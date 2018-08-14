@@ -1,0 +1,15 @@
+server:
+  port: 8004
+spring:
+   datasource:
+     driver-class-name: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://localhost:3306/ensemble?charset=utf8mb4&serverTimezone=UTC
+     username: root
+     password: 123456
+     tomcat:
+       max-active: 20
+       test-while-idle: true
+       validation-query: select 1
+       default-auto-commit: false
+       min-idle: 15
+       initial-size: 15
