@@ -29,7 +29,7 @@ public class TestController {
         List<User> result = this.userRepository.findAll();
         return result;
     }
-    @RequestMapping("/getDiffInfo")
+    @RequestMapping("/getDiffInfo/{tableName}")
     public @ResponseBody
     List<ParaDifferenceCheckPublish> getDiffInfo(HttpServletResponse response,@PathVariable("tableName") String tableName) {
         response.addHeader("Access-Control-Allow-Origin", "*");
