@@ -1,6 +1,8 @@
 package com.dcits.ensembleom.controller;
 
+import com.dcits.ensembleom.dbmodel.ParaDifferenceCheckPublish;
 import com.dcits.ensembleom.dbmodel.User;
+import com.dcits.ensembleom.repository.ParaDifferenceRepository;
 import com.dcits.ensembleom.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,8 @@ public class TestController {
 
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private ParaDifferenceRepository paraDifferenceRepository;
 
     @RequestMapping("/getUser")
     public @ResponseBody
@@ -25,5 +29,12 @@ public class TestController {
         List<User> result = this.userRepository.findAll();
         return result;
     }
-
+    @RequestMapping("/getDiffInfo")
+    public @ResponseBody
+    List<ParaDifferenceCheckPublish> getDiffInfo(HttpServletResponse response,@PathVariable("tableName") String tableName) {
+        response.addHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
+        List<ParaDifferenceCheckPublish> result = this.paraDifferenceRepository.searchDiffByTableName(tableName);
+        return result;
+    }
 }
