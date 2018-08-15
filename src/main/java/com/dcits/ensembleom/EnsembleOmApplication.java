@@ -17,6 +17,8 @@ public class EnsembleOmApplication {
 		response.setHeader("Content-Type", "application/json;charset=UTF-8");
         return "Ensemble-OM后台";
 	}
+
+
 	public static void main(String[] args) {
 		SpringApplication.run(EnsembleOmApplication.class, args);
 	}
