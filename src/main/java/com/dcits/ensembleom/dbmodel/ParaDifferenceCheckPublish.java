@@ -2,6 +2,7 @@ package com.dcits.ensembleom.dbmodel;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
 /**
@@ -102,16 +103,26 @@ public class ParaDifferenceCheckPublish implements Serializable {
 
     @Override
     public String toString() {
+        String olddataUpd="";
+        String dataDui="";
+        String keyValue="";
+        try {
+            dataDui=new String(this.dataDui,"UTF-8");
+            olddataUpd=new String(this.olddataUpd,"UTF-8");
+            keyValue=new String(this.keyValue,"UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         return "ParaDifferenceCheckPublish{" +
                 "tranTimestamp='" + tranTimestamp + '\'' +
                 ", seriesNum=" + seriesNum +
                 ", reqNo='" + reqNo + '\'' +
                 ", tableFullName='" + tableFullName + '\'' +
                 ", primaryKeyvalue='" + primaryKeyvalue + '\'' +
-                ", keyValue=" + Arrays.toString(keyValue) +
+                ", keyValue=" + keyValue +
                 ", operateType='" + operateType + '\'' +
-                ", dataDui=" + Arrays.toString(dataDui) +
-                ", olddataUpd=" + Arrays.toString(olddataUpd) +
+                ", dataDui=" + dataDui +
+                ", olddataUpd=" + olddataUpd +
                 '}';
     }
 }
