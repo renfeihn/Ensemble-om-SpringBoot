@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 public class IrlProdInt {
-    public IrlProdInt(String prodType, String eventType, String intType, String intClass,
+    public IrlProdInt(String prodType, String eventType, String intType, String intTypeDesc,String intClass,
                             String taxType, String rateAmtId, String intAmtId, String recalMethod,String company, String intStart, String intDaysType,
                             String intCalcBal, String intApplType, String rollFreq, String rollDay, String minRate, String maxRate,
                             String intRateInd, String monthBasis, String groupRuleType, String splitId,
@@ -22,6 +22,7 @@ public class IrlProdInt {
         this.prodType = prodType;
         this.eventType = eventType;
         this.intType = intType;
+        this.intTypeDesc = intTypeDesc;
         this.intClass = intClass;
         this.taxType = taxType;
         this.rateAmtId = rateAmtId;
@@ -56,6 +57,8 @@ public class IrlProdInt {
     private String eventType;
     @Column(name="int_type")
     private String intType;
+    @Column(name="int_type_desc")
+    private String intTypeDesc;
     @Column(name="int_class")
     private String intClass;
     @Column(name="tax_type")
@@ -111,6 +114,7 @@ public class IrlProdInt {
                 "prodType='" + prodType + '\'' +
                 ", eventType='" + eventType + '\'' +
                 ", intType='" + intType + '\'' +
+                ", intTypeDesc='" + intTypeDesc + '\'' +
                 ", intClass='" + intClass + '\'' +
                 ", taxType='" + taxType + '\'' +
                 ", rateAmtId='" + rateAmtId + '\'' +
