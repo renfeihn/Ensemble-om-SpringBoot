@@ -1,9 +1,8 @@
-package com.dcits.ensembleom.dbmodel;
+package com.dcits.ensembleom.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
-import java.util.Arrays;
 
 /**
  * Created by ligan on 2018/8/14.

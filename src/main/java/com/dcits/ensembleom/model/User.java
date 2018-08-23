@@ -1,10 +1,7 @@
-package com.dcits.ensembleom.dbmodel;
+package com.dcits.ensembleom.model;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import java.util.Set;
 
 /**
  * Created by ligan on 2018/8/14.

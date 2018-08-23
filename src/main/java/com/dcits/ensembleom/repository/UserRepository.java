@@ -1,6 +1,6 @@
 package com.dcits.ensembleom.repository;
 
-import com.dcits.ensembleom.dbmodel.User;
+import com.dcits.ensembleom.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 

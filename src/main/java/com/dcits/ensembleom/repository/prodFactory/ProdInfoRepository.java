@@ -1,4 +1,4 @@
-package com.dcits.ensembleom.repository;
+package com.dcits.ensembleom.repository.prodFactory;
 
 import com.dcits.ensembleom.model.ParaDifferenceCheckPublish;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by ligan on 2018/8/14.
  */
-public interface ParaDifferenceRepository extends JpaRepository<ParaDifferenceCheckPublish,Long> ,JpaSpecificationExecutor<ParaDifferenceCheckPublish>{
+public interface ProdInfoRepository extends JpaRepository<ParaDifferenceCheckPublish,Long> ,JpaSpecificationExecutor<ParaDifferenceCheckPublish>{
     @Query("select s from ParaDifferenceCheckPublish s  where s.tableFullName = :tableName")
     List<ParaDifferenceCheckPublish> searchDiffByTableName(@Param("tableName") String tableName);
 }
