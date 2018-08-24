@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 /**
  * Created by ligan on 2018/8/14.
  */
-public interface MbEventTypeRepository extends JpaRepository<MbEventType,String> ,JpaSpecificationExecutor<MbEventType>{
+public interface MbEventTypeRepository extends JpaRepository<MbEventType,Long> ,JpaSpecificationExecutor<MbEventType>{
     MbEventType findByEventType(String eventType);
 }

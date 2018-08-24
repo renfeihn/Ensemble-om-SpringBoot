@@ -44,6 +44,7 @@ public class MbProdInfoService {
             eventInfo.setMbEventType(mbEventTypeRepository.findByEventType(mbProdDefine.getAssembleId()));
             eventInfo.setMbEventAttrs(mbEventAttrRepository.findByEventTypeAndAssembleType(mbProdDefine.getAssembleId(), "ATTR"));
             eventInfo.setMbEventParts(getMbEventPart(mbProdDefine.getAssembleId()));
+            eventInfos.add(eventInfo);
         }
         return eventInfos;
     }
