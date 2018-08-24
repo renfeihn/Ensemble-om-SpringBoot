@@ -1,4 +1,4 @@
-package com.dcits.ensembleom.service;
+package com.dcits.ensembleom.service.prodFactory;
 
 import com.dcits.ensembleom.model.dbmodel.*;
 import com.dcits.ensembleom.model.prodFactory.MbEventInfo;

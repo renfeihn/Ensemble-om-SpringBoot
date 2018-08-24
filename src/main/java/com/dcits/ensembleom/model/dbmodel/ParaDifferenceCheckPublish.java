@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.UnsupportedEncodingException;
 
 /**
  * Created by ligan on 2018/8/23.
@@ -14,7 +15,10 @@ import javax.persistence.*;
 @Getter
 @Setter
 public class ParaDifferenceCheckPublish {
-    public ParaDifferenceCheckPublish(String reqNo, int seriesNum, String tableFullName, String primaryKeyvalue, String keyValue, String operateType, String dataDui, String olddataUpd) {
+    public ParaDifferenceCheckPublish(){
+
+    }
+    public ParaDifferenceCheckPublish(String reqNo, int seriesNum, String tableFullName, String primaryKeyvalue, byte[] keyValue, String operateType, byte[] dataDui, byte[] olddataUpd) {
         this.reqNo = reqNo;
         this.seriesNum = seriesNum;
         this.tableFullName = tableFullName;
@@ -36,16 +40,26 @@ public class ParaDifferenceCheckPublish {
     @Column(name="primary_keyvalue")
     private String primaryKeyvalue;
     @Column(name="key_value")
-    private String keyValue;
+    private byte[] keyValue;
     @Column(name="operate_type")
     private String operateType;
     @Column(name="data_dui")
-    private String dataDui;
+    private byte[] dataDui;
     @Column(name="olddata_upd")
-    private String olddataUpd;
+    private byte[] olddataUpd;
 
     @Override
     public String toString() {
+        String olddataUpd="";
+        String dataDui="";
+        String keyValue="";
+        try {
+            dataDui=new String(this.dataDui,"UTF-8");
+            olddataUpd=new String(this.olddataUpd,"UTF-8");
+            keyValue=new String(this.keyValue,"UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         return "ParaDifferenceCheckPublish{" +
                 "reqNo='" + reqNo + '\'' +
                 ", seriesNum=" + seriesNum +
