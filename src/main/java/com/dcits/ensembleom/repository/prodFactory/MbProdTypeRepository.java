@@ -10,6 +10,6 @@ import java.util.List;
 /**
  * Created by ligan on 2018/8/14.
  */
-public interface MbProdTypeRepository extends JpaRepository<MbProdType,Long> ,JpaSpecificationExecutor<ParaDifferenceCheckPublish>{
+public interface MbProdTypeRepository extends JpaRepository<MbProdType,Long> ,JpaSpecificationExecutor<MbProdType>{
     MbProdType findByProdType(String prodType);
 }

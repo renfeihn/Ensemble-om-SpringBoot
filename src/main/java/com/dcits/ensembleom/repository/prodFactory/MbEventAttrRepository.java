@@ -11,6 +11,6 @@ import java.util.List;
 /**
  * Created by ligan on 2018/8/14.
  */
-public interface MbEventAttrRepository extends JpaRepository<MbEventAttr,MbEventAttrKeysClass> ,JpaSpecificationExecutor<ParaDifferenceCheckPublish>{
-
+public interface MbEventAttrRepository extends JpaRepository<MbEventAttr,MbEventAttrKeysClass> ,JpaSpecificationExecutor<MbEventAttr>{
+     List<MbEventAttr> findByEventTypeAndAssembleType(String eventType,String assembleType);
 }

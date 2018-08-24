@@ -16,6 +16,9 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class MbEventAttr implements Serializable {
+    public MbEventAttr(){
+
+    }
     public MbEventAttr(String eventType, String seqNo, String assembleType, String assembleId, String attrValue, String assembleRule) {
         this.eventType = eventType;
         this.seqNo = seqNo;
@@ -25,18 +28,18 @@ public class MbEventAttr implements Serializable {
         this.assembleRule = assembleRule;
     }
     @Id
-    @Column(name="eventType")
+    @Column(name="event_type")
     private String eventType;
     @Id
-    @Column(name="seqNo")
+    @Column(name="seq_no")
     private String seqNo;
-    @Column(name="assembleType")
+    @Column(name="assemble_type")
     private String assembleType;
-    @Column(name="assembleId")
+    @Column(name="assemble_id")
     private String assembleId;
-    @Column(name="attrValue")
+    @Column(name="attr_value")
     private String attrValue;
-    @Column(name="assembleRule")
+    @Column(name="assemble_rule")
     private String assembleRule;
 
     @Override

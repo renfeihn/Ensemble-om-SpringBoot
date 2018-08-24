@@ -16,6 +16,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class MbEventPart implements Serializable {
+    public MbEventPart(){}
     public MbEventPart(String eventType, String assembleId, String attrKey, String attrValue) {
         this.eventType = eventType;
         this.assembleId = assembleId;
@@ -23,15 +24,15 @@ public class MbEventPart implements Serializable {
         this.attrValue = attrValue;
     }
     @Id
-    @Column(name="eventType")
+    @Column(name="event_type")
     private String eventType;
     @Id
-    @Column(name="assembleId")
+    @Column(name="assemble_id")
     private String assembleId;
     @Id
-    @Column(name="attrKey")
+    @Column(name="attr_key")
     private String attrKey;
-    @Column(name="attrValue")
+    @Column(name="attr_value")
     private String attrValue;
 
     @Override

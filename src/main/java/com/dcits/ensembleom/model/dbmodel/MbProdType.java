@@ -25,17 +25,17 @@ public class MbProdType {
     public MbProdType() {
     }
     @Id
-    @Column(name="prodType")
+    @Column(name="prod_type")
     private String prodType;
-    @Column(name="prodDesc")
+    @Column(name="prod_desc")
     private String prodDesc;
-    @Column(name="prodClass")
+    @Column(name="prod_class")
     private String prodClass;
-    @Column(name="prodGroup")
+    @Column(name="prod_group")
     private String prodGroup;
-    @Column(name="prodRange")
+    @Column(name="prod_range")
     private String prodRange;
-    @Column(name="baseProdType")
+    @Column(name="base_prodType")
     private String baseProdType;
     @Override
     public String toString() {

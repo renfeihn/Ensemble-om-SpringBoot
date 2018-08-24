@@ -12,12 +12,13 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "mb_prod_define")
-@IdClass(MbProdDefine.class)
+@IdClass(MbProdDefineKeysClass.class)
 @Getter
 @Setter
 public class MbProdDefine implements Serializable {
+    public MbProdDefine(){
 
-
+    };
     public MbProdDefine(String prodType, String seqNo, String assembleType, String assembleId, String eventDefault, String attrKey, String attrValue, String status) {
         this.prodType = prodType;
         this.seqNo = seqNo;
@@ -29,20 +30,20 @@ public class MbProdDefine implements Serializable {
         this.status = status;
     }
     @Id
-    @Column(name="prodType")
+    @Column(name="prod_type")
     private String prodType;
     @Id
-    @Column(name="seqNo")
+    @Column(name="seq_no")
     private String seqNo;
-    @Column(name="assembleType")
+    @Column(name="assemble_type")
     private String assembleType;
-    @Column(name="assembleId")
+    @Column(name="assemble_id")
     private String assembleId;
-    @Column(name="eventDefault")
+    @Column(name="event_default")
     private String eventDefault;
-    @Column(name="attrKey")
+    @Column(name="attr_key")
     private String attrKey;
-    @Column(name="attrValue")
+    @Column(name="attr_value")
     private String attrValue;
     @Column(name="status")
     private String status;
