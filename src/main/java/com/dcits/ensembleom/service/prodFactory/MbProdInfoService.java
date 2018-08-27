@@ -25,15 +25,37 @@ public class MbProdInfoService {
     private MbEventAttrRepository mbEventAttrRepository;
     @Autowired
     private MbEventPartRepository mbEventPartRepository;
-    public   MbProdInfo getProdInfo(String prodType){
+    public MbProdInfo getProdInfo(String prodType){
         MbProdInfo mbProdInfo=new MbProdInfo();
         mbProdInfo.setProdType(mbProdTypeRepository.findByProdType(prodType));
         mbProdInfo.setProdDefines(mbProdDefineRepository.findByProdTypeAndAssembleType(prodType, "ATTR"));
         mbProdInfo.setMbEventInfos(getMbEventInfo(prodType));
         return mbProdInfo;
     }
-    public void saveProdType(MbProdType mbProdType){
+    //保存产品所有属性
+    public void saveProdInfo(MbProdInfo mbProdInfo){
+        MbProdType mbProdType=mbProdInfo.getProdType();
+        List<MbEventInfo> mbEventInfoList=mbProdInfo.getMbEventInfos();
+        List<MbProdDefine> mbProdDefineList=mbProdInfo.getProdDefines();
         mbProdTypeRepository.saveAndFlush(mbProdType);
+        for(MbProdDefine mbProdDefine: mbProdDefineList){
+            mbProdDefineRepository.saveAndFlush(mbProdDefine);
+        }
+        saveEventInfo(mbEventInfoList);
+    }
+    //保存事件
+    public void saveEventInfo(List<MbEventInfo> mbEventInfoList){
+        for(MbEventInfo mbEventInfo:mbEventInfoList){
+            mbEventTypeRepository.saveAndFlush(mbEventInfo.getMbEventType());
+            List<MbEventAttr> mbEventAttrList=mbEventInfo.getMbEventAttrs();
+            List<MbEventPart> mbEventPartList=mbEventInfo.getMbEventParts();
+            for(MbEventAttr mbEventAttr :mbEventAttrList){
+                mbEventAttrRepository.saveAndFlush(mbEventAttr);
+            }
+            for(MbEventPart mbEventPart:mbEventPartList){
+                mbEventPartRepository.saveAndFlush(mbEventPart);
+            }
+        }
     }
     private List<MbEventInfo> getMbEventInfo(String prodType){
         List<MbEventInfo> eventInfos=new ArrayList<>();
