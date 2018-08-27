@@ -1,6 +1,5 @@
 package com.dcits.ensembleom.repository.paraFlow;
 
-import com.dcits.ensembleom.model.ParaDifferenceCheckPublish;
 import com.dcits.ensembleom.model.dbmodel.ParaCircleInfo;
 import com.dcits.ensembleom.model.dbmodel.ParaCircleInfoKeysClass;
 import org.springframework.data.jpa.repository.JpaRepository;

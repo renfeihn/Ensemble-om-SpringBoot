@@ -27,7 +27,6 @@ public class MbProdInfoService {
     private MbEventPartRepository mbEventPartRepository;
     public   MbProdInfo getProdInfo(String prodType){
         MbProdInfo mbProdInfo=new MbProdInfo();
-
         mbProdInfo.setProdType(mbProdTypeRepository.findByProdType(prodType));
         mbProdInfo.setProdDefines(mbProdDefineRepository.findByProdTypeAndAssembleType(prodType, "ATTR"));
         mbProdInfo.setMbEventInfos(getMbEventInfo(prodType));

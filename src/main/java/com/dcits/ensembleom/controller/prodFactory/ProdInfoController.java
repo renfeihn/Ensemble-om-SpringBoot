@@ -15,14 +15,14 @@ import javax.servlet.http.HttpServletResponse;
 public class ProdInfoController {
 
     @Autowired
-     public   MbProdInfoService mbProdInfoService;
-
+     private    MbProdInfoService mbProdInfoService;
     @RequestMapping("/getProdInfo/{prodType}")
     public @ResponseBody
     String getProdInfo(HttpServletResponse response,@PathVariable("prodType") String prodType) {
         response.addHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         MbProdInfo mbProdInfo=mbProdInfoService.getProdInfo(prodType);
+
        return mbProdInfo.toString();
     }
     @RequestMapping("/saveProdInfo")

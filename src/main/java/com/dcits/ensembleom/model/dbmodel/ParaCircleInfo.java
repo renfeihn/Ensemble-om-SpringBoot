@@ -15,6 +15,8 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class ParaCircleInfo implements Serializable {
+    public ParaCircleInfo(){
+        }
     public ParaCircleInfo(String reqNo, String operatorType, String checkText, String approve, String operatorId, String currentsystemTime, String clientIp) {
         this.reqNo = reqNo;
         this.operatorType = operatorType;

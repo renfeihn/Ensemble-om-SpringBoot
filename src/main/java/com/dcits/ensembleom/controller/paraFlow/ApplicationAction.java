@@ -30,8 +30,11 @@ public class ApplicationAction {
     public MbProdInfoService mbProdInfoService;
     @RequestMapping("/application/{prodType}")
     public @ResponseBody
-    void application(HttpServletResponse response,@PathVariable("prodType") String prodType) {
+    MbProdInfo application(HttpServletResponse response,@PathVariable("prodType") String prodType) {
+        response.addHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
         MbProdInfo mbProdInfo=mbProdInfoService.getProdInfo(prodType);
         prodDataAssembling.getAssembleData(mbProdInfo,"1506482712346AQVQV");
+        return mbProdInfo;
     }
 }

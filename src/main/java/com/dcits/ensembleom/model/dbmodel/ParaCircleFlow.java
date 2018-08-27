@@ -16,6 +16,9 @@ import javax.persistence.Table;
 @Getter
 @Setter
 public class ParaCircleFlow {
+    public ParaCircleFlow(){
+
+    }
     public ParaCircleFlow(String reqNo, String transactionId, String transactionDesc, String currentStatus, String isTranGroup) {
         this.reqNo = reqNo;
         this.transactionId = transactionId;

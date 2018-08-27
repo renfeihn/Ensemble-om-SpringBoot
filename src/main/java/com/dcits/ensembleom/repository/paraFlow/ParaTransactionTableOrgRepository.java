@@ -1,6 +1,5 @@
 package com.dcits.ensembleom.repository.paraFlow;
 
-import com.dcits.ensembleom.model.ParaDifferenceCheckPublish;
 import com.dcits.ensembleom.model.dbmodel.ParaTransactionTableOrg;
 import com.dcits.ensembleom.model.dbmodel.ParaTransactionTableOrgKeysClass;
 import org.springframework.data.jpa.repository.JpaRepository;

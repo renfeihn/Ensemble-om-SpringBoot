@@ -1,6 +1,5 @@
 package com.dcits.ensembleom.repository.prodFactory;
 
-import com.dcits.ensembleom.model.ParaDifferenceCheckPublish;
 import com.dcits.ensembleom.model.dbmodel.MbEventAttr;
 import com.dcits.ensembleom.model.dbmodel.MbEventAttrKeysClass;
 import org.springframework.data.jpa.repository.JpaRepository;
