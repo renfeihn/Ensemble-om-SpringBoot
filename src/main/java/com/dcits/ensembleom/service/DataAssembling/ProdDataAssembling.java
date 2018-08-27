@@ -2,10 +2,8 @@ package com.dcits.ensembleom.service.DataAssembling;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.dcits.ensembleom.model.dbmodel.MbEventType;
-import com.dcits.ensembleom.model.dbmodel.MbProdDefine;
-import com.dcits.ensembleom.model.dbmodel.MbProdType;
-import com.dcits.ensembleom.model.dbmodel.ParaDifferenceCheckPublish;
+import com.dcits.ensembleom.model.dbmodel.*;
+import com.dcits.ensembleom.model.prodFactory.MbEventInfo;
 import com.dcits.ensembleom.model.prodFactory.MbProdInfo;
 import com.dcits.ensembleom.repository.paraFlow.ParaDifferenceCheckPublishRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +13,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 /**
+ * 产品参数组装
  * Created by ligan on 2018/8/24.
  */
 @Service
@@ -23,13 +22,20 @@ public class ProdDataAssembling {
     private ParaDifferenceCheckPublishRepository paraDifferenceCheckPublishRepository;
     public void getAssembleData(MbProdInfo mbProdInfo,String reqNo){
         List<ParaDifferenceCheckPublish> paraDifferenceCheckPublishList=paraDifferenceCheckPublishRepository.findByReqNo(reqNo);
+        String fullName="";
         for(ParaDifferenceCheckPublish paraDifferenceCheckPublish:paraDifferenceCheckPublishList){
+            fullName=paraDifferenceCheckPublish.getTableFullName();
             //组装prodType
-            if(paraDifferenceCheckPublish.getTableFullName().equals("MB_PROD_TYPE"))
-            prodTypeAssembling(mbProdInfo,paraDifferenceCheckPublish);
+            if(fullName.equals("MB_PROD_TYPE")) {
+                prodTypeAssembling(mbProdInfo, paraDifferenceCheckPublish);
+            } else
             //组装prodDefine
-            //组装eventAttr
-            //组装eventPart
+            if(fullName.equals("MB_PROD_DEFINE")){
+                prodDefineAssembling(mbProdInfo,paraDifferenceCheckPublish);
+            }else{
+                eventAttrAssembling(mbProdInfo,paraDifferenceCheckPublish);
+            }
+            //组装eventAttr、组装eventPart
         }
     }
     //组装prodType
@@ -50,11 +56,17 @@ public class ProdDataAssembling {
 
         }
     }
-    //组装eventAttr
+    //组装prodDefine
     public void prodDefineAssembling(MbProdInfo mbProdInfo,ParaDifferenceCheckPublish paraDifferenceCheckPublish) {
         List<MbProdDefine> mbProdDefineList=mbProdInfo.getProdDefines();
         for(MbProdDefine mbProdDefine:mbProdDefineList){
-          
+
         }
     }
+    //组装eventAttr、eventPart
+    public void eventAttrAssembling(MbProdInfo mbProdInfo,ParaDifferenceCheckPublish paraDifferenceCheckPublish) {
+        List<MbEventInfo> mbEventInfoList=mbProdInfo.getMbEventInfos();
+
+    }
+
  }
