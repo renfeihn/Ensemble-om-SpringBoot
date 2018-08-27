@@ -34,7 +34,7 @@ public class FlowManagement {
         * */
         ParaCircleFlow paraCircleFlow= paraCircleFlowRepository.findByTransactionId(tranName);
         if(paraCircleFlow!=null&&paraCircleFlow.getReqNo()!=null){
-            appNoByTable(userName,tranName,tranFlow);
+            seqNo= appNoByTable(userName,tranName,tranFlow);
         }else{
             //此处判断如果交易状态为待复核、待发布状态则抛出异常
             seqNo=paraCircleFlow.getReqNo();
@@ -47,6 +47,8 @@ public class FlowManagement {
 
         return paraDifferenceCheckPublish;
     }
+    //为多表申请单号
+
     //申请单号
     public String appNoByTable(String userName,String tranName,String tranFlow){
         ParaCircleFlow paraCircleFlow=new ParaCircleFlow();
