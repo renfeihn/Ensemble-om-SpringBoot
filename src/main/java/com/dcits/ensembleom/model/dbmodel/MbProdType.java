@@ -39,13 +39,13 @@ public class MbProdType {
     private String baseProdType;
     @Override
     public String toString() {
-        return "MbProdType{" +
-                "prodType='" + prodType + '\'' +
-                ", prodDesc='" + prodDesc + '\'' +
-                ", prodClass='" + prodClass + '\'' +
-                ", prodGroup='" + prodGroup + '\'' +
-                ", prodRange='" + prodRange + '\'' +
-                ", baseProdType='" + baseProdType + '\'' +
+        return "{" +
+                "prodType:'" + prodType + '\'' +
+                ", prodDesc:'" + prodDesc + '\'' +
+                ", prodClass:'" + prodClass + '\'' +
+                ", prodGroup:'" + prodGroup + '\'' +
+                ", prodRange:'" + prodRange + '\'' +
+                ", baseProdType:'" + baseProdType + '\'' +
                 '}';
     }
 }
