@@ -36,7 +36,7 @@ public class ProdInfoController {
     @RequestMapping("/getProdInfo")
     public @ResponseBody
     String getProdInfo(HttpServletResponse response,@RequestBody Map map) {
-        response.addHeader("Access-Control-Allow-Origin", "*");
+//        response.addHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         Map responseMap=new HashMap<>();
         String prodType=(String)map.get("prodType");
@@ -49,7 +49,7 @@ public class ProdInfoController {
         responseMap.put("prodInfo",mbProdInfo.toString());
         if(paraDifferenceCheckPublishList!=null)
         responseMap.put("diff",paraDifferenceCheckPublishList);
-       return mbProdInfo.toString();
+       return JSON.toJSONString(mbProdInfo);
     }
 
     /**
