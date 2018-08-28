@@ -65,5 +65,9 @@ public class FlowManagement {
         paraCircleInfoRepository.saveAndFlush(paraCircleInfo);
         return seqNo;
     }
-
+    //更新操作流程
+    public void updateFlow(String reqNo,String status,String userName,String ipLoc){
+        paraCircleFlowRepository.updateParaStatus(reqNo,status);
+        //更新circle_info表信息
+    }
 }

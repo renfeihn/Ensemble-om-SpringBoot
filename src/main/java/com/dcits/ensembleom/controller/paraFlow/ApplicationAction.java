@@ -3,13 +3,12 @@ package com.dcits.ensembleom.controller.paraFlow;
 import com.dcits.ensembleom.model.prodFactory.MbProdInfo;
 import com.dcits.ensembleom.service.DataAssembling.ProdDataAssembling;
 import com.dcits.ensembleom.service.prodFactory.MbProdInfoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
 /**
@@ -24,9 +23,9 @@ public class ApplicationAction {
      * @param prodType
      * @return
      */
-    @Autowired
+    @Resource
     public ProdDataAssembling prodDataAssembling;
-    @Autowired
+    @Resource
     public MbProdInfoService mbProdInfoService;
     @RequestMapping("/application/{prodType}")
     public @ResponseBody

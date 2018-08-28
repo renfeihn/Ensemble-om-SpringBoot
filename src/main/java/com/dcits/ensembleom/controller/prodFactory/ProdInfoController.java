@@ -2,23 +2,18 @@ package com.dcits.ensembleom.controller.prodFactory;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.dcits.ensembleom.model.dbmodel.MbProdType;
 import com.dcits.ensembleom.model.dbmodel.ParaCircleFlow;
 import com.dcits.ensembleom.model.dbmodel.ParaDifferenceCheckPublish;
 import com.dcits.ensembleom.model.prodFactory.MbProdInfo;
 import com.dcits.ensembleom.repository.paraFlow.ParaCircleFlowRepository;
 import com.dcits.ensembleom.repository.paraFlow.ParaDifferenceCheckPublishRepository;
+import com.dcits.ensembleom.service.paraFlow.DifferenceInfo;
 import com.dcits.ensembleom.service.paraFlow.FlowManagement;
 import com.dcits.ensembleom.service.prodFactory.MbProdInfoService;
-import com.dcits.ensembleom.util.ResourcesUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.List;
@@ -27,14 +22,16 @@ import java.util.Map;
 @Controller
 public class ProdInfoController {
 
-    @Autowired
+    @Resource
      private  MbProdInfoService mbProdInfoService;
-    @Autowired
+    @Resource
     private FlowManagement flowManagement;
-    @Autowired
+    @Resource
     private ParaCircleFlowRepository paraCircleFlowRepository;
-    @Autowired
+    @Resource
     private ParaDifferenceCheckPublishRepository paraDifferenceCheckPublishRepository;
+    @Resource
+    private DifferenceInfo differenceInfo;
     @RequestMapping("/getProdInfo")
     public @ResponseBody
     String getProdInfo(HttpServletResponse response,@RequestParam(value="prodType",required=true) String prodType) {
@@ -61,12 +58,14 @@ public class ProdInfoController {
      * 有单号&&暂存操作：根据单号更新操作记录表
      *
      * @param response
-     * @param prodInfo
      */
     @RequestMapping("/saveProdInfo")
-    public void saveProdInfo(HttpServletResponse response,@RequestParam(value="prodType",required=true) JSONObject prodInfo,@RequestParam(value="reqNo",required=false) String reqNo) {
-      MbProdInfo  mbProdInfo=(MbProdInfo) JSON.toJavaObject(prodInfo, MbProdInfo.class);
-        String seqNo=reqNo;
+    public void saveProdInfo(HttpServletResponse response,@RequestBody Map map) {
+      MbProdInfo  mbProdInfo=(MbProdInfo) JSON.toJavaObject((JSONObject)map.get(""), MbProdInfo.class);
+        String seqNo=(String)map.get("reqNo");
+        String option=(String)map.get("option");
+        //记录流程信息,记录一对多信息
+        mbProdInfoService.saveProdInfo(mbProdInfo);
         if(seqNo==null ||"".equals(seqNo) ) {
             //无单号，1.申请单号 2.新增记录差异信息 3.根据操作类型更新交易状态
             ParaCircleFlow paraCircleFlow = paraCircleFlowRepository.findByTransactionId("MbProdType");
@@ -76,11 +75,13 @@ public class ProdInfoController {
                 //此处判断如果交易状态为待复核、待发布状态则抛出异常
                 seqNo=paraCircleFlow.getReqNo();
             }
+            //记录操作流程
+            differenceInfo.insertProdDifferenceInfo(mbProdInfo,seqNo);
         }else{
             //有单号，1.更新差异信息 2.根据操作类型更新交易状态
+            differenceInfo.updateProdDifferenceInfo(mbProdInfo,seqNo);
         }
-      mbProdInfoService.saveProdInfo(mbProdInfo);
-        //记录流程信息,记录一对多信息
-
+         //根据option实际选项，操作值
+           flowManagement.updateFlow(seqNo,"2","","");
     }
 }
