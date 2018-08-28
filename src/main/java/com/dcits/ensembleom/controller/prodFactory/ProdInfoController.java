@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
+@CrossOrigin
 public class ProdInfoController {
 
     @Resource
@@ -34,10 +35,11 @@ public class ProdInfoController {
     private DifferenceInfo differenceInfo;
     @RequestMapping("/getProdInfo")
     public @ResponseBody
-    String getProdInfo(HttpServletResponse response,@RequestParam(value="prodType",required=true) String prodType) {
+    String getProdInfo(HttpServletResponse response,@RequestBody Map map) {
         response.addHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         Map responseMap=new HashMap<>();
+        String prodType=(String)map.get("prodType");
         MbProdInfo mbProdInfo=mbProdInfoService.getProdInfo(prodType);
         ParaCircleFlow paraCircleFlow= paraCircleFlowRepository.findByTransactionId("MbProdType");
         List<ParaDifferenceCheckPublish> paraDifferenceCheckPublishList=null;
