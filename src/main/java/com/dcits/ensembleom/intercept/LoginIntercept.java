@@ -8,6 +8,11 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * @Author chengliang
+ * @Description 默认拦截器
+ * @Date 2018-08-29 15:13
+ **/
 public class LoginIntercept implements HandlerInterceptor {
     private static final Logger logger = LoggerFactory.getLogger(LoginIntercept.class);
 
