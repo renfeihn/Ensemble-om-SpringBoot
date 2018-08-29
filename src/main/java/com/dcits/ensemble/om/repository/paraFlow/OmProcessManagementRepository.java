@@ -15,7 +15,7 @@ import java.util.List;
 public interface OmProcessManagementRepository extends JpaRepository<OmProcessManagement,Long> ,JpaSpecificationExecutor<OmProcessManagement>{
      public OmProcessManagement findByTransactionId(String transactionId);
      @Modifying
-     @Query("update O mProcessManagement set currentStatus=:status where reqNo=:reqNo")
+     @Query("update OmProcessManagement set currentStatus=:status where reqNo=:reqNo")
      void updateParaStatus(@Param("reqNo") String reqNo,@Param("status") String status);
      public List<OmProcessManagement> findByCurrentStatus(String status);
 }
