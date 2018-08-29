@@ -45,7 +45,7 @@ public class MbProdInfoService {
     //保存产品所有属性(只有发布时生效)
     public void saveProdInfo(MbProdInfo mbProdInfo){
         MbProdType mbProdType=mbProdInfo.getProdType();
-        List<MbEventInfo> mbEventInfoList=mbProdInfo.getMbEventInfos();
+        Map<String,MbEventInfo> mbEventInfoList=mbProdInfo.getMbEventInfos();
         Map<String,MbProdDefine> mbProdDefineList=mbProdInfo.getProdDefines();
         mbProdTypeRepository.saveAndFlush(mbProdType);
         for(Map.Entry<String, MbProdDefine> entry: mbProdDefineList.entrySet()){
@@ -54,38 +54,48 @@ public class MbProdInfoService {
         saveEventInfo(mbEventInfoList);
     }
     //保存事件
-    public void saveEventInfo(List<MbEventInfo> mbEventInfoList){
-        for(MbEventInfo mbEventInfo:mbEventInfoList){
+    public void saveEventInfo(Map<String,MbEventInfo> mbEventInfoList){
+/*        for(MbEventInfo mbEventInfo:mbEventInfoList){
             mbEventTypeRepository.saveAndFlush(mbEventInfo.getMbEventType());
-            List<MbEventAttr> mbEventAttrList=mbEventInfo.getMbEventAttrs();
-            List<MbEventPart> mbEventPartList=mbEventInfo.getMbEventParts();
+            Map<String,MbEventAttr> mbEventAttrList=mbEventInfo.getMbEventAttrs();
+            Map<String,MbEventPart> mbEventPartList=mbEventInfo.getMbEventParts();
             for(MbEventAttr mbEventAttr :mbEventAttrList){
                 mbEventAttrRepository.saveAndFlush(mbEventAttr);
             }
             for(MbEventPart mbEventPart:mbEventPartList){
                 mbEventPartRepository.saveAndFlush(mbEventPart);
             }
-        }
+        }*/
     }
-    private List<MbEventInfo> getMbEventInfo(String prodType){
-        List<MbEventInfo> eventInfos=new ArrayList<>();
+    private Map<String,MbEventInfo> getMbEventInfo(String prodType){
+        Map<String,MbEventInfo> eventInfos=new HashMap<>();
         List<MbProdDefine> mbProdDefineEvent=mbProdDefineRepository.findByProdTypeAndAssembleType(prodType,"EVENT");
         for(MbProdDefine mbProdDefine: mbProdDefineEvent){
             MbEventInfo eventInfo= new MbEventInfo();
+            Map<String,MbEventAttr> mbEventAttrMap=new HashMap<>();
             eventInfo.setMbEventType(mbEventTypeRepository.findByEventType(mbProdDefine.getAssembleId()));
-            eventInfo.setMbEventAttrs(mbEventAttrRepository.findByEventTypeAndAssembleType(mbProdDefine.getAssembleId(), "ATTR"));
+            List<MbEventAttr> mbEventAttrList=mbEventAttrRepository.findByEventTypeAndAssembleType(mbProdDefine.getAssembleId(), "ATTR");
+            for(MbEventAttr mbEventAttr:mbEventAttrList){
+                mbEventAttrMap.put(mbEventAttr.getAssembleId(),mbEventAttr);
+            }
+            eventInfo.setMbEventAttrs(mbEventAttrMap);
             eventInfo.setMbEventParts(getMbEventPart(mbProdDefine.getAssembleId()));
-            eventInfos.add(eventInfo);
+            eventInfos.put(mbProdDefine.getAssembleId(), eventInfo);
         }
         return eventInfos;
     }
-    private List<MbEventPart> getMbEventPart(String eventType){
+    private Map<String,Map> getMbEventPart(String eventType){
         List<MbEventAttr> mbEventAttrs=mbEventAttrRepository.findByEventTypeAndAssembleType(eventType,"PART");
-        List<MbEventPart> mbEventParts=new ArrayList<>();
+        Map<String,Map> mapMap=new HashMap<>();
         for(MbEventAttr mbEventAttr:mbEventAttrs){
-            mbEventParts.addAll(mbEventPartRepository.findByEventTypeAndAssembleId(eventType, mbEventAttr.getAssembleId()));
+            Map<String,MbEventPart>  mbEventParts=new HashMap<>();
+           List<MbEventPart> mbEventPartList=mbEventPartRepository.findByEventTypeAndAssembleId(eventType, mbEventAttr.getAssembleId());
+            for(MbEventPart mbEventPart:mbEventPartList){
+                mbEventParts.put(mbEventPart.getAttrKey(),mbEventPart);
+            }
+            mapMap.put(mbEventAttr.getAssembleId(),mbEventParts);
         }
-        return mbEventParts;
+        return mapMap;
     }
 }
 

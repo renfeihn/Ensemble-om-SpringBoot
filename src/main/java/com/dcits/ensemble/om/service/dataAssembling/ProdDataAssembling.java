@@ -66,7 +66,7 @@ public class ProdDataAssembling {
     }
     //组装eventAttr、eventPart
     public void eventAttrAssembling(MbProdInfo mbProdInfo,OmOperationRecords omOperationRecords) {
-        List<MbEventInfo> mbEventInfoList=mbProdInfo.getMbEventInfos();
+   /*     List<MbEventInfo> mbEventInfoList=mbProdInfo.getMbEventInfos();*/
 
     }
 

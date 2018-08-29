@@ -16,7 +16,7 @@ import java.util.Map;
 public class MbProdInfo {
     private MbProdType prodType;
     private Map<String,MbProdDefine> prodDefines;
-    private List<MbEventInfo> mbEventInfos;
+    private Map<String,MbEventInfo> mbEventInfos;
 
     @Override
     public String toString() {
