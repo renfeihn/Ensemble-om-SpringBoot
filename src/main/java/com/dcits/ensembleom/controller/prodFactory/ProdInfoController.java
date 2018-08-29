@@ -2,11 +2,11 @@ package com.dcits.ensembleom.controller.prodFactory;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.dcits.ensembleom.model.dbmodel.ParaCircleFlow;
-import com.dcits.ensembleom.model.dbmodel.ParaDifferenceCheckPublish;
+import com.dcits.ensembleom.model.dbmodel.OmOperationRecords;
+import com.dcits.ensembleom.model.dbmodel.OmProcessManagement;
 import com.dcits.ensembleom.model.prodFactory.MbProdInfo;
-import com.dcits.ensembleom.repository.paraFlow.ParaCircleFlowRepository;
-import com.dcits.ensembleom.repository.paraFlow.ParaDifferenceCheckPublishRepository;
+import com.dcits.ensembleom.repository.paraFlow.OmProcessManagementRepository;
+import com.dcits.ensembleom.repository.paraFlow.OmOperationRecordsRepository;
 import com.dcits.ensembleom.service.paraFlow.DifferenceInfo;
 import com.dcits.ensembleom.service.paraFlow.FlowManagement;
 import com.dcits.ensembleom.service.prodFactory.MbProdInfoService;
@@ -28,9 +28,9 @@ public class ProdInfoController {
     @Resource
     private FlowManagement flowManagement;
     @Resource
-    private ParaCircleFlowRepository paraCircleFlowRepository;
+    private OmProcessManagementRepository omProcessManagementRepository;
     @Resource
-    private ParaDifferenceCheckPublishRepository paraDifferenceCheckPublishRepository;
+    private OmOperationRecordsRepository omOperationRecordsRepository;
     @Resource
     private DifferenceInfo differenceInfo;
     @RequestMapping("/getProdInfo")
@@ -41,14 +41,14 @@ public class ProdInfoController {
         Map responseMap=new HashMap<>();
         String prodType=(String)map.get("prodType");
         MbProdInfo mbProdInfo=mbProdInfoService.getProdInfo(prodType);
-        ParaCircleFlow paraCircleFlow= paraCircleFlowRepository.findByTransactionId("MbProdType");
-        List<ParaDifferenceCheckPublish> paraDifferenceCheckPublishList=null;
-        if(paraCircleFlow!=null&&paraCircleFlow.getReqNo()!=null){
-            paraDifferenceCheckPublishList  =paraDifferenceCheckPublishRepository.searchDiffByTableName(paraCircleFlow.getReqNo());
+        OmProcessManagement omProcessManagement= omProcessManagementRepository.findByTransactionId("MbProdType");
+        List<OmOperationRecords> omOperationRecordsList =null;
+        if(omProcessManagement!=null&&omProcessManagement.getReqNo()!=null){
+            omOperationRecordsList = omOperationRecordsRepository.searchDiffByTableName(omProcessManagement.getReqNo());
         }
         responseMap.put("prodInfo",mbProdInfo.toString());
-        if(paraDifferenceCheckPublishList!=null)
-        responseMap.put("diff",paraDifferenceCheckPublishList);
+        if(omOperationRecordsList !=null)
+        responseMap.put("diff", omOperationRecordsList);
        return JSON.toJSONString(mbProdInfo);
     }
 
@@ -69,12 +69,12 @@ public class ProdInfoController {
         String option=(String)map.get("option");
         if(seqNo==null ||"".equals(seqNo) ) {
             //无单号，1.申请单号 2.新增记录差异信息 3.根据操作类型更新交易状态
-            ParaCircleFlow paraCircleFlow = paraCircleFlowRepository.findByTransactionId("MbProdType");
-            if(paraCircleFlow!=null&&paraCircleFlow.getReqNo()!=null){
+            OmProcessManagement omProcessManagement = omProcessManagementRepository.findByTransactionId("MbProdType");
+            if(omProcessManagement!=null&&omProcessManagement.getReqNo()!=null){
                 seqNo=  flowManagement.appNoByTable(userName, "MB_PROD_TYPE","Y");
             }else{
                 //此处判断如果交易状态为待复核、待发布状态则抛出异常
-                seqNo=paraCircleFlow.getReqNo();
+                seqNo=omProcessManagement.getReqNo();
             }
             //记录操作流程
             differenceInfo.insertProdDifferenceInfo(mbProdInfo,seqNo);

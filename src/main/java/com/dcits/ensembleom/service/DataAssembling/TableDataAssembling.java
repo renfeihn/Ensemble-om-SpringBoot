@@ -1,4 +1,4 @@
-package com.dcits.ensembleom.service.DataAssembling;
+package com.dcits.ensembleom.service.dataAssembling;
 
 /**
  * Created by ligan on 2018/8/24.

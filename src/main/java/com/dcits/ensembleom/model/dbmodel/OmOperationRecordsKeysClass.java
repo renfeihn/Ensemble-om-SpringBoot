@@ -11,26 +11,26 @@ import java.io.Serializable;
  */
 @Getter
 @Setter
-public class ParaTransactionTableOrgKeysClass implements Serializable {
+public class OmOperationRecordsKeysClass implements Serializable {
     private String reqNo;
-    private String subReqNo;
+    private int seriesNum;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ParaTransactionTableOrgKeysClass that = (ParaTransactionTableOrgKeysClass) o;
+        OmOperationRecordsKeysClass that = (OmOperationRecordsKeysClass) o;
 
-        if (reqNo != null ? !reqNo.equals(that.reqNo) : that.reqNo != null) return false;
-        return !(subReqNo != null ? !subReqNo.equals(that.subReqNo) : that.subReqNo != null);
+        if (seriesNum != that.seriesNum) return false;
+        return !(reqNo != null ? !reqNo.equals(that.reqNo) : that.reqNo != null);
 
     }
 
     @Override
     public int hashCode() {
         int result = reqNo != null ? reqNo.hashCode() : 0;
-        result = 31 * result + (subReqNo != null ? subReqNo.hashCode() : 0);
+        result = 31 * result + seriesNum;
         return result;
     }
 }

@@ -1,7 +1,7 @@
 package com.dcits.ensembleom.controller.paraFlow;
 
 import com.dcits.ensembleom.model.prodFactory.MbProdInfo;
-import com.dcits.ensembleom.service.DataAssembling.ProdDataAssembling;
+import com.dcits.ensembleom.service.dataAssembling.ProdDataAssembling;
 import com.dcits.ensembleom.service.prodFactory.MbProdInfoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

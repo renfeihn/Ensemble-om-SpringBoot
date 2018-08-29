@@ -1,11 +1,11 @@
-package com.dcits.ensembleom.service.DataAssembling;
+package com.dcits.ensembleom.service.dataAssembling;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.dcits.ensembleom.model.dbmodel.*;
 import com.dcits.ensembleom.model.prodFactory.MbEventInfo;
 import com.dcits.ensembleom.model.prodFactory.MbProdInfo;
-import com.dcits.ensembleom.repository.paraFlow.ParaDifferenceCheckPublishRepository;
+import com.dcits.ensembleom.repository.paraFlow.OmOperationRecordsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,32 +19,32 @@ import java.util.List;
 @Service
 public class ProdDataAssembling {
     @Autowired
-    private ParaDifferenceCheckPublishRepository paraDifferenceCheckPublishRepository;
+    private OmOperationRecordsRepository omOperationRecordsRepository;
     public void getAssembleData(MbProdInfo mbProdInfo,String reqNo){
-        List<ParaDifferenceCheckPublish> paraDifferenceCheckPublishList=paraDifferenceCheckPublishRepository.findByReqNo(reqNo);
+        List<OmOperationRecords> omOperationRecordsList = omOperationRecordsRepository.findByReqNo(reqNo);
         String fullName="";
-        for(ParaDifferenceCheckPublish paraDifferenceCheckPublish:paraDifferenceCheckPublishList){
-            fullName=paraDifferenceCheckPublish.getTableFullName();
+        for(OmOperationRecords omOperationRecords : omOperationRecordsList){
+            fullName= omOperationRecords.getTableFullName();
             //组装prodType
             if(fullName.equals("MB_PROD_TYPE")) {
-                prodTypeAssembling(mbProdInfo, paraDifferenceCheckPublish);
+                prodTypeAssembling(mbProdInfo, omOperationRecords);
             } else
             //组装prodDefine
             if(fullName.equals("MB_PROD_DEFINE")){
-                prodDefineAssembling(mbProdInfo,paraDifferenceCheckPublish);
+                prodDefineAssembling(mbProdInfo, omOperationRecords);
             }else{
-                eventAttrAssembling(mbProdInfo,paraDifferenceCheckPublish);
+                eventAttrAssembling(mbProdInfo, omOperationRecords);
             }
             //组装eventAttr、组装eventPart
         }
     }
     //组装prodType
-    public void prodTypeAssembling(MbProdInfo mbProdInfo,ParaDifferenceCheckPublish paraDifferenceCheckPublish){
+    public void prodTypeAssembling(MbProdInfo mbProdInfo,OmOperationRecords omOperationRecords){
         MbProdType mbProdType=mbProdInfo.getProdType();
-        if(mbProdType.getProdType().equals(paraDifferenceCheckPublish.getPrimaryKeyvalue())){
+        if(mbProdType.getProdType().equals(omOperationRecords.getPrimaryKeyvalue())){
             try {
-                String  dataDui=new String(paraDifferenceCheckPublish.getDataDui(),"UTF-8");
-                String keyValue=new String(paraDifferenceCheckPublish.getKeyValue(),"UTF-8");
+                String  dataDui=new String(omOperationRecords.getDataDui(),"UTF-8");
+                String keyValue=new String(omOperationRecords.getKeyValue(),"UTF-8");
                 JSONObject jsonDataDui= JSON.parseObject(dataDui);
                 JSONObject jsonKeyValue= JSON.parseObject(keyValue);
                 jsonDataDui.putAll(jsonKeyValue);
@@ -57,14 +57,14 @@ public class ProdDataAssembling {
         }
     }
     //组装prodDefine
-    public void prodDefineAssembling(MbProdInfo mbProdInfo,ParaDifferenceCheckPublish paraDifferenceCheckPublish) {
+    public void prodDefineAssembling(MbProdInfo mbProdInfo,OmOperationRecords omOperationRecords) {
 /*        List<MbProdDefine> mbProdDefineList=mbProdInfo.getProdDefines();
         for(MbProdDefine mbProdDefine:mbProdDefineList){
 
         }*/
     }
     //组装eventAttr、eventPart
-    public void eventAttrAssembling(MbProdInfo mbProdInfo,ParaDifferenceCheckPublish paraDifferenceCheckPublish) {
+    public void eventAttrAssembling(MbProdInfo mbProdInfo,OmOperationRecords omOperationRecords) {
         List<MbEventInfo> mbEventInfoList=mbProdInfo.getMbEventInfos();
 
     }

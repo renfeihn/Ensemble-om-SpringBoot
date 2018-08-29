@@ -10,14 +10,14 @@ import java.io.Serializable;
  * Created by ligan on 2018/8/23.
  */
 @Entity
-@Table(name = "para_circle_info")
-@IdClass(ParaCircleInfoKeysClass.class)
+@Table(name = "om_process_combination")
+@IdClass(OmProcessCombinationKeysClass.class)
 @Getter
 @Setter
-public class ParaCircleInfo implements Serializable {
-    public ParaCircleInfo(){
+public class OmProcessCombination implements Serializable {
+    public OmProcessCombination(){
         }
-    public ParaCircleInfo(String reqNo, String operatorType, String checkText, String approve, String operatorId, String currentsystemTime, String clientIp) {
+    public OmProcessCombination(String reqNo, String operatorType, String checkText, String approve, String operatorId, String currentsystemTime, String clientIp) {
         this.reqNo = reqNo;
         this.operatorType = operatorType;
         this.checkText = checkText;
@@ -45,7 +45,7 @@ public class ParaCircleInfo implements Serializable {
 
     @Override
     public String toString() {
-        return "ParaCircleInfo{" +
+        return "OmProcessCombination{" +
                 "reqNo='" + reqNo + '\'' +
                 ", operatorType='" + operatorType + '\'' +
                 ", checkText='" + checkText + '\'' +

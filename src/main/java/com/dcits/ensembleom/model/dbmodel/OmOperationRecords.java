@@ -10,15 +10,15 @@ import java.io.UnsupportedEncodingException;
  * Created by ligan on 2018/8/23.
  */
 @Entity
-@Table(name = "para_difference_check_publish")
-@IdClass(ParaDifferenceCheckPublishKeysClass.class)
+@Table(name = "om_operation_records")
+@IdClass(OmOperationRecordsKeysClass.class)
 @Getter
 @Setter
-public class ParaDifferenceCheckPublish {
-    public ParaDifferenceCheckPublish(){
+public class OmOperationRecords {
+    public OmOperationRecords(){
 
     }
-    public ParaDifferenceCheckPublish(String reqNo, int seriesNum, String tableFullName, String primaryKeyvalue, byte[] keyValue, String operateType, byte[] dataDui, byte[] olddataUpd) {
+    public OmOperationRecords(String reqNo, int seriesNum, String tableFullName, String primaryKeyvalue, byte[] keyValue, String operateType, byte[] dataDui, byte[] olddataUpd) {
         this.reqNo = reqNo;
         this.seriesNum = seriesNum;
         this.tableFullName = tableFullName;
@@ -60,7 +60,7 @@ public class ParaDifferenceCheckPublish {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        return "ParaDifferenceCheckPublish{" +
+        return "OmOperationRecords{" +
                 "reqNo='" + reqNo + '\'' +
                 ", seriesNum=" + seriesNum +
                 ", tableFullName='" + tableFullName + '\'' +

@@ -12,14 +12,14 @@ import javax.persistence.Table;
  * Created by ligan on 2018/8/23.
  */
 @Entity
-@Table(name = "para_circle_flow")
+@Table(name = "om_process_management")
 @Getter
 @Setter
-public class ParaCircleFlow {
-    public ParaCircleFlow(){
+public class OmProcessManagement {
+    public OmProcessManagement(){
 
     }
-    public ParaCircleFlow(String reqNo, String transactionId, String transactionDesc, String currentStatus, String isTranGroup) {
+    public OmProcessManagement(String reqNo, String transactionId, String transactionDesc, String currentStatus, String isTranGroup) {
         this.reqNo = reqNo;
         this.transactionId = transactionId;
         this.transactionDesc = transactionDesc;
@@ -40,7 +40,7 @@ public class ParaCircleFlow {
 
     @Override
     public String toString() {
-        return "ParaCircleFlow{" +
+        return "OmProcessManagement{" +
                 "reqNo='" + reqNo + '\'' +
                 ", transactionId='" + transactionId + '\'' +
                 ", transactionDesc='" + transactionDesc + '\'' +

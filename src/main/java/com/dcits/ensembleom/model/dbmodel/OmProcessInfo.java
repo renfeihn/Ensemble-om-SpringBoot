@@ -10,18 +10,18 @@ import java.io.Serializable;
  * Created by ligan on 2018/8/23.
  */
 @Entity
-@Table(name = "para_transaction_table_org")
-@IdClass(ParaTransactionTableOrgKeysClass.class)
+@Table(name = "om_process_info")
+@IdClass(OmProcessInfoKeysClass.class)
 @Getter
 @Setter
-public class ParaTransactionTableOrg implements Serializable {
-    public ParaTransactionTableOrg(String reqNo, String transactionId, String subReqNo, String publishStatus) {
+public class OmProcessInfo implements Serializable {
+    public OmProcessInfo(String reqNo, String transactionId, String subReqNo, String publishStatus) {
         this.reqNo = reqNo;
         this.subTransactionId = transactionId;
         this.subReqNo = subReqNo;
         this.publishStatus = publishStatus;
     }
-    public ParaTransactionTableOrg(){}
+    public OmProcessInfo(){}
     @Id
     @Column(name="req_no")
     private String reqNo;
@@ -35,7 +35,7 @@ public class ParaTransactionTableOrg implements Serializable {
 
     @Override
     public String toString() {
-        return "ParaTransactionTableOrg{" +
+        return "OmProcessInfo{" +
                 "reqNo='" + reqNo + '\'' +
                 ", transactionId='" + subTransactionId + '\'' +
                 ", subReqNo='" + subReqNo + '\'' +

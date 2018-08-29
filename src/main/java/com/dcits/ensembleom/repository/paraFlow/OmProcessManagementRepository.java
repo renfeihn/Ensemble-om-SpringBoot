@@ -1,6 +1,6 @@
 package com.dcits.ensembleom.repository.paraFlow;
 
-import com.dcits.ensembleom.model.dbmodel.ParaCircleFlow;
+import com.dcits.ensembleom.model.dbmodel.OmProcessManagement;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
@@ -12,10 +12,10 @@ import java.util.List;
 /**
  * Created by ligan on 2018/8/14.
  */
-public interface ParaCircleFlowRepository extends JpaRepository<ParaCircleFlow,Long> ,JpaSpecificationExecutor<ParaCircleFlow>{
-     public ParaCircleFlow findByTransactionId(String transactionId);
+public interface OmProcessManagementRepository extends JpaRepository<OmProcessManagement,Long> ,JpaSpecificationExecutor<OmProcessManagement>{
+     public OmProcessManagement findByTransactionId(String transactionId);
      @Modifying
-     @Query("update ParaCircleFlow set currentStatus=:status where reqNo=:reqNo")
+     @Query("update OmProcessManagement set currentStatus=:status where reqNo=:reqNo")
      void updateParaStatus(@Param("reqNo") String reqNo,@Param("status") String status);
-     public List<ParaCircleFlow> findByCurrentStatus(String status);
+     public List<OmProcessManagement> findByCurrentStatus(String status);
 }

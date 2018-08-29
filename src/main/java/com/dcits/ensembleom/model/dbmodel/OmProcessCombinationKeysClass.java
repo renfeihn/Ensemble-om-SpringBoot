@@ -11,26 +11,26 @@ import java.io.Serializable;
  */
 @Getter
 @Setter
-public class ParaDifferenceCheckPublishKeysClass implements Serializable {
+public class OmProcessCombinationKeysClass implements Serializable {
     private String reqNo;
-    private int seriesNum;
+    private String operatorType;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ParaDifferenceCheckPublishKeysClass that = (ParaDifferenceCheckPublishKeysClass) o;
+        OmProcessCombinationKeysClass that = (OmProcessCombinationKeysClass) o;
 
-        if (seriesNum != that.seriesNum) return false;
-        return !(reqNo != null ? !reqNo.equals(that.reqNo) : that.reqNo != null);
+        if (reqNo != null ? !reqNo.equals(that.reqNo) : that.reqNo != null) return false;
+        return !(operatorType != null ? !operatorType.equals(that.operatorType) : that.operatorType != null);
 
     }
 
     @Override
     public int hashCode() {
         int result = reqNo != null ? reqNo.hashCode() : 0;
-        result = 31 * result + seriesNum;
+        result = 31 * result + (operatorType != null ? operatorType.hashCode() : 0);
         return result;
     }
 }
