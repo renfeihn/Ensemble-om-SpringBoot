@@ -63,16 +63,15 @@ public class ProdInfoController {
      */
     @RequestMapping("/saveProdInfo")
     public void saveProdInfo(HttpServletResponse response,@RequestBody Map map) {
-      MbProdInfo  mbProdInfo=(MbProdInfo) JSON.toJavaObject((JSONObject)map.get(""), MbProdInfo.class);
+      MbProdInfo  mbProdInfo=(MbProdInfo) JSON.toJavaObject((JSONObject)map.get("mbProdInfo"), MbProdInfo.class);
+        String userName=(String)map.get("userName");
         String seqNo=(String)map.get("reqNo");
         String option=(String)map.get("option");
-        //记录流程信息,记录一对多信息
-        mbProdInfoService.saveProdInfo(mbProdInfo);
         if(seqNo==null ||"".equals(seqNo) ) {
             //无单号，1.申请单号 2.新增记录差异信息 3.根据操作类型更新交易状态
             ParaCircleFlow paraCircleFlow = paraCircleFlowRepository.findByTransactionId("MbProdType");
             if(paraCircleFlow!=null&&paraCircleFlow.getReqNo()!=null){
-                seqNo=  flowManagement.appNoByTable("", "","");
+                seqNo=  flowManagement.appNoByTable(userName, "MB_PROD_TYPE","Y");
             }else{
                 //此处判断如果交易状态为待复核、待发布状态则抛出异常
                 seqNo=paraCircleFlow.getReqNo();
@@ -84,6 +83,8 @@ public class ProdInfoController {
             differenceInfo.updateProdDifferenceInfo(mbProdInfo,seqNo);
         }
          //根据option实际选项，操作值
-           flowManagement.updateFlow(seqNo,"2","","");
+        if("S".equals(option)) {
+            flowManagement.updateFlow(seqNo, "2", userName, "127.0.0.1");
+        }
     }
 }

@@ -1,7 +1,11 @@
 package com.dcits.ensembleom.controller.prodFactory;
 
 import com.alibaba.fastjson.JSON;
+<<<<<<< HEAD
 import com.alibaba.fastjson.JSONArray;
+=======
+import com.alibaba.fastjson.JSONObject;
+>>>>>>> 修改产品查询组织结构
 import com.dcits.ensembleom.model.dbmodel.MbProdType;
 import com.dcits.ensembleom.repository.prodFactory.MbProdTypeRepository;
 import org.springframework.stereotype.Controller;
@@ -25,12 +29,12 @@ public class ProdTypeListController {
     private MbProdTypeRepository mbProdTypeRepository;
     @CrossOrigin
     @RequestMapping("/getProdListByClass")
-    public @ResponseBody
+    public
+    @ResponseBody
     String getProdList(HttpServletResponse response,@RequestBody Map map){
-//        response.addHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         String prodClass=(String)map.get("prodClass");
         List<MbProdType> mbProdTypeList= mbProdTypeRepository.findByProdClass(prodClass);
-        return JSON.toJSONString(mbProdTypeList);
+        return  JSON.toJSONString(mbProdTypeList);
     }
 }

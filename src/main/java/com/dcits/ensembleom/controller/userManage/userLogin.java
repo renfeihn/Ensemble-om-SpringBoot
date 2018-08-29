@@ -23,7 +23,6 @@ public class userLogin {
     @CrossOrigin
     public @ResponseBody
     String getUserMsgByUserIs (HttpServletResponse response,@RequestBody Map map){
-        response.addHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         String userId = map.get("username").toString();
         String password = map.get("password").toString();

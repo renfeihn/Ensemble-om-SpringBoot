@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by ligan on 2018/8/14.
@@ -16,7 +17,7 @@ import java.util.List;
    @Setter
 public class MbProdInfo {
     private MbProdType prodType;
-    private List<MbProdDefine> prodDefines;
+    private Map<String,MbProdDefine> prodDefines;
     private List<MbEventInfo> mbEventInfos;
 
     @Override

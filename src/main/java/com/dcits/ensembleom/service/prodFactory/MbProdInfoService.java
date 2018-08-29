@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by ligan on 2018/8/23.
@@ -28,18 +30,23 @@ public class MbProdInfoService {
     public MbProdInfo getProdInfo(String prodType){
         MbProdInfo mbProdInfo=new MbProdInfo();
         mbProdInfo.setProdType(mbProdTypeRepository.findByProdType(prodType));
-        mbProdInfo.setProdDefines(mbProdDefineRepository.findByProdTypeAndAssembleType(prodType, "ATTR"));
+        Map<String,MbProdDefine> mbProdDefineMap =new HashMap<>();
+        List<MbProdDefine> mbProdDefineList=mbProdDefineRepository.findByProdTypeAndAssembleType(prodType,"ATTR");
+        for(MbProdDefine mbProdDefine:mbProdDefineList){
+            mbProdDefineMap.put(mbProdDefine.getAssembleId(),mbProdDefine);
+        }
+        mbProdInfo.setProdDefines(mbProdDefineMap);
         mbProdInfo.setMbEventInfos(getMbEventInfo(prodType));
         return mbProdInfo;
     }
-    //保存产品所有属性
+    //保存产品所有属性(只有发布时生效)
     public void saveProdInfo(MbProdInfo mbProdInfo){
         MbProdType mbProdType=mbProdInfo.getProdType();
         List<MbEventInfo> mbEventInfoList=mbProdInfo.getMbEventInfos();
-        List<MbProdDefine> mbProdDefineList=mbProdInfo.getProdDefines();
+        Map<String,MbProdDefine> mbProdDefineList=mbProdInfo.getProdDefines();
         mbProdTypeRepository.saveAndFlush(mbProdType);
-        for(MbProdDefine mbProdDefine: mbProdDefineList){
-            mbProdDefineRepository.saveAndFlush(mbProdDefine);
+        for(Map.Entry<String, MbProdDefine> entry: mbProdDefineList.entrySet()){
+            mbProdDefineRepository.saveAndFlush(entry.getValue());
         }
         saveEventInfo(mbEventInfoList);
     }

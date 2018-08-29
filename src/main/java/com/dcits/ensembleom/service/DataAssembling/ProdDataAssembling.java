@@ -58,10 +58,10 @@ public class ProdDataAssembling {
     }
     //组装prodDefine
     public void prodDefineAssembling(MbProdInfo mbProdInfo,ParaDifferenceCheckPublish paraDifferenceCheckPublish) {
-        List<MbProdDefine> mbProdDefineList=mbProdInfo.getProdDefines();
+/*        List<MbProdDefine> mbProdDefineList=mbProdInfo.getProdDefines();
         for(MbProdDefine mbProdDefine:mbProdDefineList){
 
-        }
+        }*/
     }
     //组装eventAttr、eventPart
     public void eventAttrAssembling(MbProdInfo mbProdInfo,ParaDifferenceCheckPublish paraDifferenceCheckPublish) {

@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Setter
 public class ParaTransactionTableOrgKeysClass implements Serializable {
     private String reqNo;
-    private String transactionId;
+    private String subReqNo;
 
     @Override
     public boolean equals(Object o) {
@@ -23,14 +23,14 @@ public class ParaTransactionTableOrgKeysClass implements Serializable {
         ParaTransactionTableOrgKeysClass that = (ParaTransactionTableOrgKeysClass) o;
 
         if (reqNo != null ? !reqNo.equals(that.reqNo) : that.reqNo != null) return false;
-        return !(transactionId != null ? !transactionId.equals(that.transactionId) : that.transactionId != null);
+        return !(subReqNo != null ? !subReqNo.equals(that.subReqNo) : that.subReqNo != null);
 
     }
 
     @Override
     public int hashCode() {
         int result = reqNo != null ? reqNo.hashCode() : 0;
-        result = 31 * result + (transactionId != null ? transactionId.hashCode() : 0);
+        result = 31 * result + (subReqNo != null ? subReqNo.hashCode() : 0);
         return result;
     }
 }

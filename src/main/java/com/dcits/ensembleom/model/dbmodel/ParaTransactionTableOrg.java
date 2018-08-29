@@ -17,17 +17,17 @@ import java.io.Serializable;
 public class ParaTransactionTableOrg implements Serializable {
     public ParaTransactionTableOrg(String reqNo, String transactionId, String subReqNo, String publishStatus) {
         this.reqNo = reqNo;
-        this.transactionId = transactionId;
+        this.subTransactionId = transactionId;
         this.subReqNo = subReqNo;
         this.publishStatus = publishStatus;
     }
-
+    public ParaTransactionTableOrg(){}
     @Id
     @Column(name="req_no")
     private String reqNo;
     @Id
-    @Column(name="transaction_id")
-    private String transactionId;
+    @Column(name="sub_transaction_id")
+    private String subTransactionId;
     @Column(name="sub_req_no")
     private String subReqNo;
     @Column(name="publish_status")
@@ -37,7 +37,7 @@ public class ParaTransactionTableOrg implements Serializable {
     public String toString() {
         return "ParaTransactionTableOrg{" +
                 "reqNo='" + reqNo + '\'' +
-                ", transactionId='" + transactionId + '\'' +
+                ", transactionId='" + subTransactionId + '\'' +
                 ", subReqNo='" + subReqNo + '\'' +
                 ", publishStatus='" + publishStatus + '\'' +
                 '}';
