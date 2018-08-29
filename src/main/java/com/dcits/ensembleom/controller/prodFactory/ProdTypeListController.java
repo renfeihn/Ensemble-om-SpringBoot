@@ -1,11 +1,6 @@
 package com.dcits.ensembleom.controller.prodFactory;
 
 import com.alibaba.fastjson.JSON;
-<<<<<<< HEAD
-import com.alibaba.fastjson.JSONArray;
-=======
-import com.alibaba.fastjson.JSONObject;
->>>>>>> 修改产品查询组织结构
 import com.dcits.ensembleom.model.dbmodel.MbProdType;
 import com.dcits.ensembleom.repository.prodFactory.MbProdTypeRepository;
 import org.springframework.stereotype.Controller;
@@ -15,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import javax.naming.ldap.PagedResultsControl;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Map;
