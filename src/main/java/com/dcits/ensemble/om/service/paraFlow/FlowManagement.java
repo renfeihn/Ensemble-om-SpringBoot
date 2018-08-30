@@ -3,11 +3,15 @@ package com.dcits.ensemble.om.service.paraFlow;
 import com.dcits.ensemble.om.model.dbmodel.OmOperationRecords;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessManagement;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessInfo;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessInfoRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessManagementRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessCombinationRepository;
 import com.dcits.ensemble.om.util.ResourcesUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
 
 /**
  * Created by ligan on 2018/8/24.
@@ -17,7 +21,7 @@ public class FlowManagement {
     @Autowired
     private OmProcessManagementRepository omProcessManagementRepository;
     @Autowired
-    private OmProcessCombinationRepository omProcessCombinationRepository;
+    private OmProcessInfoRepository omProcessInfoRepository;
     /**
      * 服务在用户暂存时调用
      * 对应交易如果有单号
@@ -59,11 +63,20 @@ public class FlowManagement {
         paraCircleFlow.setCurrentStatus("1");
         paraCircleFlow.setIsTranGroup(tranFlow);
         omProcessManagementRepository.saveAndFlush(paraCircleFlow);
-        omProcessInfo.setReqNo(seqNo);
-        omProcessInfo.setOperatorType("1");
-        omProcessInfo.setApprove(userName);
-        omProcessCombinationRepository.saveAndFlush(omProcessInfo);
+        sumProcessInfo(seqNo,userName,"1");
         return seqNo;
+    }
+    //操作信息累加processInfo
+    public void sumProcessInfo(String seqNo,String userName,String operatorType){
+        OmProcessInfo  omProcessInfo =new OmProcessInfo();
+        String operator= omProcessInfoRepository.findByReqNo(seqNo);
+        omProcessInfo.setReqNo(seqNo);
+        omProcessInfo.setOperatorType(operatorType);
+        omProcessInfo.setOperatorId(userName);
+        //累加序号
+        BigDecimal operatorNo= new BigDecimal(operator==null?"0":operator).add(BigDecimal.ONE);
+        omProcessInfo.setOperatorNo(operatorNo.toString());
+        omProcessInfoRepository.saveAndFlush(omProcessInfo);
     }
     //更新操作流程
     public void updateFlow(String reqNo,String status,String userName,String ipLoc) {

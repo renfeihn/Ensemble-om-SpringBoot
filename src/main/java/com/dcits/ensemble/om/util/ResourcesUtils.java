@@ -1,5 +1,7 @@
 package com.dcits.ensemble.om.util;
 
+import net.sf.json.JSONObject;
+
 import javax.servlet.http.HttpServletRequest;
 import java.net.Inet6Address;
 import java.net.InetAddress;
@@ -7,10 +9,8 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Enumeration;
-import java.util.Properties;
-import java.util.Random;
+import java.util.*;
+
 /**
  * Created by ligan on 2018/8/27.
  */
@@ -25,7 +25,18 @@ public class ResourcesUtils {
         String str = df.format(date);
         return str;
     }
+    public static String getJsonString(Object object){
 
+        JSONObject jsonObject=JSONObject.fromObject(object);
+        return jsonObject.toString();
+    }
+    public static Map getMap(Object object){
+        if(object==null){
+            return null;
+        }else{
+            return (Map) object;
+        }
+    }
     public static String getSystemUser(HttpServletRequest request) {
         String operator = "system";
         if(request.getSession().getAttribute("UserName") != null) {
