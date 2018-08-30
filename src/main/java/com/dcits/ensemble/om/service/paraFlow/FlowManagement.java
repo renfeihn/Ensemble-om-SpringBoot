@@ -2,7 +2,7 @@ package com.dcits.ensemble.om.service.paraFlow;
 
 import com.dcits.ensemble.om.model.dbmodel.OmOperationRecords;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessManagement;
-import com.dcits.ensemble.om.model.dbmodel.OmProcessCombination;
+import com.dcits.ensemble.om.model.dbmodel.OmProcessInfo;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessManagementRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessCombinationRepository;
 import com.dcits.ensemble.om.util.ResourcesUtils;
@@ -52,17 +52,17 @@ public class FlowManagement {
     //申请单号
     public String appNoByTable(String userName,String tranName,String tranFlow){
         OmProcessManagement paraCircleFlow=new OmProcessManagement();
-        OmProcessCombination omProcessCombination =new OmProcessCombination();
+        OmProcessInfo omProcessInfo =new OmProcessInfo();
         String  seqNo= ResourcesUtils.getDateTimeUuId();
         paraCircleFlow.setReqNo(seqNo);
         paraCircleFlow.setTransactionId(tranName);
         paraCircleFlow.setCurrentStatus("1");
         paraCircleFlow.setIsTranGroup(tranFlow);
         omProcessManagementRepository.saveAndFlush(paraCircleFlow);
-        omProcessCombination.setReqNo(seqNo);
-        omProcessCombination.setOperatorType("1");
-        omProcessCombination.setApprove(userName);
-        omProcessCombinationRepository.saveAndFlush(omProcessCombination);
+        omProcessInfo.setReqNo(seqNo);
+        omProcessInfo.setOperatorType("1");
+        omProcessInfo.setApprove(userName);
+        omProcessCombinationRepository.saveAndFlush(omProcessInfo);
         return seqNo;
     }
     //更新操作流程

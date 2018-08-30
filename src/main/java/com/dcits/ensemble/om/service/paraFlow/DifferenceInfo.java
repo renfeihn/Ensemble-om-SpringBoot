@@ -1,9 +1,10 @@
 package com.dcits.ensemble.om.service.paraFlow;
 
 import com.alibaba.fastjson.JSONObject;
+import com.dcits.ensemble.om.model.dbmodel.MbProdType;
 import com.dcits.ensemble.om.model.dbmodel.OmOperationRecords;
+import com.dcits.ensemble.om.model.dbmodel.OmProcessCombination;
 import com.dcits.ensemble.om.repository.paraFlow.OmOperationRecordsRepository;
-import com.dcits.ensemble.om.model.dbmodel.OmProcessInfo;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessInfoRepository;
 import com.dcits.ensemble.om.util.ResourcesUtils;
@@ -22,6 +23,7 @@ public class DifferenceInfo {
     private OmProcessInfoRepository omProcessInfoRepository;
     //记录产品流程信息
    public void insertProdDifferenceInfo(MbProdInfo mbProdInfo,String reqNo){
+       MbProdType mbProdType=mbProdInfo.getProdType();
 
        //变更信息以blob形式存入表
 
@@ -33,11 +35,11 @@ public class DifferenceInfo {
     //申请一个单号，单号落地在para_transaction_table_org
     public String insertTableOrg(String reqNo,String tranId){
         String seqNo= ResourcesUtils.getDateTimeUuId();
-        OmProcessInfo omProcessInfo =new OmProcessInfo();
-        omProcessInfo.setReqNo(reqNo);
-        omProcessInfo.setReqNo(seqNo);
-        omProcessInfo.setSubTransactionId(tranId);
-        omProcessInfoRepository.saveAndFlush(omProcessInfo);
+        OmProcessCombination omProcessCombination =new OmProcessCombination();
+        omProcessCombination.setReqNo(reqNo);
+        omProcessCombination.setReqNo(seqNo);
+        omProcessCombination.setSubTransactionId(tranId);
+        omProcessInfoRepository.saveAndFlush(omProcessCombination);
         return seqNo;
     }
     //拿新申请的单号组织操作数据存入paraDifferenceCheckPublish表

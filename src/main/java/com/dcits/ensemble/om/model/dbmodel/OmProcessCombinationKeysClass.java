@@ -13,7 +13,8 @@ import java.io.Serializable;
 @Setter
 public class OmProcessCombinationKeysClass implements Serializable {
     private String reqNo;
-    private String operatorType;
+    private String subReqNo;
+    private String operatorNo;
 
     @Override
     public boolean equals(Object o) {
@@ -23,14 +24,16 @@ public class OmProcessCombinationKeysClass implements Serializable {
         OmProcessCombinationKeysClass that = (OmProcessCombinationKeysClass) o;
 
         if (reqNo != null ? !reqNo.equals(that.reqNo) : that.reqNo != null) return false;
-        return !(operatorType != null ? !operatorType.equals(that.operatorType) : that.operatorType != null);
+        if (subReqNo != null ? !subReqNo.equals(that.subReqNo) : that.subReqNo != null) return false;
+        return !(operatorNo != null ? !operatorNo.equals(that.operatorNo) : that.operatorNo != null);
 
     }
 
     @Override
     public int hashCode() {
         int result = reqNo != null ? reqNo.hashCode() : 0;
-        result = 31 * result + (operatorType != null ? operatorType.hashCode() : 0);
+        result = 31 * result + (subReqNo != null ? subReqNo.hashCode() : 0);
+        result = 31 * result + (operatorNo != null ? operatorNo.hashCode() : 0);
         return result;
     }
 }
