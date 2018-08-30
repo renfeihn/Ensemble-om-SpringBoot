@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * Created by ligan on 2018/8/23.
@@ -31,7 +32,7 @@ public class OmProcessInfo implements Serializable {
     private String reqNo;
     @Id
     @Column(name="operator_no")
-    private String operatorNo;
+    private BigDecimal operatorNo;
     @Column(name="operator_type")
     private String operatorType;
     @Column(name="check_text")

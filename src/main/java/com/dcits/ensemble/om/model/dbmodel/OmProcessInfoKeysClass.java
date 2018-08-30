@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * Created by ligan on 2018/8/14.
@@ -13,7 +14,7 @@ import java.io.Serializable;
 @Setter
 public class OmProcessInfoKeysClass implements Serializable {
     private String reqNo;
-    private String operatorNo;
+    private BigDecimal operatorNo;
 
     @Override
     public boolean equals(Object o) {

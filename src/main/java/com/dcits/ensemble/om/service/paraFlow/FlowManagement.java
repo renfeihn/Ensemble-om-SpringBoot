@@ -75,7 +75,7 @@ public class FlowManagement {
         omProcessInfo.setOperatorId(userName);
         //累加序号
         BigDecimal operatorNo= new BigDecimal(operator==null?"0":operator).add(BigDecimal.ONE);
-        omProcessInfo.setOperatorNo(operatorNo.toString());
+        omProcessInfo.setOperatorNo(operatorNo);
         omProcessInfoRepository.saveAndFlush(omProcessInfo);
     }
     //更新操作流程

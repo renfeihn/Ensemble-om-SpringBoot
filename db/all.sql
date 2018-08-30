@@ -50,7 +50,7 @@ CREATE TABLE `om_process_combination` (
 DROP TABLE IF EXISTS `om_process_info`;
 CREATE TABLE `om_process_info` (
   `req_no` varchar(50) NOT NULL COMMENT '日期+时间',
-  `operator_no` varchar(10) NOT NULL,
+  `operator_no` decimal(10,0) NOT NULL,
   `operator_type` varchar(1) NOT NULL COMMENT '操作类型: A:申请;C:复核;P:发布;R:复核驳回;J:发布驳回;E:输入;S:附属;F:作废',
   `check_text` varchar(500) NOT NULL COMMENT '复核发布意见',
   `approve` varchar(1) NOT NULL COMMENT '是否通过:Y;N,作废:C',
