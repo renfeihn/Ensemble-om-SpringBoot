@@ -15,44 +15,37 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class OmProcessCombination implements Serializable {
-    public OmProcessCombination(){
-        }
-    public OmProcessCombination(String reqNo, String operatorType, String checkText, String approve, String operatorId, String currentsystemTime, String clientIp) {
+    public OmProcessCombination(String reqNo, String operatorNo, String subTransactionId, String subReqNo, String publishStatus) {
         this.reqNo = reqNo;
-        this.operatorType = operatorType;
-        this.checkText = checkText;
-        this.approve = approve;
-        this.operatorId = operatorId;
-        this.currentsystemTime = currentsystemTime;
-        this.clientIp = clientIp;
+        this.operatorNo = operatorNo;
+        this.subTransactionId = subTransactionId;
+        this.subReqNo = subReqNo;
+        this.publishStatus = publishStatus;
     }
+
+    public OmProcessCombination(){}
     @Id
     @Column(name="req_no")
     private String reqNo;
     @Id
-    @Column(name="operator_type")
-    private String operatorType;
-    @Column(name="check_text")
-    private String checkText;
-    @Column(name="approve")
-    private String approve;
-    @Column(name="operator_id")
-    private String operatorId;
-    @Column(name="currentsystem_time")
-    private String currentsystemTime;
-    @Column(name="client_ip")
-    private String clientIp;
+    @Column(name="operator_no")
+    private String operatorNo;
+    @Id
+    @Column(name="sub_transaction_id")
+    private String subTransactionId;
+    @Column(name="sub_req_no")
+    private String subReqNo;
+    @Column(name="publish_status")
+    private String publishStatus;
 
     @Override
     public String toString() {
         return "OmProcessCombination{" +
                 "reqNo='" + reqNo + '\'' +
-                ", operatorType='" + operatorType + '\'' +
-                ", checkText='" + checkText + '\'' +
-                ", approve='" + approve + '\'' +
-                ", operatorId='" + operatorId + '\'' +
-                ", currentsystemTime='" + currentsystemTime + '\'' +
-                ", clientIp='" + clientIp + '\'' +
+                ", operatorNo='" + operatorNo + '\'' +
+                ", subTransactionId='" + subTransactionId + '\'' +
+                ", subReqNo='" + subReqNo + '\'' +
+                ", publishStatus='" + publishStatus + '\'' +
                 '}';
     }
 }

@@ -54,8 +54,11 @@ public class OmOperationRecords {
         String dataDui="";
         String keyValue="";
         try {
+            if(this.dataDui!=null)
             dataDui=new String(this.dataDui,"UTF-8");
+            if(this.olddataUpd!=null)
             olddataUpd=new String(this.olddataUpd,"UTF-8");
+            if(this.keyValue!=null)
             keyValue=new String(this.keyValue,"UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
