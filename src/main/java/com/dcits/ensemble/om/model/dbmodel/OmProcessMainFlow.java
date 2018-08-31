@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 
 /**
  * Created by ligan on 2018/8/23.
@@ -19,10 +20,11 @@ public class OmProcessMainFlow {
     public OmProcessMainFlow(){
 
     }
-    public OmProcessMainFlow(String mainSeqNo, String tranId, String tran_desc, String status, String isTranGroup, String dtlSeqNo, String recSeqNo) {
+
+    public OmProcessMainFlow(String mainSeqNo, String tranId, String tranDesc, String status, String isTranGroup, BigDecimal dtlSeqNo, String recSeqNo) {
         this.mainSeqNo = mainSeqNo;
         this.tranId = tranId;
-        this.tran_desc = tran_desc;
+        this.tranDesc = tranDesc;
         this.status = status;
         this.isTranGroup = isTranGroup;
         this.dtlSeqNo = dtlSeqNo;
@@ -35,13 +37,13 @@ public class OmProcessMainFlow {
     @Column(name="tran_id")
     private String tranId;
     @Column(name="tran_desc")
-    private String tran_desc;
+    private String tranDesc;
     @Column(name="status")
     private String status;
     @Column(name="is_tran_group")
     private String isTranGroup;
     @Column(name="dtl_seq_no")
-    private String dtlSeqNo;
+    private BigDecimal dtlSeqNo;
     @Column(name="rec_seq_no")
     private String recSeqNo;
 
@@ -50,7 +52,7 @@ public class OmProcessMainFlow {
         return "OmProcessMainFlow{" +
                 "mainSeqNo='" + mainSeqNo + '\'' +
                 ", tranId='" + tranId + '\'' +
-                ", tran_desc='" + tran_desc + '\'' +
+                ", tran_desc='" + tranDesc + '\'' +
                 ", status='" + status + '\'' +
                 ", isTranGroup='" + isTranGroup + '\'' +
                 ", dtlSeqNo='" + dtlSeqNo + '\'' +

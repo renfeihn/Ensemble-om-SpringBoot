@@ -14,12 +14,13 @@ import javax.annotation.Resource;
 public class ProcessCombManagement {
     @Resource
     private OmProcessRelationHistRepository omProcessRelationHistRepository;
-    public String saveCombInfo(String reqNo,String operatorNo){
+    public String saveCombInfo(String reqNo,String operatorNo,String tranId){
         String seqNo= ResourcesUtils.getDateTimeUuId();
         OmProcessRelationHist omProcessRelationHist =new OmProcessRelationHist();
         omProcessRelationHist.setMainSeqNo(reqNo);
         omProcessRelationHist.setRecSeqNo(seqNo);
         omProcessRelationHist.setDtlSeqNo(operatorNo);
+        omProcessRelationHist.setTranId(tranId);
         omProcessRelationHistRepository.saveAndFlush(omProcessRelationHist);
         return seqNo;
     }

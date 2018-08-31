@@ -54,26 +54,25 @@ public class FlowManagement {
     //申请单号
     public String appNoByTable(String userName,String tranName,String tranFlow){
         OmProcessMainFlow paraCircleFlow=new OmProcessMainFlow();
-        OmProcessDetailHist omProcessDetailHist =new OmProcessDetailHist();
         String  seqNo= ResourcesUtils.getDateTimeUuId();
         paraCircleFlow.setMainSeqNo(seqNo);
         paraCircleFlow.setTranId(tranName);
+        paraCircleFlow.setTranDesc("产品定义");
         paraCircleFlow.setStatus("1");
         paraCircleFlow.setIsTranGroup(tranFlow);
+        paraCircleFlow.setDtlSeqNo(BigDecimal.ONE);
+        //累加序号
         omProcessMainFlowRepository.saveAndFlush(paraCircleFlow);
-        sumProcessInfo(seqNo,userName,"1");
+        sumProcessInfo(seqNo,userName,"1",BigDecimal.ONE);
         return seqNo;
     }
     //操作信息累加processInfo
-    public void sumProcessInfo(String seqNo,String userName,String operatorType){
+    public void sumProcessInfo(String seqNo,String userName,String operatorType,BigDecimal dtlSeqNo){
         OmProcessDetailHist omProcessDetailHist =new OmProcessDetailHist();
-        String operator= omProcessDetailHistRepository.findBySeqNoMax(seqNo);
         omProcessDetailHist.setMainSeqNo(seqNo);
         omProcessDetailHist.setStatus(operatorType);
         omProcessDetailHist.setUserId(userName);
-        //累加序号
-        BigDecimal operatorNo= new BigDecimal(operator==null?"0":operator).add(BigDecimal.ONE);
-        omProcessDetailHist.setDtlSeqNo(operatorNo);
+        omProcessDetailHist.setDtlSeqNo(dtlSeqNo);
         omProcessDetailHistRepository.saveAndFlush(omProcessDetailHist);
     }
     //更新操作流程

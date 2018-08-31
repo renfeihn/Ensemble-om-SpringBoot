@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -78,7 +79,11 @@ public class ProdInfoController {
                 } else {
                     //此处判断如果交易状态为待复核、待发布状态则抛出异常
                     seqNo = omProcessMainFlow.getMainSeqNo();
-                    flowManagement.sumProcessInfo(seqNo,userName,"1");
+                    BigDecimal dtlSeqNo= omProcessMainFlow.getDtlSeqNo().add(BigDecimal.ONE);
+                    //更新批次
+                    omProcessMainFlow.setDtlSeqNo(dtlSeqNo);
+                    omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
+                    flowManagement.sumProcessInfo(seqNo,userName,"1",dtlSeqNo);
                 }
             //记录操作流程
         //有单号，1.获取操作信息（操作序号） 2.组合表中生成新的子单号 3.将子单号信息存入差异信息表
