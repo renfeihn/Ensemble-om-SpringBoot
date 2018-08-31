@@ -16,10 +16,10 @@ Date: 2018-08-30 09:39:57
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ------------------------------------------
--- Table structure for om_process_main_hist
+-- Table structure for om_process_main_flow
 -- ------------------------------------------
-DROP TABLE IF EXISTS `om_process_main_hist`;
-CREATE TABLE `om_process_main_hist` (
+DROP TABLE IF EXISTS `om_process_main_flow`;
+CREATE TABLE `om_process_main_flow` (
   `main_seq_no` varchar(30) NOT NULL COMMENT '主交易号(日期+序列)',
   `tran_id` varchar(100) NOT NULL COMMENT '参数交易名(MenuID)/参数表全名',
   `tran_desc` varchar(200) NOT NULL COMMENT '交易中文描述',
@@ -71,7 +71,7 @@ CREATE TABLE `om_process_relation_hist` (
   `dtl_seq_no` int(5) NOT NULL COMMENT '当前操作历史序号',
   `rec_seq_no` int(5) NOT NULL COMMENT '当前操作记录序号',
   `tran_id` varchar(100) NOT NULL COMMENT '参数表全名:系统名_表名',
-  PRIMARY KEY (`main_seq_no`,`dtl_seq_no`,`group_seq_no`)
+  PRIMARY KEY (`main_seq_no`,`dtl_seq_no`,`rec_seq_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='参数操作历史与记录关系表';
 
 

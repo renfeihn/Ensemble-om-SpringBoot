@@ -1,16 +1,14 @@
 package com.dcits.ensemble.om.service.paraFlow;
 
 import com.alibaba.fastjson.JSONObject;
-import com.dcits.ensemble.om.model.dbmodel.MbProdType;
-import com.dcits.ensemble.om.model.dbmodel.OmOperationRecords;
-import com.dcits.ensemble.om.repository.paraFlow.OmOperationRecordsRepository;
-import com.dcits.ensemble.om.repository.paraFlow.OmProcessInfoRepository;
+import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessDetailHistRepository;
 import com.dcits.ensemble.om.util.ResourcesUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -19,14 +17,14 @@ import java.util.Map;
 @Service
 public class DifferenceInfo {
     @Resource
-    private OmOperationRecordsRepository omOperationRecordsRepository;
+    private OmProcessRecordHistRepository omProcessRecordHistRepository;
     @Resource
-    private OmProcessInfoRepository omProcessInfoRepository;
+    private OmProcessDetailHistRepository omProcessDetailHistRepository;
     @Resource
     private ProcessCombManagement processCombManagement;
     //记录产品流程信息
    public void insertProdDifferenceInfo(Map mbProdInfo,String reqNo){
-       String operatorNo=omProcessInfoRepository.findByReqNoMax(reqNo)==null?"1":omProcessInfoRepository.findByReqNoMax(reqNo);
+       String operatorNo= omProcessDetailHistRepository.findBySeqNoMax(reqNo)==null?"1": omProcessDetailHistRepository.findBySeqNoMax(reqNo);
        //1判断上送数据是否有修改操作
        //2记录组合表信息（被修改的表）
        //3变更信息以blob形式存入表
@@ -131,7 +129,7 @@ public class DifferenceInfo {
 
     //拿新申请的单号组织操作数据存入paraDifferenceCheckPublish表
     public void saveProdParaDifference(String reqNo,Map map,JSONObject keyValue,String primary){
-        OmOperationRecords omOperationRecords =new OmOperationRecords();
+        OmProcessRecordHist omProcessRecordHist =new OmProcessRecordHist();
         String dataDui=ResourcesUtils.getJsonString(map.get("newData"));
         String oldDui=ResourcesUtils.getJsonString(map.get("oldData"));
         String tableName=(String)map.get("tableName");
@@ -142,18 +140,16 @@ public class DifferenceInfo {
             tmpDataDui =dataDui.getBytes("UTF-8");
             tmpOldDui =oldDui.getBytes("UTF-8");
             tmpKeyValue=keyValue.toString().getBytes("UTF-8");
-            omOperationRecords.setKeyValue(tmpKeyValue);
-            omOperationRecords.setDataDui(tmpDataDui);
-            omOperationRecords.setOlddataUpd(tmpOldDui);
+            omProcessRecordHist.setPkAndValue(tmpKeyValue);
+            omProcessRecordHist.setDmlData(tmpDataDui);
+            omProcessRecordHist.setDmlOldData(tmpOldDui);
         }catch (UnsupportedEncodingException e){
         }
         //1.获取对象主键
-        omOperationRecords.setTableFullName(tableName);
-
-        omOperationRecords.setReqNo(reqNo);
-        omOperationRecords.setPrimaryKeyvalue(primary);
-        omOperationRecords.setOperateType("U");
-        omOperationRecordsRepository.saveAndFlush(omOperationRecords);
+        omProcessRecordHist.setTableName(tableName);
+        omProcessRecordHist.setRecSeqNo(reqNo);
+        omProcessRecordHist.setDmlType("U");
+        omProcessRecordHistRepository.saveAndFlush(omProcessRecordHist);
     }
     //修改操作流程
     public void updateProdDifferenceInfo(Map mbProdInfo,String reqNo){

@@ -1,10 +1,9 @@
 package com.dcits.ensemble.om.service.paraFlow;
 
-import com.dcits.ensemble.om.model.dbmodel.OmOperationRecords;
-import com.dcits.ensemble.om.model.dbmodel.OmProcessCombination;
-import com.dcits.ensemble.om.repository.paraFlow.OmOperationRecordsRepository;
-import com.dcits.ensemble.om.repository.paraFlow.OmProcessCombinationRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
+import com.dcits.ensemble.om.model.dbmodel.OmProcessRelationHist;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessRelationHistRepository;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -16,15 +15,15 @@ import java.util.Map;
  */
 public class ParaDifferenceManagement {
     @Resource
-    private OmOperationRecordsRepository omOperationRecordsRepository;
+    private OmProcessRecordHistRepository omProcessRecordHistRepository;
     @Resource
-    private OmProcessCombinationRepository omProcessCombinationRepository;
+    private OmProcessRelationHistRepository omProcessRelationHistRepository;
     public Map<String,List> getOperationCombList(String reqNo,String operatorNo){
         Map<String,List> reMap=new HashMap<>();
-      List<OmProcessCombination> omProcessCombinationList=omProcessCombinationRepository.findByReqNoAndOperatorNo(reqNo,operatorNo);
-        for(OmProcessCombination omProcessCombination:omProcessCombinationList){
-            List<OmOperationRecords> omOperationRecordsList=omOperationRecordsRepository.findByReqNo(omProcessCombination.getSubReqNo());
-            reMap.put(omProcessCombination.getSubTransactionId(),omOperationRecordsList);
+      List<OmProcessRelationHist> omProcessRelationHistList = omProcessRelationHistRepository.findByMainSeqNoAndDtlSeqNo(reqNo,operatorNo);
+        for(OmProcessRelationHist omProcessRelationHist : omProcessRelationHistList){
+            List<OmProcessRecordHist> omProcessRecordHistList = omProcessRecordHistRepository.findByRecSeqNo(omProcessRelationHist.getRecSeqNo());
+            reMap.put(omProcessRelationHist.getTranId(), omProcessRecordHistList);
         }
         return reMap;
     }

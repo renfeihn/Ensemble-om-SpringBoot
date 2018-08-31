@@ -1,7 +1,7 @@
 package com.dcits.ensemble.om.service.paraFlow;
 
-import com.dcits.ensemble.om.model.dbmodel.OmProcessCombination;
-import com.dcits.ensemble.om.repository.paraFlow.OmProcessCombinationRepository;
+import com.dcits.ensemble.om.model.dbmodel.OmProcessRelationHist;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessRelationHistRepository;
 import com.dcits.ensemble.om.util.ResourcesUtils;
 import org.springframework.stereotype.Service;
 
@@ -13,14 +13,14 @@ import javax.annotation.Resource;
 @Service
 public class ProcessCombManagement {
     @Resource
-    private OmProcessCombinationRepository omProcessCombinationRepository;
+    private OmProcessRelationHistRepository omProcessRelationHistRepository;
     public String saveCombInfo(String reqNo,String operatorNo){
         String seqNo= ResourcesUtils.getDateTimeUuId();
-        OmProcessCombination omProcessCombination=new OmProcessCombination();
-        omProcessCombination.setReqNo(reqNo);
-        omProcessCombination.setSubReqNo(seqNo);
-        omProcessCombination.setOperatorNo(operatorNo);
-        omProcessCombinationRepository.saveAndFlush(omProcessCombination);
+        OmProcessRelationHist omProcessRelationHist =new OmProcessRelationHist();
+        omProcessRelationHist.setMainSeqNo(reqNo);
+        omProcessRelationHist.setRecSeqNo(seqNo);
+        omProcessRelationHist.setDtlSeqNo(operatorNo);
+        omProcessRelationHistRepository.saveAndFlush(omProcessRelationHist);
         return seqNo;
     }
 }
