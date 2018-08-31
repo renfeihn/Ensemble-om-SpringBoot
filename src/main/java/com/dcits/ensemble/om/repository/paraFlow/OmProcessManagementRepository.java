@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,8 +15,9 @@ import java.util.List;
  */
 public interface OmProcessManagementRepository extends JpaRepository<OmProcessManagement,Long> ,JpaSpecificationExecutor<OmProcessManagement>{
      public OmProcessManagement findByTransactionId(String transactionId);
+     @Transactional
      @Modifying
      @Query("update OmProcessManagement set currentStatus=:status where reqNo=:reqNo")
-     void updateParaStatus(@Param("reqNo") String reqNo,@Param("status") String status);
+     void updateParaStatus(@Param("status") String status,@Param("reqNo") String reqNo);
      public List<OmProcessManagement> findByCurrentStatus(String status);
 }

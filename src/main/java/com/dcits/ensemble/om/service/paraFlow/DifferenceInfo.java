@@ -26,7 +26,7 @@ public class DifferenceInfo {
     private ProcessCombManagement processCombManagement;
     //记录产品流程信息
    public void insertProdDifferenceInfo(Map mbProdInfo,String reqNo){
-       String operatorNo=omProcessInfoRepository.findByReqNo(reqNo)==null?"1":omProcessInfoRepository.findByReqNo(reqNo);
+       String operatorNo=omProcessInfoRepository.findByReqNoMax(reqNo)==null?"1":omProcessInfoRepository.findByReqNoMax(reqNo);
        //1判断上送数据是否有修改操作
        //2记录组合表信息（被修改的表）
        //3变更信息以blob形式存入表
@@ -120,8 +120,9 @@ public class DifferenceInfo {
                 String seqNo = processCombManagement.saveCombInfo(reqNo, operatorNo);
                 prodMap.put("tableName", "MB_PROD_TYPE");
                 JSONObject keyValue = new JSONObject();
-                keyValue.put("PROD_TYPE", newData.get("PROD_TYPE"));
-                saveProdParaDifference(seqNo, prodMap, keyValue, (String) newData.get("prodType"));
+                Map oldData=(Map)prodMap.get("oldData");
+                keyValue.put("PROD_TYPE", oldData.get("prodType"));
+                saveProdParaDifference(seqNo, prodMap, keyValue, (String) oldData.get("prodType"));
             }
         }
 

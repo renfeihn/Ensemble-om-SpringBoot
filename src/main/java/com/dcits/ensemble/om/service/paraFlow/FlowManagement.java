@@ -69,7 +69,7 @@ public class FlowManagement {
     //操作信息累加processInfo
     public void sumProcessInfo(String seqNo,String userName,String operatorType){
         OmProcessInfo  omProcessInfo =new OmProcessInfo();
-        String operator= omProcessInfoRepository.findByReqNo(seqNo);
+        String operator= omProcessInfoRepository.findByReqNoMax(seqNo);
         omProcessInfo.setReqNo(seqNo);
         omProcessInfo.setOperatorType(operatorType);
         omProcessInfo.setOperatorId(userName);

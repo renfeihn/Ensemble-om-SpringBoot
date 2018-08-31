@@ -85,7 +85,7 @@ public class ProdInfoController {
         //有单号，1.获取操作信息（操作序号） 2.组合表中生成新的子单号 3.将子单号信息存入差异信息表
             differenceInfo.insertProdDifferenceInfo(map,seqNo);
          //根据option实际选项，操作值
-        if("S".equals(option)) {
+        if("save".equals(option)) {
             flowManagement.updateFlow(seqNo, "2", userName, "127.0.0.1");
         }
     }
