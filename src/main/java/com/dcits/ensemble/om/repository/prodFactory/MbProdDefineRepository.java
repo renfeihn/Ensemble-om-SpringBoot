@@ -18,6 +18,10 @@ public interface MbProdDefineRepository extends JpaRepository<MbProdDefine,MbPro
 
      @Query("select s from MbProdDefine s  where s.prodType = :prodType and s.assembleType = :assembleType order by s.pageCode,s.pageSeqNo Asc" )
      public List<MbProdDefine> findByProdTypeAndAssembleTypeOrderByPageCodePageSeqNoAsc(@Param("prodType") String prodType,@Param("assembleType") String assembleType);
+     @Query("select s from MbProdDefine s  where s.prodType = :prodType order by s.pageCode,s.pageSeqNo Asc" )
+     public List<MbProdDefine> findByProdTypeOrderByPageCodePageSeqNoAsc(@Param("prodType") String prodType);
+
+
      @Transactional
      @Modifying
      @Query("update MbProdDefine set pageSeqNo=:pageSeqNo where prodType=:prodType and assembleId=:assembleId and pageCode=:pageCode")

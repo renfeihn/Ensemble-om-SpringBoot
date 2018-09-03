@@ -55,7 +55,7 @@ public class MbProdInfoService {
                     mbProdDefineGroupList.addAll(mbProdDefineBaseList);
                 }
             }
-            List<MbProdDefine> mbProdDefineList = mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderByPageCodePageSeqNoAsc(prodType, "ATTR");
+            List<MbProdDefine> mbProdDefineList = mbProdDefineRepository.findByProdTypeOrderByPageCodePageSeqNoAsc(prodType);
             if (mbProdDefineList != null) {
                 //衍合基础产品与可售产品参数
                 mbProdDefineGroupList.addAll(mbProdDefineList);
