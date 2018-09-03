@@ -1,7 +1,10 @@
 # Ensemble-om-SpringBoot
-Ensemble后台系统
+> Ensemble后台系统
 
-##非功能
+## API-UI
+> http://localhost:8004/swagger-ui.html
+
+## 非功能
 1. https协议
 2. 安全扫描、sonar扫描
 3. session超时登录

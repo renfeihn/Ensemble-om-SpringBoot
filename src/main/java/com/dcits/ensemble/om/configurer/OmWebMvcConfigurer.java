@@ -4,6 +4,7 @@ import com.dcits.ensemble.om.intercept.LoginIntercept;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -20,6 +21,7 @@ public class OmWebMvcConfigurer implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // 添加一个拦截器，连接以/为前缀的 url路径
-        registry.addInterceptor(new LoginIntercept()).addPathPatterns("/**");
+        InterceptorRegistration addInterceptor = registry.addInterceptor(new LoginIntercept()).addPathPatterns("/**");
+        addInterceptor.excludePathPatterns("/login**");
     }
 }

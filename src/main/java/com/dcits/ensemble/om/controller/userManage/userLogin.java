@@ -1,6 +1,9 @@
 package com.dcits.ensemble.om.controller.userManage;
 
 import com.dcits.ensemble.om.service.userManage.WebUserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -11,23 +14,25 @@ import java.util.Map;
 /**
  * Created by jiajt on 2018/8/27.
  */
+@Api(value = "/getUserMsg", tags = "用户模块")
 @Controller
-
 public class userLogin {
     @Autowired
     public WebUserService webUserService;
+
+    @ApiOperation(value = "用户登录验证", notes = "用户登录验证")
     @RequestMapping("/getUserMsg")
 //@RequestParam(value="password",required=false)  String password, @RequestParam(value="username",required=false) String userName
     @CrossOrigin
-    public @ResponseBody
-    String getUserMsgByUserIs (HttpServletResponse response,@RequestBody Map map){
+    @ResponseBody
+    public String getUserMsgByUserIs(HttpServletResponse response, @RequestBody Map map) {
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         String userId = map.get("username").toString();
         String password = map.get("password").toString();
-        boolean falg = webUserService.getUserMsgByUserId (userId,password);
-        if(falg) {
+        boolean flag = webUserService.getUserMsgByUserId(userId, password);
+        if (flag) {
             return "true";
-        }else{
+        } else {
             return "false";
         }
     }

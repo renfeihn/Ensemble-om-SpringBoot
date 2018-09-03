@@ -19,6 +19,7 @@ public class ApplicationAction {
     /**
      * 用户暂存时申请订单号
      * 在操作流程记录表中储存用户操作信息
+     *
      * @param response
      * @param prodType
      * @return
@@ -27,13 +28,14 @@ public class ApplicationAction {
     public ProdDataAssembling prodDataAssembling;
     @Resource
     public MbProdInfoService mbProdInfoService;
+
     @RequestMapping("/application/{prodType}")
     public @ResponseBody
-    MbProdInfo application(HttpServletResponse response,@PathVariable("prodType") String prodType) {
+    MbProdInfo application(HttpServletResponse response, @PathVariable("prodType") String prodType) {
         response.addHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
-        MbProdInfo mbProdInfo=mbProdInfoService.getProdInfo(prodType);
-        prodDataAssembling.getAssembleData(mbProdInfo,"1506482712346AQVQV");
+        MbProdInfo mbProdInfo = mbProdInfoService.getProdInfo(prodType);
+        prodDataAssembling.getAssembleData(mbProdInfo, "1506482712346AQVQV");
         return mbProdInfo;
     }
 }
