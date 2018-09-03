@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 /**
  * Created by jiajt on 2018/8/27.
@@ -13,7 +12,7 @@ import java.io.Serializable;
 @Table(name = "web_user")
 @Getter
 @Setter
-public class WebUser implements Serializable {
+public class WebUser {
     public WebUser(){}
 
     public WebUser(String userId, String userName, String password, String message, String organization, String legalentity){
@@ -28,7 +27,6 @@ public class WebUser implements Serializable {
     @Id
     @Column(name="user_id")
     private String userId;
-    @Id
     @Column(name="user_name")
     private String userName;
     @Column(name="password")
