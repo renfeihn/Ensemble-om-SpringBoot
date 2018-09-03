@@ -1,16 +1,14 @@
 package com.dcits.ensemble.om.service.paraFlow;
 
 import com.alibaba.fastjson.JSONObject;
-import com.dcits.ensemble.om.model.dbmodel.MbProdType;
-import com.dcits.ensemble.om.model.dbmodel.OmOperationRecords;
-import com.dcits.ensemble.om.repository.paraFlow.OmOperationRecordsRepository;
-import com.dcits.ensemble.om.repository.paraFlow.OmProcessInfoRepository;
+import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessDetailHistRepository;
 import com.dcits.ensemble.om.util.ResourcesUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -19,14 +17,14 @@ import java.util.Map;
 @Service
 public class DifferenceInfo {
     @Resource
-    private OmOperationRecordsRepository omOperationRecordsRepository;
+    private OmProcessRecordHistRepository omProcessRecordHistRepository;
     @Resource
-    private OmProcessInfoRepository omProcessInfoRepository;
+    private OmProcessDetailHistRepository omProcessDetailHistRepository;
     @Resource
     private ProcessCombManagement processCombManagement;
     //记录产品流程信息
    public void insertProdDifferenceInfo(Map mbProdInfo,String reqNo){
-       String operatorNo=omProcessInfoRepository.findByReqNo(reqNo)==null?"1":omProcessInfoRepository.findByReqNo(reqNo);
+       String operatorNo= omProcessDetailHistRepository.findBySeqNoMax(reqNo)==null?"1": omProcessDetailHistRepository.findBySeqNoMax(reqNo);
        //1判断上送数据是否有修改操作
        //2记录组合表信息（被修改的表）
        //3变更信息以blob形式存入表
@@ -44,84 +42,83 @@ public class DifferenceInfo {
    }
 
     //事件指标
-    public void eventPartTran(Map prodMap,String reqNo,String operatorNo){
+    public void eventPartTran(Map prodMap,String seqNo,String operatorNo){
         if(prodMap.get("newData")!=null ) {
             Map newData=(Map)prodMap.get("newData");
             if(newData.size()>0) {
                 //记录组合
-                String seqNo = processCombManagement.saveCombInfo(reqNo, operatorNo);
+                String subSeqNo = processCombManagement.saveCombInfo(seqNo, operatorNo,"MB_EVENT_PART");
                 prodMap.put("tableName", "MB_EVENT_PART");
                 JSONObject keyValue = new JSONObject();
                 keyValue.put("EVENT_TYPE", newData.get("EVENT_TYPE"));
                 keyValue.put("ASSEMBLE_ID", newData.get("ASSEMBLE_ID"));
                 keyValue.put("ATTR_KEY", newData.get("ATTR_KEY"));
-                String primaryCom = (String) newData.get("EVENT_TYPE") + "," + (String) newData.get("ASSEMBLE_ID") + "," + (String) newData.get("ATTR_KEY");
-                saveProdParaDifference(reqNo, prodMap, keyValue, primaryCom);
+
+                saveProdParaDifference(subSeqNo, prodMap, keyValue, seqNo);
             }
         }
     }
     //事件参数
-    public void eventAttrTran(Map prodMap,String reqNo,String operatorNo){
+    public void eventAttrTran(Map prodMap,String seqNo,String operatorNo){
         if(prodMap.get("newData")!=null ) {
             Map newData=(Map)prodMap.get("newData");
             if(newData.size()>0) {
                 //记录组合
-                String seqNo = processCombManagement.saveCombInfo(reqNo, operatorNo);
+                String subSeqNo = processCombManagement.saveCombInfo(seqNo, operatorNo,"MB_EVENT_ATTR");
                 prodMap.put("tableName", "MB_EVENT_ATTR");
                 JSONObject keyValue = new JSONObject();
                 keyValue.put("EVENT_TYPE", newData.get("EVENT_TYPE"));
                 keyValue.put("SEQ_NO", newData.get("SEQ_NO"));
-                String primaryCom = (String) newData.get("EVENT_TYPE") + "," + (String) newData.get("SEQ_NO");
-                saveProdParaDifference(seqNo, prodMap, keyValue, primaryCom);
+                saveProdParaDifference(subSeqNo, prodMap, keyValue, seqNo);
             }
         }
     }
     //事件类型
-    public void eventTypeTran(Map prodMap,String reqNo,String operatorNo){
+    public void eventTypeTran(Map prodMap,String seqNo,String operatorNo){
         if(prodMap.get("newData")!=null ) {
             Map newData=(Map)prodMap.get("newData");
             if(newData.size()>0) {
                 //记录组合
-                String seqNo = processCombManagement.saveCombInfo(reqNo, operatorNo);
+                String subSeqNo = processCombManagement.saveCombInfo(seqNo, operatorNo,"EVENT_TYPE");
                 prodMap.put("tableName", "MB_EVENT_TYPE");
                 JSONObject keyValue = new JSONObject();
                 keyValue.put("EVENT_TYPE", newData.get("EVENT_TYPE"));
                 String primaryCom = (String) newData.get("EVENT_TYPE");
-                saveProdParaDifference(seqNo, prodMap, keyValue, primaryCom);
+                saveProdParaDifference(subSeqNo, prodMap, keyValue, seqNo);
             }
         }
     }
     //产品参数
-    public void prodDefineTran(Map prodMap,String reqNo,String operatorNo){
+    public void prodDefineTran(Map prodMap,String seqNo,String operatorNo){
         if(prodMap.get("newData")!=null ) {
             Map newData=(Map)prodMap.get("newData");
             if(newData.size()>0) {
                 //记录组合
-                String seqNo = processCombManagement.saveCombInfo(reqNo, operatorNo);
+                String subSeqNo = processCombManagement.saveCombInfo(seqNo, operatorNo,"MB_PROD_DEFINE");
                 prodMap.put("tableName", "MB_PROD_DEFINE");
                 JSONObject keyValue = new JSONObject();
                 for (Object key : newData.keySet()) {
                     Map define=(Map) newData.get(key);
                     keyValue.put("PROD_TYPE", define.get("prodType"));
                     keyValue.put("SEQ_NO", define.get("seqNo"));
-                    String primaryCom = (String) define.get("prodType") + ',' + (String) define.get("seqNo");
-                    saveProdParaDifference(seqNo, prodMap, keyValue, primaryCom);
+                    saveProdParaDifference(subSeqNo, prodMap, keyValue, seqNo);
                 }
             }
         }
     }
     //产品
-    public void prodTran(Map prodMap,String reqNo,String operatorNo){
+    public void prodTran(Map prodMap,String seqNo,String operatorNo){
             //记录差异
         if(prodMap.get("newData")!=null ) {
             Map newData=(Map)prodMap.get("newData");
             if(newData.size()>0) {
                 //记录组合
-                String seqNo = processCombManagement.saveCombInfo(reqNo, operatorNo);
+                String subSeqNo = processCombManagement.saveCombInfo(seqNo, operatorNo,"MB_PROD_TYPE");
                 prodMap.put("tableName", "MB_PROD_TYPE");
                 JSONObject keyValue = new JSONObject();
-                keyValue.put("PROD_TYPE", newData.get("PROD_TYPE"));
-                saveProdParaDifference(seqNo, prodMap, keyValue, (String) newData.get("prodType"));
+                Map oldData=(Map)prodMap.get("oldData");
+                keyValue.put("PROD_TYPE", oldData.get("prodType"));
+                saveProdParaDifference(subSeqNo, prodMap, keyValue, seqNo);
             }
         }
 
@@ -129,8 +126,8 @@ public class DifferenceInfo {
 
 
     //拿新申请的单号组织操作数据存入paraDifferenceCheckPublish表
-    public void saveProdParaDifference(String reqNo,Map map,JSONObject keyValue,String primary){
-        OmOperationRecords omOperationRecords =new OmOperationRecords();
+    public void saveProdParaDifference(String seqNo,Map map,JSONObject keyValue,String mainSeqNo){
+        OmProcessRecordHist omProcessRecordHist =new OmProcessRecordHist();
         String dataDui=ResourcesUtils.getJsonString(map.get("newData"));
         String oldDui=ResourcesUtils.getJsonString(map.get("oldData"));
         String tableName=(String)map.get("tableName");
@@ -141,18 +138,17 @@ public class DifferenceInfo {
             tmpDataDui =dataDui.getBytes("UTF-8");
             tmpOldDui =oldDui.getBytes("UTF-8");
             tmpKeyValue=keyValue.toString().getBytes("UTF-8");
-            omOperationRecords.setKeyValue(tmpKeyValue);
-            omOperationRecords.setDataDui(tmpDataDui);
-            omOperationRecords.setOlddataUpd(tmpOldDui);
+            omProcessRecordHist.setPkAndValue(tmpKeyValue);
+            omProcessRecordHist.setDmlData(tmpDataDui);
+            omProcessRecordHist.setDmlOldData(tmpOldDui);
         }catch (UnsupportedEncodingException e){
         }
         //1.获取对象主键
-        omOperationRecords.setTableFullName(tableName);
-
-        omOperationRecords.setReqNo(reqNo);
-        omOperationRecords.setPrimaryKeyvalue(primary);
-        omOperationRecords.setOperateType("U");
-        omOperationRecordsRepository.saveAndFlush(omOperationRecords);
+        omProcessRecordHist.setTableName(tableName);
+        omProcessRecordHist.setRecSeqNo(seqNo);
+        omProcessRecordHist.setDmlType("U");
+        omProcessRecordHist.setMainSeqNo(mainSeqNo);
+        omProcessRecordHistRepository.saveAndFlush(omProcessRecordHist);
     }
     //修改操作流程
     public void updateProdDifferenceInfo(Map mbProdInfo,String reqNo){

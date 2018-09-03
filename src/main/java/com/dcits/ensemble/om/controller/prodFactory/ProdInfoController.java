@@ -1,13 +1,12 @@
 package com.dcits.ensemble.om.controller.prodFactory;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.dcits.ensemble.om.model.dbmodel.OmOperationRecords;
-import com.dcits.ensemble.om.model.dbmodel.OmProcessManagement;
+import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
+import com.dcits.ensemble.om.model.dbmodel.OmProcessMainFlow;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
-import com.dcits.ensemble.om.repository.paraFlow.OmOperationRecordsRepository;
-import com.dcits.ensemble.om.repository.paraFlow.OmProcessInfoRepository;
-import com.dcits.ensemble.om.repository.paraFlow.OmProcessManagementRepository;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessDetailHistRepository;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessMainFlowRepository;
 import com.dcits.ensemble.om.service.paraFlow.DifferenceInfo;
 import com.dcits.ensemble.om.service.paraFlow.FlowManagement;
 import com.dcits.ensemble.om.service.prodFactory.MbProdInfoService;
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,11 +29,11 @@ public class ProdInfoController {
     @Resource
     private FlowManagement flowManagement;
     @Resource
-    private OmProcessManagementRepository omProcessManagementRepository;
+    private OmProcessMainFlowRepository omProcessMainFlowRepository;
     @Resource
-    private OmOperationRecordsRepository omOperationRecordsRepository;
+    private OmProcessRecordHistRepository omProcessRecordHistRepository;
     @Resource
-    private OmProcessInfoRepository omProcessInfoRepository;
+    private OmProcessDetailHistRepository omProcessDetailHistRepository;
     @Resource
     private DifferenceInfo differenceInfo;
     @RequestMapping("/getProdInfo")
@@ -43,18 +43,18 @@ public class ProdInfoController {
         Map responseMap=new HashMap<>();
         String prodType=(String)map.get("prodType");
         MbProdInfo mbProdInfo=mbProdInfoService.getProdInfo(prodType);
-        OmProcessManagement omProcessManagement= omProcessManagementRepository.findByTransactionId("MbProdType");
-        List<OmOperationRecords> omOperationRecordsList =null;
+        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranId("MbProdType");
+        List<OmProcessRecordHist> omProcessRecordHistList =null;
 /*      查询差异信息
-        if(omProcessManagement!=null&&omProcessManagement.getReqNo()!=null){
+        if(omProcessMainFlow!=null&&omProcessMainFlow.getReqNo()!=null){
             //获取组合信息
-            String operatorNo=omProcessInfoRepository.findByReqNo(omProcessManagement.getReqNo());
+            String operatorNo=omProcessDetailHistRepository.findByReqNo(omProcessMainFlow.getReqNo());
 
-            omOperationRecordsList = omOperationRecordsRepository.searchDiffByTableName(omProcessManagement.getReqNo());
+            omProcessRecordHistList = omProcessRecordHistRepository.searchDiffByTableName(omProcessMainFlow.getReqNo());
         }*/
         responseMap.put("prodInfo",mbProdInfo.toString());
-        if(omOperationRecordsList !=null)
-        responseMap.put("diff", omOperationRecordsList);
+        if(omProcessRecordHistList !=null)
+        responseMap.put("diff", omProcessRecordHistList);
        return JSON.toJSONString(mbProdInfo);
     }
 
@@ -72,20 +72,24 @@ public class ProdInfoController {
         String userName=(String)map.get("userName");
         String seqNo;
         String option=(String)map.get("option");
-        OmProcessManagement omProcessManagement = omProcessManagementRepository.findByTransactionId("MB_PROD_TYPE");
+        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranId("MB_PROD_TYPE");
                 //无单号，1.申请单号 2.新增记录差异信息 3.根据操作类型更新交易状态
-                if (omProcessManagement == null || omProcessManagement.getReqNo() == null) {
+                if (omProcessMainFlow == null || omProcessMainFlow.getMainSeqNo() == null) {
                     seqNo = flowManagement.appNoByTable(userName, "MB_PROD_TYPE", "Y");
                 } else {
                     //此处判断如果交易状态为待复核、待发布状态则抛出异常
-                    seqNo = omProcessManagement.getReqNo();
-                    flowManagement.sumProcessInfo(seqNo,userName,"1");
+                    seqNo = omProcessMainFlow.getMainSeqNo();
+                    BigDecimal dtlSeqNo= omProcessMainFlow.getDtlSeqNo().add(BigDecimal.ONE);
+                    //更新批次
+                    omProcessMainFlow.setDtlSeqNo(dtlSeqNo);
+                    omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
+                    flowManagement.sumProcessInfo(seqNo,userName,"1",dtlSeqNo);
                 }
             //记录操作流程
         //有单号，1.获取操作信息（操作序号） 2.组合表中生成新的子单号 3.将子单号信息存入差异信息表
             differenceInfo.insertProdDifferenceInfo(map,seqNo);
          //根据option实际选项，操作值
-        if("S".equals(option)) {
+        if("save".equals(option)) {
             flowManagement.updateFlow(seqNo, "2", userName, "127.0.0.1");
         }
     }

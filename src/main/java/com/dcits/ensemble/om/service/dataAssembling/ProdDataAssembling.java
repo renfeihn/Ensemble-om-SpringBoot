@@ -3,9 +3,8 @@ package com.dcits.ensemble.om.service.dataAssembling;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.dcits.ensemble.om.model.dbmodel.MbProdType;
-import com.dcits.ensemble.om.model.dbmodel.OmOperationRecords;
-import com.dcits.ensemble.om.model.prodFactory.MbEventInfo;
-import com.dcits.ensemble.om.repository.paraFlow.OmOperationRecordsRepository;
+import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,32 +19,32 @@ import java.util.List;
 @Service
 public class ProdDataAssembling {
     @Autowired
-    private OmOperationRecordsRepository omOperationRecordsRepository;
+    private OmProcessRecordHistRepository omProcessRecordHistRepository;
     public void getAssembleData(MbProdInfo mbProdInfo,String reqNo){
-        List<OmOperationRecords> omOperationRecordsList = omOperationRecordsRepository.findByReqNo(reqNo);
+    /*    List<OmProcessRecordHist> omProcessRecordHistList = omProcessRecordHistRepository.findByRecReqNo(reqNo);
         String fullName="";
-        for(OmOperationRecords omOperationRecords : omOperationRecordsList){
-            fullName= omOperationRecords.getTableFullName();
+        for(OmProcessRecordHist omProcessRecordHist : omProcessRecordHistList){
+            fullName= omProcessRecordHist.getTableName();
             //组装prodType
             if(fullName.equals("MB_PROD_TYPE")) {
-                prodTypeAssembling(mbProdInfo, omOperationRecords);
+                prodTypeAssembling(mbProdInfo, omProcessRecordHist);
             } else
             //组装prodDefine
             if(fullName.equals("MB_PROD_DEFINE")){
-                prodDefineAssembling(mbProdInfo, omOperationRecords);
+                prodDefineAssembling(mbProdInfo, omProcessRecordHist);
             }else{
-                eventAttrAssembling(mbProdInfo, omOperationRecords);
+                eventAttrAssembling(mbProdInfo, omProcessRecordHist);
             }
             //组装eventAttr、组装eventPart
-        }
+        }*/
     }
     //组装prodType
-    public void prodTypeAssembling(MbProdInfo mbProdInfo,OmOperationRecords omOperationRecords){
+    public void prodTypeAssembling(MbProdInfo mbProdInfo,OmProcessRecordHist omProcessRecordHist){
         MbProdType mbProdType=mbProdInfo.getProdType();
-        if(mbProdType.getProdType().equals(omOperationRecords.getPrimaryKeyvalue())){
+/*        if(mbProdType.getProdType().equals(omProcessRecordHist.getPrimaryKeyvalue())){
             try {
-                String  dataDui=new String(omOperationRecords.getDataDui(),"UTF-8");
-                String keyValue=new String(omOperationRecords.getKeyValue(),"UTF-8");
+                String  dataDui=new String(omProcessRecordHist.getDataDui(),"UTF-8");
+                String keyValue=new String(omProcessRecordHist.getKeyValue(),"UTF-8");
                 JSONObject jsonDataDui= JSON.parseObject(dataDui);
                 JSONObject jsonKeyValue= JSON.parseObject(keyValue);
                 jsonDataDui.putAll(jsonKeyValue);
@@ -55,17 +54,17 @@ public class ProdDataAssembling {
                 e.printStackTrace();
             }
 
-        }
+        }*/
     }
     //组装prodDefine
-    public void prodDefineAssembling(MbProdInfo mbProdInfo,OmOperationRecords omOperationRecords) {
+    public void prodDefineAssembling(MbProdInfo mbProdInfo,OmProcessRecordHist omProcessRecordHist) {
 /*        List<MbProdDefine> mbProdDefineList=mbProdInfo.getProdDefines();
         for(MbProdDefine mbProdDefine:mbProdDefineList){
 
         }*/
     }
     //组装eventAttr、eventPart
-    public void eventAttrAssembling(MbProdInfo mbProdInfo,OmOperationRecords omOperationRecords) {
+    public void eventAttrAssembling(MbProdInfo mbProdInfo,OmProcessRecordHist omProcessRecordHist) {
    /*     List<MbEventInfo> mbEventInfoList=mbProdInfo.getMbEventInfos();*/
 
     }
