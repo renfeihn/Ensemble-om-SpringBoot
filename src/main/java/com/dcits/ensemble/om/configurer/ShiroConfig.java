@@ -12,6 +12,7 @@ import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.servlet.Filter;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -56,6 +57,9 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
         //9.设置shiroFilterFactoryBean的FilterChainDefinitionMap
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainMap);
+        LinkedHashMap<String, Filter> filtsMap=new LinkedHashMap<String, Filter>();
+        filtsMap.put("authc", new ShiroFormAuthenticationFilter());
+        shiroFilterFactoryBean.setFilters(filtsMap);
         return shiroFilterFactoryBean;
     }
 

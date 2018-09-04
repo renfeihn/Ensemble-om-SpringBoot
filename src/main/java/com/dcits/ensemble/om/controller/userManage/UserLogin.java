@@ -33,7 +33,6 @@ public class UserLogin {
 
     @ApiOperation(value = "用户登录验证", notes = "用户登录验证")
     @RequestMapping("/login")
-    @CrossOrigin
     @ResponseBody
     public String getUserMsgByUserIs(HttpServletResponse response, @RequestParam(value = "userName", required = false) String userName) {
 
@@ -50,6 +49,8 @@ public class UserLogin {
         //String pwd =new Md5Hash(user.getPassword(), user.getUserId()).toHex();
         UsernamePasswordToken token = new UsernamePasswordToken(user.getUserId(), user.getPassword());
         currentUser.login(token);
+
+
         return JSON.toJSONString(webUser);
     }
 }
