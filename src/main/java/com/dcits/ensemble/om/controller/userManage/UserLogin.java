@@ -1,38 +1,37 @@
 package com.dcits.ensemble.om.controller.userManage;
 
-import com.dcits.ensemble.om.service.userManage.WebUserService;
+import com.alibaba.fastjson.JSON;
+import com.dcits.ensemble.om.model.RequestBean;
+import com.dcits.ensemble.om.model.dbmodel.system.WebUser;
+import com.dcits.ensemble.om.repository.userManage.WebUserRespository;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 import java.util.Map;
 
 /**
  * Created by jiajt on 2018/8/27.
  */
-@Api(value = "/getUserMsg", tags = "用户模块")
+@Api(value = "/userLoginCheck", tags = "用户模块")
 @Controller
 public class UserLogin {
-    @Autowired
-    public WebUserService webUserService;
+    @Resource
+    private WebUserRespository webUserRespository;
 
     @ApiOperation(value = "用户登录验证", notes = "用户登录验证")
-    @RequestMapping("/getUserMsg")
+    @RequestMapping("/userLoginCheck")
     @CrossOrigin
     @ResponseBody
-    public String getUserMsgByUserIs(HttpServletResponse response, @RequestBody Map map) {
+    public String getUserMsgByUserIs(HttpServletResponse response, @RequestBody RequestBean requestBean) {
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
+        Map map = requestBean.getBody();
         String userId = map.get("username").toString();
-        String password = map.get("password").toString();
-        boolean flag = webUserService.getUserMsgByUserId(userId, password);
-        if (flag) {
-            return "true";
-        } else {
-            return "false";
-        }
+        List<WebUser> webUser = webUserRespository.findByUserId(userId);
+        return JSON.toJSONString(webUser);
     }
 }

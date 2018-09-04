@@ -1,6 +1,7 @@
 package com.dcits.ensemble.om.controller.prodFactory;
 
 import com.alibaba.fastjson.JSON;
+import com.dcits.ensemble.om.model.RequestBean;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessMainFlow;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
@@ -38,7 +39,8 @@ public class ProdInfoController {
     private DifferenceInfo differenceInfo;
     @RequestMapping("/getProdInfo")
     public @ResponseBody
-    String getProdInfo(HttpServletResponse response,@RequestBody Map map) {
+    String getProdInfo(HttpServletResponse response,@RequestBody RequestBean requestBean) {
+        Map map= requestBean.getBody();
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         Map responseMap=new HashMap<>();
         String prodType=(String)map.get("prodType");
