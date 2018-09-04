@@ -16,13 +16,12 @@ import java.util.Map;
  */
 @Api(value = "/getUserMsg", tags = "用户模块")
 @Controller
-public class userLogin {
+public class UserLogin {
     @Autowired
     public WebUserService webUserService;
 
     @ApiOperation(value = "用户登录验证", notes = "用户登录验证")
     @RequestMapping("/getUserMsg")
-//@RequestParam(value="password",required=false)  String password, @RequestParam(value="username",required=false) String userName
     @CrossOrigin
     @ResponseBody
     public String getUserMsgByUserIs(HttpServletResponse response, @RequestBody Map map) {
