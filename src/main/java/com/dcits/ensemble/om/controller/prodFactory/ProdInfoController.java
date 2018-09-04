@@ -11,6 +11,7 @@ import com.dcits.ensemble.om.repository.paraFlow.OmProcessMainFlowRepository;
 import com.dcits.ensemble.om.service.paraFlow.DifferenceInfo;
 import com.dcits.ensemble.om.service.paraFlow.FlowManagement;
 import com.dcits.ensemble.om.service.prodFactory.MbProdInfoService;
+import io.swagger.annotations.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,12 +22,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Api(value = "/getProdInfo", tags = "产品模块")
 @Controller
-@CrossOrigin
 public class ProdInfoController {
 
     @Resource
-     private  MbProdInfoService mbProdInfoService;
+    private MbProdInfoService mbProdInfoService;
     @Resource
     private FlowManagement flowManagement;
     @Resource
@@ -37,27 +38,30 @@ public class ProdInfoController {
     private OmProcessDetailHistRepository omProcessDetailHistRepository;
     @Resource
     private DifferenceInfo differenceInfo;
+
+    @ApiOperation(value = "产品信息", notes = "获取产品明细")
     @RequestMapping("/getProdInfo")
-    public @ResponseBody
-    String getProdInfo(HttpServletResponse response,@RequestBody RequestBean requestBean) {
-        Map map= requestBean.getBody();
+    @ResponseBody
+    public String getProdInfo(HttpServletResponse response, @RequestParam(value = "prodType", required = false) String prodType) {
+        //Map map = requestBean.getBody();
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
-        Map responseMap=new HashMap<>();
-        String prodType=(String)map.get("prodType");
-        MbProdInfo mbProdInfo=mbProdInfoService.getProdInfo(prodType);
+        Map responseMap = new HashMap<>();
+        //String prodType = (String) map.get("prodType");
+
+        MbProdInfo mbProdInfo = mbProdInfoService.getProdInfo(prodType);
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranId("MbProdType");
-        List<OmProcessRecordHist> omProcessRecordHistList =null;
-/*      查询差异信息
+        List<OmProcessRecordHist> omProcessRecordHistList = null;
+        /*查询差异信息
         if(omProcessMainFlow!=null&&omProcessMainFlow.getReqNo()!=null){
             //获取组合信息
             String operatorNo=omProcessDetailHistRepository.findByReqNo(omProcessMainFlow.getReqNo());
 
             omProcessRecordHistList = omProcessRecordHistRepository.searchDiffByTableName(omProcessMainFlow.getReqNo());
         }*/
-        responseMap.put("prodInfo",mbProdInfo.toString());
-        if(omProcessRecordHistList !=null)
-        responseMap.put("diff", omProcessRecordHistList);
-       return JSON.toJSONString(mbProdInfo);
+        responseMap.put("prodInfo", mbProdInfo.toString());
+        if (omProcessRecordHistList != null)
+            responseMap.put("diff", omProcessRecordHistList);
+        return JSON.toJSONString(mbProdInfo);
     }
 
     /**
@@ -70,28 +74,28 @@ public class ProdInfoController {
      * @param response
      */
     @RequestMapping("/saveProdInfo")
-    public void saveProdInfo(HttpServletResponse response,@RequestBody Map map) {
-        String userName=(String)map.get("userName");
+    public void saveProdInfo(HttpServletResponse response, @RequestBody Map map) {
+        String userName = (String) map.get("userName");
         String seqNo;
-        String option=(String)map.get("option");
+        String option = (String) map.get("option");
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranId("MB_PROD_TYPE");
-                //无单号，1.申请单号 2.新增记录差异信息 3.根据操作类型更新交易状态
-                if (omProcessMainFlow == null || omProcessMainFlow.getMainSeqNo() == null) {
-                    seqNo = flowManagement.appNoByTable(userName, "MB_PROD_TYPE", "Y");
-                } else {
-                    //此处判断如果交易状态为待复核、待发布状态则抛出异常
-                    seqNo = omProcessMainFlow.getMainSeqNo();
-                    BigDecimal dtlSeqNo= omProcessMainFlow.getDtlSeqNo().add(BigDecimal.ONE);
-                    //更新批次
-                    omProcessMainFlow.setDtlSeqNo(dtlSeqNo);
-                    omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
-                    flowManagement.sumProcessInfo(seqNo,userName,"1",dtlSeqNo);
-                }
-            //记录操作流程
+        //无单号，1.申请单号 2.新增记录差异信息 3.根据操作类型更新交易状态
+        if (omProcessMainFlow == null || omProcessMainFlow.getMainSeqNo() == null) {
+            seqNo = flowManagement.appNoByTable(userName, "MB_PROD_TYPE", "Y");
+        } else {
+            //此处判断如果交易状态为待复核、待发布状态则抛出异常
+            seqNo = omProcessMainFlow.getMainSeqNo();
+            BigDecimal dtlSeqNo = omProcessMainFlow.getDtlSeqNo().add(BigDecimal.ONE);
+            //更新批次
+            omProcessMainFlow.setDtlSeqNo(dtlSeqNo);
+            omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
+            flowManagement.sumProcessInfo(seqNo, userName, "1", dtlSeqNo);
+        }
+        //记录操作流程
         //有单号，1.获取操作信息（操作序号） 2.组合表中生成新的子单号 3.将子单号信息存入差异信息表
-            differenceInfo.insertProdDifferenceInfo(map,seqNo);
-         //根据option实际选项，操作值
-        if("save".equals(option)) {
+        differenceInfo.insertProdDifferenceInfo(map, seqNo);
+        //根据option实际选项，操作值
+        if ("save".equals(option)) {
             flowManagement.updateFlow(seqNo, "2", userName, "127.0.0.1");
         }
     }
