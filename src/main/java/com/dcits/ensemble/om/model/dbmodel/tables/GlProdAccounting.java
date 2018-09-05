@@ -5,14 +5,17 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
+
 /**
  * Created by jiajt on 2018/9/18.
  */
 @Entity
 @Table(name = "gl_prod_accounting")
+@IdClass(GlProdAccountingKeysClass.class)
 @Getter
 @Setter
-public class GlProdAccounting {
+public class GlProdAccounting implements Serializable {
     public GlProdAccounting(String prodType, String accountingStatus, String profitCentre, String businessUnit,
                        String glCodeA, String glCodeL, String glCodeIntE, String glCodeIntPay,String glCodeIntI, String glCodeIntRec, String glCodeIntAcr,
                             String glCodeOdpI, String glCodeOdpRec, String glCodeOdpAcr, String glCodeOdiI, String glCodeOdiRec, String glCodeOdiAcr,

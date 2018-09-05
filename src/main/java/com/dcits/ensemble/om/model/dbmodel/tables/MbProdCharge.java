@@ -7,12 +7,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "mb_prod_charge")
+@IdClass(MbProdChargeKeysClass.class)
 @Getter
 @Setter
-public class MbProdCharge {
+public class MbProdCharge implements Serializable {
     public MbProdCharge(String prodType, String feeType, String chargePeriodFreq, String chargeDay, String nextChargeDate, String tranTimestamp, String tranTime, String chargeDealMethod, String conDeductFlag, String conDeductTimes) {
         this.prodType = prodType;
         this.feeType = feeType;

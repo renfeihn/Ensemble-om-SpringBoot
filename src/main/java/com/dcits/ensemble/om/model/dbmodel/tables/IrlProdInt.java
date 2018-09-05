@@ -8,12 +8,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "irl_prod_int")
+@IdClass(IrlProdIntKeysClass.class)
 @Getter
 @Setter
-public class IrlProdInt {
+public class IrlProdInt implements Serializable {
     public IrlProdInt(String prodType, String eventType, String intType, String intTypeDesc,String intClass,
                             String taxType, String rateAmtId, String intAmtId, String recalMethod,String company, String intStart, String intDaysType,
                             String intCalcBal, String intApplType, String rollFreq, String rollDay, String minRate, String maxRate,
