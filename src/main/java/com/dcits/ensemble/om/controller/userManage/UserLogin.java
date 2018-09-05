@@ -38,7 +38,6 @@ public class UserLogin {
             return ResultUtils.warn(ResultCode.WARN, "请重新登录！");
         }
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
-
         WebUser webUser = webUserService.login(userId);
         return ResultUtils.success(JSON.toJSONString(webUser));
     }

@@ -21,7 +21,7 @@ import java.util.Map;
 public class ProdTypeListController {
     @Resource
     private MbProdTypeRepository mbProdTypeRepository;
-    @CrossOrigin
+
     @RequestMapping("/getProdListByClass")
     public
     @ResponseBody
