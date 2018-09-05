@@ -27,9 +27,11 @@ public class WebUserService {
 
     public WebUser login(String userId) {
         WebUser webUser = webUserRespository.findByUserId(userId);
-        Subject currentUser = SecurityUtils.getSubject();
-        UsernamePasswordToken token = new UsernamePasswordToken(webUser.getUserId(), webUser.getPassword());
-        currentUser.login(token);
+        if (webUser != null) {
+            Subject currentUser = SecurityUtils.getSubject();
+            UsernamePasswordToken token = new UsernamePasswordToken(webUser.getUserId(), webUser.getPassword());
+            currentUser.login(token);
+        }
         return webUser;
     }
 }

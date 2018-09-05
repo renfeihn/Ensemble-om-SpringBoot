@@ -23,7 +23,7 @@ public class OmWebMvcConfigurer implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         // 添加一个拦截器，连接以/为前缀的 url路径
         InterceptorRegistration addInterceptor = registry.addInterceptor(new LoginIntercept()).addPathPatterns("/**");
-        addInterceptor.excludePathPatterns("/login**");
+        //addInterceptor.excludePathPatterns("/login**");
     }
     @Override
     public void addCorsMappings(CorsRegistry registry) {
