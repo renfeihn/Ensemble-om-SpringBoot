@@ -9,6 +9,6 @@ import java.util.List;
 /**
  * Created by jiajt on 2018/8/27.
  */
-public interface WebUserRespository  extends JpaRepository<WebUser,Long>,JpaSpecificationExecutor<WebUser> {
-     List<WebUser> findByUserId(String userId);
+public interface WebUserRespository extends JpaRepository<WebUser, Long>, JpaSpecificationExecutor<WebUser> {
+    WebUser findByUserId(String userId);
 }

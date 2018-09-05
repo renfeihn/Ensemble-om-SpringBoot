@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by jiajt on 2018/8/27.
@@ -12,11 +13,12 @@ import javax.persistence.*;
 @Table(name = "web_user")
 @Getter
 @Setter
-public class WebUser {
-    public WebUser(){}
+public class WebUser implements Serializable {
+    public WebUser() {
+    }
 
-    public WebUser(String userId, String userName, String password, String message, String organization, String legalentity){
-        this.userId =userId;
+    public WebUser(String userId, String userName, String password, String message, String organization, String legalentity) {
+        this.userId = userId;
         this.userName = userName;
         this.password = password;
         this.message = message;
@@ -25,17 +27,17 @@ public class WebUser {
     }
 
     @Id
-    @Column(name="user_id")
+    @Column(name = "user_id")
     private String userId;
-    @Column(name="user_name")
+    @Column(name = "user_name")
     private String userName;
-    @Column(name="password")
+    @Column(name = "password")
     private String password;
-    @Column(name="message")
+    @Column(name = "message")
     private String message;
-    @Column(name="organization")
+    @Column(name = "organization")
     private String organization;
-    @Column(name="legalentity")
+    @Column(name = "legalentity")
     private String legalentity;
 
     @Override

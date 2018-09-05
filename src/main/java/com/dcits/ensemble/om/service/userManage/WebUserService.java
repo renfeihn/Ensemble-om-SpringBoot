@@ -2,6 +2,9 @@ package com.dcits.ensemble.om.service.userManage;
 
 import com.dcits.ensemble.om.model.dbmodel.system.WebUser;
 import com.dcits.ensemble.om.repository.userManage.WebUserRespository;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class WebUserService {
     @Autowired
-    WebUserRespository webUserRespository;
+    private WebUserRespository webUserRespository;
 
     public boolean getUserMsgByUserId(String userId, String password) {
 //        WebUser webUser = webUserRespository.getUserMsgByUserId(userId,password);
@@ -19,6 +22,14 @@ public class WebUserService {
     }
 
     public WebUser findByUsername(String username) {
-        return webUserRespository.findByUserId(username).get(0);
+        return webUserRespository.findByUserId(username);
+    }
+
+    public WebUser login(String userId) {
+        WebUser webUser = webUserRespository.findByUserId(userId);
+        Subject currentUser = SecurityUtils.getSubject();
+        UsernamePasswordToken token = new UsernamePasswordToken(webUser.getUserId(), webUser.getPassword());
+        currentUser.login(token);
+        return webUser;
     }
 }
