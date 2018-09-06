@@ -1,0 +1,3 @@
+delete from mb_event_attr where EVENT_TYPE = 'WTD_RB101' and SEQ_NO = '5';
+INSERT INTO mb_event_attr (EVENT_TYPE, SEQ_NO, ASSEMBLE_TYPE, ASSEMBLE_ID, ATTR_VALUE, ASSEMBLE_RULE) VALUES ('WTD_RB101', '5', 'PART', 'CHECK_KEEP_BAL', NULL, 'F');
+commit;
