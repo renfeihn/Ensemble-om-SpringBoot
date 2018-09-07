@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by ligan on 2018/8/24.
@@ -68,11 +70,14 @@ public class FlowManagement {
     }
     //操作信息累加processInfo
     public void sumProcessInfo(String seqNo,String userName,String operatorType,BigDecimal dtlSeqNo){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        String date = sdf.format(new Date());
         OmProcessDetailHist omProcessDetailHist =new OmProcessDetailHist();
         omProcessDetailHist.setMainSeqNo(seqNo);
         omProcessDetailHist.setStatus(operatorType);
         omProcessDetailHist.setUserId(userName);
         omProcessDetailHist.setDtlSeqNo(dtlSeqNo);
+        omProcessDetailHist.setTranTime(date);
         omProcessDetailHistRepository.saveAndFlush(omProcessDetailHist);
     }
     //更新操作流程

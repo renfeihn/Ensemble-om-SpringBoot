@@ -35,7 +35,7 @@ public class ParaFlowList {
     @RequestMapping("/reviewList")
     public @ResponseBody
     String getFlowList(HttpServletResponse response){
-        List<OmProcessMainFlow> omProcessMainFlowList = omProcessMainFlowRepositorys.findByStatus("1");
+        List<OmProcessMainFlow> omProcessMainFlowList = omProcessMainFlowRepositorys.findAll();
         List<Map> resultList=new ArrayList<>();
        for(OmProcessMainFlow omProcessMainFlow : omProcessMainFlowList){
            Map<String,Object> infoMap=new HashMap<>();
