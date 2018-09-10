@@ -15,6 +15,7 @@ import java.util.List;
  */
 public interface OmProcessMainFlowRepository extends JpaRepository<OmProcessMainFlow,Long> ,JpaSpecificationExecutor<OmProcessMainFlow>{
      public OmProcessMainFlow findByTranId(String tranId);
+     public OmProcessMainFlow findByMainSeqNo(String mainSeqNo);
      @Transactional
      @Modifying
      @Query("update OmProcessMainFlow set status=:status where mainSeqNo=:mainSeqNo")

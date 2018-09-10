@@ -65,11 +65,11 @@ public class FlowManagement {
         paraCircleFlow.setDtlSeqNo(BigDecimal.ONE);
         //累加序号
         omProcessMainFlowRepository.saveAndFlush(paraCircleFlow);
-        sumProcessInfo(seqNo,userName,"1",BigDecimal.ONE);
+        sumProcessInfo(seqNo,userName,"1",BigDecimal.ONE,null,null);
         return seqNo;
     }
     //操作信息累加processInfo
-    public void sumProcessInfo(String seqNo,String userName,String operatorType,BigDecimal dtlSeqNo){
+    public void sumProcessInfo(String seqNo,String userName,String operatorType,BigDecimal dtlSeqNo,String remark,String isApproved){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         String date = sdf.format(new Date());
         OmProcessDetailHist omProcessDetailHist =new OmProcessDetailHist();
@@ -78,6 +78,8 @@ public class FlowManagement {
         omProcessDetailHist.setUserId(userName);
         omProcessDetailHist.setDtlSeqNo(dtlSeqNo);
         omProcessDetailHist.setTranTime(date);
+        omProcessDetailHist.setRemark(remark);
+        omProcessDetailHist.setIsApproved(isApproved);
         omProcessDetailHistRepository.saveAndFlush(omProcessDetailHist);
     }
     //更新操作流程

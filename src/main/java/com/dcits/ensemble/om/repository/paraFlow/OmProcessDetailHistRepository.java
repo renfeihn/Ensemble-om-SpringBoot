@@ -17,6 +17,6 @@ public interface OmProcessDetailHistRepository extends JpaRepository<OmProcessDe
     @Query("select max(s.dtlSeqNo) from OmProcessDetailHist s  where s.mainSeqNo = :mainSeqNo")
     public String findBySeqNoMax(@Param("mainSeqNo") String mainSeqNo);
 
-    public OmProcessDetailHist findByMainSeqNoAndDtlSeqNoAndStatus(@Param("mainSeqNo") String mainSeqNo,@Param("dtlSeqNo") BigDecimal dtlSeqNo,@Param("status") String status);
+    public OmProcessDetailHist findByMainSeqNoAndDtlSeqNo(@Param("mainSeqNo") String mainSeqNo,@Param("dtlSeqNo") BigDecimal dtlSeqNo);
 
 }

@@ -89,7 +89,7 @@ public class ProdInfoController {
             //更新批次
             omProcessMainFlow.setDtlSeqNo(dtlSeqNo);
             omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
-            flowManagement.sumProcessInfo(seqNo, userName, "1", dtlSeqNo);
+            flowManagement.sumProcessInfo(seqNo, userName, "1", dtlSeqNo,null,null);
         }
         //记录操作流程
         //有单号，1.获取操作信息（操作序号） 2.组合表中生成新的子单号 3.将子单号信息存入差异信息表
@@ -98,5 +98,31 @@ public class ProdInfoController {
         if ("save".equals(option)) {
             flowManagement.updateFlow(seqNo, "2", userName, "127.0.0.1");
         }
+    }
+
+    /**
+     * 复核，发布流程处理
+     * 通过界面传递的optType(操作类型)3:复核  4:发布
+     * 当为复核操作时： 主流程表（om_process_main_flow）更新状态为3:复核 del_seq_no递增
+     *                  参数操作历史表（om_process_detail_hist）表，插入一条数据del_seq_no递增 status为3：复核
+     * 当为发布操作时： 主流程表（om_process_main_flow）更新状态为4:发布 del_seq_no递增
+     *                  参数操作历史表（om_process_detail_hist）表，插入一条数据del_seq_no递增 status为4：发布
+     * **/
+    @RequestMapping("/tranFlowInfo")
+    public void tranFlowInfo(HttpServletResponse response, @RequestBody Map map) {
+        String mainSeqNo = (String)map.get("mainSeqNo");
+        String userId = (String)map.get("userId");
+        String remark = (String)map.get("remark");
+        String isApproved = (String)map.get("isApproved");
+        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByMainSeqNo(mainSeqNo);
+        //更新主流程表
+        BigDecimal dtlSeqNo = omProcessMainFlow.getDtlSeqNo().add(BigDecimal.ONE);
+        //更新批次,流程状态
+        omProcessMainFlow.setDtlSeqNo(dtlSeqNo);
+        omProcessMainFlow.setMainSeqNo(mainSeqNo);
+        omProcessMainFlow.setStatus((String)map.get("optType"));
+        omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
+        //记录参数操作历史表
+        flowManagement.sumProcessInfo(mainSeqNo, userId, (String)map.get("optType"), dtlSeqNo,remark,isApproved);
     }
 }

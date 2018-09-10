@@ -39,7 +39,7 @@ public class ParaFlowList {
         List<Map> resultList=new ArrayList<>();
        for(OmProcessMainFlow omProcessMainFlow : omProcessMainFlowList){
            Map<String,Object> infoMap=new HashMap<>();
-           OmProcessDetailHist omProcessDetailHist = omProcessDetailHistRepository.findByMainSeqNoAndDtlSeqNoAndStatus(omProcessMainFlow.getMainSeqNo(), BigDecimal.ONE, "1");
+           OmProcessDetailHist omProcessDetailHist = omProcessDetailHistRepository.findByMainSeqNoAndDtlSeqNo(omProcessMainFlow.getMainSeqNo(), BigDecimal.ONE);
            infoMap.put("flowManage", omProcessMainFlow);
            infoMap.put("flowInfo", omProcessDetailHist);
            resultList.add(infoMap);
