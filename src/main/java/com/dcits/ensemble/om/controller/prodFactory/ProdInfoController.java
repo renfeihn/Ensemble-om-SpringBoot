@@ -116,7 +116,7 @@ public class ProdInfoController {
         String isApproved = (String)map.get("isApproved");
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByMainSeqNo(mainSeqNo);
         //更新主流程表
-        BigDecimal dtlSeqNo = omProcessMainFlow.getDtlSeqNo().add(BigDecimal.ONE);
+        BigDecimal dtlSeqNo = BigDecimal.ONE;
         //更新批次,流程状态
         omProcessMainFlow.setDtlSeqNo(dtlSeqNo);
         omProcessMainFlow.setMainSeqNo(mainSeqNo);

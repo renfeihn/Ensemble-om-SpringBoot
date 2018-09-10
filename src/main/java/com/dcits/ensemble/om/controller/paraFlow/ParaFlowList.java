@@ -16,10 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by ligan on 2018/8/28.
@@ -33,19 +30,39 @@ public class ParaFlowList {
     OmProcessDetailHistRepository omProcessDetailHistRepository;
     @Resource
     OmProcessMainFlowRepository omProcessMainFlowRepositorys;
-    //获取交易流程信息
+    //获取交易提交流程信息
     @RequestMapping("/reviewList")
     public @ResponseBody
     Result getFlowList(HttpServletResponse response){
         List<OmProcessMainFlow> omProcessMainFlowList = omProcessMainFlowRepositorys.findAll();
         List<Map> resultList=new ArrayList<>();
        for(OmProcessMainFlow omProcessMainFlow : omProcessMainFlowList){
-           Map<String,Object> infoMap=new HashMap<>();
-           OmProcessDetailHist omProcessDetailHist = omProcessDetailHistRepository.findByMainSeqNoAndDtlSeqNo(omProcessMainFlow.getMainSeqNo(), BigDecimal.ONE);
-           infoMap.put("flowManage", omProcessMainFlow);
-           infoMap.put("flowInfo", omProcessDetailHist);
-           resultList.add(infoMap);
+           Map<String,Object> commitMap= new HashMap<>();
+           //获取提交流程信息
+           OmProcessDetailHist omProcessDetailHistCommit = omProcessDetailHistRepository.findByMainSeqNoAndDtlSeqNoAndStatus(omProcessMainFlow.getMainSeqNo(), omProcessMainFlow.getDtlSeqNo(),omProcessMainFlow.getStatus());
+           commitMap.put("flowManage", omProcessMainFlow);
+           commitMap.put("flowCommitInfo", omProcessDetailHistCommit);
+           resultList.add(commitMap);
        }
       return ResultUtils.success(resultList);
     }
+    //获取交易复核流程信息
+    @RequestMapping("/reviewCheckList")
+    public @ResponseBody
+    Result getCheckFlowList(HttpServletResponse response){
+        List<OmProcessMainFlow> omProcessMainFlowList = omProcessMainFlowRepositorys.findAll();
+        List<Map> resultList=new ArrayList<>();
+        for(OmProcessMainFlow omProcessMainFlow : omProcessMainFlowList){
+            Map<String,Object> checkMap= new HashMap<>();
+            //获取提交流程信息
+            OmProcessDetailHist omProcessDetailHistCheck = omProcessDetailHistRepository.findByMainSeqNoAndDtlSeqNoAndStatus(omProcessMainFlow.getMainSeqNo(), omProcessMainFlow.getDtlSeqNo(),omProcessMainFlow.getStatus());
+            checkMap.put("flowManage", omProcessMainFlow);
+            checkMap.put("flowCheckInfo", omProcessDetailHistCheck);
+            OmProcessDetailHist omProcessDetailHistCommit = omProcessDetailHistRepository.findByMainSeqNoAndDtlSeqNoAndStatus(omProcessMainFlow.getMainSeqNo(), BigDecimal.ONE,"2");
+            checkMap.put("flowCommitInfo", omProcessDetailHistCommit);
+            resultList.add(checkMap);
+        }
+        return ResultUtils.success(resultList);
+    }
+
 }
