@@ -38,7 +38,7 @@ public class FlowManagement {
         * */
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranId(tranName);
         if(omProcessMainFlow !=null&& omProcessMainFlow.getMainSeqNo()!=null){
-            seqNo= appNoByTable(userName,tranName,tranFlow);
+            seqNo= appNoByTable(userName,tranName,tranFlow,"1");
         }else{
             //此处判断如果交易状态为待复核、待发布状态则抛出异常
             seqNo= omProcessMainFlow.getMainSeqNo();
@@ -54,27 +54,27 @@ public class FlowManagement {
     //为多表申请单号
 
     //申请单号
-    public String appNoByTable(String userName,String tranName,String tranFlow){
+    public String appNoByTable(String userName,String tranName,String tranFlow,String status){
         OmProcessMainFlow paraCircleFlow=new OmProcessMainFlow();
         String  seqNo= ResourcesUtils.getDateTimeUuId();
         paraCircleFlow.setMainSeqNo(seqNo);
         paraCircleFlow.setTranId(tranName);
         paraCircleFlow.setTranDesc("产品定义");
-        paraCircleFlow.setStatus("1");
+        paraCircleFlow.setStatus(status);
         paraCircleFlow.setIsTranGroup(tranFlow);
         paraCircleFlow.setDtlSeqNo(BigDecimal.ONE);
         //累加序号
         omProcessMainFlowRepository.saveAndFlush(paraCircleFlow);
-        sumProcessInfo(seqNo,userName,"1",BigDecimal.ONE,null,null);
+        sumProcessInfo(seqNo,userName,status,BigDecimal.ONE,null,null);
         return seqNo;
     }
     //操作信息累加processInfo
-    public void sumProcessInfo(String seqNo,String userName,String operatorType,BigDecimal dtlSeqNo,String remark,String isApproved){
+    public void sumProcessInfo(String seqNo,String userName,String status,BigDecimal dtlSeqNo,String remark,String isApproved){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         String date = sdf.format(new Date());
         OmProcessDetailHist omProcessDetailHist =new OmProcessDetailHist();
         omProcessDetailHist.setMainSeqNo(seqNo);
-        omProcessDetailHist.setStatus(operatorType);
+        omProcessDetailHist.setStatus(status);
         omProcessDetailHist.setUserId(userName);
         omProcessDetailHist.setDtlSeqNo(dtlSeqNo);
         omProcessDetailHist.setTranTime(date);

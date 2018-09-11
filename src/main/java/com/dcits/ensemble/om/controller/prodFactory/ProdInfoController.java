@@ -78,26 +78,26 @@ public class ProdInfoController {
         String userName = (String) map.get("userName");
         String seqNo;
         String option = (String) map.get("option");
+        //根据option设置交易状态  保存(save):2  暂存(temp):1
+        String status = "save".equals(option)?"2":"temp".equals(option)?"1":"";
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranId("MB_PROD_TYPE");
         //无单号，1.申请单号 2.新增记录差异信息 3.根据操作类型更新交易状态
         if (omProcessMainFlow == null || omProcessMainFlow.getMainSeqNo() == null) {
-            seqNo = flowManagement.appNoByTable(userName, "MB_PROD_TYPE", "Y");
+            seqNo = flowManagement.appNoByTable(userName, "MB_PROD_TYPE", "Y",status);
         } else {
             //此处判断如果交易状态为待复核、待发布状态则抛出异常
             seqNo = omProcessMainFlow.getMainSeqNo();
             BigDecimal dtlSeqNo = omProcessMainFlow.getDtlSeqNo().add(BigDecimal.ONE);
             //更新批次
             omProcessMainFlow.setDtlSeqNo(dtlSeqNo);
+            omProcessMainFlow.setStatus(status);
             omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
-            flowManagement.sumProcessInfo(seqNo, userName, "1", dtlSeqNo,null,null);
+            flowManagement.sumProcessInfo(seqNo, userName, status, dtlSeqNo,null,null);
         }
         //记录操作流程
         //有单号，1.获取操作信息（操作序号） 2.组合表中生成新的子单号 3.将子单号信息存入差异信息表
         differenceInfo.insertProdDifferenceInfo(map, seqNo);
-        //根据option实际选项，操作值
-        if ("save".equals(option)) {
-            flowManagement.updateFlow(seqNo, "2", userName, "127.0.0.1");
-        }
+
     }
 
     /**
