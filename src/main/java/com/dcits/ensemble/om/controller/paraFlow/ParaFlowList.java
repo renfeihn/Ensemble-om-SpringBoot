@@ -34,7 +34,7 @@ public class ParaFlowList {
     @RequestMapping("/reviewList")
     public @ResponseBody
     Result getFlowList(HttpServletResponse response){
-        List<OmProcessMainFlow> omProcessMainFlowList = omProcessMainFlowRepositorys.findAll();
+        List<OmProcessMainFlow> omProcessMainFlowList = omProcessMainFlowRepositorys.findByStatus("2");
         List<Map> resultList=new ArrayList<>();
        for(OmProcessMainFlow omProcessMainFlow : omProcessMainFlowList){
            Map<String,Object> commitMap= new HashMap<>();

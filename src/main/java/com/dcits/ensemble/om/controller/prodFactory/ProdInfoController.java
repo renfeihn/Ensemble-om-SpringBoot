@@ -80,7 +80,7 @@ public class ProdInfoController {
         String option = (String) map.get("option");
         //根据option设置交易状态  保存(save):2  暂存(temp):1
         String status = "save".equals(option)?"2":"temp".equals(option)?"1":"";
-        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranId("MB_PROD_TYPE");
+        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranIdAndStatus("MB_PROD_TYPE","1");
         //无单号，1.申请单号 2.新增记录差异信息 3.根据操作类型更新交易状态
         if (omProcessMainFlow == null || omProcessMainFlow.getMainSeqNo() == null) {
             seqNo = flowManagement.appNoByTable(userName, "MB_PROD_TYPE", "Y",status);
@@ -105,11 +105,7 @@ public class ProdInfoController {
     /**
      * 复核，发布流程处理
      * 通过界面传递的optType(操作类型)3:复核  4:发布
-     * 当为复核操作时： 主流程表（om_process_main_flow）更新状态为3:复核 del_seq_no递增
-     *                  参数操作历史表（om_process_detail_hist）表，插入一条数据del_seq_no递增 status为3：复核
-     * 当为发布操作时： 主流程表（om_process_main_flow）更新状态为4:发布 del_seq_no递增
-     *                  参数操作历史表（om_process_detail_hist）表，插入一条数据del_seq_no递增 status为4：发布
-     * **/
+     **/
     @RequestMapping("/tranFlowInfo")
     public void tranFlowInfo(HttpServletResponse response, @RequestBody Map map) {
         String mainSeqNo = (String)map.get("mainSeqNo");
