@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -17,4 +18,6 @@ public interface OmProcessRecordHistRepository extends JpaRepository<OmProcessRe
     List<OmProcessRecordHist> findByRecSeqNo(@Param("recReqNo")String recSeqNo);
     @Query("select s from OmProcessRecordHist s  where s.tableName = :tableName")
     List<OmProcessRecordHist> searchDiffByTableName(@Param("tableName") String tableName);
+    @Query("select max(s.subSeqNo) from OmProcessRecordHist s  where s.recSeqNo = :recSeqNo")
+    public String findBySubSeqNoMax(@Param("recSeqNo") String recSeqNo);
 }
