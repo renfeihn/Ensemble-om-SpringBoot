@@ -83,7 +83,7 @@ public class ProdInfoController {
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranId("MB_PROD_TYPE");
         //无单号，1.申请单号 2.新增记录差异信息 3.根据操作类型更新交易状态
         if (omProcessMainFlow == null || omProcessMainFlow.getMainSeqNo() == null) {
-            seqNo = flowManagement.appNoByTable(userName, "MB_PROD_TYPE", "Y","1");
+            seqNo = flowManagement.appNoByTable(userName, "MB_PROD_TYPE", "Y",status);
         } else {
             //此处判断如果交易状态为待复核、待发布状态则抛出异常
             seqNo = omProcessMainFlow.getMainSeqNo();
