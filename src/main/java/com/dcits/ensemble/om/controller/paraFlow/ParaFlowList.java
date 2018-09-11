@@ -58,7 +58,7 @@ public class ParaFlowList {
             OmProcessDetailHist omProcessDetailHistCheck = omProcessDetailHistRepository.findByMainSeqNoAndDtlSeqNoAndStatus(omProcessMainFlow.getMainSeqNo(), omProcessMainFlow.getDtlSeqNo(),omProcessMainFlow.getStatus());
             checkMap.put("flowManage", omProcessMainFlow);
             checkMap.put("flowCheckInfo", omProcessDetailHistCheck);
-            OmProcessDetailHist omProcessDetailHistCommit = omProcessDetailHistRepository.findByMainSeqNoAndDtlSeqNoAndStatus(omProcessMainFlow.getMainSeqNo(), BigDecimal.ONE,"2");
+            OmProcessDetailHist omProcessDetailHistCommit = omProcessDetailHistRepository.findByMainSeqNoAndDtlSeqNoAndStatus(omProcessMainFlow.getMainSeqNo(), omProcessMainFlow.getDtlSeqNo(),"2");
             checkMap.put("flowCommitInfo", omProcessDetailHistCommit);
             resultList.add(checkMap);
         }

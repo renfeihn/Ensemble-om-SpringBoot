@@ -83,16 +83,18 @@ public class ProdInfoController {
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranId("MB_PROD_TYPE");
         //无单号，1.申请单号 2.新增记录差异信息 3.根据操作类型更新交易状态
         if (omProcessMainFlow == null || omProcessMainFlow.getMainSeqNo() == null) {
-            seqNo = flowManagement.appNoByTable(userName, "MB_PROD_TYPE", "Y",status);
+            seqNo = flowManagement.appNoByTable(userName, "MB_PROD_TYPE", "Y","1");
         } else {
             //此处判断如果交易状态为待复核、待发布状态则抛出异常
             seqNo = omProcessMainFlow.getMainSeqNo();
             BigDecimal dtlSeqNo = omProcessMainFlow.getDtlSeqNo().add(BigDecimal.ONE);
-            //更新批次
-            omProcessMainFlow.setDtlSeqNo(dtlSeqNo);
+            //暂存状态更新批次
+            if("temp".equals(option)) {
+                omProcessMainFlow.setDtlSeqNo(dtlSeqNo);
+            }
             omProcessMainFlow.setStatus(status);
             omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
-            flowManagement.sumProcessInfo(seqNo, userName, status, dtlSeqNo,null,null);
+            flowManagement.sumProcessInfo(seqNo, userName, status, omProcessMainFlow.getDtlSeqNo(),null,null);
         }
         //记录操作流程
         //有单号，1.获取操作信息（操作序号） 2.组合表中生成新的子单号 3.将子单号信息存入差异信息表
@@ -117,10 +119,6 @@ public class ProdInfoController {
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByMainSeqNo(mainSeqNo);
         if(omProcessMainFlow!=null) {
             String status = "";
-            //更新主流程表
-            BigDecimal dtlSeqNo = BigDecimal.ONE;
-            //更新批次,流程状态
-            omProcessMainFlow.setDtlSeqNo(dtlSeqNo);
             omProcessMainFlow.setMainSeqNo(mainSeqNo);
             if(isApproved.equals("Y")){
                 //发布或复核通过
@@ -130,9 +128,10 @@ public class ProdInfoController {
                 status = "6";
             }
             omProcessMainFlow.setStatus(status);
+            //更新主流程表
             omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
             //记录参数操作历史表
-            flowManagement.sumProcessInfo(mainSeqNo, userId, status, dtlSeqNo, remark, isApproved);
+            flowManagement.sumProcessInfo(mainSeqNo, userId, status, omProcessMainFlow.getDtlSeqNo(), remark, isApproved);
         }
     }
 }
