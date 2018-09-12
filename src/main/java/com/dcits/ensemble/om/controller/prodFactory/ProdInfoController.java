@@ -3,7 +3,6 @@ package com.dcits.ensemble.om.controller.prodFactory;
 import com.alibaba.fastjson.JSON;
 import com.dcits.ensemble.om.controller.model.Result;
 import com.dcits.ensemble.om.controller.model.ResultUtils;
-import com.dcits.ensemble.om.model.RequestBean;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessMainFlow;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
