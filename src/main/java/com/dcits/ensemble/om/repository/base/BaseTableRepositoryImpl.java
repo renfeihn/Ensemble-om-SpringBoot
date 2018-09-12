@@ -1,6 +1,7 @@
 package com.dcits.ensemble.om.repository.base;
 
 
+import com.dcits.ensemble.om.table.DbTable;
 import org.hibernate.SQLQuery;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Service;
@@ -18,12 +19,16 @@ import java.util.Map;
 public class BaseTableRepositoryImpl {
     @PersistenceContext
     private EntityManager em;
-    @SuppressWarnings("unchecked")
+        @SuppressWarnings("unchecked")
     public List<Map> findAllTable(String tableName){
         String dataSql = "select * from "+tableName+" where 1 = 1";
         Query dataQuery = em.createNativeQuery(dataSql);
         dataQuery.unwrap(SQLQuery.class).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
         List<Map> data = dataQuery.getResultList();
         return data;
+    }
+    public void insertTable(DbTable dbTable){
+        String tableName=dbTable.getCode();
+
     }
 }
