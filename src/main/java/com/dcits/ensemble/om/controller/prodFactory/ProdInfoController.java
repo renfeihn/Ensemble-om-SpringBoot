@@ -75,6 +75,7 @@ public class ProdInfoController {
      * @param response
      */
     @RequestMapping("/saveProdInfo")
+    @ResponseBody
     public Result saveProdInfo(HttpServletResponse response, @RequestBody Map map) {
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         String userName = (String) map.get("userName");
@@ -109,6 +110,7 @@ public class ProdInfoController {
      * 通过界面传递的optType(操作类型)3:复核  4:发布
      **/
     @RequestMapping("/tranFlowInfo")
+    @ResponseBody
     public Result tranFlowInfo(HttpServletResponse response, @RequestBody Map map) {
         String mainSeqNo = (String)map.get("mainSeqNo");
         String userId = (String)map.get("userId");
