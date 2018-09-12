@@ -1,6 +1,6 @@
 package com.dcits.ensemble.om.repository.base;
 
-import com.dcits.ensemble.om.model.BaseTable;
+
 import org.hibernate.SQLQuery;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Service;
