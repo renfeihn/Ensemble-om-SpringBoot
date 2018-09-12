@@ -37,8 +37,9 @@ public class DifferenceInfo {
        //2记录组合表信息（被修改的表）
        //3变更信息以blob形式存入表
           //产品
-       prodTran((Map) mbProdInfo.get("prodType"), reqNo, operatorNo);
        this.optionType=(String)mbProdInfo.get("optionType");
+       prodTran((Map) mbProdInfo.get("prodType"), reqNo, operatorNo);
+
        //产品参数
        prodDefineTran(ResourcesUtils.getMap(mbProdInfo.get("prodDefines")), reqNo, operatorNo);
        Map eventInfo=(Map) mbProdInfo.get("mbEventInfos");
