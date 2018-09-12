@@ -1,6 +1,8 @@
 package com.dcits.ensemble.om.controller.prodFactory;
 
 import com.alibaba.fastjson.JSON;
+import com.dcits.ensemble.om.controller.model.Result;
+import com.dcits.ensemble.om.controller.model.ResultUtils;
 import com.dcits.ensemble.om.model.dbmodel.MbProdType;
 import com.dcits.ensemble.om.repository.prodFactory.MbProdTypeRepository;
 import org.springframework.stereotype.Controller;
@@ -25,10 +27,10 @@ public class ProdTypeListController {
     @RequestMapping("/getProdListByClass")
     public
     @ResponseBody
-    String getProdList(HttpServletResponse response,@RequestBody Map map){
+    Result getProdList(HttpServletResponse response,@RequestBody Map map){
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         String prodClass=(String)map.get("prodClass");
         List<MbProdType> mbProdTypeList= mbProdTypeRepository.findByProdClass(prodClass);
-        return  JSON.toJSONString(mbProdTypeList);
+        return   ResultUtils.success(JSON.toJSONString(mbProdTypeList));
     }
 }

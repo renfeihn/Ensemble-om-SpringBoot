@@ -11,7 +11,9 @@ public class ResultUtils {
     public static Result success(Object data) {
         return new Result<>(ResultCode.SUCCESS, data);
     }
-
+    public static Result success(){
+        return new Result<>(ResultCode.SUCCESS);
+    }
     public static Result warn(ResultCode resultCode, String msg) {
         return new Result<>(resultCode, msg);
     }

@@ -1,6 +1,8 @@
 package com.dcits.ensemble.om.controller.prodFactory;
 
 import com.alibaba.fastjson.JSON;
+import com.dcits.ensemble.om.controller.model.Result;
+import com.dcits.ensemble.om.controller.model.ResultUtils;
 import com.dcits.ensemble.om.model.RequestBean;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessMainFlow;
@@ -42,7 +44,7 @@ public class ProdInfoController {
     @ApiOperation(value = "产品信息", notes = "获取产品明细")
     @RequestMapping("/getProdInfo")
     @ResponseBody
-    public String getProdInfo(HttpServletResponse response, @RequestParam(value = "prodType", required = false) String prodType) {
+    public Result getProdInfo(HttpServletResponse response, @RequestParam(value = "prodType", required = false) String prodType) {
         //Map map = requestBean.getBody();
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         Map responseMap = new HashMap<>();
@@ -61,7 +63,7 @@ public class ProdInfoController {
         responseMap.put("prodInfo", mbProdInfo.toString());
         if (omProcessRecordHistList != null)
             responseMap.put("diff", omProcessRecordHistList);
-        return JSON.toJSONString(mbProdInfo);
+        return ResultUtils.success(JSON.toJSONString(mbProdInfo));
     }
 
     /**
@@ -74,7 +76,8 @@ public class ProdInfoController {
      * @param response
      */
     @RequestMapping("/saveProdInfo")
-    public void saveProdInfo(HttpServletResponse response, @RequestBody Map map) {
+    public Result saveProdInfo(HttpServletResponse response, @RequestBody Map map) {
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
         String userName = (String) map.get("userName");
         String seqNo;
         String option = (String) map.get("option");
@@ -99,7 +102,7 @@ public class ProdInfoController {
         //记录操作流程
         //有单号，1.获取操作信息（操作序号） 2.组合表中生成新的子单号 3.将子单号信息存入差异信息表
         differenceInfo.insertProdDifferenceInfo(map, seqNo);
-
+        return ResultUtils.success();
     }
 
     /**
@@ -107,7 +110,7 @@ public class ProdInfoController {
      * 通过界面传递的optType(操作类型)3:复核  4:发布
      **/
     @RequestMapping("/tranFlowInfo")
-    public void tranFlowInfo(HttpServletResponse response, @RequestBody Map map) {
+    public Result tranFlowInfo(HttpServletResponse response, @RequestBody Map map) {
         String mainSeqNo = (String)map.get("mainSeqNo");
         String userId = (String)map.get("userId");
         String remark = (String)map.get("remark");
@@ -129,5 +132,6 @@ public class ProdInfoController {
             //记录参数操作历史表
             flowManagement.sumProcessInfo(mainSeqNo, userId, status, omProcessMainFlow.getDtlSeqNo(), remark, isApproved);
         }
+        return ResultUtils.success();
     }
 }
