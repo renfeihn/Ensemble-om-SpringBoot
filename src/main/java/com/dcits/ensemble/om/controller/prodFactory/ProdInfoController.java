@@ -62,7 +62,7 @@ public class ProdInfoController {
         responseMap.put("prodInfo", mbProdInfo.toString());
         if (omProcessRecordHistList != null)
             responseMap.put("diff", omProcessRecordHistList);
-        return ResultUtils.success(JSON.toJSONString(mbProdInfo));
+        return ResultUtils.success(mbProdInfo);
     }
 
     /**

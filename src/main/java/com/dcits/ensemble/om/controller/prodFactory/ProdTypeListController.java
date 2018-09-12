@@ -31,6 +31,6 @@ public class ProdTypeListController {
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         String prodClass=(String)map.get("prodClass");
         List<MbProdType> mbProdTypeList= mbProdTypeRepository.findByProdClass(prodClass);
-        return   ResultUtils.success(JSON.toJSONString(mbProdTypeList));
+        return   ResultUtils.success(mbProdTypeList);
     }
 }
