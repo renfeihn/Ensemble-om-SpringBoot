@@ -2,14 +2,12 @@ package com.dcits.ensemble.om.controller.prodFactory;
 
 import com.dcits.ensemble.om.controller.model.Result;
 import com.dcits.ensemble.om.controller.model.ResultUtils;
-import com.dcits.ensemble.om.model.dbmodel.MbProdType;
-import com.dcits.ensemble.om.model.dbmodel.OmProcessMainFlow;
-import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
-import com.dcits.ensemble.om.model.dbmodel.OmProcessRelationHist;
+import com.dcits.ensemble.om.model.dbmodel.*;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessMainFlowRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRelationHistRepository;
+import com.dcits.ensemble.om.repository.prodFactory.MbProdDefineRepository;
 import com.dcits.ensemble.om.repository.prodFactory.MbProdTypeRepository;
 import com.dcits.ensemble.om.service.paraFlow.ParaDifferenceManagement;
 import com.dcits.ensemble.om.service.prodFactory.MbProdInfoService;
@@ -17,10 +15,12 @@ import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,7 +42,8 @@ public class ProdDiffController {
     private OmProcessMainFlowRepository omProcessMainFlowRepository;
     @Resource
     private OmProcessRelationHistRepository omProcessRelationHistRepository;
-
+    @Resource
+    MbProdDefineRepository mbProdDefineRepository;
     @RequestMapping("/getProdDiff")
     public
     @ResponseBody Result getProdDiff(HttpServletResponse response, @RequestBody Map map) {
@@ -103,5 +104,49 @@ public class ProdDiffController {
         return ResultUtils.success(responseMap);
     }
 
+
+    //产品发布时，通过交易主单号获取产品所属模块信息
+    @RequestMapping("/getModuleByFlowCode")
+    @ResponseBody
+    public Result getModule(HttpServletResponse response, @RequestParam(value = "code", required = true) String code) {
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
+        Map responseMap = new HashMap<>();
+        List<OmProcessRecordHist> omProcessRecordHists = omProcessRecordHistRepository.findByMainSeqNo(code);
+        String prodType = "";
+        String sourceModule = "";
+        for(OmProcessRecordHist omProcessRecordHist: omProcessRecordHists){
+            //获取差异数据中prodType
+            if(omProcessRecordHist.getTableName().equals("MB_PROD_TYPE")){
+                JSONObject pk = JSONObject.fromObject(omProcessRecordHist.getPkAndValue());
+                prodType = pk.get("PROD_TYPE").toString();
+            }
+            //差异中存在source_module 时候 直接获取
+            if(omProcessRecordHist.getTableName().equals("MB_PROD_DEFINE")){
+                String str= null;
+                try {
+                    str = new String(omProcessRecordHist.getDmlData(),"utf-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                JSONObject newValue = JSONObject.fromObject(str);
+                if(newValue.get("assembleId").equals("SOURCE_MODULE")){
+                    sourceModule = newValue.get("attrValue").toString();
+                }
+            }
+        }
+        if(!"".equals(sourceModule)){
+            //差异数据中存在 直接返回
+            responseMap.put("SOURCE_MODULE",sourceModule);
+        }else{
+            //通过prodType查询mb_prod_define表获取
+            MbProdDefine mbProdDefine = mbProdDefineRepository.findByProdTypeAndAssembleId(prodType,"SOURCE_MODULE");
+            if(mbProdDefine!=null) {
+                //产品source_module已存在于数据库时候
+                sourceModule = mbProdDefine.getAttrValue();
+                responseMap.put("SOURCE_MODULE",sourceModule);
+            }
+        }
+            return ResultUtils.success(responseMap);
+    }
 
 }

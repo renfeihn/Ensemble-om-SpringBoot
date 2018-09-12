@@ -229,20 +229,22 @@ public class DifferenceProdInfo {
                             JSONObject keyValue = new JSONObject();
                             String newEventType = eventType.split("_")[0]+"_"+mbProdType.getProdType().toString();
                             MbEventAttr mbEventAttr = mbEventAttrRepository.findByEventTypeAndAssembleId(newEventType,assembleId);
-                            Map infos =  ResourcesUtils.getMap(mbProdInfo.get("mbEventInfos"));
-                            Map event =  ResourcesUtils.getMap(infos.get(eventType));
-                            Map eventAttrs = ResourcesUtils.getMap(event.get("mbEventAttrs"));
-                            Map attr = ResourcesUtils.getMap(eventAttrs.get(attrOptPerm.get("key").toString()));
-                            Map newData = (Map) attr.get("newData");
-                            newData.put("eventType",newEventType);
-                            newData.put("seqNo",mbEventAttr.getSeqNo());
-                            attr.put("newData",newData);
-                            attr.put("tableName","MB_EVENT_ATTR");
-                            attr.put("optType","D");
-                            keyValue.put("EVENT_TYPE", newEventType);
-                            keyValue.put("SEQ_NO", mbEventAttr.getSeqNo());
-                            this.eventType = newEventType;
-                            saveProdParaDifference(subSeqNo, attr, keyValue, seqNo);
+                            if(mbEventAttr != null) {
+                                Map infos = ResourcesUtils.getMap(mbProdInfo.get("mbEventInfos"));
+                                Map event = ResourcesUtils.getMap(infos.get(eventType));
+                                Map eventAttrs = ResourcesUtils.getMap(event.get("mbEventAttrs"));
+                                Map attr = ResourcesUtils.getMap(eventAttrs.get(attrOptPerm.get("key").toString()));
+                                Map newData = (Map) attr.get("newData");
+                                newData.put("eventType", newEventType);
+                                newData.put("seqNo", mbEventAttr.getSeqNo());
+                                attr.put("newData", newData);
+                                attr.put("tableName", "MB_EVENT_ATTR");
+                                attr.put("optType", "D");
+                                keyValue.put("EVENT_TYPE", newEventType);
+                                keyValue.put("SEQ_NO", mbEventAttr.getSeqNo());
+                                this.eventType = newEventType;
+                                saveProdParaDifference(subSeqNo, attr, keyValue, seqNo);
+                            }
                         }
                     }
                 }
