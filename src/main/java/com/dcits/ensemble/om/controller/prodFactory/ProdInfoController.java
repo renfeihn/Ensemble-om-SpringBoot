@@ -116,23 +116,10 @@ public class ProdInfoController {
         String userId = (String)map.get("userId");
         String remark = (String)map.get("remark");
         String isApproved = (String)map.get("isApproved");
-        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByMainSeqNo(mainSeqNo);
-        if(omProcessMainFlow!=null) {
-            String status = "";
-            omProcessMainFlow.setMainSeqNo(mainSeqNo);
-            if(isApproved.equals("Y")){
-                //发布或复核通过
-                status = (String) map.get("optType");
-            }else{
-                //发布和复核驳回
-                status = "6";
-            }
-            omProcessMainFlow.setStatus(status);
-            //更新主流程表
-            omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
-            //记录参数操作历史表
-            flowManagement.sumProcessInfo(mainSeqNo, userId, status, omProcessMainFlow.getDtlSeqNo(), remark, isApproved);
-        }
+       String optType= (String) map.get("optType");
+
+        //只需变更流程信息，登记流程的变动
+       flowManagement.updateFlowOnly(mainSeqNo,userId,remark,isApproved,optType);
         return ResultUtils.success();
     }
 }

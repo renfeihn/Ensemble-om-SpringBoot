@@ -61,52 +61,46 @@ public class DifferenceInfo {
 
     //事件指标
     public void eventPartTran(Map prodMap,String seqNo,String operatorNo){
-        if(prodMap.get("newData")!=null ) {
-            Map newData=(Map)prodMap.get("newData");
-            if(newData.size()>0) {
+            if(prodMap.size()>0) {
                 //记录组合
                 this.eventPartNo = this.eventPartNo==null?processCombManagement.saveCombInfo(seqNo, operatorNo,"MB_EVENT_PART"):this.eventPartNo;
-                prodMap.put("tableName", "MB_EVENT_PART");
                 JSONObject keyValue = new JSONObject();
                 keyValue.put("EVENT_TYPE", this.eventType);
-                for(Object key:newData.keySet()) {
-                    Map<String, Map> eventOne = (Map) newData.get(key);
-                    if(eventOne.size()>0) {
+                for(Object key:prodMap.keySet()) {
+                    Map<String, Object> eventOne = (Map) prodMap.get(key);
                     keyValue.put("ASSEMBLE_ID", key);
                         for(Object keyAttr:eventOne.keySet()) {
+
+                            Map<String, Object> eventAttr = (Map) eventOne.get(keyAttr);
+                            eventAttr.put("tableName", "MB_EVENT_PART");
+                            Map<String,Object> newData=(Map)eventAttr.get("newData");
                             keyValue.put("ATTR_KEY", keyAttr);
-                            saveProdParaDifference(this.eventPartNo, prodMap, keyValue, seqNo);
+                            saveProdParaDifference(this.eventPartNo, eventAttr, keyValue, seqNo);
                         }
                     }
-                }
-            }
         }
     }
     //事件参数
     public void eventAttrTran(Map prodMap,String seqNo,String operatorNo){
-        if(prodMap.get("newData")!=null ) {
-            Map newData=(Map)prodMap.get("newData");
-            if(newData.size()>0) {
+            if(prodMap.size()>0) {
                 //记录组合
                 this.eventAttrNo = this.eventAttrNo==null?processCombManagement.saveCombInfo(seqNo, operatorNo,"MB_EVENT_ATTR"):this.eventAttrNo;
-                prodMap.put("tableName", "MB_EVENT_ATTR");
                 JSONObject keyValue = new JSONObject();
                 keyValue.put("EVENT_TYPE",this.eventType);
-                for(Object key:newData.keySet()) {
-                    Map<String,Map> eventOne=(Map)newData.get(key);
+                for(Object key:prodMap.keySet()) {
+                    Map<String,Object> eventOne=(Map)prodMap.get(key);
+                    Map<String,Object> newData=(Map)eventOne.get("newData");
                     if(eventOne.size()>0) {
-                        keyValue.put("SEQ_NO", eventOne.get("seqNo"));
-                        saveProdParaDifference(this.eventAttrNo, prodMap, keyValue, seqNo);
+                        keyValue.put("SEQ_NO", newData.get("seqNo"));
+                        eventOne.put("tableName", "MB_EVENT_ATTR");
+                        saveProdParaDifference(this.eventAttrNo, eventOne, keyValue, seqNo);
                     }
                 }
             }
-        }
     }
     //事件类型
     public void eventTypeTran(Map prodMap,String seqNo,String operatorNo){
-        if(prodMap.get("newData")!=null ) {
-            Map newData=(Map)prodMap.get("newData");
-            if(newData.size()>0) {
+            if(prodMap.size()>0) {
                 //记录组合
                this.eventTypeNo = this.eventTypeNo==null?processCombManagement.saveCombInfo(seqNo, operatorNo,"EVENT_TYPE"):this.eventTypeNo;
                 prodMap.put("tableName", "MB_EVENT_TYPE");
@@ -114,25 +108,23 @@ public class DifferenceInfo {
                 keyValue.put("EVENT_TYPE", this.eventType);
                 saveProdParaDifference(this.eventTypeNo, prodMap, keyValue, seqNo);
             }
-        }
     }
     //产品参数
     public void prodDefineTran(Map prodMap,String seqNo,String operatorNo){
-        if(prodMap.get("newData")!=null ) {
-            Map newData=(Map)prodMap.get("newData");
-            if(newData.size()>0) {
+            if(prodMap.size()>0) {
                 //记录组合
                 String subSeqNo = processCombManagement.saveCombInfo(seqNo, operatorNo,"MB_PROD_DEFINE");
-                prodMap.put("tableName", "MB_PROD_DEFINE");
+
                 JSONObject keyValue = new JSONObject();
-                for (Object key : newData.keySet()) {
-                    Map define=(Map) newData.get(key);
+                for (Object key : prodMap.keySet()) {
+                    Map define=(Map) prodMap.get(key);
+                    Map newData=(Map)  define.get("newData");
                     keyValue.put("PROD_TYPE", this.prodType);
-                    keyValue.put("SEQ_NO", define.get("seqNo"));
-                    saveProdParaDifference(subSeqNo, prodMap, keyValue, seqNo);
+                    keyValue.put("SEQ_NO", newData.get("seqNo"));
+                    define.put("tableName", "MB_PROD_DEFINE");
+                    saveProdParaDifference(subSeqNo, define, keyValue, seqNo);
                 }
             }
-        }
     }
     //产品
     public void prodTran(Map prodMap,String seqNo,String operatorNo){
@@ -156,8 +148,19 @@ public class DifferenceInfo {
     //拿新申请的单号组织操作数据存入paraDifferenceCheckPublish表
     public void saveProdParaDifference(String seqNo,Map map,JSONObject keyValue,String mainSeqNo){
         OmProcessRecordHist omProcessRecordHist =new OmProcessRecordHist();
-        String dataDui=ResourcesUtils.getJsonString(map.get("newData"));
-        String oldDui=ResourcesUtils.getJsonString(map.get("oldData"));
+        Map newData= (Map)map.get("newData");
+        Map oldData= (Map)map.get("oldData");
+        if(newData.size()==0&&oldData.size()==0){
+            return;
+        }
+        if(newData.get("prodType")!=null) {
+            newData.put("prodType", this.prodType);
+        }
+        if(newData.get("eventType")!=null) {
+            newData.put("eventType", this.eventType);
+        }
+        String dataDui=ResourcesUtils.getJsonString(newData);
+        String oldDui=ResourcesUtils.getJsonString(oldData);
         String tableName=(String)map.get("tableName");
         byte[] tmpDataDui;
         byte[] tmpOldDui;

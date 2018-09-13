@@ -87,4 +87,24 @@ public class FlowManagement {
         omProcessMainFlowRepository.updateParaStatus(reqNo, status);
         //更新circle_info表信息
     }
+    //只更改所有流程信息
+    public void updateFlowOnly(String mainSeqNo,String userId,String remark,String isApproved,String optType){
+        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByMainSeqNo(mainSeqNo);
+        if(omProcessMainFlow!=null) {
+            String status = "";
+            omProcessMainFlow.setMainSeqNo(mainSeqNo);
+            if(isApproved.equals("Y")){
+                //发布或复核通过
+                status = optType;
+            }else{
+                //发布和复核驳回
+                status = "6";
+            }
+            omProcessMainFlow.setStatus(status);
+            //更新主流程表
+            omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
+            //记录参数操作历史表
+            sumProcessInfo(mainSeqNo, userId, status, omProcessMainFlow.getDtlSeqNo(), remark, isApproved);
+        }
+    }
 }
