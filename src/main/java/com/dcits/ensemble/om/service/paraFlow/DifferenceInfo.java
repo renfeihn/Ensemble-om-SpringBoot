@@ -44,6 +44,9 @@ public class DifferenceInfo {
        if(eventInfo==null){
            return;
        }
+     eventTypeNo=null;
+     eventPartNo=null;
+     eventAttrNo=null;
      for (Object key : eventInfo.keySet()) {
          Map<String,Map> eventOne=(Map)eventInfo.get(key);
          String eventType=(String)key;
@@ -136,8 +139,15 @@ public class DifferenceInfo {
                 String subSeqNo = processCombManagement.saveCombInfo(seqNo, operatorNo,"MB_PROD_TYPE");
                 prodMap.put("tableName", "MB_PROD_TYPE");
                 JSONObject keyValue = new JSONObject();
-                keyValue.put("PROD_TYPE", newData.get("prodType"));
-                this.prodType=(String)newData.get("prodType");
+                if(newData.get("prodType")!=null) {
+                    keyValue.put("PROD_TYPE", newData.get("prodType"));
+                    this.prodType=(String)newData.get("prodType");
+                }else{
+                    Map oldData=(Map)prodMap.get("oldData");
+                    keyValue.put("PROD_TYPE", oldData.get("prodType"));
+                    this.prodType=(String)oldData.get("prodType");
+                }
+
                 saveProdParaDifference(subSeqNo, prodMap, keyValue, seqNo);
             }
         }
@@ -164,12 +174,10 @@ public class DifferenceInfo {
         String tableName=(String)map.get("tableName");
         byte[] tmpDataDui;
         byte[] tmpOldDui;
-        byte[] tmpKeyValue;
         try {
             tmpDataDui =dataDui.getBytes("UTF-8");
-            tmpOldDui =oldDui.getBytes("UTF-8");
-            tmpKeyValue=keyValue.toString().getBytes("UTF-8");
-            omProcessRecordHist.setPkAndValue(tmpKeyValue);
+            tmpOldDui = oldDui.getBytes("UTF-8");
+            omProcessRecordHist.setPkAndValue(keyValue.toString());
             omProcessRecordHist.setDmlData(tmpDataDui);
             omProcessRecordHist.setDmlOldData(tmpOldDui);
         }catch (UnsupportedEncodingException e){

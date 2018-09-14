@@ -19,7 +19,7 @@ public class OmProcessRecordHist {
 
     }
 
-    public OmProcessRecordHist(String recSeqNo, int subSeqNo, String mainSeqNo, String tableName, byte[] pkAndValue, String dmlType, byte[] dmlData, byte[] dmlOldData) {
+    public OmProcessRecordHist(String recSeqNo, int subSeqNo, String mainSeqNo, String tableName, String pkAndValue, String dmlType, byte[] dmlData, byte[] dmlOldData) {
         this.recSeqNo = recSeqNo;
         this.subSeqNo = subSeqNo;
         this.mainSeqNo = mainSeqNo;
@@ -41,7 +41,7 @@ public class OmProcessRecordHist {
     @Column(name="table_name")
     private String tableName;
     @Column(name="pk_and_value")
-    private byte[] pkAndValue;
+    private String pkAndValue;
     @Column(name="dml_type")
     private String dmlType;
     @Column(name="dml_data")
@@ -56,7 +56,7 @@ public class OmProcessRecordHist {
                 ", subSeqNo=" + subSeqNo +
                 ", mainSeqNo='" + mainSeqNo + '\'' +
                 ", tableName='" + tableName + '\'' +
-                ", pkAndValue=" + Arrays.toString(pkAndValue) +
+                ", pkAndValue=" + pkAndValue +
                 ", dmlType='" + dmlType + '\'' +
                 ", dmlData=" + Arrays.toString(dmlData) +
                 ", dmlOldData=" + Arrays.toString(dmlOldData) +

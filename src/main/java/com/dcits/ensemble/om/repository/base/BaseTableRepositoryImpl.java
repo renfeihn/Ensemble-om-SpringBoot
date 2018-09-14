@@ -36,6 +36,47 @@ public class BaseTableRepositoryImpl {
     }
     @Modifying
     @Transactional
+    public void updateTable(String tableName, JSONObject dataMap,String pkValue){
+        String space=" ";
+        String equal="=";
+        String mark="?";
+        String comm=",";
+        String and="and";
+        JSONObject pkValueJson=JSONObject.fromObject(pkValue);
+        StringBuffer sqlStr=new StringBuffer("update"+space);
+        sqlStr.append(tableName+space+"set"+space);
+        for(Object data:dataMap.keySet()){
+            Object value=dataMap.get(data);
+            if(pkValueJson.get(data)==null&&value!=null&&!"null".equals(value.toString())) {
+                    String columnName = ResourcesUtils.camelToUnderline(data.toString());
+                    sqlStr.append(columnName + equal + mark + comm);
+            }
+        }
+        sqlStr.deleteCharAt(sqlStr.length() - 1);
+        sqlStr.append(space+"where");
+        for(Object key:pkValueJson.keySet()){
+            Object value = dataMap.get(key);
+            sqlStr.append(space+key + equal  + mark + and);
+        }
+        sqlStr.delete(sqlStr.length() - 3, sqlStr.length() );
+        Query dataQuery = em.createNativeQuery(sqlStr.toString());
+        int i=1;
+        for(Object data:dataMap.keySet()) {
+            Object value=dataMap.get(data);
+            if(value!=null&&!"null".equals(value.toString())) {
+                dataQuery.setParameter(i, value);
+                i++;
+            }
+        }
+        for(Object key:pkValueJson.keySet()){
+            Object value=pkValueJson.get(key);
+            dataQuery.setParameter(i, value);
+            i++;
+        }
+        dataQuery.executeUpdate();
+    };
+    @Modifying
+    @Transactional
     public void insertTable(String tableName, JSONObject dataMap){
         String space=" ";
         String left="(";

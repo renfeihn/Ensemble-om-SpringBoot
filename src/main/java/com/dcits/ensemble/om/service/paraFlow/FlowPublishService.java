@@ -31,10 +31,10 @@ public class FlowPublishService {
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByMainSeqNo(mainSeqNo);
         List<OmProcessRelationHist> omProcessRelationHistList=omProcessRelationHistRepository.findByMainSeqNoAndDtlSeqNo(mainSeqNo,omProcessMainFlow.getDtlSeqNo().toString());
         for(OmProcessRelationHist omProcessRelationHist:omProcessRelationHistList){
-           insert(omProcessRelationHist.getRecSeqNo());
+           save(omProcessRelationHist.getRecSeqNo());
         }
     }
-    public void insert(String recSeqNo){
+    public void save(String recSeqNo){
         List<OmProcessRecordHist> omProcessRecordHists=  omProcessRecordHistRepository.findByRecSeqNo(recSeqNo);
         for(OmProcessRecordHist omProcessRecordHist:omProcessRecordHists){
             String str= null;
@@ -44,7 +44,11 @@ public class FlowPublishService {
                 e.printStackTrace();
             }
             JSONObject myJson = JSONObject.fromObject(str);
+            if("I".equals(omProcessRecordHist.getDmlType()))
             baseTableRepositoryImpl.insertTable(omProcessRecordHist.getTableName(),myJson);
+            else if("U".equals(omProcessRecordHist.getDmlType())){
+                baseTableRepositoryImpl.updateTable(omProcessRecordHist.getTableName(),myJson,omProcessRecordHist.getPkAndValue());
+            }
         }
 
     }
