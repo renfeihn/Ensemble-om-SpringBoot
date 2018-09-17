@@ -38,7 +38,7 @@ public class FlowManagement {
         * */
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranId(tranName);
         if(omProcessMainFlow !=null&& omProcessMainFlow.getMainSeqNo()!=null){
-            seqNo= appNoByTable(userName,tranName,tranFlow);
+            seqNo= appNoByTable(userName,tranName,tranFlow,"1");
         }else{
             //此处判断如果交易状态为待复核、待发布状态则抛出异常
             seqNo= omProcessMainFlow.getMainSeqNo();
@@ -54,35 +54,57 @@ public class FlowManagement {
     //为多表申请单号
 
     //申请单号
-    public String appNoByTable(String userName,String tranName,String tranFlow){
+    public String appNoByTable(String userName,String tranName,String tranFlow,String status){
         OmProcessMainFlow paraCircleFlow=new OmProcessMainFlow();
         String  seqNo= ResourcesUtils.getDateTimeUuId();
         paraCircleFlow.setMainSeqNo(seqNo);
         paraCircleFlow.setTranId(tranName);
         paraCircleFlow.setTranDesc("产品定义");
-        paraCircleFlow.setStatus("1");
+        paraCircleFlow.setStatus(status);
         paraCircleFlow.setIsTranGroup(tranFlow);
         paraCircleFlow.setDtlSeqNo(BigDecimal.ONE);
         //累加序号
         omProcessMainFlowRepository.saveAndFlush(paraCircleFlow);
-        sumProcessInfo(seqNo,userName,"1",BigDecimal.ONE);
+        sumProcessInfo(seqNo,userName,status,BigDecimal.ONE,null,null);
         return seqNo;
     }
     //操作信息累加processInfo
-    public void sumProcessInfo(String seqNo,String userName,String operatorType,BigDecimal dtlSeqNo){
+    public void sumProcessInfo(String seqNo,String userName,String status,BigDecimal dtlSeqNo,String remark,String isApproved){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         String date = sdf.format(new Date());
         OmProcessDetailHist omProcessDetailHist =new OmProcessDetailHist();
         omProcessDetailHist.setMainSeqNo(seqNo);
-        omProcessDetailHist.setStatus(operatorType);
+        omProcessDetailHist.setStatus(status);
         omProcessDetailHist.setUserId(userName);
         omProcessDetailHist.setDtlSeqNo(dtlSeqNo);
         omProcessDetailHist.setTranTime(date);
+        omProcessDetailHist.setRemark(remark);
+        omProcessDetailHist.setIsApproved(isApproved);
         omProcessDetailHistRepository.saveAndFlush(omProcessDetailHist);
     }
     //更新操作流程
     public void updateFlow(String reqNo,String status,String userName,String ipLoc) {
         omProcessMainFlowRepository.updateParaStatus(reqNo, status);
         //更新circle_info表信息
+    }
+    //只更改所有流程信息
+    public void updateFlowOnly(String mainSeqNo,String userId,String remark,String isApproved,String optType){
+        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByMainSeqNo(mainSeqNo);
+        if(omProcessMainFlow!=null) {
+            String status = "";
+            omProcessMainFlow.setMainSeqNo(mainSeqNo);
+            if(isApproved.equals("Y")){
+                //发布或复核通过
+                status = optType;
+            }else{
+                //发布和复核驳回
+                status = "6";
+            }
+            omProcessMainFlow.setStatus(status);
+            //更新主流程表
+            omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
+            //记录参数操作历史表
+            sumProcessInfo(mainSeqNo, userId, status, omProcessMainFlow.getDtlSeqNo(), remark, isApproved);
+        }
     }
 }
