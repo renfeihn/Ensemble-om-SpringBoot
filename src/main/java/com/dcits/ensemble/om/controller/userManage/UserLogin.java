@@ -8,15 +8,13 @@ import com.dcits.ensemble.om.model.dbmodel.system.WebUser;
 import com.dcits.ensemble.om.service.userManage.WebUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -31,10 +29,13 @@ public class UserLogin {
     @Autowired
     private WebUserService webUserService;
 
-    @ApiOperation(value = "用户登录验证", notes = "用户登录验证")
-    @RequestMapping("/user/login")
+    @ApiOperation(value = "用户登录", notes = "用户登录")
+    @PostMapping("/user/login")
     @CrossOrigin
-    public Result login(HttpServletResponse response, @RequestParam(value = "userId", required = true) String userId,
+    public Result login(HttpServletResponse response,
+                        @ApiParam(name = "userId", value = "用户id", required = true)
+                        @RequestParam(value = "userId", required = true) String userId,
+                        @ApiParam(name = "password", value = "用户密码", required = true)
                         @RequestParam(value = "password", required = true) String password) {
         if (StringUtils.isEmpty(userId)) {
             return ResultUtils.warn(ResultCode.WARN, "请重新登录！");
@@ -45,7 +46,7 @@ public class UserLogin {
         if (webUser == null) {
             return ResultUtils.warn(ResultCode.WARN, "用户名或密码不正确!");
         }
-        String pwd=new Md5Hash(password, userId).toHex();
+        String pwd = new Md5Hash(password, userId).toHex();
         if (!webUser.getPassword().equals(pwd)) {
             return ResultUtils.warn(ResultCode.WARN, "用户名或密码不正确!");
         }
