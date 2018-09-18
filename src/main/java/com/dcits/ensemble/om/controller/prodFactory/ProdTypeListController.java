@@ -39,6 +39,15 @@ public class ProdTypeListController {
         return   ResultUtils.success(mbProdTypeList);
     }
 
+    @RequestMapping("/getAllProdList")
+    public
+    @ResponseBody
+    Result getAllProdList(HttpServletResponse response){
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
+        List<MbProdType> mbProdTypeList= mbProdTypeRepository.findAll();
+        return   ResultUtils.success(mbProdTypeList);
+    }
+
     @RequestMapping("/getProdClassList")
     public
     @ResponseBody
