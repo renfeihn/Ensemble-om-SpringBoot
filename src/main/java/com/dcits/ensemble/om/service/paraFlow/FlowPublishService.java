@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,6 +35,7 @@ public class FlowPublishService {
            save(omProcessRelationHist.getRecSeqNo());
         }
     }
+
     public void save(String recSeqNo){
         List<OmProcessRecordHist> omProcessRecordHists=  omProcessRecordHistRepository.findByRecSeqNo(recSeqNo);
         for(OmProcessRecordHist omProcessRecordHist:omProcessRecordHists){

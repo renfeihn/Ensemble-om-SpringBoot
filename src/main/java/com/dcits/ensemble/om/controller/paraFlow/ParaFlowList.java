@@ -26,8 +26,6 @@ import java.util.*;
 @CrossOrigin
 public class ParaFlowList {
     @Resource
-    OmProcessRelationHistRepository omProcessRelationHistRepository;
-    @Resource
     private FlowManagement flowManagement;
     @Resource
     OmProcessMainFlowRepository omProcessMainFlowRepository;
