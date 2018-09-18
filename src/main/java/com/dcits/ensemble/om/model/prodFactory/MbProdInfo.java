@@ -3,6 +3,10 @@ package com.dcits.ensemble.om.model.prodFactory;
 
 import com.dcits.ensemble.om.model.dbmodel.MbProdDefine;
 import com.dcits.ensemble.om.model.dbmodel.MbProdType;
+import com.dcits.ensemble.om.model.dbmodel.tables.GlProdAccounting;
+import com.dcits.ensemble.om.model.dbmodel.tables.IrlProdInt;
+import com.dcits.ensemble.om.model.dbmodel.tables.MbAcctStats;
+import com.dcits.ensemble.om.model.dbmodel.tables.MbProdCharge;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +19,10 @@ import java.util.Map;
    @Setter
 public class MbProdInfo {
     private MbProdType prodType;
+    private List<GlProdAccounting> glProdAccounting;
+    private List<IrlProdInt> irlProdInt;
+    private List<MbAcctStats> mbAcctStats;
+    private List<MbProdCharge> mbProdCharge;
     private Map<String,MbProdDefine> prodDefines;
     private Map<String,MbEventInfo> mbEventInfos;
 
@@ -22,6 +30,10 @@ public class MbProdInfo {
     public String toString() {
         return "MbProdInfo{" +
                 "prodType=" + prodType +
+                ", glProdAccounting=" + glProdAccounting +
+                ", irlProdInt=" + irlProdInt +
+                ", mbAcctStats=" + mbAcctStats +
+                ", mbProdCharge=" + mbProdCharge +
                 ", prodDefines=" + prodDefines +
                 ", mbEventInfos=" + mbEventInfos +
                 '}';

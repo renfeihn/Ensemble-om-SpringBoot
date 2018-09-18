@@ -7,6 +7,10 @@ import com.dcits.ensemble.om.model.dbmodel.MbProdType;
 import com.dcits.ensemble.om.model.prodFactory.MbEventInfo;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
 import com.dcits.ensemble.om.repository.prodFactory.*;
+import com.dcits.ensemble.om.repository.tables.GlProdAccountingRepository;
+import com.dcits.ensemble.om.repository.tables.IrlProdIntRepository;
+import com.dcits.ensemble.om.repository.tables.MbAcctStatsRepository;
+import com.dcits.ensemble.om.repository.tables.MbProdChargeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +34,14 @@ public class MbProdInfoService {
     private MbEventAttrRepository mbEventAttrRepository;
     @Autowired
     private MbEventPartRepository mbEventPartRepository;
+    @Autowired
+    private GlProdAccountingRepository glProdAccountingRepository;
+    @Autowired
+    private IrlProdIntRepository irlProdIntRepository;
+    @Autowired
+    private MbProdChargeRepository mbProdChargeRepository;
+    @Autowired
+    private MbAcctStatsRepository mbAcctStatsRepository;
     public MbProdInfo getProdInfo(String prodType){
         MbProdInfo mbProdInfo=new MbProdInfo();
         mbProdInfo.setProdType(mbProdTypeRepository.findByProdType(prodType));
@@ -40,6 +52,11 @@ public class MbProdInfoService {
         }
         mbProdInfo.setProdDefines(mbProdDefineMap);
         mbProdInfo.setMbEventInfos(getMbEventInfo(prodType));
+        //获取单表数据
+        mbProdInfo.setGlProdAccounting(glProdAccountingRepository.findByProdType(prodType));
+        mbProdInfo.setIrlProdInt(irlProdIntRepository.findByProdType(prodType));
+        mbProdInfo.setMbAcctStats(mbAcctStatsRepository.findAll());
+        mbProdInfo.setMbProdCharge(mbProdChargeRepository.findByProdType(prodType));
         return mbProdInfo;
     }
     //保存产品所有属性(只有发布时生效)
