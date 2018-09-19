@@ -33,7 +33,7 @@ CREATE TABLE `mb_prod_type` (
 -- ----------------------------
 -- Records of mb_prod_type
 -- ----------------------------
-INSERT INTO `mb_prod_type` VALUES ('CD601', '普卡', 'RB100', 'Y', 'S', 'RBA01', 'A');
+INSERT INTO `mb_prod_type` VALUES ('CD601', '普卡', 'RB400', 'Y', 'S', 'RBA01', 'A');
 INSERT INTO `mb_prod_type` VALUES ('CL001', '普通贷款基础产品', 'CLBASE', 'N', 'B', '', 'A');
 INSERT INTO `mb_prod_type` VALUES ('CL002', '银团贷款基础产品', 'CLBASE', 'N', 'B', null, 'A');
 INSERT INTO `mb_prod_type` VALUES ('CL101', '个人住房贷款', 'CL100', 'N', 'S', 'CL001', 'A');
@@ -55,18 +55,18 @@ INSERT INTO `mb_prod_type` VALUES ('MM101', '行内拆入', 'MM100', 'N', 'S', '
 INSERT INTO `mb_prod_type` VALUES ('MM102', '行内拆出', 'MM100', 'N', 'S', 'MM001', 'A');
 INSERT INTO `mb_prod_type` VALUES ('MM201', '同业拆入', 'MM100', 'N', 'S', 'MM001', 'A');
 INSERT INTO `mb_prod_type` VALUES ('MM202', '同业拆出', 'MM100', 'N', 'S', 'MM001', 'A');
-INSERT INTO `mb_prod_type` VALUES ('RB101', '个人活期存款', 'RB100', 'Y', 'S', 'RBHQ1', 'A');
-INSERT INTO `mb_prod_type` VALUES ('RB103', '个人活期多币种存款', 'RB100', 'N', 'S', 'RBHQ2', 'A');
-INSERT INTO `mb_prod_type` VALUES ('RB121', '个人活期联名存款', 'RB100', 'N', 'S', 'RBHQ3', 'A');
-INSERT INTO `mb_prod_type` VALUES ('RB151', '个人整存整取', 'RB100', 'N', 'S', 'RBDQ1', 'A');
-INSERT INTO `mb_prod_type` VALUES ('RB152', '个人零存整取', 'RB100', 'N', 'S', 'RBDQ1', 'A');
-INSERT INTO `mb_prod_type` VALUES ('RB153', '个人协议存款', 'RB100', 'N', 'S', 'RBDQ1', 'A');
-INSERT INTO `mb_prod_type` VALUES ('RB154', '个人一天通知存款', 'RB100', 'N', 'S', 'RBDQ1', 'A');
-INSERT INTO `mb_prod_type` VALUES ('RB155', '个人七天通知存款', 'RB100', 'N', 'S', 'RBDQ1', 'A');
-INSERT INTO `mb_prod_type` VALUES ('RB157', '个人教育储蓄', 'RB100', 'N', 'S', 'RBDQ1', 'A');
-INSERT INTO `mb_prod_type` VALUES ('RB159', '个人定活两便', 'RB100', 'N', 'S', 'RBDQ1', 'A');
-INSERT INTO `mb_prod_type` VALUES ('RB171', '个人众筹定期存款', 'RB100', 'N', 'S', 'RBDQ3', 'A');
-INSERT INTO `mb_prod_type` VALUES ('RB180', '个人定期一本通', 'RB100', 'Y', 'S', 'RBDQ2', 'A');
+INSERT INTO `mb_prod_type` VALUES ('RB101', '活期产品', 'RB100', 'Y', 'S', 'RBHQ1', 'A');
+INSERT INTO `mb_prod_type` VALUES ('RB103', '个人活期多币种存款', 'RB400', 'N', 'S', 'RBHQ2', 'A');
+INSERT INTO `mb_prod_type` VALUES ('RB121', '个人活期联名存款', 'RB400', 'N', 'S', 'RBHQ3', 'A');
+INSERT INTO `mb_prod_type` VALUES ('RB151', '个人整存整取', 'RB400', 'N', 'S', 'RBDQ1', 'A');
+INSERT INTO `mb_prod_type` VALUES ('RB152', '个人零存整取', 'RB400', 'N', 'S', 'RBDQ1', 'A');
+INSERT INTO `mb_prod_type` VALUES ('RB153', '个人协议存款', 'RB400', 'N', 'S', 'RBDQ1', 'A');
+INSERT INTO `mb_prod_type` VALUES ('RB154', '个人一天通知存款', 'RB400', 'N', 'S', 'RBDQ1', 'A');
+INSERT INTO `mb_prod_type` VALUES ('RB155', '个人七天通知存款', 'RB400', 'N', 'S', 'RBDQ1', 'A');
+INSERT INTO `mb_prod_type` VALUES ('RB157', '个人教育储蓄', 'RB400', 'N', 'S', 'RBDQ1', 'A');
+INSERT INTO `mb_prod_type` VALUES ('RB159', '个人定活两便', 'RB400', 'N', 'S', 'RBDQ1', 'A');
+INSERT INTO `mb_prod_type` VALUES ('RB171', '个人众筹定期存款', 'RB400', 'N', 'S', 'RBDQ3', 'A');
+INSERT INTO `mb_prod_type` VALUES ('RB180', '个人定期一本通', 'RB400', 'Y', 'S', 'RBDQ2', 'A');
 INSERT INTO `mb_prod_type` VALUES ('RB201', '单位活期一本通', 'RB200', 'N', 'S', 'RBHQ1', 'A');
 INSERT INTO `mb_prod_type` VALUES ('RB203', '单位活期多币种存款', 'RB200', 'N', 'S', 'RBHQ2', 'A');
 INSERT INTO `mb_prod_type` VALUES ('RB221', '单位活期联名存款', 'RB200', 'N', 'S', 'RBHQ3', 'A');
@@ -79,8 +79,8 @@ INSERT INTO `mb_prod_type` VALUES ('RB280', '单位定期一本通', 'RB200', 'Y
 INSERT INTO `mb_prod_type` VALUES ('RB301', '同业活期存款', 'RB300', 'N', 'S', 'RBHQ2', 'A');
 INSERT INTO `mb_prod_type` VALUES ('RB351', '同业定期存款', 'RB300', 'N', 'S', 'RBDQ1', 'A');
 INSERT INTO `mb_prod_type` VALUES ('RB601', '对公AIO', 'RB200', 'Y', 'S', 'RBA01', 'A');
-INSERT INTO `mb_prod_type` VALUES ('RB701', 'II类个人活期产品', 'RB100', 'N', 'S', 'RBHQ1', 'A');
-INSERT INTO `mb_prod_type` VALUES ('RB702', 'III类个人活期产品', 'RB100', 'N', 'S', 'RBHQ1', 'A');
+INSERT INTO `mb_prod_type` VALUES ('RB701', 'II类个人活期产品', 'RB400', 'N', 'S', 'RBHQ1', 'A');
+INSERT INTO `mb_prod_type` VALUES ('RB702', 'III类个人活期产品', 'RB400', 'N', 'S', 'RBHQ1', 'A');
 INSERT INTO `mb_prod_type` VALUES ('RBA01', 'AIO基础产品', 'RBBASE', 'N', 'B', '', 'A');
 INSERT INTO `mb_prod_type` VALUES ('RBDQ1', '普通定期基础产品', 'RBBASE', 'N', 'B', null, 'A');
 INSERT INTO `mb_prod_type` VALUES ('RBDQ2', '定期一本通基础产品', 'RBBASE', 'N', 'B', null, 'A');
