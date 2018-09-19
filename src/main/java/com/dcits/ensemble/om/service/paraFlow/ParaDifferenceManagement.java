@@ -62,9 +62,11 @@ public class ParaDifferenceManagement {
                     }
                     String key = omProcessRecordHist.getTableName() + eventType + eventPart + "." + newJsonObject.get("attrKey");
                     //此处可将key转换成中文描述
-                    String value = (String) newJsonObject.get("attrValue");
+                    if(!newJsonObject.get("attrValue").equals("null")) {
+                        String value = (String) newJsonObject.get("attrValue");
+                        omProcessRecordHistsAll.put(key, value);
+                    }
                     omProcessRecordHistsAll.put("prodType",newJsonObject.get("prodType"));
-                    omProcessRecordHistsAll.put(key, value);
                 }
             }
         }
