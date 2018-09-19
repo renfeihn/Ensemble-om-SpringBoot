@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 public class MbProdCharge {
-    public MbProdCharge(String prodType, String feeType, String chargePeriodFreq, String chargeDay, String nextChargeDate, String tranTimestamp, String tranTime) {
+    public MbProdCharge(String prodType, String feeType, String chargePeriodFreq, String chargeDay, String nextChargeDate, String tranTimestamp, String tranTime, String chargeDealMethod, String conDeductFlag, String conDeductTimes) {
         this.prodType = prodType;
         this.feeType = feeType;
         this.chargePeriodFreq = chargePeriodFreq;
@@ -21,6 +21,9 @@ public class MbProdCharge {
         this.nextChargeDate = nextChargeDate;
         this.tranTimestamp = tranTimestamp;
         this.tranTime = tranTime;
+        this.chargeDealMethod = chargeDealMethod;
+        this.conDeductFlag = conDeductFlag;
+        this.conDeductTimes = conDeductTimes;
     }
 
     public MbProdCharge() {
@@ -41,6 +44,13 @@ public class MbProdCharge {
     @Column(name="tran_time")
     private String tranTime;
 
+    @Column(name="charge_deal_method")
+    private String chargeDealMethod;
+    @Column(name="con_deduct_flag")
+    private String conDeductFlag;
+    @Column(name="con_deduct_times")
+    private String conDeductTimes;
+
     @Override
     public String toString() {
         return "MbProdCharge{" +
@@ -51,6 +61,9 @@ public class MbProdCharge {
                 ", nextChargeDate='" + nextChargeDate + '\'' +
                 ", tranTimestamp='" + tranTimestamp + '\'' +
                 ", tranTime='" + tranTime + '\'' +
+                ", chargeDealMethod='" + chargeDealMethod + '\'' +
+                ", conDeductFlag='" + conDeductFlag + '\'' +
+                ", conDeductTimes='" + conDeductTimes + '\'' +
                 '}';
     }
 }
