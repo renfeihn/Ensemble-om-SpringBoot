@@ -19,13 +19,14 @@ public class MbEventAttr implements Serializable {
     public MbEventAttr(){
 
     }
-    public MbEventAttr(String eventType, String seqNo, String assembleType, String assembleId, String attrValue, String assembleRule) {
+    public MbEventAttr(String eventType, String seqNo, String assembleType, String assembleId, String attrValue, String assembleRule,String perEffect) {
         this.eventType = eventType;
         this.seqNo = seqNo;
         this.assembleType = assembleType;
         this.assembleId = assembleId;
         this.attrValue = attrValue;
         this.assembleRule = assembleRule;
+        this.perEffect = perEffect;
     }
     @Id
     @Column(name="event_type")
@@ -41,6 +42,8 @@ public class MbEventAttr implements Serializable {
     private String attrValue;
     @Column(name="assemble_rule")
     private String assembleRule;
+    @Column(name="per_effect")
+    private String perEffect;
 
     @Override
     public String toString() {
@@ -51,6 +54,7 @@ public class MbEventAttr implements Serializable {
                 ", assembleId='" + assembleId + '\'' +
                 ", attrValue='" + attrValue + '\'' +
                 ", assembleRule='" + assembleRule + '\'' +
+                ", perEffect='" + perEffect + '\'' +
                 '}';
     }
 }

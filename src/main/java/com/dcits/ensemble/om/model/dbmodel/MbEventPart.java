@@ -17,11 +17,12 @@ import java.io.Serializable;
 @Setter
 public class MbEventPart implements Serializable {
     public MbEventPart(){}
-    public MbEventPart(String eventType, String assembleId, String attrKey, String attrValue) {
+    public MbEventPart(String eventType, String assembleId, String attrKey, String attrValue,String perEffect) {
         this.eventType = eventType;
         this.assembleId = assembleId;
         this.attrKey = attrKey;
         this.attrValue = attrValue;
+        this.perEffect = perEffect;
     }
     @Id
     @Column(name="event_type")
@@ -34,6 +35,8 @@ public class MbEventPart implements Serializable {
     private String attrKey;
     @Column(name="attr_value")
     private String attrValue;
+    @Column(name="per_effect")
+    private String perEffect;
 
     @Override
     public String toString() {
@@ -42,6 +45,7 @@ public class MbEventPart implements Serializable {
                 ", assembleId='" + assembleId + '\'' +
                 ", attrKey='" + attrKey + '\'' +
                 ", attrValue='" + attrValue + '\'' +
+                ", perEffect='" + perEffect + '\'' +
                 '}';
     }
 }
