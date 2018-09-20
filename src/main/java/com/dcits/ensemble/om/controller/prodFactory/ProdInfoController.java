@@ -80,7 +80,7 @@ public class ProdInfoController {
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         String userName = (String) map.get("userName");
         String seqNo;
-        String option = (String) map.get("option");
+        String option = (String) map.get("option"); 
         //根据option设置交易状态  保存(save):2  暂存(temp):1
         String status = "save".equals(option)?"2":"temp".equals(option)?"1":"";
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranIdAndStatus("MB_PROD_TYPE","1");

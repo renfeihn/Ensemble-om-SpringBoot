@@ -59,9 +59,57 @@ public class DifferenceInfo {
          eventAttrTran(ResourcesUtils.getMap(eventOne.get("mbEventAttrs")), reqNo, operatorNo);
          eventPartTran(ResourcesUtils.getMap(eventOne.get("mbEventParts")), reqNo, operatorNo);
      }
+     //涉及他表
 
    }
-
+   //GlProdAccounting
+    public void glProdAccounting(Map prodMap,String seqNo,String operatorNo){
+        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,"GL_PROD_ACCOUNTING");
+        for(Object key:prodMap.keySet()){
+            Map<String,Object> accounting=(Map)prodMap.get(key);
+            Map<String,Object> oldData=(Map)accounting.get("oldData");
+            JSONObject keyValue = new JSONObject();
+            keyValue.put("PROD_TYPE",oldData.get("PROD_TYPE"));
+            keyValue.put("ACCOUNTING_STATUS",oldData.get("ACCOUNTING_STATUS"));
+            saveProdParaDifference(accountingNo, accounting, keyValue, seqNo);
+        }
+    }
+    //IrlProdInt
+    public void irlProdInt(Map prodMap,String seqNo,String operatorNo){
+        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,"IRL_PROD_INT");
+        for(Object key:prodMap.keySet()){
+            Map<String,Object> accounting=(Map)prodMap.get(key);
+            Map<String,Object> oldData=(Map)accounting.get("oldData");
+            JSONObject keyValue = new JSONObject();
+            keyValue.put("PROD_TYPE",oldData.get("PROD_TYPE"));
+            keyValue.put("EVENT_TYPE",oldData.get("EVENT_TYPE"));
+            keyValue.put("INT_CLASS",oldData.get("INT_CLASS"));
+            saveProdParaDifference(accountingNo, accounting, keyValue, seqNo);
+        }
+    }
+    //MbAcctStats
+    public void mbAcctStats(Map prodMap,String seqNo,String operatorNo){
+        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,"MB_ACCT_STATS");
+        for(Object key:prodMap.keySet()){
+            Map<String,Object> accounting=(Map)prodMap.get(key);
+            Map<String,Object> oldData=(Map)accounting.get("oldData");
+            JSONObject keyValue = new JSONObject();
+            keyValue.put("INTERNAL_KEY",oldData.get("INTERNAL_KEY"));
+            saveProdParaDifference(accountingNo, accounting, keyValue, seqNo);
+        }
+    }
+    //mbProdCharge
+    public void mbProdCharge(Map prodMap,String seqNo,String operatorNo){
+        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,"MB_PROD_CHARGE");
+        for(Object key:prodMap.keySet()){
+            Map<String,Object> accounting=(Map)prodMap.get(key);
+            Map<String,Object> oldData=(Map)accounting.get("oldData");
+            JSONObject keyValue = new JSONObject();
+            keyValue.put("PROD_TYPE",oldData.get("PROD_TYPE"));
+            keyValue.put("FEE_TYPE",oldData.get("FEE_TYPE"));
+            saveProdParaDifference(accountingNo, accounting, keyValue, seqNo);
+        }
+    }
     //事件指标
     public void eventPartTran(Map prodMap,String seqNo,String operatorNo){
             if(prodMap.size()>0) {
