@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -58,9 +59,10 @@ public class DifferenceInfo {
          eventTypeTran(ResourcesUtils.getMap(eventOne.get("mbEventType")), reqNo, operatorNo);
          eventAttrTran(ResourcesUtils.getMap(eventOne.get("mbEventAttrs")), reqNo, operatorNo);
          eventPartTran(ResourcesUtils.getMap(eventOne.get("mbEventParts")), reqNo, operatorNo);
+
      }
      //涉及他表
-
+       mbProdCharge((List)mbProdInfo.get("mbProdCharge"), reqNo, operatorNo);
    }
    //GlProdAccounting
     public void glProdAccounting(Map prodMap,String seqNo,String operatorNo){
@@ -99,14 +101,22 @@ public class DifferenceInfo {
         }
     }
     //mbProdCharge
-    public void mbProdCharge(Map prodMap,String seqNo,String operatorNo){
+    public void mbProdCharge(List prodMap,String seqNo,String operatorNo){
         String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,"MB_PROD_CHARGE");
-        for(Object key:prodMap.keySet()){
-            Map<String,Object> accounting=(Map)prodMap.get(key);
-            Map<String,Object> oldData=(Map)accounting.get("oldData");
+        for(Object key:prodMap){
+            Map<String,Object> accounting=(Map)key;
+            String operateType=(String)accounting.get("optType");
+            accounting.put("tableName","MB_PROD_CHARGE");
+            Map<String, Object> data;
+            if("I".equals(operateType)) {
+                data = (Map) accounting.get("newData");
+            }else{
+                data = (Map) accounting.get("oldData");
+            }
             JSONObject keyValue = new JSONObject();
-            keyValue.put("PROD_TYPE",oldData.get("PROD_TYPE"));
-            keyValue.put("FEE_TYPE",oldData.get("FEE_TYPE"));
+            this.prodType=(String)data.get("prodType");
+            keyValue.put("PROD_TYPE",this.prodType);
+            keyValue.put("FEE_TYPE",data.get("feeType"));
             saveProdParaDifference(accountingNo, accounting, keyValue, seqNo);
         }
     }
@@ -124,6 +134,7 @@ public class DifferenceInfo {
 
                             Map<String, Object> eventAttr = (Map) eventOne.get(keyAttr);
                             eventAttr.put("tableName", "MB_EVENT_PART");
+                            eventAttr.put("optType", this.optionType);
                             Map<String,Object> newData=(Map)eventAttr.get("newData");
                             keyValue.put("ATTR_KEY", keyAttr);
                             saveProdParaDifference(this.eventPartNo, eventAttr, keyValue, seqNo);
@@ -144,6 +155,7 @@ public class DifferenceInfo {
                     if(eventOne.size()>0) {
                         keyValue.put("SEQ_NO", newData.get("seqNo"));
                         eventOne.put("tableName", "MB_EVENT_ATTR");
+                        eventOne.put("optType", this.optionType);
                         saveProdParaDifference(this.eventAttrNo, eventOne, keyValue, seqNo);
                     }
                 }
@@ -155,6 +167,7 @@ public class DifferenceInfo {
                 //记录组合
                this.eventTypeNo = this.eventTypeNo==null?processCombManagement.saveCombInfo(seqNo, operatorNo,"EVENT_TYPE"):this.eventTypeNo;
                 prodMap.put("tableName", "MB_EVENT_TYPE");
+                prodMap.put("optType", this.optionType);
                 JSONObject keyValue = new JSONObject();
                 keyValue.put("EVENT_TYPE", this.eventType);
                 saveProdParaDifference(this.eventTypeNo, prodMap, keyValue, seqNo);
@@ -173,6 +186,7 @@ public class DifferenceInfo {
                     keyValue.put("PROD_TYPE", this.prodType);
                     keyValue.put("SEQ_NO", newData.get("seqNo"));
                     define.put("tableName", "MB_PROD_DEFINE");
+                    define.put("optType", this.optionType);
                     saveProdParaDifference(subSeqNo, define, keyValue, seqNo);
                 }
             }
@@ -182,6 +196,7 @@ public class DifferenceInfo {
             //记录差异
         if(prodMap.get("newData")!=null ) {
             Map newData=(Map)prodMap.get("newData");
+            prodMap.put("optType", this.optionType);
             if(newData.size()>0) {
                 //记录组合
                 String subSeqNo = processCombManagement.saveCombInfo(seqNo, operatorNo,"MB_PROD_TYPE");
@@ -220,6 +235,7 @@ public class DifferenceInfo {
         String dataDui=ResourcesUtils.getJsonString(newData);
         String oldDui=ResourcesUtils.getJsonString(oldData);
         String tableName=(String)map.get("tableName");
+        String optType=(String)map.get("optType");
         byte[] tmpDataDui;
         byte[] tmpOldDui;
         try {
@@ -233,7 +249,7 @@ public class DifferenceInfo {
         //1.获取对象主键
         omProcessRecordHist.setTableName(tableName);
         omProcessRecordHist.setRecSeqNo(seqNo);
-        omProcessRecordHist.setDmlType(this.optionType);
+        omProcessRecordHist.setDmlType(optType);
         omProcessRecordHist.setMainSeqNo(mainSeqNo);
         omProcessRecordHist.setSubSeqNo(getMaxDiffSub(seqNo) );
         omProcessRecordHistRepository.saveAndFlush(omProcessRecordHist);

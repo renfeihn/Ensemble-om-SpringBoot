@@ -76,7 +76,7 @@ public class ParaFlowList {
         String remark = (String)map.get("remark");
         String isApproved = (String)map.get("isApproved");
         String optType= (String) map.get("optType");
-        if("Y".equals(optType))
+        if("Y".equals(isApproved))
         flowPublishService.publishSave(mainSeqNo);
         //只需变更流程信息，登记流程的变动
         flowManagement.updateFlowOnly(mainSeqNo,userId,remark,isApproved,optType);
