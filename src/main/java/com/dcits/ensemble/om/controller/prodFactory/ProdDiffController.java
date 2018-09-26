@@ -44,7 +44,6 @@ public class ProdDiffController {
         //Map map = requestBean.getBody();
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         Map responseMap = new HashMap<>();
-        String prodType = (String) map.get("prodType");
         String mainSeqNo = (String)map.get("mainSeqNo");
 
         Map omProcessRecordHistList = paraDifferenceManagement.getDiffByMainSeqNo(mainSeqNo);

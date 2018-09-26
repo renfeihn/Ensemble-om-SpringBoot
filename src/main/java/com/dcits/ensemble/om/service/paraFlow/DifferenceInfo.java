@@ -226,6 +226,17 @@ public class DifferenceInfo {
         if(newData.size()==0&&oldData.size()==0){
             return;
         }
+        //去除为Null
+        for(Object key :newData.keySet()){
+            if("null".equals(newData.get(key))||"NULL".equals(newData.get(key))){
+             newData.remove(key);
+            }
+        }
+        for(Object key :oldData.keySet()){
+            if("null".equals(oldData.get(key))||"NULL".equals(oldData.get(key))){
+                oldData.remove(key);
+            }
+        }
         if(newData.get("prodType")!=null) {
             newData.put("prodType", this.prodType);
         }
