@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.io.UnsupportedEncodingException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -227,14 +228,20 @@ public class DifferenceInfo {
             return;
         }
         //去除为Null
-        for(Object key :newData.keySet()){
-            if("null".equals(newData.get(key))||"NULL".equals(newData.get(key))){
-             newData.remove(key);
+        Iterator<Map.Entry<Integer, String>> it = newData.entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry<Integer, String> entry = it.next();
+            String value=entry.getValue();
+            if(value ==null||"null".equals(value)||"NULL".equals(value)){
+                it.remove();
             }
         }
-        for(Object key :oldData.keySet()){
-            if("null".equals(oldData.get(key))||"NULL".equals(oldData.get(key))){
-                oldData.remove(key);
+        Iterator<Map.Entry<Integer, String>> itOld = oldData.entrySet().iterator();
+        while(itOld.hasNext()){
+            Map.Entry<Integer, String> entry = itOld.next();
+            String value=entry.getValue();
+            if(value ==null||"null".equals(value)||"NULL".equals(value)){
+                itOld.remove();
             }
         }
         if(newData.get("prodType")!=null) {
