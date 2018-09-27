@@ -114,5 +114,35 @@ public class MbProdInfoService {
         }
         return mapMap;
     }
+    //组装事件
+    public Map<String,Map> assembleEvent(Map<String,MbEventInfo> mbEventInfos){
+        Map<String,Map> mbEventInfoList=new HashMap<>();
+        for(Object key:mbEventInfos.keySet()){
+            Map<String,Map> mbEvent=new HashMap<>();
+            MbEventInfo mbEventInfo=mbEventInfos.get(key);
+            Map<String,MbEventAttr> mbEventAttrMap= mbEventInfo.getMbEventAttrs();
+            for(Object keyAttr:mbEventAttrMap.keySet()){
+                MbEventAttr mbEventAttr=mbEventAttrMap.get(keyAttr);
+                Map attr=new HashMap<>();
+                attr.put(mbEventAttr.getAssembleId(),mbEventAttr.getAttrValue());
+                mbEvent.putAll(attr);
+            }
+            Map<String,Map> mbEventParts=mbEventInfo.getMbEventParts();
+            for(Object keyPart:mbEventParts.keySet()){
+                mbEvent.putAll(partToAttr(mbEventParts.get(keyPart)));
+            }
+            mbEventInfoList.put((String)key,mbEvent);
+        }
+        return mbEventInfoList;
+    }
+    //提取指标下的参数
+    private Map<String,Map> partToAttr(Map map){
+        Map attr=new HashMap<>();
+        for(Object keyPart:map.keySet()){
+            MbEventPart mbEventPart=(MbEventPart)map.get(keyPart);
+            attr.put(keyPart,mbEventPart.getAttrValue());
+        }
+        return attr;
+    }
 }
 

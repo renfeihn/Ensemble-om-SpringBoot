@@ -48,7 +48,11 @@ public class ProdDiffController {
 
         Map omProcessRecordHistList = paraDifferenceManagement.getDiffByMainSeqNo(mainSeqNo);
         MbProdInfo mbProdInfo = mbProdInfoService.getProdInfo((String)omProcessRecordHistList.get("prodType"));
-        responseMap.put("prodInfo", mbProdInfo);
+
+        responseMap.put("prodDefine", mbProdInfo.getProdDefines());
+        responseMap.put("mbProdCharge", mbProdInfo.getMbProdCharge());
+        //组装事件
+        responseMap.put("prodEvent", mbProdInfoService.assembleEvent(mbProdInfo.getMbEventInfos()));
         if (omProcessRecordHistList != null)
             responseMap.put("diff", omProcessRecordHistList);
         responseMap.put("prodType", omProcessRecordHistList.get("prodType"));

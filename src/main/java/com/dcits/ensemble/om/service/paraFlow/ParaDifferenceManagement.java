@@ -41,8 +41,11 @@ public class ParaDifferenceManagement {
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByMainSeqNo(mainSeqNo);
         List<OmProcessRelationHist> omProcessRelationHistList=omProcessRelationHistRepository.findByMainSeqNoAndDtlSeqNo(mainSeqNo, omProcessMainFlow.getDtlSeqNo().toString());
         Map omProcessRecordHistsAll=new HashMap<>();
+        String prodType=null;
         for(OmProcessRelationHist omProcessRelationHist:omProcessRelationHistList){
             List<OmProcessRecordHist> omProcessRecordHists=  omProcessRecordHistRepository.findByRecSeqNo(omProcessRelationHist.getRecSeqNo());
+            Map mbProdChargeList=new HashMap<>();
+            Map defineMap=new HashMap<>();
             for(OmProcessRecordHist omProcessRecordHist: omProcessRecordHists) {
                 String newData = "";
                 try {
@@ -51,39 +54,39 @@ public class ParaDifferenceManagement {
                     e.printStackTrace();
                 }
                 JSONObject newJsonObject = JSONObject.fromObject(newData);
-                if ("MB_PROD_DEFINE".equals(omProcessRecordHist.getTableName())) {
-                    assembleDefine(newJsonObject, omProcessRecordHistsAll, omProcessRecordHist);
+                if(prodType==null&&newJsonObject.get("prodType")!=null) {
+                    prodType=(String)newJsonObject.get("prodType");
                 }
                 if("MB_PROD_CHARGE".equals(omProcessRecordHist.getTableName())){
-                    Map mbProdChargeList=new HashMap<>();
                     assembleCharge(newJsonObject, mbProdChargeList, omProcessRecordHist);
                     if(omProcessRecordHistsAll.get("prodType")==null){
                         omProcessRecordHistsAll.put("prodType",newJsonObject.get("prodType"));
                     }
-                    omProcessRecordHistsAll.put("mbProdCharge",mbProdChargeList);
+                }else  if("MB_PROD_DEFINE".equals(omProcessRecordHist.getTableName())){
+                    assembleDefine(newJsonObject, defineMap);
                 }
             }
-
+            omProcessRecordHistsAll.put("mbProdCharge",mbProdChargeList);
+            omProcessRecordHistsAll.put("prodDefine",defineMap);
+            omProcessRecordHistsAll.put("prodType",prodType);
         }
         return omProcessRecordHistsAll;
     }
-    //装载define
-    public void assembleDefine(JSONObject newJsonObject,Map omProcessRecordHistsAll,OmProcessRecordHist omProcessRecordHist){
-        String eventType = "";
-        if ("MB_EVENT_ATTR".equals(omProcessRecordHist.getTableName()))
-            eventType = "." + newJsonObject.get("EVENT_TYPE");
-        String eventPart = "";
-        if ("MB_EVENT_PART".equals(omProcessRecordHist.getTableName())) {
-            eventType = "." + newJsonObject.get("EVENT_TYPE");
-            eventPart = "." + newJsonObject.get("ASSEMBLE_ID");
+    //装载事件
+    public void assembleEvent(JSONObject newJsonObject,Map omProcessRecordHistsAll,OmProcessRecordHist omProcessRecordHist){
+        String tableName=omProcessRecordHist.getTableName();
+        if("MB_EVENT_ATTR".equals(tableName)){
+            String eventType=(String)newJsonObject.get("eventType");
         }
-        String key = omProcessRecordHist.getTableName() + eventType + eventPart + "." + newJsonObject.get("attrKey");
+    }
+    //装载define
+    public void assembleDefine(JSONObject newJsonObject,Map defineMap){
+        String key = (String)newJsonObject.get("attrKey");
         //此处可将key转换成中文描述
         if(!newJsonObject.get("attrValue").equals("null")) {
             String value = (String) newJsonObject.get("attrValue");
-            omProcessRecordHistsAll.put(key, value);
+            defineMap.put(key, value);
         }
-        omProcessRecordHistsAll.put("prodType",newJsonObject.get("prodType"));
     }
     //装载prodCharge
     public void assembleCharge(JSONObject newJsonObject,Map mbProdChargeList,OmProcessRecordHist omProcessRecordHist){
