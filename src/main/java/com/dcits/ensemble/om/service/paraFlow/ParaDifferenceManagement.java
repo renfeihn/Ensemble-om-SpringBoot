@@ -97,7 +97,7 @@ public class ParaDifferenceManagement {
         String key = (String)newJsonObject.get("attrKey");
         //此处可将key转换成中文描述
         if(newJsonObject.get("attrValue")!=null&&!newJsonObject.get("attrValue").equals("null")) {
-            String value = (String) newJsonObject.get("attrValue");
+            Object value =newJsonObject.get("attrValue");
             defineMap.put(key, value);
         }
     }

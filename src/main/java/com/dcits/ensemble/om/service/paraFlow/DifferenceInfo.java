@@ -5,6 +5,7 @@ import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessDetailHistRepository;
 import com.dcits.ensemble.om.util.ResourcesUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -115,7 +116,6 @@ public class DifferenceInfo {
                 data = (Map) accounting.get("oldData");
             }
             JSONObject keyValue = new JSONObject();
-            this.prodType=(String)data.get("prodType");
             keyValue.put("PROD_TYPE",this.prodType);
             keyValue.put("FEE_TYPE",data.get("feeType"));
             saveProdParaDifference(accountingNo, accounting, keyValue, seqNo);
@@ -209,11 +209,16 @@ public class DifferenceInfo {
                 }else{
                     Map oldData=(Map)prodMap.get("oldData");
                     keyValue.put("PROD_TYPE", oldData.get("prodType"));
-                    this.prodType=(String)oldData.get("prodType");
                 }
 
                 saveProdParaDifference(subSeqNo, prodMap, keyValue, seqNo);
+            }else{
+                Map oldData=(Map)prodMap.get("oldData");
+                this.prodType=(String)oldData.get("prodType");
             }
+        }else{
+            Map oldData=(Map)prodMap.get("oldData");
+            this.prodType=(String)oldData.get("prodType");
         }
 
     }
@@ -228,10 +233,14 @@ public class DifferenceInfo {
             return;
         }
         //去除为Null
-        Iterator<Map.Entry<Integer, String>> it = newData.entrySet().iterator();
+        Iterator<Map.Entry<Integer, Object>> it = newData.entrySet().iterator();
         while(it.hasNext()){
-            Map.Entry<Integer, String> entry = it.next();
-            String value=entry.getValue();
+            Map.Entry<Integer, Object> entry = it.next();
+            String value="";
+            if(List.class.isInstance(entry.getValue())){
+                entry.setValue(StringUtils.join((List)entry.getValue(),","));
+            }
+            value = (String)entry.getValue();
             if(value ==null||"null".equals(value)||"NULL".equals(value)){
                 it.remove();
             }
