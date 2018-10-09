@@ -83,7 +83,7 @@ public class ProdInfoController {
         String option = (String) map.get("option"); 
         //根据option设置交易状态  保存(save):2  暂存(temp):1
         String status = "save".equals(option)?"2":"temp".equals(option)?"1":"";
-        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranIdAndStatus("MB_PROD_TYPE","1");
+        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranIdAndStatus("MB_PROD_TYPE","6");
         //无单号，1.申请单号 2.新增记录差异信息 3.根据操作类型更新交易状态
         if (omProcessMainFlow == null || omProcessMainFlow.getMainSeqNo() == null) {
             seqNo = flowManagement.appNoByTable(userName, "MB_PROD_TYPE", "Y",status);
@@ -92,9 +92,7 @@ public class ProdInfoController {
             seqNo = omProcessMainFlow.getMainSeqNo();
             BigDecimal dtlSeqNo = omProcessMainFlow.getDtlSeqNo().add(BigDecimal.ONE);
             //暂存状态更新批次
-            if("temp".equals(option)) {
                 omProcessMainFlow.setDtlSeqNo(dtlSeqNo);
-            }
             omProcessMainFlow.setStatus(status);
             omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
             flowManagement.sumProcessInfo(seqNo, userName, status, omProcessMainFlow.getDtlSeqNo(),null,null);
