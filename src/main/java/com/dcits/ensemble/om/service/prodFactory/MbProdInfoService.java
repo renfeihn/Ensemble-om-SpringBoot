@@ -14,10 +14,7 @@ import com.dcits.ensemble.om.repository.tables.MbProdChargeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by ligan on 2018/8/23.
@@ -45,8 +42,8 @@ public class MbProdInfoService {
     public MbProdInfo getProdInfo(String prodType){
         MbProdInfo mbProdInfo=new MbProdInfo();
         mbProdInfo.setProdType(mbProdTypeRepository.findByProdType(prodType));
-        Map<String,MbProdDefine> mbProdDefineMap =new HashMap<>();
-        List<MbProdDefine> mbProdDefineList=mbProdDefineRepository.findByProdTypeAndAssembleType(prodType,"ATTR");
+        Map<String,MbProdDefine> mbProdDefineMap =new LinkedHashMap<>();
+        List<MbProdDefine> mbProdDefineList=mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderBySeqNoAsc(prodType, "ATTR");
         for(MbProdDefine mbProdDefine:mbProdDefineList){
             mbProdDefineMap.put(mbProdDefine.getAssembleId(),mbProdDefine);
         }
@@ -86,7 +83,7 @@ public class MbProdInfoService {
     }
     private Map<String,MbEventInfo> getMbEventInfo(String prodType){
         Map<String,MbEventInfo> eventInfos=new HashMap<>();
-        List<MbProdDefine> mbProdDefineEvent=mbProdDefineRepository.findByProdTypeAndAssembleType(prodType,"EVENT");
+        List<MbProdDefine> mbProdDefineEvent=mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderBySeqNoAsc(prodType, "EVENT");
         for(MbProdDefine mbProdDefine: mbProdDefineEvent){
             MbEventInfo eventInfo= new MbEventInfo();
             Map<String,MbEventAttr> mbEventAttrMap=new HashMap<>();

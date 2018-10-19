@@ -11,5 +11,5 @@ import java.util.List;
  * Created by ligan on 2018/8/14.
  */
 public interface MbProdDefineRepository extends JpaRepository<MbProdDefine,MbProdDefineKeysClass> ,JpaSpecificationExecutor<MbProdDefine>{
-     List<MbProdDefine> findByProdTypeAndAssembleType(String prodType,String assembleType);
+     List<MbProdDefine> findByProdTypeAndAssembleTypeOrderBySeqNoAsc(String prodType,String assembleType);
 }
