@@ -14,6 +14,7 @@ import com.dcits.ensemble.om.repository.tables.MbProdChargeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.*;
 
 /**
@@ -23,7 +24,7 @@ import java.util.*;
 public class MbProdInfoService {
     @Autowired
     private MbProdTypeRepository mbProdTypeRepository;
-    @Autowired
+    @Resource
     private MbProdDefineRepository mbProdDefineRepository;
     @Autowired
     private MbEventTypeRepository mbEventTypeRepository;
@@ -43,7 +44,7 @@ public class MbProdInfoService {
         MbProdInfo mbProdInfo=new MbProdInfo();
         mbProdInfo.setProdType(mbProdTypeRepository.findByProdType(prodType));
         Map<String,MbProdDefine> mbProdDefineMap =new LinkedHashMap<>();
-        List<MbProdDefine> mbProdDefineList=mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderBySeqNoAsc(prodType, "ATTR");
+        List<MbProdDefine> mbProdDefineList=mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderByPageCodePageSeqNoAsc(prodType, "ATTR");
         for(MbProdDefine mbProdDefine:mbProdDefineList){
             mbProdDefineMap.put(mbProdDefine.getAssembleId(),mbProdDefine);
         }
@@ -83,7 +84,7 @@ public class MbProdInfoService {
     }
     private Map<String,MbEventInfo> getMbEventInfo(String prodType){
         Map<String,MbEventInfo> eventInfos=new HashMap<>();
-        List<MbProdDefine> mbProdDefineEvent=mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderBySeqNoAsc(prodType, "EVENT");
+        List<MbProdDefine> mbProdDefineEvent=mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderByPageCodePageSeqNoAsc(prodType, "EVENT");
         for(MbProdDefine mbProdDefine: mbProdDefineEvent){
             MbEventInfo eventInfo= new MbEventInfo();
             Map<String,MbEventAttr> mbEventAttrMap=new HashMap<>();
@@ -140,6 +141,10 @@ public class MbProdInfoService {
             attr.put(keyPart,mbEventPart.getAttrValue());
         }
         return attr;
+    }
+    //修改DEFINE表中参数的位置信息
+    public void updateColumn(Map column,String prodType){
+        mbProdDefineRepository.updatePageSeq((Integer)column.get("pageSeqNo"),prodType,(String)column.get("key"),(String)column.get("pageCode"));
     }
 }
 

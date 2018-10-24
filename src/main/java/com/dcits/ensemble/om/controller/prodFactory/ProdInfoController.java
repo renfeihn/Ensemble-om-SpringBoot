@@ -120,4 +120,17 @@ public class ProdInfoController {
        flowManagement.updateFlowOnly(mainSeqNo,userId,remark,isApproved,optType);
         return ResultUtils.success();
     }
+    /**
+     * 界面修改列的位置
+     */
+    @RequestMapping("/saveColumn")
+    @ResponseBody
+    public Result saveColumn(HttpServletResponse response, @RequestBody Map map) {
+        List<Map> columnList=(List)map.get("column");
+        String prodType=(String)map.get("prodType");
+        for(Map column: columnList){
+            mbProdInfoService.updateColumn(column,prodType);
+        }
+        return ResultUtils.success();
+    }
 }
