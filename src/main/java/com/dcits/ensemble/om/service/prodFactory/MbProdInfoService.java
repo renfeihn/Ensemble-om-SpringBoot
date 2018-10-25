@@ -42,14 +42,30 @@ public class MbProdInfoService {
     private MbAcctStatsRepository mbAcctStatsRepository;
     public MbProdInfo getProdInfo(String prodType){
         MbProdInfo mbProdInfo=new MbProdInfo();
-        mbProdInfo.setProdType(mbProdTypeRepository.findByProdType(prodType));
+        MbProdType mbProdType=mbProdTypeRepository.findByProdType(prodType);
+        mbProdInfo.setProdType(mbProdType);
         Map<String,MbProdDefine> mbProdDefineMap =new LinkedHashMap<>();
-        List<MbProdDefine> mbProdDefineList=mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderByPageCodePageSeqNoAsc(prodType, "ATTR");
-        for(MbProdDefine mbProdDefine:mbProdDefineList){
-            mbProdDefineMap.put(mbProdDefine.getAssembleId(),mbProdDefine);
+        String baseType=mbProdType.getBaseProdType();
+        List<MbProdDefine> mbProdDefineGroupList=new ArrayList<>();
+        if(baseType!=null){
+            List<MbProdDefine> mbProdDefineBaseList=mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderByPageCodePageSeqNoAsc(baseType, "ATTR");
+            if(mbProdDefineBaseList!=null){
+                mbProdDefineGroupList.addAll(mbProdDefineBaseList);
+            }
+        }
+        List<MbProdDefine>  mbProdDefineList=mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderByPageCodePageSeqNoAsc(prodType, "ATTR");
+        if(mbProdDefineList!=null){
+            mbProdDefineGroupList.addAll(mbProdDefineList);
+        }
+        for(MbProdDefine mbProdDefine:mbProdDefineGroupList){
+            if(baseType.equals(mbProdDefine.getProdType())){
+                mbProdDefine.setGroup("BASE");
+                mbProdDefine.setProdType(prodType);
+            }
+            mbProdDefineMap.put(mbProdDefine.getAssembleId(), mbProdDefine);
         }
         mbProdInfo.setProdDefines(mbProdDefineMap);
-        mbProdInfo.setMbEventInfos(getMbEventInfo(prodType));
+        mbProdInfo.setMbEventInfos(getMbEventInfo(prodType,baseType));
         //获取单表数据
         mbProdInfo.setGlProdAccounting(glProdAccountingRepository.findByProdType(prodType));
         mbProdInfo.setIrlProdInt(irlProdIntRepository.findByProdType(prodType));
@@ -82,33 +98,51 @@ public class MbProdInfoService {
             }
         }*/
     }
-    private Map<String,MbEventInfo> getMbEventInfo(String prodType){
+    private Map<String,MbEventInfo> getMbEventInfo(String prodType,String baseType){
         Map<String,MbEventInfo> eventInfos=new HashMap<>();
         List<MbProdDefine> mbProdDefineEvent=mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderByPageCodePageSeqNoAsc(prodType, "EVENT");
         for(MbProdDefine mbProdDefine: mbProdDefineEvent){
             MbEventInfo eventInfo= new MbEventInfo();
             Map<String,MbEventAttr> mbEventAttrMap=new HashMap<>();
+            String eventKey=mbProdDefine.getAssembleId();
+            String baseEventKey= eventKey.substring(eventKey.length()-prodType.length())+baseType;
             eventInfo.setMbEventType(mbEventTypeRepository.findByEventType(mbProdDefine.getAssembleId()));
-            List<MbEventAttr> mbEventAttrList=mbEventAttrRepository.findByEventTypeAndAssembleType(mbProdDefine.getAssembleId(), "ATTR");
-            for(MbEventAttr mbEventAttr:mbEventAttrList){
+            List<MbEventAttr> mbEventAttrGroupList=new ArrayList<>();
+            List<MbEventAttr> mbEventAttrList=mbEventAttrRepository.findByEventTypeAndAssembleType(eventKey, "ATTR");
+            List<MbEventAttr> mbEventBaseAttrList=mbEventAttrRepository.findByEventTypeAndAssembleType(baseEventKey, "ATTR");
+            mbEventAttrGroupList.addAll(mbEventBaseAttrList);
+            mbEventAttrGroupList.addAll(mbEventAttrList);
+            for(MbEventAttr mbEventAttr:mbEventAttrGroupList){
+                if(mbEventAttr.getEventType().equals(baseEventKey)){
+                    mbEventAttr.setEventType(eventKey);
+                    mbEventAttr.setGroup("BASE");
+                }
                 mbEventAttrMap.put(mbEventAttr.getAssembleId(),mbEventAttr);
             }
             eventInfo.setMbEventAttrs(mbEventAttrMap);
-            eventInfo.setMbEventParts(getMbEventPart(mbProdDefine.getAssembleId()));
+            eventInfo.setMbEventParts(getMbEventPart(eventKey,baseEventKey));
             eventInfos.put(mbProdDefine.getAssembleId(), eventInfo);
         }
         return eventInfos;
     }
-    private Map<String,Map> getMbEventPart(String eventType){
+    private Map<String,Map> getMbEventPart(String eventType,String baseEventKey){
         List<MbEventAttr> mbEventAttrs=mbEventAttrRepository.findByEventTypeAndAssembleType(eventType,"PART");
         Map<String,Map> mapMap=new HashMap<>();
         for(MbEventAttr mbEventAttr:mbEventAttrs){
             Map<String,MbEventPart>  mbEventParts=new HashMap<>();
+            List<MbEventPart> mbEventPartGroupList=new ArrayList<>();
            List<MbEventPart> mbEventPartList=mbEventPartRepository.findByEventTypeAndAssembleId(eventType, mbEventAttr.getAssembleId());
-            for(MbEventPart mbEventPart:mbEventPartList){
+           List<MbEventPart> mbEventPartBaseList=mbEventPartRepository.findByEventTypeAndAssembleId(baseEventKey, mbEventAttr.getAssembleId());
+            mbEventPartGroupList.addAll(mbEventPartBaseList);
+            mbEventPartGroupList.addAll(mbEventPartList);
+            for(MbEventPart mbEventPart:mbEventPartGroupList){
+                if(mbEventPart.getEventType().equals(baseEventKey)) {
+                    mbEventPart.setEventType(eventType);
+                    mbEventPart.setGroup("BASE");
+                }
                 mbEventParts.put(mbEventPart.getAttrKey(),mbEventPart);
             }
-            mapMap.put(mbEventAttr.getAssembleId(),mbEventParts);
+            mapMap.put(mbEventAttr.getAssembleId(), mbEventParts);
         }
         return mapMap;
     }

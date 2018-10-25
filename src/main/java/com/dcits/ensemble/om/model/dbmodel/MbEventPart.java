@@ -37,7 +37,8 @@ public class MbEventPart implements Serializable {
     private String attrValue;
     @Column(name="per_effect")
     private String perEffect;
-
+    @Transient
+    private String group;
     @Override
     public String toString() {
         return "MbEventPart{" +

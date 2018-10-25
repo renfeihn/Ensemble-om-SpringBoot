@@ -44,7 +44,8 @@ public class MbEventAttr implements Serializable {
     private String assembleRule;
     @Column(name="per_effect")
     private String perEffect;
-
+    @Transient
+    private String group;
     @Override
     public String toString() {
         return "MbEventAttr{" +
