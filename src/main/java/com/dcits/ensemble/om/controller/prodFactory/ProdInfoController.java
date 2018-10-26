@@ -48,7 +48,9 @@ public class ProdInfoController {
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         Map responseMap = new HashMap<>();
         //String prodType = (String) map.get("prodType");
-
+        if(prodType==null){
+            return ResultUtils.success();
+        }
         MbProdInfo mbProdInfo = mbProdInfoService.getProdInfo(prodType);
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranId("MbProdType");
         List<OmProcessRecordHist> omProcessRecordHistList = null;
