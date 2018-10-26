@@ -240,7 +240,7 @@ public class DifferenceInfo {
             if(List.class.isInstance(entry.getValue())){
                 entry.setValue(StringUtils.join((List)entry.getValue(),","));
             }
-            value = (String)entry.getValue();
+            value = String.valueOf(entry.getValue());
             if(value ==null||"null".equals(value)||"NULL".equals(value)){
                 it.remove();
             }
@@ -248,7 +248,7 @@ public class DifferenceInfo {
         Iterator<Map.Entry<Integer, String>> itOld = oldData.entrySet().iterator();
         while(itOld.hasNext()){
             Map.Entry<Integer, String> entry = itOld.next();
-            String value=entry.getValue();
+            String value= String.valueOf(entry.getValue());
             if(value ==null||"null".equals(value)||"NULL".equals(value)){
                 itOld.remove();
             }
@@ -262,7 +262,8 @@ public class DifferenceInfo {
         String dataDui=ResourcesUtils.getJsonString(newData);
         String oldDui=ResourcesUtils.getJsonString(oldData);
         String tableName=(String)map.get("tableName");
-        String optType=(String)map.get("optType");
+        //差异数据表保存的操作类型取自各个参数的optionType
+        String optType=(String)map.get("optionType");
         byte[] tmpDataDui;
         byte[] tmpOldDui;
         try {
