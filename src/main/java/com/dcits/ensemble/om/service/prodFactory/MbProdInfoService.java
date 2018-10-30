@@ -108,8 +108,8 @@ public class MbProdInfoService {
             String baseEventKey= eventKey.substring(eventKey.length()-prodType.length())+baseType;
             eventInfo.setMbEventType(mbEventTypeRepository.findByEventType(mbProdDefine.getAssembleId()));
             List<MbEventAttr> mbEventAttrGroupList=new ArrayList<>();
-            List<MbEventAttr> mbEventAttrList=mbEventAttrRepository.findByEventTypeAndAssembleType(eventKey, "ATTR");
-            List<MbEventAttr> mbEventBaseAttrList=mbEventAttrRepository.findByEventTypeAndAssembleType(baseEventKey, "ATTR");
+            List<MbEventAttr> mbEventAttrList=mbEventAttrRepository.findByEventType(eventKey);
+            List<MbEventAttr> mbEventBaseAttrList=mbEventAttrRepository.findByEventType(baseEventKey);
             mbEventAttrGroupList.addAll(mbEventBaseAttrList);
             mbEventAttrGroupList.addAll(mbEventAttrList);
             for(MbEventAttr mbEventAttr:mbEventAttrGroupList){
@@ -126,7 +126,7 @@ public class MbProdInfoService {
         return eventInfos;
     }
     private Map<String,Map> getMbEventPart(String eventType,String baseEventKey){
-        List<MbEventAttr> mbEventAttrs=mbEventAttrRepository.findByEventTypeAndAssembleType(eventType,"PART");
+        List<MbEventAttr> mbEventAttrs=mbEventAttrRepository.findByEventType(eventType);
         Map<String,Map> mapMap=new HashMap<>();
         for(MbEventAttr mbEventAttr:mbEventAttrs){
             Map<String,MbEventPart>  mbEventParts=new HashMap<>();
