@@ -156,7 +156,7 @@ public class DifferenceInfo {
                     if(eventOne.size()>0) {
                         keyValue.put("SEQ_NO", newData.get("seqNo"));
                         eventOne.put("tableName", "MB_EVENT_ATTR");
-                        eventOne.put("optType", this.optionType);
+                        eventOne.put("optType", eventOne.get("optionType"));
                         saveProdParaDifference(this.eventAttrNo, eventOne, keyValue, seqNo);
                     }
                 }
@@ -187,7 +187,7 @@ public class DifferenceInfo {
                     keyValue.put("PROD_TYPE", this.prodType);
                     keyValue.put("SEQ_NO", newData.get("seqNo"));
                     define.put("tableName", "MB_PROD_DEFINE");
-                    define.put("optType", this.optionType);
+                    define.put("optType", define.get("optionType"));
                     saveProdParaDifference(subSeqNo, define, keyValue, seqNo);
                 }
             }
@@ -197,6 +197,7 @@ public class DifferenceInfo {
             //记录差异
         if(prodMap.get("newData")!=null ) {
             Map newData=(Map)prodMap.get("newData");
+            //产品信息操作类型取自整体option
             prodMap.put("optType", this.optionType);
             if(newData.size()>0) {
                 //记录组合
@@ -263,7 +264,7 @@ public class DifferenceInfo {
         String oldDui=ResourcesUtils.getJsonString(oldData);
         String tableName=(String)map.get("tableName");
         //差异数据表保存的操作类型取自各个参数的optionType
-        String optType=(String)map.get("optionType");
+        String optType=(String)map.get("optType");
         byte[] tmpDataDui;
         byte[] tmpOldDui;
         try {
