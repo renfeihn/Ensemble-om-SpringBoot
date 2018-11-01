@@ -55,12 +55,17 @@ public class MbProdInfoService {
         }
         List<MbProdDefine>  mbProdDefineList=mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderByPageCodePageSeqNoAsc(prodType, "ATTR");
         if(mbProdDefineList!=null){
+            //衍合基础产品与可售产品参数
             mbProdDefineGroupList.addAll(mbProdDefineList);
         }
         for(MbProdDefine mbProdDefine:mbProdDefineGroupList){
             if(baseType.equals(mbProdDefine.getProdType())){
+                //参数取自基础产品
                 mbProdDefine.setGroup("BASE");
                 mbProdDefine.setProdType(prodType);
+            }else if (!baseType.equals(mbProdDefine.getProdType())){
+                //参数取自可售产品
+                mbProdDefine.setGroup("SOLD");
             }
             mbProdDefineMap.put(mbProdDefine.getAssembleId(), mbProdDefine);
         }
