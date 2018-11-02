@@ -58,6 +58,8 @@ public class MbProdDefine implements Serializable {
     private String pageCode;
     @Column(name="page_seq_no")
     private Integer pageSeqNo;
+    @Column(name="option_permissions")
+    private String optionPermissions;
     @Transient
     private String group;
     @Override
