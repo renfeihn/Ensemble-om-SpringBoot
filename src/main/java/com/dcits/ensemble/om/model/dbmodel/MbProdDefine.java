@@ -20,7 +20,7 @@ public class MbProdDefine implements Serializable {
 
     };
 
-    public MbProdDefine(String prodType, String seqNo, String assembleType, String assembleId, String eventDefault, String attrKey, String attrValue, String status, String perEffect, String pageCode, Integer pageSeqNo) {
+    public MbProdDefine(String optionPermissions,String prodType, String seqNo, String assembleType, String assembleId, String eventDefault, String attrKey, String attrValue, String status, String perEffect, String pageCode, Integer pageSeqNo) {
         this.prodType = prodType;
         this.seqNo = seqNo;
         this.assembleType = assembleType;
@@ -32,6 +32,7 @@ public class MbProdDefine implements Serializable {
         this.perEffect = perEffect;
         this.pageCode = pageCode;
         this.pageSeqNo = pageSeqNo;
+        this.optionPermissions = optionPermissions;
     }
 
     @Id
@@ -76,6 +77,8 @@ public class MbProdDefine implements Serializable {
                 ", perEffect='" + perEffect + '\'' +
                 ", pageCode='" + pageCode + '\'' +
                 ", pageSeqNo='" + pageSeqNo + '\'' +
+                ", optionPermissions='" + optionPermissions + '\'' +
+
                 '}';
     }
 }
