@@ -19,7 +19,7 @@ public class MbEventAttr implements Serializable {
     public MbEventAttr(){
 
     }
-    public MbEventAttr(String eventType, String pageCode,String pageSeqNo,String seqNo, String assembleType, String assembleId, String attrValue, String assembleRule,String perEffect) {
+    public MbEventAttr(String optionPermissions,String eventType, String pageCode,String pageSeqNo,String seqNo, String assembleType, String assembleId, String attrValue, String assembleRule,String perEffect) {
         this.eventType = eventType;
         this.seqNo = seqNo;
         this.assembleType = assembleType;
@@ -29,6 +29,7 @@ public class MbEventAttr implements Serializable {
         this.perEffect = perEffect;
         this.pageCode = pageCode;
         this.pageSeqNo = pageSeqNo;
+        this.optionPermissions = optionPermissions;
     }
     @Id
     @Column(name="event_type")
@@ -50,6 +51,8 @@ public class MbEventAttr implements Serializable {
     private String pageCode;
     @Column(name="pageSeqNo")
     private String pageSeqNo;
+    @Column(name="option_permissions")
+    private String optionPermissions;
     @Transient
     private String group;
     @Override
@@ -64,6 +67,7 @@ public class MbEventAttr implements Serializable {
                 ", perEffect='" + perEffect + '\'' +
                 ", pageCode='" + pageCode + '\'' +
                 ", pageSeqNo='" + pageSeqNo + '\'' +
+                ", optionPermissions='" + optionPermissions + '\'' +
                 '}';
     }
 }

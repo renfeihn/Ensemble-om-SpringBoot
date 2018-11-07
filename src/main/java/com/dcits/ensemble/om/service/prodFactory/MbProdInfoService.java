@@ -71,7 +71,7 @@ public class MbProdInfoService {
             mbProdDefineMap.put(mbProdDefine.getAssembleId(), mbProdDefine);
         }
         mbProdInfo.setProdDefines(mbProdDefineMap);
-        mbProdInfo.setMbEventInfos(getMbEventInfo(prodType,baseType));
+        mbProdInfo.setMbEventInfos(getMbEventInfo(prodRange,prodType,baseType));
         //获取单表数据
         mbProdInfo.setGlProdAccounting(glProdAccountingRepository.findByProdType(prodType));
         mbProdInfo.setIrlProdInt(irlProdIntRepository.findByProdType(prodType));
@@ -104,7 +104,7 @@ public class MbProdInfoService {
             }
         }*/
     }
-    private Map<String,MbEventInfo> getMbEventInfo(String prodType,String baseType){
+    private Map<String,MbEventInfo> getMbEventInfo(String prodRange,String prodType,String baseType){
         Map<String,MbEventInfo> eventInfos=new HashMap<>();
         List<MbProdDefine> mbProdDefineEvent=mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderByPageCodePageSeqNoAsc(prodType, "EVENT");
         for(MbProdDefine mbProdDefine: mbProdDefineEvent){
@@ -122,16 +122,18 @@ public class MbProdInfoService {
                 if(mbEventAttr.getEventType().equals(baseEventKey)){
                     mbEventAttr.setEventType(eventKey);
                     mbEventAttr.setGroup("BASE");
+                }else if (!mbEventAttr.getEventType().equals(baseEventKey) && !prodRange.equals("B")){
+                    mbEventAttr.setGroup("SOLD");
                 }
                 mbEventAttrMap.put(mbEventAttr.getAssembleId(),mbEventAttr);
             }
             eventInfo.setMbEventAttrs(mbEventAttrMap);
-            eventInfo.setMbEventParts(getMbEventPart(eventKey,baseEventKey));
+            eventInfo.setMbEventParts(getMbEventPart(prodRange,eventKey,baseEventKey));
             eventInfos.put(mbProdDefine.getAssembleId(), eventInfo);
         }
         return eventInfos;
     }
-    private Map<String,Map> getMbEventPart(String eventType,String baseEventKey){
+    private Map<String,Map> getMbEventPart(String prodRange,String eventType,String baseEventKey){
         List<MbEventAttr> mbEventAttrs=mbEventAttrRepository.findByEventType(eventType);
         Map<String,Map> mapMap=new HashMap<>();
         for(MbEventAttr mbEventAttr:mbEventAttrs){
@@ -145,6 +147,8 @@ public class MbProdInfoService {
                 if(mbEventPart.getEventType().equals(baseEventKey)) {
                     mbEventPart.setEventType(eventType);
                     mbEventPart.setGroup("BASE");
+                }else if(!mbEventPart.getEventType().equals(baseEventKey) && !prodRange.equals("B")){
+                    mbEventPart.setGroup("SOLD");
                 }
                 mbEventParts.put(mbEventPart.getAttrKey(),mbEventPart);
             }
