@@ -60,7 +60,7 @@ public class MbProdInfoService {
             mbProdDefineGroupList.addAll(mbProdDefineList);
         }
         for(MbProdDefine mbProdDefine:mbProdDefineGroupList){
-            if(baseType.equals(mbProdDefine.getProdType())){
+            if(mbProdDefine.getProdType().equals(baseType)){
                 //参数取自基础产品
                 mbProdDefine.setGroup("BASE");
                 mbProdDefine.setProdType(prodType);
@@ -189,6 +189,22 @@ public class MbProdInfoService {
     //修改DEFINE表中参数的位置信息
     public void updateColumn(Map column,String prodType){
         mbProdDefineRepository.updatePageSeq((Integer)column.get("pageSeqNo"),prodType,(String)column.get("key"),(String)column.get("pageCode"));
+    }
+    //获取子产品与基础产品不相同的产品集合
+    public List findChildDiffInfo(String baseProdType,String value,String assembleId){
+        List<MbProdType> prodTypeList=mbProdTypeRepository.findByBaseProdType(baseProdType);
+        Map responseMap = new HashMap<>();
+        List responseList = new ArrayList<>();
+        for(MbProdType mbProdType:prodTypeList){
+            MbProdDefine mbProdDefine=mbProdDefineRepository.findByProdTypeAndAssembleId(mbProdType.getProdType(),assembleId);
+            if(mbProdDefine!=null&&!value.equals(mbProdDefine.getAttrValue())){
+                responseMap.put("prodType",mbProdType.getProdType());
+                responseMap.put("baseValue",value);
+                responseMap.put("soldValue",mbProdDefine.getAttrValue());
+                responseList.add(responseMap);
+            }
+        }
+        return responseList;
     }
 }
 

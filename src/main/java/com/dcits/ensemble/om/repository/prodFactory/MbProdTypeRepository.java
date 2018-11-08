@@ -12,4 +12,5 @@ import java.util.List;
 public interface MbProdTypeRepository extends JpaRepository<MbProdType,Long> ,JpaSpecificationExecutor<MbProdType>{
     MbProdType findByProdType(String prodType);
     List<MbProdType> findByProdClass(String prodClass);
+    List<MbProdType> findByBaseProdType(String baseProdType);
 }

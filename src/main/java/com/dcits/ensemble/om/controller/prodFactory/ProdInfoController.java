@@ -85,7 +85,7 @@ public class ProdInfoController {
         String option = (String) map.get("option"); 
         //根据option设置交易状态  保存(save):2  暂存(temp):1
         String status = "save".equals(option)?"2":"temp".equals(option)?"1":"";
-        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranIdAndStatus("MB_PROD_TYPE","6");
+        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranIdAndStatus("MB_PROD_TYPE", "6");
         //无单号，1.申请单号 2.新增记录差异信息 3.根据操作类型更新交易状态
         if (omProcessMainFlow == null || omProcessMainFlow.getMainSeqNo() == null) {
             seqNo = flowManagement.appNoByTable(userName, "MB_PROD_TYPE", "Y",status);
@@ -119,7 +119,7 @@ public class ProdInfoController {
        String optType= (String) map.get("optType");
 
         //只需变更流程信息，登记流程的变动
-       flowManagement.updateFlowOnly(mainSeqNo,userId,remark,isApproved,optType);
+       flowManagement.updateFlowOnly(mainSeqNo, userId, remark, isApproved, optType);
         return ResultUtils.success();
     }
     /**
@@ -134,5 +134,17 @@ public class ProdInfoController {
             mbProdInfoService.updateColumn(column,prodType);
         }
         return ResultUtils.success();
+    }
+    /**
+     * 查询影响子产品的列表
+     */
+    @RequestMapping("/findChildProd")
+    @ResponseBody
+    public Result findChildProd(HttpServletResponse response, @RequestBody Map map) {
+        String prodType=(String) map.get("prodType");
+        String attrValue=(String) map.get("attrValue");
+        String attrType=(String) map.get("attrType");
+        List responseList= mbProdInfoService.findChildDiffInfo(prodType, attrValue,attrType);
+        return ResultUtils.success(responseList);
     }
 }

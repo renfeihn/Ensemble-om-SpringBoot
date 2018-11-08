@@ -10,17 +10,17 @@ public class Attr {
     private String precision;
     private String comment;
     private String defaults;
-    private String pk;
-    private String mk;
+    private String p;
+    private String m;
 
-    public Attr(String code, String dataType, String lengths, String precision, String comment, String defaults, String pk, String mk) {
+    public Attr(String code, String dataType, String lengths, String precision, String comment, String defaults, String p, String m) {
         this.code = code;
         this.dataType = dataType;
         this.lengths = lengths;
         this.precision = precision;
         this.comment = comment;
         this.defaults = defaults;
-        this.pk = pk;
-        this.mk = mk;
+        this.p = p;
+        this.m = m;
     }
 }

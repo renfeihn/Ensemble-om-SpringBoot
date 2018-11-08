@@ -43,4 +43,23 @@ public class TableDefine {
         }
         return dbTables;
     }
+    public static DbTable getTable(String tableName) {
+        DbTable dbTable;
+        try {
+            File file = ResourceUtils.getFile("classpath:table");
+            File fileTable = ResourceUtils.getFile(file.getPath()+"\\"+tableName+".json");
+            if (file.exists()) {
+                        logger.info("table name is {}", fileTable.getName());
+                        String content = IOUtils.toString(new FileInputStream(fileTable), Charset.forName("UTF-8"));
+                        dbTable = JSON.parseObject(content, new TypeReference<DbTable>() {
+                        });
+                return dbTable;
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
