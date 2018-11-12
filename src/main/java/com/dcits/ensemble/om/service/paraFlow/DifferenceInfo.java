@@ -197,7 +197,8 @@ public class DifferenceInfo {
         Map optPermMap = ResourcesUtils.getMap(mbProdInfo.get("optionPermissions"));
         if(!optPermMap.isEmpty()){
             //获取继承与该基础产品的可售产品
-            List<MbProdType> prodTypeList=mbProdTypeRepository.findByBaseProdType(this.prodType);
+            String baseProdType = this.prodType;
+            List<MbProdType> prodTypeList=mbProdTypeRepository.findByBaseProdType(baseProdType);
             String subSeqNo = processCombManagement.saveCombInfo(seqNo, operatorNo,"MB_PROD_DEFINE");
             BigDecimal defineIndex = new BigDecimal("1");
             BigDecimal attrIndex = new BigDecimal("1");
@@ -216,6 +217,7 @@ public class DifferenceInfo {
                             keyValue.put("SEQ_NO", mbProdDefine.getSeqNo());
                             define.put("tableName", "MB_PROD_DEFINE");
                             define.put("optType", "D");
+                            this.prodType = mbProdDefine.getProdType();
                             saveProdParaDifference(subSeqNo, define, keyValue, seqNo);
                         }
                     }
@@ -233,7 +235,7 @@ public class DifferenceInfo {
                         JSONObject keyValue = new JSONObject();
                         Map define = (Map) ResourcesUtils.getMap(mbProdInfo.get("prodDefines")).get(assembleId);
                         Map newData = (Map) define.get("newData");
-                        keyValue.put("PROD_TYPE", this.prodType);
+                        keyValue.put("PROD_TYPE", baseProdType);
                         keyValue.put("SEQ_NO", newData.get("seqNo"));
                         define.put("tableName", "MB_PROD_DEFINE");
                         define.put("optType", "D");
@@ -263,6 +265,7 @@ public class DifferenceInfo {
                             define.put("optType", "I");
                             keyValue.put("PROD_TYPE", mbProdType.getProdType());
                             keyValue.put("SEQ_NO", newSeqNo);
+                            this.prodType = mbProdType.getProdType();
                             saveProdParaDifference(subSeqNo, define, keyValue, seqNo);
                         }
                         defineIndex = defineIndex.add(BigDecimal.ONE);
@@ -382,12 +385,12 @@ public class DifferenceInfo {
                 itOld.remove();
             }
         }
-//        if(newData.get("prodType")!=null) {
-//            newData.put("prodType", this.prodType);
-//        }
-//        if(newData.get("eventType")!=null) {
-//            newData.put("eventType", this.eventType);
-//        }
+        if(newData.get("prodType")!=null) {
+            newData.put("prodType", this.prodType);
+        }
+        if(newData.get("eventType")!=null) {
+            newData.put("eventType", this.eventType);
+        }
         String dataDui=ResourcesUtils.getJsonString(newData);
         String oldDui=ResourcesUtils.getJsonString(oldData);
         String tableName=(String)map.get("tableName");
