@@ -50,6 +50,9 @@ public class FlowPublishService {
             baseTableRepositoryImpl.insertTable(omProcessRecordHist.getTableName(),myJson);
             else if("U".equals(omProcessRecordHist.getDmlType())){
                 baseTableRepositoryImpl.updateTable(omProcessRecordHist.getTableName(),myJson,omProcessRecordHist.getPkAndValue());
+            }else if("D".equals(omProcessRecordHist.getDmlType())){
+                //参数删除
+                baseTableRepositoryImpl.deleteTable(omProcessRecordHist.getTableName(),myJson,omProcessRecordHist.getPkAndValue());
             }
         }
 

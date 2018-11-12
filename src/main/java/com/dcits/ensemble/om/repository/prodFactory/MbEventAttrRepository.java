@@ -12,4 +12,5 @@ import java.util.List;
  */
 public interface MbEventAttrRepository extends JpaRepository<MbEventAttr,MbEventAttrKeysClass> ,JpaSpecificationExecutor<MbEventAttr>{
      List<MbEventAttr> findByEventType(String eventType);
+     public MbEventAttr findByEventTypeAndAssembleId(String eventType,String assembleId);
 }

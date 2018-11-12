@@ -36,6 +36,11 @@ public class BaseTableRepositoryImpl {
     }
     @Modifying
     @Transactional
+    public void  deleteTable(String tableName, JSONObject dataMap,String pkValue){
+        //删除表参数信息
+    }
+    @Modifying
+    @Transactional
     public void updateTable(String tableName, JSONObject dataMap,String pkValue){
         String space=" ";
         String equal="=";

@@ -1,15 +1,25 @@
 package com.dcits.ensemble.om.service.paraFlow;
 
 import com.alibaba.fastjson.JSONObject;
+import com.dcits.ensemble.om.model.dbmodel.MbEventAttr;
+import com.dcits.ensemble.om.model.dbmodel.MbProdDefine;
+import com.dcits.ensemble.om.model.dbmodel.MbProdType;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessDetailHistRepository;
+import com.dcits.ensemble.om.repository.prodFactory.MbEventAttrRepository;
+import com.dcits.ensemble.om.repository.prodFactory.MbProdDefineRepository;
+import com.dcits.ensemble.om.repository.prodFactory.MbProdTypeRepository;
 import com.dcits.ensemble.om.util.ResourcesUtils;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Array;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -19,12 +29,18 @@ import java.util.Map;
  */
 @Service
 public class DifferenceInfo {
+    @Autowired
+    private MbProdTypeRepository mbProdTypeRepository;
     @Resource
     private OmProcessRecordHistRepository omProcessRecordHistRepository;
     @Resource
     private OmProcessDetailHistRepository omProcessDetailHistRepository;
     @Resource
     private ProcessCombManagement processCombManagement;
+    @Resource
+    private MbProdDefineRepository mbProdDefineRepository;
+    @Resource
+    private MbEventAttrRepository mbEventAttrRepository;
     private String optionType;
     private String prodType;
     private String eventType;
@@ -47,24 +63,26 @@ public class DifferenceInfo {
        if(eventInfo==null){
            return;
        }
-     eventTypeNo=null;
-     eventPartNo=null;
-     eventAttrNo=null;
-     for (Object key : eventInfo.keySet()) {
-         Map<String,Map> eventOne=(Map)eventInfo.get(key);
-         String eventType=(String)key;
-         //如果操作类型为复制则事件名字以新的产品类型为名
-         if("I".equals(this.optionType)){
-             eventType=  eventType.substring(0,eventType.indexOf("_")+1)+this.prodType;
-         }
-         this.eventType=eventType;
-         eventTypeTran(ResourcesUtils.getMap(eventOne.get("mbEventType")), reqNo, operatorNo);
-         eventAttrTran(ResourcesUtils.getMap(eventOne.get("mbEventAttrs")), reqNo, operatorNo);
-         eventPartTran(ResourcesUtils.getMap(eventOne.get("mbEventParts")), reqNo, operatorNo);
-
-     }
-     //涉及他表
-       mbProdCharge((List)mbProdInfo.get("mbProdCharge"), reqNo, operatorNo);
+        eventTypeNo=null;
+        eventPartNo=null;
+        eventAttrNo=null;
+        for (Object key : eventInfo.keySet()) {
+            Map<String,Map> eventOne=(Map)eventInfo.get(key);
+            String eventType=(String)key;
+            //如果操作类型为复制则事件名字以新的产品类型为名
+            if("I".equals(this.optionType)){
+                eventType=  eventType.substring(0,eventType.indexOf("_")+1)+this.prodType;
+            }
+            this.eventType=eventType;
+            eventTypeTran(ResourcesUtils.getMap(eventOne.get("mbEventType")), reqNo, operatorNo);
+            eventAttrTran(ResourcesUtils.getMap(eventOne.get("mbEventAttrs")), reqNo, operatorNo);
+            eventPartTran(ResourcesUtils.getMap(eventOne.get("mbEventParts")), reqNo, operatorNo);
+        }
+        //涉及他表
+          mbProdCharge((List)mbProdInfo.get("mbProdCharge"), reqNo, operatorNo);
+        //参数状态
+        optionPermTran(mbProdInfo,reqNo,operatorNo);
+       
    }
    //GlProdAccounting
     public void glProdAccounting(Map prodMap,String seqNo,String operatorNo){
@@ -174,16 +192,126 @@ public class DifferenceInfo {
                 saveProdParaDifference(this.eventTypeNo, prodMap, keyValue, seqNo);
             }
     }
+    //参数状态处理
+    public void optionPermTran(Map mbProdInfo,String seqNo,String operatorNo){
+        Map optPermMap = ResourcesUtils.getMap(mbProdInfo.get("optionPermissions"));
+        if(!optPermMap.isEmpty()){
+            //获取继承与该基础产品的可售产品
+            List<MbProdType> prodTypeList=mbProdTypeRepository.findByBaseProdType(this.prodType);
+            String subSeqNo = processCombManagement.saveCombInfo(seqNo, operatorNo,"MB_PROD_DEFINE");
+            BigDecimal defineIndex = new BigDecimal("1");
+            BigDecimal attrIndex = new BigDecimal("1");
+            for(Object attrKey : optPermMap.keySet()){
+                Map attrOptPerm = (Map) optPermMap.get(attrKey);
+                String assembleId = attrOptPerm.get("key").toString();
+                if(attrOptPerm.get("optPerm").equals("D") || attrOptPerm.get("optPerm").equals("DALL")){
+                    //删除mbProdDefine表参数
+                    if("MB_PROD_DEFINE".equals(attrOptPerm.get("tableName").toString())){
+                        for(MbProdType mbProdType:prodTypeList) {
+                            JSONObject keyValue = new JSONObject();
+                            MbProdDefine mbProdDefine = mbProdDefineRepository.findByProdTypeAndAssembleId(mbProdType.getProdType(), assembleId);
+                            //向omProcessRecordHist插入
+                            Map define = (Map) ResourcesUtils.getMap(mbProdInfo.get("prodDefines")).get(assembleId);
+                            keyValue.put("PROD_TYPE", mbProdDefine.getProdType());
+                            keyValue.put("SEQ_NO", mbProdDefine.getSeqNo());
+                            define.put("tableName", "MB_PROD_DEFINE");
+                            define.put("optType", "D");
+                            saveProdParaDifference(subSeqNo, define, keyValue, seqNo);
+                        }
+                    }
+                    //删除mbEventAttr表参数
+                    if("MB_EVENT_ATTR".equals(attrOptPerm.get("tableName".toString()))){
+                        for(MbProdType mbProdType:prodTypeList){
+                            JSONObject keyValue = new JSONObject();
+                            MbEventAttr mbEventAttr = mbEventAttrRepository.findByEventTypeAndAssembleId(this.eventType,assembleId);
+                        }
+                    }
+                }
+                if(attrOptPerm.get("optPerm").equals("DALL")){
+                    //删除基础产品
+                    if("MB_PROD_DEFINE".equals(attrOptPerm.get("tableName").toString())) {
+                        JSONObject keyValue = new JSONObject();
+                        Map define = (Map) ResourcesUtils.getMap(mbProdInfo.get("prodDefines")).get(assembleId);
+                        Map newData = (Map) define.get("newData");
+                        keyValue.put("PROD_TYPE", this.prodType);
+                        keyValue.put("SEQ_NO", newData.get("seqNo"));
+                        define.put("tableName", "MB_PROD_DEFINE");
+                        define.put("optType", "D");
+                        saveProdParaDifference(subSeqNo, define, keyValue, seqNo);
+                    }
+                }
+                if(attrOptPerm.get("optPerm").equals("I")) {
+                    //可售产品增加参数
+                    if ("MB_PROD_DEFINE".equals(attrOptPerm.get("tableName").toString())) {
+                        for(MbProdType mbProdType:prodTypeList) {
+                            JSONObject keyValue = new JSONObject();
+                            //获取新增参数的seqNo
+                            BigDecimal maxSeqNo = new BigDecimal(getMaxSeqNo(mbProdType.getProdType(),"MB_PROD_DEFINE"));
+                            String newSeqNo = maxSeqNo.add(defineIndex).toString();
+                            Map define = (Map) ResourcesUtils.getMap(mbProdInfo.get("prodDefines")).get(assembleId);
+                            Map newData = (Map) define.get("newData");
+                            //获取新增参数的pageSeqNo
+                            BigDecimal maxPageSeqNo = new BigDecimal(getMaxPageSeqNo(mbProdType.getProdType(),"MB_PROD_DEFINE",newData.get("pageCode").toString()));
+                            String newPageSeqNo = maxPageSeqNo.add(defineIndex).toString();
+                            //重新组装插入数据参数
+                            newData.put("prodType",mbProdType.getProdType());
+                            newData.put("seqNo",newSeqNo);
+                            newData.put("pageSeqNo",newPageSeqNo);
+                            newData.put("optionPermissions",null);
+                            define.put("newData",newData);
+                            define.put("tableName", "MB_PROD_DEFINE");
+                            define.put("optType", "I");
+                            keyValue.put("PROD_TYPE", mbProdType.getProdType());
+                            keyValue.put("SEQ_NO", newSeqNo);
+                            saveProdParaDifference(subSeqNo, define, keyValue, seqNo);
+                        }
+                        defineIndex = defineIndex.add(BigDecimal.ONE);
+                    }
+                }
+            }
+        }
+    }
+    //获取同一pageCode下最大pageSeqNo
+    public String getMaxPageSeqNo(String key,String table,String pageCode){
+        String maxPageSeqNo = "";
+        if("MB_PROD_DEFINE".equals(table)){
+            List<MbProdDefine> mbProdDefines = mbProdDefineRepository.findByProdTypeAndPageCode(key,pageCode);
+            int pageSeqNo = mbProdDefines.get(0).getPageSeqNo();
+            for(int i=1; i<mbProdDefines.size(); i++){
+                if(pageSeqNo<mbProdDefines.get(i).getPageSeqNo()){
+                    pageSeqNo = mbProdDefines.get(i).getPageSeqNo();
+                }
+            }
+            maxPageSeqNo = pageSeqNo+"";
+        }
+        return maxPageSeqNo;
+    }
+    //获取最大SeqNo
+    public String getMaxSeqNo (String key,String table){
+        String maxSeqNo = "";
+        if("MB_EVENT_ATTR".equals(table)){
+        }
+        if("MB_PROD_DEFINE".equals(table)){
+            List<MbProdDefine> mbProdDefines = mbProdDefineRepository.findByProdType(key);
+            int seqNo = Integer.parseInt(mbProdDefines.get(0).getSeqNo());
+            for(int i=1; i<mbProdDefines.size(); i++){
+                if(seqNo<Integer.parseInt(mbProdDefines.get(i).getSeqNo())){
+                    seqNo = Integer.parseInt(mbProdDefines.get(i).getSeqNo());
+                }
+            }
+            maxSeqNo = seqNo+"";
+        }
+        return maxSeqNo;
+    }
     //产品参数
     public void prodDefineTran(Map prodMap,String seqNo,String operatorNo){
             if(prodMap.size()>0) {
                 //记录组合
                 String subSeqNo = processCombManagement.saveCombInfo(seqNo, operatorNo,"MB_PROD_DEFINE");
-
                 JSONObject keyValue = new JSONObject();
                 for (Object key : prodMap.keySet()) {
-                    Map define=(Map) prodMap.get(key);
-                    Map newData=(Map)  define.get("newData");
+                    Map define = (Map) prodMap.get(key);
+                    Map newData = (Map) define.get("newData");
                     keyValue.put("PROD_TYPE", this.prodType);
                     keyValue.put("SEQ_NO", newData.get("seqNo"));
                     define.put("tableName", "MB_PROD_DEFINE");
@@ -254,12 +382,12 @@ public class DifferenceInfo {
                 itOld.remove();
             }
         }
-        if(newData.get("prodType")!=null) {
-            newData.put("prodType", this.prodType);
-        }
-        if(newData.get("eventType")!=null) {
-            newData.put("eventType", this.eventType);
-        }
+//        if(newData.get("prodType")!=null) {
+//            newData.put("prodType", this.prodType);
+//        }
+//        if(newData.get("eventType")!=null) {
+//            newData.put("eventType", this.eventType);
+//        }
         String dataDui=ResourcesUtils.getJsonString(newData);
         String oldDui=ResourcesUtils.getJsonString(oldData);
         String tableName=(String)map.get("tableName");
