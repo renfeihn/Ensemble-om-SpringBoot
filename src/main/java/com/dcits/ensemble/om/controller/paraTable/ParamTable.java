@@ -30,11 +30,12 @@ import java.util.Map;
 @Api(value = "/getParamTable", tags = "单表模块")
 @Controller
 public class ParamTable {
+    @Resource
     private ParamTableService paramTableService;
     @ApiOperation(value = "单表信息", notes = "获取单表信息")
     @RequestMapping("/getTableInfo")
     @ResponseBody
-    public Result getProdInfo(HttpServletResponse response, @RequestParam(value = "tableName", required = false) String tableName) {
+    public Result getProdInfo(HttpServletResponse response, @RequestParam(value = "tableName", required = true) String tableName) {
         //Map map = requestBean.getBody();
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         Map responseMap = new HashMap<>();
@@ -43,7 +44,7 @@ public class ParamTable {
         responseMap.put("columnInfo",paramTableService.getTableInfo(tableName));
         //2.根据参数列信息及表名差数据库获取数据信息
         //3.将得到的信息分为两个对象集合传到前端
-        return ResultUtils.success();
+        return ResultUtils.success(responseMap);
     }
 
 }

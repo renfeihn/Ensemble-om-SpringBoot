@@ -33,7 +33,11 @@ public class ParamTableService {
     public List<ColumnBean> getTableColumn(String tableName){
        List<ColumnBean> columnInfoList=new ArrayList<>();
         DbTable dbTable= TableDefine.getTable(tableName);
-        for(Attr attr: dbTable.getAttrs()){
+        for(Attr attr: dbTable.getAttr()){
+            String attrCode=attr.getCode();
+            if("TRAN_TIMESTAMP".equals(attrCode)||"TRAN_TIME".equals(attrCode)){
+                continue;
+            }
             ColumnBean column=new ColumnBean(attr.getCode(),attr.getComment(),attr.getP(),attr.getM());
             columnInfoList.add(column);
         }

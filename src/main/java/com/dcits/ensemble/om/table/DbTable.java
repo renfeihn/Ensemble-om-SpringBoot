@@ -17,14 +17,14 @@ public class DbTable {
 
     private String parameter;
 
-    private List<Attr> attrs;
+    private List<Attr> attr;
 
-    public DbTable(String code, String system, String comment, String dbType, String parameter, List<Attr> attrs) {
+    public DbTable(String code, String system, String comment, String dbType, String parameter, List<Attr> attr) {
         this.code = code;
         this.system = system;
         this.comment = comment;
         this.dbType = dbType;
         this.parameter = parameter;
-        this.attrs = attrs;
+        this.attr = attr;
     }
 }

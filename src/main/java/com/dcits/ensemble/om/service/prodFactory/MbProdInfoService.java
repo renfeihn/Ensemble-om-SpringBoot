@@ -64,7 +64,7 @@ public class MbProdInfoService {
                 //参数取自基础产品
                 mbProdDefine.setGroup("BASE");
                 mbProdDefine.setProdType(prodType);
-            }else if (!baseType.equals(mbProdDefine.getProdType()) && !prodRange.equals("B")){
+            }else if (!mbProdDefine.getProdType().equals(baseType) && !prodRange.equals("B")){
                 //参数取自可售产品
                 mbProdDefine.setGroup("SOLD");
             }
