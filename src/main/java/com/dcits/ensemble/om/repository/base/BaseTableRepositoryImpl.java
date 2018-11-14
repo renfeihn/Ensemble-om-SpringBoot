@@ -38,6 +38,25 @@ public class BaseTableRepositoryImpl {
     @Transactional
     public void  deleteTable(String tableName, JSONObject dataMap,String pkValue){
         //删除表参数信息
+        String space=" ";
+        String equal="=";
+        String mark="?";
+        String and="and";
+        JSONObject pkValueJson=JSONObject.fromObject(pkValue);
+        StringBuffer sqlStr=new StringBuffer("delete from "+space+tableName+space+"where");
+        for(Object key:pkValueJson.keySet()){
+            Object value = dataMap.get(key);
+            sqlStr.append(space+key + equal  + mark + and);
+        }
+        sqlStr.delete(sqlStr.length() - 3, sqlStr.length() );
+        Query dataQuery = em.createNativeQuery(sqlStr.toString());
+        int i=1;
+        for(Object key:pkValueJson.keySet()){
+            Object value=pkValueJson.get(key);
+            dataQuery.setParameter(i, value);
+            i++;
+        }
+        dataQuery.executeUpdate();
     }
     @Modifying
     @Transactional
