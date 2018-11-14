@@ -223,9 +223,25 @@ public class DifferenceInfo {
                     }
                     //删除mbEventAttr表参数
                     if("MB_EVENT_ATTR".equals(attrOptPerm.get("tableName".toString()))){
+                        String eventType =  attrOptPerm.get("eventType").toString();
                         for(MbProdType mbProdType:prodTypeList){
                             JSONObject keyValue = new JSONObject();
-                            MbEventAttr mbEventAttr = mbEventAttrRepository.findByEventTypeAndAssembleId(this.eventType,assembleId);
+                            String newEventType = eventType.split("_")[0]+"_"+mbProdType.getProdType().toString();
+                            MbEventAttr mbEventAttr = mbEventAttrRepository.findByEventTypeAndAssembleId(newEventType,assembleId);
+                            Map infos =  ResourcesUtils.getMap(mbProdInfo.get("mbEventInfos"));
+                            Map event =  ResourcesUtils.getMap(infos.get(eventType));
+                            Map eventAttrs = ResourcesUtils.getMap(event.get("mbEventAttrs"));
+                            Map attr = ResourcesUtils.getMap(eventAttrs.get(attrOptPerm.get("key").toString()));
+                            Map newData = (Map) attr.get("newData");
+                            newData.put("eventType",newEventType);
+                            newData.put("seqNo",mbEventAttr.getSeqNo());
+                            attr.put("newData",newData);
+                            attr.put("tableName","MB_EVENT_ATTR");
+                            attr.put("optType","D");
+                            keyValue.put("EVENT_TYPE", newEventType);
+                            keyValue.put("SEQ_NO", mbEventAttr.getSeqNo());
+                            this.eventType = newEventType;
+                            saveProdParaDifference(subSeqNo, attr, keyValue, seqNo);
                         }
                     }
                 }
@@ -240,6 +256,20 @@ public class DifferenceInfo {
                         define.put("tableName", "MB_PROD_DEFINE");
                         define.put("optType", "D");
                         saveProdParaDifference(subSeqNo, define, keyValue, seqNo);
+                    }
+                    if("MB_EVENT_ATTR".equals(attrOptPerm.get("tableName").toString())){
+                        String eventType =  attrOptPerm.get("eventType").toString();
+                        JSONObject keyValue = new JSONObject();
+                        Map infos =  ResourcesUtils.getMap(mbProdInfo.get("mbEventInfos"));
+                        Map event =  ResourcesUtils.getMap(infos.get(eventType));
+                        Map eventAttrs = ResourcesUtils.getMap(event.get("mbEventAttrs"));
+                        Map attr = ResourcesUtils.getMap(eventAttrs.get(attrOptPerm.get("key").toString()));
+                        Map newData = (Map) attr.get("newData");
+                        keyValue.put("EVENT_TYPE", eventType);
+                        keyValue.put("SEQ_NO", newData.get("seqNo"));
+                        attr.put("tableName","MB_EVENT_ATTR");
+                        attr.put("optType","D");
+                        saveProdParaDifference(subSeqNo, attr, keyValue, seqNo);
                     }
                 }
                 if(attrOptPerm.get("optPerm").equals("I")) {
@@ -270,6 +300,37 @@ public class DifferenceInfo {
                         }
                         defineIndex = defineIndex.add(BigDecimal.ONE);
                     }
+                    if ("MB_EVENT_ATTR".equals(attrOptPerm.get("tableName").toString())) {
+                        String eventType =  attrOptPerm.get("eventType").toString();
+                        for(MbProdType mbProdType:prodTypeList) {
+                            String newEventType = eventType.split("_")[0]+"_"+mbProdType.getProdType().toString();
+                            JSONObject keyValue = new JSONObject();
+                            //获取新增参数的seqNo
+                            BigDecimal maxSeqNo = new BigDecimal(getMaxSeqNo(newEventType,"MB_EVENT_ATTR"));
+                            String newSeqNo = maxSeqNo.add(attrIndex).toString(); //attrIndex初始化为1 后+1递增
+                            Map infos =  ResourcesUtils.getMap(mbProdInfo.get("mbEventInfos"));
+                            Map event =  ResourcesUtils.getMap(infos.get(eventType));
+                            Map eventAttrs = ResourcesUtils.getMap(event.get("mbEventAttrs"));
+                            Map attr = ResourcesUtils.getMap(eventAttrs.get(attrOptPerm.get("key").toString()));
+                            Map newData = (Map) attr.get("newData");
+                            //获取新增参数的pageSeqNo
+                            BigDecimal maxPageSeqNo = new BigDecimal(getMaxPageSeqNo(newEventType,"MB_EVENT_ATTR",newData.get("pageCode").toString()));
+                            String newPageSeqNo = maxPageSeqNo.add(attrIndex).toString();
+                            //重新组装插入数据参数
+                            newData.put("eventType",newEventType);
+                            newData.put("seqNo",newSeqNo);
+                            newData.put("pageSeqNo",newPageSeqNo);
+                            newData.put("optionPermissions",null);
+                            attr.put("newData",newData);
+                            attr.put("tableName", "MB_EVENT_ATTR");
+                            attr.put("optType", "I");
+                            keyValue.put("EVENT_TYPE", newEventType);
+                            keyValue.put("SEQ_NO", newSeqNo);
+                            this.eventType = newEventType;
+                            saveProdParaDifference(subSeqNo, attr, keyValue, seqNo);
+                        }
+                        attrIndex = attrIndex.add(BigDecimal.ONE);
+                    }
                 }
             }
         }
@@ -287,12 +348,30 @@ public class DifferenceInfo {
             }
             maxPageSeqNo = pageSeqNo+"";
         }
+        if("MB_EVENT_ATTR".equals(table)){
+            List<MbEventAttr> mbEventAttrs = mbEventAttrRepository.findByEventType(key);
+            int pageSeqNo = mbEventAttrs.get(0).getPageSeqNo();
+            for(int i=1; i<mbEventAttrs.size(); i++){
+                if(pageSeqNo<mbEventAttrs.get(i).getPageSeqNo()){
+                    pageSeqNo = mbEventAttrs.get(i).getPageSeqNo();
+                }
+            }
+            maxPageSeqNo = pageSeqNo+"";
+        }
         return maxPageSeqNo;
     }
     //获取最大SeqNo
     public String getMaxSeqNo (String key,String table){
         String maxSeqNo = "";
         if("MB_EVENT_ATTR".equals(table)){
+            List<MbEventAttr> mbEventAttrs = mbEventAttrRepository.findByEventType(key);
+            int seqNo = Integer.parseInt(mbEventAttrs.get(0).getSeqNo());
+            for(int i=1; i<mbEventAttrs.size(); i++){
+                if(seqNo<Integer.parseInt(mbEventAttrs.get(i).getSeqNo())){
+                    seqNo = Integer.parseInt(mbEventAttrs.get(i).getSeqNo());
+                }
+            }
+            maxSeqNo = seqNo+"";
         }
         if("MB_PROD_DEFINE".equals(table)){
             List<MbProdDefine> mbProdDefines = mbProdDefineRepository.findByProdType(key);
