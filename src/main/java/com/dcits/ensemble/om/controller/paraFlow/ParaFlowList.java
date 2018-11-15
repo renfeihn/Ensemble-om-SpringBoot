@@ -75,11 +75,18 @@ public class ParaFlowList {
         String userId = (String)map.get("userId");
         String remark = (String)map.get("remark");
         String isApproved = (String)map.get("isApproved");
+        Boolean flag = (Boolean)map.get("downLoad");
+        Map responseMap = new HashMap<>();
         String optType= (String) map.get("optType");
-        if("Y".equals(isApproved))
-        flowPublishService.publishSave(mainSeqNo);
+        String sql="";
+        if("Y".equals(isApproved)) {
+            sql = flowPublishService.publishSave(mainSeqNo,flag);
+            responseMap.put("sql",sql);
+        }
         //只需变更流程信息，登记流程的变动
-        flowManagement.updateFlowOnly(mainSeqNo,userId,remark,isApproved,optType);
-        return ResultUtils.success();
+        if(flag) {
+            flowManagement.updateFlowOnly(mainSeqNo, userId, remark, isApproved, optType);
+        }
+        return ResultUtils.success(responseMap);
     }
 }

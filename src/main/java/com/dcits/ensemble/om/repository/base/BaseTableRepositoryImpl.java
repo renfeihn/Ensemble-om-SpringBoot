@@ -36,7 +36,7 @@ public class BaseTableRepositoryImpl {
     }
     @Modifying
     @Transactional
-    public void  deleteTable(String tableName, JSONObject dataMap,String pkValue){
+    public StringBuffer  deleteTable(String tableName, JSONObject dataMap,String pkValue,Boolean flag){
         //删除表参数信息
         String space=" ";
         String equal="=";
@@ -44,23 +44,31 @@ public class BaseTableRepositoryImpl {
         String and="and";
         JSONObject pkValueJson=JSONObject.fromObject(pkValue);
         StringBuffer sqlStr=new StringBuffer("delete from "+space+tableName+space+"where");
+        StringBuffer reSql=new StringBuffer("delete from "+space+tableName+space+"where");
         for(Object key:pkValueJson.keySet()){
             Object value = dataMap.get(key);
             sqlStr.append(space+key + equal  + mark + and);
+            reSql.append(space+key + equal  + "'"+value+"'" + and);
         }
         sqlStr.delete(sqlStr.length() - 3, sqlStr.length() );
-        Query dataQuery = em.createNativeQuery(sqlStr.toString());
-        int i=1;
-        for(Object key:pkValueJson.keySet()){
-            Object value=pkValueJson.get(key);
-            dataQuery.setParameter(i, value);
-            i++;
+        reSql.delete(reSql.length() - 3, reSql.length() );
+
+            Query dataQuery = em.createNativeQuery(sqlStr.toString());
+            int i = 1;
+            for (Object key : pkValueJson.keySet()) {
+                Object value = pkValueJson.get(key);
+                dataQuery.setParameter(i, value);
+                i++;
+            }
+        if(flag) {
+            dataQuery.executeUpdate();
         }
-        dataQuery.executeUpdate();
+        reSql.append(";");
+        return reSql;
     }
     @Modifying
     @Transactional
-    public void updateTable(String tableName, JSONObject dataMap,String pkValue){
+    public StringBuffer updateTable(String tableName, JSONObject dataMap,String pkValue,Boolean flag){
         String space=" ";
         String equal="=";
         String mark="?";
@@ -68,46 +76,58 @@ public class BaseTableRepositoryImpl {
         String and="and";
         JSONObject pkValueJson=JSONObject.fromObject(pkValue);
         StringBuffer sqlStr=new StringBuffer("update"+space);
+        StringBuffer reSql=new StringBuffer("update"+space);
         sqlStr.append(tableName+space+"set"+space);
+        reSql.append(tableName+space+"set"+space);
         for(Object data:dataMap.keySet()){
             Object value=dataMap.get(data);
             if(pkValueJson.get(data)==null&&value!=null&&!"null".equals(value.toString())) {
                     String columnName = ResourcesUtils.camelToUnderline(data.toString());
                     sqlStr.append(columnName + equal + mark + comm);
+                    reSql.append(columnName + equal + "'"+value+"'" + comm);
             }
         }
         sqlStr.deleteCharAt(sqlStr.length() - 1);
-        sqlStr.append(space+"where");
+        reSql.deleteCharAt(reSql.length() - 1);
+        sqlStr.append(space + "where");
+        reSql.append(space + "where");
         for(Object key:pkValueJson.keySet()){
-            Object value = dataMap.get(key);
+            Object value = pkValueJson.get(key);
             sqlStr.append(space+key + equal  + mark + and);
+            reSql.append(space+key + equal  + "'"+value+"'" + and);
         }
         sqlStr.delete(sqlStr.length() - 3, sqlStr.length() );
-        Query dataQuery = em.createNativeQuery(sqlStr.toString());
-        int i=1;
-        for(Object data:dataMap.keySet()) {
-            Object value=dataMap.get(data);
-            if(value!=null&&!"null".equals(value.toString())) {
+        reSql.delete(reSql.length() - 3, reSql.length() );
+
+            Query dataQuery = em.createNativeQuery(sqlStr.toString());
+            int i = 1;
+            for (Object data : dataMap.keySet()) {
+                Object value = dataMap.get(data);
+                if (value != null && !"null".equals(value.toString())) {
+                    dataQuery.setParameter(i, value);
+                    i++;
+                }
+            }
+            for (Object key : pkValueJson.keySet()) {
+                Object value = pkValueJson.get(key);
                 dataQuery.setParameter(i, value);
                 i++;
             }
+        if(flag) {
+            dataQuery.executeUpdate();
         }
-        for(Object key:pkValueJson.keySet()){
-            Object value=pkValueJson.get(key);
-            dataQuery.setParameter(i, value);
-            i++;
-        }
-        dataQuery.executeUpdate();
+        reSql.append(";");
+        return reSql;
     };
     @Modifying
     @Transactional
-    public void insertTable(String tableName, JSONObject dataMap){
+    public StringBuffer insertTable(String tableName, JSONObject dataMap,Boolean flag){
         String space=" ";
         String left="(";
         String right=")";
         String comm=",";
         StringBuffer sqlStr=new StringBuffer("insert into"+space);
-        sqlStr.append(tableName+space);
+        sqlStr.append(tableName + space);
         sqlStr.append(left);
         int i;
         for(Object data:dataMap.keySet()){
@@ -132,15 +152,18 @@ public class BaseTableRepositoryImpl {
             i++;
         }
         sqlStr.append(right);
-        Query dataQuery = em.createNativeQuery(sqlStr.toString());
-        i=1;
-        for(Object data:dataMap.keySet()){
-            Object value=dataMap.get(data);
-            if(value!=null&&!"null".equals(value.toString())) {
-                dataQuery.setParameter(i, value);
-                i++;
+        if(flag) {
+            Query dataQuery = em.createNativeQuery(sqlStr.toString());
+            i = 1;
+            for (Object data : dataMap.keySet()) {
+                Object value = dataMap.get(data);
+                if (value != null && !"null".equals(value.toString())) {
+                    dataQuery.setParameter(i, value);
+                    i++;
+                }
             }
+            dataQuery.executeUpdate();
         }
-        dataQuery.executeUpdate();
+        return sqlStr;
     }
 }

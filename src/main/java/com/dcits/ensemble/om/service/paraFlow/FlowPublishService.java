@@ -28,16 +28,19 @@ public class FlowPublishService {
     private OmProcessRecordHistRepository omProcessRecordHistRepository;
     @Resource
     private BaseTableRepositoryImpl baseTableRepositoryImpl;
-    public void publishSave(String mainSeqNo){
+    public String publishSave(String mainSeqNo,Boolean flag){
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByMainSeqNo(mainSeqNo);
-        List<OmProcessRelationHist> omProcessRelationHistList=omProcessRelationHistRepository.findByMainSeqNoAndDtlSeqNo(mainSeqNo,omProcessMainFlow.getDtlSeqNo().toString());
+        List<OmProcessRelationHist> omProcessRelationHistList=omProcessRelationHistRepository.findByMainSeqNoAndDtlSeqNo(mainSeqNo, omProcessMainFlow.getDtlSeqNo().toString());
+        StringBuffer pushSql= new StringBuffer();
         for(OmProcessRelationHist omProcessRelationHist:omProcessRelationHistList){
-           save(omProcessRelationHist.getRecSeqNo());
+            pushSql.append(save(omProcessRelationHist.getRecSeqNo(),flag));
         }
+        return pushSql.toString();
     }
 
-    public void save(String recSeqNo){
+    public StringBuffer save(String recSeqNo,Boolean flag){
         List<OmProcessRecordHist> omProcessRecordHists=  omProcessRecordHistRepository.findByRecSeqNo(recSeqNo);
+        StringBuffer pushSql=new StringBuffer();
         for(OmProcessRecordHist omProcessRecordHist:omProcessRecordHists){
             String str= null;
             try {
@@ -47,14 +50,14 @@ public class FlowPublishService {
             }
             JSONObject myJson = JSONObject.fromObject(str);
             if("I".equals(omProcessRecordHist.getDmlType()))
-            baseTableRepositoryImpl.insertTable(omProcessRecordHist.getTableName(),myJson);
-            else if("U".equals(omProcessRecordHist.getDmlType())){
-                baseTableRepositoryImpl.updateTable(omProcessRecordHist.getTableName(),myJson,omProcessRecordHist.getPkAndValue());
+                pushSql.append(baseTableRepositoryImpl.insertTable(omProcessRecordHist.getTableName(),myJson,flag));
+            else if("U".equals(omProcessRecordHist.getDmlType())) {
+                pushSql.append(baseTableRepositoryImpl.updateTable(omProcessRecordHist.getTableName(), myJson, omProcessRecordHist.getPkAndValue(),flag));
             }else if("D".equals(omProcessRecordHist.getDmlType())){
                 //参数删除
-                baseTableRepositoryImpl.deleteTable(omProcessRecordHist.getTableName(),myJson,omProcessRecordHist.getPkAndValue());
+                pushSql.append(baseTableRepositoryImpl.deleteTable(omProcessRecordHist.getTableName(), myJson, omProcessRecordHist.getPkAndValue(),flag));
             }
         }
-
+        return pushSql;
     }
 }

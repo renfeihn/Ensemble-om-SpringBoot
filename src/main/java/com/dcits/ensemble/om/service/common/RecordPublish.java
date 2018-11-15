@@ -28,7 +28,7 @@ public class RecordPublish {
         for(OmProcessRecordHist omProcessRecordHist:omProcessRecordHists){
             String str= new String(omProcessRecordHist.getDmlData()) ;
             JSONObject  myJson = JSONObject.fromObject(str);
-            baseTableRepositoryImpl.insertTable(omProcessRecordHist.getTableName(),myJson);
+         /*   baseTableRepositoryImpl.insertTable(omProcessRecordHist.getTableName(),myJson);*/
         }
 
     }
