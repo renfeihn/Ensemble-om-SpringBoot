@@ -3,6 +3,7 @@ package com.dcits.ensemble.om.controller.paraTable;
 import com.dcits.ensemble.om.controller.model.Result;
 import com.dcits.ensemble.om.controller.model.ResultUtils;
 import com.dcits.ensemble.om.repository.tables.OmTableListRepository;
+import com.dcits.ensemble.om.util.TableToJson;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,8 @@ import java.util.Map;
 public class TableList {
     @Resource
     private OmTableListRepository omTableListRepository;
+    @Resource
+    private TableToJson tableToJson;
     @ApiOperation(value = "单表信息", notes = "获取单表信息")
     @RequestMapping("/getTableList")
     @ResponseBody
@@ -30,6 +33,7 @@ public class TableList {
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         Map responseMap = new HashMap<>();
         responseMap.put("tableList",omTableListRepository.findBySystem(system));
+       /* tableToJson.tableToJson();*/
         return ResultUtils.success(responseMap);
     }
 }
