@@ -1,6 +1,5 @@
 package com.dcits.ensemble.om.controller.prodFactory;
 
-import com.alibaba.fastjson.JSON;
 import com.dcits.ensemble.om.controller.model.Result;
 import com.dcits.ensemble.om.controller.model.ResultUtils;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
@@ -9,7 +8,7 @@ import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessDetailHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessMainFlowRepository;
-import com.dcits.ensemble.om.service.paraFlow.DifferenceInfo;
+import com.dcits.ensemble.om.service.paraFlow.DifferenceProdInfo;
 import com.dcits.ensemble.om.service.paraFlow.FlowManagement;
 import com.dcits.ensemble.om.service.prodFactory.MbProdInfoService;
 import io.swagger.annotations.*;
@@ -38,7 +37,7 @@ public class ProdInfoController {
     @Resource
     private OmProcessDetailHistRepository omProcessDetailHistRepository;
     @Resource
-    private DifferenceInfo differenceInfo;
+    private DifferenceProdInfo differenceProdInfo;
 
     @ApiOperation(value = "产品信息", notes = "获取产品明细")
     @RequestMapping("/getProdInfo")
@@ -101,7 +100,7 @@ public class ProdInfoController {
         }
         //记录操作流程
         //有单号，1.获取操作信息（操作序号） 2.组合表中生成新的子单号 3.将子单号信息存入差异信息表
-        differenceInfo.insertProdDifferenceInfo(map, seqNo);
+        differenceProdInfo.insertProdDifferenceInfo(map, seqNo);
         return ResultUtils.success();
     }
 

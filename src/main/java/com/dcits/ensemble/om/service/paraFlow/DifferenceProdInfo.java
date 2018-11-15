@@ -28,7 +28,7 @@ import java.util.Map;
  * Created by ligan on 2018/8/27.
  */
 @Service
-public class DifferenceInfo {
+public class DifferenceProdInfo {
     @Autowired
     private MbProdTypeRepository mbProdTypeRepository;
     @Resource
