@@ -3,10 +3,7 @@ package com.dcits.ensemble.om.model.dbmodel.system;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -14,6 +11,7 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "OmMenuRole")
+@IdClass(OmMenuRoleClass.class)
 @Getter
 @Setter
 public class OmMenuRole implements Serializable {
@@ -27,6 +25,7 @@ public class OmMenuRole implements Serializable {
     @Id
     @Column(name="role_id")
     private String roleId;
+    @Id
     @Column(name="menu_id")
     private String menuId;
 
