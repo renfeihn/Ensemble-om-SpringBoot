@@ -82,7 +82,10 @@ public class BaseTableRepositoryImpl {
         for(Object data:dataMap.keySet()){
             Object value=dataMap.get(data);
             if(pkValueJson.get(data)==null&&value!=null&&!"null".equals(value.toString())) {
-                    String columnName = ResourcesUtils.camelToUnderline(data.toString());
+                String columnName=data.toString();
+                if(!columnName.equals(columnName.toUpperCase())) {
+                    columnName = ResourcesUtils.camelToUnderline(data.toString());
+                }
                     sqlStr.append(columnName + equal + mark + comm);
                     reSql.append(columnName + equal + "'"+value+"'" + comm);
             }
@@ -103,7 +106,7 @@ public class BaseTableRepositoryImpl {
             int i = 1;
             for (Object data : dataMap.keySet()) {
                 Object value = dataMap.get(data);
-                if (value != null && !"null".equals(value.toString())) {
+                if (pkValueJson.get(data)==null&&value != null && !"null".equals(value.toString())) {
                     dataQuery.setParameter(i, value);
                     i++;
                 }
@@ -131,7 +134,10 @@ public class BaseTableRepositoryImpl {
         sqlStr.append(left);
         int i;
         for(Object data:dataMap.keySet()){
-            String columnName=ResourcesUtils.camelToUnderline(data.toString());
+            String columnName=data.toString();
+            if(!columnName.equals(columnName.toUpperCase())) {
+                columnName= ResourcesUtils.camelToUnderline(data.toString());
+            }
             Object value=dataMap.get(data);
             if(value!=null&&!"null".equals(value.toString())) {
                 sqlStr.append(columnName);

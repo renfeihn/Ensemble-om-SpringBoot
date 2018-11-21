@@ -2,6 +2,7 @@ package com.dcits.ensemble.om.service.paraFlow;
 
 import com.alibaba.fastjson.JSONObject;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessDetailHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
 import com.dcits.ensemble.om.table.Attr;
 import com.dcits.ensemble.om.table.TableDefine;
@@ -22,22 +23,27 @@ import java.util.Map;
 public class DifferenceTableInfo {
     @Resource
     private OmProcessRecordHistRepository omProcessRecordHistRepository;
+    @Resource
+    private OmProcessDetailHistRepository omProcessDetailHistRepository;
+    @Resource
+    private ProcessCombManagement processCombManagement;
     //记录产品流程信息
-    public void insertTableDifferenceInfo(List mbProdInfoList,String reqNom,String tableName){
+    public void insertTableDifferenceInfo(List mbProdInfoList,String seqNo,String tableName){
         /*
         * 判断是否组合表交易
         * 组合表交易需在此加子表循环操作
         * */
 
+        String operatorNo= omProcessDetailHistRepository.findBySeqNoMax(seqNo)==null?"1": omProcessDetailHistRepository.findBySeqNoMax(seqNo);
+         String subSeqNo = processCombManagement.saveCombInfo(seqNo, operatorNo,tableName);
          for(Object key:mbProdInfoList){
             Map<String,Object> accounting=(Map)key;
-            String operateType=(String)accounting.get("optType");
             //根据单条数据的操作类型判断具体怎么执行
-            insertColumn( accounting,tableName);
+            insertColumn( accounting,tableName,seqNo,subSeqNo);
         }
      }
     //单表新增操作
-    public void insertColumn(Map map,String tableName){
+    public void insertColumn(Map map,String tableName,String seqNo,String recSeqNo){
         OmProcessRecordHist omProcessRecordHist =new OmProcessRecordHist();
         Map newData= (Map)map.get("newData");
         Map oldData= (Map)map.get("oldData");
@@ -96,10 +102,10 @@ public class DifferenceTableInfo {
         }
 
         omProcessRecordHist.setTableName(tableName);
-    /*    omProcessRecordHist.setRecSeqNo(seqNo);*/
+        omProcessRecordHist.setRecSeqNo(recSeqNo);
         omProcessRecordHist.setDmlType(optType);
-/*        omProcessRecordHist.setMainSeqNo(mainSeqNo);
-        omProcessRecordHist.setSubSeqNo(getMaxDiffSub(seqNo) );*/
+        omProcessRecordHist.setMainSeqNo(seqNo);
+        omProcessRecordHist.setSubSeqNo(getMaxDiffSub(seqNo) );
         omProcessRecordHistRepository.saveAndFlush(omProcessRecordHist);
     }
     private int getMaxDiffSub(String seqNo){
