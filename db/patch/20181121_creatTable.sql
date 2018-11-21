@@ -1,10 +1,12 @@
 CREATE TABLE om_menu (
   menu_seq_no   varchar(10) NOT NULL COMMENT '菜单编号',
   menu_id	 varchar(30) NOT NULL COMMENT '菜单id',
-  menu_desc	   varchar(100) NOT NULL COMMENT '菜单名称',
+  menu_name	   varchar(100) NOT NULL COMMENT '菜单名称',
   menu_parent_id	   varchar(30) COMMENT '父级菜单',
   menu_level	   int(1) COMMENT '菜单等级 ',
   menu_status   varchar(1) COMMENT '菜单状态',
+  menu_icon varchar(50) COMMENT '菜单图标id',
+  menu_component varchar(100) COMMENT '菜单url',
   PRIMARY KEY (menu_seq_no)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='菜单信息定义表';
 
