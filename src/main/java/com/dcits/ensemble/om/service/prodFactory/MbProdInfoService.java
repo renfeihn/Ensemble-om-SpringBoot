@@ -42,7 +42,7 @@ public class MbProdInfoService {
     private MbAcctStatsRepository mbAcctStatsRepository;
     public MbProdInfo getProdInfo(String prodType){
         MbProdInfo mbProdInfo=new MbProdInfo();
-        MbProdType mbProdType=mbProdTypeRepository.findByProdType(prodType);
+            MbProdType mbProdType=mbProdTypeRepository.findByProdType(prodType);
         mbProdInfo.setProdType(mbProdType);
         Map<String,MbProdDefine> mbProdDefineMap =new LinkedHashMap<>();
         String baseType=mbProdType.getBaseProdType();
@@ -166,7 +166,10 @@ public class MbProdInfoService {
             for(Object keyAttr:mbEventAttrMap.keySet()){
                 MbEventAttr mbEventAttr=mbEventAttrMap.get(keyAttr);
                 Map attr=new HashMap<>();
-                attr.put(mbEventAttr.getAssembleId(),mbEventAttr.getAttrValue());
+                Map map = new HashMap();
+                map.put("attrValue",mbEventAttr.getAttrValue());
+                map.put("optionPermissions",mbEventAttr.getOptionPermissions());
+                attr.put(mbEventAttr.getAssembleId(),map);
                 mbEvent.putAll(attr);
             }
             Map<String,Map> mbEventParts=mbEventInfo.getMbEventParts();

@@ -87,8 +87,11 @@ public class ParaDifferenceManagement {
         }
         if(newJsonObject.get("attrValue")!=null&&!newJsonObject.get("attrValue").equals("null")) {
             String value = (String) newJsonObject.get("attrValue");
+            Map map = new HashMap();
+            map.put("attrValue",value);
+            map.put("optionPermissions",newJsonObject.get("optionPermissions"));
             String eventType=(String) newJsonObject.get("eventType");
-            eventMap.put(eventType+'.'+key, value);
+            eventMap.put(eventType+'.'+key, map);
         }
 
     }
@@ -98,7 +101,10 @@ public class ParaDifferenceManagement {
         //此处可将key转换成中文描述
         if(newJsonObject.get("attrValue")!=null&&!newJsonObject.get("attrValue").equals("null")) {
             Object value =newJsonObject.get("attrValue");
-            defineMap.put(key, value);
+            Map map = new HashMap();
+            map.put("attrValue",value);
+            map.put("optionPermissions",newJsonObject.get("optionPermissions"));
+            defineMap.put(key, map);
         }
     }
     //装载prodCharge
