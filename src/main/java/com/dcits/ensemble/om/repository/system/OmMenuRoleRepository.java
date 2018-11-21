@@ -9,4 +9,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  * Created by jiajt on 2018/11/21.
  */
 public  interface OmMenuRoleRepository extends JpaRepository<OmMenuRole,OmMenuRoleClass>,JpaSpecificationExecutor<OmMenuRole> {
+    public OmMenuRole findByRoleIdAndMenuId(String roleId,String menuId);
 }

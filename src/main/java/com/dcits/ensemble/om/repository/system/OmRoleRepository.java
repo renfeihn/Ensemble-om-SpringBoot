@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  * Created by jiajt on 2018/11/21.
  */
 public interface OmRoleRepository extends JpaRepository<OmRole,Long>,JpaSpecificationExecutor<OmRole> {
+    public OmRole findByRoleId(String roleId);
 }

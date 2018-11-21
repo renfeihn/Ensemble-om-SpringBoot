@@ -8,4 +8,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  * Created by jiajt on 2018/11/21.
  */
 public interface OmMenuRepository extends JpaRepository<OmMenu,Long>,JpaSpecificationExecutor<OmMenu> {
+    public OmMenu findByMenuSeqNo(String menuSeqNo);
+
 }
