@@ -3,10 +3,7 @@ package com.dcits.ensemble.om.model.dbmodel.system;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -14,6 +11,8 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "OmProdPermDef")
+@IdClass(OmProdPermDefClass.class)
+
 @Getter
 @Setter
 public class OmProdPermDef implements Serializable {
