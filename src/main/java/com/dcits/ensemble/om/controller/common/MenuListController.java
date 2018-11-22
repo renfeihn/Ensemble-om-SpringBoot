@@ -41,6 +41,9 @@ public class MenuListController {
         List<Map> reMenu=new ArrayList<>();
         List<OmMenu> omMenuList=omMenuRepository.findAll();
         OmUserRole omUserRole=omUserRoleRepository.findByUserId(userId);
+        if(omUserRole==null){
+            return  ResultUtils.success(reMenu);
+        }
         List<OmMenuRole> omMenuRoleList=omMenuRoleRepository.findByRoleId(omUserRole.getRoleId());
         int sumNum=0;
         int reNum =0;
