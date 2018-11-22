@@ -23,13 +23,13 @@ public class MenuService {
                 break;
             //2级菜单
             case "2":
-                reAssembleMenu.put("title",omMenu.getMenuName());
+                reAssembleMenu.put("title",omMenu.getMenuTitle());
                 reAssembleMenu.put("icon",omMenu.getMenuIcon());
                 reAssembleMenu.put("name",omMenu.getMenuComponent());
                 break;
             //2级菜单
             case "3":
-                reAssembleMenu.put("title",omMenu.getMenuName());
+                reAssembleMenu.put("title",omMenu.getMenuTitle());
                 reAssembleMenu.put("icon",omMenu.getMenuIcon());
                 reAssembleMenu.put("name",omMenu.getMenuName());
                 reAssembleMenu.put("component",omMenu.getMenuComponent());
