@@ -25,7 +25,7 @@ public class MenuService {
             case "2":
                 reAssembleMenu.put("title",omMenu.getMenuName());
                 reAssembleMenu.put("icon",omMenu.getMenuIcon());
-                reAssembleMenu.put("name",omMenu.getMenuName());
+                reAssembleMenu.put("name",omMenu.getMenuComponent());
                 break;
             //2级菜单
             case "3":
@@ -35,7 +35,7 @@ public class MenuService {
                 reAssembleMenu.put("component",omMenu.getMenuComponent());
                 break;
         }
-        reAssembleMenu.put("menuId",omMenu.getMenuName());
+        reAssembleMenu.put("menuId",omMenu.getMenuId());
         return reAssembleMenu;
     }
     //是否包含menu

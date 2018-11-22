@@ -1,6 +1,8 @@
 package com.dcits.ensemble.om.service.userManage;
 
+import com.dcits.ensemble.om.model.dbmodel.system.OmUser;
 import com.dcits.ensemble.om.model.dbmodel.system.WebUser;
+import com.dcits.ensemble.om.repository.system.OmUserRepository;
 import com.dcits.ensemble.om.repository.userManage.WebUserRespository;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -14,19 +16,19 @@ import org.springframework.stereotype.Service;
 @Service
 public class WebUserService {
     @Autowired
-    private WebUserRespository webUserRespository;
+    private OmUserRepository omUserRepository;
 
     public boolean getUserMsgByUserId(String userId, String password) {
 //        WebUser webUser = webUserRespository.getUserMsgByUserId(userId,password);
         return userId.equals("admin") && password.equals("123456");
     }
 
-    public WebUser findByUsername(String username) {
-        return webUserRespository.findByUserId(username);
+    public OmUser findByUsername(String username) {
+        return omUserRepository.findByUserId(username);
     }
 
-    public WebUser login(String userId) {
-        WebUser webUser = webUserRespository.findByUserId(userId);
+    public OmUser login(String userId) {
+        OmUser webUser = omUserRepository.findByUserId(userId);
         if (webUser != null) {
             Subject currentUser = SecurityUtils.getSubject();
             UsernamePasswordToken token = new UsernamePasswordToken(webUser.getUserId(), webUser.getPassword());

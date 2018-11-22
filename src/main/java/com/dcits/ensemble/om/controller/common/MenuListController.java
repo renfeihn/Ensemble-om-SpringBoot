@@ -56,16 +56,15 @@ public class MenuListController {
                          continue;
                      }
                      reNum=(int)hasSumRole.get("num");
-                     sumMenu=hasSumRole;
-                 }
-                 if(omMenuItem.getMenuLevel().equals("3")){
+                     sumMenu=reAssembleMap;
+                 }else if(omMenuItem.getMenuLevel().equals("3")){
                      //对子菜单进行加载
                      sumList.add(reAssembleMap);
                      sumNum++;
                      if(reNum==sumNum){
                          sumMenu.put("items",sumList);
                          reMenu.add(sumMenu);
-                         sumMenu=new HashMap<>();
+                         sumList=new ArrayList<>();
                          sumNum=0;
                          reNum=0;
                      }
