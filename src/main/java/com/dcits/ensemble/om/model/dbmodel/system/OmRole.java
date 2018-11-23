@@ -19,10 +19,11 @@ import java.io.Serializable;
 public class OmRole implements Serializable {
     public OmRole () {}
 
-    public OmRole(String roleId, String roleName, String roleDesc) {
+    public OmRole(String roleId, String roleName, String roleDesc,String roleLevel) {
         this.roleId = roleId;
         this.roleName = roleName;
         this.roleDesc = roleDesc;
+        this.roleLevel = roleLevel;
     }
 
     @Id
@@ -32,13 +33,15 @@ public class OmRole implements Serializable {
     private String roleName;
     @Column(name = "role_desc")
     private String roleDesc;
-
+    @Column(name = "role_level")
+    private String roleLevel;
     @Override
     public String toString() {
         return "OmRole{" +
                 "roleId='" + roleId + '\'' +
                 ", roleName='" + roleName + '\'' +
                 ", roleDesc='" + roleDesc + '\'' +
+                ", roleLevel='" + roleLevel + '\'' +
                 '}';
     }
 }
