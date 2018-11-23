@@ -19,10 +19,11 @@ public class OmProdPermDef implements Serializable {
 
     public OmProdPermDef () {}
 
-    public OmProdPermDef(String userId, String modelType, String permLevel) {
+    public OmProdPermDef(String userId, String modelType, String baseProdLevel, String soldProdLevel) {
         this.userId = userId;
         this.modelType = modelType;
-        this.permLevel = permLevel;
+        this.baseProdLevel = baseProdLevel;
+        this.soldProdLevel = soldProdLevel;
     }
 
     @Id
@@ -30,15 +31,18 @@ public class OmProdPermDef implements Serializable {
     private String userId;
     @Column(name="model_type")
     private String modelType;
-    @Column(name="perm_level")
-    private String permLevel;
+    @Column(name="base_prod_level")
+    private String baseProdLevel;
+    @Column(name="sold_prod_level")
+    private String soldProdLevel;
 
     @Override
     public String toString() {
         return "OmProdPermDef{" +
                 "userId='" + userId + '\'' +
                 ", modelType='" + modelType + '\'' +
-                ", permLevel='" + permLevel + '\'' +
+                ", baseProdLevel='" + baseProdLevel + '\'' +
+                ", soldProdLevel='" + soldProdLevel + '\'' +
                 '}';
     }
 }
