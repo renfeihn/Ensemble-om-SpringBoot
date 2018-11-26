@@ -1,7 +1,7 @@
 package com.dcits.ensemble.om.controller.paraTable;
 import com.dcits.ensemble.om.controller.model.Result;
 import com.dcits.ensemble.om.controller.model.ResultUtils;
-import com.dcits.ensemble.om.repository.base.BaseTableRepositoryImpl;
+import com.dcits.ensemble.om.model.dbmodel.system.*;
 import com.dcits.ensemble.om.repository.base.SystemTableRepositoryImpl;
 import com.dcits.ensemble.om.repository.system.*;
 import io.swagger.annotations.Api;
@@ -112,5 +112,89 @@ public class SystemTable {
             }
         }
         return null;
+    }
+
+    /*
+    * 通过用户  获取用户所能访问的菜单信息
+    * */
+    @RequestMapping("/getSysInfoByUser")
+    @ResponseBody
+    public Result getSysInfoByUser(HttpServletResponse response, @RequestParam(value = "userId", required = true) String userId) {
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
+        Map responseMap = new HashMap<>();
+        String parentUserId = userId;
+        List<OmMenu> omMenus = new ArrayList<>();
+        List<OmRole> omRoles = new ArrayList<>();
+        List<OmUser> omUser = new ArrayList<>();
+        List<OmMenuRole> omMenuRoles = new ArrayList<>();
+        List<OmUserRole> omUserRoles1 = new ArrayList<>();
+
+        String userLevel = omUserRepository.findByUserId(userId).getUserLevel();
+        if("1".equals(userLevel)){
+            //系统管理员登录
+            omMenus = omMenuRepository.findAll();
+            omRoles = omRoleRepository.findAll();
+            omMenuRoles = omMenuRoleRepository.findAll();
+            omUserRoles1 = omUserRoleRepository.findAll();
+            omUser = omUserRepository.findAll();
+            responseMap.put("columnInfo", omMenus);
+            responseMap.put("roleInfo", omRoles);
+            responseMap.put("userInfo", omUser);
+            responseMap.put("menuRoleInfo", omMenuRoles);
+            responseMap.put("userRoleInfo", omUserRoles1);
+
+        }
+        else {
+            //获取用户所管理的所有用户信息
+            List<OmUser> omUsers = omUserRepository.findByParentUserId(parentUserId);
+            omUser = omUsers;
+            //获取所有用户的角色信息
+            if (omUsers.size() > 0) {
+                for (int i = 0; i < omUsers.size(); i++) {
+                    OmUserRole omUserRoles = omUserRoleRepository.findByUserId(omUsers.get(i).getUserId());
+                    omUserRoles1.add(omUserRoles);
+                    if (omUserRoles != null) {
+                        //组装角色信息
+                        omRoles.add(omRoleRepository.findByRoleId(omUserRoles.getRoleId()));
+                        //通过角色获取菜单信息
+                        List<OmMenuRole> omMenuRole = omMenuRoleRepository.findByRoleId(omUserRoles.getRoleId());
+                        for (int j = 0; j < omMenuRole.size(); j++) {
+                            //组装角色菜单信息
+                            omMenuRoles.add(omMenuRole.get(j));
+                            //获取菜单信息
+                            OmMenu omMenu = omMenuRepository.findByMenuId(omMenuRole.get(j).getMenuId());
+                            if (omMenu != null) {
+                                //去重
+                                Boolean flag = false;
+                                for(int k=0;k<omMenus.size();k++){
+                                    if(omMenus.get(k).getMenuSeqNo().equals(omMenu.getMenuSeqNo())){
+                                        flag = true;
+                                        break;
+                                    }
+                                }
+                                if(!flag){
+                                    omMenus.add(omMenu);
+                                }
+                            }
+                        }
+                    }
+                }
+                responseMap.put("columnInfo", omMenus);
+                responseMap.put("roleInfo", omRoles);
+                responseMap.put("userInfo", omUser);
+                responseMap.put("menuRoleInfo", omMenuRoles);
+                responseMap.put("userRoleInfo", omUserRoles1);
+
+
+            } else {
+                responseMap.put("columnInfo", null);
+                responseMap.put("roleInfo", null);
+                responseMap.put("userInfo", null);
+                responseMap.put("menuRole", null);
+                responseMap.put("menuRoleInfo", null);
+                responseMap.put("userRoleInfo", null);
+            }
+        }
+       return ResultUtils.success(responseMap);
     }
 }

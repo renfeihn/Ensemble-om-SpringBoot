@@ -1,0 +1,57 @@
+{
+  "code": "MB_PROD_CLASS",
+  "comment": "产品分类定义表",
+  "attr": [
+    {
+      "code": "PROD_CLASS",
+      "dataType": "Varchar",
+      "lengths": "50",
+      "precision": "",
+      "M": true,
+      "P": true,
+      "comment": "产品类型",
+      "defaults": ""
+    },
+    {
+      "code": "PROD_CLASS_DESC",
+      "dataType": "Varchar",
+      "lengths": "100",
+      "precision": "",
+      "M": true,
+      "P": false,
+      "comment": "产品类型描述",
+      "defaults": "",
+      "dictionary": "PROD_CLASS_DESC",
+      "column": "产品类型描述",
+      "scope": ""
+    },
+    {
+      "dictionary": "PROD_CLASS_LEVEL",
+      "code": "PROD_CLASS_LEVEL",
+      "codeOld": "PROD_CLASS_LEVEL",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "defaults": "",
+      "M": true,
+      "P": false
+    },
+    {
+      "dictionary": "PARENT_PROD_CLASS",
+      "code": "PARENT_PROD_CLASS",
+      "codeOld": "PARENT_PROD_CLASS",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "defaults": "",
+      "M": false,
+      "P": false
+    }
+  ],
+  "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": "描述产品工厂所有的产品类型",
+  "moduleType": "产品参数"
+}

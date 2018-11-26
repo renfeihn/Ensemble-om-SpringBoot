@@ -11,5 +11,6 @@ import java.util.List;
  */
 public interface OmMenuRepository extends JpaRepository<OmMenu,Long>,JpaSpecificationExecutor<OmMenu> {
     public OmMenu findByMenuSeqNo(String menuSeqNo);
+    public OmMenu findByMenuId(String menuId);
 
 }
