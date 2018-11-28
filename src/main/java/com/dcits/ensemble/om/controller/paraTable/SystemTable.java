@@ -4,6 +4,7 @@ import com.dcits.ensemble.om.controller.model.ResultUtils;
 import com.dcits.ensemble.om.model.dbmodel.system.*;
 import com.dcits.ensemble.om.repository.base.SystemTableRepositoryImpl;
 import com.dcits.ensemble.om.repository.system.*;
+import com.dcits.ensemble.om.repository.tables.OmTableListRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import net.sf.json.JSONObject;
@@ -40,6 +41,8 @@ public class SystemTable {
     @Resource
     private OmParamPermDefRepository omParamPermDefRepository;
     @Resource
+    private OmTableListRepository omTableListRepository;
+    @Resource
     private SystemTableRepositoryImpl systemTableRepositoryImpl;
     @ApiOperation(value = "系统表信息", notes = "获取用户，菜单，角色，权限表信息")
     @RequestMapping("/getSysTable")
@@ -68,6 +71,9 @@ public class SystemTable {
         }
         if("OM_PARAM_PERM_DEF".equals(tableName)) {
             responseMap.put("columnInfo", omParamPermDefRepository.findAll());
+        }
+        if("OM_TABLE_LIST".equals(tableName)) {
+            responseMap.put("columnInfo", omTableListRepository.findAll());
         }
         return ResultUtils.success(responseMap);
     }
