@@ -16,12 +16,13 @@ import javax.persistence.Table;
 @Getter
 @Setter
 public class OmTableList {
-    public OmTableList(String tableName, String tableDesc, String system, String parameter,String modelId) {
+    public OmTableList(String tableName, String tableDesc, String system, String parameter,String modelId,String searchColumn) {
         this.tableName = tableName;
         this.tableDesc = tableDesc;
         this.system = system;
         this.parameter = parameter;
         this.modelId  = modelId;
+        this.searchColumn = searchColumn;
     }
     public OmTableList() {
 
@@ -37,6 +38,10 @@ public class OmTableList {
     private String parameter;
     @Column(name="model_id")
     private String modelId;
+    @Column(name="search_column")
+    private String searchColumn;
+
+
     @Override
     public String toString() {
         return "OmTableList{" +
@@ -45,6 +50,7 @@ public class OmTableList {
                 ", system='" + system + '\'' +
                 ", parameter='" + parameter + '\'' +
                 ", modelId='" + modelId + '\'' +
+                ", searchColumn='" + searchColumn + '\'' +
                 '}';
     }
 }

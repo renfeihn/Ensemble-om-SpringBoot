@@ -1,6 +1,6 @@
 {
   "code": "MB_ATTR_VALUE",
-  "comment": "²ÎÊıÖµ¶¨Òå±í",
+  "comment": "å‚æ•°å€¼å®šä¹‰è¡¨",
   "attr": [
     {
       "code": "ATTR_KEY",
@@ -9,10 +9,10 @@
       "precision": "",
       "M": true,
       "P": true,
-      "comment": "²ÎÊıKEYÖµ È¡ÖµÓÚMB_ATTR_TYPE.ATTR_KEY",
+      "comment": "å‚æ•°KEYå€¼ å–å€¼äºMB_ATTR_TYPE.ATTR_KEY",
       "defaults": "",
       "dictionary": "ATTR_KEY",
-      "column": "²ÎÊıKEY È¡ÖµÓÚMB_ATTR_TYPE ",
+      "column": "å‚æ•°KEY å–å€¼äºMB_ATTR_TYPE ",
       "scope": ""
     },
     {
@@ -22,10 +22,10 @@
       "precision": "",
       "M": true,
       "P": true,
-      "comment": "²ÎÊıÖµ",
+      "comment": "å‚æ•°å€¼",
       "defaults": "",
       "dictionary": "ATTR_VALUE",
-      "column": "²ÎÊıÖµ",
+      "column": "å‚æ•°å€¼",
       "scope": ""
     },
     {
@@ -35,10 +35,10 @@
       "precision": "",
       "M": true,
       "P": false,
-      "comment": "²ÎÊıÖµÃèÊö",
+      "comment": "å‚æ•°å€¼æè¿°",
       "defaults": "",
       "dictionary": "VALUE_DESC",
-      "column": "²ÎÊıÖµÃèÊö",
+      "column": "å‚æ•°å€¼æè¿°",
       "scope": ""
     },
     {
@@ -48,10 +48,10 @@
       "precision": "",
       "M": false,
       "P": false,
-      "comment": "ÒıÓÃ±íÃû",
+      "comment": "å¼•ç”¨è¡¨å",
       "defaults": "",
       "dictionary": "REF_TABLE",
-      "column": "ÒıÓÃ±íÃû",
+      "column": "å¼•ç”¨è¡¨å",
       "scope": ""
     },
     {
@@ -61,10 +61,10 @@
       "precision": "",
       "M": false,
       "P": false,
-      "comment": "ÒıÓÃÌõ¼ş",
+      "comment": "å¼•ç”¨æ¡ä»¶",
       "defaults": "",
       "dictionary": "REF_CONDITION",
-      "column": "ÒıÓÃÌõ¼ş",
+      "column": "å¼•ç”¨æ¡ä»¶",
       "scope": ""
     },
     {
@@ -74,10 +74,10 @@
       "precision": "",
       "M": false,
       "P": false,
-      "comment": "¹ØÁª±íÃèÊöÁĞ  ",
+      "comment": "å…³è”è¡¨æè¿°åˆ—  ",
       "defaults": "",
       "dictionary": "REF_COLUMNS",
-      "column": "¹ØÁª±íÃèÊöÁĞ  ",
+      "column": "å…³è”è¡¨æè¿°åˆ—  ",
       "scope": ""
     },
     {
@@ -90,7 +90,7 @@
       "comment": "",
       "defaults": "",
       "dictionary": "COMPANY",
-      "column": "·¨ÈË´úÂë",
+      "column": "æ³•äººä»£ç ",
       "scope": ""
     },
     {
@@ -100,10 +100,10 @@
       "precision": "",
       "M": false,
       "P": false,
-      "comment": "½»Ò×Ê±¼ä´Á",
+      "comment": "äº¤æ˜“æ—¶é—´æˆ³",
       "defaults": "",
       "dictionary": "TRAN_TIMESTAMP",
-      "column": "Ê±¼ä´Á",
+      "column": "æ—¶é—´æˆ³",
       "scope": ""
     },
     {
@@ -113,10 +113,10 @@
       "precision": "0",
       "M": false,
       "P": false,
-      "comment": "½»Ò×Ê±¼ä",
+      "comment": "äº¤æ˜“æ—¶é—´",
       "defaults": "",
       "dictionary": "TRAN_TIME",
-      "column": "½»Ò×Ê±¼ä",
+      "column": "äº¤æ˜“æ—¶é—´",
       "scope": ""
     }
   ],
@@ -124,6 +124,6 @@
   "dbType": "upright",
   "parameter": "init_para",
   "system": "Ensemble",
-  "commentDesc": "ÃèÊö²úÆ·¹¤³§ÔÊĞíµÄ²ÎÊıÖµ·¶Î§",
-  "moduleType": "²úÆ·²ÎÊı"
+  "commentDesc": "æè¿°äº§å“å·¥å‚å…è®¸çš„å‚æ•°å€¼èŒƒå›´",
+  "moduleType": "äº§å“å‚æ•°"
 }
