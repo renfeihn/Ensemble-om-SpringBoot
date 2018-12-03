@@ -1,0 +1,103 @@
+{
+    "code": "MB_ATTR_CLASS",
+    "comment": "参数分类定义表",
+    "attr": [
+        {
+            "code": "ATTR_CLASS",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "参数分类",
+            "defaults": "",
+            "dictionary": "ATTR_CLASS",
+            "column": "参数分类",
+            "scope": ""
+        },
+        {
+            "code": "ATTR_CLASS_DESC",
+            "dataType": "Varchar",
+            "lengths": "100",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "参数分类描述",
+            "defaults": "",
+            "dictionary": "ATTR_CLASS_DESC",
+            "column": "参数分类描述",
+            "scope": ""
+        },
+        {
+            "dictionary": "ATTR_CLASS_LEVEL",
+            "code": "ATTR_CLASS_LEVEL",
+            "codeOld": "ATTR_CLASS_LEVEL",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "defaults": "",
+            "comment": "参数分类层级",
+            "scope": "1:1级,2:2级",
+            "M": false,
+            "P": false
+        },
+        {
+            "dictionary": "PARENT_ATTR_CLASS",
+            "code": "PARENT_ATTR_CLASS",
+            "codeOld": "PARENT_ATTR_CLASS",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "defaults": "",
+            "comment": "上级参数分类",
+            "scope": "取值于MB_ATTR_CLASS.ATTR_CLASS",
+            "M": false,
+            "P": false
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "column": "法人代码",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "column": "时间戳",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "column": "交易时间",
+            "scope": ""
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "init_para",
+    "system": "Ensemble",
+    "commentDesc": "描述产品工厂中参数的分类及定义",
+    "moduleType": "产品参数"
+}
