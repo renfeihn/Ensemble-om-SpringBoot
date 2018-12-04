@@ -77,3 +77,55 @@ CREATE TABLE `om_table_list` (
 -- ----------------------------
 INSERT INTO `om_table_list` VALUES ('CIF_CLIENT_TYPE', '客户类型定义', 'ensemble', 'init', 'CIF', '');
 SET FOREIGN_KEY_CHECKS=1;
+
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : ensemble
+Source Server Version : 50516
+Source Host           : 127.0.0.1:3306
+Source Database       : ensemble
+
+Target Server Type    : MYSQL
+Target Server Version : 50516
+File Encoding         : 65001
+
+Date: 2018-12-04 20:12:27
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for om_system_org
+-- ----------------------------
+DROP TABLE IF EXISTS `om_system_org`;
+CREATE TABLE `om_system_org` (
+  `SYSTEM_ID` varchar(10) COLLATE utf8_unicode_ci NOT NULL COMMENT '目标系统ID',
+  `SYSTEM_NAME` varchar(60) COLLATE utf8_unicode_ci NOT NULL COMMENT '目标系统名称',
+  `SYSTEM_DESC` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '目标系统描述',
+  PRIMARY KEY (`SYSTEM_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of om_system_org
+-- ----------------------------
+INSERT INTO `om_system_org` VALUES ('accounting', 'accounting', '核算管理');
+INSERT INTO `om_system_org` VALUES ('ensemble', 'ensemble', '核心业务');
+INSERT INTO `om_system_org` VALUES ('price', 'price', '统一计价');
+
+-- ----------------------------
+-- Table structure for para_module_org
+-- ----------------------------
+DROP TABLE IF EXISTS `para_module_org`;
+CREATE TABLE `para_module_org` (
+  `MODULE_ID` varchar(10) NOT NULL COMMENT '模块代码',
+  `SYSTEM_ID` varchar(10) NOT NULL COMMENT '目标系统ID',
+  `MODULE_NAME` varchar(60) NOT NULL COMMENT '目标模块名称',
+  `MODULE_DESC` varchar(100) DEFAULT NULL COMMENT '目标模块描述',
+  PRIMARY KEY (`MODULE_ID`,`SYSTEM_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='目标模块表';
+
+-- ----------------------------
+-- Records of para_module_org
+-- ----------------------------
+SET FOREIGN_KEY_CHECKS=1;

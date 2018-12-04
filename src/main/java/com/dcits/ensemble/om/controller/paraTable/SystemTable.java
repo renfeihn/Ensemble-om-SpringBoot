@@ -44,6 +44,11 @@ public class SystemTable {
     private OmTableListRepository omTableListRepository;
     @Resource
     private SystemTableRepositoryImpl systemTableRepositoryImpl;
+    @Resource
+    private OmSystemOrgRepository omSystemOrgRepository;
+    @Resource
+    private OmModuleOrgRepository omModuleOrgRepository;
+
     @ApiOperation(value = "系统表信息", notes = "获取用户，菜单，角色，权限表信息")
     @RequestMapping("/getSysTable")
     @ResponseBody
@@ -74,6 +79,12 @@ public class SystemTable {
         }
         if("OM_TABLE_LIST".equals(tableName)) {
             responseMap.put("columnInfo", omTableListRepository.findAll());
+        }
+        if("OM_SYSTEM_ORG".equals(tableName)) {
+            responseMap.put("columnInfo", omSystemOrgRepository.findAll());
+        }
+        if("OM_MODULE_ORG".equals(tableName)) {
+            responseMap.put("columnInfo", omModuleOrgRepository.findAll());
         }
         return ResultUtils.success(responseMap);
     }
