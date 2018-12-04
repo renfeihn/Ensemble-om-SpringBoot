@@ -47,7 +47,7 @@ public class TableDefine {
         DbTable dbTable;
         try {
             File file = ResourceUtils.getFile("classpath:table");
-            File fileTable = ResourceUtils.getFile(file.getPath()+"\\"+tableName+".json");
+            File fileTable = ResourceUtils.getFile(file.getPath()+"/"+tableName+".json");
             if (file.exists()) {
                         logger.info("table name is {}", fileTable.getName());
                         String content = IOUtils.toString(new FileInputStream(fileTable), Charset.forName("UTF-8"));
