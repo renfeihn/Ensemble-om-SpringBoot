@@ -65,6 +65,7 @@ public class TableDiffController {
             }
         }
         responseMap.put("tableInfo",tableDiffAllList);
+        responseMap.put("mainFlow",omProcessMainFlow);
         return ResultUtils.success(responseMap);
     }
 }
