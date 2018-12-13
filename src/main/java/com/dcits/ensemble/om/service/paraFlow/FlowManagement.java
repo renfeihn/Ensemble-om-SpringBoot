@@ -63,6 +63,8 @@ public class FlowManagement {
         paraCircleFlow.setStatus(status);
         paraCircleFlow.setIsTranGroup(tranFlow);
         paraCircleFlow.setDtlSeqNo(BigDecimal.ONE);
+        paraCircleFlow.setDispose("N");
+        paraCircleFlow.setUserId(userName);
         //累加序号
         omProcessMainFlowRepository.saveAndFlush(paraCircleFlow);
         sumProcessInfo(seqNo,userName,status,BigDecimal.ONE,null,null);
@@ -96,6 +98,9 @@ public class FlowManagement {
             if(isApproved.equals("Y")){
                 //发布或复核通过
                 status = optType;
+                if("4".equals(status)){
+                    omProcessMainFlow.setDispose("Y");
+                }
             }else{
                 //发布和复核驳回
                 status = "6";
@@ -106,5 +111,12 @@ public class FlowManagement {
             //记录参数操作历史表
             sumProcessInfo(mainSeqNo, userId, status, omProcessMainFlow.getDtlSeqNo(), remark, isApproved);
         }
+    }
+    public void onlyUpdateDel(OmProcessMainFlow omProcessMainFlow,String userName){
+        BigDecimal dtlSeqNo = omProcessMainFlow.getDtlSeqNo().add(BigDecimal.ONE);
+        omProcessMainFlow.setDtlSeqNo(dtlSeqNo);
+        omProcessMainFlow.setStatus("1");
+        omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
+        sumProcessInfo(omProcessMainFlow.getMainSeqNo(), userName, "1", omProcessMainFlow.getDtlSeqNo(),null,null);
     }
 }

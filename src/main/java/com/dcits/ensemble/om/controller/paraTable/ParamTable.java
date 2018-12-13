@@ -60,28 +60,24 @@ public class ParamTable {
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         String userName = (String) map.get("userName");
         String tableName= (String) map.get("tableName");
+        String tableDesc= (String) map.get("tableDesc");
         List list= (List) map.get("data");
         String seqNo;
         String option = (String) map.get("option");
         //根据option设置交易状态  保存(save):2  暂存(temp):1
-        String status = "save".equals(option)?"2":"temp".equals(option)?"1":"";
-        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranIdAndStatus(tableName, "6");
+        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByUserIdAndDispose(userName, "N");
         //无单号，1.申请单号 2.新增记录差异信息 3.根据操作类型更新交易状态
         if (omProcessMainFlow == null || omProcessMainFlow.getMainSeqNo() == null) {
-            seqNo = flowManagement.appNoByTable(userName, tableName, "Y",status);
+            seqNo = flowManagement.appNoByTable(userName, tableName, "Y","1");
         } else {
-            //此处判断如果交易状态为待复核、待发布状态则抛出异常
             seqNo = omProcessMainFlow.getMainSeqNo();
-            BigDecimal dtlSeqNo = omProcessMainFlow.getDtlSeqNo().add(BigDecimal.ONE);
-            //暂存状态更新批次
-            omProcessMainFlow.setDtlSeqNo(dtlSeqNo);
-            omProcessMainFlow.setStatus(status);
-            omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
-            flowManagement.sumProcessInfo(seqNo, userName, status, omProcessMainFlow.getDtlSeqNo(),null,null);
+            if("6".equals(omProcessMainFlow.getStatus())) {
+                flowManagement.onlyUpdateDel(omProcessMainFlow,userName);
+            }
         }
         //记录操作流程
         //有单号，1.获取操作信息（操作序号） 2.组合表中生成新的子单号 3.将子单号信息存入差异信息表
-        differenceTableInfo.insertTableDifferenceInfo(list, seqNo,tableName);
+        differenceTableInfo.insertTableDifferenceInfo(list, seqNo,tableName,tableDesc,"1");
         return ResultUtils.success();
     }
 }

@@ -28,14 +28,14 @@ public class DifferenceTableInfo {
     @Resource
     private ProcessCombManagement processCombManagement;
     //记录产品流程信息
-    public void insertTableDifferenceInfo(List mbProdInfoList,String seqNo,String tableName){
+    public void insertTableDifferenceInfo(List mbProdInfoList,String seqNo,String tableName,String tableDesc,String tranType){
         /*
         * 判断是否组合表交易
         * 组合表交易需在此加子表循环操作
         * */
 
         String operatorNo= omProcessDetailHistRepository.findBySeqNoMax(seqNo)==null?"1": omProcessDetailHistRepository.findBySeqNoMax(seqNo);
-         String subSeqNo = processCombManagement.saveCombInfo(seqNo, operatorNo,tableName);
+         String subSeqNo = processCombManagement.saveCombInfo(seqNo, operatorNo,tableName,tableDesc,tranType);
          for(Object key:mbProdInfoList){
             Map<String,Object> accounting=(Map)key;
             //根据单条数据的操作类型判断具体怎么执行
