@@ -117,7 +117,7 @@ INSERT INTO `om_system_org` VALUES ('price', 'price', '统一计价');
 -- Table structure for para_module_org
 -- ----------------------------
 DROP TABLE IF EXISTS `para_module_org`;
-CREATE TABLE `para_module_org` (
+CREATE TABLE `om_module_org` (
   `MODULE_ID` varchar(10) NOT NULL COMMENT '模块代码',
   `SYSTEM_ID` varchar(10) NOT NULL COMMENT '目标系统ID',
   `MODULE_NAME` varchar(60) NOT NULL COMMENT '目标模块名称',
