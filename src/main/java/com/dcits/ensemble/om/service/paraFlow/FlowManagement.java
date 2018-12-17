@@ -3,25 +3,34 @@ package com.dcits.ensemble.om.service.paraFlow;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessMainFlow;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessDetailHist;
+import com.dcits.ensemble.om.model.dbmodel.OmProcessRelationHist;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessDetailHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessMainFlowRepository;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessRelationHistRepository;
 import com.dcits.ensemble.om.util.ResourcesUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by ligan on 2018/8/24.
  */
 @Service
 public class FlowManagement {
-    @Autowired
+    @Resource
     private OmProcessMainFlowRepository omProcessMainFlowRepository;
-    @Autowired
+    @Resource
     private OmProcessDetailHistRepository omProcessDetailHistRepository;
+    @Resource
+    private OmProcessRecordHistRepository omProcessRecordHistRepository;
+    @Resource
+    private OmProcessRelationHistRepository omProcessRelationHistRepository;
     /**
      * 服务在用户暂存时调用
      * 对应交易如果有单号
@@ -118,5 +127,15 @@ public class FlowManagement {
         omProcessMainFlow.setStatus("1");
         omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
         sumProcessInfo(omProcessMainFlow.getMainSeqNo(), userName, "1", omProcessMainFlow.getDtlSeqNo(),null,null);
+    }
+    //删除订单信息
+    public void deleteTask(String tranId,String seqNo){
+        List<OmProcessRelationHist> omProcessRelationHistList = omProcessRelationHistRepository.findByMainSeqNo(seqNo);
+        for(OmProcessRelationHist omProcessRelationHist : omProcessRelationHistList){
+            if("ALL".equals(tranId)||omProcessRelationHist.getTranId().equals(tranId)){
+                omProcessRelationHistRepository.deleteByRecSeqNo(omProcessRelationHist.getRecSeqNo());
+                omProcessRecordHistRepository.deleteByRecSeqNo(omProcessRelationHist.getRecSeqNo());
+            }
+        }
     }
 }

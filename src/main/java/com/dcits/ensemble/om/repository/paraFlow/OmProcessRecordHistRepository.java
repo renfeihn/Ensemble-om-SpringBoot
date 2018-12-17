@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -20,4 +21,6 @@ public interface OmProcessRecordHistRepository extends JpaRepository<OmProcessRe
     List<OmProcessRecordHist> searchDiffByTableName(@Param("tableName") String tableName);
     @Query("select max(s.subSeqNo) from OmProcessRecordHist s  where s.recSeqNo = :recSeqNo")
     public String findBySubSeqNoMax(@Param("recSeqNo") String recSeqNo);
+    @Transactional
+    public void deleteByRecSeqNo(@Param("recSeqNo") String recSeqNo);
 }

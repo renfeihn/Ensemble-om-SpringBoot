@@ -45,6 +45,8 @@ public class ApplicationAction {
     @Resource
     public OmProcessRelationHistRepository omProcessRelationHistRepository;
     @Resource
+    public OmProcessRecordHistRepository omProcessRecordHistRepository;
+    @Resource
     public FlowManagement flowManagement;
     @RequestMapping("/application/{prodType}")
     public @ResponseBody
@@ -75,7 +77,7 @@ public class ApplicationAction {
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByUserIdAndDispose(userId, "N");
         List<OmProcessRelationHist> mbProdTypeList=new ArrayList<>();
         if(omProcessMainFlow !=null) {
-            mbProdTypeList = omProcessRelationHistRepository.findByMainSeqNo(omProcessMainFlow.getMainSeqNo());
+            mbProdTypeList = omProcessRelationHistRepository.findByMainSeqNoGroupBy(omProcessMainFlow.getMainSeqNo());
         }
         return   ResultUtils.success(mbProdTypeList);
     }
@@ -84,9 +86,19 @@ public class ApplicationAction {
     @ResponseBody
     Result cleanList(HttpServletResponse response,@RequestBody Map map){
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
-        String userId = (String) map.get("userId");
-        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByUserIdAndDispose(userId, "N");
-        omProcessMainFlowRepository.updateParaDispose("Y",omProcessMainFlow.getMainSeqNo());
+        String seqNo = (String) map.get("seqNo");
+        omProcessMainFlowRepository.updateParaDispose("Y",seqNo);
+        flowManagement.deleteTask("ALL",seqNo);
+        return   ResultUtils.success();
+    }
+    @RequestMapping("/deleteTask")
+    public
+    @ResponseBody
+    Result deleteTask(HttpServletResponse response,@RequestBody Map map){
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
+        String seqNo = (String) map.get("seqNo");
+        String tranId = (String) map.get("tranId");
+        flowManagement.deleteTask(tranId,seqNo);
         return   ResultUtils.success();
     }
 }
