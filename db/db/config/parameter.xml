@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<parameterConfiguration>
+
+    <!--线程设置-->
+    <poolConfig total="10"/>
+
+    <!--数据库链接URL，用户名、密码 -->
+    <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
+    <!--connectionURL="jdbc:mysql://192.168.165.219:3306/ens_upright?useUnicode=true&amp;characterEncoding=utf8"-->
+    <!--userId="root" password="123123"/>-->
+
+    <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+                    connectionURL="jdbc:oracle:thin:@192.168.161.41:1521:DCITS"
+                    userId="SIT3_UPRIGHT" password="SIT3_UPRIGHT"/>
+
+    <!-- DBTable 的配置 -->
+    <tableConfig schemaName="ENS_UPRIGHT" isAllTable="false" isParamInit="false"/>
+    <!-- Excel 的配置 -->
+    <excelConfig targetDir="\db\busi_parameter\"/>
+    <!-- File 的配置 建议的格式配置 format="PC" encoding="gb2312" 或 format="UNIX" encoding="utf-8" -->
+    <fileConfig targetDir="\db\busi_parameter\" format="PC" encoding="gb2312"/>
+
+
+<!-- 要生成的表 -->
+<!--  kbs参数  
+	<table tableName="CD_CARD_BIN" desc=""/>
+    <table tableName="CIF_BUSINESS" desc="行业代码"/>
+    <table tableName="CIF_CATEGORY_TYPE" desc="客户类型-细分类"/>
+    <table tableName="CIF_CLASS_1" desc="客户分类1"/>
+    <table tableName="CIF_CLASS_2" desc="客户分类2"/>
+    <table tableName="CIF_CLASS_3" desc="客户分类3"/>
+    <table tableName="CIF_CLASS_4" desc="客户分类4"/>
+    <table tableName="CIF_CLASS_5" desc="客户分类5"/>
+    <table tableName="CIF_CLASS_LEVEL" desc="参数"/>
+    <table tableName="CIF_CLIENT_TYPE" desc="客户类型-大类"/>
+    <table tableName="CIF_CONTACT_TYPE" desc="联系类型"/>
+    <table tableName="CIF_CR_RATING" desc="信用等级"/>
+    <table tableName="CIF_DIST_CODE" desc="地区代码静态参数"/>
+    <table tableName="CIF_DOCUMENT_TYPE" desc="证件类型"/>
+    <table tableName="CIF_ECON_DIST" desc="经济特区静态参数"/>
+    <table tableName="CIF_EDUCATION" desc="教育程度"/>
+    <table tableName="CIF_INDUSTRY" desc="通用行业代码"/>
+    <table tableName="CIF_OCCUPATION" desc="职业分类"/>
+    <table tableName="CIF_QUALIFICATION" desc="职称定义"/>
+    <table tableName="CIF_RELATION_TYPE" desc="客户关系类型"/>
+    <table tableName="CIF_RESIDENT_TYPE" desc="居住类型"/>
+    <table tableName="CIF_SALUTATION" desc="称呼类型"/>
+    <table tableName="FM_ACCT_EXEC" desc="客户经理"/>
+    <table tableName="FM_BANK" desc="银行"/>
+    <table tableName="FM_BANK_HIERARCHY" desc=""/>
+    <table tableName="FM_BRANCH" desc="机构信息"/>
+    <table tableName="FM_BRANCH_CCY" desc="分行经营币种"/>
+    <table tableName="FM_CCY_HOLIDAY" desc="货币假日"/>
+    <table tableName="FM_CHANNEL" desc=""/>
+    <table tableName="FM_CHARGE_DEFINE" desc="服务费定义"/>
+    <table tableName="FM_CITY" desc="城市信息"/>
+    <table tableName="FM_COMPANY" desc="国家信息"/>
+    <table tableName="FM_COUNTER_PARTY" desc="交易对手"/>
+    <table tableName="FM_COUNTRY" desc="国家信息"/>
+    <table tableName="FM_CURRENCY" desc="币种信息"/>
+    <table tableName="FM_DEPARTMENT" desc="部门"/>
+    <table tableName="FM_EXCHANGE_TRAN_CODE" desc="结售汇项目编码"/>
+    <table tableName="FM_LOC_HOLIDAY" desc="地区假日"/>
+    <table tableName="FM_PASSWORD_FAILURE_TIMES" desc=""/>
+    <table tableName="FM_PERIOD_FREQ" desc="周期频率"/>
+    <table tableName="FM_PROFIT_CENTRE" desc="利润中心"/>
+    <table tableName="FM_REGION" desc="区域代码"/>
+    <table tableName="FM_RESTRAINT_TYPE" desc="居住类型"/>
+    <table tableName="FM_SEQ_TYPE" desc="序列类型"/>
+    <table tableName="FM_SEQ_TYPE_DTL" desc="序列信息"/>
+    <table tableName="FM_SEQ_TYPE_RULE" desc="序列规则定义"/>
+    <table tableName="FM_SETTLE_METHOD" desc="清算方法"/>
+    <table tableName="FM_STATE" desc="省州信息"/>
+    <table tableName="FM_STRUCTURE_DIGIT_POS" desc="结构位置"/>
+    <table tableName="FM_STRUCTURE_PARAM" desc="结构参数"/>
+    <table tableName="FM_STRUCTURE_TYPE" desc="结构类型"/>
+    <table tableName="FM_SUB_BRANCH_TBL" desc="分行定义"/>
+    <table tableName="FM_SYSTEM" desc="系统参数"/>
+    <table tableName="FM_REF_CODE" desc="系统内部预定义参数表"/>
+	<table tableName="LM_TRAN_LIMIT_BRANCH" desc=""/>
+	<table tableName="LM_TRAN_LIMIT_DEF" desc=""/>
+	<table tableName="LM_TRAN_LIMIT_LINK" desc=""/>
+	<table tableName="TB_APPLY_CONF" desc=""/>
+	<table tableName="TB_CASH_SIGN_RESON" desc=""/>
+	<table tableName="TB_CASH_UNIT" desc=""/>
+	<table tableName="TB_PAR_VALUE" desc=""/>
+	<table tableName="TB_TRAILBOX_OVERDRAW" desc=""/>
+	<table tableName="TB_VOUCHER_BRANCH" desc=""/>
+	<table tableName="TB_VOUCHER_DEF" desc=""/>
+	
+	<table tableName="MB_DEP_WTD_TRAN_TYPE" desc=""/>
+	<table tableName="MB_DORM_CLOSE" desc=""/>
+	<table tableName="MB_DRA_DEP" desc=""/>
+	<table tableName="MB_PROD_CHARGE" desc=""/>
+	<table tableName="MB_PROD_NATURE" desc=""/>
+	<table tableName="MB_ANALYSIS1" desc=""/>
+	<table tableName="MB_ANALYSIS2" desc=""/>
+	<table tableName="MB_ANALYSIS3" desc=""/>
+-->
+
+<!-- 核算的表  -->
+<!-- glr 
+<table tableName="GL_ACCOUNTING" desc="系统参数"/>
+<table tableName="GL_ACCT_TYPE" desc="系统参数"/>
+<table tableName="GL_AMOUNT_MAPPING" desc="系统参数"/>
+<table tableName="GL_AMOUNT_TYPE" desc="系统参数"/>
+<table tableName="GL_CCY_CTRL_ACCT_TBL" desc="系统参数"/>
+<table tableName="GL_CCY_RULE" desc="系统参数"/>
+<table tableName="GL_CUSTOM_RULE" desc="系统参数"/>
+<table tableName="GL_EVENT_MAPPING" desc="系统参数"/>
+<table tableName="GL_EVENT_TYPE" desc="系统参数"/>
+<table tableName="GL_PROD_ACCOUNTING" desc="系统参数"/>
+<table tableName="GL_PROD_MAPPING" desc="系统参数"/>
+<table tableName="GL_PROD_RULE" desc="系统参数"/>
+<table tableName="GL_SYSTEM" desc="系统参数"/>
+<table tableName="GL_TRAN_MAPPING" desc="系统参数"/>
+<table tableName="AC_BRANCH" desc=""/>
+<table tableName="AC_SUBJECT" desc=""/>
+-->
+
+<!-- 产品工厂表  -->
+<!-- PF -->
+<table tableName="MB_ATTR_CLASS" desc=""/>
+<table tableName="MB_ATTR_TYPE" desc=""/>
+<table tableName="MB_ATTR_VALUE" desc=""/>
+<table tableName="MB_EVENT_ATTR" desc=""/>
+<table tableName="MB_EVENT_CLASS" desc=""/>
+<table tableName="MB_EVENT_DEFAULT_TYPE" desc=""/>
+<table tableName="MB_EVENT_LINK" desc=""/>
+<table tableName="MB_EVENT_NODES" desc=""/>
+<table tableName="MB_EVENT_PART" desc=""/>
+<table tableName="MB_EVENT_TYPE" desc=""/>
+<table tableName="MB_PART_ATTR" desc=""/>
+<table tableName="MB_PART_CLASS" desc=""/>
+<table tableName="MB_PART_TYPE" desc=""/>
+<table tableName="MB_PROD_CLASS" desc=""/>
+<table tableName="MB_PROD_DEFINE" desc=""/>
+<table tableName="MB_PROD_GROUP" desc=""/>
+<table tableName="MB_PROD_RELATION_DEFINE" desc=""/>
+<table tableName="MB_PROD_TYPE" desc=""/>
+<table tableName="MB_TRAN_DEF" desc=""/>
+<table tableName="MB_AMT_CALC_TYPE" desc=""/>
+<table tableName="MB_LINK_CONDITION" desc=""/>
+<table tableName="MB_EVENT_PART_RELATION" desc=""/>
+
+
+<!-- 利率市场化表  -->
+<!-- up 
+<table tableName="IRL_AMT_EXPRESSION" desc="系统参数"/>
+<table tableName="IRL_BASIS_RATE" desc="系统参数"/>
+<table tableName="IRL_CCY_RATE" desc="系统参数"/>
+<table tableName="IRL_DUAD_CCY_RATE" desc="系统参数"/>
+<table tableName="IRL_ELEMENT" desc="系统参数"/>
+<table tableName="IRL_EXCHANGE_TYPE" desc="系统参数"/>
+<table tableName="IRL_FEE_CLIENT_TYPE" desc="系统参数"/>
+<table tableName="IRL_FEE_MAPPING" desc="系统参数"/>
+<table tableName="IRL_FEE_MATRIX" desc="系统参数"/>
+<table tableName="IRL_FEE_PROFIT_DISTRIBUTION" desc="系统参数"/>
+<table tableName="IRL_FEE_RATE" desc="系统参数"/>
+<table tableName="IRL_FEE_TYPE" desc=""/>
+<table tableName="IRL_INT_BASIS" desc=""/>
+<table tableName="IRL_INT_MATRIX" desc=""/>
+<table tableName="IRL_INT_RATE" desc=""/>
+<table tableName="IRL_INT_TYPE" desc=""/>
+<table tableName="IRL_MARKET_FACTOR_INFO" desc=""/>
+<table tableName="IRL_PROD_INT" desc=""/>
+<table tableName="IRL_PROD_TYPE" desc=""/>
+<table tableName="IRL_RISK_SETING" desc=""/>
+<table tableName="IRL_RULE_MESSAGE" desc=""/>
+<table tableName="IRL_SYSTEM" desc=""/>
+<table tableName="IRL_RULE_GROUP" desc="规则分组定义表"/>
+<table tableName="IRL_ELEMENT_GROUP" desc="因子分组定义表"/>
+-->
+</parameterConfiguration>

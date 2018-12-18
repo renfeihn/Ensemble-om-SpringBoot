@@ -1,0 +1,24 @@
+{
+  "db_type": "oracle",
+  "encoding": "UTF-8",
+  "is_console_log": "N",
+  "createName":"sys",
+  "createPassword":"sys",
+  "db_upright":{
+    "url":"jdbc:oracle:thin:@192.168.161.41:1521:dcits",
+    "user":"BATUPRIGHT",
+    "pwd":"BATUPRIGHT",
+    "tableSpace":"FAT_UPRIGHT",
+    "tableSpaceTemp":"FAT_UPRIGHT_TEMP"
+  },
+  "db_level1":{
+    "url":"jdbc:oracle:thin:@192.168.161.41:1521:dcits",
+    "user":"BATUPRIGHT",
+    "pwd":"BATUPRIGHT",
+    "tableSpace":"FAT_UPRIGHT",
+    "tableSpaceTemp":"FAT_UPRIGHT_TEMP"
+  },
+  "runners":[
+    "oracle-runner-all.json"
+  ]
+}

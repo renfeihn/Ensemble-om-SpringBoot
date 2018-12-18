@@ -1,0 +1,19 @@
+{
+  "runners": [
+    {
+      "db":"db_upright",
+      "db_file_dir": "3table/",
+      "db_file": "3table/runner_upright.sql"
+    },
+    {
+      "db":"db_level1",
+      "db_file_dir": "3table/",
+      "db_file": "3table/runner_level.sql"
+    },
+    {
+      "db":"db_level2",
+      "db_file_dir": "3table/",
+      "db_file": "3table/runner_level.sql"
+    }
+  ]
+}

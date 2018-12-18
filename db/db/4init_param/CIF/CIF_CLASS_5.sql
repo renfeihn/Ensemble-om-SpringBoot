@@ -1,0 +1,3 @@
+TRUNCATE TABLE cif_class_5;
+
+COMMIT;

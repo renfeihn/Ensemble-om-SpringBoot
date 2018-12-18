@@ -1,0 +1,25 @@
+{
+  "db_type": "mysql",
+  "encoding": "GBK",
+  "is_console_log": "N",
+  "createName":"root",
+  "createPassword":"root123",
+  "db_upright":{
+    "url":"jdbc:mysql://10.7.94.150:3306",
+    "user":"ensemble_sit",
+    "pwd":"root123"
+  },
+  "db_level1":{
+    "url":"jdbc:mysql://10.7.94.150:3306",
+    "user":"ensemble_sit",
+    "pwd":"root123"
+  },
+  "db_level2":{
+    "url":"jdbc:mysql://10.7.94.150:3306",
+    "user":"ensemble_sit",
+    "pwd":"root123"
+  }, 
+  "runners":[
+    "mysql-runner-all-param.json"
+  ]
+}

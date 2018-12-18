@@ -1,0 +1,50 @@
+drop table if exists MB_TDA_HIST;
+/*==============================================================*/
+/* Table: MB_TDA_HIST                                           */
+/*==============================================================*/
+create table MB_TDA_HIST
+(
+    INTERNAL_KEY Decimal(15) not null comment '帐户主键',
+    SEQ_NO varchar(50) not null comment '序号',
+    ACCT_OPEN_DATE varchar(8) comment '账户开户日期',
+    MATURITY_DATE varchar(8) comment '账户到期日',
+    ACCT_MOVT_DATE varchar(8) comment '转存交易日期',
+    MOVT_STATUS varchar(1) comment '转存交易类型',
+    PRINCIPAL_AMT Decimal(17,2) comment '交易本金',
+    DEP_TERM_PERIOD varchar(50) comment '存期',
+    DEP_TERM_TYPE varchar(1) comment '存期类型',
+    ACCT_LEVEL_INT_RATE Decimal(15,8) comment '账户基础利率',
+    SPREAD_RATE Decimal(15,8) comment '浮动点数',
+    GROSS_INTEREST_AMT Decimal(17,2) comment '利息金额',
+    TAX_AMT Decimal(17,2) comment '税金',
+    INT_ADJ_AMT Decimal(17,2) comment '调整利息',
+    NET_INTEREST_AMT Decimal(17,2) comment '净利息',
+    MAT_NOTICE varchar(1) comment '是否到期通知',
+    RENEW_NO varchar(5) comment '本金转存次数',
+    ROLLOVER_NO varchar(5) comment '本息转存次数',
+    PARTIAL_RENEW_ROLL varchar(1) comment '是否部分本金转存',
+    WDRAWN_AMT Decimal(17,2) comment '支取金额',
+    PRINCIPAL_AMT_ACTUAL Decimal(17,2) comment '实际本金金额',
+    CERTIFICATE_NO varchar(8) comment '存款证实书号码',
+    AUTO_RENEW_ROLLOVER varchar(1) comment '是否自动转存',
+    ADDTL_PRINCIPAL varchar(1) comment '是否允许增加本金 ',
+    NOTICE_PERIOD varchar(5) comment '通知期限',
+    SEQ_RENEW_ROLLOVER_NO varchar(50) comment '转存序号',
+    USER_ID varchar(30) comment '交易柜员',
+    ACCR_INT_ADJ Decimal(17,2) comment '利息调整金额',
+    TDA_INT_RATE Decimal(15,8) comment '支取利率',
+    TRAN_SEQ_NO varchar(50) comment '费用交易序号',
+    TRAN_REF_NO varchar(50) comment '交易参考号',
+    REV_SEQ_NO varchar(50) comment '冲正交易序号',
+    DOC_TYPE varchar(10) comment '凭证类型 ',
+    PREFIX varchar(10) comment '前缀',
+    CERTIFICATE_NO_ACT varchar(20) comment '存单号码',
+    ADD_TERM varchar(5) comment '续存期数',
+    PARTIAL_RR_AMT Decimal(17,2) comment '本金部分转存金额',
+    TRAN_TIMESTAMP varchar(17) comment '时间戳',
+    TRAN_TIME Decimal(11,0) comment '交易时间',
+    ROUTER_KEY varchar(100) comment '分库路由关键字',
+    LOST_NO varchar(16) comment '挂失编号',
+    primary  key (INTERNAL_KEY,SEQ_NO)
+);
+alter table MB_TDA_HIST comment '定期交易历史表 undefined';

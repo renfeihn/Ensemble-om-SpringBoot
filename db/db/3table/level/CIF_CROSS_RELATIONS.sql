@@ -1,0 +1,52 @@
+drop table if exists CIF_CROSS_RELATIONS;
+/*==============================================================*/
+/* Table: CIF_CROSS_RELATIONS                                           */
+/*==============================================================*/
+create table CIF_CROSS_RELATIONS
+(
+    CLIENT_A varchar(20) not null comment '客户',
+    CLIENT_B varchar(20) not null comment '关系客户',
+    RELATION varchar(3) not null comment '关系类型',
+    LAST_CHANGE_DATE varchar(8) comment '更新日期',
+    LAST_CHANGE_USER_ID varchar(30) comment '更新用户',
+    CLOSED_DATE varchar(8) comment '关闭日期',
+    CREATION_DATE varchar(8) not null comment '创建日期',
+    CREATION_USER_ID varchar(30) not null comment '创建柜员',
+    STATUS varchar(3) not null comment '状态 A-正常，C-关闭',
+    CLIENT_KEY Decimal(15) comment '关系客户内部键',
+    CLIENT_SHORT varchar(30) comment '关联方简称',
+    CLIENT_NAME varchar(200) comment '关联方英文名称',
+    CH_CLIENT_NAME varchar(200) comment '关联方中文名称',
+    RELA_COUNTRY varchar(3) comment '关联方国籍',
+    RELA_DOCUMENT_TYPE varchar(3) comment '关联方证件类型',
+    RELA_DOCUMENT_ID varchar(75) comment '关联方证件号',
+    RELA_TEL varchar(50) comment '关联方联系电话',
+    RELA_TYPE varchar(1) comment '关联方类型：1-个人 2-企业',
+    RELA_LOAN_CARD varchar(50) comment '关联方如果是企业，则此处为企业的贷款卡编码',
+    RELA_REG_CODE varchar(20) comment '关联方如果是企业，则此处为企业的登记注册代码',
+    RELA_ORG_CODE varchar(50) comment '关联方如果是企业，则此处为企业的组织机构代码',
+    RELA_CREDIT_CODE varchar(20) comment '关联方如果是企业，则此处为企业的机构信用代码',
+    EQUITY_PERCENT Decimal(5,2) comment '关联方如果是企业，则此处为企业的占股比例',
+    RELA_SEX varchar(1) comment '关联方如果是个人，此处为关联方性别',
+    RELA_BIRTH_DATE varchar(8) comment '关联方如果是个人，此处为关联方出生日期',
+    RELA_EDUCATION varchar(2) comment '关联方如果是个人，此处为关联方最高学历',
+    RELA_EMPLOYER_NM varchar(100) comment '关联方如果是个人，此处为关联方所在单位名称',
+    RELA_EMPLOYER_TEL varchar(50) comment '关联方如果是个人，此处为关联方所在单位电话',
+    RELA_EMPLOYER_ADR varchar(100) comment '关联方如果是个人，此处为关联方所在单位地址',
+    COMPANY varchar(20) comment '法人代码',
+    APPROVE_DATE varchar(8) comment '批准日期',
+    DECLARE_DATE varchar(8) comment '宣告日期',
+    INVERSE_RELA_TYPE varchar(2) comment '反向关系类型',
+    INVERSE_RELA_DESC varchar(100) comment '反向关系描述',
+    EVAL_NETVAL_CCY varchar(3) comment '估价净值币种',
+    EVAL_NETVAL Decimal(17,2) comment '估价净值',
+    NOTICE_NETVAL_CCY varchar(3) comment '公告净值币种',
+    NOTICE_NETVAL Decimal(17,2) comment '公告净值',
+    ASSESS_NETVAL_CCY varchar(3) comment '评定净值币种',
+    ASSESS_NETVAL Decimal(17,2) comment '评定净值',
+    TRAN_TIMESTAMP varchar(17) comment '交易时间戳',
+    TRAN_TIME Decimal(11,0) comment '交易时间',
+    ROUTER_KEY varchar(100) comment '分库路由关键字',
+    primary  key (CLIENT_A,CLIENT_B,RELATION)
+);
+alter table CIF_CROSS_RELATIONS comment '客户关系表 undefined';

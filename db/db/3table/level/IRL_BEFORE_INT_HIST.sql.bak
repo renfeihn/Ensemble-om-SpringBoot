@@ -1,0 +1,46 @@
+create table IRL_BEFORE_INT_HIST
+(
+    IRL_SEQ_NO Varchar2(50) not null,
+    REFERENCE Varchar2(50),
+    OTH_REFERENCE Varchar2(50),
+    INTERNAL_KEY number(15),
+    SYSTEM_ID Varchar2(20),
+    TRAN_DATE date,
+    START_DATE Varchar2(8),
+    END_DATE Varchar2(8),
+    ACCR_DAYS Varchar2(10),
+    INT_AMT number(17,10),
+    ACTUAL_RATE number(15,8),
+    FLOAT_RATE number(15,8),
+    REAL_RATE number(15,8),
+    NEAR_AMT number(17,2),
+    INT_ADJ number(17,2),
+    INT_AGG number(38,2),
+    REVERSAL Varchar2(1),
+    TRAN_TIMESTAMP Varchar2(17),
+    TRAN_TIME number(11,0),
+    ROUTER_KEY Varchar2(100),
+    constraint PK_IRL_BEFORE_INT_HIST primary key (IRL_SEQ_NO)
+)
+PARTITION BY RANGE (TRAN_DATE)INTERVAL ( NUMTOYMINTERVAL(1,'month') )(PARTITION IRL_BEFORE_INT_HIST_p01 VALUES LESS THAN(TO_DATE ('2012-01-01', 'yyyy-mm-dd'))) tablespace price_data;
+comment on table IRL_BEFORE_INT_HIST is '倒起息计息明细表';
+comment on column IRL_BEFORE_INT_HIST.IRL_SEQ_NO is '序号   取值范围：计提INPUT_DATE|| PROD_TYPE  结息  RUN_DATE||INTERNAL_KEY|| PROD_TYPE  ';
+comment on column IRL_BEFORE_INT_HIST.REFERENCE is '交易参考号 计提:INPUT_DATE|| PROD_TYPE,结息:RUN_DATE||INTERNAL_KEY|| PROD_TYPE  ';
+comment on column IRL_BEFORE_INT_HIST.OTH_REFERENCE is '对方交易参考号 ';
+comment on column IRL_BEFORE_INT_HIST.INTERNAL_KEY is '帐户主键 ';
+comment on column IRL_BEFORE_INT_HIST.SYSTEM_ID is '系统ID ';
+comment on column IRL_BEFORE_INT_HIST.TRAN_DATE is '交易日期 ';
+comment on column IRL_BEFORE_INT_HIST.START_DATE is '生效日期 ';
+comment on column IRL_BEFORE_INT_HIST.END_DATE is '终止日期 ';
+comment on column IRL_BEFORE_INT_HIST.ACCR_DAYS is '计息天数 ';
+comment on column IRL_BEFORE_INT_HIST.INT_AMT is '利息金额 ';
+comment on column IRL_BEFORE_INT_HIST.ACTUAL_RATE is '行内利率 ';
+comment on column IRL_BEFORE_INT_HIST.FLOAT_RATE is '浮动利率 ';
+comment on column IRL_BEFORE_INT_HIST.REAL_RATE is '执行利率 ';
+comment on column IRL_BEFORE_INT_HIST.NEAR_AMT is '靠档金额 ';
+comment on column IRL_BEFORE_INT_HIST.INT_ADJ is '利息调整(累计) ';
+comment on column IRL_BEFORE_INT_HIST.INT_AGG is '调整积数 ';
+comment on column IRL_BEFORE_INT_HIST.REVERSAL is '冲正标志 Y:是 N:否 Y:已冲正,N:未冲正';
+comment on column IRL_BEFORE_INT_HIST.TRAN_TIMESTAMP is '交易时间戳 ';
+comment on column IRL_BEFORE_INT_HIST.TRAN_TIME is '交易时间 ';
+comment on column IRL_BEFORE_INT_HIST.ROUTER_KEY is '分库路由关键字 ';

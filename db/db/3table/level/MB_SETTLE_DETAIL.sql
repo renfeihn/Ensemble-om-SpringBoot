@@ -1,0 +1,52 @@
+drop table if exists MB_SETTLE_DETAIL;
+/*==============================================================*/
+/* Table: MB_SETTLE_DETAIL                                           */
+/*==============================================================*/
+create table MB_SETTLE_DETAIL
+(
+    SEQ_NO varchar(50) not null comment '交易序号',
+    INTERNAL_KEY Decimal(15) comment '帐户主键',
+    TRAN_DATE varchar(8) not null comment '交易日期',
+    TRAN_TYPE varchar(10) comment '交易类型',
+    EVENT_TYPE varchar(50) comment '事件类型',
+    CCY varchar(3) comment '币种',
+    CR_DR_MAINT_IND varchar(1) comment '借贷标志',
+    TRAN_AMT Decimal(17,2) comment '交易金额',
+    BRANCH varchar(20) comment '交易机构',
+    SOURCE_TYPE varchar(10) comment '渠道类型 ',
+    REFERENCE varchar(50) comment '交易参考号',
+    TRAN_CATEGORY varchar(1) comment '交易类别',
+    BANK_SEQ_NO varchar(50) comment '银行交易序号',
+    EFFECT_DATE varchar(8) comment '生效日期',
+    ACCT_TRAN_FLAG varchar(1) comment '账户交易标志',
+    ACTUAL_BAL_AMT Decimal(17,2) comment '实际余额',
+    BASE_ACCT_NO varchar(150) comment '账号/卡号',
+    ACCT_SEQ_NO varchar(8) comment '账户序列号',
+    ACCT_CCY varchar(3) comment '账户币种',
+    PROD_TYPE varchar(50) comment '产品类型',
+    ACCT_BRANCH varchar(20) comment '账户开户行',
+    GL_CODE varchar(20) comment '科目代码',
+    ACCT_DESC varchar(150) comment '账户描述',
+    NARRATIVE varchar(300) comment '摘要',
+    TRAN_DESC varchar(100) comment '交易描述',
+    TRAN_STATUS varchar(3) comment '客户交易状态  ',
+    CLIENT_NO varchar(20) comment '客户号',
+    CLIENT_NAME varchar(200) comment '客户名称',
+    PROFIT_CENTRE varchar(12) comment '利润中心  ',
+    BUSINESS_UNIT varchar(10) comment '帐套',
+    SOURCE_MODULE varchar(10) comment '源模块',
+    COMPANY varchar(20) comment '法人代码',
+    CLIENT_TYPE varchar(3) comment '客户类型',
+    AMT_TYPE varchar(10) comment '金额类型',
+    TRAN_HIST_FLAG varchar(10) comment '登记交流流水标志',
+    ACCT_STATUS varchar(3) comment '账户状态',
+    ACCOUNTING_STATUS varchar(3) comment '核算状态',
+    PRIMARY_EVENT_TYPE varchar(50) comment '主事件类型',
+    TRAN_TIMESTAMP varchar(17) comment '时间戳',
+    TRAN_TIME Decimal(11,0) comment '交易时间',
+    ROUTER_KEY varchar(100) comment '分库路由关键字',
+    REVERSAL varchar(1) comment '冲正标志',
+    TRAN_HIS_FLG varchar(1) comment '标志',
+    primary  key (SEQ_NO)
+);
+alter table MB_SETTLE_DETAIL comment '清算明细信息表 undefined';

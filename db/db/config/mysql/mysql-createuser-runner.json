@@ -1,0 +1,28 @@
+{
+  "runners": [
+      {
+      "id": "CreateUser_upright",
+      "db":"db_upright",
+      "db_file": "1user/create_mysqlUser.sql",
+      "db_file_is_runall": "Y"
+    },
+    {
+      "id": "CreateUser_level1",
+      "db":"db_level1",
+      "db_file": "1user/create_mysqlUser.sql",
+      "db_file_is_runall": "Y"
+    },
+    {
+      "id": "CreateUser_level2",
+      "db":"db_level2",
+      "db_file": "1user/create_mysqlUser.sql",
+      "db_file_is_runall": "Y"
+    },
+    {
+      "id": "CreateUser_om",
+      "db":"db_om",
+      "db_file": "1user/create_mysqlUser.sql",
+      "db_file_is_runall": "Y"
+    }
+  ]
+}

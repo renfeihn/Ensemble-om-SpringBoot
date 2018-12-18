@@ -1,0 +1,51 @@
+drop table if exists MB_FEE_AMORTIZE_AGR;
+/*==============================================================*/
+/* Table: MB_FEE_AMORTIZE_AGR                                           */
+/*==============================================================*/
+create table MB_FEE_AMORTIZE_AGR
+(
+    AGREEMENT_ID varchar(30) not null comment '合约编号',
+    INTERNAL_KEY Decimal(15) comment '账户标识符',
+    CLIENT_NO varchar(20) not null comment '客户号',
+    TRAN_TYPE varchar(10) not null comment '交易类型',
+    FEE_TYPE varchar(8) not null comment '费用类型',
+    AMORTIZE_NAME varchar(200) comment '摊销名称',
+    BUSI_NO varchar(50) comment '业务编号',
+    AMORTIZE_PERIOD_FREQ varchar(2) not null comment '摊销频率 ',
+    AMORTIZE_TIME varchar(2) not null comment '摊销时间 F-期初 L-期末 D-周期内固定日期',
+    AMORTIZE_MONTH varchar(2) comment '摊销月',
+    AMORTIZE_DAY varchar(2) comment '摊销日',
+    LAST_AMORTIZE_DATE varchar(8) comment '上一摊销日期',
+    NEXT_AMORTIZE_DATE varchar(8) comment '下一摊销日期',
+    AMORTIZE_CCY varchar(3) not null comment '摊销币种',
+    AMORTIZE_TOTAL_AMT Decimal(17,2) not null comment '摊销总金额',
+    AMORTIZED_AMT Decimal(17,2) comment '已摊销金额',
+    REMAIN_AMORTIZE_AMT Decimal(17,2) not null comment '剩余摊销金额',
+    AMORTIZE_TOTAL_CNT varchar(5) comment '摊销总次数',
+    AMORTIZED_CNT varchar(5) comment '已摊销次数',
+    REMAIN_AMORTIZE_CNT varchar(5) comment '剩余摊销次数',
+    EFFECT_DATE varchar(8) not null comment '生效日期',
+    END_DATE varchar(8) comment '结束日期',
+    AMORTIZE_STATUS varchar(2) not null comment '摊销状态 A-活动 C-正常关闭 D-已删除 P-预建立 R-已冲销',
+    TRAN_DATE varchar(8) not null comment '交易日期',
+    TRAN_BRANCH varchar(20) not null comment '交易机构',
+    USER_ID varchar(30) comment '交易柜员',
+    AUTH_USER_ID varchar(30) comment '授权柜员',
+    REFERENCE varchar(50) comment '交易参考号',
+    CHANNEL_SEQ_NO varchar(50) comment '渠道流水号',
+    BANK_SEQ_NO varchar(50) comment '银行交易序号',
+    SOURCE_MODULE varchar(10) comment '来源模块',
+    SOURCE_TYPE varchar(10) comment '渠道类型',
+    OSD_SEQ_NO varchar(50) comment '应收费用序号;与MB_OSD_SERV_CHARGE.OSD_SEQ_NO字段关联',
+    BATCH_SEQ_NO varchar(50) comment '登记序号;与MB_BATCH_CHARGE.BATCH_SEQ_NO字段关联',
+    REVERSAL varchar(1) not null comment '冲正标志',
+    REVERSAL_USER_ID varchar(30) comment '冲正柜员',
+    REVERSAL_AUTH_USER_ID varchar(30) comment '冲正授权柜员',
+    REVERSAL_BRANCH varchar(20) comment '冲正机构',
+    REVERSAL_DATE varchar(8) comment '冲正日期',
+    TRAN_TIMESTAMP varchar(17) comment '交易时间戳',
+    TRAN_TIME Decimal(11,0) comment '交易时间',
+    ROUTER_KEY varchar(100) comment '分库路由关键字',
+    primary  key (AGREEMENT_ID)
+);
+alter table MB_FEE_AMORTIZE_AGR comment '摊销合约表 undefined';

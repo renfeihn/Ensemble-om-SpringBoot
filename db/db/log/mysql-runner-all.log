@@ -1,0 +1,988 @@
+Error executing: drop index AK_GAC_UK_GL_ACCT on GL_ACCT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'AK_GAC_UK_GL_ACCT'; check that column/key exists
+Error executing: drop index IND_GL_POST_HIST_1 on GL_POST_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'IND_GL_POST_HIST_1'; check that column/key exists
+Error executing: drop index GL_POST_IND1 on GL_POST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'GL_POST_IND1'; check that column/key exists
+Error executing: drop index IND_GL_POST_1 on GL_POST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'IND_GL_POST_1'; check that column/key exists
+Error executing: drop index MB_ACCT_INT_DETAIL_IND1 on MB_PCP_ACCT_DETAIL
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_INT_DETAIL_IND1'; check that column/key exists
+Error executing: drop index AK_KBH_UK2_FM_BANK_ on FM_BANK_HIERARCHY
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'AK_KBH_UK2_FM_BANK_'; check that column/key exists
+Error executing: drop index FACR_IND4 on FM_ACCT_CLIENT_RELATION
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'FACR_IND4'; check that column/key exists
+Error executing: drop index FACR_IND1 on FM_ACCT_CLIENT_RELATION
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'FACR_IND1'; check that column/key exists
+Error executing: drop index FACR_IND2 on FM_ACCT_CLIENT_RELATION
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'FACR_IND2'; check that column/key exists
+Error executing: drop index FACR_IND3 on FM_ACCT_CLIENT_RELATION
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'FACR_IND3'; check that column/key exists
+Error executing: drop table if exists MB_BATCH_OPEN;
+/*==============================================================*/
+/* Table: MB_BATCH_OPEN                                           */
+/*==============================================================*/
+create table MB_BATCH_OPEN
+(
+    CONTRAST_BAT_NO varchar(50) not null comment '鎵规鍙�',
+    OPEN_CLASS varchar(3) not null comment '鎵归噺寮�绔嬩笟鍔″垎绫�',
+    CONTRAST_DESC varchar(250) comment '鎻忔鎻忚堪',
+    OPEN_TYPE varchar(3) comment '鎵归噺寮�绔嬫柟寮�',
+    FILE_NAME varchar(500) comment '鏂囦欢鍚�',
+    FILE_PATH varchar(512) comment '鏂囦欢璺緞',
+    TOTAL_NUM varchar(10) comment '鎬绘暟閲�',
+    TOTAL_AMT Decimal(17,2) comment '鎬婚噾棰�',
+    OPEN_DATE varchar(8) comment '寮�绔嬫棩鏈�',
+    OPEN_BRANCH varchar(20) comment '鐢宠寮�绔嬫満鏋�',
+    CARD_P_FLAG varchar(1) comment '鍗�/鎶樻爣蹇楋細C-鍗� P-鎶�',
+    PROD_TYPE varchar(50) comment '鎵归噺寮�鎴蜂骇鍝佺被鍨�',
+    OPEN_CCY varchar(3) comment '鎵归噺寮�鎴峰竵绉�',
+    GET_TYPE varchar(10) comment '鎵归噺寮�鍗￠鍙栨柟寮�',
+    COPR_NAME varchar(200) comment '鍗曚綅鍚嶇О',
+    WITHDRAWAL_TYPE varchar(1) comment '鏀彇鏂瑰紡',
+    FROM_CARD_NO varchar(50) comment '澶辫触鏁伴噺',
+    TO_CARD_NO varchar(50) comment '缁堟鍗″彿',
+    CONTRAST_BAT_STATUS varchar(1) comment '鎵规鐘舵��',
+    SUCC_NUM varchar(10) comment '鎴愬姛鏁伴噺',
+    FAIL_NUM varchar(10) comment '澶辫触鏁伴噺',
+    ERROR_DESC varchar(4000) comment '閿欒鎻忚堪',
+    SERVER_IP varchar(50) comment '鍚庡彴鏈嶅姟IP',
+    BEGIN_TIME varchar(30) comment '寮�濮嬫椂闂�',
+    END_TIME varchar(30) comment '瀹屾垚鏃堕棿',
+    APPR_FLAG varchar(1) comment '澶嶆牳鏍囧織',
+    APPR_USER_ID varchar(30) comment '澶嶆牳鏌滃憳',
+    AUTH_FLAG varchar(1) comment '鎺堟潈鏍囧織',
+    AUTH_USER_ID varchar(30) comment '鎺堟潈鏌滃憳',
+    BRANCH_ID varchar(20) comment '鎵ц鏈烘瀯',
+    COMPANY varchar(20) comment '娉曚汉',
+    DEST_BRANCH_NO varchar(6) comment '鐩爣鑺傜偣缂栧彿',
+    MAC_VALUE varchar(50) comment '浼犺緭瀵嗘娂',
+    PROGRAM_ID varchar(20) comment '浜ゆ槗灞忓箷鏍囪瘑鍙�',
+    REFERENCE varchar(50) comment '浜ゆ槗鍙傝�冨彿',
+    RUN_DATE varchar(8) comment '杩愯鏃ユ湡',
+    SEQ_NO varchar(50) comment '浜ゆ槗娴佹按鍙�',
+    SOURCE_BRANCH_NO varchar(6) comment '婧愯妭鐐圭紪鍙�',
+    SOURCE_TYPE varchar(10) comment '娓犻亾绫诲瀷',
+    SYSTEM_ID varchar(20) comment '绯荤粺ID',
+    THREAD_NO varchar(512) comment '绾跨▼缂栧彿',
+    TRAN_DATE varchar(8) comment '浜ゆ槗鏃ユ湡',
+    TRAN_MODE varchar(10) comment '浜ゆ槗妯″紡',
+    TRAN_TIMESTAMP varchar(17) comment '杩愯鏃堕棿',
+    USER_ID varchar(30) comment '鏌滃憳',
+    USER_LANG varchar(20) comment '鏌滃憳璇█',
+    TRAN_TIME Decimal(11,0) comment '浜ゆ槗鏃堕棿',
+    CLIENT_TYPE varchar(3) not null comment '瀹㈡埛绫诲瀷',
+    CATEGORY_TYPE varchar(3) not null comment '瀹㈡埛缁嗗垎绫诲瀷',
+    CONTACT_TYPE varchar(3) not null comment '鑱旂郴绫诲瀷',
+    primary  key (CONTRAST_BAT_NO)
+);
+alter table MB_BATCH_OPEN comment '鎵归噺寮�绔嬩俊鎭櫥璁扮翱 undefined';
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create table MB_BATCH_OPEN
+(
+    CONTRAST_BAT_NO varchar(50) not null comment ' at line 5
+Error executing: drop table if exists MB_BATCH_TRAN;
+/*==============================================================*/
+/* Table: MB_BATCH_TRAN                                           */
+/*==============================================================*/
+create table MB_BATCH_TRAN
+(
+    BATCH_NO varchar(50) not null comment '鎵瑰鐞嗗彿',
+    BATCH_CLASS varchar(10) not null comment '鎵归噺浜ゆ槗绫诲瀷',
+    RUN_TIME varchar(3) comment '杩愯鏃堕棿',
+    FILE_PATH varchar(512) comment '鏂囦欢璺緞',
+    FILE_NAME varchar(500) comment '鏂囦欢鍚嶇О',
+    TOTAL_NUM varchar(10) comment '鎬绘暟閲�',
+    TOTAL_AMT Decimal(17,2) comment '璁″垝鎬婚噾棰�',
+    DEAL_DATE varchar(8) comment '澶勭悊鏃ユ湡',
+    BATCH_STATUS varchar(3) comment '鎵规澶勭悊鐘舵�� ',
+    SUCC_NUM varchar(10) comment '鎴愬姛鏁伴噺',
+    FAIL_NUM varchar(10) comment '澶辫触鏁伴噺',
+    ERROR_DESC varchar(4000) comment '鏈敓鎴愬垎褰曞師鍥�',
+    NARRATIVE varchar(300) comment '鎽樿锛屽紑鎴锋椂鐨勮处鍙风敤閫旓紝閿�鎴锋椂鐨勯攢鎴峰師鍥�',
+    SERVER_IP varchar(50) comment '鍚庡彴鏈嶅姟IP',
+    BEGIN_TIME varchar(30) comment '寮�濮嬫椂闂�',
+    END_TIME varchar(30) comment '缁堟鏃堕棿',
+    APPR_FLAG varchar(1) comment '澶嶆牳鏍囧織',
+    APPR_USER_ID varchar(30) comment '澶嶆牳鏌滃憳',
+    AUTH_FLAG varchar(1) comment '鎺堟潈鏍囧織',
+    AUTH_USER_ID varchar(30) comment '鎺堟潈鏌滃憳',
+    BRANCH_ID varchar(20) comment '鏈烘瀯浠ｇ爜',
+    COMPANY varchar(20) comment '娉曚汉浠ｇ爜',
+    DEST_BRANCH_NO varchar(6) comment '鐩爣鑺傜偣缂栧彿',
+    MAC_VALUE varchar(50) comment '浼犺緭瀵嗘娂',
+    PROGRAM_ID varchar(20) comment '浜ゆ槗鐮�',
+    REFERENCE varchar(50) comment '浜ゆ槗鍙傝�冨彿',
+    RUN_DATE varchar(8) comment '杩愯鏃ユ湡',
+    SEQ_NO varchar(50) comment '搴忓彿',
+    SOURCE_BRANCH_NO varchar(6) comment '婧愯妭鐐圭紪鍙�',
+    SOURCE_TYPE varchar(10) comment '娓犻亾',
+    SYSTEM_ID varchar(20) comment '绯荤粺ID',
+    THREAD_NO varchar(512) comment '绾跨▼缂栧彿',
+    TRAN_DATE varchar(8) comment '浜ゆ槗鏃ユ湡',
+    TRAN_MODE varchar(10) comment '浜ゆ槗妯″紡',
+    TRAN_TIMESTAMP varchar(17) comment '浜ゆ槗鏃堕棿鎴�',
+    USER_ID varchar(30) comment '浜ゆ槗鏌滃憳 FM_USER.USER_ID',
+    USER_LANG varchar(20) comment '鏌滃憳璇█ ',
+    TRAN_TIME Decimal(11,0) comment '浜ゆ槗鏃堕棿',
+    ROUTER_KEY varchar(100) comment '鍒嗗簱璺敱鍏抽敭瀛�',
+    BATCH_DESC varchar(300),
+    primary  key (BATCH_NO)
+);
+alter table MB_BATCH_TRAN comment '鎵归噺浜ゆ槗淇℃伅鐧昏绨� undefined';
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create table MB_BATCH_TRAN
+(
+    BATCH_NO varchar(50) not null comment '鎵瑰' at line 5
+Error executing: drop index MB_ACCT_INT_DETAIL_IND1 on MB_PCP_ACCT_DETAIL
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_INT_DETAIL_IND1'; check that column/key exists
+Error executing: drop index PK_TB_VOUCHER_TRAILBOX_INFO_BA on TB_VOUCHER_TRAILBOX_INFO_BAK
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'PK_TB_VOUCHER_TRAILBOX_INFO_BA'; check that column/key exists
+Error executing: drop index CIF_CLIENT_DOC_IND1 on CIF_CLIENT_DOCUMENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'CIF_CLIENT_DOC_IND1'; check that column/key exists
+Error executing: drop index CIF_CLIENT_DOC_IND2 on CIF_CLIENT_DOCUMENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'CIF_CLIENT_DOC_IND2'; check that column/key exists
+Error executing: drop index CIF_CLIENT_NO_IND on CIF_CLIENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'CIF_CLIENT_NO_IND'; check that column/key exists
+Error executing: drop index MB_ACCT_BALANCE_IND1 on MB_ACCT_BALANCE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_BALANCE_IND1'; check that column/key exists
+Error executing: drop index MB_ACCT_BALANCE_IND2 on MB_ACCT_BALANCE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_BALANCE_IND2'; check that column/key exists
+Error executing: drop table if exists MB_ACCT_INT_DETAIL;
+/*==============================================================*/
+/* Table: MB_ACCT_INT_DETAIL                                           */
+/*==============================================================*/
+create table MB_ACCT_INT_DETAIL
+(
+    INTERNAL_KEY Decimal(15) not null comment '甯愭埛涓婚敭',
+    INT_CLASS varchar(20) not null comment '鍒╂伅鍒嗙被 IRL_INT_ROLL.INT_CLASS',
+    NEXT_CYCLE_DATE varchar(8) comment '涓嬩竴缁撴伅鏃�',
+    CYCLE_FREQ varchar(2) comment '缁撴伅鍛ㄦ湡',
+    INT_DAY varchar(2) comment '缁撴伅鏃�',
+    LAST_CYCLE_DATE varchar(8) comment '涓婁竴缁撴伅鏃�',
+    LAST_TRUE_CYCLE_DATE varchar(8) comment '涓婁竴鐪熷疄缁撴伅鏃ワ紙澧炲姞鐗规畩缁撴伅鏃ュ鍒版湡鏃ユ椂浣跨敤锛�',
+    INT_TYPE varchar(3) comment '鍒╃巼绫诲瀷 IRL_INT_TYPE.INT_TAX_TYPE',
+    ACTUAL_RATE Decimal(15,8) comment '琛屽唴鍒╃巼',
+    FLOAT_RATE Decimal(15,8) comment '娴姩鍒╃巼',
+    SPREAD_RATE Decimal(15,8) comment '娴姩鐐规暟',
+    SPREAD_PERCENT Decimal(5,2) comment '鍒╃巼娴姩鐧惧垎姣�',
+    ACCT_FIXED_RATE Decimal(15,8) comment '鍒嗘埛绾у浐瀹氬埄鐜�',
+    ACCT_SPREAD_RATE Decimal(15,8) comment '鍒嗘埛绾ф诞鍔ㄧ櫨鍒嗙偣',
+    ACCT_PERCENT_RATE Decimal(5,2) comment '鍒嗘埛娴姩鐧惧垎姣�',
+    REAL_RATE Decimal(15,8) comment '鎵ц鍒╃巼',
+    PENALTY_ODI_RATE_TYPE varchar(1) comment '缃氭伅鍒╃巼浣跨敤鏂瑰紡  IRL_INT_TYPE.INT_TAX_TYPE',
+    INT_ACCRUED_CTD Decimal(17,2) comment '璁℃彁鏃ヨ鎻愬埄鎭�',
+    INT_ACCRUED Decimal(17,2) comment '绱璁℃彁鍒╂伅锛堢粨鎭懆鏈熷唴绱璁℃彁閲戦锛�',
+    INT_ADJ_CTD Decimal(17,2) comment '璁℃彁鏃ュ埄鎭皟鏁�',
+    INT_ADJ Decimal(17,2) comment '鍒╂伅璋冩暣(绱)',
+    INT_POSTED_CTD Decimal(17,2) comment '缁撴伅鏃ュ埄鎭噾棰�',
+    INT_POSTED Decimal(17,2) comment '缁撴伅鍒╂伅閲戦锛堢疮璁￠噾棰濓級',
+    INT_PAST_DUE Decimal(17,2) comment '閫炬湡鍒╂伅',
+    LAST_INT_PAST_DUE Decimal(17,2) comment '涓婃棩閫炬湡鍒╂伅',
+    INT_CAP varchar(1) comment '璧勬湰鍖栨爣蹇� Y:鏄� N:鍚�',
+    INT_CAP_AMT Decimal(17,2) comment '鍒╂伅璧勬湰鍖栭噾棰�',
+    LAST_ACCRUAL_DATE varchar(8) comment '涓婁竴鍒╂伅璁℃彁鏃�',
+    INT_APPL_TYPE varchar(1) comment '鍒╃巼鍚敤鏂瑰紡 MB_ATTR_VALUE.INT_APPL_TYPE',
+    RATE_EFFECT_TYPE varchar(1) comment '鍒╃巼鐢熸晥鏂瑰紡',
+    ROLL_DATE varchar(8) comment '涓嬩竴涓埄鐜囧彉鏇存棩鏈� ',
+    ROLL_FREQ varchar(2) comment '鍒╃巼鍙樻洿鍛ㄦ湡',
+    ROLL_DAY varchar(2) comment '涓嬩竴涓埄鐜囧彉鏇存棩 ',
+    DISCNT_RETAIN_INT Decimal(17,2) comment '鏈疄鐜板埄鎭�',
+    DISCNT_UI_FLAG Decimal(17,2) comment '鎶樻墸鍒╂伅鏍囧織',
+    UI_INT Decimal(17,2) comment '鎶樻墸浠樺嚭鍒╂伅',
+    UI_PENALTY_AMT Decimal(17,2) comment '鎶樻墸缃氭伅閲戦',
+    DISCNT_INT Decimal(17,2) comment '鎶樻墸鍒╂伅',
+    CALC_BEGIN_DATE varchar(8) comment '鍒╂伅璁＄畻璧峰鏃�',
+    CALC_END_DATE varchar(8) comment '鍒╂伅璁＄畻鎴鏃�',
+    LAST_CHANGE_DATE varchar(8) comment '鏈�鍚庡彉鏇存棩鏈� ',
+    LAST_CHANGE_USER_ID varchar(30) comment '涓婃淇敼鏌滃憳',
+    INT_REM_DAYS varchar(5) comment '璁℃伅鍓╀綑澶╂暟',
+    YEAR_BASIS varchar(3) comment '骞村熀鍑嗗ぉ鏁� 360澶� 365澶�',
+    MONTH_BASIS varchar(3) comment '鏈堝熀鍑� ACT:瀹為檯澶╂暟 30D:姣忔湀30澶�',
+    DAC_VALUE varchar(32) comment 'DAC鍊�  闃茬鏀瑰姞瀵�',
+    COMPANY varchar(20) comment '娉曚汉浠ｇ爜',
+    MIN_INT_RATE Decimal(15,8) comment '鎵ц鍒╃巼涓嬮檺',
+    MAX_INT_RATE Decimal(15,8) comment '鎵ц鍒╃巼涓婇檺',
+    TAX_TYPE varchar(3) comment '绋庣巼绫诲瀷  IRL_INT_TYPE.INT_TAX_TYPE',
+    TAX_RATE Decimal(15,8) comment '绋庣巼',
+    TAX_ACCRUED_CTD Decimal(17,2) comment '璁℃彁鏃ュ埄鎭◣',
+    TAX_ACCRUED Decimal(17,2) comment '缁撴伅鍛ㄦ湡鍐呭埄鎭◣绱閲戦',
+    TAX_POSTED_CTD Decimal(17,2) comment '缁撴伅鏃ュ埄鎭◣',
+    TAX_POSTED Decimal(17,2) comment '鍒╂伅绋庣疮璁￠噾棰�',
+    LAST_CYCLE_DATE_PRE varchar(8) comment '鏃ュ垏鍓嶄笂涓�缁撴伅鏃�',
+    INT_IND varchar(1) comment '鏄惁璁℃伅 Y:鏄� N:鍚�',
+    RATE_CHANGE_IND varchar(1) comment '鍒╃巼鍙樺寲鏍囧織锛岀敱鍒╃巼甯傚満鍖栬繑鍥烇紝褰撴墽琛屽埄鐜囧彂鐢熷彉鍖栨椂鐧昏涓篩,鏍稿績渚濇嵁姝ゆ爣蹇楅噸鏂扮敓鎴愯繕娆捐鍒掋�傜浜屾棩EOD鍒╃巼甯傚満鍖栭噸鏂拌祴鍊笺��',
+    ACCR_INT_DAY varchar(2) comment '璁℃彁鏃�',
+    ACCR_PERIOD_FREQ varchar(2) comment '璁℃彁鍛ㄦ湡  FM_PERIOD_FREQ.PERIOD_FREQ',
+    NEXT_ACCR_DATE varchar(8) comment '涓嬩竴璁℃彁鏃ユ湡',
+    AGG Decimal(38,2) not null default 0.00   comment '绉暟',
+    AGREE_AGG Decimal(38,2) comment '鍗忚绉暟',
+    AGREE_POST Decimal(17,2) comment '鍗忚鍒╂伅 ',
+    INT_ACCRUED_CALC_CTD Decimal(25,10) comment '璁℃彁鏃ヨ鎻愬師閲戦锛堝疄闄呰绠楅噾棰濓級',
+    INT_ACCRUED_DIFF Decimal(15,10) comment '璁℃彁閲戦宸',
+    INT_ACCRUED_T Decimal(17,2) comment '瀛樻湡璁℃彁绱鍒╂伅',
+    INT_AMT Decimal(17,2) comment '鍒╂伅閲戦',
+    IS_CYCLE varchar(1) comment '鏄惁缁撴伅 Y:鏄� N:鍚�',
+    IS_RETRY varchar(1) comment '鏄惁閲嶇畻 Y:鏄� N:鍚�',
+    LAST_ROLL_DATE varchar(8) comment '涓婁竴涓埄鐜囧彉鏇存棩鏈�  濡傛灉鍒╃巼鍚敤鏂瑰紡涓篟鏃跺綍鍏�',
+    TAX_ACCRUED_CALC_CTD Decimal(25,10) comment '璁℃彁鏃ュ埄鎭◣鍘熼噾棰濓紙瀹為檯璁＄畻閲戦锛�',
+    TAX_ACCRUED_DIFF Decimal(15,10) comment '鍒╂伅绋庡樊棰�',
+    INT_CALC_BAL varchar(3) comment '璁℃伅鏂瑰紡 MB_ATTR_VALUE.INT_CALC_TYPE',
+    CALC_BY_INT varchar(1) default 'N' comment 'Y: 鎸夋甯稿埄鐜囨诞鍔�
+N:涓嶆寜姝ｅ父鍒╃巼娴姩',
+    SETTLE_CYCLE_DATE varchar(8) comment '璐︽埛缁撶畻鏃ユ湡',
+    AGREE_CHANGE_TYPE varchar(1) comment '鍗忚鍙樺姩鏂瑰紡',
+    AGREE_FIXED_RATE Decimal(15,8) comment '鍗忚鍥哄畾鍒╃巼',
+    AGREE_PERCENT_RATE Decimal(5,2) comment '鍗忚娴姩鐧惧垎姣�',
+    AGREE_SPREAD_RATE Decimal(15,8) comment '鍗忚娴姩鐧惧垎鐐�',
+    TD_INT_NUM_DAYS varchar(5) comment '褰撴湡绱璁℃伅澶╂暟',
+    SPLIT_RATE_FLAG varchar(1) comment '鍒╃巼鍒嗘鏍囧織',
+    INT_TAX_T Decimal(17,2) comment '瀛橀噺鍒╂伅绋庯細褰撴暟鎹Щ妞嶅悗锛岃褰曡处鎴风Щ妞嶅墠鐨勭疮璁″埄鎭◣',
+    ACCT_FIXED_TAX_RATE Decimal(15,8) comment '绋庣巼鍥哄畾娴姩',
+    ACCT_SPREAD_TAX_RATE Decimal(15,8) comment '绋庣巼鐧惧垎鐐规诞鍔�',
+    ACCT_PERCENT_TAX_RATE Decimal(15,8) comment '绋庣巼鐧惧垎姣旀诞鍔�',
+    TD_ACCR_INT_DAY varchar(2) comment '璁℃彁璧峰鏃ユ湡',
+    AGREE_REDUCE_AMT Decimal(38,2) comment '鍗忚浼樻儬閲戦',
+    TD_LAST_ACCR_DATE varchar(8) comment '褰撴湡涓婁竴璁℃彁鏃�',
+    SYSTEM_ID varchar(20) comment '绯荤粺ID',
+    FLOAT_TYPE varchar(3) comment '娴姩绫诲瀷',
+    FOLLOW_INT_DAY_TYPE varchar(1) comment '鍚庣画鍙樺姩鏃ュ埄鐜囧彇鍊兼棩绫诲瀷',
+    FOLLOW_TRACE_NATURAL_DAYS varchar(5) comment '鍥炴函鑷劧鏃ュぉ鏁�',
+    FOLLOW_TRACE_WORKDAY_DAYS varchar(5) comment '鍥炴函宸ヤ綔鏃ュぉ鏁�',
+    TRAN_TIMESTAMP varchar(17) comment '浜ゆ槗鏃堕棿鎴�',
+    TRAN_TIME Decimal(11,0) comment '浜ゆ槗鏃堕棿',
+    ROUTER_KEY varchar(100) comment '鍒嗗簱璺敱鍏抽敭瀛�',
+    primary  key (INTERNAL_KEY,INT_CLASS)
+);
+alter table MB_ACCT_INT_DETAIL comment '鍒╂伅鏄庣粏琛� undefined';
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create table MB_ACCT_INT_DETAIL
+(
+    INTERNAL_KEY Decimal(15) not null commen' at line 5
+Error executing: drop index MB_ACCT_SCHEDULE_DETAIL_IND1 on MB_ACCT_SCHEDULE_DETAIL
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_SCHEDULE_DETAIL_IND1'; check that column/key exists
+Error executing: drop index MB_ACCT_SCH_IND2 on MB_ACCT_SCHEDULE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_SCH_IND2'; check that column/key exists
+Error executing: drop index MB_ACCT_SEC_BALANCE_IND1 on MB_ACCT_SEC_BALANCE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_SEC_BALANCE_IND1'; check that column/key exists
+Error executing: drop index MB_ACCT_SETTLE_IND1 on MB_ACCT_SETTLE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_SETTLE_IND1'; check that column/key exists
+Error executing: drop index MB_ACCT_IND2 on MB_ACCT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_IND2'; check that column/key exists
+Error executing: drop index MB_ACCT_IND3 on MB_ACCT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_IND3'; check that column/key exists
+Error executing: drop index MB_ACCT_IND4 on MB_ACCT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_IND4'; check that column/key exists
+Error executing: drop index MB_ACCT_IND5 on MB_ACCT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_IND5'; check that column/key exists
+Error executing: drop index MB_AGREEMENT_LOAN_IND1 on MB_AGREEMENT_LOAN
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_AGREEMENT_LOAN_IND1'; check that column/key exists
+Error executing: drop index MB_AGREEMENT_LOAN_IND2 on MB_AGREEMENT_LOAN
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_AGREEMENT_LOAN_IND2'; check that column/key exists
+Error executing: drop index MB_AGREEMENT_OVERDRAFT_IND2 on MB_AGREEMENT_OVERDRAFT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_AGREEMENT_OVERDRAFT_IND2'; check that column/key exists
+Error executing: drop index MB_AGREEMENT_IND2 on MB_AGREEMENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_AGREEMENT_IND2'; check that column/key exists
+Error executing: drop index MB_AGREEMENT_IND3 on MB_AGREEMENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_AGREEMENT_IND3'; check that column/key exists
+Error executing: drop index MB_AGREEMENT_IND4 on MB_AGREEMENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_AGREEMENT_IND4'; check that column/key exists
+Error executing: drop index MB_CHANL_TRAN_INDEX on MB_CHANNEL_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_CHANL_TRAN_INDEX'; check that column/key exists
+Error executing: drop index MB_CHANL_TRAN_INDEX_1 on MB_CHANNEL_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_CHANL_TRAN_INDEX_1'; check that column/key exists
+Error executing: drop index MB_CHANL_TRAN_INDEX_2 on MB_CHANNEL_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_CHANL_TRAN_INDEX_2'; check that column/key exists
+Error executing: drop table if exists MB_COLLAT_TBL;
+/*==============================================================*/
+/* Table: MB_COLLAT_TBL                                           */
+/*==============================================================*/
+create table MB_COLLAT_TBL
+(
+    COLL_REF varchar(50) not null comment '鎶垫娂鍝佺紪鍙�',
+    BRANCH varchar(20) comment '鏈烘瀯鍙�',
+    CONTRACT_NO varchar(50) comment '鍚堝悓鍙�',
+    OWNER_NO varchar(200) comment '瀹㈡埛鍙�',
+    OWNER varchar(50) comment '瀹㈡埛鍚嶇О',
+    COLLAT_TYPE varchar(10) comment '鎶垫娂鍝佺绫�',
+    COLLAT_NAME varchar(50) comment '鎶垫娂鍝佸悕绉�',
+    COLLAT_VALUE Decimal(17,2) comment '鎶垫娂鍝佷环鍊�',
+    CCY varchar(3) comment '甯佺',
+    VOUCHER_NO varchar(50) comment '鍑瘉鍙�',
+    BASE_ACCT_NO varchar(150) comment '璐︽埛',
+    PROD_TYPE varchar(50) comment '浜у搧绫诲瀷',
+    ACCT_CCY varchar(3) comment '璐︽埛甯佺',
+    ACCT_SEQ_NO varchar(8) comment '璐︽埛搴忓彿',
+    BEGIN_DATE varchar(8) comment '寮�濮嬫棩鏈�',
+    END_DATE varchar(8) comment '缁撴潫鏃ユ湡',
+    TRAN_DATE varchar(8) comment '浜ゆ槗鏃ユ湡',
+    STATUS varchar(3) comment '鐘舵��',
+    USER_ID varchar(30) comment '鎿嶄綔鏌滃憳',
+    AUTH_USER_ID varchar(30) comment '澶嶆牳鏌滃憳',
+    APPR_USER_ID varchar(30) comment '鎺堟潈鏌滃憳',
+    WS_ID varchar(200) comment '鎿嶄綔鏈哄櫒鐮�',
+    NARRATIVE varchar(300) comment '澶囨敞',
+    LAST_CHANGE_DATE varchar(8) comment '鏈�鍚庝慨鏀规棩鏈�',
+    IS_INNER varchar(2) comment '鏄惁鏈',
+    SOURCE_TYPE varchar(10) comment '娓犻亾绫诲瀷',
+    RESTRAINT_SEQ_NO varchar(50) comment '闄愬埗搴忓彿',
+    VERIFY varchar(1) comment '鏄惁纭',
+    TRAN_TIMESTAMP varchar(17) comment '浜ゆ槗鏃堕棿鎴�',
+    TRAN_TIME Decimal(11,0) comment '浜ゆ槗鏃堕棿',
+    ROUTER_KEY varchar(100) comment '鍒嗗簱璺敱鍏抽敭瀛�',
+    primary  key (COLL_REF)
+);
+alter table MB_COLLAT_TBL comment '鎶佃川鎶煎搧鐧昏钖� undefined';
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create table MB_COLLAT_TBL
+(
+    COLL_REF varchar(50) not null comment '鎶垫' at line 5
+Error executing: drop index mb_seq_index on MB_COLLATE_APPLY
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'mb_seq_index'; check that column/key exists
+Error executing: drop index mb_tran_index1 on MB_COLLATE_APPLY
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'mb_tran_index1'; check that column/key exists
+Error executing: /*==============================================================*/
+/* Table: MB_FEE_AMORTIZE_AGR                                           */
+/*==============================================================*/
+create table MB_FEE_AMORTIZE_AGR
+(
+    AGREEMENT_ID varchar(30) not null comment '鍚堢害缂栧彿',
+    INTERNAL_KEY Decimal(15) comment '璐︽埛鏍囪瘑绗�',
+    CLIENT_NO varchar(20) not null comment '瀹㈡埛鍙�',
+    TRAN_TYPE varchar(10) not null comment '浜ゆ槗绫诲瀷',
+    FEE_TYPE varchar(8) not null comment '璐圭敤绫诲瀷',
+    AMORTIZE_NAME varchar(200) comment '鎽婇攢鍚嶇О',
+    BUSI_NO varchar(50) comment '涓氬姟缂栧彿',
+    AMORTIZE_PERIOD_FREQ varchar(2) not null comment '鎽婇攢棰戠巼 ',
+    AMORTIZE_TIME varchar(2) not null comment '鎽婇攢鏃堕棿 F-鏈熷垵 L-鏈熸湯 D-鍛ㄦ湡鍐呭浐瀹氭棩鏈�',
+    AMORTIZE_MONTH varchar(2) comment '鎽婇攢鏈�',
+    AMORTIZE_DAY varchar(2) comment '鎽婇攢鏃�',
+    LAST_AMORTIZE_DATE varchar(8) comment '涓婁竴鎽婇攢鏃ユ湡',
+    NEXT_AMORTIZE_DATE varchar(8) comment '涓嬩竴鎽婇攢鏃ユ湡',
+    AMORTIZE_CCY varchar(3) not null comment '鎽婇攢甯佺',
+    AMORTIZE_TOTAL_AMT Decimal(17,2) not null comment '鎽婇攢鎬婚噾棰�',
+    AMORTIZED_AMT Decimal(17,2) comment '宸叉憡閿�閲戦',
+    REMAIN_AMORTIZE_AMT Decimal(17,2) not null comment '鍓╀綑鎽婇攢閲戦',
+    AMORTIZE_TOTAL_CNT varchar(5) comment '鎽婇攢鎬绘鏁�',
+    AMORTIZED_CNT varchar(5) comment '宸叉憡閿�娆℃暟',
+    REMAIN_AMORTIZE_CNT varchar(5) comment '鍓╀綑鎽婇攢娆℃暟',
+    EFFECT_DATE varchar(8) not null comment '鐢熸晥鏃ユ湡',
+    END_DATE varchar(8) comment '缁撴潫鏃ユ湡',
+    AMORTIZE_STATUS varchar(2) not null comment '鎽婇攢鐘舵�� A-娲诲姩 C-姝ｅ父鍏抽棴 D-宸插垹闄� P-棰勫缓绔� R-宸插啿閿�',
+    TRAN_DATE varchar(8) not null comment '浜ゆ槗鏃ユ湡',
+    TRAN_BRANCH varchar(20) not null comment '浜ゆ槗鏈烘瀯',
+    USER_ID varchar(30) comment '浜ゆ槗鏌滃憳',
+    AUTH_USER_ID varchar(30) comment '鎺堟潈鏌滃憳',
+    REFERENCE varchar(50) comment '浜ゆ槗鍙傝�冨彿',
+    CHANNEL_SEQ_NO varchar(50) comment '娓犻亾娴佹按鍙�',
+    BANK_SEQ_NO varchar(50) comment '閾惰浜ゆ槗搴忓彿',
+    SOURCE_MODULE varchar(10) comment '鏉ユ簮妯″潡',
+    SOURCE_TYPE varchar(10) comment '娓犻亾绫诲瀷',
+    OSD_SEQ_NO varchar(50) comment '搴旀敹璐圭敤搴忓彿
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''搴旀敹璐圭敤搴忓彿' at line 38
+Error executing:     BATCH_SEQ_NO varchar(50) comment '鐧昏搴忓彿
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BATCH_SEQ_NO varchar(50) comment '鐧昏搴忓彿' at line 1
+Error executing:     REVERSAL varchar(1) not null comment '鍐叉鏍囧織',
+    REVERSAL_USER_ID varchar(30) comment '鍐叉鏌滃憳',
+    REVERSAL_AUTH_USER_ID varchar(30) comment '鍐叉鎺堟潈鏌滃憳',
+    REVERSAL_BRANCH varchar(20) comment '鍐叉鏈烘瀯',
+    REVERSAL_DATE varchar(8) comment '鍐叉鏃ユ湡',
+    TRAN_TIMESTAMP varchar(17) comment '浜ゆ槗鏃堕棿鎴�',
+    TRAN_TIME Decimal(11,0) comment '浜ゆ槗鏃堕棿',
+    ROUTER_KEY varchar(100) comment '鍒嗗簱璺敱鍏抽敭瀛�',
+    primary  key (AGREEMENT_ID)
+)
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'REVERSAL varchar(1) not null comment '鍐叉鏍囧織',
+    REVERSAL_USER_ID' at line 1
+Error executing: alter table MB_FEE_AMORTIZE_AGR comment '鎽婇攢鍚堢害琛� undefined'
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'ensemble_sit.mb_fee_amortize_agr' doesn't exist
+Error executing: drop index MB_INVOICE_IND2 on MB_INVOICE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_INVOICE_IND2'; check that column/key exists
+Error executing: drop index MB_INVOICE_IND1 on MB_INVOICE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_INVOICE_IND1'; check that column/key exists
+Error executing: drop index MB_MANUAL_DETAIL_INDEX on MB_MANUAL_DETAIL
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_MANUAL_DETAIL_INDEX'; check that column/key exists
+Error executing: drop index MB_MANUAL_DETAIL_INDEX_1 on MB_MANUAL_DETAIL
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_MANUAL_DETAIL_INDEX_1'; check that column/key exists
+Error executing: drop index MB_MANUAL_DETAIL_INDEX_2 on MB_MANUAL_DETAIL
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_MANUAL_DETAIL_INDEX_2'; check that column/key exists
+Error executing: drop index MB_MAUA_TRAN_INDEX on MB_MANUAL_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_MAUA_TRAN_INDEX'; check that column/key exists
+Error executing: drop index MB_MAUA_TRAN_INDEX_1 on MB_MANUAL_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_MAUA_TRAN_INDEX_1'; check that column/key exists
+Error executing: drop index MB_MAUA_TRAN_INDEX_2 on MB_MANUAL_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_MAUA_TRAN_INDEX_2'; check that column/key exists
+Error executing: drop index MB_MAUA_TRAN_INDEX_3 on MB_MANUAL_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_MAUA_TRAN_INDEX_3'; check that column/key exists
+Error executing: drop index MB_TRAN_CONTROL_HIST_IND1 on MB_TRAN_CONTROL_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_TRAN_CONTROL_HIST_IND1'; check that column/key exists
+Error executing: drop index MB_TRAN_HIST_IND1 on MB_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_TRAN_HIST_IND1'; check that column/key exists
+Error executing: drop index MB_TRAN_HIST_IND2 on MB_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_TRAN_HIST_IND2'; check that column/key exists
+Error executing: drop index MUBT_IND1 on MB_UPD_BALANCE_TRAN
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MUBT_IND1'; check that column/key exists
+Error executing: drop index MUBT_IND2 on MB_UPD_BALANCE_TRAN
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MUBT_IND2'; check that column/key exists
+Error executing: drop index TB_VOUCHER_INFO_IND1 on TB_VOUCHER_INFO
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'TB_VOUCHER_INFO_IND1'; check that column/key exists
+Error executing: drop index FX_MB_PAY_MESAGE_IND2 on FX_MB_PAYMENT_MESSAGE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'FX_MB_PAY_MESAGE_IND2'; check that column/key exists
+Error executing: drop index FX_MB_PAY_MESAGE_IND3 on FX_MB_PAYMENT_MESSAGE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'FX_MB_PAY_MESAGE_IND3'; check that column/key exists
+Error executing: drop index FX_MB_PAYMENT_TH_IND2 on FX_MB_PAYMENT_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'FX_MB_PAYMENT_TH_IND2'; check that column/key exists
+Error executing: drop index FX_MB_PAYMENT_TH_IND3 on FX_MB_PAYMENT_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'FX_MB_PAYMENT_TH_IND3'; check that column/key exists
+Error executing: drop index FX_MB_STOR_TRANH_IND2 on FX_MB_STOR_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'FX_MB_STOR_TRANH_IND2'; check that column/key exists
+Error executing: drop index FX_MB_STOR_TRANH_IND3 on FX_MB_STOR_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'FX_MB_STOR_TRANH_IND3'; check that column/key exists
+Error executing: drop index CIF_CLIENT_DOC_IND1 on CIF_CLIENT_DOCUMENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'CIF_CLIENT_DOC_IND1'; check that column/key exists
+Error executing: drop index CIF_CLIENT_DOC_IND2 on CIF_CLIENT_DOCUMENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'CIF_CLIENT_DOC_IND2'; check that column/key exists
+Error executing: drop index CIF_CLIENT_NO_IND on CIF_CLIENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'CIF_CLIENT_NO_IND'; check that column/key exists
+Error executing: drop index IRL_ACCR_INFO_MAIN_IND1 on IRL_ACCR_INFO_MAIN
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'IRL_ACCR_INFO_MAIN_IND1'; check that column/key exists
+Error executing: drop table if exists IRL_INT_SPLIT_RATE;
+/*==============================================================*/
+/* Table: IRL_INT_SPLIT_RATE                                           */
+/*==============================================================*/
+create table IRL_INT_SPLIT_RATE
+(
+    IRL_SEQ_NO varchar(50) not null comment '搴忓彿  ',
+    SYSTEM_ID varchar(20) not null comment '绯荤粺ID',
+    INTERNAL_KEY Decimal(15) not null comment '甯愭埛涓婚敭',
+    INT_CLASS varchar(20) comment '鍒╂伅鍒嗙被',
+    SPLIT_DATE varchar(8) comment '鍒嗘鏃惰绠楀紑濮嬫棩鏈�',
+    START_DATE varchar(8) comment '鐢熸晥鏃ユ湡',
+    END_DATE varchar(8) comment '鍒嗘鏃惰绠楃粨鏉熸棩鏈�',
+    PERI_SPLIT_ID varchar(10) comment '鍛ㄦ湡鍒嗘ID',
+    PERI_SEQ_NO varchar(5) comment '鍛ㄦ湡鍒嗘搴忓彿',
+    AMT_SPLIT_ID varchar(10) comment '閲戦鍒嗘ID',
+    AMT_SEQ_NO varchar(5) comment '閲戦鍒嗘搴忓彿',
+    NEAR_AMT Decimal(17,2) comment '闈犳。閲戦',
+    ACCR_AMT Decimal(17,2) comment '璁℃彁閲戦',
+    NEAR_PERIOD_TYPE varchar(1) comment '鍒嗘鍛ㄦ湡绫诲瀷',
+    NEAR_PERIOD varchar(5) comment '鍒嗘鍛ㄦ湡',
+    ACCR_DAYS varchar(10) comment '璁℃伅澶╂暟',
+    ACTUAL_RATE Decimal(15,8) comment '琛屽唴鍒╃巼',
+    FLOAT_RATE Decimal(15,8) comment '娴姩鍒╃巼',
+    REAL_RATE Decimal(15,8) comment '鎵ц鍒╃巼',
+    ACCT_SPREAD_RATE Decimal(15,8) comment '鍒嗘埛绾ф诞鍔ㄧ櫨鍒嗙偣',
+    ACCT_PERCENT_RATE Decimal(5,2) comment '鍒嗘埛娴姩鐧惧垎姣�',
+    ACCT_FIXED_RATE Decimal(15,8) comment '鍒嗘埛绾у浐瀹氬埄鐜�',
+    INT_TYPE varchar(3) comment '鍒╃巼绫诲瀷',
+    AMT_SPLIT_MODE varchar(1) comment '閲戦鍒嗘妯″瀷',
+    PERI_SPLIT_MODE varchar(1) comment '鍛ㄦ湡鍒嗘妯″瀷',
+    YEAR_BASIS varchar(3) comment '骞村熀鍑嗗ぉ鏁�',
+    MONTH_BASIS varchar(3) comment '鏈堝熀鍑嗗ぉ鏁�',
+    RECAL_METHOD varchar(1) comment '閲嶇畻鍒╂伅鏂规硶  ',
+    COMPANY varchar(20) comment '娉曚汉浠ｇ爜',
+    AGREE_FIXED_RATE Decimal(15,8) comment '鍗忚鍥哄畾鍒╃巼',
+    AGREE_PERCENT_RATE Decimal(5,2) comment '鍗忚娴姩鐧惧垎姣�',
+    AGREE_SPREAD_RATE Decimal(15,8) comment '鍗忚娴姩鐧惧垎鐐�',
+    AGREE_CHANGE_TYPE varchar(1) comment '鍗忚鍙樺姩鏂瑰紡',
+    AGREE_REDUCE_AMT Decimal(38,2) comment '鍗忚浼樻儬閲戦',
+    TD_LAST_ACCR_DATE varchar(8) comment '褰撴湡涓婁竴璁℃彁鏃�',
+    TD_ACCR_INT_DAY varchar(2) comment '璁℃彁璧峰鏃ユ湡',
+    TD_INT_NUM_DAYS varchar(5) comment '褰撴湡绱璁℃伅澶╂暟',
+    CALC_BEGIN_DATE varchar(8) comment '鍒╂伅璁＄畻璧峰鏃�',
+    TD_END_ACCR_DATE varchar(8) comment '璁℃彁缁撴潫鏃ユ湡',
+    TRAN_TIMESTAMP varchar(17) comment '浜ゆ槗鏃堕棿鎴�',
+    TRAN_TIME Decimal(11,0) comment '浜ゆ槗鏃堕棿',
+    ROUTER_KEY varchar(100) comment '鍒嗗簱璺敱鍏抽敭瀛�',
+    primary  key (IRL_SEQ_NO)
+);
+alter table IRL_INT_SPLIT_RATE comment '鍒嗘埛鍒嗘淇℃伅鍒╃巼琛� undefined';
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create table IRL_INT_SPLIT_RATE
+(
+    IRL_SEQ_NO varchar(50) not null comment ' at line 5
+Error executing: drop table if exists IRL_INT_SPLIT;
+/*==============================================================*/
+/* Table: IRL_INT_SPLIT                                           */
+/*==============================================================*/
+create table IRL_INT_SPLIT
+(
+    SYSTEM_ID varchar(20) not null comment '绯荤粺ID',
+    INTERNAL_KEY Decimal(15) not null comment '甯愭埛涓婚敭',
+    START_DATE varchar(8) not null comment '鐢熸晥鏃ユ湡',
+    END_DATE varchar(8) comment '缁堟鏃ユ湡',
+    INT_CLASS varchar(20) not null comment '鍒╂伅鍒嗙被',
+    ACCT_NO varchar(150) comment '璐﹀彿',
+    PROD_TYPE varchar(50) comment '浜у搧绫诲瀷',
+    EVENT_TYPE varchar(50) comment '浜嬩欢绫诲瀷',
+    BRANCH varchar(20) comment '鏈烘瀯浠ｇ爜',
+    SOURCE_TYPE varchar(10) comment '娓犻亾 ',
+    CCY varchar(3) comment '甯佺',
+    INT_CALC_BAL varchar(3) comment '璁℃伅鏂瑰紡',
+    CLIENT_NO varchar(20) comment '瀹㈡埛鍙�',
+    CR_RATING varchar(4) comment '瀹㈡埛绛夌骇 ',
+    IRL_GENE_STR varchar(500) comment '鍒╃巼鍥犲瓙',
+    INT_AMT Decimal(17,2) comment '璁℃彁閲戦',
+    CUR_INT_ACCRUED Decimal(17,2) comment '褰撴湡绱璁℃彁',
+    CUR_INT_ADJ Decimal(17,2) comment '褰撴湡绱璋冩暣',
+    CUR_TAX_ACCRUED Decimal(17,2) comment '褰撴湡绱鍒╂伅绋�',
+    TAX_TYPE varchar(3) comment '绋庣巼绫诲瀷',
+    TAX_RATE Decimal(15,8) comment '绋庣巼',
+    PRE_INT_ACCRUED Decimal(17,2) comment '鏈熷垵绱璁℃彁',
+    AFTER_INT_ACCRUED Decimal(17,2) comment '鏈熸湯绱璁℃彁',
+    PRE_INT_ADJ Decimal(17,2) comment '鏈熷垵绱璋冩暣',
+    AFTER_INT_ADJ Decimal(17,2) comment '鏈熸湯绱璋冩暣',
+    PRE_TAX_ACCRUED Decimal(17,2) comment '鏈熷垵绱鍒╂伅绋�',
+    AFTER_TAX_ACCRUED Decimal(17,2) comment '鏈熸湯绱鍒╂伅绋�',
+    COMPANY varchar(20) comment '娉曚汉浠ｇ爜',
+    MONTH_BASIS varchar(3) comment '鏈堝熀鍑� ',
+    YEAR_BASIS varchar(3) comment '骞村熀鍑嗗ぉ鏁� 360澶� 365澶�',
+    INT_TYPE varchar(3) comment '鍒╃巼绫诲瀷',
+    ACTUAL_RATE Decimal(15,8) comment '琛屽唴鍒╃巼',
+    FLOAT_RATE Decimal(15,8) comment '娴姩鍒╃巼',
+    REAL_RATE Decimal(15,8) comment '鎵ц鍒╃巼',
+    ACCT_SPREAD_RATE Decimal(15,8) comment '鍒嗘埛绾ф诞鍔ㄧ櫨鍒嗙偣',
+    ACCT_PERCENT_RATE Decimal(5,2) comment '鍒嗘埛娴姩鐧惧垎姣�',
+    ACCT_FIXED_RATE Decimal(15,8) comment '鍒嗘埛绾у浐瀹氬埄鐜�',
+    AGREE_CHANGE_TYPE varchar(1) comment '鍗忚鍙樺姩鏂瑰紡',
+    AGREE_FIXED_RATE Decimal(15,8) comment '鍗忚鍥哄畾鍒╃巼',
+    AGREE_PERCENT_RATE Decimal(5,2) comment '鍗忚娴姩鐧惧垎姣�',
+    AGREE_SPREAD_RATE Decimal(15,8) comment '鍗忚娴姩鐧惧垎鐐�',
+    SPLIT_RATE_FLAG varchar(1) comment '鍒╃巼鍒嗘鏍囧織',
+    AFTER_INT_ACCRUED_DIFF Decimal(15,10) comment ' 鏈熸湯璁℃彁宸',
+    PRE_INT_ACCRUED_DIFF Decimal(15,10) comment '鏈熷垵璁℃彁宸',
+    AGREE_REDUCE_AMT Decimal(38,2) comment '鍗忚浼樻儬閲戦',
+    TD_LAST_ACCR_DATE varchar(8) comment '褰撴湡涓婁竴璁℃彁鏃�',
+    TD_ACCR_INT_DAY varchar(2) comment '璁℃彁璧峰鏃ユ湡',
+    TD_INT_NUM_DAYS varchar(5) comment '褰撴湡绱璁℃伅澶╂暟',
+    CALC_BEGIN_DATE varchar(8) comment '鍒╂伅璁＄畻璧峰鏃�',
+    TD_END_ACCR_DATE varchar(8) comment '璁℃彁缁撴潫鏃ユ湡',
+    TRAN_TIME Decimal(11,0) comment '浜ゆ槗鏃堕棿',
+    TRAN_TIMESTAMP varchar(17) comment '浜ゆ槗鏃堕棿鎴�',
+    ROUTER_KEY varchar(100) comment '鍒嗗簱璺敱鍏抽敭瀛�',
+    primary  key (SYSTEM_ID,INTERNAL_KEY,START_DATE,INT_CLASS)
+);
+alter table IRL_INT_SPLIT comment '鍒嗘埛鍒嗘淇℃伅琛� undefined';
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create table IRL_INT_SPLIT
+(
+    SYSTEM_ID varchar(20) not null comment '绯' at line 5
+Error executing: drop index CIF_CLIENT_DOC_IND1 on CIF_CLIENT_DOCUMENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'CIF_CLIENT_DOC_IND1'; check that column/key exists
+Error executing: drop index CIF_CLIENT_DOC_IND2 on CIF_CLIENT_DOCUMENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'CIF_CLIENT_DOC_IND2'; check that column/key exists
+Error executing: drop index CIF_CLIENT_NO_IND on CIF_CLIENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'CIF_CLIENT_NO_IND'; check that column/key exists
+Error executing: drop index MB_ACCT_BALANCE_IND1 on MB_ACCT_BALANCE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_BALANCE_IND1'; check that column/key exists
+Error executing: drop index MB_ACCT_BALANCE_IND2 on MB_ACCT_BALANCE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_BALANCE_IND2'; check that column/key exists
+Error executing: drop table if exists MB_ACCT_INT_DETAIL;
+/*==============================================================*/
+/* Table: MB_ACCT_INT_DETAIL                                           */
+/*==============================================================*/
+create table MB_ACCT_INT_DETAIL
+(
+    INTERNAL_KEY Decimal(15) not null comment '甯愭埛涓婚敭',
+    INT_CLASS varchar(20) not null comment '鍒╂伅鍒嗙被 IRL_INT_ROLL.INT_CLASS',
+    NEXT_CYCLE_DATE varchar(8) comment '涓嬩竴缁撴伅鏃�',
+    CYCLE_FREQ varchar(2) comment '缁撴伅鍛ㄦ湡',
+    INT_DAY varchar(2) comment '缁撴伅鏃�',
+    LAST_CYCLE_DATE varchar(8) comment '涓婁竴缁撴伅鏃�',
+    LAST_TRUE_CYCLE_DATE varchar(8) comment '涓婁竴鐪熷疄缁撴伅鏃ワ紙澧炲姞鐗规畩缁撴伅鏃ュ鍒版湡鏃ユ椂浣跨敤锛�',
+    INT_TYPE varchar(3) comment '鍒╃巼绫诲瀷 IRL_INT_TYPE.INT_TAX_TYPE',
+    ACTUAL_RATE Decimal(15,8) comment '琛屽唴鍒╃巼',
+    FLOAT_RATE Decimal(15,8) comment '娴姩鍒╃巼',
+    SPREAD_RATE Decimal(15,8) comment '娴姩鐐规暟',
+    SPREAD_PERCENT Decimal(5,2) comment '鍒╃巼娴姩鐧惧垎姣�',
+    ACCT_FIXED_RATE Decimal(15,8) comment '鍒嗘埛绾у浐瀹氬埄鐜�',
+    ACCT_SPREAD_RATE Decimal(15,8) comment '鍒嗘埛绾ф诞鍔ㄧ櫨鍒嗙偣',
+    ACCT_PERCENT_RATE Decimal(5,2) comment '鍒嗘埛娴姩鐧惧垎姣�',
+    REAL_RATE Decimal(15,8) comment '鎵ц鍒╃巼',
+    PENALTY_ODI_RATE_TYPE varchar(1) comment '缃氭伅鍒╃巼浣跨敤鏂瑰紡  IRL_INT_TYPE.INT_TAX_TYPE',
+    INT_ACCRUED_CTD Decimal(17,2) comment '璁℃彁鏃ヨ鎻愬埄鎭�',
+    INT_ACCRUED Decimal(17,2) comment '绱璁℃彁鍒╂伅锛堢粨鎭懆鏈熷唴绱璁℃彁閲戦锛�',
+    INT_ADJ_CTD Decimal(17,2) comment '璁℃彁鏃ュ埄鎭皟鏁�',
+    INT_ADJ Decimal(17,2) comment '鍒╂伅璋冩暣(绱)',
+    INT_POSTED_CTD Decimal(17,2) comment '缁撴伅鏃ュ埄鎭噾棰�',
+    INT_POSTED Decimal(17,2) comment '缁撴伅鍒╂伅閲戦锛堢疮璁￠噾棰濓級',
+    INT_PAST_DUE Decimal(17,2) comment '閫炬湡鍒╂伅',
+    LAST_INT_PAST_DUE Decimal(17,2) comment '涓婃棩閫炬湡鍒╂伅',
+    INT_CAP varchar(1) comment '璧勬湰鍖栨爣蹇� Y:鏄� N:鍚�',
+    INT_CAP_AMT Decimal(17,2) comment '鍒╂伅璧勬湰鍖栭噾棰�',
+    LAST_ACCRUAL_DATE varchar(8) comment '涓婁竴鍒╂伅璁℃彁鏃�',
+    INT_APPL_TYPE varchar(1) comment '鍒╃巼鍚敤鏂瑰紡 MB_ATTR_VALUE.INT_APPL_TYPE',
+    RATE_EFFECT_TYPE varchar(1) comment '鍒╃巼鐢熸晥鏂瑰紡',
+    ROLL_DATE varchar(8) comment '涓嬩竴涓埄鐜囧彉鏇存棩鏈� ',
+    ROLL_FREQ varchar(2) comment '鍒╃巼鍙樻洿鍛ㄦ湡',
+    ROLL_DAY varchar(2) comment '涓嬩竴涓埄鐜囧彉鏇存棩 ',
+    DISCNT_RETAIN_INT Decimal(17,2) comment '鏈疄鐜板埄鎭�',
+    DISCNT_UI_FLAG Decimal(17,2) comment '鎶樻墸鍒╂伅鏍囧織',
+    UI_INT Decimal(17,2) comment '鎶樻墸浠樺嚭鍒╂伅',
+    UI_PENALTY_AMT Decimal(17,2) comment '鎶樻墸缃氭伅閲戦',
+    DISCNT_INT Decimal(17,2) comment '鎶樻墸鍒╂伅',
+    CALC_BEGIN_DATE varchar(8) comment '鍒╂伅璁＄畻璧峰鏃�',
+    CALC_END_DATE varchar(8) comment '鍒╂伅璁＄畻鎴鏃�',
+    LAST_CHANGE_DATE varchar(8) comment '鏈�鍚庡彉鏇存棩鏈� ',
+    LAST_CHANGE_USER_ID varchar(30) comment '涓婃淇敼鏌滃憳',
+    INT_REM_DAYS varchar(5) comment '璁℃伅鍓╀綑澶╂暟',
+    YEAR_BASIS varchar(3) comment '骞村熀鍑嗗ぉ鏁� 360澶� 365澶�',
+    MONTH_BASIS varchar(3) comment '鏈堝熀鍑� ACT:瀹為檯澶╂暟 30D:姣忔湀30澶�',
+    DAC_VALUE varchar(32) comment 'DAC鍊�  闃茬鏀瑰姞瀵�',
+    COMPANY varchar(20) comment '娉曚汉浠ｇ爜',
+    MIN_INT_RATE Decimal(15,8) comment '鎵ц鍒╃巼涓嬮檺',
+    MAX_INT_RATE Decimal(15,8) comment '鎵ц鍒╃巼涓婇檺',
+    TAX_TYPE varchar(3) comment '绋庣巼绫诲瀷  IRL_INT_TYPE.INT_TAX_TYPE',
+    TAX_RATE Decimal(15,8) comment '绋庣巼',
+    TAX_ACCRUED_CTD Decimal(17,2) comment '璁℃彁鏃ュ埄鎭◣',
+    TAX_ACCRUED Decimal(17,2) comment '缁撴伅鍛ㄦ湡鍐呭埄鎭◣绱閲戦',
+    TAX_POSTED_CTD Decimal(17,2) comment '缁撴伅鏃ュ埄鎭◣',
+    TAX_POSTED Decimal(17,2) comment '鍒╂伅绋庣疮璁￠噾棰�',
+    LAST_CYCLE_DATE_PRE varchar(8) comment '鏃ュ垏鍓嶄笂涓�缁撴伅鏃�',
+    INT_IND varchar(1) comment '鏄惁璁℃伅 Y:鏄� N:鍚�',
+    RATE_CHANGE_IND varchar(1) comment '鍒╃巼鍙樺寲鏍囧織锛岀敱鍒╃巼甯傚満鍖栬繑鍥烇紝褰撴墽琛屽埄鐜囧彂鐢熷彉鍖栨椂鐧昏涓篩,鏍稿績渚濇嵁姝ゆ爣蹇楅噸鏂扮敓鎴愯繕娆捐鍒掋�傜浜屾棩EOD鍒╃巼甯傚満鍖栭噸鏂拌祴鍊笺��',
+    ACCR_INT_DAY varchar(2) comment '璁℃彁鏃�',
+    ACCR_PERIOD_FREQ varchar(2) comment '璁℃彁鍛ㄦ湡  FM_PERIOD_FREQ.PERIOD_FREQ',
+    NEXT_ACCR_DATE varchar(8) comment '涓嬩竴璁℃彁鏃ユ湡',
+    AGG Decimal(38,2) not null default 0.00   comment '绉暟',
+    AGREE_AGG Decimal(38,2) comment '鍗忚绉暟',
+    AGREE_POST Decimal(17,2) comment '鍗忚鍒╂伅 ',
+    INT_ACCRUED_CALC_CTD Decimal(25,10) comment '璁℃彁鏃ヨ鎻愬師閲戦锛堝疄闄呰绠楅噾棰濓級',
+    INT_ACCRUED_DIFF Decimal(15,10) comment '璁℃彁閲戦宸',
+    INT_ACCRUED_T Decimal(17,2) comment '瀛樻湡璁℃彁绱鍒╂伅',
+    INT_AMT Decimal(17,2) comment '鍒╂伅閲戦',
+    IS_CYCLE varchar(1) comment '鏄惁缁撴伅 Y:鏄� N:鍚�',
+    IS_RETRY varchar(1) comment '鏄惁閲嶇畻 Y:鏄� N:鍚�',
+    LAST_ROLL_DATE varchar(8) comment '涓婁竴涓埄鐜囧彉鏇存棩鏈�  濡傛灉鍒╃巼鍚敤鏂瑰紡涓篟鏃跺綍鍏�',
+    TAX_ACCRUED_CALC_CTD Decimal(25,10) comment '璁℃彁鏃ュ埄鎭◣鍘熼噾棰濓紙瀹為檯璁＄畻閲戦锛�',
+    TAX_ACCRUED_DIFF Decimal(15,10) comment '鍒╂伅绋庡樊棰�',
+    INT_CALC_BAL varchar(3) comment '璁℃伅鏂瑰紡 MB_ATTR_VALUE.INT_CALC_TYPE',
+    CALC_BY_INT varchar(1) default 'N' comment 'Y: 鎸夋甯稿埄鐜囨诞鍔�
+N:涓嶆寜姝ｅ父鍒╃巼娴姩',
+    SETTLE_CYCLE_DATE varchar(8) comment '璐︽埛缁撶畻鏃ユ湡',
+    AGREE_CHANGE_TYPE varchar(1) comment '鍗忚鍙樺姩鏂瑰紡',
+    AGREE_FIXED_RATE Decimal(15,8) comment '鍗忚鍥哄畾鍒╃巼',
+    AGREE_PERCENT_RATE Decimal(5,2) comment '鍗忚娴姩鐧惧垎姣�',
+    AGREE_SPREAD_RATE Decimal(15,8) comment '鍗忚娴姩鐧惧垎鐐�',
+    TD_INT_NUM_DAYS varchar(5) comment '褰撴湡绱璁℃伅澶╂暟',
+    SPLIT_RATE_FLAG varchar(1) comment '鍒╃巼鍒嗘鏍囧織',
+    INT_TAX_T Decimal(17,2) comment '瀛橀噺鍒╂伅绋庯細褰撴暟鎹Щ妞嶅悗锛岃褰曡处鎴风Щ妞嶅墠鐨勭疮璁″埄鎭◣',
+    ACCT_FIXED_TAX_RATE Decimal(15,8) comment '绋庣巼鍥哄畾娴姩',
+    ACCT_SPREAD_TAX_RATE Decimal(15,8) comment '绋庣巼鐧惧垎鐐规诞鍔�',
+    ACCT_PERCENT_TAX_RATE Decimal(15,8) comment '绋庣巼鐧惧垎姣旀诞鍔�',
+    TD_ACCR_INT_DAY varchar(2) comment '璁℃彁璧峰鏃ユ湡',
+    AGREE_REDUCE_AMT Decimal(38,2) comment '鍗忚浼樻儬閲戦',
+    TD_LAST_ACCR_DATE varchar(8) comment '褰撴湡涓婁竴璁℃彁鏃�',
+    SYSTEM_ID varchar(20) comment '绯荤粺ID',
+    FLOAT_TYPE varchar(3) comment '娴姩绫诲瀷',
+    FOLLOW_INT_DAY_TYPE varchar(1) comment '鍚庣画鍙樺姩鏃ュ埄鐜囧彇鍊兼棩绫诲瀷',
+    FOLLOW_TRACE_NATURAL_DAYS varchar(5) comment '鍥炴函鑷劧鏃ュぉ鏁�',
+    FOLLOW_TRACE_WORKDAY_DAYS varchar(5) comment '鍥炴函宸ヤ綔鏃ュぉ鏁�',
+    TRAN_TIMESTAMP varchar(17) comment '浜ゆ槗鏃堕棿鎴�',
+    TRAN_TIME Decimal(11,0) comment '浜ゆ槗鏃堕棿',
+    ROUTER_KEY varchar(100) comment '鍒嗗簱璺敱鍏抽敭瀛�',
+    primary  key (INTERNAL_KEY,INT_CLASS)
+);
+alter table MB_ACCT_INT_DETAIL comment '鍒╂伅鏄庣粏琛� undefined';
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create table MB_ACCT_INT_DETAIL
+(
+    INTERNAL_KEY Decimal(15) not null commen' at line 5
+Error executing: drop index MB_ACCT_SCHEDULE_DETAIL_IND1 on MB_ACCT_SCHEDULE_DETAIL
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_SCHEDULE_DETAIL_IND1'; check that column/key exists
+Error executing: drop index MB_ACCT_SCH_IND2 on MB_ACCT_SCHEDULE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_SCH_IND2'; check that column/key exists
+Error executing: drop index MB_ACCT_SEC_BALANCE_IND1 on MB_ACCT_SEC_BALANCE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_SEC_BALANCE_IND1'; check that column/key exists
+Error executing: drop index MB_ACCT_SETTLE_IND1 on MB_ACCT_SETTLE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_SETTLE_IND1'; check that column/key exists
+Error executing: drop index MB_ACCT_IND2 on MB_ACCT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_IND2'; check that column/key exists
+Error executing: drop index MB_ACCT_IND3 on MB_ACCT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_IND3'; check that column/key exists
+Error executing: drop index MB_ACCT_IND4 on MB_ACCT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_IND4'; check that column/key exists
+Error executing: drop index MB_ACCT_IND5 on MB_ACCT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_ACCT_IND5'; check that column/key exists
+Error executing: drop index MB_AGREEMENT_LOAN_IND1 on MB_AGREEMENT_LOAN
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_AGREEMENT_LOAN_IND1'; check that column/key exists
+Error executing: drop index MB_AGREEMENT_LOAN_IND2 on MB_AGREEMENT_LOAN
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_AGREEMENT_LOAN_IND2'; check that column/key exists
+Error executing: drop index MB_AGREEMENT_OVERDRAFT_IND2 on MB_AGREEMENT_OVERDRAFT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_AGREEMENT_OVERDRAFT_IND2'; check that column/key exists
+Error executing: drop index MB_AGREEMENT_IND2 on MB_AGREEMENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_AGREEMENT_IND2'; check that column/key exists
+Error executing: drop index MB_AGREEMENT_IND3 on MB_AGREEMENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_AGREEMENT_IND3'; check that column/key exists
+Error executing: drop index MB_AGREEMENT_IND4 on MB_AGREEMENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_AGREEMENT_IND4'; check that column/key exists
+Error executing: drop index MB_CHANL_TRAN_INDEX on MB_CHANNEL_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_CHANL_TRAN_INDEX'; check that column/key exists
+Error executing: drop index MB_CHANL_TRAN_INDEX_1 on MB_CHANNEL_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_CHANL_TRAN_INDEX_1'; check that column/key exists
+Error executing: drop index MB_CHANL_TRAN_INDEX_2 on MB_CHANNEL_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_CHANL_TRAN_INDEX_2'; check that column/key exists
+Error executing: drop table if exists MB_COLLAT_TBL;
+/*==============================================================*/
+/* Table: MB_COLLAT_TBL                                           */
+/*==============================================================*/
+create table MB_COLLAT_TBL
+(
+    COLL_REF varchar(50) not null comment '鎶垫娂鍝佺紪鍙�',
+    BRANCH varchar(20) comment '鏈烘瀯鍙�',
+    CONTRACT_NO varchar(50) comment '鍚堝悓鍙�',
+    OWNER_NO varchar(200) comment '瀹㈡埛鍙�',
+    OWNER varchar(50) comment '瀹㈡埛鍚嶇О',
+    COLLAT_TYPE varchar(10) comment '鎶垫娂鍝佺绫�',
+    COLLAT_NAME varchar(50) comment '鎶垫娂鍝佸悕绉�',
+    COLLAT_VALUE Decimal(17,2) comment '鎶垫娂鍝佷环鍊�',
+    CCY varchar(3) comment '甯佺',
+    VOUCHER_NO varchar(50) comment '鍑瘉鍙�',
+    BASE_ACCT_NO varchar(150) comment '璐︽埛',
+    PROD_TYPE varchar(50) comment '浜у搧绫诲瀷',
+    ACCT_CCY varchar(3) comment '璐︽埛甯佺',
+    ACCT_SEQ_NO varchar(8) comment '璐︽埛搴忓彿',
+    BEGIN_DATE varchar(8) comment '寮�濮嬫棩鏈�',
+    END_DATE varchar(8) comment '缁撴潫鏃ユ湡',
+    TRAN_DATE varchar(8) comment '浜ゆ槗鏃ユ湡',
+    STATUS varchar(3) comment '鐘舵��',
+    USER_ID varchar(30) comment '鎿嶄綔鏌滃憳',
+    AUTH_USER_ID varchar(30) comment '澶嶆牳鏌滃憳',
+    APPR_USER_ID varchar(30) comment '鎺堟潈鏌滃憳',
+    WS_ID varchar(200) comment '鎿嶄綔鏈哄櫒鐮�',
+    NARRATIVE varchar(300) comment '澶囨敞',
+    LAST_CHANGE_DATE varchar(8) comment '鏈�鍚庝慨鏀规棩鏈�',
+    IS_INNER varchar(2) comment '鏄惁鏈',
+    SOURCE_TYPE varchar(10) comment '娓犻亾绫诲瀷',
+    RESTRAINT_SEQ_NO varchar(50) comment '闄愬埗搴忓彿',
+    VERIFY varchar(1) comment '鏄惁纭',
+    TRAN_TIMESTAMP varchar(17) comment '浜ゆ槗鏃堕棿鎴�',
+    TRAN_TIME Decimal(11,0) comment '浜ゆ槗鏃堕棿',
+    ROUTER_KEY varchar(100) comment '鍒嗗簱璺敱鍏抽敭瀛�',
+    primary  key (COLL_REF)
+);
+alter table MB_COLLAT_TBL comment '鎶佃川鎶煎搧鐧昏钖� undefined';
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create table MB_COLLAT_TBL
+(
+    COLL_REF varchar(50) not null comment '鎶垫' at line 5
+Error executing: drop index mb_seq_index on MB_COLLATE_APPLY
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'mb_seq_index'; check that column/key exists
+Error executing: drop index mb_tran_index1 on MB_COLLATE_APPLY
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'mb_tran_index1'; check that column/key exists
+Error executing: /*==============================================================*/
+/* Table: MB_FEE_AMORTIZE_AGR                                           */
+/*==============================================================*/
+create table MB_FEE_AMORTIZE_AGR
+(
+    AGREEMENT_ID varchar(30) not null comment '鍚堢害缂栧彿',
+    INTERNAL_KEY Decimal(15) comment '璐︽埛鏍囪瘑绗�',
+    CLIENT_NO varchar(20) not null comment '瀹㈡埛鍙�',
+    TRAN_TYPE varchar(10) not null comment '浜ゆ槗绫诲瀷',
+    FEE_TYPE varchar(8) not null comment '璐圭敤绫诲瀷',
+    AMORTIZE_NAME varchar(200) comment '鎽婇攢鍚嶇О',
+    BUSI_NO varchar(50) comment '涓氬姟缂栧彿',
+    AMORTIZE_PERIOD_FREQ varchar(2) not null comment '鎽婇攢棰戠巼 ',
+    AMORTIZE_TIME varchar(2) not null comment '鎽婇攢鏃堕棿 F-鏈熷垵 L-鏈熸湯 D-鍛ㄦ湡鍐呭浐瀹氭棩鏈�',
+    AMORTIZE_MONTH varchar(2) comment '鎽婇攢鏈�',
+    AMORTIZE_DAY varchar(2) comment '鎽婇攢鏃�',
+    LAST_AMORTIZE_DATE varchar(8) comment '涓婁竴鎽婇攢鏃ユ湡',
+    NEXT_AMORTIZE_DATE varchar(8) comment '涓嬩竴鎽婇攢鏃ユ湡',
+    AMORTIZE_CCY varchar(3) not null comment '鎽婇攢甯佺',
+    AMORTIZE_TOTAL_AMT Decimal(17,2) not null comment '鎽婇攢鎬婚噾棰�',
+    AMORTIZED_AMT Decimal(17,2) comment '宸叉憡閿�閲戦',
+    REMAIN_AMORTIZE_AMT Decimal(17,2) not null comment '鍓╀綑鎽婇攢閲戦',
+    AMORTIZE_TOTAL_CNT varchar(5) comment '鎽婇攢鎬绘鏁�',
+    AMORTIZED_CNT varchar(5) comment '宸叉憡閿�娆℃暟',
+    REMAIN_AMORTIZE_CNT varchar(5) comment '鍓╀綑鎽婇攢娆℃暟',
+    EFFECT_DATE varchar(8) not null comment '鐢熸晥鏃ユ湡',
+    END_DATE varchar(8) comment '缁撴潫鏃ユ湡',
+    AMORTIZE_STATUS varchar(2) not null comment '鎽婇攢鐘舵�� A-娲诲姩 C-姝ｅ父鍏抽棴 D-宸插垹闄� P-棰勫缓绔� R-宸插啿閿�',
+    TRAN_DATE varchar(8) not null comment '浜ゆ槗鏃ユ湡',
+    TRAN_BRANCH varchar(20) not null comment '浜ゆ槗鏈烘瀯',
+    USER_ID varchar(30) comment '浜ゆ槗鏌滃憳',
+    AUTH_USER_ID varchar(30) comment '鎺堟潈鏌滃憳',
+    REFERENCE varchar(50) comment '浜ゆ槗鍙傝�冨彿',
+    CHANNEL_SEQ_NO varchar(50) comment '娓犻亾娴佹按鍙�',
+    BANK_SEQ_NO varchar(50) comment '閾惰浜ゆ槗搴忓彿',
+    SOURCE_MODULE varchar(10) comment '鏉ユ簮妯″潡',
+    SOURCE_TYPE varchar(10) comment '娓犻亾绫诲瀷',
+    OSD_SEQ_NO varchar(50) comment '搴旀敹璐圭敤搴忓彿
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''搴旀敹璐圭敤搴忓彿' at line 38
+Error executing:     BATCH_SEQ_NO varchar(50) comment '鐧昏搴忓彿
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BATCH_SEQ_NO varchar(50) comment '鐧昏搴忓彿' at line 1
+Error executing:     REVERSAL varchar(1) not null comment '鍐叉鏍囧織',
+    REVERSAL_USER_ID varchar(30) comment '鍐叉鏌滃憳',
+    REVERSAL_AUTH_USER_ID varchar(30) comment '鍐叉鎺堟潈鏌滃憳',
+    REVERSAL_BRANCH varchar(20) comment '鍐叉鏈烘瀯',
+    REVERSAL_DATE varchar(8) comment '鍐叉鏃ユ湡',
+    TRAN_TIMESTAMP varchar(17) comment '浜ゆ槗鏃堕棿鎴�',
+    TRAN_TIME Decimal(11,0) comment '浜ゆ槗鏃堕棿',
+    ROUTER_KEY varchar(100) comment '鍒嗗簱璺敱鍏抽敭瀛�',
+    primary  key (AGREEMENT_ID)
+)
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'REVERSAL varchar(1) not null comment '鍐叉鏍囧織',
+    REVERSAL_USER_ID' at line 1
+Error executing: alter table MB_FEE_AMORTIZE_AGR comment '鎽婇攢鍚堢害琛� undefined'
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'ensemble_sit.mb_fee_amortize_agr' doesn't exist
+Error executing: drop index MB_INVOICE_IND2 on MB_INVOICE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_INVOICE_IND2'; check that column/key exists
+Error executing: drop index MB_INVOICE_IND1 on MB_INVOICE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_INVOICE_IND1'; check that column/key exists
+Error executing: drop index MB_MANUAL_DETAIL_INDEX on MB_MANUAL_DETAIL
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_MANUAL_DETAIL_INDEX'; check that column/key exists
+Error executing: drop index MB_MANUAL_DETAIL_INDEX_1 on MB_MANUAL_DETAIL
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_MANUAL_DETAIL_INDEX_1'; check that column/key exists
+Error executing: drop index MB_MANUAL_DETAIL_INDEX_2 on MB_MANUAL_DETAIL
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_MANUAL_DETAIL_INDEX_2'; check that column/key exists
+Error executing: drop index MB_MAUA_TRAN_INDEX on MB_MANUAL_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_MAUA_TRAN_INDEX'; check that column/key exists
+Error executing: drop index MB_MAUA_TRAN_INDEX_1 on MB_MANUAL_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_MAUA_TRAN_INDEX_1'; check that column/key exists
+Error executing: drop index MB_MAUA_TRAN_INDEX_2 on MB_MANUAL_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_MAUA_TRAN_INDEX_2'; check that column/key exists
+Error executing: drop index MB_MAUA_TRAN_INDEX_3 on MB_MANUAL_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_MAUA_TRAN_INDEX_3'; check that column/key exists
+Error executing: drop index MB_TRAN_CONTROL_HIST_IND1 on MB_TRAN_CONTROL_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_TRAN_CONTROL_HIST_IND1'; check that column/key exists
+Error executing: drop index MB_TRAN_HIST_IND1 on MB_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_TRAN_HIST_IND1'; check that column/key exists
+Error executing: drop index MB_TRAN_HIST_IND2 on MB_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MB_TRAN_HIST_IND2'; check that column/key exists
+Error executing: drop index MUBT_IND1 on MB_UPD_BALANCE_TRAN
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MUBT_IND1'; check that column/key exists
+Error executing: drop index MUBT_IND2 on MB_UPD_BALANCE_TRAN
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'MUBT_IND2'; check that column/key exists
+Error executing: drop index TB_VOUCHER_INFO_IND1 on TB_VOUCHER_INFO
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'TB_VOUCHER_INFO_IND1'; check that column/key exists
+Error executing: drop index FX_MB_PAY_MESAGE_IND2 on FX_MB_PAYMENT_MESSAGE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'FX_MB_PAY_MESAGE_IND2'; check that column/key exists
+Error executing: drop index FX_MB_PAY_MESAGE_IND3 on FX_MB_PAYMENT_MESSAGE
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'FX_MB_PAY_MESAGE_IND3'; check that column/key exists
+Error executing: drop index FX_MB_PAYMENT_TH_IND2 on FX_MB_PAYMENT_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'FX_MB_PAYMENT_TH_IND2'; check that column/key exists
+Error executing: drop index FX_MB_PAYMENT_TH_IND3 on FX_MB_PAYMENT_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'FX_MB_PAYMENT_TH_IND3'; check that column/key exists
+Error executing: drop index FX_MB_STOR_TRANH_IND2 on FX_MB_STOR_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'FX_MB_STOR_TRANH_IND2'; check that column/key exists
+Error executing: drop index FX_MB_STOR_TRANH_IND3 on FX_MB_STOR_TRAN_HIST
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'FX_MB_STOR_TRANH_IND3'; check that column/key exists
+Error executing: drop index CIF_CLIENT_DOC_IND1 on CIF_CLIENT_DOCUMENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'CIF_CLIENT_DOC_IND1'; check that column/key exists
+Error executing: drop index CIF_CLIENT_DOC_IND2 on CIF_CLIENT_DOCUMENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'CIF_CLIENT_DOC_IND2'; check that column/key exists
+Error executing: drop index CIF_CLIENT_NO_IND on CIF_CLIENT
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'CIF_CLIENT_NO_IND'; check that column/key exists
+Error executing: drop index IRL_ACCR_INFO_MAIN_IND1 on IRL_ACCR_INFO_MAIN
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Can't DROP 'IRL_ACCR_INFO_MAIN_IND1'; check that column/key exists
+Error executing: drop table if exists IRL_INT_SPLIT_RATE;
+/*==============================================================*/
+/* Table: IRL_INT_SPLIT_RATE                                           */
+/*==============================================================*/
+create table IRL_INT_SPLIT_RATE
+(
+    IRL_SEQ_NO varchar(50) not null comment '搴忓彿  ',
+    SYSTEM_ID varchar(20) not null comment '绯荤粺ID',
+    INTERNAL_KEY Decimal(15) not null comment '甯愭埛涓婚敭',
+    INT_CLASS varchar(20) comment '鍒╂伅鍒嗙被',
+    SPLIT_DATE varchar(8) comment '鍒嗘鏃惰绠楀紑濮嬫棩鏈�',
+    START_DATE varchar(8) comment '鐢熸晥鏃ユ湡',
+    END_DATE varchar(8) comment '鍒嗘鏃惰绠楃粨鏉熸棩鏈�',
+    PERI_SPLIT_ID varchar(10) comment '鍛ㄦ湡鍒嗘ID',
+    PERI_SEQ_NO varchar(5) comment '鍛ㄦ湡鍒嗘搴忓彿',
+    AMT_SPLIT_ID varchar(10) comment '閲戦鍒嗘ID',
+    AMT_SEQ_NO varchar(5) comment '閲戦鍒嗘搴忓彿',
+    NEAR_AMT Decimal(17,2) comment '闈犳。閲戦',
+    ACCR_AMT Decimal(17,2) comment '璁℃彁閲戦',
+    NEAR_PERIOD_TYPE varchar(1) comment '鍒嗘鍛ㄦ湡绫诲瀷',
+    NEAR_PERIOD varchar(5) comment '鍒嗘鍛ㄦ湡',
+    ACCR_DAYS varchar(10) comment '璁℃伅澶╂暟',
+    ACTUAL_RATE Decimal(15,8) comment '琛屽唴鍒╃巼',
+    FLOAT_RATE Decimal(15,8) comment '娴姩鍒╃巼',
+    REAL_RATE Decimal(15,8) comment '鎵ц鍒╃巼',
+    ACCT_SPREAD_RATE Decimal(15,8) comment '鍒嗘埛绾ф诞鍔ㄧ櫨鍒嗙偣',
+    ACCT_PERCENT_RATE Decimal(5,2) comment '鍒嗘埛娴姩鐧惧垎姣�',
+    ACCT_FIXED_RATE Decimal(15,8) comment '鍒嗘埛绾у浐瀹氬埄鐜�',
+    INT_TYPE varchar(3) comment '鍒╃巼绫诲瀷',
+    AMT_SPLIT_MODE varchar(1) comment '閲戦鍒嗘妯″瀷',
+    PERI_SPLIT_MODE varchar(1) comment '鍛ㄦ湡鍒嗘妯″瀷',
+    YEAR_BASIS varchar(3) comment '骞村熀鍑嗗ぉ鏁�',
+    MONTH_BASIS varchar(3) comment '鏈堝熀鍑嗗ぉ鏁�',
+    RECAL_METHOD varchar(1) comment '閲嶇畻鍒╂伅鏂规硶  ',
+    COMPANY varchar(20) comment '娉曚汉浠ｇ爜',
+    AGREE_FIXED_RATE Decimal(15,8) comment '鍗忚鍥哄畾鍒╃巼',
+    AGREE_PERCENT_RATE Decimal(5,2) comment '鍗忚娴姩鐧惧垎姣�',
+    AGREE_SPREAD_RATE Decimal(15,8) comment '鍗忚娴姩鐧惧垎鐐�',
+    AGREE_CHANGE_TYPE varchar(1) comment '鍗忚鍙樺姩鏂瑰紡',
+    AGREE_REDUCE_AMT Decimal(38,2) comment '鍗忚浼樻儬閲戦',
+    TD_LAST_ACCR_DATE varchar(8) comment '褰撴湡涓婁竴璁℃彁鏃�',
+    TD_ACCR_INT_DAY varchar(2) comment '璁℃彁璧峰鏃ユ湡',
+    TD_INT_NUM_DAYS varchar(5) comment '褰撴湡绱璁℃伅澶╂暟',
+    CALC_BEGIN_DATE varchar(8) comment '鍒╂伅璁＄畻璧峰鏃�',
+    TD_END_ACCR_DATE varchar(8) comment '璁℃彁缁撴潫鏃ユ湡',
+    TRAN_TIMESTAMP varchar(17) comment '浜ゆ槗鏃堕棿鎴�',
+    TRAN_TIME Decimal(11,0) comment '浜ゆ槗鏃堕棿',
+    ROUTER_KEY varchar(100) comment '鍒嗗簱璺敱鍏抽敭瀛�',
+    primary  key (IRL_SEQ_NO)
+);
+alter table IRL_INT_SPLIT_RATE comment '鍒嗘埛鍒嗘淇℃伅鍒╃巼琛� undefined';
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create table IRL_INT_SPLIT_RATE
+(
+    IRL_SEQ_NO varchar(50) not null comment ' at line 5
+Error executing: drop table if exists IRL_INT_SPLIT;
+/*==============================================================*/
+/* Table: IRL_INT_SPLIT                                           */
+/*==============================================================*/
+create table IRL_INT_SPLIT
+(
+    SYSTEM_ID varchar(20) not null comment '绯荤粺ID',
+    INTERNAL_KEY Decimal(15) not null comment '甯愭埛涓婚敭',
+    START_DATE varchar(8) not null comment '鐢熸晥鏃ユ湡',
+    END_DATE varchar(8) comment '缁堟鏃ユ湡',
+    INT_CLASS varchar(20) not null comment '鍒╂伅鍒嗙被',
+    ACCT_NO varchar(150) comment '璐﹀彿',
+    PROD_TYPE varchar(50) comment '浜у搧绫诲瀷',
+    EVENT_TYPE varchar(50) comment '浜嬩欢绫诲瀷',
+    BRANCH varchar(20) comment '鏈烘瀯浠ｇ爜',
+    SOURCE_TYPE varchar(10) comment '娓犻亾 ',
+    CCY varchar(3) comment '甯佺',
+    INT_CALC_BAL varchar(3) comment '璁℃伅鏂瑰紡',
+    CLIENT_NO varchar(20) comment '瀹㈡埛鍙�',
+    CR_RATING varchar(4) comment '瀹㈡埛绛夌骇 ',
+    IRL_GENE_STR varchar(500) comment '鍒╃巼鍥犲瓙',
+    INT_AMT Decimal(17,2) comment '璁℃彁閲戦',
+    CUR_INT_ACCRUED Decimal(17,2) comment '褰撴湡绱璁℃彁',
+    CUR_INT_ADJ Decimal(17,2) comment '褰撴湡绱璋冩暣',
+    CUR_TAX_ACCRUED Decimal(17,2) comment '褰撴湡绱鍒╂伅绋�',
+    TAX_TYPE varchar(3) comment '绋庣巼绫诲瀷',
+    TAX_RATE Decimal(15,8) comment '绋庣巼',
+    PRE_INT_ACCRUED Decimal(17,2) comment '鏈熷垵绱璁℃彁',
+    AFTER_INT_ACCRUED Decimal(17,2) comment '鏈熸湯绱璁℃彁',
+    PRE_INT_ADJ Decimal(17,2) comment '鏈熷垵绱璋冩暣',
+    AFTER_INT_ADJ Decimal(17,2) comment '鏈熸湯绱璋冩暣',
+    PRE_TAX_ACCRUED Decimal(17,2) comment '鏈熷垵绱鍒╂伅绋�',
+    AFTER_TAX_ACCRUED Decimal(17,2) comment '鏈熸湯绱鍒╂伅绋�',
+    COMPANY varchar(20) comment '娉曚汉浠ｇ爜',
+    MONTH_BASIS varchar(3) comment '鏈堝熀鍑� ',
+    YEAR_BASIS varchar(3) comment '骞村熀鍑嗗ぉ鏁� 360澶� 365澶�',
+    INT_TYPE varchar(3) comment '鍒╃巼绫诲瀷',
+    ACTUAL_RATE Decimal(15,8) comment '琛屽唴鍒╃巼',
+    FLOAT_RATE Decimal(15,8) comment '娴姩鍒╃巼',
+    REAL_RATE Decimal(15,8) comment '鎵ц鍒╃巼',
+    ACCT_SPREAD_RATE Decimal(15,8) comment '鍒嗘埛绾ф诞鍔ㄧ櫨鍒嗙偣',
+    ACCT_PERCENT_RATE Decimal(5,2) comment '鍒嗘埛娴姩鐧惧垎姣�',
+    ACCT_FIXED_RATE Decimal(15,8) comment '鍒嗘埛绾у浐瀹氬埄鐜�',
+    AGREE_CHANGE_TYPE varchar(1) comment '鍗忚鍙樺姩鏂瑰紡',
+    AGREE_FIXED_RATE Decimal(15,8) comment '鍗忚鍥哄畾鍒╃巼',
+    AGREE_PERCENT_RATE Decimal(5,2) comment '鍗忚娴姩鐧惧垎姣�',
+    AGREE_SPREAD_RATE Decimal(15,8) comment '鍗忚娴姩鐧惧垎鐐�',
+    SPLIT_RATE_FLAG varchar(1) comment '鍒╃巼鍒嗘鏍囧織',
+    AFTER_INT_ACCRUED_DIFF Decimal(15,10) comment ' 鏈熸湯璁℃彁宸',
+    PRE_INT_ACCRUED_DIFF Decimal(15,10) comment '鏈熷垵璁℃彁宸',
+    AGREE_REDUCE_AMT Decimal(38,2) comment '鍗忚浼樻儬閲戦',
+    TD_LAST_ACCR_DATE varchar(8) comment '褰撴湡涓婁竴璁℃彁鏃�',
+    TD_ACCR_INT_DAY varchar(2) comment '璁℃彁璧峰鏃ユ湡',
+    TD_INT_NUM_DAYS varchar(5) comment '褰撴湡绱璁℃伅澶╂暟',
+    CALC_BEGIN_DATE varchar(8) comment '鍒╂伅璁＄畻璧峰鏃�',
+    TD_END_ACCR_DATE varchar(8) comment '璁℃彁缁撴潫鏃ユ湡',
+    TRAN_TIME Decimal(11,0) comment '浜ゆ槗鏃堕棿',
+    TRAN_TIMESTAMP varchar(17) comment '浜ゆ槗鏃堕棿鎴�',
+    ROUTER_KEY varchar(100) comment '鍒嗗簱璺敱鍏抽敭瀛�',
+    primary  key (SYSTEM_ID,INTERNAL_KEY,START_DATE,INT_CLASS)
+);
+alter table IRL_INT_SPLIT comment '鍒嗘埛鍒嗘淇℃伅琛� undefined';
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create table IRL_INT_SPLIT
+(
+    SYSTEM_ID varchar(20) not null comment '绯' at line 5
