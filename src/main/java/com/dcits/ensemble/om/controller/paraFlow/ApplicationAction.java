@@ -76,7 +76,7 @@ public class ApplicationAction {
         String userId = (String) map.get("userId");
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByUserIdAndDispose(userId, "N");
         List<OmProcessRelationHist> mbProdTypeList=new ArrayList<>();
-        if(omProcessMainFlow !=null) {
+        if(omProcessMainFlow !=null &&("1".equals(omProcessMainFlow.getStatus())||"6".equals(omProcessMainFlow.getStatus()))) {
             mbProdTypeList = omProcessRelationHistRepository.findByMainSeqNoGroupBy(omProcessMainFlow.getMainSeqNo());
         }
         return   ResultUtils.success(mbProdTypeList);
