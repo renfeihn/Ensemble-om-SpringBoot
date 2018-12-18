@@ -56,43 +56,46 @@ public class ProdDiffController {
         MbProdInfo mbProdInfo = mbProdInfoService.getProdInfo(prodType);
 
         //基础产品时候  获取基础产品影响的产品
-        String isBase = mbProdTypeRepository.findByProdType(prodType).getProdRange();
-        HashMap resMap = new HashMap();
-        if("B".equals(isBase)) {
-            HashMap baseEffectProd= new HashMap();
-            OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByMainSeqNo(mainSeqNo);
-            List<OmProcessRelationHist> omProcessRelationHistList = omProcessRelationHistRepository.findByMainSeqNoAndDtlSeqNo(mainSeqNo, omProcessMainFlow.getDtlSeqNo().toString());
-            for(OmProcessRelationHist omProcessRelationHist: omProcessRelationHistList){
-                List<OmProcessRecordHist> omProcessRecordHists=  omProcessRecordHistRepository.findByRecSeqNo(omProcessRelationHist.getRecSeqNo());
-                for(OmProcessRecordHist omProcessRecordHist: omProcessRecordHists) {
-                    //获取受影响产品类型
-                    JSONObject pkValueJson=JSONObject.fromObject(omProcessRecordHist.getPkAndValue());
-                    for(Object key:pkValueJson.keySet()){
-                        if(key.equals("PROD_TYPE")){
-                            baseEffectProd.put(pkValueJson.get(key),pkValueJson.get(key));
-                        }
-                        if(key.equals("EVENT_TYPE")){
-                            baseEffectProd.put(pkValueJson.get(key).toString().split("_")[1],pkValueJson.get(key).toString().split("_")[1]);
+        MbProdType mbProdType = mbProdTypeRepository.findByProdType(prodType);
+        if(mbProdType != null) {
+            String isBase = mbProdTypeRepository.findByProdType(prodType).getProdRange();
+            HashMap resMap = new HashMap();
+            if ("B".equals(isBase)) {
+                HashMap baseEffectProd = new HashMap();
+                OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByMainSeqNo(mainSeqNo);
+                List<OmProcessRelationHist> omProcessRelationHistList = omProcessRelationHistRepository.findByMainSeqNoAndDtlSeqNo(mainSeqNo, omProcessMainFlow.getDtlSeqNo().toString());
+                for (OmProcessRelationHist omProcessRelationHist : omProcessRelationHistList) {
+                    List<OmProcessRecordHist> omProcessRecordHists = omProcessRecordHistRepository.findByRecSeqNo(omProcessRelationHist.getRecSeqNo());
+                    for (OmProcessRecordHist omProcessRecordHist : omProcessRecordHists) {
+                        //获取受影响产品类型
+                        JSONObject pkValueJson = JSONObject.fromObject(omProcessRecordHist.getPkAndValue());
+                        for (Object key : pkValueJson.keySet()) {
+                            if (key.equals("PROD_TYPE")) {
+                                baseEffectProd.put(pkValueJson.get(key), pkValueJson.get(key));
+                            }
+                            if (key.equals("EVENT_TYPE")) {
+                                baseEffectProd.put(pkValueJson.get(key).toString().split("_")[1], pkValueJson.get(key).toString().split("_")[1]);
+                            }
                         }
                     }
                 }
-            }
-            if(baseEffectProd.size()>0){
-                JSONObject pkValueJsonP=JSONObject.fromObject(baseEffectProd);
-                for(Object key:pkValueJsonP.keySet()){
-                    resMap.put(key,mbProdTypeRepository.findByProdType(pkValueJsonP.get(key).toString()));
+                if (baseEffectProd.size() > 0) {
+                    JSONObject pkValueJsonP = JSONObject.fromObject(baseEffectProd);
+                    for (Object key : pkValueJsonP.keySet()) {
+                        resMap.put(key, mbProdTypeRepository.findByProdType(pkValueJsonP.get(key).toString()));
+                    }
                 }
             }
-        }
-        if(resMap.size()>0){
-            responseMap.put("baseEffectProd",resMap);
-        }
-        responseMap.put("prodDefine", mbProdInfo.getProdDefines());
-        responseMap.put("mbProdCharge", mbProdInfo.getMbProdCharge());
-        responseMap.put("mbProdType", mbProdInfo.getProdType());
+            if (resMap.size() > 0) {
+                responseMap.put("baseEffectProd", resMap);
+            }
+            responseMap.put("prodDefine", mbProdInfo.getProdDefines());
+            responseMap.put("mbProdCharge", mbProdInfo.getMbProdCharge());
+            responseMap.put("mbProdType", mbProdInfo.getProdType());
 
-        //组装事件
-        responseMap.put("prodEvent", mbProdInfoService.assembleEvent(mbProdInfo.getMbEventInfos()));
+            //组装事件
+            responseMap.put("prodEvent", mbProdInfoService.assembleEvent(mbProdInfo.getMbEventInfos()));
+        }
         if (omProcessRecordHistList != null)
             responseMap.put("diff", omProcessRecordHistList);
         responseMap.put("prodType", omProcessRecordHistList.get("prodType"));

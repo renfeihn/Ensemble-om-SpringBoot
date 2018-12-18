@@ -42,41 +42,43 @@ public class MbProdInfoService {
     private MbAcctStatsRepository mbAcctStatsRepository;
     public MbProdInfo getProdInfo(String prodType){
         MbProdInfo mbProdInfo=new MbProdInfo();
-            MbProdType mbProdType=mbProdTypeRepository.findByProdType(prodType);
-        mbProdInfo.setProdType(mbProdType);
-        Map<String,MbProdDefine> mbProdDefineMap =new LinkedHashMap<>();
-        String baseType=mbProdType.getBaseProdType();
-        String prodRange = mbProdType.getProdRange();
-        List<MbProdDefine> mbProdDefineGroupList=new ArrayList<>();
-        if(baseType!=null){
-            List<MbProdDefine> mbProdDefineBaseList=mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderByPageCodePageSeqNoAsc(baseType, "ATTR");
-            if(mbProdDefineBaseList!=null){
-                mbProdDefineGroupList.addAll(mbProdDefineBaseList);
+        MbProdType mbProdType=mbProdTypeRepository.findByProdType(prodType);
+        if(mbProdType != null) {
+            mbProdInfo.setProdType(mbProdType);
+            Map<String, MbProdDefine> mbProdDefineMap = new LinkedHashMap<>();
+            String baseType = mbProdType.getBaseProdType();
+            String prodRange = mbProdType.getProdRange();
+            List<MbProdDefine> mbProdDefineGroupList = new ArrayList<>();
+            if (baseType != null) {
+                List<MbProdDefine> mbProdDefineBaseList = mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderByPageCodePageSeqNoAsc(baseType, "ATTR");
+                if (mbProdDefineBaseList != null) {
+                    mbProdDefineGroupList.addAll(mbProdDefineBaseList);
+                }
             }
-        }
-        List<MbProdDefine>  mbProdDefineList=mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderByPageCodePageSeqNoAsc(prodType, "ATTR");
-        if(mbProdDefineList!=null){
-            //衍合基础产品与可售产品参数
-            mbProdDefineGroupList.addAll(mbProdDefineList);
-        }
-        for(MbProdDefine mbProdDefine:mbProdDefineGroupList){
-            if(mbProdDefine.getProdType().equals(baseType)){
-                //参数取自基础产品
-                mbProdDefine.setGroup("BASE");
-                mbProdDefine.setProdType(prodType);
-            }else if (!mbProdDefine.getProdType().equals(baseType) && !prodRange.equals("B")){
-                //参数取自可售产品
-                mbProdDefine.setGroup("SOLD");
+            List<MbProdDefine> mbProdDefineList = mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderByPageCodePageSeqNoAsc(prodType, "ATTR");
+            if (mbProdDefineList != null) {
+                //衍合基础产品与可售产品参数
+                mbProdDefineGroupList.addAll(mbProdDefineList);
             }
-            mbProdDefineMap.put(mbProdDefine.getAssembleId(), mbProdDefine);
+            for (MbProdDefine mbProdDefine : mbProdDefineGroupList) {
+                if (mbProdDefine.getProdType().equals(baseType)) {
+                    //参数取自基础产品
+                    mbProdDefine.setGroup("BASE");
+                    mbProdDefine.setProdType(prodType);
+                } else if (!mbProdDefine.getProdType().equals(baseType) && !prodRange.equals("B")) {
+                    //参数取自可售产品
+                    mbProdDefine.setGroup("SOLD");
+                }
+                mbProdDefineMap.put(mbProdDefine.getAssembleId(), mbProdDefine);
+            }
+            mbProdInfo.setProdDefines(mbProdDefineMap);
+            mbProdInfo.setMbEventInfos(getMbEventInfo(prodRange, prodType, baseType));
+            //获取单表数据
+            mbProdInfo.setGlProdAccounting(glProdAccountingRepository.findByProdType(prodType));
+            mbProdInfo.setIrlProdInt(irlProdIntRepository.findByProdType(prodType));
+            mbProdInfo.setMbAcctStats(mbAcctStatsRepository.findAll());
+            mbProdInfo.setMbProdCharge(mbProdChargeRepository.findByProdType(prodType));
         }
-        mbProdInfo.setProdDefines(mbProdDefineMap);
-        mbProdInfo.setMbEventInfos(getMbEventInfo(prodRange,prodType,baseType));
-        //获取单表数据
-        mbProdInfo.setGlProdAccounting(glProdAccountingRepository.findByProdType(prodType));
-        mbProdInfo.setIrlProdInt(irlProdIntRepository.findByProdType(prodType));
-        mbProdInfo.setMbAcctStats(mbAcctStatsRepository.findAll());
-        mbProdInfo.setMbProdCharge(mbProdChargeRepository.findByProdType(prodType));
         return mbProdInfo;
     }
     //保存产品所有属性(只有发布时生效)
