@@ -2,7 +2,6 @@ package com.dcits.ensemble.om.repository.paraFlow;
 
 import com.dcits.ensemble.om.model.dbmodel.OmProcessRelationHist;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessRelationHistKeysClass;
-import com.dcits.ensemble.om.model.dbmodel.OmProcessDetailHist;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
