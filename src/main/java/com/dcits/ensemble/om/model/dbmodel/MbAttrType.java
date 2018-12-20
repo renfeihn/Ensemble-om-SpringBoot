@@ -13,7 +13,7 @@ import java.io.Serializable;
  * Created by jiajt on 2018/12/3.
  */
 @Entity
-@Table(name = "mb_attr_class")
+@Table(name = "mb_attr_type")
 @Getter
 @Setter
 public class MbAttrType implements Serializable {
@@ -21,7 +21,7 @@ public class MbAttrType implements Serializable {
 
     }
 
-    public MbAttrType(String attrKey, String attrType, String attrDesc, String attrClass, String useMethod, String valueMethod, String setValueFlag, String busiCatagory, String status, String compang, String tranTimestamp, String tranTime) {
+    public MbAttrType(String attrKey, String attrType, String attrDesc, String attrClass, String useMethod, String valueMethod, String setValueFlag, String busiCatagory, String status, String company, String tranTimestamp, String tranTime) {
         this.attrKey = attrKey;
         this.attrType = attrType;
         this.attrDesc = attrDesc;
@@ -31,7 +31,7 @@ public class MbAttrType implements Serializable {
         this.setValueFlag = setValueFlag;
         this.busiCatagory = busiCatagory;
         this.status = status;
-        this.compang = compang;
+        this.company = company;
         this.tranTimestamp = tranTimestamp;
         this.tranTime = tranTime;
     }
@@ -56,7 +56,7 @@ public class MbAttrType implements Serializable {
     @Column(name="status")
     private String status;
     @Column(name="company")
-    private String compang;
+    private String company;
     @Column(name="tran_timestamp")
     private String tranTimestamp;
     @Column(name="tran_time")
@@ -74,7 +74,7 @@ public class MbAttrType implements Serializable {
                 ", setValueFlag='" + setValueFlag + '\'' +
                 ", busiCatagory='" + busiCatagory + '\'' +
                 ", status='" + status + '\'' +
-                ", compang='" + compang + '\'' +
+                ", compang='" + company + '\'' +
                 ", tranTimestamp='" + tranTimestamp + '\'' +
                 ", tranTime='" + tranTime + '\'' +
                 '}';

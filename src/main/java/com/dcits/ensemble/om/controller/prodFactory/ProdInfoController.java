@@ -2,6 +2,7 @@ package com.dcits.ensemble.om.controller.prodFactory;
 
 import com.dcits.ensemble.om.controller.model.Result;
 import com.dcits.ensemble.om.controller.model.ResultUtils;
+import com.dcits.ensemble.om.model.dbmodel.MbProdDefine;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessMainFlow;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
@@ -52,7 +53,7 @@ public class ProdInfoController {
         }
         MbProdInfo mbProdInfo = mbProdInfoService.getProdInfo(prodType);
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByTranId("MbProdType");
-        List<OmProcessRecordHist> omProcessRecordHistList = null;
+ /*       List<OmProcessRecordHist> omProcessRecordHistList = null;*/
         /*查询差异信息
         if(omProcessMainFlow!=null&&omProcessMainFlow.getReqNo()!=null){
             //获取组合信息
@@ -60,9 +61,11 @@ public class ProdInfoController {
 
             omProcessRecordHistList = omProcessRecordHistRepository.searchDiffByTableName(omProcessMainFlow.getReqNo());
         }*/
-        responseMap.put("prodInfo", mbProdInfo.toString());
-        if (omProcessRecordHistList != null)
-            responseMap.put("diff", omProcessRecordHistList);
+        //从产品参数表查询参数范围
+        mbProdInfoService.assembleColumnInfo(mbProdInfo);
+/*              responseMap.put("prodInfo", mbProdInfo.toString());
+  if (omProcessRecordHistList != null)
+            responseMap.put("diff", omProcessRecordHistList);*/
         return ResultUtils.success(mbProdInfo);
     }
 

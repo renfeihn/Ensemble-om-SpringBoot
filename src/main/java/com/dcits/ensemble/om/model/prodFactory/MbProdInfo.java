@@ -25,7 +25,7 @@ public class MbProdInfo {
     private List<MbProdCharge> mbProdCharge;
     private Map<String,MbProdDefine> prodDefines;
     private Map<String,MbEventInfo> mbEventInfos;
-
+    private Map<String, MbColumnInfo> mbColumnInfo;
     @Override
     public String toString() {
         return "MbProdInfo{" +
@@ -35,6 +35,7 @@ public class MbProdInfo {
                 ", mbAcctStats=" + mbAcctStats +
                 ", mbProdCharge=" + mbProdCharge +
                 ", prodDefines=" + prodDefines +
+                ", mbColumnInfo=" + mbColumnInfo +
                 ", mbEventInfos=" + mbEventInfos +
                 '}';
     }

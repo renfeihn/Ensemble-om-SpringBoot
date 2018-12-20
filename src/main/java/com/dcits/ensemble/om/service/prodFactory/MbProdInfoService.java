@@ -4,6 +4,7 @@ import com.dcits.ensemble.om.model.dbmodel.MbEventAttr;
 import com.dcits.ensemble.om.model.dbmodel.MbEventPart;
 import com.dcits.ensemble.om.model.dbmodel.MbProdDefine;
 import com.dcits.ensemble.om.model.dbmodel.MbProdType;
+import com.dcits.ensemble.om.model.prodFactory.MbColumnInfo;
 import com.dcits.ensemble.om.model.prodFactory.MbEventInfo;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
 import com.dcits.ensemble.om.repository.prodFactory.*;
@@ -40,6 +41,8 @@ public class MbProdInfoService {
     private MbProdChargeRepository mbProdChargeRepository;
     @Autowired
     private MbAcctStatsRepository mbAcctStatsRepository;
+    @Resource
+    private MbAttrInfoService mbAttrInfoService;
     public MbProdInfo getProdInfo(String prodType){
         MbProdInfo mbProdInfo=new MbProdInfo();
         MbProdType mbProdType=mbProdTypeRepository.findByProdType(prodType);
@@ -210,6 +213,25 @@ public class MbProdInfoService {
             }
         }
         return responseList;
+    }
+    //组织参数的备选数据
+    public void assembleColumnInfo(MbProdInfo mbProdInfo){
+       Map assembleColumnList=new HashMap();
+       Map mbProdDefines=mbProdInfo.getProdDefines();
+       //完成对产品参数的组装
+       for(Object key:mbProdDefines.keySet()){
+           MbColumnInfo assembleColumn=mbAttrInfoService.getColumnInfo((String)key);
+           if(assembleColumn!=null)
+           assembleColumnList.put(key,assembleColumn);
+       }
+       //完成对事件的组装
+        Map mbProdEvents=mbProdInfo.getMbEventInfos();
+       for(Object key:mbProdEvents.keySet()){
+           MbColumnInfo assembleColumn=mbAttrInfoService.getColumnInfo((String)key);
+           if(assembleColumn!=null)
+           assembleColumnList.put(key,assembleColumn);
+       }
+        mbProdInfo.setMbColumnInfo(assembleColumnList);
     }
 }
 
