@@ -146,4 +146,5 @@ public class ProdInfoController {
         List responseList= mbProdInfoService.findChildDiffInfo(prodType, attrValue,attrType);
         return ResultUtils.success(responseList);
     }
+
 }

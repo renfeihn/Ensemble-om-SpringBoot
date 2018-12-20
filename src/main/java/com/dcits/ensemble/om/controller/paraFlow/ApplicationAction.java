@@ -101,4 +101,16 @@ public class ApplicationAction {
         flowManagement.deleteTask(tranId,seqNo);
         return   ResultUtils.success();
     }
+    /**
+     *
+     * 获取待发布数据的订单列表
+     * */
+    @RequestMapping("/getTaskListBySeqNo")
+    @ResponseBody
+    public Result getTaskListBySeqNo(HttpServletResponse response, @RequestBody Map map){
+        String seqNo=(String) map.get("seqNo");
+        List<OmProcessRelationHist> mbProdTypeList = omProcessRelationHistRepository.findByMainSeqNoGroupBy(seqNo);
+        return ResultUtils.success(mbProdTypeList);
+    }
+
 }
