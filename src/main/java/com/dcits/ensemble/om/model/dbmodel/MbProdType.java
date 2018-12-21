@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 public class MbProdType {
-    public MbProdType(String prodType, String prodRange, String prodDesc, String prodClass, String prodGroup, String baseProdType,String status) {
+    public MbProdType(String prodType, String prodRange, String prodDesc, String prodClass, String prodGroup, String baseProdType,String status,String sourceModule) {
         this.prodType = prodType;
         this.prodRange = prodRange;
         this.prodDesc = prodDesc;
@@ -22,6 +22,7 @@ public class MbProdType {
         this.prodGroup = prodGroup;
         this.baseProdType = baseProdType;
         this.status = status;
+        this.sourceModule = sourceModule;
     }
     public MbProdType() {
     }
@@ -40,6 +41,8 @@ public class MbProdType {
     private String baseProdType;
     @Column(name="status")
     private String status;
+    @Column(name="sourceModule")
+    private String sourceModule;
     @Override
     public String toString() {
         return "MbProdType{" +
@@ -50,6 +53,7 @@ public class MbProdType {
                 ", prodRange='" + prodRange + '\'' +
                 ", baseProdType='" + baseProdType + '\'' +
                 ", status='" + status + '\'' +
+                ", sourceModule='" + sourceModule + '\'' +
                 '}';
     }
 }

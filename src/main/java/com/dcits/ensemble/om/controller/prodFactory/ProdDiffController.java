@@ -112,16 +112,10 @@ public class ProdDiffController {
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         Map responseMap = new HashMap<>();
         List<OmProcessRecordHist> omProcessRecordHists = omProcessRecordHistRepository.findByMainSeqNo(code);
-        String prodType = "";
         String sourceModule = "";
         for(OmProcessRecordHist omProcessRecordHist: omProcessRecordHists){
             //获取差异数据中prodType
             if(omProcessRecordHist.getTableName().equals("MB_PROD_TYPE")){
-                JSONObject pk = JSONObject.fromObject(omProcessRecordHist.getPkAndValue());
-                prodType = pk.get("PROD_TYPE").toString();
-            }
-            //差异中存在source_module 时候 直接获取
-            if(omProcessRecordHist.getTableName().equals("MB_PROD_DEFINE")){
                 String str= null;
                 try {
                     str = new String(omProcessRecordHist.getDmlData(),"utf-8");
@@ -129,24 +123,13 @@ public class ProdDiffController {
                     e.printStackTrace();
                 }
                 JSONObject newValue = JSONObject.fromObject(str);
-                if(newValue.get("assembleId").equals("SOURCE_MODULE")){
-                    sourceModule = newValue.get("attrValue").toString();
+                if(newValue.get("sourceModule") != null){
+                    sourceModule = newValue.get("sourceModule").toString();
                 }
+                break;
             }
         }
-        if(!"".equals(sourceModule)){
-            //差异数据中存在 直接返回
-            responseMap.put("SOURCE_MODULE",sourceModule);
-        }else{
-            //通过prodType查询mb_prod_define表获取
-            MbProdDefine mbProdDefine = mbProdDefineRepository.findByProdTypeAndAssembleId(prodType,"SOURCE_MODULE");
-            if(mbProdDefine!=null) {
-                //产品source_module已存在于数据库时候
-                sourceModule = mbProdDefine.getAttrValue();
-                responseMap.put("SOURCE_MODULE",sourceModule);
-            }
-        }
-            return ResultUtils.success(responseMap);
+        responseMap.put("SOURCE_MODULE",sourceModule);
+        return ResultUtils.success(responseMap);
     }
-
 }
