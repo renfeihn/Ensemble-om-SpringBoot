@@ -16,11 +16,9 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class IrlProdInt implements Serializable {
-    public IrlProdInt(String prodType, String eventType, String intType, String intTypeDesc,String intClass,
-                            String taxType, String rateAmtId, String intAmtId, String recalMethod,String company, String intStart, String intDaysType,
-                            String intCalcBal, String intApplType, String rollFreq, String rollDay, String minRate, String maxRate,
-                            String intRateInd, String monthBasis, String groupRuleType, String splitId,
-                            String splitType, String ruleid, String tranTimestamp, String tranTime,String acctRateEffect) {
+    public IrlProdInt() {}
+
+    public IrlProdInt(String prodType, String eventType, String intType, String intTypeDesc, String intClass, String taxType, String rateAmtId, String intAmtId, String recalMethod, String company, String intStart, String intDaysType, String intCalcBal, String intApplType, String rollFreq, String rollDay, String minRate, String maxRate, String intRateInd, String monthBasis, String groupRuleType, String splitId, String splitType, String ruleId, String tranTimestamp, String tranTime, String acctRateEffect, String roundDown) {
         this.prodType = prodType;
         this.eventType = eventType;
         this.intType = intType;
@@ -43,15 +41,14 @@ public class IrlProdInt implements Serializable {
         this.monthBasis = monthBasis;
         this.groupRuleType = groupRuleType;
         this.splitId = splitId;
-
         this.splitType = splitType;
-        this.ruleid = ruleid;
+        this.ruleId = ruleId;
         this.tranTimestamp = tranTimestamp;
         this.tranTime = tranTime;
         this.acctRateEffect = acctRateEffect;
+        this.roundDown = roundDown;
     }
-    public IrlProdInt() {
-    }
+
     @Id
     @Column(name="prod_type")
     private String prodType;
@@ -87,7 +84,6 @@ public class IrlProdInt implements Serializable {
     private String rollDay;
     @Column(name="min_rate")
     private String minRate;
-
     @Column(name="max_rate")
     private String maxRate;
     @Column(name="int_rate_ind")
@@ -98,17 +94,19 @@ public class IrlProdInt implements Serializable {
     private String groupRuleType;
     @Column(name="split_id")
     private String splitId;
-
     @Column(name="split_type")
     private String splitType;
-    @Column(name="ruleid")
-    private String ruleid;
+    @Column(name="rule_id")
+    private String ruleId;
     @Column(name="tran_timestamp")
     private String tranTimestamp;
     @Column(name="tran_time")
     private String tranTime;
     @Column(name="acct_rate_effect")
     private String acctRateEffect;
+    @Column(name="round_down")
+    private String roundDown;
+
 
     @Override
     public String toString() {
@@ -136,10 +134,11 @@ public class IrlProdInt implements Serializable {
                 ", groupRuleType='" + groupRuleType + '\'' +
                 ", splitId='" + splitId + '\'' +
                 ", splitType='" + splitType + '\'' +
-                ", ruleid='" + ruleid + '\'' +
+                ", ruleId='" + ruleId + '\'' +
                 ", tranTimestamp='" + tranTimestamp + '\'' +
                 ", tranTime='" + tranTime + '\'' +
                 ", acctRateEffect='" + acctRateEffect + '\'' +
+                ", roundDown='" + roundDown + '\'' +
                 '}';
     }
 }
