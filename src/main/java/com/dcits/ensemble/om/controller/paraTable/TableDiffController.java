@@ -38,10 +38,11 @@ public class TableDiffController {
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         Map responseMap = new HashMap<>();
         String mainSeqNo = (String)map.get("mainSeqNo");
+        String tranId = (String)map.get("tranId");
 
         //通过交易单号获取差异信息
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByMainSeqNo(mainSeqNo);
-        List<OmProcessRelationHist> omProcessRelationHistList=omProcessRelationHistRepository.findByMainSeqNoAndDtlSeqNo(mainSeqNo, omProcessMainFlow.getDtlSeqNo().toString());
+        List<OmProcessRelationHist> omProcessRelationHistList=omProcessRelationHistRepository.findByMainSeqNoAndDtlSeqNoAndTranId(mainSeqNo, omProcessMainFlow.getDtlSeqNo().toString(),tranId);
         Map tableDiffAllList = new HashMap<>();
         //通过主键获取
         for(OmProcessRelationHist omProcessRelationHist:omProcessRelationHistList) {

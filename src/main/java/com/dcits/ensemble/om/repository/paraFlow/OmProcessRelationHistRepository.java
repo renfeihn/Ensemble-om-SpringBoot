@@ -14,6 +14,7 @@ import java.util.List;
  * Created by ligan on 2018/8/14.
  */
 public interface OmProcessRelationHistRepository extends JpaRepository<OmProcessRelationHist,OmProcessRelationHistKeysClass> ,JpaSpecificationExecutor<OmProcessRelationHist>{
+  public List<OmProcessRelationHist> findByMainSeqNoAndDtlSeqNoAndTranId(@Param("mainSeqNo") String mainSeqNo,@Param("dtlSeqNo") String dtlSeqNo,@Param("tranId") String tranId);
   public List<OmProcessRelationHist> findByMainSeqNoAndDtlSeqNo(@Param("mainSeqNo") String mainSeqNo,@Param("dtlSeqNo") String dtlSeqNo);
   @Query("select s from OmProcessRelationHist s  where s.mainSeqNo = :mainSeqNo GROUP BY s.tranId")
   public List<OmProcessRelationHist> findByMainSeqNoGroupBy(@Param("mainSeqNo") String mainSeqNo);

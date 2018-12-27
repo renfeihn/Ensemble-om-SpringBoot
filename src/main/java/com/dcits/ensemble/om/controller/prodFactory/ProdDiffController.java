@@ -51,8 +51,9 @@ public class ProdDiffController {
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         Map responseMap = new HashMap<>();
         String mainSeqNo = (String)map.get("mainSeqNo");
+        String tranId = (String)map.get("tranId");
 
-        Map omProcessRecordHistList = paraDifferenceManagement.getDiffByMainSeqNo(mainSeqNo);
+        Map omProcessRecordHistList = paraDifferenceManagement.getDiffByMainSeqNo(mainSeqNo,tranId);
         String prodType = (String)omProcessRecordHistList.get("prodType");
         MbProdInfo mbProdInfo = mbProdInfoService.getProdInfo(prodType);
 
@@ -130,6 +131,7 @@ public class ProdDiffController {
             }
         }
         responseMap.put("SOURCE_MODULE",sourceModule);
+
         return ResultUtils.success(responseMap);
     }
 }

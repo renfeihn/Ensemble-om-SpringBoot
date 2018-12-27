@@ -27,19 +27,11 @@ public class ParaDifferenceManagement {
     private OmProcessRelationHistRepository omProcessRelationHistRepository;
     @Resource
     private OmProcessMainFlowRepository omProcessMainFlowRepository;
-    public Map<String,List> getOperationCombList(String reqNo,String operatorNo){
-        Map<String,List> reMap=new HashMap<>();
-      List<OmProcessRelationHist> omProcessRelationHistList = omProcessRelationHistRepository.findByMainSeqNoAndDtlSeqNo(reqNo,operatorNo);
-        for(OmProcessRelationHist omProcessRelationHist : omProcessRelationHistList){
-            List<OmProcessRecordHist> omProcessRecordHistList = omProcessRecordHistRepository.findByRecSeqNo(omProcessRelationHist.getRecSeqNo());
-            reMap.put(omProcessRelationHist.getTranId(), omProcessRecordHistList);
-        }
-        return reMap;
-    }
+
     //获取主交易号下的所有差异信息
-    public Map getDiffByMainSeqNo(String mainSeqNo){
+    public Map getDiffByMainSeqNo(String mainSeqNo,String tranId){
         OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByMainSeqNo(mainSeqNo);
-        List<OmProcessRelationHist> omProcessRelationHistList=omProcessRelationHistRepository.findByMainSeqNoAndDtlSeqNo(mainSeqNo, omProcessMainFlow.getDtlSeqNo().toString());
+        List<OmProcessRelationHist> omProcessRelationHistList=omProcessRelationHistRepository.findByMainSeqNoAndDtlSeqNoAndTranId(mainSeqNo, omProcessMainFlow.getDtlSeqNo().toString(),tranId);
         Map omProcessRecordHistsAll=new HashMap<>();
         String prodType=null;
         Map mbProdChargeList=new HashMap<>();
