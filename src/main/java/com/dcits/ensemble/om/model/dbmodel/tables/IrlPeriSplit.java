@@ -44,7 +44,7 @@ public class IrlPeriSplit implements Serializable {
     private String recalMethod;
     @Column(name="int_type")
     private String intType;
-    @Column(name="amt_aplit_id")
+    @Column(name="amt_split_id")
     private String amtSplitId;
     @Column(name="rule_id")
     private String ruleId;

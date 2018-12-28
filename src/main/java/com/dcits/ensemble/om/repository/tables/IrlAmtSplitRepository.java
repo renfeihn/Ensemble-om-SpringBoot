@@ -10,4 +10,5 @@ import java.util.List;
 public interface IrlAmtSplitRepository extends JpaRepository<IrlAmtSplit, IrlAmtSplitKeysClass>, JpaSpecificationExecutor<IrlAmtSplit> {
 
     List<IrlAmtSplit> findByAmtSplitIdAndAmtSeqNo(String amtSplitId, String amtSeqNo);
+    List<IrlAmtSplit> findByAmtSplitId(String amtSplitId);
 }

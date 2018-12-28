@@ -18,7 +18,7 @@ import java.io.Serializable;
 public class IrlProdInt implements Serializable {
     public IrlProdInt() {}
 
-    public IrlProdInt(String prodType, String eventType, String intType, String intTypeDesc, String intClass, String taxType, String rateAmtId, String intAmtId, String recalMethod, String company, String intStart, String intDaysType, String intCalcBal, String intApplType, String rollFreq, String rollDay, String minRate, String maxRate, String intRateInd, String monthBasis, String groupRuleType, String splitId, String splitType, String ruleId, String tranTimestamp, String tranTime, String acctRateEffect, String roundDown) {
+    public IrlProdInt(String prodType, String eventType, String intType, String intTypeDesc, String intClass, String taxType, String rateAmtId, String intAmtId, String recalMethod, String company, String intStart, String intDaysType, String intCalcBal, String intApplType, String rollFreq, String rollDay, String minRate, String maxRate, String intRateInd, String monthBasis, String groupRuleType, String splitId, String splitType, String ruleid, String tranTimestamp, String tranTime, String acctRateEffect, String roundDown) {
         this.prodType = prodType;
         this.eventType = eventType;
         this.intType = intType;
@@ -42,7 +42,7 @@ public class IrlProdInt implements Serializable {
         this.groupRuleType = groupRuleType;
         this.splitId = splitId;
         this.splitType = splitType;
-        this.ruleId = ruleId;
+        this.ruleid= ruleid;
         this.tranTimestamp = tranTimestamp;
         this.tranTime = tranTime;
         this.acctRateEffect = acctRateEffect;
@@ -96,8 +96,8 @@ public class IrlProdInt implements Serializable {
     private String splitId;
     @Column(name="split_type")
     private String splitType;
-    @Column(name="rule_id")
-    private String ruleId;
+    @Column(name="ruleid")
+    private String ruleid;
     @Column(name="tran_timestamp")
     private String tranTimestamp;
     @Column(name="tran_time")
@@ -134,7 +134,7 @@ public class IrlProdInt implements Serializable {
                 ", groupRuleType='" + groupRuleType + '\'' +
                 ", splitId='" + splitId + '\'' +
                 ", splitType='" + splitType + '\'' +
-                ", ruleId='" + ruleId + '\'' +
+                ", ruleid='" + ruleid + '\'' +
                 ", tranTimestamp='" + tranTimestamp + '\'' +
                 ", tranTime='" + tranTime + '\'' +
                 ", acctRateEffect='" + acctRateEffect + '\'' +

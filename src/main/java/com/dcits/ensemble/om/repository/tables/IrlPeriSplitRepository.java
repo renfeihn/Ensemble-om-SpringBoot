@@ -9,4 +9,5 @@ import java.util.List;
 
 public interface IrlPeriSplitRepository extends JpaRepository<IrlPeriSplit, IrlPeriSplitKeysClass>, JpaSpecificationExecutor<IrlPeriSplit> {
     List<IrlPeriSplit> findByPeriSplitIdAndPeriSeqNo(String periSplitId, String periSeqNo);
+    List<IrlPeriSplit> findByPeriSplitId(String periSplitId);
 }

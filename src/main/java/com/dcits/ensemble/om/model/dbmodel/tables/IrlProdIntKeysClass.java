@@ -16,7 +16,7 @@ public class IrlProdIntKeysClass implements Serializable {
     private String eventType;
     private String intClass;
     private String splitId;
-    private String ruleId;
+    private String ruleid;
 
     @Override
     public boolean equals(Object o) {
@@ -28,7 +28,7 @@ public class IrlProdIntKeysClass implements Serializable {
         if (prodType != null ? !prodType.equals(that.prodType) : that.prodType != null) return false;
         if (eventType != null ? !eventType.equals(that.eventType) : that.eventType != null) return false;
         if (splitId != null ? !splitId.equals(that.splitId) : that.splitId != null) return false;
-        if (ruleId != null ? !ruleId.equals(that.ruleId) : that.ruleId != null) return false;
+        if (ruleid != null ? !ruleid.equals(that.ruleid) : that.ruleid != null) return false;
         return !(intClass != null ? !intClass.equals(that.intClass) : that.intClass != null);
 
     }
@@ -39,7 +39,7 @@ public class IrlProdIntKeysClass implements Serializable {
         result = 31 * result + (eventType != null ? eventType.hashCode() : 0);
         result = 31 * result + (intClass != null ? intClass.hashCode() : 0);
         result = 31 * result + (splitId != null ? splitId.hashCode() : 0);
-        result = 31 * result + (ruleId != null ? ruleId.hashCode() : 0);
+        result = 31 * result + (ruleid != null ? ruleid.hashCode() : 0);
 
         return result;
     }

@@ -4,14 +4,13 @@ import com.dcits.ensemble.om.model.dbmodel.MbEventAttr;
 import com.dcits.ensemble.om.model.dbmodel.MbEventPart;
 import com.dcits.ensemble.om.model.dbmodel.MbProdDefine;
 import com.dcits.ensemble.om.model.dbmodel.MbProdType;
+import com.dcits.ensemble.om.model.dbmodel.tables.*;
+import com.dcits.ensemble.om.model.prodFactory.IrlProdIntInfo;
 import com.dcits.ensemble.om.model.prodFactory.MbColumnInfo;
 import com.dcits.ensemble.om.model.prodFactory.MbEventInfo;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
 import com.dcits.ensemble.om.repository.prodFactory.*;
-import com.dcits.ensemble.om.repository.tables.GlProdAccountingRepository;
-import com.dcits.ensemble.om.repository.tables.IrlProdIntRepository;
-import com.dcits.ensemble.om.repository.tables.MbAcctStatsRepository;
-import com.dcits.ensemble.om.repository.tables.MbProdChargeRepository;
+import com.dcits.ensemble.om.repository.tables.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +39,19 @@ public class MbProdInfoService {
     @Autowired
     private MbProdChargeRepository mbProdChargeRepository;
     @Autowired
-    private MbAcctStatsRepository mbAcctStatsRepository;
+    private GlProdMappingRepository glProdMappingRepository;
+    @Autowired
+    private IrlAmtSplitRepository irlAmtSplitRepository;
+    @Autowired
+    private IrlPeriSplitRepository irlPeriSplitRepository;
+    @Autowired
+    private IrlIntTypeRepository irlIntTypeRepository;
+    @Autowired
+    private IrlIntRateRepository irlIntRateRepository;
+    @Autowired
+    private IrlIntMatrixRepository irlIntMatrixRepository;
+    @Autowired
+    private GlProdCodeMappingRepository glProdCodeMappingRepository;
     @Resource
     private MbAttrInfoService mbAttrInfoService;
     public MbProdInfo getProdInfo(String prodType){
@@ -77,11 +88,31 @@ public class MbProdInfoService {
             mbProdInfo.setProdDefines(mbProdDefineMap);
             mbProdInfo.setMbEventInfos(getMbEventInfo(prodRange, prodType, baseType));
             //获取单表数据
-            mbProdInfo.setGlProdAccounting(glProdAccountingRepository.findByProdType(prodType));
-            mbProdInfo.setIrlProdInt(irlProdIntRepository.findByProdType(prodType));
-            mbProdInfo.setMbAcctStats(mbAcctStatsRepository.findAll());
-            mbProdInfo.setMbProdCharge(mbProdChargeRepository.findByProdType(prodType));
+            mbProdInfo = getProdTablesInfo(mbProdInfo,prodType);
         }
+        return mbProdInfo;
+    }
+    //获取产品附带单表信息
+    public MbProdInfo getProdTablesInfo(MbProdInfo mbProdInfos,String prodTypes){
+        MbProdInfo mbProdInfo = mbProdInfos;
+        String prodType = prodTypes;
+        //获取核算相关参数
+        mbProdInfo.setGlProdAccounting(glProdAccountingRepository.findByProdType(prodType));
+        mbProdInfo.setGlProdCodeMappings(glProdCodeMappingRepository.findByProdType(prodType));
+        //获取利率相关参数
+        mbProdInfo.setIrlProdInt(irlProdIntRepository.findByProdType(prodType));
+        IrlProdIntInfo irlProdIntInfo = new IrlProdIntInfo();
+        irlProdIntInfo.setIrlPeriSplitList(irlPeriSplitRepository.findAll());
+        irlProdIntInfo.setIrlAmtSplitList(irlAmtSplitRepository.findAll());
+        irlProdIntInfo.setIrlIntTypeList(irlIntTypeRepository.findAll());
+        irlProdIntInfo.setIrlIntRateList(irlIntRateRepository.findAll());
+        mbProdInfo.setIrlProdIntInfos(irlProdIntInfo);
+        mbProdInfo.setIrlIntMatrices(irlIntMatrixRepository.findAll());
+        //获取收费定义相关参数
+        mbProdInfo.setMbProdCharge(mbProdChargeRepository.findByProdType(prodType));
+        //获取产品映射参数
+        mbProdInfo.setGlProdMappings(glProdMappingRepository.findByProdType(prodType));
+
         return mbProdInfo;
     }
     //保存产品所有属性(只有发布时生效)
