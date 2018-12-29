@@ -52,6 +52,8 @@ public class MbProdInfoService {
     private IrlIntMatrixRepository irlIntMatrixRepository;
     @Autowired
     private GlProdCodeMappingRepository glProdCodeMappingRepository;
+    @Autowired
+    private IrlBasisRateRepository irlBasisRateRepository;
     @Resource
     private MbAttrInfoService mbAttrInfoService;
     public MbProdInfo getProdInfo(String prodType){
@@ -106,6 +108,7 @@ public class MbProdInfoService {
         irlProdIntInfo.setIrlAmtSplitList(irlAmtSplitRepository.findAll());
         irlProdIntInfo.setIrlIntTypeList(irlIntTypeRepository.findAll());
         irlProdIntInfo.setIrlIntRateList(irlIntRateRepository.findAll());
+        irlProdIntInfo.setIrlBasisRateList(irlBasisRateRepository.findAll());
         mbProdInfo.setIrlProdIntInfos(irlProdIntInfo);
         mbProdInfo.setIrlIntMatrices(irlIntMatrixRepository.findAll());
         //获取收费定义相关参数
