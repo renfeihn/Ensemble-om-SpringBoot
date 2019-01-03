@@ -148,13 +148,13 @@ public class MbProdInfoService {
         List<MbProdDefine> mbProdDefineEvent=mbProdDefineRepository.findByProdTypeAndAssembleTypeOrderByPageCodePageSeqNoAsc(prodType, "EVENT");
         for(MbProdDefine mbProdDefine: mbProdDefineEvent){
             MbEventInfo eventInfo= new MbEventInfo();
-            Map<String,MbEventAttr> mbEventAttrMap=new HashMap<>();
+            Map<String,MbEventAttr> mbEventAttrMap=new LinkedHashMap<>();
             String eventKey=mbProdDefine.getAssembleId();
             String baseEventKey= eventKey.substring(eventKey.length()-prodType.length())+baseType;
             eventInfo.setMbEventType(mbEventTypeRepository.findByEventType(mbProdDefine.getAssembleId()));
             List<MbEventAttr> mbEventAttrGroupList=new ArrayList<>();
-            List<MbEventAttr> mbEventAttrList=mbEventAttrRepository.findByEventType(eventKey);
-            List<MbEventAttr> mbEventBaseAttrList=mbEventAttrRepository.findByEventType(baseEventKey);
+            List<MbEventAttr> mbEventAttrList=mbEventAttrRepository.findByEventTypeOrderByPageCodePageSeqNoAsc(eventKey);
+            List<MbEventAttr> mbEventBaseAttrList=mbEventAttrRepository.findByEventTypeOrderByPageCodePageSeqNoAsc(baseEventKey);
             mbEventAttrGroupList.addAll(mbEventBaseAttrList);
             mbEventAttrGroupList.addAll(mbEventAttrList);
             for(MbEventAttr mbEventAttr:mbEventAttrGroupList){
@@ -173,7 +173,7 @@ public class MbProdInfoService {
         return eventInfos;
     }
     private Map<String,Map> getMbEventPart(String prodRange,String eventType,String baseEventKey){
-        List<MbEventAttr> mbEventAttrs=mbEventAttrRepository.findByEventType(eventType);
+        List<MbEventAttr> mbEventAttrs=mbEventAttrRepository.findByEventTypeOrderByPageCodePageSeqNoAsc(eventType);
         Map<String,Map> mapMap=new HashMap<>();
         for(MbEventAttr mbEventAttr:mbEventAttrs){
             Map<String,MbEventPart>  mbEventParts=new HashMap<>();
@@ -231,6 +231,10 @@ public class MbProdInfoService {
     //修改DEFINE表中参数的位置信息
     public void updateColumn(Map column,String prodType){
         mbProdDefineRepository.updatePageSeq((Integer)column.get("pageSeqNo"),prodType,(String)column.get("key"),(String)column.get("pageCode"));
+    }
+    //修改Event表中参数的位置信息
+    public void updateColumnEvent(Map column,String eventType){
+        mbEventAttrRepository.updatePageSeq((Integer)column.get("pageSeqNo"),eventType,(String)column.get("key"),(String)column.get("pageCode"));
     }
     //获取子产品与基础产品不相同的产品集合
     public List findChildDiffInfo(String baseProdType,String value,String assembleId){

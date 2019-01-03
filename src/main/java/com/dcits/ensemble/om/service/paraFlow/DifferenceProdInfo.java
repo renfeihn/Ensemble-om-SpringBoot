@@ -352,7 +352,7 @@ public class DifferenceProdInfo {
             maxPageSeqNo = pageSeqNo+"";
         }
         if("MB_EVENT_ATTR".equals(table)){
-            List<MbEventAttr> mbEventAttrs = mbEventAttrRepository.findByEventType(key);
+            List<MbEventAttr> mbEventAttrs = mbEventAttrRepository.findByEventTypeOrderByPageCodePageSeqNoAsc(key);
             int pageSeqNo = mbEventAttrs.get(0).getPageSeqNo();
             for(int i=1; i<mbEventAttrs.size(); i++){
                 if(pageSeqNo<mbEventAttrs.get(i).getPageSeqNo()){
@@ -367,7 +367,7 @@ public class DifferenceProdInfo {
     public String getMaxSeqNo (String key,String table){
         String maxSeqNo = "";
         if("MB_EVENT_ATTR".equals(table)){
-            List<MbEventAttr> mbEventAttrs = mbEventAttrRepository.findByEventType(key);
+            List<MbEventAttr> mbEventAttrs = mbEventAttrRepository.findByEventTypeOrderByPageCodePageSeqNoAsc(key);
             int seqNo = Integer.parseInt(mbEventAttrs.get(0).getSeqNo());
             for(int i=1; i<mbEventAttrs.size(); i++){
                 if(seqNo<Integer.parseInt(mbEventAttrs.get(i).getSeqNo())){

@@ -2,6 +2,7 @@ package com.dcits.ensemble.om.controller.prodFactory;
 
 import com.dcits.ensemble.om.controller.model.Result;
 import com.dcits.ensemble.om.controller.model.ResultUtils;
+import com.dcits.ensemble.om.model.dbmodel.MbEventClass;
 import com.dcits.ensemble.om.model.dbmodel.MbProdDefine;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessMainFlow;
@@ -9,6 +10,7 @@ import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessDetailHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessMainFlowRepository;
+import com.dcits.ensemble.om.repository.prodFactory.MbEventClassRepository;
 import com.dcits.ensemble.om.service.paraFlow.DifferenceProdInfo;
 import com.dcits.ensemble.om.service.paraFlow.FlowManagement;
 import com.dcits.ensemble.om.service.prodFactory.MbProdInfoService;
@@ -39,7 +41,8 @@ public class ProdInfoController {
     private OmProcessDetailHistRepository omProcessDetailHistRepository;
     @Resource
     private DifferenceProdInfo differenceProdInfo;
-
+    @Resource
+    private MbEventClassRepository mbEventClassRepository;
     @ApiOperation(value = "产品信息", notes = "获取产品明细")
     @RequestMapping("/getProdInfo")
     @ResponseBody
@@ -129,8 +132,17 @@ public class ProdInfoController {
     public Result saveColumn(HttpServletResponse response, @RequestBody Map map) {
         List<Map> columnList=(List)map.get("column");
         String prodType=(String)map.get("prodType");
-        for(Map column: columnList){
-            mbProdInfoService.updateColumn(column,prodType);
+        String tags=(String)map.get("tags");
+        //判断修改是否为事件修改
+        MbEventClass mbEventClass= mbEventClassRepository.findByEventClass(tags);
+        if(mbEventClass==null) {
+            for (Map column : columnList) {
+                mbProdInfoService.updateColumn(column, prodType);
+            }
+        }else{
+            for (Map column : columnList) {
+                mbProdInfoService.updateColumnEvent(column, tags+"_"+prodType);
+            }
         }
         return ResultUtils.success();
     }
