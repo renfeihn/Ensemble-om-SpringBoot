@@ -127,10 +127,11 @@ public class ProdDiffController {
                 if(newValue.get("sourceModule") != null){
                     sourceModule = newValue.get("sourceModule").toString();
                 }
-                break;
+                Map temp = new HashMap<>();
+                temp.put("SOURCE_MODULE",sourceModule);
+                responseMap.put(newValue.get("prodType").toString(),temp);
             }
         }
-        responseMap.put("SOURCE_MODULE",sourceModule);
 
         return ResultUtils.success(responseMap);
     }
