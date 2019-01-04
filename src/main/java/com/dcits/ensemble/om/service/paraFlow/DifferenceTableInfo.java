@@ -113,4 +113,6 @@ public class DifferenceTableInfo {
         int  intSub=subSeqNo==null?1: 1+Integer.valueOf(subSeqNo);
         return  intSub;
     }
+    //通过表名和差异合并得到最新数据
+    
 }
