@@ -112,6 +112,7 @@ public class SystemTable {
             }else{
                 data = (Map) dataMap.get("newData");
             }
+            
             //获取主键对象
             JSONObject pkValue=new JSONObject();
             for(int j=0;j<keySet.split(",").length;j++){
