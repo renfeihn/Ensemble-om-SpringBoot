@@ -19,7 +19,7 @@ import java.io.Serializable;
 public class OmUser implements Serializable {
     public OmUser () {}
 
-    public OmUser(String userId, String userName, String password, String branch, String company, String userLevel, String parentUserId) {
+    public OmUser(String userId, String userName, String password, String branch, String company, String userLevel, String parentUserId, String email, String phone) {
         this.userId = userId;
         this.userName = userName;
         this.password = password;
@@ -27,6 +27,8 @@ public class OmUser implements Serializable {
         this.company = company;
         this.userLevel = userLevel;
         this.parentUserId = parentUserId;
+        this.email = email;
+        this.phone = phone;
     }
 
     @Id
@@ -44,6 +46,10 @@ public class OmUser implements Serializable {
     private String userLevel;
     @Column(name = "parent_user_id")
     private String parentUserId;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "phone")
+    private String phone;
 
     @Override
     public String toString() {
@@ -55,6 +61,8 @@ public class OmUser implements Serializable {
                 ", company='" + company + '\'' +
                 ", userLevel='" + userLevel + '\'' +
                 ", parentUserId='" + parentUserId + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
                 '}';
     }
 }
