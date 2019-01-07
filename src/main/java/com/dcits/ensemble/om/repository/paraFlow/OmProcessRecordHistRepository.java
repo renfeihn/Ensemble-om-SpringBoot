@@ -17,6 +17,7 @@ import java.util.List;
 public interface OmProcessRecordHistRepository extends JpaRepository<OmProcessRecordHist,OmProcessRecordHistKeysClass> ,JpaSpecificationExecutor<OmProcessRecordHist>{
 
     List<OmProcessRecordHist> findByRecSeqNo(@Param("recReqNo")String recSeqNo);
+    List<OmProcessRecordHist> findByRecSeqNoOrderBySubSeqNoAsc(@Param("recReqNo")String recSeqNo);
     List<OmProcessRecordHist> findByMainSeqNo(@Param("mainSeqNo")String mainSeqNo);
 
     @Query("select s from OmProcessRecordHist s  where s.tableName = :tableName")

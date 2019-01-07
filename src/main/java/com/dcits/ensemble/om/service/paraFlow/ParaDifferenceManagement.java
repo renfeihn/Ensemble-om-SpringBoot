@@ -104,4 +104,11 @@ public class ParaDifferenceManagement {
         newJsonObject.put("dmlType",omProcessRecordHist.getDmlType());
         mbProdChargeList.put(omProcessRecordHist.getPkAndValue(),newJsonObject);
     }
+    //通过recSeqNo获取所有差异并得到目标结果
+    public void mergePkList(String reqNo,List<Map> pkList){
+        List<OmProcessRecordHist> omProcessRecordHistList= omProcessRecordHistRepository.findByRecSeqNoOrderBySubSeqNoAsc(reqNo);
+        for(OmProcessRecordHist omProcessRecordHist: omProcessRecordHistList){
+
+        }
+    }
 }
