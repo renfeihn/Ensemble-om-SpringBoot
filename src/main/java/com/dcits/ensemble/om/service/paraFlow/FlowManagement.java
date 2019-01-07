@@ -122,7 +122,7 @@ public class FlowManagement {
         }
     }
     public void onlyUpdateDel(OmProcessMainFlow omProcessMainFlow,String userName){
-        BigDecimal dtlSeqNo = omProcessMainFlow.getDtlSeqNo().add(BigDecimal.ONE);
+        BigDecimal dtlSeqNo = omProcessMainFlow.getDtlSeqNo();
         omProcessMainFlow.setDtlSeqNo(dtlSeqNo);
         omProcessMainFlow.setStatus("1");
         omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
