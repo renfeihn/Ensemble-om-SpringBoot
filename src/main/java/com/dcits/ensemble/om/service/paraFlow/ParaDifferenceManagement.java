@@ -105,10 +105,49 @@ public class ParaDifferenceManagement {
         mbProdChargeList.put(omProcessRecordHist.getPkAndValue(),newJsonObject);
     }
     //通过recSeqNo获取所有差异并得到目标结果
-    public void mergePkList(String reqNo,List<Map> pkList){
+    public void mergePkList(String reqNo,List<Map> pkList,String column,String columnDesc){
         List<OmProcessRecordHist> omProcessRecordHistList= omProcessRecordHistRepository.findByRecSeqNoOrderBySubSeqNoAsc(reqNo);
         for(OmProcessRecordHist omProcessRecordHist: omProcessRecordHistList){
-
+          String dmlType=omProcessRecordHist.getDmlType();
+            JSONObject myJson;
+            if("D".equals(dmlType)){
+                myJson = getJsonByBolb(omProcessRecordHist.getDmlOldData());
+          }else{
+             myJson = getJsonByBolb(omProcessRecordHist.getDmlData());
+          }
+            String pkColumnKey=myJson.getString(column);
+            String pkColumnDecs=myJson.getString(columnDesc);
+            containsKey(pkList,pkColumnKey,pkColumnDecs,dmlType);
         }
+    }
+    //获取集合中是否已经存在该key值
+    private void containsKey(List<Map> pkList,String key,String keyColumn,String dmlType){
+        Map dmlColumn = new HashMap();
+        dmlColumn.put("key", key);
+        dmlColumn.put("value", keyColumn);
+        if("I".equals(dmlType)){
+            pkList.add(dmlColumn);
+        }else {
+            for (Map map:pkList) {
+                if (key.equals(map.get("key"))) {
+                    pkList.remove(map);
+                    break;
+                }
+            }
+            if ("U".equals(dmlType)) {
+                pkList.add(dmlColumn);
+            }
+        }
+    }
+
+    public static JSONObject getJsonByBolb(byte[] data){
+        String str= null;
+        try {
+            str = new String(data,"utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        JSONObject myJson = JSONObject.fromObject(str);
+        return myJson;
     }
 }

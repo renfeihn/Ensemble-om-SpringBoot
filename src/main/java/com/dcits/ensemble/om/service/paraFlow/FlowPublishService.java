@@ -42,13 +42,7 @@ public class FlowPublishService {
         List<OmProcessRecordHist> omProcessRecordHists=  omProcessRecordHistRepository.findByRecSeqNo(recSeqNo);
         StringBuffer pushSql=new StringBuffer();
         for(OmProcessRecordHist omProcessRecordHist:omProcessRecordHists){
-            String str= null;
-            try {
-                str = new String(omProcessRecordHist.getDmlData(),"utf-8");
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
-            JSONObject myJson = JSONObject.fromObject(str);
+            JSONObject myJson = ParaDifferenceManagement.getJsonByBolb(omProcessRecordHist.getDmlData());
             if("I".equals(omProcessRecordHist.getDmlType()))
                 pushSql.append(baseTableRepositoryImpl.insertTable(omProcessRecordHist.getTableName(),myJson,flag));
             else if("U".equals(omProcessRecordHist.getDmlType())) {

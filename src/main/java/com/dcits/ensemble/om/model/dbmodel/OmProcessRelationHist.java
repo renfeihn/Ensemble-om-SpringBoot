@@ -15,14 +15,13 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class OmProcessRelationHist implements Serializable {
-    public OmProcessRelationHist(String mainSeqNo, String dtlSeqNo, String recSeqNo, String tranId, String tranType, String tranName, String dispose) {
+    public OmProcessRelationHist(String mainSeqNo, String dtlSeqNo, String recSeqNo, String tranId, String tranType, String tranName) {
         this.mainSeqNo = mainSeqNo;
         this.dtlSeqNo = dtlSeqNo;
         this.recSeqNo = recSeqNo;
         this.tranId = tranId;
         this.tranName = tranName;
         this.tranType = tranType;
-        this.dispose = dispose;
     }
 
     public OmProcessRelationHist(){}
@@ -41,8 +40,6 @@ public class OmProcessRelationHist implements Serializable {
     private String tranName;
     @Column(name="tran_type")
     private String tranType;
-    @Column(name="dispose")
-    private String dispose;
     @Override
     public String toString() {
         return "OmProcessRelationHist{" +
@@ -52,7 +49,6 @@ public class OmProcessRelationHist implements Serializable {
                 ", tranId='" + tranId + '\'' +
                 ", tranType='" + tranType + '\'' +
                 ", tranType='" + tranName + '\'' +
-                ", dispose='" + dispose + '\'' +
                 '}';
     }
 }

@@ -105,7 +105,7 @@ public class DifferenceTableInfo {
         omProcessRecordHist.setRecSeqNo(recSeqNo);
         omProcessRecordHist.setDmlType(optType);
         omProcessRecordHist.setMainSeqNo(seqNo);
-        omProcessRecordHist.setSubSeqNo(getMaxDiffSub(seqNo) );
+        omProcessRecordHist.setSubSeqNo(getMaxDiffSub(recSeqNo));
         omProcessRecordHistRepository.saveAndFlush(omProcessRecordHist);
     }
     private int getMaxDiffSub(String seqNo){

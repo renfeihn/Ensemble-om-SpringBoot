@@ -51,9 +51,11 @@ public class PkListController {
         String mainSeqNo =(String) map.get("mainSeqNo");
         List<Map> columnMap= pkListRepository.getPkList(tableName,column,columnDesc);
         if(mainSeqNo!=null) {
-            OmProcessRelationHist omProcessRelationHist=omProcessRelationHistRepository.findByMainSeqNoAndAndTranIdAndDispose(mainSeqNo,tableName,"N");
+            OmProcessRelationHist omProcessRelationHist=omProcessRelationHistRepository.findByMainSeqNoAndAndTranId(mainSeqNo,tableName);
             //从差异表结合新表反向得到数据
-            paraDifferenceManagement.mergePkList(omProcessRelationHist.getRecSeqNo(),columnMap);
+            if(omProcessRelationHist!=null) {
+                paraDifferenceManagement.mergePkList(omProcessRelationHist.getRecSeqNo(), columnMap,column,columnDesc);
+            }
         }
         return  ResultUtils.success(columnMap);
     }
