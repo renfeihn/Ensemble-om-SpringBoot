@@ -1,8 +1,10 @@
 package com.dcits.ensemble.om.service.prodFactory;
 
+import com.alibaba.fastjson.JSONObject;
 import com.dcits.ensemble.om.model.dbmodel.MbAttrType;
 import com.dcits.ensemble.om.model.dbmodel.MbAttrValue;
 import com.dcits.ensemble.om.model.prodFactory.MbColumnInfo;
+import com.dcits.ensemble.om.model.table.AttrValueBean;
 import com.dcits.ensemble.om.repository.prodFactory.MbAttrTypeRepository;
 import com.dcits.ensemble.om.repository.prodFactory.MbAttrValueRepository;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,67 @@ public class MbAttrInfoService {
     private MbAttrValueRepository mbAttrValueRepository;
     @Resource
     private MbAttrTypeRepository mbAttrTypeRepository;
+    public JSONObject getAttrInfo(){
+        JSONObject resultData=new JSONObject();
+        List<MbAttrType> attrTypeList=mbAttrTypeRepository.findAll();
+        for(MbAttrType mbAttrType:attrTypeList){
+            JSONObject jsonInfo=new JSONObject();
+            String method=mbAttrType.getValueMethod();
+            String columnType="";
+            switch (method){
+                case "FD":
+                    columnType="input";
+                    break;
+                case "YN":
+                    columnType="switch";
+                    break;
+                case "VL":
+                case "RF":
+                    columnType="select";
+                    AttrValueBean AttrValueBean=getAttrValue(mbAttrType.getAttrKey(),method);
+                    jsonInfo.put("valueScore",AttrValueBean.getValueScore());
+                    if("RF".equals(method)) {
+                        Map rfMap=new HashMap<>();
+                        rfMap.put("tableName", AttrValueBean.getRfTable());
+                        rfMap.put("columnCode", AttrValueBean.getRfColumn());
+                        rfMap.put("columnDesc", AttrValueBean.getRfColumnDesc());
+                        jsonInfo.put("valueScore",rfMap);
+                    }
+                    break;
+            }
+            jsonInfo.put("columnType",columnType);
+            jsonInfo.put("valueMethod",method);
+            jsonInfo.put("columnDesc",mbAttrType.getAttrDesc());
+            resultData.put(mbAttrType.getAttrKey(),jsonInfo);
+        }
+        return resultData;
+    }
+    private AttrValueBean getAttrValue(String key,String valueMethod){
+        List<MbAttrValue> mbAttrValueList= mbAttrValueRepository.findAllByAttrKey(key);
+        AttrValueBean attrValueBean=new AttrValueBean();
+        List valueScoreList=new ArrayList<>();
+        for(MbAttrValue attrValue : mbAttrValueList){
+                if("RF".equals(valueMethod)){
+                    String columnInfo=attrValue.getRefColumns();
+                    String[] columns= columnInfo.split(",");
+                    attrValueBean.setKey(key);
+                    attrValueBean.setRfTable(attrValue.getRefTable());
+                    attrValueBean.setRfColumn(columns[0]);
+                    if(columns.length>1) {
+                        attrValueBean.setRfColumnDesc(columns[1]);
+                    }
+                }else if("VL".equals(valueMethod)){
+                    Map vlMap =new HashMap<>();
+                    vlMap.put("key",attrValue.getAttrValue());
+                    vlMap.put("value", attrValue.getValueDesc());
+                    valueScoreList.add(vlMap);
+                }
+        }
+        if("VL".equals(valueMethod)){
+            attrValueBean.setValueScore(valueScoreList);
+        }
+        return attrValueBean;
+    }
     public MbColumnInfo getColumnInfo(String attrKey){
         MbColumnInfo mbColumnInfo=new MbColumnInfo();
         MbAttrType mbAttrType=mbAttrTypeRepository.findByAttrKey(attrKey);

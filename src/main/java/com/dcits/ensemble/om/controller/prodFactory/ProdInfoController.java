@@ -13,6 +13,7 @@ import com.dcits.ensemble.om.repository.paraFlow.OmProcessMainFlowRepository;
 import com.dcits.ensemble.om.repository.prodFactory.MbEventClassRepository;
 import com.dcits.ensemble.om.service.paraFlow.DifferenceProdInfo;
 import com.dcits.ensemble.om.service.paraFlow.FlowManagement;
+import com.dcits.ensemble.om.service.prodFactory.MbAttrInfoService;
 import com.dcits.ensemble.om.service.prodFactory.MbProdInfoService;
 import io.swagger.annotations.*;
 import org.springframework.stereotype.Controller;
@@ -41,6 +42,8 @@ public class ProdInfoController {
     private OmProcessDetailHistRepository omProcessDetailHistRepository;
     @Resource
     private DifferenceProdInfo differenceProdInfo;
+    @Resource
+    private MbAttrInfoService mbAttrInfoService;
     @Resource
     private MbEventClassRepository mbEventClassRepository;
     @ApiOperation(value = "产品信息", notes = "获取产品明细")
@@ -158,5 +161,12 @@ public class ProdInfoController {
         List responseList= mbProdInfoService.findChildDiffInfo(prodType, attrValue,attrType);
         return ResultUtils.success(responseList);
     }
-
+    /**
+     * 获取所有的ATTR参数属性
+     */
+    @RequestMapping("/getAttrInfo")
+    @ResponseBody
+    public Result getAttrInfo(HttpServletResponse response) {
+        return ResultUtils.success(mbAttrInfoService.getAttrInfo());
+    }
 }
