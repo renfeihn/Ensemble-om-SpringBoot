@@ -79,6 +79,10 @@ public class MbProdInfoService {
             for (MbProdDefine mbProdDefine : mbProdDefineGroupList) {
                 if (mbProdDefine.getProdType().equals(baseType)) {
                     //参数取自基础产品
+                    if("V".equals(mbProdDefine.getOptionPermissions())||"E".equals(mbProdDefine.getOptionPermissions()))
+                    {
+                        continue;
+                    }
                     mbProdDefine.setGroup("BASE");
                     mbProdDefine.setProdType(prodType);
                 } else if (!mbProdDefine.getProdType().equals(baseType) && !prodRange.equals("B")) {
@@ -159,6 +163,10 @@ public class MbProdInfoService {
             mbEventAttrGroupList.addAll(mbEventAttrList);
             for(MbEventAttr mbEventAttr:mbEventAttrGroupList){
                 if(mbEventAttr.getEventType().equals(baseEventKey)){
+                    if("V".equals(mbEventAttr.getOptionPermissions())||"E".equals(mbEventAttr.getOptionPermissions()))
+                    {
+                        continue;
+                    }
                     mbEventAttr.setEventType(eventKey);
                     mbEventAttr.setGroup("BASE");
                 }else if (!mbEventAttr.getEventType().equals(baseEventKey) && !prodRange.equals("B")){

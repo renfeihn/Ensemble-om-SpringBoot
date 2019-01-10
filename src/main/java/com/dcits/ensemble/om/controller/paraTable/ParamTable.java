@@ -3,7 +3,9 @@ package com.dcits.ensemble.om.controller.paraTable;
 import com.dcits.ensemble.om.controller.model.Result;
 import com.dcits.ensemble.om.controller.model.ResultUtils;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessMainFlow;
+import com.dcits.ensemble.om.model.dbmodel.tables.OmTableList;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessMainFlowRepository;
+import com.dcits.ensemble.om.repository.tables.OmTableListRepository;
 import com.dcits.ensemble.om.service.paraFlow.DifferenceProdInfo;
 import com.dcits.ensemble.om.service.paraFlow.DifferenceTableInfo;
 import com.dcits.ensemble.om.service.paraFlow.FlowManagement;
@@ -34,6 +36,8 @@ public class ParamTable {
     private DifferenceTableInfo differenceTableInfo;
     @Resource
     private ParamTableService paramTableService;
+    @Resource
+    private OmTableListRepository omTableListRepository;
     @ApiOperation(value = "单表信息", notes = "获取单表信息")
     @RequestMapping("/getTableInfo")
     @ResponseBody
@@ -46,6 +50,11 @@ public class ParamTable {
         responseMap.put("columnInfo",paramTableService.getTableInfo(tableName));
         //2.根据参数列信息及表名差数据库获取数据信息
         //3.将得到的信息分为两个对象集合传到前端
+        //获取表定义信息
+        OmTableList omTableList= omTableListRepository.findByTableName(tableName);
+        if (omTableList != null) {
+            responseMap.put("tableDesc",omTableList.getTableDesc());
+        }
         return ResultUtils.success(responseMap);
     }
     /**

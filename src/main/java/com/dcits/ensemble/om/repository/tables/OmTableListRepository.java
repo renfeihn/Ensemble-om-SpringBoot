@@ -11,4 +11,5 @@ import java.util.List;
  */
 public interface OmTableListRepository extends JpaRepository<OmTableList,Long>,JpaSpecificationExecutor<OmTableList> {
     List<OmTableList> findBySystem(String system);
+    OmTableList findByTableName(String tableName);
 }
