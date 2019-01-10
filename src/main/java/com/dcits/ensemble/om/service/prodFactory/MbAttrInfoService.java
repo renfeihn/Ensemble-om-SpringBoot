@@ -27,10 +27,15 @@ public class MbAttrInfoService {
         for(MbAttrType mbAttrType:attrTypeList){
             JSONObject jsonInfo=new JSONObject();
             String method=mbAttrType.getValueMethod();
+            String attrType= mbAttrType.getAttrType();
             String columnType="";
             switch (method){
                 case "FD":
-                    columnType="input";
+                    if("DATE".equals(attrType)){
+                        columnType= "date";
+                    }else {
+                        columnType = "input";
+                    }
                     break;
                 case "YN":
                     columnType="switch";
@@ -51,7 +56,7 @@ public class MbAttrInfoService {
             }
             jsonInfo.put("columnType",columnType);
             jsonInfo.put("valueMethod",method);
-            jsonInfo.put("attrType",mbAttrType.getAttrType());
+            jsonInfo.put("attrType",attrType);
             jsonInfo.put("columnDesc",mbAttrType.getAttrDesc());
             resultData.put(mbAttrType.getAttrKey(),jsonInfo);
         }
