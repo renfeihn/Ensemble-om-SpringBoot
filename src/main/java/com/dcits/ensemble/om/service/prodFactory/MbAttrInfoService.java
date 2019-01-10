@@ -38,19 +38,20 @@ public class MbAttrInfoService {
                 case "VL":
                 case "RF":
                     columnType="select";
-                    AttrValueBean AttrValueBean=getAttrValue(mbAttrType.getAttrKey(),method);
-                    jsonInfo.put("valueScore",AttrValueBean.getValueScore());
+                    AttrValueBean attrValueBean=getAttrValue(mbAttrType.getAttrKey(),method);
+                    jsonInfo.put("valueScore",attrValueBean.getValueScore());
                     if("RF".equals(method)) {
                         Map rfMap=new HashMap<>();
-                        rfMap.put("tableName", AttrValueBean.getRfTable());
-                        rfMap.put("columnCode", AttrValueBean.getRfColumn());
-                        rfMap.put("columnDesc", AttrValueBean.getRfColumnDesc());
+                        rfMap.put("tableName", attrValueBean.getRfTable());
+                        rfMap.put("columnCode", attrValueBean.getRfColumn());
+                        rfMap.put("columnDesc", attrValueBean.getRfColumnDesc());
                         jsonInfo.put("valueScore",rfMap);
                     }
                     break;
             }
             jsonInfo.put("columnType",columnType);
             jsonInfo.put("valueMethod",method);
+            jsonInfo.put("attrType",mbAttrType.getAttrType());
             jsonInfo.put("columnDesc",mbAttrType.getAttrDesc());
             resultData.put(mbAttrType.getAttrKey(),jsonInfo);
         }
