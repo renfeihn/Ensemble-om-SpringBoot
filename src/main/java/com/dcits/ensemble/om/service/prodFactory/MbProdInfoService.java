@@ -54,6 +54,8 @@ public class MbProdInfoService {
     private GlProdCodeMappingRepository glProdCodeMappingRepository;
     @Autowired
     private IrlBasisRateRepository irlBasisRateRepository;
+    @Autowired
+    private IrlProdTypeRepository irlProdTypeRepository;
     @Resource
     private MbAttrInfoService mbAttrInfoService;
     public MbProdInfo getProdInfo(String prodType){
@@ -119,7 +121,8 @@ public class MbProdInfoService {
         mbProdInfo.setMbProdCharge(mbProdChargeRepository.findByProdType(prodType));
         //获取产品映射参数
         mbProdInfo.setGlProdMappings(glProdMappingRepository.findByProdType(prodType));
-
+        //获取定价工厂产品信息
+        mbProdInfo.setIrlProdTypes(irlProdTypeRepository.findByProdType(prodType));
         return mbProdInfo;
     }
     //保存产品所有属性(只有发布时生效)
