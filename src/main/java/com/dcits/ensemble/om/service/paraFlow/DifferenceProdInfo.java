@@ -83,10 +83,51 @@ public class DifferenceProdInfo {
           mbProdCharge((List)mbProdInfo.get("mbProdCharge"), reqNo, operatorNo);
         //核算信息
           glProdAccounting((List)mbProdInfo.get("glProdAccounting"), reqNo, operatorNo);
-        //参数状态
+          //产品映射(0115屏蔽对产品映射处理)
+//          glProdMapping((List)mbProdInfo.get("glProdMappings"), reqNo, operatorNo);
+//          irlProdType((List)mbProdInfo.get("irlProdType"), reqNo, operatorNo);
+
+       //参数状态
         optionPermTran(mbProdInfo,reqNo,operatorNo);
        
    }
+    public void irlProdType(List prodMap,String seqNo,String operatorNo){
+        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
+        for(Object key:prodMap){
+            Map<String,Object> irlProdType=(Map)key;
+            String operateType=(String)irlProdType.get("optType");
+            irlProdType.put("tableName","IRL_PROD_TYPE");
+            Map<String, Object> data;
+            if("I".equals(operateType)) {
+                data = (Map) irlProdType.get("newData");
+            }else{
+                data = (Map) irlProdType.get("oldData");
+            }
+            JSONObject keyValue = new JSONObject();
+            keyValue.put("PROD_TYPE",data.get("prodType"));
+            saveProdParaDifference(accountingNo, irlProdType, keyValue, seqNo);
+        }
+    }
+
+    //glProdMapping
+    public void glProdMapping(List prodMap,String seqNo,String operatorNo){
+        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
+        for(Object key:prodMap){
+            Map<String,Object> mapping=(Map)key;
+            String operateType=(String)mapping.get("optType");
+            mapping.put("tableName","GL_PROD_MAPPING");
+            Map<String, Object> data;
+            if("I".equals(operateType)) {
+                data = (Map) mapping.get("newData");
+            }else{
+                data = (Map) mapping.get("oldData");
+            }
+            JSONObject keyValue = new JSONObject();
+            keyValue.put("MAPPING_TYPE",data.get("mappingType"));
+            saveProdParaDifference(accountingNo, mapping, keyValue, seqNo);
+        }
+    }
+
    //GlProdAccounting
     public void glProdAccounting(List prodMap,String seqNo,String operatorNo){
         String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
