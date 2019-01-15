@@ -213,13 +213,15 @@ public class DifferenceProdInfo {
                             JSONObject keyValue = new JSONObject();
                             MbProdDefine mbProdDefine = mbProdDefineRepository.findByProdTypeAndAssembleId(mbProdType.getProdType(), assembleId);
                             //向omProcessRecordHist插入
-                            Map define = (Map) ResourcesUtils.getMap(mbProdInfo.get("prodDefines")).get(assembleId);
-                            keyValue.put("PROD_TYPE", mbProdDefine.getProdType());
-                            keyValue.put("SEQ_NO", mbProdDefine.getSeqNo());
-                            define.put("tableName", "MB_PROD_DEFINE");
-                            define.put("optType", "D");
-                            this.prodType = mbProdDefine.getProdType();
-                            saveProdParaDifference(subSeqNo, define, keyValue, seqNo);
+                            if(mbProdDefine != null) {
+                                Map define = (Map) ResourcesUtils.getMap(mbProdInfo.get("prodDefines")).get(assembleId);
+                                keyValue.put("PROD_TYPE", mbProdDefine.getProdType());
+                                keyValue.put("SEQ_NO", mbProdDefine.getSeqNo());
+                                define.put("tableName", "MB_PROD_DEFINE");
+                                define.put("optType", "D");
+                                this.prodType = mbProdDefine.getProdType();
+                                saveProdParaDifference(subSeqNo, define, keyValue, seqNo);
+                            }
                         }
                     }
                     //删除mbEventAttr表参数
