@@ -79,22 +79,51 @@ public class DifferenceProdInfo {
             eventAttrTran(ResourcesUtils.getMap(eventOne.get("mbEventAttrs")), reqNo, operatorNo);
             eventPartTran(ResourcesUtils.getMap(eventOne.get("mbEventParts")), reqNo, operatorNo);
         }
-        //涉及他表
+        //费用信息
           mbProdCharge((List)mbProdInfo.get("mbProdCharge"), reqNo, operatorNo);
+        //核算信息
+          glProdAccounting((List)mbProdInfo.get("glProdAccounting"), reqNo, operatorNo);
         //参数状态
         optionPermTran(mbProdInfo,reqNo,operatorNo);
        
    }
    //GlProdAccounting
-    public void glProdAccounting(Map prodMap,String seqNo,String operatorNo){
+    public void glProdAccounting(List prodMap,String seqNo,String operatorNo){
         String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
-        for(Object key:prodMap.keySet()){
-            Map<String,Object> accounting=(Map)prodMap.get(key);
-            Map<String,Object> oldData=(Map)accounting.get("oldData");
+        for(Object key:prodMap){
+            Map<String,Object> accounting=(Map)key;
+            String operateType=(String)accounting.get("optType");
+            accounting.put("tableName","GL_PROD_ACCOUNTING");
+            Map<String, Object> data;
+            if("I".equals(operateType)) {
+                data = (Map) accounting.get("newData");
+            }else{
+                data = (Map) accounting.get("oldData");
+            }
             JSONObject keyValue = new JSONObject();
-            keyValue.put("PROD_TYPE",oldData.get("PROD_TYPE"));
-            keyValue.put("ACCOUNTING_STATUS",oldData.get("ACCOUNTING_STATUS"));
+            keyValue.put("PROD_TYPE",this.prodType);
+            keyValue.put("ACCOUNTING_STATUS",data.get("accountingStatus"));
             saveProdParaDifference(accountingNo, accounting, keyValue, seqNo);
+        }
+    }
+
+    //mbProdCharge
+    public void mbProdCharge(List prodMap,String seqNo,String operatorNo){
+        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
+        for(Object key:prodMap){
+            Map<String,Object> charge=(Map)key;
+            String operateType=(String)charge.get("optType");
+            charge.put("tableName","MB_PROD_CHARGE");
+            Map<String, Object> data;
+            if("I".equals(operateType)) {
+                data = (Map) charge.get("newData");
+            }else{
+                data = (Map) charge.get("oldData");
+            }
+            JSONObject keyValue = new JSONObject();
+            keyValue.put("PROD_TYPE",this.prodType);
+            keyValue.put("FEE_TYPE",data.get("feeType"));
+            saveProdParaDifference(accountingNo, charge, keyValue, seqNo);
         }
     }
     //IrlProdInt
@@ -107,36 +136,6 @@ public class DifferenceProdInfo {
             keyValue.put("PROD_TYPE",oldData.get("PROD_TYPE"));
             keyValue.put("EVENT_TYPE",oldData.get("EVENT_TYPE"));
             keyValue.put("INT_CLASS",oldData.get("INT_CLASS"));
-            saveProdParaDifference(accountingNo, accounting, keyValue, seqNo);
-        }
-    }
-    //MbAcctStats
-    public void mbAcctStats(Map prodMap,String seqNo,String operatorNo){
-        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
-        for(Object key:prodMap.keySet()){
-            Map<String,Object> accounting=(Map)prodMap.get(key);
-            Map<String,Object> oldData=(Map)accounting.get("oldData");
-            JSONObject keyValue = new JSONObject();
-            keyValue.put("INTERNAL_KEY",oldData.get("INTERNAL_KEY"));
-            saveProdParaDifference(accountingNo, accounting, keyValue, seqNo);
-        }
-    }
-    //mbProdCharge
-    public void mbProdCharge(List prodMap,String seqNo,String operatorNo){
-        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
-        for(Object key:prodMap){
-            Map<String,Object> accounting=(Map)key;
-            String operateType=(String)accounting.get("optType");
-            accounting.put("tableName","MB_PROD_CHARGE");
-            Map<String, Object> data;
-            if("I".equals(operateType)) {
-                data = (Map) accounting.get("newData");
-            }else{
-                data = (Map) accounting.get("oldData");
-            }
-            JSONObject keyValue = new JSONObject();
-            keyValue.put("PROD_TYPE",this.prodType);
-            keyValue.put("FEE_TYPE",data.get("feeType"));
             saveProdParaDifference(accountingNo, accounting, keyValue, seqNo);
         }
     }
