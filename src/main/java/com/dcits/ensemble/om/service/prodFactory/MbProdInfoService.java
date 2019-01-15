@@ -157,7 +157,7 @@ public class MbProdInfoService {
             MbEventInfo eventInfo= new MbEventInfo();
             Map<String,MbEventAttr> mbEventAttrMap=new LinkedHashMap<>();
             String eventKey=mbProdDefine.getAssembleId();
-            String baseEventKey= eventKey.substring(eventKey.length()-prodType.length())+baseType;
+            String baseEventKey= eventKey.split("_")[0]+ "_"+baseType;
             eventInfo.setMbEventType(mbEventTypeRepository.findByEventType(mbProdDefine.getAssembleId()));
             List<MbEventAttr> mbEventAttrGroupList=new ArrayList<>();
             List<MbEventAttr> mbEventAttrList=mbEventAttrRepository.findByEventTypeOrderByPageCodePageSeqNoAsc(eventKey);
