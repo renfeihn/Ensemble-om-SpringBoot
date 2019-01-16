@@ -19,10 +19,10 @@ import java.io.Serializable;
 public class OmMenu implements Serializable {
     public OmMenu () {}
 
-    public OmMenu(String menuSeqNo, String menuId, String menuName, String menuParentId, String menuLevel, String menuStatus, String menuIcon, String menuComponent,String menuTitle) {
+    public OmMenu(String menuSeqNo, String menuId, String menuParams, String menuParentId, String menuLevel, String menuStatus, String menuIcon, String menuComponent,String menuTitle) {
         this.menuSeqNo = menuSeqNo;
         this.menuId = menuId;
-        this.menuName = menuName;
+        this.menuParams = menuParams;
         this.menuParentId = menuParentId;
         this.menuLevel = menuLevel;
         this.menuStatus = menuStatus;
@@ -36,8 +36,8 @@ public class OmMenu implements Serializable {
     private String menuSeqNo;
     @Column(name = "menu_id")
     private String menuId;
-    @Column(name = "menu_name")
-    private String menuName;
+    @Column(name = "menu_params")
+    private String menuParams;
     @Column(name="menuTitle")
     private String menuTitle;
     @Column(name = "menu_parent_id")
@@ -56,7 +56,7 @@ public class OmMenu implements Serializable {
         return "OmMenu{" +
                 "menuSeqNo='" + menuSeqNo + '\'' +
                 ", menuId='" + menuId + '\'' +
-                ", menuName='" + menuName + '\'' +
+                ", menuName='" + menuParams + '\'' +
                 ", menuParentId='" + menuParentId + '\'' +
                 ", menuLevel='" + menuLevel + '\'' +
                 ", menuTitle='" + menuTitle + '\'' +

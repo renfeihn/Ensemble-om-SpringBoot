@@ -4,15 +4,13 @@ import com.dcits.ensemble.om.model.dbmodel.MbEventAttr;
 import com.dcits.ensemble.om.model.dbmodel.MbEventPart;
 import com.dcits.ensemble.om.model.dbmodel.MbProdDefine;
 import com.dcits.ensemble.om.model.dbmodel.MbProdType;
+import com.dcits.ensemble.om.model.dbmodel.tables.OmTableList;
 import com.dcits.ensemble.om.model.prodFactory.MbEventInfo;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
 import com.dcits.ensemble.om.model.table.ColumnBean;
 import com.dcits.ensemble.om.repository.base.BaseTableRepositoryImpl;
 import com.dcits.ensemble.om.repository.prodFactory.*;
-import com.dcits.ensemble.om.repository.tables.GlProdAccountingRepository;
-import com.dcits.ensemble.om.repository.tables.IrlProdIntRepository;
-import com.dcits.ensemble.om.repository.tables.MbAcctStatsRepository;
-import com.dcits.ensemble.om.repository.tables.MbProdChargeRepository;
+import com.dcits.ensemble.om.repository.tables.*;
 import com.dcits.ensemble.om.table.Attr;
 import com.dcits.ensemble.om.table.DbTable;
 import com.dcits.ensemble.om.table.TableDefine;
@@ -29,6 +27,8 @@ import java.util.*;
 public class ParamTableService {
     @Resource
     private BaseTableRepositoryImpl baseTableRepository;
+    @Resource
+    private OmTableListRepository omTableListRepository;
     //1.根据表名获取参数列信息
     public List<ColumnBean> getTableColumn(String tableName){
        List<ColumnBean> columnInfoList=new ArrayList<>();
@@ -47,6 +47,14 @@ public class ParamTableService {
     public List<Map> getTableInfo(String tableName){
         List<Map> columnInfoList=baseTableRepository.findAllTable(tableName);
         return columnInfoList;
+    }
+    //获取表描述信息
+    public String getTableDesc(String tableName){
+        OmTableList omTableList= omTableListRepository.findByTableName(tableName);
+        if (omTableList != null) {
+            return omTableList.getTableDesc();
+        }else
+            return "";
     }
 }
 

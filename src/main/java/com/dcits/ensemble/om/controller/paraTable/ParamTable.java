@@ -41,7 +41,7 @@ public class ParamTable {
     @ApiOperation(value = "单表信息", notes = "获取单表信息")
     @RequestMapping("/getTableInfo")
     @ResponseBody
-    public Result getProdInfo(HttpServletResponse response, @RequestParam(value = "tableName", required = true) String tableName) {
+    public Result getTableInfo(HttpServletResponse response, @RequestParam(value = "tableName", required = true) String tableName) {
         //Map map = requestBean.getBody();
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         Map responseMap = new HashMap<>();
@@ -51,10 +51,17 @@ public class ParamTable {
         //2.根据参数列信息及表名差数据库获取数据信息
         //3.将得到的信息分为两个对象集合传到前端
         //获取表定义信息
-        OmTableList omTableList= omTableListRepository.findByTableName(tableName);
-        if (omTableList != null) {
-            responseMap.put("tableDesc",omTableList.getTableDesc());
-        }
+        responseMap.put("tableDesc",paramTableService.getTableDesc(tableName));
+        return ResultUtils.success(responseMap);
+    }
+    @RequestMapping("/getTableInfoDesc")
+    @ResponseBody
+    public Result getTableInfoDesc (HttpServletResponse response, @RequestParam(value = "tableName", required = true) String tableName) {
+        //Map map = requestBean.getBody();
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
+        Map responseMap = new HashMap<>();
+        //获取表定义信息
+       responseMap.put("tableDesc",paramTableService.getTableDesc(tableName));
         return ResultUtils.success(responseMap);
     }
     /**

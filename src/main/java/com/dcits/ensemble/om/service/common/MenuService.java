@@ -19,7 +19,7 @@ public class MenuService {
         switch (omMenu.getMenuLevel()){
             //1级菜单
             case "1":
-                reAssembleMenu.put("header",omMenu.getMenuName());
+                reAssembleMenu.put("header",omMenu.getMenuTitle());
                 break;
             //2级菜单
             case "2":
@@ -31,7 +31,7 @@ public class MenuService {
             case "3":
                 reAssembleMenu.put("title",omMenu.getMenuTitle());
                 reAssembleMenu.put("icon",omMenu.getMenuIcon());
-                reAssembleMenu.put("name",omMenu.getMenuName());
+                reAssembleMenu.put("params",omMenu.getMenuParams());
                 reAssembleMenu.put("component",omMenu.getMenuComponent());
                 break;
         }
