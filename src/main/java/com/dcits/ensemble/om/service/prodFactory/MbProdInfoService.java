@@ -114,7 +114,7 @@ public class MbProdInfoService {
         irlProdIntInfo.setIrlAmtSplitList(irlAmtSplitRepository.findAll());
         irlProdIntInfo.setIrlIntTypeList(irlIntTypeRepository.findAll());
         irlProdIntInfo.setIrlIntRateList(irlIntRateRepository.findAll());
-        irlProdIntInfo.setIrlBasisRateList(irlBasisRateRepository.findAll());
+        mbProdInfo.setIrlBasisRateList(irlBasisRateRepository.findAll());
         mbProdInfo.setIrlProdIntInfos(irlProdIntInfo);
         mbProdInfo.setIrlIntMatrices(irlIntMatrixRepository.findAll());
         //获取收费定义相关参数

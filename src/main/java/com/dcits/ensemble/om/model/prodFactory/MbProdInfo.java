@@ -28,6 +28,7 @@ public class MbProdInfo {
     private List<MbProdCharge> mbProdCharge;
     private List<GlProdMapping> glProdMappings;
     private List<IrlProdType> irlProdTypes;
+    private List<IrlBasisRate> irlBasisRateList;
 
     @Override
     public String toString() {
@@ -44,6 +45,7 @@ public class MbProdInfo {
                 ", mbProdCharge=" + mbProdCharge +
                 ", glProdMappings=" + glProdMappings +
                 ", irlProdTypes=" + irlProdTypes +
+                ", IrlBasisRate=" + irlBasisRateList +
                 '}';
     }
 }

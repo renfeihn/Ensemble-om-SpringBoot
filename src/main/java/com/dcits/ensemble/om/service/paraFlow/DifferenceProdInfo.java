@@ -86,11 +86,34 @@ public class DifferenceProdInfo {
           //产品映射(0115屏蔽对产品映射处理)
 //          glProdMapping((List)mbProdInfo.get("glProdMappings"), reqNo, operatorNo);
 //          irlProdType((List)mbProdInfo.get("irlProdType"), reqNo, operatorNo);
-
+       //利率信息
+       irlProdInt((List)mbProdInfo.get("irlProdInt"), reqNo, operatorNo);
        //参数状态
         optionPermTran(mbProdInfo,reqNo,operatorNo);
        
    }
+    //IrlProdInt
+    public void irlProdInt(List prodMap,String seqNo,String operatorNo){
+        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
+        for(Object key:prodMap){
+            Map<String,Object> irlProdInt=(Map)key;
+            String operateType=(String)irlProdInt.get("optType");
+            irlProdInt.put("tableName","IRL_PROD_INT");
+            Map<String, Object> data;
+            if("I".equals(operateType)) {
+                data = (Map) irlProdInt.get("newData");
+            }else{
+                data = (Map) irlProdInt.get("oldData");
+            }
+            JSONObject keyValue = new JSONObject();
+            keyValue.put("PROD_TYPE",data.get("prodType"));
+            keyValue.put("EVENT_TYPE",data.get("eventType"));
+            keyValue.put("INT_CLASS",data.get("intClass"));
+            keyValue.put("SPLIT_ID",data.get("splitId"));
+            keyValue.put("RULEID",data.get("ruleid"));
+            saveProdParaDifference(accountingNo, irlProdInt, keyValue, seqNo);
+        }
+    }
     public void irlProdType(List prodMap,String seqNo,String operatorNo){
         String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
         for(Object key:prodMap){
@@ -165,19 +188,6 @@ public class DifferenceProdInfo {
             keyValue.put("PROD_TYPE",this.prodType);
             keyValue.put("FEE_TYPE",data.get("feeType"));
             saveProdParaDifference(accountingNo, charge, keyValue, seqNo);
-        }
-    }
-    //IrlProdInt
-    public void irlProdInt(Map prodMap,String seqNo,String operatorNo){
-        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
-        for(Object key:prodMap.keySet()){
-            Map<String,Object> accounting=(Map)prodMap.get(key);
-            Map<String,Object> oldData=(Map)accounting.get("oldData");
-            JSONObject keyValue = new JSONObject();
-            keyValue.put("PROD_TYPE",oldData.get("PROD_TYPE"));
-            keyValue.put("EVENT_TYPE",oldData.get("EVENT_TYPE"));
-            keyValue.put("INT_CLASS",oldData.get("INT_CLASS"));
-            saveProdParaDifference(accountingNo, accounting, keyValue, seqNo);
         }
     }
     //事件指标
@@ -515,7 +525,7 @@ public class DifferenceProdInfo {
         if(newData.get("prodType")!=null) {
             newData.put("prodType", this.prodType);
         }
-        if(newData.get("eventType")!=null) {
+        if(newData.get("eventType")!=null && keyValue.size()!=5) {
             newData.put("eventType", this.eventType);
         }
         String dataDui=ResourcesUtils.getJsonString(newData);

@@ -18,7 +18,6 @@ public class IrlProdIntInfo {
 
     private List<IrlIntRate> irlIntRateList;
 
-    private List<IrlBasisRate> irlBasisRateList;
 
 
     @Override
@@ -28,8 +27,6 @@ public class IrlProdIntInfo {
                 ", IrlAmtSplit=" + irlAmtSplitList +
                 ", IrlIntType=" + irlIntTypeList +
                 ", IrlIntRate=" + irlIntRateList +
-                ", IrlBasisRate=" + irlBasisRateList +
-
                 '}';
     }
 
