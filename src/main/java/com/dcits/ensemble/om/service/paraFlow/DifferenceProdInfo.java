@@ -88,10 +88,30 @@ public class DifferenceProdInfo {
        irlProdType((List)mbProdInfo.get("irlProdTypes"), reqNo, operatorNo);
        //利率信息
        irlProdInt((List)mbProdInfo.get("irlProdInt"), reqNo, operatorNo);
+       //产品变更信息
+       mbProdAmendMaping((List)mbProdInfo.get("mbProdAmendMaping"), reqNo, operatorNo);
        //参数状态
        optionPermTran(mbProdInfo,reqNo,operatorNo);
        
    }
+    //IrlProdInt
+    public void mbProdAmendMaping(List prodMap,String seqNo,String operatorNo){
+        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
+        for(Object key:prodMap){
+            Map<String,Object> mbProdAmendMaping=(Map)key;
+            String operateType=(String)mbProdAmendMaping.get("optType");
+            mbProdAmendMaping.put("tableName","MB_PROD_AMEND_MAPING");
+            Map<String, Object> data;
+            if("I".equals(operateType)) {
+                data = (Map) mbProdAmendMaping.get("newData");
+            }else{
+                data = (Map) mbProdAmendMaping.get("oldData");
+            }
+            JSONObject keyValue = new JSONObject();
+            keyValue.put("PROD_TYPE",data.get("prodType"));
+            saveProdParaDifference(accountingNo, mbProdAmendMaping, keyValue, seqNo);
+        }
+    }
     //IrlProdInt
     public void irlProdInt(List prodMap,String seqNo,String operatorNo){
         String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;

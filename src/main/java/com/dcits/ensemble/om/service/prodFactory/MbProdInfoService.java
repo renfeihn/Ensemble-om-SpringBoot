@@ -4,7 +4,6 @@ import com.dcits.ensemble.om.model.dbmodel.MbEventAttr;
 import com.dcits.ensemble.om.model.dbmodel.MbEventPart;
 import com.dcits.ensemble.om.model.dbmodel.MbProdDefine;
 import com.dcits.ensemble.om.model.dbmodel.MbProdType;
-import com.dcits.ensemble.om.model.dbmodel.tables.*;
 import com.dcits.ensemble.om.model.prodFactory.IrlProdIntInfo;
 import com.dcits.ensemble.om.model.prodFactory.MbColumnInfo;
 import com.dcits.ensemble.om.model.prodFactory.MbEventInfo;
@@ -56,6 +55,8 @@ public class MbProdInfoService {
     private IrlBasisRateRepository irlBasisRateRepository;
     @Autowired
     private IrlProdTypeRepository irlProdTypeRepository;
+    @Autowired
+    private MbProdAmendMapingRepository mbProdAmendMapingRepository;
     @Resource
     private MbAttrInfoService mbAttrInfoService;
     public MbProdInfo getProdInfo(String prodType){
@@ -123,10 +124,12 @@ public class MbProdInfoService {
         mbProdInfo.setGlProdMappings(glProdMappingRepository.findByProdType(prodType));
         //获取定价工厂产品信息
         mbProdInfo.setIrlProdTypes(irlProdTypeRepository.findByProdType(prodType));
+        //获取产品变更信息表参数
+        mbProdInfo.setMbProdAmendMaping(mbProdAmendMapingRepository.findByProdType(prodType));
         return mbProdInfo;
     }
     //保存产品所有属性(只有发布时生效)
-    public void saveProdInfo(MbProdInfo mbProdInfo){
+    public void rodInfo(MbProdInfo mbProdInfo){
         MbProdType mbProdType=mbProdInfo.getProdType();
         Map<String,MbEventInfo> mbEventInfoList=mbProdInfo.getMbEventInfos();
         Map<String,MbProdDefine> mbProdDefineList=mbProdInfo.getProdDefines();
