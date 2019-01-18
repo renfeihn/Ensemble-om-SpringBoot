@@ -64,32 +64,32 @@ public class DifferenceProdInfo {
        if(eventInfo==null){
            return;
        }
-        eventTypeNo=null;
-        eventPartNo=null;
-        eventAttrNo=null;
-        for (Object key : eventInfo.keySet()) {
-            Map<String,Map> eventOne=(Map)eventInfo.get(key);
-            String eventType=(String)key;
-            //如果操作类型为复制则事件名字以新的产品类型为名
-            if("I".equals(this.optionType)){
-                eventType=  eventType.substring(0,eventType.indexOf("_")+1)+this.prodType;
-            }
-            this.eventType=eventType;
-            eventTypeTran(ResourcesUtils.getMap(eventOne.get("mbEventType")), reqNo, operatorNo);
-            eventAttrTran(ResourcesUtils.getMap(eventOne.get("mbEventAttrs")), reqNo, operatorNo);
-            eventPartTran(ResourcesUtils.getMap(eventOne.get("mbEventParts")), reqNo, operatorNo);
-        }
-        //费用信息
-          mbProdCharge((List)mbProdInfo.get("mbProdCharge"), reqNo, operatorNo);
-        //核算信息
-          glProdAccounting((List)mbProdInfo.get("glProdAccounting"), reqNo, operatorNo);
-          //产品映射(0115屏蔽对产品映射处理)
-//          glProdMapping((List)mbProdInfo.get("glProdMappings"), reqNo, operatorNo);
-//          irlProdType((List)mbProdInfo.get("irlProdType"), reqNo, operatorNo);
+       eventTypeNo=null;
+       eventPartNo=null;
+       eventAttrNo=null;
+       for (Object key : eventInfo.keySet()) {
+           Map<String,Map> eventOne=(Map)eventInfo.get(key);
+           String eventType=(String)key;
+           //如果操作类型为复制则事件名字以新的产品类型为名
+           if("I".equals(this.optionType)){
+               eventType=  eventType.substring(0,eventType.indexOf("_")+1)+this.prodType;
+           }
+           this.eventType=eventType;
+           eventTypeTran(ResourcesUtils.getMap(eventOne.get("mbEventType")), reqNo, operatorNo);
+           eventAttrTran(ResourcesUtils.getMap(eventOne.get("mbEventAttrs")), reqNo, operatorNo);
+           eventPartTran(ResourcesUtils.getMap(eventOne.get("mbEventParts")), reqNo, operatorNo);
+       }
+       //费用信息
+       mbProdCharge((List)mbProdInfo.get("mbProdCharge"), reqNo, operatorNo);
+       //核算信息
+       glProdAccounting((List)mbProdInfo.get("glProdAccounting"), reqNo, operatorNo);
+       //产品映射(0115屏蔽对产品映射处理)
+       glProdMapping((List)mbProdInfo.get("glProdMappings"), reqNo, operatorNo);
+       irlProdType((List)mbProdInfo.get("irlProdTypes"), reqNo, operatorNo);
        //利率信息
        irlProdInt((List)mbProdInfo.get("irlProdInt"), reqNo, operatorNo);
        //参数状态
-        optionPermTran(mbProdInfo,reqNo,operatorNo);
+       optionPermTran(mbProdInfo,reqNo,operatorNo);
        
    }
     //IrlProdInt
@@ -147,6 +147,7 @@ public class DifferenceProdInfo {
             }
             JSONObject keyValue = new JSONObject();
             keyValue.put("MAPPING_TYPE",data.get("mappingType"));
+            keyValue.put("PROD_TYPE",data.get("prodType"));
             saveProdParaDifference(accountingNo, mapping, keyValue, seqNo);
         }
     }
