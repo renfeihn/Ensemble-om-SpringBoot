@@ -5,10 +5,12 @@ import com.dcits.ensemble.om.controller.model.ResultUtils;
 import com.dcits.ensemble.om.model.dbmodel.MbProdType;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessMainFlow;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessRelationHist;
+import com.dcits.ensemble.om.model.dbmodel.tables.OmTableList;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessMainFlowRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRelationHistRepository;
+import com.dcits.ensemble.om.repository.tables.OmTableListRepository;
 import com.dcits.ensemble.om.service.dataAssembling.ProdDataAssembling;
 import com.dcits.ensemble.om.service.paraFlow.FlowManagement;
 import com.dcits.ensemble.om.service.prodFactory.MbProdInfoService;
@@ -44,6 +46,8 @@ public class ApplicationAction {
     public OmProcessMainFlowRepository omProcessMainFlowRepository;
     @Resource
     public OmProcessRelationHistRepository omProcessRelationHistRepository;
+    @Resource
+    public OmTableListRepository omTableListRepository;
     @Resource
     public OmProcessRecordHistRepository omProcessRecordHistRepository;
     @Resource
@@ -111,6 +115,18 @@ public class ApplicationAction {
         String seqNo=(String) map.get("seqNo");
         List<OmProcessRelationHist> mbProdTypeList = omProcessRelationHistRepository.findByMainSeqNoGroupBy(seqNo);
         return ResultUtils.success(mbProdTypeList);
+    }
+
+    /**
+     *
+     * 获取待发布数据的单表的描述
+     * */
+    @RequestMapping("/getTableByTableName")
+    @ResponseBody
+    public Result getTableByTableName(HttpServletResponse response, @RequestBody Map map){
+        String tableName=(String) map.get("tableName");
+        OmTableList omTableLists = omTableListRepository.findByTableName(tableName);
+        return ResultUtils.success(omTableLists);
     }
 
 }
