@@ -117,16 +117,4 @@ public class ApplicationAction {
         return ResultUtils.success(mbProdTypeList);
     }
 
-    /**
-     *
-     * 获取待发布数据的单表的描述
-     * */
-    @RequestMapping("/getTableByTableName")
-    @ResponseBody
-    public Result getTableByTableName(HttpServletResponse response, @RequestBody Map map){
-        String tableName=(String) map.get("tableName");
-        OmTableList omTableLists = omTableListRepository.findByTableName(tableName);
-        return ResultUtils.success(omTableLists);
-    }
-
 }
