@@ -83,6 +83,7 @@ public class DifferenceProdInfo {
        mbProdCharge((List)mbProdInfo.get("mbProdCharge"), reqNo, operatorNo);
        //核算信息
        glProdAccounting((List)mbProdInfo.get("glProdAccounting"), reqNo, operatorNo);
+       glProdCodeMapping((List)mbProdInfo.get("glProdCodeMappings"), reqNo, operatorNo);
        //产品映射(0115屏蔽对产品映射处理)
        glProdMapping((List)mbProdInfo.get("glProdMappings"), reqNo, operatorNo);
        irlProdType((List)mbProdInfo.get("irlProdTypes"), reqNo, operatorNo);
@@ -94,6 +95,26 @@ public class DifferenceProdInfo {
        optionPermTran(mbProdInfo,reqNo,operatorNo);
        
    }
+    //glProdCodeMapping
+    public void glProdCodeMapping(List prodMap,String seqNo,String operatorNo){
+        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
+        for(Object key:prodMap){
+            Map<String,Object> glProdCodeMapping=(Map)key;
+            String operateType=(String)glProdCodeMapping.get("optType");
+            glProdCodeMapping.put("tableName","GL_PROD_CODE_MAPPING");
+            Map<String, Object> data;
+            if("I".equals(operateType)) {
+                data = (Map) glProdCodeMapping.get("newData");
+            }else{
+                data = (Map) glProdCodeMapping.get("oldData");
+            }
+            JSONObject keyValue = new JSONObject();
+            keyValue.put("PROD_TYPE",data.get("prodType"));
+            keyValue.put("STATUS",data.get("status"));
+            keyValue.put("AMT_TYPE",data.get("amtType"));
+            saveProdParaDifference(accountingNo, glProdCodeMapping, keyValue, seqNo);
+        }
+    }
     //IrlProdInt
     public void mbProdAmendMaping(List prodMap,String seqNo,String operatorNo){
         String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
