@@ -129,7 +129,7 @@ public class SystemTable {
                 systemTableRepositoryImpl.updateTable(tableName,data,pkValue);
             }
         }
-        return null;
+        return ResultUtils.success();
     }
 
     /*
