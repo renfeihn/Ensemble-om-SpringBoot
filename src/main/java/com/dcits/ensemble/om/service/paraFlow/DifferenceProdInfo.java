@@ -89,12 +89,52 @@ public class DifferenceProdInfo {
        irlProdType((List)mbProdInfo.get("irlProdTypes"), reqNo, operatorNo);
        //利率信息
        irlProdInt((List)mbProdInfo.get("irlProdInt"), reqNo, operatorNo);
+       irlIntMatrix((List)mbProdInfo.get("irlIntMatrices"), reqNo, operatorNo);
+       intBasisRate((List)mbProdInfo.get("irlBasisRateList"), reqNo, operatorNo);
        //产品变更信息
        mbProdAmendMaping((List)mbProdInfo.get("mbProdAmendMaping"), reqNo, operatorNo);
        //参数状态
        optionPermTran(mbProdInfo,reqNo,operatorNo);
        
    }
+    //irlIntMatrix
+    public void irlIntMatrix(List prodMap,String seqNo,String operatorNo){
+        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
+        for(Object key:prodMap){
+            Map<String,Object> irlIntMatrix=(Map)key;
+            String operateType=(String)irlIntMatrix.get("optType");
+            irlIntMatrix.put("tableName","IRL_INT_MATRIX");
+            Map<String, Object> data;
+            if("I".equals(operateType)) {
+                data = (Map) irlIntMatrix.get("newData");
+            }else{
+                data = (Map) irlIntMatrix.get("oldData");
+            }
+            JSONObject keyValue = new JSONObject();
+            keyValue.put("MATRIX_NO",data.get("matrixNo"));
+            saveProdParaDifference(accountingNo, irlIntMatrix, keyValue, seqNo);
+        }
+    }
+    //intBasisRate
+    public void intBasisRate(List prodMap,String seqNo,String operatorNo){
+        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
+        for(Object key:prodMap){
+            Map<String,Object> intBasisRate=(Map)key;
+            String operateType=(String)intBasisRate.get("optType");
+            intBasisRate.put("tableName","IRL_BASIS_RATE");
+            Map<String, Object> data;
+            if("I".equals(operateType)) {
+                data = (Map) intBasisRate.get("newData");
+            }else{
+                data = (Map) intBasisRate.get("oldData");
+            }
+            JSONObject keyValue = new JSONObject();
+            keyValue.put("INT_BASIS",data.get("intBasis"));
+            keyValue.put("CCY",data.get("ccy"));
+            keyValue.put("EFFECT_DATE",data.get("effectDate"));
+            saveProdParaDifference(accountingNo, intBasisRate, keyValue, seqNo);
+        }
+    }
     //glProdCodeMapping
     public void glProdCodeMapping(List prodMap,String seqNo,String operatorNo){
         String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
