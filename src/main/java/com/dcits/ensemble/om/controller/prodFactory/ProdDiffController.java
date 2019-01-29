@@ -135,4 +135,20 @@ public class ProdDiffController {
 
         return ResultUtils.success(responseMap);
     }
+    //产品信息对比  获取各个产品信息
+    @RequestMapping("/getProdCompareDiff")
+    @ResponseBody
+    public Result getProdCompareDiff(HttpServletResponse response, @RequestBody Map map) {
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
+        Map responseMap = new HashMap<>();
+        //进行对比的产品集合
+        ArrayList prodArr = (ArrayList)map.get("prodType");
+        if(prodArr!=null){
+            for(int index=0; index< prodArr.size(); index++){
+                String prodType = prodArr.get(index).toString();
+                responseMap.put(prodType,mbProdInfoService.getProdAllInfo(prodType));
+            }
+        }
+        return ResultUtils.success(responseMap);
+    }
 }

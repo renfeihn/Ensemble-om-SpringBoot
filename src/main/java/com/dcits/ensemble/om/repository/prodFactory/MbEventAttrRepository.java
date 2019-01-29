@@ -17,6 +17,7 @@ import java.util.List;
 public interface MbEventAttrRepository extends JpaRepository<MbEventAttr,MbEventAttrKeysClass> ,JpaSpecificationExecutor<MbEventAttr>{
      @Query("select s from MbEventAttr s  where s.eventType = :eventType order by s.pageCode,s.pageSeqNo Asc" )
      List<MbEventAttr> findByEventTypeOrderByPageCodePageSeqNoAsc(@Param("eventType") String eventType);
+     List<MbEventAttr> findByEventType(String eventType);
      public MbEventAttr findByEventTypeAndAssembleId(String eventType,String assembleId);
      @Transactional
      @Modifying

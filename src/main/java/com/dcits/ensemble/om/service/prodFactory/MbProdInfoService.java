@@ -1,9 +1,6 @@
 package com.dcits.ensemble.om.service.prodFactory;
 
-import com.dcits.ensemble.om.model.dbmodel.MbEventAttr;
-import com.dcits.ensemble.om.model.dbmodel.MbEventPart;
-import com.dcits.ensemble.om.model.dbmodel.MbProdDefine;
-import com.dcits.ensemble.om.model.dbmodel.MbProdType;
+import com.dcits.ensemble.om.model.dbmodel.*;
 import com.dcits.ensemble.om.model.prodFactory.IrlProdIntInfo;
 import com.dcits.ensemble.om.model.prodFactory.MbColumnInfo;
 import com.dcits.ensemble.om.model.prodFactory.MbEventInfo;
@@ -284,6 +281,63 @@ public class MbProdInfoService {
            assembleColumnList.put(key,assembleColumn);
        }
         mbProdInfo.setMbColumnInfo(assembleColumnList);
+    }
+
+    //获取产品基本信息，参数信息  事件信息
+    public Map getProdAllInfo(String prodType){
+        Map responseMap = new HashMap<>();
+        //产品基本信息(mbProdType)
+        MbProdType mbProdType = mbProdTypeRepository.findByProdType(prodType);
+        //产品对应的基础产品代码
+        String baseProdType = mbProdType.getBaseProdType();
+        if(mbProdType != null) {
+            //组装产品基本信息
+            responseMap.put("prodType", mbProdType);
+            //基础产品标识
+            Boolean isBase = mbProdType.getProdRange().equals("B")?true:false;
+            //组装产品参数（mbProdDefine）
+            List<MbProdDefine> mbProdDefineList = mbProdDefineRepository.findByProdType(prodType);
+            if(!isBase){
+                //可售产品时 获取基础产品信息
+                if(!baseProdType.isEmpty()) {
+                    List<MbProdDefine> baseDefineInfo = mbProdDefineRepository.findByProdType(baseProdType);
+                    for (int defineIndex = 0; defineIndex < baseDefineInfo.size(); defineIndex++) {
+                        //获取参数状态为不可编辑||不可见参数
+                        String optPerm = baseDefineInfo.get(defineIndex).getOptionPermissions();
+                        if (!"E".equals(optPerm) && optPerm!=null && optPerm !="") {
+                            baseDefineInfo.get(defineIndex).setProdType(prodType);
+                            mbProdDefineList.add(baseDefineInfo.get(defineIndex));
+                        }
+                    }
+                }
+            }
+            responseMap.put("prodDefine", mbProdDefineList);
+            //组装产品事件参数(mbEventAttr)
+            if (mbProdDefineList != null) {
+                for (int index = 0; index < mbProdDefineList.size(); index++) {
+                    if (mbProdDefineList.get(index).getAssembleType().equals("EVENT")) {
+                        String eventType = mbProdDefineList.get(index).getAssembleId();
+                        List<MbEventAttr> mbEventAttrList = mbEventAttrRepository.findByEventType(eventType);
+                        if(!isBase){
+                            //可售产品时  获取基础产品事件参数
+                            if(!baseProdType.isEmpty()) {
+                                String baseEventType = eventType.split("_")[0] + "_"+baseProdType;
+                                List<MbEventAttr> baseEventList = mbEventAttrRepository.findByEventType(baseEventType);
+                                for (int eventIndex = 0; eventIndex < baseEventList.size(); eventIndex++) {
+                                    String optPerm = baseEventList.get(eventIndex).getOptionPermissions();
+                                    if (!"E".equals(optPerm) && optPerm!=null && optPerm!="") {
+                                        baseEventList.get(eventIndex).setEventType(eventType);
+                                        mbEventAttrList.add(baseEventList.get(eventIndex));
+                                    }
+                                }
+                            }
+                        }
+                        responseMap.put(eventType, mbEventAttrList);
+                    }
+                }
+            }
+        }
+        return  responseMap;
     }
 }
 
