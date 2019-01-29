@@ -14,6 +14,7 @@ import com.dcits.ensemble.om.util.ResourcesUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.io.UnsupportedEncodingException;
@@ -49,6 +50,7 @@ public class DifferenceProdInfo {
     private String eventPartNo;
     private String eventAttrNo;
     //记录产品流程信息
+    @Transactional(rollbackFor = Exception.class)
    public void insertProdDifferenceInfo(Map mbProdInfo,String reqNo){
        String operatorNo= omProcessDetailHistRepository.findBySeqNoMax(reqNo)==null?"1": omProcessDetailHistRepository.findBySeqNoMax(reqNo);
        //1判断上送数据是否有修改操作
@@ -95,11 +97,10 @@ public class DifferenceProdInfo {
        mbProdAmendMaping((List)mbProdInfo.get("mbProdAmendMaping"), reqNo, operatorNo);
        //参数状态
        optionPermTran(mbProdInfo,reqNo,operatorNo);
-       
    }
     //irlIntMatrix
     public void irlIntMatrix(List prodMap,String seqNo,String operatorNo){
-        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");;
+        String accountingNo=processCombManagement.saveCombInfo(seqNo, operatorNo,this.prodType,this.prodDesc, "0");
         for(Object key:prodMap){
             Map<String,Object> irlIntMatrix=(Map)key;
             String operateType=(String)irlIntMatrix.get("optType");

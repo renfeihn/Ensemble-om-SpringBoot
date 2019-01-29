@@ -11,6 +11,7 @@ import com.dcits.ensemble.om.repository.paraFlow.OmProcessRelationHistRepository
 import com.dcits.ensemble.om.util.ResourcesUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
@@ -121,12 +122,14 @@ public class FlowManagement {
             sumProcessInfo(mainSeqNo, userId, status, omProcessMainFlow.getDtlSeqNo(), remark, isApproved);
         }
     }
+    @Transactional(rollbackFor = Exception.class)
     public void onlyUpdateDel(OmProcessMainFlow omProcessMainFlow,String userName){
         BigDecimal dtlSeqNo = omProcessMainFlow.getDtlSeqNo();
         omProcessMainFlow.setDtlSeqNo(dtlSeqNo);
         omProcessMainFlow.setStatus("1");
         omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
         sumProcessInfo(omProcessMainFlow.getMainSeqNo(), userName, "1", omProcessMainFlow.getDtlSeqNo(),null,null);
+
     }
     //删除订单信息
     public void deleteTask(String tranId,String seqNo){

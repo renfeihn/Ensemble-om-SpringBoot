@@ -143,7 +143,7 @@ public class SystemTable {
         String parentUserId = userId;
         List<OmMenu> omMenus = new ArrayList<>();
         List<OmRole> omRoles = new ArrayList<>();
-        List<OmUser> omUser = new ArrayList<>();
+        List<OmUser> omUser ;
         List<OmMenuRole> omMenuRoles = new ArrayList<>();
         List<OmUserRole> omUserRoles1 = new ArrayList<>();
 
