@@ -478,23 +478,27 @@ public class DifferenceProdInfo {
         String maxPageSeqNo = "";
         if("MB_PROD_DEFINE".equals(table)){
             List<MbProdDefine> mbProdDefines = mbProdDefineRepository.findByProdTypeAndPageCode(key,pageCode);
-            int pageSeqNo = mbProdDefines.get(0).getPageSeqNo();
-            for(int i=1; i<mbProdDefines.size(); i++){
-                if(pageSeqNo<mbProdDefines.get(i).getPageSeqNo()){
-                    pageSeqNo = mbProdDefines.get(i).getPageSeqNo();
+            if(mbProdDefines.size()>0) {
+                int pageSeqNo = mbProdDefines.get(0).getPageSeqNo();
+                for (int i = 1; i < mbProdDefines.size(); i++) {
+                    if (pageSeqNo < mbProdDefines.get(i).getPageSeqNo()) {
+                        pageSeqNo = mbProdDefines.get(i).getPageSeqNo();
+                    }
                 }
+                maxPageSeqNo = pageSeqNo + "";
             }
-            maxPageSeqNo = pageSeqNo+"";
         }
         if("MB_EVENT_ATTR".equals(table)){
             List<MbEventAttr> mbEventAttrs = mbEventAttrRepository.findByEventTypeOrderByPageCodePageSeqNoAsc(key);
-            int pageSeqNo = mbEventAttrs.get(0).getPageSeqNo();
-            for(int i=1; i<mbEventAttrs.size(); i++){
-                if(pageSeqNo<mbEventAttrs.get(i).getPageSeqNo()){
-                    pageSeqNo = mbEventAttrs.get(i).getPageSeqNo();
+            if(mbEventAttrs.size()>0) {
+                int pageSeqNo = mbEventAttrs.get(0).getPageSeqNo();
+                for (int i = 1; i < mbEventAttrs.size(); i++) {
+                    if (pageSeqNo < mbEventAttrs.get(i).getPageSeqNo()) {
+                        pageSeqNo = mbEventAttrs.get(i).getPageSeqNo();
+                    }
                 }
+                maxPageSeqNo = pageSeqNo + "";
             }
-            maxPageSeqNo = pageSeqNo+"";
         }
         return maxPageSeqNo;
     }
@@ -503,23 +507,27 @@ public class DifferenceProdInfo {
         String maxSeqNo = "";
         if("MB_EVENT_ATTR".equals(table)){
             List<MbEventAttr> mbEventAttrs = mbEventAttrRepository.findByEventTypeOrderByPageCodePageSeqNoAsc(key);
-            int seqNo = Integer.parseInt(mbEventAttrs.get(0).getSeqNo());
-            for(int i=1; i<mbEventAttrs.size(); i++){
-                if(seqNo<Integer.parseInt(mbEventAttrs.get(i).getSeqNo())){
-                    seqNo = Integer.parseInt(mbEventAttrs.get(i).getSeqNo());
+            if(mbEventAttrs.size()>0) {
+                int seqNo = Integer.parseInt(mbEventAttrs.get(0).getSeqNo());
+                for (int i = 1; i < mbEventAttrs.size(); i++) {
+                    if (seqNo < Integer.parseInt(mbEventAttrs.get(i).getSeqNo())) {
+                        seqNo = Integer.parseInt(mbEventAttrs.get(i).getSeqNo());
+                    }
                 }
+                maxSeqNo = seqNo + "";
             }
-            maxSeqNo = seqNo+"";
         }
         if("MB_PROD_DEFINE".equals(table)){
             List<MbProdDefine> mbProdDefines = mbProdDefineRepository.findByProdType(key);
-            int seqNo = Integer.parseInt(mbProdDefines.get(0).getSeqNo());
-            for(int i=1; i<mbProdDefines.size(); i++){
-                if(seqNo<Integer.parseInt(mbProdDefines.get(i).getSeqNo())){
-                    seqNo = Integer.parseInt(mbProdDefines.get(i).getSeqNo());
+            if(mbProdDefines.size()>0) {
+                int seqNo = Integer.parseInt(mbProdDefines.get(0).getSeqNo());
+                for (int i = 1; i < mbProdDefines.size(); i++) {
+                    if (seqNo < Integer.parseInt(mbProdDefines.get(i).getSeqNo())) {
+                        seqNo = Integer.parseInt(mbProdDefines.get(i).getSeqNo());
+                    }
                 }
+                maxSeqNo = seqNo + "";
             }
-            maxSeqNo = seqNo+"";
         }
         return maxSeqNo;
     }
