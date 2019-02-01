@@ -1,6 +1,10 @@
 server:
   port: 8004
 spring:
+   servlet:
+     multipart:
+       maxFileSize: 10Mb
+       maxRequestSize: 100Mb
    datasource:
      driver-class-name: com.mysql.cj.jdbc.Driver
      url: jdbc:mysql://localhost:3306/ensemble?charset=utf8mb4&serverTimezone=UTC&useSSL=false
