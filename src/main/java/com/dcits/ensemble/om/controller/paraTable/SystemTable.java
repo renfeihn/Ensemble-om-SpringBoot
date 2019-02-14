@@ -91,8 +91,8 @@ public class SystemTable {
 
 
     /*
-    * 用户，菜单，角色，权限表信息保存
-    * */
+     * 用户，菜单，角色，权限表信息保存
+     * */
     @RequestMapping("/saveSysTable")
     @ResponseBody
     public Result saveTable(HttpServletResponse response, @RequestBody Map map) {
@@ -112,7 +112,7 @@ public class SystemTable {
             }else{
                 data = (Map) dataMap.get("newData");
             }
-            
+
             //获取主键对象
             JSONObject pkValue=new JSONObject();
             for(int j=0;j<keySet.split(",").length;j++){
@@ -133,8 +133,8 @@ public class SystemTable {
     }
 
     /*
-    * 通过用户  获取用户所能访问的菜单信息
-    * */
+     * 通过用户  获取用户所能访问的菜单信息
+     * */
     @RequestMapping("/getSysInfoByUser")
     @ResponseBody
     public Result getSysInfoByUser(HttpServletResponse response, @RequestParam(value = "userId", required = true) String userId) {
@@ -143,7 +143,7 @@ public class SystemTable {
         String parentUserId = userId;
         List<OmMenu> omMenus = new ArrayList<>();
         List<OmRole> omRoles = new ArrayList<>();
-        List<OmUser> omUser ;
+        List<OmUser> omUser = new ArrayList<>();
         List<OmMenuRole> omMenuRoles = new ArrayList<>();
         List<OmUserRole> omUserRoles1 = new ArrayList<>();
 
@@ -213,6 +213,75 @@ public class SystemTable {
                 responseMap.put("userRoleInfo", null);
             }
         }
-       return ResultUtils.success(responseMap);
+        return ResultUtils.success(responseMap);
     }
+
+    /*
+     * 通过用户  获取用户所能访问的菜单信息
+     * */
+    @RequestMapping("/getSysUserInfoByUser")
+    @ResponseBody
+    public Result getSysUserInfoByUser(HttpServletResponse response, @RequestParam(value = "userId", required = true) String userId) {
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
+        Map responseMap = new HashMap<>();
+        List<OmMenu> omMenus = new ArrayList<>();
+        List<OmRole> omRoles = new ArrayList<>();
+        List<OmUser> omUser = new ArrayList<>();
+        List<OmMenuRole> omMenuRoles = new ArrayList<>();
+        List<OmUserRole> omUserRoles1 = new ArrayList<>();
+
+        String userLevel = omUserRepository.findByUserId(userId).getUserLevel();
+
+        //获取用户信息
+        OmUser omUsers = omUserRepository.findByUserId(userId);
+        List<OmUser> omUserList = new ArrayList();
+        omUserList.add(omUsers);
+        //获取用户的角色信息
+        if (omUsers != null) {
+            OmUserRole omUserRoles = omUserRoleRepository.findByUserId(omUsers.getUserId());
+            omUserRoles1.add(omUserRoles);
+            if (omUserRoles != null) {
+                //组装角色信息
+                omRoles.add(omRoleRepository.findByRoleId(omUserRoles.getRoleId()));
+                //通过角色获取菜单信息
+                List<OmMenuRole> omMenuRole = omMenuRoleRepository.findByRoleId(omUserRoles.getRoleId());
+                for (int j = 0; j < omMenuRole.size(); j++) {
+                    //组装角色菜单信息
+                    omMenuRoles.add(omMenuRole.get(j));
+                    //获取菜单信息
+                    OmMenu omMenu = omMenuRepository.findByMenuId(omMenuRole.get(j).getMenuId());
+                    if (omMenu != null) {
+                        //去重
+                        Boolean flag = false;
+                        for(int k=0;k<omMenus.size();k++){
+                            if(omMenus.get(k).getMenuSeqNo().equals(omMenu.getMenuSeqNo())){
+                                flag = true;
+                                break;
+                            }
+                        }
+                        if(!flag){
+                            omMenus.add(omMenu);
+                        }
+                    }
+                }
+            }
+            responseMap.put("columnInfo", omMenus);
+            responseMap.put("roleInfo", omRoles);
+            responseMap.put("userInfo", omUserList);
+            responseMap.put("menuRoleInfo", omMenuRoles);
+            responseMap.put("userRoleInfo", omUserRoles1);
+
+
+        } else {
+            responseMap.put("columnInfo", null);
+            responseMap.put("roleInfo", null);
+            responseMap.put("userInfo", null);
+            responseMap.put("menuRole", null);
+            responseMap.put("menuRoleInfo", null);
+            responseMap.put("userRoleInfo", null);
+        }
+
+        return ResultUtils.success(responseMap);
+    }
+
 }
