@@ -8,6 +8,7 @@ import com.dcits.ensemble.om.model.dbmodel.tables.OmTableList;
 import com.dcits.ensemble.om.model.prodFactory.MbEventInfo;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
 import com.dcits.ensemble.om.model.table.ColumnBean;
+import com.dcits.ensemble.om.model.table.ColumnBeanTwo;
 import com.dcits.ensemble.om.repository.base.BaseTableRepositoryImpl;
 import com.dcits.ensemble.om.repository.prodFactory.*;
 import com.dcits.ensemble.om.repository.tables.*;
@@ -38,8 +39,22 @@ public class ParamTableService {
             if("TRAN_TIMESTAMP".equals(attrCode)||"TRAN_TIME".equals(attrCode)){
                 continue;
             }
-            ColumnBean column=new ColumnBean(attr.getCode(),attr.getComment(),attr.getP(),attr.getM());
+            ColumnBean column=new ColumnBean(attr.getCode(),attr.getDataType(),attr.getComment(),attr.getP(),attr.getM(),attr.getLengths());
             columnInfoList.add(column);
+        }
+        return columnInfoList;
+    }
+    //1.5根据表名获取参数列信息,给前端a-table传参数用的
+    public List<ColumnBeanTwo> getTableColumnTwo(String tableName){
+        List<ColumnBeanTwo> columnInfoList=new ArrayList<>();
+        DbTable dbTable= TableDefine.getTable(tableName);
+        for(Attr attr: dbTable.getAttr()){
+            String attrCode=attr.getCode();
+            if("TRAN_TIMESTAMP".equals(attrCode)||"TRAN_TIME".equals(attrCode)){
+                continue;
+            }
+            ColumnBeanTwo columnTwo= new ColumnBeanTwo(attr.getCode(),attr.getComment(),attr.getP(),attr.getM());
+            columnInfoList.add(columnTwo);
         }
         return columnInfoList;
     }

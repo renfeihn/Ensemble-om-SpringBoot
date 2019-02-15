@@ -46,6 +46,7 @@ public class ParamTable {
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         Map responseMap = new HashMap<>();
         //1.根据表名获取参数列信息
+        responseMap.put("columnTwo",paramTableService.getTableColumnTwo(tableName));
         responseMap.put("column",paramTableService.getTableColumn(tableName));
         responseMap.put("columnInfo",paramTableService.getTableInfo(tableName));
         //2.根据参数列信息及表名差数据库获取数据信息
