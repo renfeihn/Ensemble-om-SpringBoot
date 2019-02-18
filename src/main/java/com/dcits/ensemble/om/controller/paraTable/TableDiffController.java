@@ -8,6 +8,7 @@ import com.dcits.ensemble.om.model.dbmodel.OmProcessRelationHist;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessMainFlowRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRelationHistRepository;
+import com.dcits.ensemble.om.service.paraTable.ParamTableService;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +24,8 @@ import java.util.Map;
 
 @Controller
 public class TableDiffController {
-
+    @Resource
+    private ParamTableService paramTableService;
     @Resource
     private OmProcessRecordHistRepository omProcessRecordHistRepository;
     @Resource
@@ -64,6 +66,9 @@ public class TableDiffController {
                 temp.put("dmlType",omProcessRecordHist.getDmlType());
                 tableDiffAllList.put(tableDiffAllList.size(),temp);
             }
+        }
+        if(tranId != "") {
+            responseMap.put("columnHeard", paramTableService.getTableColumnHeard(tranId));
         }
         responseMap.put("tableInfo",tableDiffAllList);
         responseMap.put("mainFlow",omProcessMainFlow);

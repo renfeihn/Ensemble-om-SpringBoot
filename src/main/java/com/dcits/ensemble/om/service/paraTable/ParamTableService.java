@@ -9,6 +9,7 @@ import com.dcits.ensemble.om.model.prodFactory.MbEventInfo;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
 import com.dcits.ensemble.om.model.table.ColumnBean;
 import com.dcits.ensemble.om.model.table.ColumnBeanTwo;
+import com.dcits.ensemble.om.model.table.ColumnHeard;
 import com.dcits.ensemble.om.repository.base.BaseTableRepositoryImpl;
 import com.dcits.ensemble.om.repository.prodFactory.*;
 import com.dcits.ensemble.om.repository.tables.*;
@@ -61,6 +62,16 @@ public class ParamTableService {
     //2.根据参数列信息及表名差数据库获取数据信息
     public List<Map> getTableInfo(String tableName){
         List<Map> columnInfoList=baseTableRepository.findAllTable(tableName);
+        return columnInfoList;
+    }
+    //3.获取单表列信息
+    public List<ColumnHeard> getTableColumnHeard(String tableName){
+        List<ColumnHeard> columnInfoList = new ArrayList<>();
+        DbTable dbTable= TableDefine.getTable(tableName);
+        for(Attr attr: dbTable.getAttr()){
+            ColumnHeard column = new ColumnHeard(attr.getCode(),attr.getComment());
+            columnInfoList.add(column);
+        }
         return columnInfoList;
     }
     //获取表描述信息
