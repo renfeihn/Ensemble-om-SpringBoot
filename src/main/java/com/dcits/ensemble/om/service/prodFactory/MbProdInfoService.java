@@ -54,6 +54,8 @@ public class MbProdInfoService {
     private IrlProdTypeRepository irlProdTypeRepository;
     @Autowired
     private MbProdAmendMapingRepository mbProdAmendMapingRepository;
+    @Autowired
+    private MbProdGroupRepository mbProdGroupRepository;
     @Resource
     private MbAttrInfoService mbAttrInfoService;
     public MbProdInfo getProdInfo(String prodType){
@@ -95,6 +97,7 @@ public class MbProdInfoService {
             mbProdInfo.setMbEventInfos(getMbEventInfo(prodRange, prodType, baseType));
             //获取单表数据
             mbProdInfo = getProdTablesInfo(mbProdInfo,prodType);
+
         }
         return mbProdInfo;
     }
@@ -123,6 +126,8 @@ public class MbProdInfoService {
         mbProdInfo.setIrlProdTypes(irlProdTypeRepository.findByProdType(prodType));
         //获取产品变更信息表参数
         mbProdInfo.setMbProdAmendMaping(mbProdAmendMapingRepository.findByProdType(prodType));
+        //获取组合信息
+        mbProdInfo.setMbProdGroup(mbProdGroupRepository.findByProdType(prodType));
         return mbProdInfo;
     }
     //保存产品所有属性(只有发布时生效)

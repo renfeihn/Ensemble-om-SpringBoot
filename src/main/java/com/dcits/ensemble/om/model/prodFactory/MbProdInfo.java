@@ -30,7 +30,7 @@ public class MbProdInfo {
     private List<IrlProdType> irlProdTypes;
     private List<IrlBasisRate> irlBasisRateList;
     private List<MbProdAmendMaping> mbProdAmendMaping;
-
+    private List<MbProdGroup> mbProdGroup;
     @Override
     public String toString() {
         return "MbProdInfo{" +
@@ -47,6 +47,7 @@ public class MbProdInfo {
                 ", glProdMappings=" + glProdMappings +
                 ", irlProdTypes=" + irlProdTypes +
                 ", IrlBasisRate=" + irlBasisRateList +
+                ", mbProdGroups=" + mbProdGroup +
                 ", mbProdAmendMaping=" + mbProdAmendMaping +
                 '}';
     }
