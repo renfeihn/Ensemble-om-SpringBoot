@@ -1,0 +1,109 @@
+{
+    "code": "TB_PAR_VALUE",
+    "comment": "券别币种表 记录币种卷别的参数信息。",
+    "attr": [        {
+            "code": "PAR_VALUE_ID",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": true,            "P": true,            "comment": "券别代号",
+            "defaults": "",
+            "dictionary": "PAR_VALUE_ID",
+            "column": "券别代号 取值 TB_PAR_VALUE.PAR_VALUE_ID",
+            "scope": ""        }
+,        {
+            "code": "CCY",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "M": true,            "P": false,            "comment": "币种 取值 FM_CURRENCY.CCY",
+            "defaults": "",
+            "dictionary": "CCY",
+            "column": "币种",
+            "scope": ""        }
+,        {
+            "code": "PAR_VALUE",
+            "dataType": "Number",
+            "lengths": "17",
+            "precision": "2",
+            "M": false,            "P": false,            "comment": "券别",
+            "defaults": "",
+            "dictionary": "PAR_VALUE",
+            "column": "券别",
+            "scope": ""        }
+,        {
+            "code": "PAR_TYPE",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "券别类型 取值： S：纸币； C：硬币；",
+            "defaults": "",
+            "dictionary": "PAR_TYPE",
+            "column": "券别类型 取值： S：纸币； C：硬币；",
+            "scope": ""        }
+,        {
+            "code": "PAR_DESC",
+            "dataType": "Varchar",
+            "lengths": "60",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "券别描述",
+            "defaults": "",
+            "dictionary": "PAR_DESC",
+            "column": "券别描述",
+            "scope": ""        }
+,        {
+            "code": "UPDATE_DATE",
+            "dataType": "Varchar",
+            "lengths": "8",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "更新日期",
+            "defaults": "",
+            "dictionary": "UPDATE_DATE",
+            "column": "更新日期",
+            "scope": ""        }
+,        {
+            "code": "IS_SPALL",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "M": true,            "P": false,            "comment": "是否残损币 取值：Y-残损币，N-完整币",
+            "defaults": "",
+            "dictionary": "IS_SPALL",
+            "column": "是否残损币 取值：Y-残损币，N-完整币",
+            "scope": ""        }
+,        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "column": "法人代码",
+            "scope": ""        }
+,        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "column": "时间戳",
+            "scope": ""        }
+,        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,            "P": false,            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "column": "交易时间",
+            "scope": ""        }
+    ],    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "比如：人民币券别有100、50、10、5、1、0.5、0.1等；卷别类型有：S纸币、C硬币；",
+"moduleType":"尾箱参数"}

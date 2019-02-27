@@ -1,0 +1,90 @@
+{
+    "code": "CIF_CLIENT_NATURE_DEF",
+    "comment": "客户属性定义",
+    "attr": [
+        {
+            "dictionary": "CLIENT_NATURE",
+            "code": "CLIENT_NATURE",
+            "codeOld": "CLIENT_NATURE",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "defaults": "",
+            "comment": "属性类型",
+            "scope": "",
+            "M": true,
+            "P": true
+        },
+        {
+            "dictionary": "CLIENT_NATURE_DESC",
+            "code": "CLIENT_NATURE_DESC",
+            "codeOld": "CLIENT_NATURE_DESC",
+            "dataType": "Varchar",
+            "lengths": "50",
+            "precision": "",
+            "defaults": "",
+            "comment": "类型描述",
+            "scope": "",
+            "M": true,
+            "P": false
+        },
+        {
+            "code": "LOSS_IND",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "损失标志 Y-损失 N-非损失",
+            "defaults": "",
+            "dictionary": "LOSS_IND",
+            "column": "损失标志 Y-损失 N-非损失",
+            "scope": "Y:损失,N:非损失"
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "column": "法人代码",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "column": "时间戳",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "column": "交易时间",
+            "scope": ""
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "将客户分成不同的属性，便于统计、核算等的区别处理。该表记录客户的属性类型、类型描述、损失标志。",
+    "moduleType": "客户参数"
+}

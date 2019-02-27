@@ -1,0 +1,109 @@
+{
+    "code": "CIF_INDUSTRY",
+    "comment": "通用行业代码",
+    "attr": [        {
+            "code": "INDUSTRY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": true,            "P": true,            "comment": "通用行业代码",
+            "defaults": "",
+            "dictionary": "INDUSTRY",
+            "column": "通用行业代码",
+            "scope": ""        }
+,        {
+            "code": "INDUSTRY_DESC",
+            "dataType": "Varchar",
+            "lengths": "60",
+            "precision": "",
+            "M": true,            "P": false,            "comment": "说明",
+            "defaults": "",
+            "dictionary": "INDUSTRY_DESC",
+            "column": "说明",
+            "scope": ""        }
+,        {
+            "code": "PARENT_INDUSTRY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "上级通用行业代码",
+            "defaults": "",
+            "dictionary": "PARENT_INDUSTRY",
+            "column": "上级通用行业代码",
+            "scope": ""        }
+,        {
+            "code": "RISK_LEVEL",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "风险等级 H-高 L-低",
+            "defaults": "",
+            "dictionary": "RISK_LEVEL",
+            "column": "风险等级 H-高 L-低",
+            "scope": ""        }
+,        {
+            "code": "INDUSTRY_LEVEL",
+            "dataType": "Varchar",
+            "lengths": "2",
+            "precision": "",
+            "M": true,            "P": false,            "comment": "层级",
+            "defaults": "",
+            "dictionary": "INDUSTRY_LEVEL",
+            "column": "层级",
+            "scope": ""        }
+,        {
+            "code": "DETAIL_IND",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "M": true,            "P": false,            "comment": "是否明细代码 Y-是 N-否",
+            "defaults": "",
+            "dictionary": "DETAIL_IND",
+            "column": "是否明细代码 Y-是 N-否",
+            "scope": ""        }
+,        {
+            "code": "STANDARD_IND",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "M": true,            "P": false,            "comment": "是否国际代码 Y-是 N-否",
+            "defaults": "",
+            "dictionary": "STANDARD_IND",
+            "column": "是否国际代码 Y-是 N-否",
+            "scope": ""        }
+,        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "column": "法人代码",
+            "scope": ""        }
+,        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "column": "时间戳",
+            "scope": ""        }
+,        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,            "P": false,            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "column": "交易时间",
+            "scope": ""        }
+    ],    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "1、该表登记通用行业代码及其说明、层级及上下级关系、风险登记等  2、在详细客户信息维护时，可以根据此参数维护客户的行业分类",
+"moduleType":"客户参数"}

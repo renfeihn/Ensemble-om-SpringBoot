@@ -1,0 +1,89 @@
+{
+    "code": "TB_CASH_SIGN_RESON",
+    "comment": "长短款原因参数表",
+    "attr": [        {
+            "code": "SHTG_TYPE",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "M": true,            "P": true,            "comment": "处理类型 REASONID:长短款原因 ， CASHFROMTO:长短款挂账资金去向",
+            "defaults": "",
+            "dictionary": "SHTG_TYPE",
+            "column": "处理类型 REASONID:长短款原因 ， CASHFROMTO:长短款挂账资金去向",
+            "scope": ""        }
+,        {
+            "code": "SHTG_ID",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "M": true,            "P": true,            "comment": "原因代号/资金流向代号",
+            "defaults": "",
+            "dictionary": "SHTG_ID",
+            "column": "原因代号/资金流向代号",
+            "scope": ""        }
+,        {
+            "code": "SHTG_DESC",
+            "dataType": "Varchar",
+            "lengths": "50",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "原因描述/资金流向描述",
+            "defaults": "",
+            "dictionary": "SHTG_DESC",
+            "column": "原因描述/资金流向描述",
+            "scope": ""        }
+,        {
+            "code": "OVER_TRAN_TYPE",
+            "dataType": "Varchar",
+            "lengths": "4",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "长款交易类型 取值 MB_TRAN_DEF.TRAN_TYPE",
+            "defaults": "",
+            "dictionary": "OVER_TRAN_TYPE",
+            "column": "长款交易类型 取值 MB_TRAN_DEF.TRAN_TYPE",
+            "scope": ""        }
+,        {
+            "code": "SHORT_TRAN_TYPE",
+            "dataType": "Varchar",
+            "lengths": "4",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "短款交易类型 取值 MB_TRAN_DEF.TRAN_TYPE",
+            "defaults": "",
+            "dictionary": "SHORT_TRAN_TYPE",
+            "column": "短款交易类型 取值 MB_TRAN_DEF.TRAN_TYPE",
+            "scope": ""        }
+,        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "column": "法人代码",
+            "scope": ""        }
+,        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "column": "时间戳",
+            "scope": ""        }
+,        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,            "P": false,            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "column": "交易时间",
+            "scope": ""        }
+    ],    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "该表用来维护柜员在实际业务中出现现金长短款情况时，系统后续处理需要的长短钞原因、交易类型等参数信息。",
+"moduleType":"尾箱参数"}

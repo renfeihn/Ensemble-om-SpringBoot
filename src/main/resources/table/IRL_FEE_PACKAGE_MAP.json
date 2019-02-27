@@ -1,0 +1,61 @@
+{
+    "code": "IRL_FEE_PACKAGE_MAP",
+    "comment": "费用套餐费用类型关联表",
+    "attr": [
+        {
+            "dictionary": "PACKAGE_ID",
+            "code": "PACKAGE_ID",
+            "codeOld": "PACKAGE_ID",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "defaults": "",
+            "comment": "套餐代码",
+            "scope": "取自IRL_FEE_PACKAGE.PACKAGE_ID",
+            "M": true,
+            "P": true
+        },
+        {
+            "dictionary": "FEE_TYPE",
+            "code": "FEE_TYPE",
+            "codeOld": "FEE_TYPE",
+            "dataType": "Varchar",
+            "lengths": "8",
+            "precision": "",
+            "defaults": "",
+            "comment": "费用类型",
+            "scope": "取自IRL_FEE_TYPE.FEE_TYPE",
+            "M": true,
+            "P": true
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "price_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Limarket",
+    "commentDesc": ""
+}

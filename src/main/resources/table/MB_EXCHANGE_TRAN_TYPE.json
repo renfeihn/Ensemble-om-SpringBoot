@@ -1,0 +1,74 @@
+{
+    "code": "MB_EXCHANGE_TRAN_TYPE",
+    "comment": "结售汇交易类型",
+    "attr": [
+        {
+            "code": "TRAN_TYPE",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "交易类型",
+            "defaults": "",
+            "dictionary": "TRAN_TYPE",
+            "scope": ""
+        },
+        {
+            "dictionary": "EX_TYPE",
+            "code": "EX_TYPE",
+            "codeOld": "EX_TYPE",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "defaults": "",
+            "comment": "兑换类型",
+            "scope": "B：结汇\nS：售汇\nE：外币兑换",
+            "M": false,
+            "P": false
+        },
+        {
+            "dictionary": "OP_TYPE",
+            "code": "OP_TYPE",
+            "codeOld": "OP_TYPE",
+            "dataType": "Varchar",
+            "lengths": "2",
+            "precision": "",
+            "defaults": "",
+            "comment": "兑换方式",
+            "scope": "AA：账户兑账户\nCC：现金兑现金\nCA：现金兑账户\nAC：账户兑现金",
+            "M": false,
+            "P": false
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "",
+    "moduleType": "产品参数"
+}

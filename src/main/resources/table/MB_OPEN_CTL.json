@@ -1,0 +1,110 @@
+{
+    "code": "MB_OPEN_CTL",
+    "comment": "开户数量控制表",
+    "attr": [
+        {
+            "code": "CLIENT_TYPE",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "客户类型",
+            "defaults": "",
+            "dictionary": "CLIENT_TYPE",
+            "scope": "CIF_CLIENT_TYPE.CLIENT_TYPE"
+        },
+        {
+            "dictionary": "CTRL_ATTR",
+            "code": "CTRL_ATTR",
+            "codeOld": "CTRL_ATTR",
+            "dataType": "Varchar",
+            "lengths": "5",
+            "precision": "",
+            "defaults": "",
+            "comment": "控制要素",
+            "scope": "P:产品类型,A:账户属性,D:凭证类型",
+            "M": true,
+            "P": true
+        },
+        {
+            "code": "CTRL_VALUE",
+            "dataType": "Varchar",
+            "lengths": "50",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "要素取值",
+            "defaults": "",
+            "dictionary": "CTRL_VALUE",
+            "scope": ""
+        },
+        {
+            "code": "QUANTITY",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "数量",
+            "defaults": "",
+            "dictionary": "QUANTITY",
+            "scope": ""
+        },
+        {
+            "dictionary": "DEAL_FLOW",
+            "code": "DEAL_FLOW",
+            "codeOld": "DEAL_FLOW",
+            "dataType": "Varchar",
+            "lengths": "2",
+            "precision": "",
+            "defaults": "",
+            "comment": "处理方式",
+            "scope": "A:授权处理,B:拒绝处理,D:提醒处理",
+            "M": true,
+            "P": false
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "FM_COMPANY.COMPANY"
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "",
+    "moduleType": "产品参数"
+}

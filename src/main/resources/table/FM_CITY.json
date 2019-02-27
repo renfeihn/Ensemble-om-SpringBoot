@@ -1,0 +1,110 @@
+{
+    "code": "FM_CITY",
+    "comment": "城市代码",
+    "attr": [
+        {
+            "dictionary": "COUNTRY",
+            "code": "COUNTRY",
+            "codeOld": "COUNTRY",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "defaults": "",
+            "comment": "国家",
+            "scope": "FM_COUNTRY.COUNTRY",
+            "M": true,
+            "P": true
+        },
+        {
+            "dictionary": "STATE",
+            "code": "STATE",
+            "codeOld": "STATE",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "defaults": "",
+            "comment": "省、州",
+            "scope": "FM_STATE.STATE",
+            "M": true,
+            "P": true
+        },
+        {
+            "code": "CITY",
+            "dataType": "Varchar",
+            "lengths": "8",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "城市代码",
+            "defaults": "",
+            "dictionary": "CITY",
+            "scope": "取值 FM_CITY.CITY"
+        },
+        {
+            "code": "CITY_TEL",
+            "dataType": "Varchar",
+            "lengths": "4",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "电话区号",
+            "defaults": "",
+            "dictionary": "CITY_TEL",
+            "scope": "FM_CITY.CITY"
+        },
+        {
+            "code": "CITY_DESC",
+            "dataType": "Varchar",
+            "lengths": "100",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "描述",
+            "defaults": "",
+            "dictionary": "CITY_DESC",
+            "scope": ""
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "",
+    "moduleType": "公共参数"
+}

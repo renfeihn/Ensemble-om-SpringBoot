@@ -1,0 +1,79 @@
+{
+    "code": "MB_ACCT_NATURE_RESTRAINTS",
+    "comment": "账户属性与账户限制关联配置",
+    "attr": [        {
+            "code": "ACCT_NATURE",
+            "dataType": "Varchar",
+            "lengths": "4",
+            "precision": "",
+            "M": true,            "P": true,            "comment": "账户属性 取值范围RB_ACCT_NATURE_DEF表ACCT_NATURE字段",
+            "defaults": "",
+            "dictionary": "ACCT_NATURE",
+            "scope": "",
+            "column": "账户属性"        }
+,        {
+            "code": "RESTRAINT_TYPE",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "M": true,            "P": true,            "comment": "限制类型 取值范围RB_RESTRAINT_TYPE表RESTRAINT_TYPE",
+            "defaults": "",
+            "dictionary": "RESTRAINT_TYPE",
+            "scope": "",
+            "column": "限制类型 取值范围FM_RESTRAINT_TYPE表RESTRAINT_TYPE"        }
+,        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "",
+            "column": "法人代码"        }
+,        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": "",
+            "column": "时间戳"        }
+,        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,            "P": false,            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": "",
+            "column": "交易时间"        }
+,        {
+            "code": "TERM",
+            "dataType": "Varchar",
+            "lengths": "5",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "存期",
+            "defaults": "",
+            "scope": "",
+            "dictionary": "TERM",
+            "column": "存期"        }
+,        {
+            "code": "TERM_TYPE",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "存期类型",
+            "defaults": "",
+            "scope": "",
+            "dictionary": "TERM_TYPE",
+            "column": "存期类型"        }
+    ],    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "定义账户属性与限制类型之间的关联关系，用于设置某类账户的限制",
+"moduleType":"账户参数"}

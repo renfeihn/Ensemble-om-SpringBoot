@@ -1,0 +1,77 @@
+{
+    "system": "Ensemble",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "table_space": "core_data",
+    "code": "FM_REGION_CODE_USERDEF",
+    "comment": "自定义区域代码定义",
+    "attr": [
+        {
+            "code": "REGION_CODE",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "区域代码",
+            "defaults": "",
+            "scope": "",
+            "dictionary": "REGION_CODE",
+            "column": "区域代码"
+        },
+        {
+            "code": "REGION_CODE_DESC",
+            "dataType": "Varchar",
+            "lengths": "100",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "区域代码描述",
+            "defaults": "",
+            "scope": "",
+            "dictionary": "REGION_CODE_DESC",
+            "column": "区域代码描述"
+        },
+        {
+            "code": "REGION_TYPE_CODE",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "区域类型代码",
+            "defaults": "",
+            "scope": "",
+            "dictionary": "REGION_TYPE_CODE",
+            "column": "区域类型代码"
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "scope": "",
+            "dictionary": "TRAN_TIME",
+            "column": "交易时间"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "时间戳",
+            "defaults": "",
+            "scope": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "column": "时间戳"
+        }
+    ],
+    "indexs": [],
+    "commentDesc": "自定义区域代码定义"
+}

@@ -1,0 +1,59 @@
+{
+    "code": "TB_VOUCHER_BRANCH",
+    "comment": "凭证使用分行表",
+    "attr": [        {
+            "code": "DOC_TYPE",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "M": true,            "P": true,            "comment": "凭证类型 取值TB_VOUCHER_DEF.DOC_TYPE",
+            "defaults": "",
+            "dictionary": "DOC_TYPE",
+            "column": "凭证类型",
+            "scope": ""        }
+,        {
+            "code": "BRANCH",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": true,            "P": true,            "comment": "机构 取值FM_BRANCH_TBL.BRANCH",
+            "defaults": "",
+            "dictionary": "BRANCH",
+            "column": "机构代码",
+            "scope": ""        }
+,        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "column": "法人代码",
+            "scope": ""        }
+,        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "column": "时间戳",
+            "scope": ""        }
+,        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,            "P": false,            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "column": "交易时间",
+            "scope": ""        }
+    ],    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "维护凭证可使用的机构信息，该表为业务参数。如果凭证类型定义为限制使用机构（即表tb_voucher_def中BRANCH_RESTRAINT=Y），则需要在本表中维护该凭证类型可使用的机构信息，如果凭证类型定义为不限制使用机构（即表tb_voucher_def中BRANCH_RESTRAINT=N），则该凭证类型的凭证可全行使用，不用维护本表中的数据。",
+"moduleType":"尾箱参数"}

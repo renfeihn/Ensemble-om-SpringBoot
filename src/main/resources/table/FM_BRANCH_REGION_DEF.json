@@ -1,0 +1,77 @@
+{
+    "system": "Ensemble",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "table_space": "core_data",
+    "code": "FM_BRANCH_REGION_DEF",
+    "comment": "机构自定义区域设置",
+    "attr": [
+        {
+            "code": "BRANCH_ID",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "机构",
+            "defaults": "",
+            "scope": "",
+            "dictionary": "BRANCH_ID",
+            "column": "执行机构"
+        },
+        {
+            "code": "USER_REGION_TYPE",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "自定义区域类型",
+            "defaults": "",
+            "scope": "",
+            "dictionary": "USER_REGION_TYPE",
+            "column": "自定义区域类型"
+        },
+        {
+            "code": "USER_REGION_CODE",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "自定义区域代码",
+            "defaults": "",
+            "scope": "",
+            "dictionary": "USER_REGION_CODE",
+            "column": "自定义区域代码"
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "scope": "",
+            "dictionary": "TRAN_TIME",
+            "column": "交易时间"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "时间戳",
+            "defaults": "",
+            "scope": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "column": "时间戳"
+        }
+    ],
+    "indexs": [],
+    "commentDesc": "机构自定义区域设置"
+}

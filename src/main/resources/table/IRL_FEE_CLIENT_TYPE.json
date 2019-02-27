@@ -1,0 +1,76 @@
+{
+    "code": "IRL_FEE_CLIENT_TYPE",
+    "comment": "费率客户类型关系表",
+    "attr": [
+        {
+            "dictionary": "FEE_TYPE",
+            "code": "FEE_TYPE",
+            "codeOld": "FEE_TYPE",
+            "dataType": "Varchar",
+            "lengths": "8",
+            "precision": "",
+            "defaults": "",
+            "comment": "费率类型",
+            "scope": "取自IRL_FEE_TYPE.FEE_TYPE",
+            "M": true,
+            "P": true
+        },
+        {
+            "code": "CLIENT_TYPE",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "客户类型",
+            "defaults": "",
+            "dictionary": "CLIENT_TYPE",
+            "column": "客户类型",
+            "scope": "CIF_CLIENT_TYPE.CLIENT_TYPE"
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "column": "法人代码",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "column": "时间戳",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "column": "交易时间",
+            "scope": ""
+        }
+    ],
+    "table_space": "price_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Limarket",
+    "commentDesc": "作用：记录费率适用客户类型；如果全部客户适用，可设置为ALL;"
+}

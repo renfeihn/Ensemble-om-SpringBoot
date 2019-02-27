@@ -1,0 +1,60 @@
+{
+    "code": "TB_TRAILBOX_OVERDRAW",
+    "comment": "尾箱透支表",
+    "attr": [
+        {
+            "code": "PROGRAM_ID",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "交易编号",
+            "defaults": "",
+            "dictionary": "PROGRAM_ID",
+            "scope": ""
+        },
+        {
+            "code": "OVERDRAW_AMT",
+            "dataType": "Number",
+            "lengths": "17",
+            "precision": "2",
+            "M": false,
+            "P": false,
+            "comment": "允许透支金额",
+            "defaults": "",
+            "dictionary": "OVERDRAW_AMT",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "",
+    "moduleType": "尾箱参数"
+}

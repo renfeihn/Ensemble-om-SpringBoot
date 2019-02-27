@@ -1,0 +1,73 @@
+{
+    "code": "MB_COMMISSION_PARAMETER",
+    "comment": "交易代办人参数表",
+    "attr": [
+        {
+            "code": "PROGRAM_ID",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易码",
+            "defaults": "",
+            "dictionary": "PROGRAM_ID",
+            "scope": ""
+        },
+        {
+            "code": "CLIENT_TYPE",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "客户类型",
+            "defaults": "",
+            "dictionary": "CLIENT_TYPE",
+            "scope": "CIF_CLIENT_TYPE.CLIENT_TYPE"
+        },
+        {
+            "dictionary": "STATUS",
+            "code": "STATUS",
+            "codeOld": "STATUS",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "defaults": "",
+            "comment": "状态",
+            "scope": "A:有效 E:失效",
+            "M": false,
+            "P": false
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "tran",
+    "system": "Ensemble",
+    "commentDesc": "",
+    "moduleType": "交易参数"
+}

@@ -1,0 +1,85 @@
+{
+    "code": "GL_CCY_RULE",
+    "comment": "币种规则表",
+    "attr": [
+        {
+            "dictionary": "EVENT_TYPE",
+            "code": "EVENT_TYPE",
+            "codeOld": "EVENT_TYPE",
+            "dataType": "Varchar",
+            "lengths": "50",
+            "precision": "",
+            "defaults": "",
+            "comment": "事件类型",
+            "scope": "MB_EVENT_TYPE.EVENT_TYPE",
+            "M": true,
+            "P": true
+        },
+        {
+            "dictionary": "SELL_CCY",
+            "code": "SELL_CCY",
+            "codeOld": "SELL_CCY",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "defaults": "",
+            "comment": "卖出币种",
+            "scope": "FM_CURRENCY.CCY",
+            "M": true,
+            "P": true
+        },
+        {
+            "code": "BUY_CCY",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "买入币种",
+            "defaults": "",
+            "dictionary": "BUY_CCY",
+            "scope": "FM_CURRENCY.CCY"
+        },
+        {
+            "code": "ACCOUNTING_NO",
+            "dataType": "Varchar",
+            "lengths": "30",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "会计分录编号",
+            "defaults": "",
+            "dictionary": "ACCOUNTING_NO",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        }
+    ],
+    "table_space": "account_data",
+    "dbType": "upright",
+    "parameter": "init_para",
+    "system": "Accounting",
+    "commentDesc": ""
+}

@@ -1,0 +1,108 @@
+{
+    "code": "IRL_RULE_GROUP",
+    "comment": "规则分组定义表",
+    "attr": [
+        {
+            "dictionary": "GROUP_TYPE",
+            "code": "GROUP_TYPE",
+            "codeOld": "GROUP_TYPE",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "defaults": "",
+            "comment": "规则分组类型",
+            "scope": "",
+            "M": true,
+            "P": true
+        },
+        {
+            "code": "GROUP_TYPE_DESC",
+            "dataType": "Varchar",
+            "lengths": "50",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "规则分组描述",
+            "defaults": "",
+            "dictionary": "GROUP_TYPE_DESC",
+            "scope": ""
+        },
+        {
+            "code": "GROUP_CLASS",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "分组归属分类  ",
+            "defaults": "",
+            "dictionary": "GROUP_CLASS",
+            "scope": "D:折扣,L:利率,E:汇率"
+        },
+        {
+            "code": "GROUP_MATCH_TYPE",
+            "dataType": "Varchar",
+            "lengths": "2",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "组内规则关系    ",
+            "defaults": "",
+            "dictionary": "GROUP_MATCH_TYPE",
+            "scope": "当GROUP_CLASS = D 时:01:折上折,02:取最大,03:取最小,04:取平均值,05:取叠加,06:取权重,07:取固定,当GROUP_CLASS = L 时:,02:取最大,03:取最小,04:取平均值,05:取叠加,06:取权重,当GROUP_CLASS = E 时:,02:取最大,03:取最小,04:取平均值,05:取叠加,06:取权重"
+        },
+        {
+            "code": "WEIGHT",
+            "dataType": "Varchar",
+            "lengths": "5",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "权重",
+            "defaults": "",
+            "dictionary": "WEIGHT",
+            "scope": ""
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "price_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Limarket",
+    "commentDesc": ""
+}

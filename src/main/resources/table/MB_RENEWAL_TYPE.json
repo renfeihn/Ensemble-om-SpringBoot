@@ -1,0 +1,99 @@
+{
+    "code": "MB_RENEWAL_TYPE",
+    "comment": "定期产品比例定义表",
+    "attr": [        {
+            "code": "RENEWAL_TYPE",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "M": true,            "P": true,            "comment": "比例类型",
+            "defaults": "",
+            "dictionary": "RENEWAL_TYPE",
+            "column": "定期理财方式",
+            "scope": ""        }
+,        {
+            "code": "RENEWAL_RATE",
+            "dataType": "Number",
+            "lengths": "15",
+            "precision": "8",
+            "M": false,            "P": false,            "comment": "比率",
+            "defaults": "",
+            "dictionary": "RENEWAL_RATE",
+            "column": "比率",
+            "scope": ""        }
+,        {
+            "code": "PROD_TYPE",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "产品类型",
+            "defaults": "",
+            "dictionary": "PROD_TYPE",
+            "column": "产品类型 取值于MB_PROD_TYPE.PROD_TYPE",
+            "scope": ""        }
+,        {
+            "code": "TERM",
+            "dataType": "Varchar",
+            "lengths": "5",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "存期",
+            "defaults": "",
+            "dictionary": "TERM",
+            "column": "存期",
+            "scope": ""        }
+,        {
+            "code": "TERM_TYPE",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "存期类型",
+            "defaults": "",
+            "dictionary": "TERM_TYPE",
+            "column": "存期类型",
+            "scope": ""        }
+,        {
+            "code": "WTD_TRAN_TYPE",
+            "dataType": "Varchar",
+            "lengths": "4",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "支取交易类型",
+            "defaults": "",
+            "dictionary": "WTD_TRAN_TYPE",
+            "column": "支取交易类型",
+            "scope": ""        }
+,        {
+            "code": "DEP_TRAN_TYPE",
+            "dataType": "Varchar",
+            "lengths": "4",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "存入交易类型",
+            "defaults": "",
+            "dictionary": "DEP_TRAN_TYPE",
+            "column": "存入交易类型",
+            "scope": ""        }
+,        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "column": "时间戳",
+            "scope": ""        }
+,        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,            "P": false,            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "column": "交易时间",
+            "scope": ""        }
+    ],    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": " 1、如果一种理财方案中包含多种定期类型，则在该表中定义各定期类型的分摊比例。  2、作为理财方案定义表的子表，可根据理财方案定义表中的分摊类型字段(RENEWAL_TYPE)与该表进行关联。",
+"moduleType":"产品参数"}

@@ -1,0 +1,109 @@
+{
+    "code": "FM_BANK",
+    "comment": "外部金融机构定义表",
+    "attr": [
+        {
+            "code": "BANK_CODE",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "银行代码",
+            "defaults": "",
+            "dictionary": "BANK_CODE",
+            "scope": ""
+        },
+        {
+            "code": "BANK_ID",
+            "dataType": "Varchar",
+            "lengths": "8",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "银行ID",
+            "defaults": "",
+            "dictionary": "BANK_ID",
+            "scope": ""
+        },
+        {
+            "code": "BANK_NAME",
+            "dataType": "Varchar",
+            "lengths": "35",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "银行名称",
+            "defaults": "",
+            "dictionary": "BANK_NAME",
+            "scope": ""
+        },
+        {
+            "code": "BANK_TYPE",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "银行类别 O-Our Bank 我行                      B-Bank 他行 S-Building Society建房互助协会 T-Third Party Bank第三方银行",
+            "defaults": "",
+            "dictionary": "BANK_TYPE",
+            "scope": "O:Our Bank 我行,B:Bank 他行,S:Building Society建房互助协会,T:Third Party Bank第三方银行"
+        },
+        {
+            "dictionary": "STATUS",
+            "code": "STATUS",
+            "codeOld": "STATUS",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "defaults": "",
+            "comment": "状态",
+            "scope": "A:有效,F:无效",
+            "M": true,
+            "P": false
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "",
+    "moduleType": "公共参数"
+}

@@ -1,0 +1,122 @@
+{
+    "code": "IRL_INT_TYPE",
+    "comment": "利率税率类型表",
+    "attr": [
+        {
+            "code": "INT_TAX_TYPE",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "利率税率类型",
+            "defaults": "",
+            "dictionary": "INT_TAX_TYPE",
+            "scope": ""
+        },
+        {
+            "code": "INT_TAX_TYPE_DESC",
+            "dataType": "Varchar",
+            "lengths": "50",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "利率税率类型描述",
+            "defaults": "",
+            "dictionary": "INT_TAX_TYPE_DESC",
+            "scope": ""
+        },
+        {
+            "code": "PROD_GRP",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "产品组",
+            "defaults": "",
+            "dictionary": "PROD_GRP",
+            "scope": "RB:负债,CL:资产,GL:总账,MM:货币市场  "
+        },
+        {
+            "dictionary": "RATE_LADDER",
+            "code": "RATE_LADDER",
+            "codeOld": "RATE_LADDER",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "defaults": "",
+            "comment": "利息计算模型",
+            "scope": "取自表FM_REF_CODE,当字段DOMAIN的值为RATE_LADDER时，取字段FIELD_VALUE的值",
+            "M": true,
+            "P": false
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "dictionary": "INT_TAX_FLAG",
+            "code": "INT_TAX_FLAG",
+            "codeOld": "INT_TAX_FLAG",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "defaults": "",
+            "comment": "利率类型税率类型标志 ",
+            "scope": "\n",
+            "M": true,
+            "P": false
+        },
+        {
+            "dictionary": "TAX_LADDER",
+            "code": "TAX_LADDER",
+            "codeOld": "TAX_LADDER",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "defaults": "",
+            "comment": "税率计算模型",
+            "scope": "A：增值税，B：个人所得税",
+            "M": false,
+            "P": false
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "price_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Limarket",
+    "commentDesc": ""
+}

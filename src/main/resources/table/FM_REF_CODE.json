@@ -1,0 +1,108 @@
+{
+    "code": "FM_REF_CODE",
+    "comment": "系统内部预定义参数表",
+    "attr": [
+        {
+            "code": "REF_LANG",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "语言",
+            "defaults": "",
+            "dictionary": "REF_LANG",
+            "scope": ""
+        },
+        {
+            "code": "DOMAIN",
+            "dataType": "Varchar",
+            "lengths": "70",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "表字段",
+            "defaults": "",
+            "dictionary": "DOMAIN",
+            "scope": ""
+        },
+        {
+            "code": "FIELD_VALUE",
+            "dataType": "Varchar",
+            "lengths": "8",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "取值范围",
+            "defaults": "",
+            "dictionary": "FIELD_VALUE",
+            "scope": ""
+        },
+        {
+            "code": "ABBREVIATION",
+            "dataType": "Timestamp",
+            "lengths": "8",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "缩写",
+            "defaults": "",
+            "dictionary": "ABBREVIATION",
+            "scope": ""
+        },
+        {
+            "code": "MEANING",
+            "dataType": "Varchar",
+            "lengths": "30",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "取值的含义说明",
+            "defaults": "",
+            "dictionary": "MEANING",
+            "scope": ""
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "init_para",
+    "system": "Ensemble",
+    "commentDesc": "",
+    "moduleType": "公共参数"
+}

@@ -1,0 +1,59 @@
+{
+    "code": "CIF_EDUCATION",
+    "comment": "教育程度",
+    "attr": [        {
+            "code": "EDUCATION",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "M": true,            "P": true,            "comment": "教育程度编号",
+            "defaults": "",
+            "dictionary": "EDUCATION",
+            "column": "学历 数据来源于参数表CIF_EDUCATION表",
+            "scope": ""        }
+,        {
+            "code": "EDUCATION_DESC",
+            "dataType": "Varchar",
+            "lengths": "30",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "教育程度描述",
+            "defaults": "",
+            "dictionary": "EDUCATION_DESC",
+            "column": "教育程度描述",
+            "scope": ""        }
+,        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "column": "法人代码",
+            "scope": ""        }
+,        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,            "P": false,            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "column": "时间戳",
+            "scope": ""        }
+,        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,            "P": false,            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "column": "交易时间",
+            "scope": ""        }
+    ],    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "定义客户的受教育程度",
+"moduleType":"客户参数"}
