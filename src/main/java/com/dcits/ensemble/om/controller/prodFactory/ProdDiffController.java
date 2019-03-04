@@ -76,7 +76,12 @@ public class ProdDiffController {
                                 baseEffectProd.put(pkValueJson.get(key), pkValueJson.get(key));
                             }
                             if (key.equals("EVENT_TYPE")) {
-                                baseEffectProd.put(pkValueJson.get(key).toString().split("_")[1], pkValueJson.get(key).toString().split("_")[1]);
+                                if(pkValueJson.get(key).toString().split("_").length>1){
+                                    baseEffectProd.put(pkValueJson.get(key).toString().split("_")[1], pkValueJson.get(key).toString().split("_")[1]);
+                                }
+                                else{
+                                    baseEffectProd.put(pkValueJson.get(key).toString().split("_")[0], pkValueJson.get(key).toString().split("_")[0]);
+                                }
                             }
                         }
                     }

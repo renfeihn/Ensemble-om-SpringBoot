@@ -6,6 +6,7 @@ import com.dcits.ensemble.om.model.dbmodel.MbEventClass;
 import com.dcits.ensemble.om.model.dbmodel.MbProdDefine;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessMainFlow;
+import com.dcits.ensemble.om.model.dbmodel.tables.IrlProdInt;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessDetailHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
@@ -68,6 +69,12 @@ public class ProdInfoController {
             omProcessRecordHistList = omProcessRecordHistRepository.searchDiffByTableName(omProcessMainFlow.getReqNo());
         }*/
         //从产品参数表查询参数范围
+        List<IrlProdInt> irlProdInt = mbProdInfo.getIrlProdInt();
+        for(IrlProdInt irl : irlProdInt){
+            if(irl.getMinRate().equals("0E-8")){
+                irl.setMinRate("0.00000000");
+            }
+        }
         mbProdInfoService.assembleColumnInfo(mbProdInfo);
 /*              responseMap.put("prodInfo", mbProdInfo.toString());
   if (omProcessRecordHistList != null)
