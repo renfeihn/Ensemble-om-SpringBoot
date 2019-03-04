@@ -68,13 +68,15 @@ public class ProdInfoController {
 
             omProcessRecordHistList = omProcessRecordHistRepository.searchDiffByTableName(omProcessMainFlow.getReqNo());
         }*/
-        //从产品参数表查询参数范围
         List<IrlProdInt> irlProdInt = mbProdInfo.getIrlProdInt();
         for(IrlProdInt irl : irlProdInt){
-            if(irl.getMinRate().equals("0E-8")){
-                irl.setMinRate("0.00000000");
+            if(irl.getMinRate() != null){
+                if(irl.getMinRate().equals("0E-8")){
+                    irl.setMinRate("0.00000000");
+                }
             }
         }
+        //从产品参数表查询参数范围
         mbProdInfoService.assembleColumnInfo(mbProdInfo);
 /*              responseMap.put("prodInfo", mbProdInfo.toString());
   if (omProcessRecordHistList != null)
