@@ -69,10 +69,12 @@ public class ProdInfoController {
             omProcessRecordHistList = omProcessRecordHistRepository.searchDiffByTableName(omProcessMainFlow.getReqNo());
         }*/
         List<IrlProdInt> irlProdInt = mbProdInfo.getIrlProdInt();
-        for(IrlProdInt irl : irlProdInt){
-            if(irl.getMinRate() != null){
-                if(irl.getMinRate().equals("0E-8")){
-                    irl.setMinRate("0.00000000");
+        if(irlProdInt != null){
+            for(IrlProdInt irl : irlProdInt){
+                if(irl.getMinRate() != null){
+                    if(irl.getMinRate().equals("0E-8")){
+                        irl.setMinRate("0.00000000");
+                    }
                 }
             }
         }
