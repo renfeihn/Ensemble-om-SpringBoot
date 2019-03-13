@@ -98,6 +98,9 @@ public class ProdDiffController {
             }
             responseMap.put("prodDefine", mbProdInfo.getProdDefines());
             responseMap.put("mbProdCharge", mbProdInfo.getMbProdCharge());
+            responseMap.put("irlProdInt", mbProdInfo.getIrlProdInt());
+            responseMap.put("mbProdAmendMaping", mbProdInfo.getMbProdAmendMaping());
+            responseMap.put("glProdAccounting", mbProdInfo.getGlProdAccounting());
             responseMap.put("mbProdType", mbProdInfo.getProdType());
 
             //组装事件

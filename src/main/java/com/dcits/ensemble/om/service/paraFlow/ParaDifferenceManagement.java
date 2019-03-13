@@ -35,6 +35,9 @@ public class ParaDifferenceManagement {
         Map omProcessRecordHistsAll=new HashMap<>();
         String prodType=null;
         Map mbProdChargeList=new HashMap<>();
+        Map irlProdIntList = new HashMap<>();
+        Map glProdAccounting = new HashMap<>();
+        Map mbProdAmendMaping = new HashMap<>();
         Map defineMap=new HashMap<>();
         Map eventMap=new HashMap<>();
         for(OmProcessRelationHist omProcessRelationHist:omProcessRelationHistList){
@@ -55,6 +58,12 @@ public class ParaDifferenceManagement {
                     if(omProcessRecordHistsAll.get("prodType")==null){
                         omProcessRecordHistsAll.put("prodType",newJsonObject.get("prodType"));
                     }
+                }else if("MB_PROD_AMEND_MAPING".equals(omProcessRecordHist.getTableName())){
+                    assembleAmend(newJsonObject, mbProdAmendMaping, omProcessRecordHist);
+                }else if("IRL_PROD_INT".equals(omProcessRecordHist.getTableName())){
+                    assembleInt(newJsonObject, irlProdIntList, omProcessRecordHist);
+                }else if("GL_PROD_ACCOUNTING".equals(omProcessRecordHist.getTableName())){
+                    assembleAccounting(newJsonObject, glProdAccounting, omProcessRecordHist);
                 }else  if("MB_PROD_DEFINE".equals(omProcessRecordHist.getTableName())){
                     assembleDefine(newJsonObject, defineMap);
                 }else if("MB_EVENT_ATTR".equals(omProcessRecordHist.getTableName())){
@@ -64,6 +73,9 @@ public class ParaDifferenceManagement {
         }
         omProcessRecordHistsAll.put("prodType",prodType);
         omProcessRecordHistsAll.put("mbProdCharge",mbProdChargeList);
+        omProcessRecordHistsAll.put("irlProdInt",irlProdIntList);
+        omProcessRecordHistsAll.put("glProdAccounting",glProdAccounting);
+        omProcessRecordHistsAll.put("mbProdAmendMaping",mbProdAmendMaping);
         omProcessRecordHistsAll.put("mbProdEvent",eventMap);
         omProcessRecordHistsAll.put("prodDefine",defineMap);
         return omProcessRecordHistsAll;
@@ -98,6 +110,21 @@ public class ParaDifferenceManagement {
             map.put("optionPermissions",newJsonObject.get("optionPermissions"));
             defineMap.put(key, map);
         }
+    }
+    //装载irlProdInt
+    public void assembleInt(JSONObject newJsonObject,Map irlProdIntList,OmProcessRecordHist omProcessRecordHist){
+        newJsonObject.put("dmlType",omProcessRecordHist.getDmlType());
+        irlProdIntList.put(omProcessRecordHist.getPkAndValue(),newJsonObject);
+    }
+    //装载mbProdAmendMaping
+    public void assembleAmend(JSONObject newJsonObject,Map mbProdAmendMaping,OmProcessRecordHist omProcessRecordHist){
+        newJsonObject.put("dmlType",omProcessRecordHist.getDmlType());
+        mbProdAmendMaping.put(omProcessRecordHist.getPkAndValue(),newJsonObject);
+    }
+    //装载glProdAccounting
+    public void assembleAccounting(JSONObject newJsonObject,Map glProdAccounting,OmProcessRecordHist omProcessRecordHist){
+        newJsonObject.put("dmlType",omProcessRecordHist.getDmlType());
+        glProdAccounting.put(omProcessRecordHist.getPkAndValue(),newJsonObject);
     }
     //装载prodCharge
     public void assembleCharge(JSONObject newJsonObject,Map mbProdChargeList,OmProcessRecordHist omProcessRecordHist){
