@@ -2,16 +2,16 @@ package com.dcits.ensemble.om.controller.prodFactory;
 
 import com.dcits.ensemble.om.controller.model.Result;
 import com.dcits.ensemble.om.controller.model.ResultUtils;
-import com.dcits.ensemble.om.model.dbmodel.MbEventClass;
-import com.dcits.ensemble.om.model.dbmodel.MbProdDefine;
-import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
-import com.dcits.ensemble.om.model.dbmodel.OmProcessMainFlow;
+import com.dcits.ensemble.om.model.dbmodel.*;
 import com.dcits.ensemble.om.model.dbmodel.tables.IrlProdInt;
+import com.dcits.ensemble.om.model.dbmodel.tables.OmTableList;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessDetailHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessMainFlowRepository;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessRelationHistRepository;
 import com.dcits.ensemble.om.repository.prodFactory.MbEventClassRepository;
+import com.dcits.ensemble.om.repository.tables.OmTableListRepository;
 import com.dcits.ensemble.om.service.paraFlow.DifferenceProdInfo;
 import com.dcits.ensemble.om.service.paraFlow.FlowManagement;
 import com.dcits.ensemble.om.service.prodFactory.MbAttrInfoService;
@@ -23,9 +23,12 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static java.lang.Integer.parseInt;
 
 @Api(value = "/getProdInfo", tags = "产品模块")
 @Controller
@@ -38,9 +41,13 @@ public class ProdInfoController {
     @Resource
     private OmProcessMainFlowRepository omProcessMainFlowRepository;
     @Resource
+    private OmProcessRelationHistRepository omProcessRelationHistRepository;
+    @Resource
     private OmProcessRecordHistRepository omProcessRecordHistRepository;
     @Resource
     private OmProcessDetailHistRepository omProcessDetailHistRepository;
+    @Resource
+    private OmTableListRepository omTableListRepository;
     @Resource
     private DifferenceProdInfo differenceProdInfo;
     @Resource
@@ -179,5 +186,66 @@ public class ProdInfoController {
     @ResponseBody
     public Result getAttrInfo(HttpServletResponse response) {
         return ResultUtils.success(mbAttrInfoService.getAttrInfo());
+    }
+    /**
+     * 查询某个产品的操作历史
+     */
+    @RequestMapping("/findProdHistory")
+    @ResponseBody
+    public Result findProdHistory(HttpServletResponse response, @RequestParam(value = "tranId", required = true) String tranId) {
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
+        Map responseMap = new HashMap<>();
+        ArrayList<Map> resMap = new ArrayList<Map>();
+        ArrayList<String> seqNos = new ArrayList<String>();
+        List<OmProcessRelationHist> omProcessRelations = omProcessRelationHistRepository.findByTranId(tranId);
+        for(OmProcessRelationHist omProcessRelation : omProcessRelations){
+            String mainSeqNo = omProcessRelation.getMainSeqNo();
+            int num = 0;
+            if(seqNos.size() != 0){
+                for(String seqNo : seqNos){
+                    if(mainSeqNo.equals(seqNo)){
+                        num++;
+                    }
+                }
+                if(num == 0){
+                    seqNos.add(mainSeqNo);
+                }
+            }else{
+                seqNos.add(mainSeqNo);
+            }
+        }
+        for(String seqNo : seqNos){
+            Map process = new HashMap<>();
+            OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByMainSeqNo(seqNo);
+            if(parseInt(omProcessMainFlow.getStatus()) == 4){
+                process.put("mainSeqNo",seqNo);
+                process.put("userId",omProcessMainFlow.getUserId());
+                List<OmProcessRecordHist> omProcessRecordHists = omProcessRecordHistRepository.findByMainSeqNo(seqNo);
+                ArrayList<String> tableName = new ArrayList<String>();
+                ArrayList<String> pkAndValue = new ArrayList<String>();
+                for(OmProcessRecordHist omProcessRecordHist : omProcessRecordHists){
+                    tableName.add(omProcessRecordHist.getTableName());
+                    pkAndValue.add(omProcessRecordHist.getPkAndValue());
+                }
+                ArrayList<String> tableNameDesc = new ArrayList<>();
+                for(String taN : tableName){
+                    OmTableList omTableList= omTableListRepository.findByTableName(taN);
+                    String desc = taN +"   "+omTableList.getTableDesc();
+                    tableNameDesc.add(desc);
+                }
+                List<OmProcessDetailHist> omProcessDetailHists = omProcessDetailHistRepository.findByMainSeqNo(seqNo);
+                for(OmProcessDetailHist omProcessDetailHist : omProcessDetailHists){
+                    if(parseInt(omProcessDetailHist.getStatus()) == 4){
+                        String time = omProcessDetailHist.getTranTime();
+                        process.put("tranTime",time);
+                    }
+                }
+                process.put("tableNameDesc",tableNameDesc);
+                process.put("pkAndValue",pkAndValue);
+                resMap.add(process);
+            }
+        }
+        responseMap.put("mainSeqNo",resMap);
+        return ResultUtils.success(responseMap);
     }
 }

@@ -20,7 +20,7 @@ public interface OmProcessRelationHistRepository extends JpaRepository<OmProcess
   //public List<OmProcessRelationHist> findByMainSeqNoGroupBy(@Param("mainSeqNo") String mainSeqNo);
   @Query("select s from OmProcessRelationHist s  where s.mainSeqNo = :mainSeqNo GROUP BY s.tranId,s.tranType,s.mainSeqNo,s.dtlSeqNo,s.recSeqNo,s.tranName")
   public List<OmProcessRelationHist> findByMainSeqNoGroupBy(@Param("mainSeqNo") String mainSeqNo);
-
+  public List<OmProcessRelationHist> findByTranId(String tranId);
   public List<OmProcessRelationHist> findByMainSeqNo(@Param("mainSeqNo") String mainSeqNo);
   public OmProcessRelationHist findByMainSeqNoAndAndTranId(@Param("mainSeqNo") String mainSeqNo, @Param("tranId") String tranId);
   @Transactional
