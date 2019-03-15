@@ -20,8 +20,7 @@ public class PkListRepository {
     private EntityManager em;
     @SuppressWarnings("unchecked")
     public List<Map> getPkList(String tableName,String column,String columnDesc){
-        String dataSql = "select "+column+" 'key',"+columnDesc+" value from "+tableName+" where 1 = 1";
-        //String dataSql = "select "+column+" as key,"+columnDesc+" as value from "+tableName+" where 1 = 1";
+        String dataSql = "select "+column+" as \"key\","+columnDesc+" as \"value\" from "+tableName+" where 1 = 1";
         Query dataQuery = em.createNativeQuery(dataSql);
         dataQuery.unwrap(SQLQuery.class).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
         List<Map> dataList = dataQuery.getResultList();
