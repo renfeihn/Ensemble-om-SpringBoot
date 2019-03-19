@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -188,7 +187,7 @@ public class ProdInfoController {
         return ResultUtils.success(mbAttrInfoService.getAttrInfo());
     }
     /**
-     * 查询某个产品的操作历史
+     * 查询某个产品的历史操作单号，时间，操作人
      */
     @RequestMapping("/findProdHistory")
     @ResponseBody
@@ -220,19 +219,6 @@ public class ProdInfoController {
             if(parseInt(omProcessMainFlow.getStatus()) == 4){
                 process.put("mainSeqNo",seqNo);
                 process.put("userId",omProcessMainFlow.getUserId());
-                List<OmProcessRecordHist> omProcessRecordHists = omProcessRecordHistRepository.findByMainSeqNo(seqNo);
-                ArrayList<String> tableName = new ArrayList<String>();
-                ArrayList<String> pkAndValue = new ArrayList<String>();
-                for(OmProcessRecordHist omProcessRecordHist : omProcessRecordHists){
-                    tableName.add(omProcessRecordHist.getTableName());
-                    pkAndValue.add(omProcessRecordHist.getPkAndValue());
-                }
-                ArrayList<String> tableNameDesc = new ArrayList<>();
-                for(String taN : tableName){
-                    OmTableList omTableList= omTableListRepository.findByTableName(taN);
-                    String desc = taN +"   "+omTableList.getTableDesc();
-                    tableNameDesc.add(desc);
-                }
                 List<OmProcessDetailHist> omProcessDetailHists = omProcessDetailHistRepository.findByMainSeqNo(seqNo);
                 for(OmProcessDetailHist omProcessDetailHist : omProcessDetailHists){
                     if(parseInt(omProcessDetailHist.getStatus()) == 4){
@@ -240,12 +226,55 @@ public class ProdInfoController {
                         process.put("tranTime",time);
                     }
                 }
-                process.put("tableNameDesc",tableNameDesc);
-                process.put("pkAndValue",pkAndValue);
                 resMap.add(process);
             }
         }
         responseMap.put("mainSeqNo",resMap);
+        return ResultUtils.success(responseMap);
+    }
+    /**
+     * 查询某个产品的某个操作历史差异
+     */
+    @RequestMapping("/findProdHistoryChange")
+    @ResponseBody
+    public Result findProdHistoryChange(HttpServletResponse response, @RequestParam(value = "mainSeqNo", required = true) String mainSeqNo) {
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
+        Map responseMap = new HashMap<>();
+        List<OmProcessRecordHist> omProcessRecordHists = omProcessRecordHistRepository.findByMainSeqNo(mainSeqNo);
+        ArrayList<String> tableName = new ArrayList<String>();
+        ArrayList<String> pkAndValue = new ArrayList<String>();
+        ArrayList<ArrayList<String>> tableNameDesc = new ArrayList<>();
+        ArrayList<String[]> dmlData = new ArrayList<>();
+        ArrayList<String[]> dmlOldData = new ArrayList<>();
+        for(OmProcessRecordHist omProcessRecordHist : omProcessRecordHists){
+            tableName.add(omProcessRecordHist.getTableName());
+            pkAndValue.add(omProcessRecordHist.getPkAndValue());
+            String dml = new String(omProcessRecordHist.getDmlData());
+            dml = dml.replace("{","");
+            dml = dml.replace("}","");
+            dml = dml.replace("\"","");
+            String[] dmls = dml.split(",");
+            dmlData.add(dmls);
+            String dmlOld = new String(omProcessRecordHist.getDmlOldData());
+            dmlOld = dmlOld.replace("{","");
+            dmlOld = dmlOld.replace("}","");
+            dmlOld = dmlOld.replace("\"","");
+            String[] dmlOlds = dmlOld.split(",");
+            dmlOldData.add(dmlOlds);
+        }
+        for(String taN : tableName){
+            OmTableList omTableList= omTableListRepository.findByTableName(taN);
+            ArrayList<String> desc = new ArrayList<>();
+            if(omTableList != null){
+                desc.add(taN);
+                desc.add(omTableList.getTableDesc());
+            }
+            tableNameDesc.add(desc);
+        }
+        responseMap.put("tableNameDesc",tableNameDesc);
+        responseMap.put("pkAndValue",pkAndValue);
+        responseMap.put("dmlData",dmlData);
+        responseMap.put("dmlOldData",dmlOldData);
         return ResultUtils.success(responseMap);
     }
 }
