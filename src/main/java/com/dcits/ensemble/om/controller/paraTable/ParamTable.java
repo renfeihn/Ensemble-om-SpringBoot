@@ -54,6 +54,8 @@ public class ParamTable {
         //3.将得到的信息分为两个对象集合传到前端
         //获取表定义信息
         responseMap.put("tableDesc",paramTableService.getTableDesc(tableName));
+        //4.根据表名获取该表的检索条件
+        responseMap.put("search",omTableListRepository.findByTableName(tableName));
         return ResultUtils.success(responseMap);
     }
     @RequestMapping("/getTableInfoDesc")
