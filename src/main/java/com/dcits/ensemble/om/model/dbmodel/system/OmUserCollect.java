@@ -16,9 +16,10 @@ public class OmUserCollect implements Serializable {
 
     public OmUserCollect() {}
 
-    public OmUserCollect(String userId, String prodType, String prodDesc, String sourceModule, String collectDate, String collectStatus) {
+    public OmUserCollect(String userId, String prodType,String prodRange, String prodDesc, String sourceModule, String collectDate, String collectStatus) {
         this.userId = userId;
         this.prodType = prodType;
+        this.prodRange = prodRange;
         this.prodDesc = prodDesc;
         this.sourceModule = sourceModule;
         this.collectDate = collectDate;
@@ -39,13 +40,15 @@ public class OmUserCollect implements Serializable {
     private String collectStatus;
     @Column(name="prod_desc")
     private String prodDesc;
-
+    @Column(name="prod_range")
+    private String prodRange;
     @Override
     public String toString() {
         return "OmUserCollect{" +
                 "userId='" + userId + '\'' +
                 ", prodType='" + prodType + '\'' +
                 ", prodDesc='" + prodDesc + '\'' +
+                ", prodRange='" + prodRange + '\'' +
                 ", sourceModule='" + sourceModule + '\'' +
                 ", collectDate='" + collectDate + '\'' +
                 ", collectStatus='" + collectStatus + '\'' +

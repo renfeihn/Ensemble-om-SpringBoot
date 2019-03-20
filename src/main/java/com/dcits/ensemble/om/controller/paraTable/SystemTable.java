@@ -1,8 +1,10 @@
 package com.dcits.ensemble.om.controller.paraTable;
 import com.dcits.ensemble.om.controller.model.Result;
 import com.dcits.ensemble.om.controller.model.ResultUtils;
+import com.dcits.ensemble.om.model.dbmodel.MbProdType;
 import com.dcits.ensemble.om.model.dbmodel.system.*;
 import com.dcits.ensemble.om.repository.base.SystemTableRepositoryImpl;
+import com.dcits.ensemble.om.repository.prodFactory.MbProdTypeRepository;
 import com.dcits.ensemble.om.repository.system.*;
 import com.dcits.ensemble.om.repository.tables.OmTableListRepository;
 import io.swagger.annotations.Api;
@@ -49,6 +51,8 @@ public class SystemTable {
     private OmModuleOrgRepository omModuleOrgRepository;
     @Resource
     private OmUserCollectRepository omUserCollectRepository;
+    @Resource
+    private MbProdTypeRepository mbProdTypeRepository;
 
     @ApiOperation(value = "系统表信息", notes = "获取用户，菜单，角色，权限表信息")
     @RequestMapping("/getSysTable")
@@ -294,6 +298,16 @@ public class SystemTable {
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         Map responseMap = new HashMap<>();
         List<OmUserCollect> collectList = omUserCollectRepository.findByUserId(userId);
+        for(int index=0; index<collectList.size(); index++){
+            MbProdType mbProdType = mbProdTypeRepository.findByProdType(collectList.get(index).getProdType());
+            String prodStatus = "";
+            if(mbProdType.equals(null)){
+                prodStatus = "D";//产品不存在
+            }else {
+                prodStatus = mbProdType.getStatus();
+            }
+            collectList.get(index).setCollectStatus(prodStatus);
+        }
         responseMap.put("collectList",collectList);
         return ResultUtils.success(responseMap);
     }
@@ -307,7 +321,7 @@ public class SystemTable {
     public Result saveCollectProd(HttpServletResponse response, @RequestBody Map map) {
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         String optType = (String) map.get("optType");
-        String date = ResourcesUtils.getDateTimeUuId();
+        String date = ResourcesUtils.getDate();
         map.put("collectStatus","A");
         map.put("collectDate",date);
         map.remove("optType");

@@ -141,4 +141,10 @@ public class ResourcesUtils {
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmssSSS");
         return format.format(date);
     }
+
+    public static String getDate(){
+        Date date  = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日");
+        return format.format(date);
+    }
 }
