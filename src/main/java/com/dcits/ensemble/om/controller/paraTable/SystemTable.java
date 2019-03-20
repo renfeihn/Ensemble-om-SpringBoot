@@ -19,7 +19,6 @@ import java.lang.reflect.Array;
 import java.util.*;
 
 import com.dcits.ensemble.om.util.ResourcesUtils;
-
 /**
  * Created by jiajt on 2018/11/21.
  */
@@ -48,6 +47,8 @@ public class SystemTable {
     private OmSystemOrgRepository omSystemOrgRepository;
     @Resource
     private OmModuleOrgRepository omModuleOrgRepository;
+    @Resource
+    private OmUserCollectRepository omUserCollectRepository;
 
     @ApiOperation(value = "系统表信息", notes = "获取用户，菜单，角色，权限表信息")
     @RequestMapping("/getSysTable")
@@ -282,6 +283,45 @@ public class SystemTable {
         }
 
         return ResultUtils.success(responseMap);
+    }
+
+    /*
+     * 通过用户id获取用户收藏的产品信息
+     * */
+    @RequestMapping("/getUserCollectByUserId")
+    @ResponseBody
+    public Result getUserCollectByUserId(HttpServletResponse response, @RequestParam(value = "userId", required = true) String userId) {
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
+        Map responseMap = new HashMap<>();
+        List<OmUserCollect> collectList = omUserCollectRepository.findByUserId(userId);
+        responseMap.put("collectList",collectList);
+        return ResultUtils.success(responseMap);
+    }
+
+
+    /*
+     * 用户收藏产品保存修改提交
+     * */
+    @RequestMapping("/saveCollectProd")
+    @ResponseBody
+    public Result saveCollectProd(HttpServletResponse response, @RequestBody Map map) {
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
+        String optType = (String) map.get("optType");
+        String date = ResourcesUtils.getDateTimeUuId();
+        map.put("collectStatus","A");
+        map.put("collectDate",date);
+        map.remove("optType");
+        if ("I".equals(optType)) {
+            //新增收藏产品信息
+            systemTableRepositoryImpl.insertTable("OM_USER_COLLECT", map);
+        }
+        if ("D".equals(optType)) {
+            JSONObject pkValue = new JSONObject();
+            pkValue.put("USER_ID", map.get("userId"));
+            pkValue.put("PROD_TYPE", map.get("prodType"));
+            systemTableRepositoryImpl.deleteTable("OM_USER_COLLECT", map, pkValue);
+        }
+        return ResultUtils.success();
     }
 
 }
