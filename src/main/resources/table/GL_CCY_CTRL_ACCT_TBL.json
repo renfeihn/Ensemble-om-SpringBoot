@@ -1,0 +1,74 @@
+{
+    "code": "GL_CCY_CTRL_ACCT_TBL",
+    "comment": "汇兑损益重估科目定义",
+    "attr": [
+        {
+            "dictionary": "GL_CODE",
+            "code": "GL_CODE",
+            "codeOld": "GL_CODE",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "defaults": "",
+            "comment": "损益重估科目",
+            "scope": "AC_SUBJECT.SUBJECT_CODE",
+            "M": true,
+            "P": true
+        },
+        {
+            "dictionary": "GL_CODE_PROFIT",
+            "code": "GL_CODE_PROFIT",
+            "codeOld": "GL_CODE_PROFIT",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "defaults": "",
+            "comment": "利润科目",
+            "scope": "AC_SUBJECT.SUBJECT_CODE",
+            "M": true,
+            "P": false
+        },
+        {
+            "dictionary": "GL_CODE_LOSS",
+            "code": "GL_CODE_LOSS",
+            "codeOld": "GL_CODE_LOSS",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "defaults": "",
+            "comment": "损益科目",
+            "scope": "AC_SUBJECT.SUBJECT_CODE",
+            "M": true,
+            "P": false
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        }
+    ],
+    "table_space": "account_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Accounting",
+    "commentDesc": ""
+}

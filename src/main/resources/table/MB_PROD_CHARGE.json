@@ -1,0 +1,97 @@
+{
+    "code": "MB_PROD_CHARGE",
+    "comment": "产品类型费用类型关联表",
+    "attr": [
+        {
+            "code": "PROD_TYPE",
+            "dataType": "Varchar",
+            "lengths": "50",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "产品类型",
+            "defaults": "",
+            "dictionary": "PROD_TYPE",
+            "scope": "取值于MB_PROD_TYPE.PROD_TYPE"
+        },
+        {
+            "code": "FEE_TYPE",
+            "dataType": "Varchar",
+            "lengths": "8",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "费用类型",
+            "defaults": "",
+            "dictionary": "FEE_TYPE",
+            "scope": ""
+        },
+        {
+            "code": "CHARGE_PERIOD_FREQ",
+            "dataType": "Varchar",
+            "lengths": "2",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "收取频率",
+            "defaults": "",
+            "dictionary": "CHARGE_PERIOD_FREQ",
+            "scope": "FM_PERIOD_FREQ.PERIOD_FREQ"
+        },
+        {
+            "code": "CHARGE_DAY",
+            "dataType": "Varchar",
+            "lengths": "2",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "收取日",
+            "defaults": "",
+            "dictionary": "CHARGE_DAY",
+            "scope": ""
+        },
+        {
+            "dictionary": "NEXT_CHARGE_DATE",
+            "code": "NEXT_CHARGE_DATE",
+            "codeOld": "NEXT_CHARGE_DATE",
+            "dataType": "Varchar",
+            "lengths": "8",
+            "precision": "",
+            "defaults": "",
+            "comment": "下一收费日期",
+            "scope": "",
+            "M": true,
+            "P": false
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "",
+    "moduleType": "产品参数"
+}
