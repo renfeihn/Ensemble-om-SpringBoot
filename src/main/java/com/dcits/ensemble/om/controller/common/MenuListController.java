@@ -5,6 +5,7 @@ import com.dcits.ensemble.om.controller.model.ResultUtils;
 import com.dcits.ensemble.om.model.dbmodel.system.OmMenu;
 import com.dcits.ensemble.om.model.dbmodel.system.OmMenuRole;
 import com.dcits.ensemble.om.model.dbmodel.system.OmUser;
+import com.dcits.ensemble.om.model.dbmodel.system.OmMenu;
 import com.dcits.ensemble.om.model.dbmodel.system.OmUserRole;
 import com.dcits.ensemble.om.repository.system.OmMenuRepository;
 import com.dcits.ensemble.om.repository.system.OmMenuRoleRepository;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
@@ -49,7 +51,26 @@ public class MenuListController {
         int reNum =0;
         List<Map> sumList=new ArrayList<>();
         Map sumMenu=new HashMap<>();
+        OmMenu center;
+        for(int i=0; i<omMenuList.size(); i++){
+            for(int j=0; j<omMenuList.size()-1; j++){
+                int small = Integer.parseInt(omMenuList.get(j).getMenuId());
+                int big = Integer.parseInt(omMenuList.get(j+1).getMenuId());
+                if(small > big){
+                    center = omMenuList.get(j);
+                    omMenuList.set(j,omMenuList.get(j+1));
+                    omMenuList.set(j+1,center);
+                }
+            }
+        }
+        List<OmMenu> omMenuLists=new ArrayList<>();
         for(OmMenu omMenuItem:omMenuList){
+            if(omMenuItem.getMenuParentId() == null || "".equals(omMenuItem.getMenuParentId())){
+                omMenuLists.add(omMenuItem);
+                getMenu(omMenuItem.getMenuId(),omMenuList,omMenuLists);
+            }
+        }
+        for(OmMenu omMenuItem:omMenuLists){
                 if(MenuService.hasRole(omMenuRoleList,omMenuItem.getMenuId())){
                  Map reAssembleMap= MenuService.assembleMenuItem(omMenuItem);
                  if(omMenuItem.getMenuLevel().equals("2")){
@@ -77,5 +98,15 @@ public class MenuListController {
                 }
         }
         return  ResultUtils.success(reMenu);
+    }
+    public void getMenu(String parent,List<OmMenu> omMenuList,List<OmMenu> omMenuLists){
+        for(OmMenu omMenuItem:omMenuList){
+            if(omMenuItem.getMenuParentId() != null && omMenuItem.getMenuParentId() != ""){
+                if(omMenuItem.getMenuParentId().equals(parent)){
+                    omMenuLists.add(omMenuItem);
+                    getMenu(omMenuItem.getMenuId(),omMenuList,omMenuLists);
+                }
+            }
+        }
     }
 }
