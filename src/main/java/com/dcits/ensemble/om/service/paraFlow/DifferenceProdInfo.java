@@ -521,7 +521,12 @@ public class DifferenceProdInfo {
                 maxPageSeqNo = pageSeqNo + "";
             }
         }
-        return maxPageSeqNo;
+        if("".equals(maxPageSeqNo)){
+            //无参数时候 return 0
+            return "0";
+        }else {
+            return maxPageSeqNo;
+        }
     }
     //获取最大SeqNo
     public String getMaxSeqNo (String key,String table){
@@ -550,7 +555,12 @@ public class DifferenceProdInfo {
                 maxSeqNo = seqNo + "";
             }
         }
-        return maxSeqNo;
+        if("".equals(maxSeqNo)){
+            //无参数时候 return 0
+            return "0";
+        }else {
+            return maxSeqNo;
+        }
     }
     //产品参数
     public void prodDefineTran(Map prodMap,String seqNo,String operatorNo){
