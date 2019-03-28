@@ -4,6 +4,9 @@ import com.dcits.ensemble.om.controller.model.Result;
 import com.dcits.ensemble.om.controller.model.ResultUtils;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessDetailHist;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessMainFlow;
+import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
+import com.dcits.ensemble.om.model.dbmodel.OmProcessRelationHist;
+import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRelationHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessDetailHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessMainFlowRepository;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import springfox.documentation.spring.web.json.Json;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
@@ -33,6 +37,8 @@ public class ParaFlowList {
     OmProcessDetailHistRepository omProcessDetailHistRepository;
     @Resource
     FlowPublishService flowPublishService;
+    @Resource
+    OmProcessRecordHistRepository omProcessRecordHistRepository;
     //获取交易提交流程信息
     @RequestMapping("/reviewList")
     public @ResponseBody
@@ -49,6 +55,7 @@ public class ParaFlowList {
        }
       return ResultUtils.success(resultList);
     }
+
     //获取交易复核流程信息
     @RequestMapping("/reviewCheckList")
     public @ResponseBody
@@ -87,6 +94,37 @@ public class ParaFlowList {
         if(flag) {
             flowManagement.updateFlowOnly(mainSeqNo, userId, remark, isApproved, optType);
         }
+        return ResultUtils.success(responseMap);
+    }
+
+    //判断产品是否已经被编辑
+    @RequestMapping("/checkProdInFlow")
+    public @ResponseBody
+    Result checkProdInFlow(HttpServletResponse response, @RequestBody Map map){
+        String prodType = (String)map.get("prodType");
+        Map responseMap = new HashMap<>();
+        Boolean ret = false;
+        List<OmProcessMainFlow> omProcessMainFlowList = omProcessMainFlowRepository.findAll();
+        for(OmProcessMainFlow omProcessMainFlow:omProcessMainFlowList){
+            String status = omProcessMainFlow.getStatus().toString();
+            if("1".equals(status) || "2".equals(status) || "3".equals(status)){
+                Boolean findIn = false;
+                //存在在途数据 判断是否该产品
+                List<OmProcessRecordHist> omProcessRecordHistList = omProcessRecordHistRepository.findByMainSeqNo(omProcessMainFlow.getMainSeqNo());
+                for(OmProcessRecordHist omProcessRecordHist:omProcessRecordHistList){
+                    if(omProcessRecordHist.getPkAndValue().indexOf(prodType)!=-1){
+                        //产品存在
+                        ret = true;
+                        findIn = true;
+                        break;
+                    }
+                }
+                if(findIn){
+                    break;
+                }
+            }
+        }
+        responseMap.put("ret",ret);
         return ResultUtils.success(responseMap);
     }
 }
