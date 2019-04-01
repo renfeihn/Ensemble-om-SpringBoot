@@ -107,7 +107,8 @@ public class ParaFlowList {
         List<OmProcessMainFlow> omProcessMainFlowList = omProcessMainFlowRepository.findAll();
         for(OmProcessMainFlow omProcessMainFlow:omProcessMainFlowList){
             String status = omProcessMainFlow.getStatus().toString();
-            if("1".equals(status) || "2".equals(status) || "3".equals(status)){
+            String isP = omProcessMainFlow.getDispose().toString();
+            if(("N".equals(isP) && ("1".equals(status))) || "2".equals(status) || "3".equals(status)){
                 Boolean findIn = false;
                 //存在在途数据 判断是否该产品
                 List<OmProcessRecordHist> omProcessRecordHistList = omProcessRecordHistRepository.findByMainSeqNo(omProcessMainFlow.getMainSeqNo());
