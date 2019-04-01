@@ -4,14 +4,18 @@ import com.dcits.ensemble.om.controller.model.Result;
 import com.dcits.ensemble.om.controller.model.ResultUtils;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessMainFlow;
 import com.dcits.ensemble.om.model.dbmodel.tables.OmTableList;
+import com.dcits.ensemble.om.repository.base.SystemTableRepositoryImpl;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessMainFlowRepository;
 import com.dcits.ensemble.om.repository.tables.OmTableListRepository;
 import com.dcits.ensemble.om.service.paraFlow.DifferenceProdInfo;
 import com.dcits.ensemble.om.service.paraFlow.DifferenceTableInfo;
 import com.dcits.ensemble.om.service.paraFlow.FlowManagement;
 import com.dcits.ensemble.om.service.paraTable.ParamTableService;
+import com.dcits.ensemble.om.repository.prodFactory.MbAttrClassRepository;
+import com.dcits.ensemble.om.repository.prodFactory.FmCompanyRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,6 +42,12 @@ public class ParamTable {
     private ParamTableService paramTableService;
     @Resource
     private OmTableListRepository omTableListRepository;
+    @Resource
+    private MbAttrClassRepository mbAttrClassRepository;
+    @Resource
+    private FmCompanyRepository fmCompanyRepository;
+    @Resource
+    private SystemTableRepositoryImpl systemTableRepositoryImpl;
     @ApiOperation(value = "单表信息", notes = "获取单表信息")
     @RequestMapping("/getTableInfo")
     @ResponseBody
@@ -98,6 +108,99 @@ public class ParamTable {
         //记录操作流程
         //有单号，1.获取操作信息（操作序号） 2.组合表中生成新的子单号 3.将子单号信息存入差异信息表
         differenceTableInfo.insertTableDifferenceInfo(list, seqNo,tableName,tableDesc,"1");
+        return ResultUtils.success();
+    }
+
+    //获取元数据需要的参数分类和法人代码
+    @RequestMapping("/getTableColumnInfo")
+    @ResponseBody
+    public Result getTableColumnInfo (HttpServletResponse response) {
+        //Map map = requestBean.getBody();
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
+        Map responseMap = new HashMap<>();
+        responseMap.put("mbAttrClass",mbAttrClassRepository.findAll());
+        responseMap.put("fmCompany",fmCompanyRepository.findAll());
+        return ResultUtils.success(responseMap);
+    }
+
+    @RequestMapping("/saveParam")
+    @ResponseBody
+    public Result saveParam(HttpServletResponse response, @RequestBody Map map) {
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
+        String operate = (String) map.get("operate");
+        Map mbAttrType = (Map) map.get("mbAttrType");
+        //新增数据
+        if(operate.equals("add")){
+            List<Map> mbAttrValueAdd = (List) map.get("mbAttrValueAdd");
+            //attrType表
+            systemTableRepositoryImpl.insertTable("MB_ATTR_TYPE", mbAttrType);
+            //attrValue表
+            if(mbAttrValueAdd.size() != 0){
+                for(Map attrValue : mbAttrValueAdd){
+                    systemTableRepositoryImpl.insertTable("MB_ATTR_VALUE", attrValue);
+                }
+            }
+        }
+        //更新数据
+        if(operate.equals("update")){
+            //attrType
+            JSONObject pkAttr = new JSONObject();
+            pkAttr.put("ATTR_KEY", mbAttrType.get("attrKey"));
+            systemTableRepositoryImpl.updateTable("MB_ATTR_TYPE", mbAttrType, pkAttr);
+            //attrValue
+            if(mbAttrType.get("valueMethod").equals("RF")){
+                Map mbAttrValueUpdate = (Map) map.get("mbAttrValueUpdate");
+                JSONObject pkValue = new JSONObject();
+                pkValue.put("ATTR_KEY", mbAttrValueUpdate.get("attrKey"));
+                pkValue.put("ATTR_VALUE", mbAttrValueUpdate.get("attrValue"));
+                systemTableRepositoryImpl.updateTable("MB_ATTR_Value", mbAttrValueUpdate, pkValue);
+            }
+            if(mbAttrType.get("valueMethod").equals("VL")){
+                Map mbAttrValueUpdate = (Map) map.get("mbAttrValueUpdate");
+                List<Map> valueAdd = (List) mbAttrValueUpdate.get("mbAttrValueAdd");
+                List<Map> valueUpdate = (List) mbAttrValueUpdate.get("mbAttrValueUpdate");
+                List<Map> valueDelete = (List) mbAttrValueUpdate.get("mbAttrValueDelete");
+                if(valueAdd.size() != 0){
+                    for(Map attrValue : valueAdd){
+                        systemTableRepositoryImpl.insertTable("MB_ATTR_VALUE", attrValue);
+                    }
+                }
+                if(valueUpdate.size() != 0){
+                    for(Map attrValue : valueUpdate){
+                        JSONObject pkValue = new JSONObject();
+                        pkValue.put("ATTR_KEY", attrValue.get("attrKey"));
+                        pkValue.put("ATTR_VALUE", attrValue.get("attrValue"));
+                        systemTableRepositoryImpl.updateTable("MB_ATTR_VALUE", attrValue, pkValue);
+                    }
+                }
+                if(valueDelete.size() != 0){
+                    for(Map attrValue : valueDelete){
+                        JSONObject pkValue = new JSONObject();
+                        pkValue.put("ATTR_KEY", attrValue.get("attrKey"));
+                        pkValue.put("ATTR_VALUE", attrValue.get("attrValue"));
+                        systemTableRepositoryImpl.deleteTable("MB_ATTR_VALUE", attrValue, pkValue);
+                    }
+                }
+            }
+        }
+        //删除数据
+        if(operate.equals("delete")){
+            List<Map> mbAttrValueDelete = (List) map.get("mbAttrValueDelete");
+            JSONObject pkAttr = new JSONObject();
+            //attrType表
+            pkAttr.put("ATTR_KEY", mbAttrType.get("attrKey"));
+            systemTableRepositoryImpl.deleteTable("MB_ATTR_TYPE", mbAttrType, pkAttr);
+            //attrValue表
+            if(mbAttrValueDelete.size() != 0){
+                for(Map attrValue : mbAttrValueDelete){
+                    JSONObject pkValue = new JSONObject();
+                    pkValue.put("ATTR_KEY", attrValue.get("attrKey"));
+                    pkValue.put("ATTR_VALUE", attrValue.get("attrValue"));
+                    systemTableRepositoryImpl.deleteTable("MB_ATTR_VALUE", attrValue, pkAttr);
+                }
+            }
+        }
+
         return ResultUtils.success();
     }
 }

@@ -58,6 +58,11 @@ public class MbAttrInfoService {
             jsonInfo.put("valueMethod",method);
             jsonInfo.put("attrType",attrType);
             jsonInfo.put("columnDesc",mbAttrType.getAttrDesc());
+            jsonInfo.put("columnClass",mbAttrType.getAttrClass());
+            jsonInfo.put("useMethod",mbAttrType.getUseMethod());
+            jsonInfo.put("setValueFlag",mbAttrType.getSetValueFlag());
+            jsonInfo.put("busiCatagory",mbAttrType.getBusiCatagory());
+            jsonInfo.put("company",mbAttrType.getCompany());
             resultData.put(mbAttrType.getAttrKey(),jsonInfo);
         }
         return resultData;
