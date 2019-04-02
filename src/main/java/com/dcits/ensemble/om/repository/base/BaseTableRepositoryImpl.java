@@ -146,29 +146,52 @@ public class BaseTableRepositoryImpl {
         }
         sqlStr.deleteCharAt(sqlStr.length() - 1);
         sqlStr.append(right + space + "values" + space + left);
-        i=0;
-        for(Object data:dataMap.keySet()){
-            Object value=dataMap.get(data);
-            if(value!=null&&!"null".equals(value.toString())) {
-                if(i!=0) {
-                    sqlStr.append(comm);
-                }
-                sqlStr.append("?");
-            }
-            i++;
-        }
-        sqlStr.append(right);
+        //落数据库操作
         if(flag) {
-            Query dataQuery = em.createNativeQuery(sqlStr.toString());
-            i = 1;
+            i=0;
+            for(Object data:dataMap.keySet()){
+                Object value=dataMap.get(data);
+                if(value!=null&&!"null".equals(value.toString())) {
+                    if(i!=0) {
+                        sqlStr.append(comm);
+                    }
+                    sqlStr.append("?");
+                }
+                i++;
+            }
+            sqlStr.append(right);
+            if (flag) {
+                Query dataQuery = em.createNativeQuery(sqlStr.toString());
+                i = 1;
+                for (Object data : dataMap.keySet()) {
+                    Object value = dataMap.get(data);
+                    if (value != null && !"null".equals(value.toString())) {
+                        dataQuery.setParameter(i, value);
+                        i++;
+                    }
+                }
+                dataQuery.executeUpdate();
+            }
+        }
+        //导出sql数据操作
+        if(!flag) {
+            int dataSize = dataMap.size();
+            int flags = 1;
             for (Object data : dataMap.keySet()) {
                 Object value = dataMap.get(data);
-                if (value != null && !"null".equals(value.toString())) {
-                    dataQuery.setParameter(i, value);
-                    i++;
+                //sql导出
+                if (!flag) {
+                    sqlStr.append("'");
+                    sqlStr.append(value.toString());
+                    sqlStr.append("'");
+                    if (flags != dataSize) {
+                        sqlStr.append(comm);
+                    }
+                    flags++;
                 }
             }
-            dataQuery.executeUpdate();
+            sqlStr.append(right);
+            sqlStr.append(";");
         }
         return sqlStr;
     }
