@@ -5,11 +5,13 @@ import com.dcits.ensemble.om.controller.model.ResultUtils;
 import com.dcits.ensemble.om.model.dbmodel.*;
 import com.dcits.ensemble.om.model.dbmodel.tables.IrlProdInt;
 import com.dcits.ensemble.om.model.dbmodel.tables.OmTableList;
+import com.dcits.ensemble.om.model.dbmodel.MbAttrType;
 import com.dcits.ensemble.om.model.prodFactory.MbProdInfo;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessDetailHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessMainFlowRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRelationHistRepository;
+import com.dcits.ensemble.om.repository.prodFactory.MbAttrTypeRepository;
 import com.dcits.ensemble.om.repository.prodFactory.MbEventClassRepository;
 import com.dcits.ensemble.om.repository.tables.OmTableListRepository;
 import com.dcits.ensemble.om.service.paraFlow.DifferenceProdInfo;
@@ -32,7 +34,8 @@ import static java.lang.Integer.parseInt;
 @Api(value = "/getProdInfo", tags = "产品模块")
 @Controller
 public class ProdInfoController {
-
+    @Resource
+    private MbAttrTypeRepository mbAttrTypeRepository;
     @Resource
     private MbProdInfoService mbProdInfoService;
     @Resource
@@ -185,6 +188,24 @@ public class ProdInfoController {
     @ResponseBody
     public Result getAttrInfo(HttpServletResponse response) {
         return ResultUtils.success(mbAttrInfoService.getAttrInfo());
+    }
+    /**
+     * 获取某个的ATTR参数的中文描述
+     */
+    @RequestMapping("/getAttrType")
+    @ResponseBody
+    public Result getAttrType(HttpServletResponse response, @RequestParam(value = "attrKey", required = false) String attrKey) {
+        if(attrKey.matches(".*[a-z]+.*")){
+            attrKey =  attrKey.replaceAll("[A-Z]", "_$0");
+        }
+        MbAttrType mbAttrType = mbAttrTypeRepository.findByAttrKey(attrKey);
+        String attrDesc;
+        if(mbAttrType == null){
+            attrDesc =attrKey;
+        }else{
+            attrDesc = mbAttrType.getAttrDesc();
+        }
+        return ResultUtils.success(attrDesc);
     }
     /**
      * 查询某个产品的历史操作单号，时间，操作人
