@@ -194,18 +194,8 @@ public class ProdInfoController {
      */
     @RequestMapping("/getAttrType")
     @ResponseBody
-    public Result getAttrType(HttpServletResponse response, @RequestParam(value = "attrKey", required = false) String attrKey) {
-        if(attrKey.matches(".*[a-z]+.*")){
-            attrKey =  attrKey.replaceAll("[A-Z]", "_$0");
-        }
-        MbAttrType mbAttrType = mbAttrTypeRepository.findByAttrKey(attrKey);
-        String attrDesc;
-        if(mbAttrType == null){
-            attrDesc =attrKey;
-        }else{
-            attrDesc = mbAttrType.getAttrDesc();
-        }
-        return ResultUtils.success(attrDesc);
+    public Result getAttrType(HttpServletResponse response) {
+        return ResultUtils.success(mbAttrTypeRepository.findAll());
     }
     /**
      * 查询某个产品的历史操作单号，时间，操作人
