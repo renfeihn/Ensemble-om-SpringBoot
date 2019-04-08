@@ -1,6 +1,6 @@
 {
     "code": "MB_OPEN_CTL",
-    "comment": "¿ª»§ÊıÁ¿¿ØÖÆ±í",
+    "comment": "å¼€æˆ·æ•°é‡æ§åˆ¶è¡¨",
     "attr": [
         {
             "code": "CLIENT_TYPE",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "¿Í»§ÀàĞÍ",
+            "comment": "å®¢æˆ·ç±»å‹",
             "defaults": "",
             "dictionary": "CLIENT_TYPE",
             "scope": "CIF_CLIENT_TYPE.CLIENT_TYPE"
@@ -22,8 +22,8 @@
             "lengths": "5",
             "precision": "",
             "defaults": "",
-            "comment": "¿ØÖÆÒªËØ",
-            "scope": "P:²úÆ·ÀàĞÍ,A:ÕË»§ÊôĞÔ,D:Æ¾Ö¤ÀàĞÍ",
+            "comment": "æ§åˆ¶è¦ç´ ",
+            "scope": "P:äº§å“ç±»å‹,A:è´¦æˆ·å±æ€§,D:å‡­è¯ç±»å‹",
             "M": true,
             "P": true
         },
@@ -34,7 +34,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÒªËØÈ¡Öµ",
+            "comment": "è¦ç´ å–å€¼",
             "defaults": "",
             "dictionary": "CTRL_VALUE",
             "scope": ""
@@ -46,7 +46,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÊıÁ¿",
+            "comment": "æ•°é‡",
             "defaults": "",
             "dictionary": "QUANTITY",
             "scope": ""
@@ -59,8 +59,8 @@
             "lengths": "2",
             "precision": "",
             "defaults": "",
-            "comment": "´¦Àí·½Ê½",
-            "scope": "A:ÊÚÈ¨´¦Àí,B:¾Ü¾ø´¦Àí,D:ÌáĞÑ´¦Àí",
+            "comment": "å¤„ç†æ–¹å¼",
+            "scope": "A:æˆæƒå¤„ç†,B:æ‹’ç»å¤„ç†,D:æé†’å¤„ç†",
             "M": true,
             "P": false
         },
@@ -71,7 +71,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -83,7 +83,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -95,7 +95,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -106,5 +106,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "²úÆ·²ÎÊı"
+    "moduleType": "äº§å“å‚æ•°"
 }

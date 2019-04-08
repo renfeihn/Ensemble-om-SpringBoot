@@ -1,6 +1,6 @@
 {
     "code": "IRL_RISK_SETING",
-    "comment": "ÀûÂÊ·çÏÕÉèÖÃ±í",
+    "comment": "åˆ©ç‡é£é™©è®¾ç½®è¡¨",
     "attr": [
         {
             "dictionary": "IRL_SEQ_NO",
@@ -10,7 +10,7 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "ĞòºÅ",
+            "comment": "åºå·",
             "scope": "",
             "M": true,
             "P": false
@@ -22,11 +22,11 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "²úÆ·ÀàĞÍ",
+            "comment": "äº§å“ç±»å‹",
             "defaults": "",
             "dictionary": "PROD_TYPE",
-            "column": "²úÆ·ÀàĞÍ È¡ÖµÓÚMB_PROD_TYPE.PROD_TYPE",
-            "scope": "È¡ÖµÓÚMB_PROD_TYPE.PROD_TYPE"
+            "column": "äº§å“ç±»å‹ å–å€¼äºMB_PROD_TYPE.PROD_TYPE",
+            "scope": "å–å€¼äºMB_PROD_TYPE.PROD_TYPE"
         },
         {
             "code": "CCY",
@@ -35,10 +35,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "±ÒÖÖ",
+            "comment": "å¸ç§",
             "defaults": "",
             "dictionary": "CCY",
-            "column": "±ÒÖÖ",
+            "column": "å¸ç§",
             "scope": "FM_CURRENCY.CCY"
         },
         {
@@ -48,10 +48,10 @@
             "precision": "2",
             "M": true,
             "P": false,
-            "comment": "Óà¶î",
+            "comment": "ä½™é¢",
             "defaults": "",
             "dictionary": "BALANCE",
-            "column": "Óà¶î",
+            "column": "ä½™é¢",
             "scope": ""
         },
         {
@@ -62,8 +62,8 @@
             "lengths": "2",
             "precision": "",
             "defaults": "",
-            "comment": "ÆµÂÊÀàĞÍ",
-            "scope": "È¡×ÔFM_PERIOD_FREQ.PERIOD_FREQ",
+            "comment": "é¢‘ç‡ç±»å‹",
+            "scope": "å–è‡ªFM_PERIOD_FREQ.PERIOD_FREQ",
             "M": false,
             "P": false
         },
@@ -74,10 +74,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ã¿ÆÚÌìÊı",
+            "comment": "æ¯æœŸå¤©æ•°",
             "defaults": "",
             "dictionary": "DAY_NUM",
-            "column": "Ã¿ÆÚÌìÊı DAY_MTHÎªDÊ±£¬È¡ADD_NOÖµ£»ÎªMÊ±£¬ÖµÎª7* ADD_NO£»ÎªYÊ±£¬ÖµÎª360* ADD_NO",
+            "column": "æ¯æœŸå¤©æ•° DAY_MTHä¸ºDæ—¶ï¼Œå–ADD_NOå€¼ï¼›ä¸ºMæ—¶ï¼Œå€¼ä¸º7* ADD_NOï¼›ä¸ºYæ—¶ï¼Œå€¼ä¸º360* ADD_NO",
             "scope": ""
         },
         {
@@ -87,10 +87,10 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "¸¡¶¯µãÊıÏÂÏŞ",
+            "comment": "æµ®åŠ¨ç‚¹æ•°ä¸‹é™",
             "defaults": "",
             "dictionary": "MIN_SPREAD_RATE",
-            "column": "¸¡¶¯µãÊıÏÂÏŞ",
+            "column": "æµ®åŠ¨ç‚¹æ•°ä¸‹é™",
             "scope": ""
         },
         {
@@ -100,10 +100,10 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "¸¡¶¯µãÊıÉÏÏŞ",
+            "comment": "æµ®åŠ¨ç‚¹æ•°ä¸Šé™",
             "defaults": "",
             "dictionary": "MAX_SPREAD_RATE",
-            "column": "¸¡¶¯µãÊıÉÏÏŞ",
+            "column": "æµ®åŠ¨ç‚¹æ•°ä¸Šé™",
             "scope": ""
         },
         {
@@ -113,10 +113,10 @@
             "precision": "2",
             "M": false,
             "P": false,
-            "comment": "¸¡¶¯°Ù·Ö±ÈÏÂÏŞ",
+            "comment": "æµ®åŠ¨ç™¾åˆ†æ¯”ä¸‹é™",
             "defaults": "",
             "dictionary": "MIN_SPREAD_PERCENT",
-            "column": "¸¡¶¯°Ù·Ö±ÈÏÂÏŞ",
+            "column": "æµ®åŠ¨ç™¾åˆ†æ¯”ä¸‹é™",
             "scope": ""
         },
         {
@@ -126,10 +126,10 @@
             "precision": "2",
             "M": false,
             "P": false,
-            "comment": "¸¡¶¯°Ù·Ö±ÈÉÏÏŞ",
+            "comment": "æµ®åŠ¨ç™¾åˆ†æ¯”ä¸Šé™",
             "defaults": "",
             "dictionary": "MAX_SPREAD_PERCENT",
-            "column": "¸¡¶¯°Ù·Ö±ÈÉÏÏŞ",
+            "column": "æµ®åŠ¨ç™¾åˆ†æ¯”ä¸Šé™",
             "scope": ""
         },
         {
@@ -139,10 +139,10 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "ĞĞÄÚÀûÂÊÏÂÏŞ",
+            "comment": "è¡Œå†…åˆ©ç‡ä¸‹é™",
             "defaults": "",
             "dictionary": "MIN_BRANCH_RATE",
-            "column": "ĞĞÄÚÀûÂÊÏÂÏŞ",
+            "column": "è¡Œå†…åˆ©ç‡ä¸‹é™",
             "scope": ""
         },
         {
@@ -152,10 +152,10 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "ĞĞÄÚÀûÂÊÉÏÏŞ",
+            "comment": "è¡Œå†…åˆ©ç‡ä¸Šé™",
             "defaults": "",
             "dictionary": "MAX_BRANCH_RATE",
-            "column": "ĞĞÄÚÀûÂÊÉÏÏŞ",
+            "column": "è¡Œå†…åˆ©ç‡ä¸Šé™",
             "scope": ""
         },
         {
@@ -165,10 +165,10 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "Ö´ĞĞÀûÂÊÏÂÏŞ",
+            "comment": "æ‰§è¡Œåˆ©ç‡ä¸‹é™",
             "defaults": "",
             "dictionary": "MIN_INT_RATE",
-            "column": "Ö´ĞĞÀûÂÊÏÂÏŞ",
+            "column": "æ‰§è¡Œåˆ©ç‡ä¸‹é™",
             "scope": ""
         },
         {
@@ -178,10 +178,10 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "Ö´ĞĞÀûÂÊÉÏÏŞ",
+            "comment": "æ‰§è¡Œåˆ©ç‡ä¸Šé™",
             "defaults": "",
             "dictionary": "MAX_INT_RATE",
-            "column": "Ö´ĞĞÀûÂÊÉÏÏŞ",
+            "column": "æ‰§è¡Œåˆ©ç‡ä¸Šé™",
             "scope": ""
         },
         {
@@ -191,10 +191,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
+            "column": "æ³•äººä»£ç ",
             "scope": "FM_COMPANY.COMPANY"
         },
         {
@@ -204,10 +204,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
+            "column": "æ—¶é—´æˆ³",
             "scope": ""
         },
         {
@@ -217,10 +217,10 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
+            "column": "äº¤æ˜“æ—¶é—´",
             "scope": ""
         }
     ],
@@ -228,5 +228,5 @@
     "dbType": "upright",
     "parameter": "tran",
     "system": "Limarket",
-    "commentDesc": "±¸×¢£ºPROD_TYPE¡¢CCY¡¢BALANCE¡¢PERIOD_FREQ±ØĞëÎ¨Ò»"
+    "commentDesc": "å¤‡æ³¨ï¼šPROD_TYPEã€CCYã€BALANCEã€PERIOD_FREQå¿…é¡»å”¯ä¸€"
 }

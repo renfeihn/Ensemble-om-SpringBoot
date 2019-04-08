@@ -1,6 +1,6 @@
 {
     "code": "IRL_FEE_PROFIT_DISTRIBUTION",
-    "comment": "·ÖÈó¹æÔò±í",
+    "comment": "åˆ†æ¶¦è§„åˆ™è¡¨",
     "attr": [
         {
             "dictionary": "FEE_TYPE",
@@ -10,8 +10,8 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "·ÑÂÊÀàĞÍ",
-            "scope": "È¡×ÔIRL_FEE_TYPE.FEE_TYPE",
+            "comment": "è´¹ç‡ç±»å‹",
+            "scope": "å–è‡ªIRL_FEE_TYPE.FEE_TYPE",
             "M": true,
             "P": true
         },
@@ -22,10 +22,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "»ú¹¹´úÂë",
+            "comment": "æœºæ„ä»£ç ",
             "defaults": "",
             "dictionary": "BRANCH",
-            "column": "»ú¹¹´úÂë",
+            "column": "æœºæ„ä»£ç ",
             "scope": "FM_BRANCH.BRANCH"
         },
         {
@@ -35,10 +35,10 @@
             "precision": "2",
             "M": true,
             "P": false,
-            "comment": "°Ù·Ö±È",
+            "comment": "ç™¾åˆ†æ¯”",
             "defaults": "",
             "dictionary": "PERCENT",
-            "column": "°Ù·Ö±È",
+            "column": "ç™¾åˆ†æ¯”",
             "scope": ""
         },
         {
@@ -48,10 +48,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
+            "column": "æ³•äººä»£ç ",
             "scope": "FM_COMPANY.COMPANY"
         },
         {
@@ -61,10 +61,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
+            "column": "æ—¶é—´æˆ³",
             "scope": ""
         },
         {
@@ -74,10 +74,10 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
+            "column": "äº¤æ˜“æ—¶é—´",
             "scope": ""
         }
     ],
@@ -85,5 +85,5 @@
     "dbType": "upright",
     "parameter": "busi_para",
     "system": "Limarket",
-    "commentDesc": "×÷ÓÃ£º¼ÇÂ¼·ÑÂÊµÄ·ÖÈó¹æÔò£¬·ÖÈó¹æÔòÖĞ°üÀ¨»ú¹¹´úÂëºÍ·ÖÈó±ÈÀı£¬È«²¿±ÈÀıÏà¼ÓĞèµÈÓÚ100%¡£;"
+    "commentDesc": "ä½œç”¨ï¼šè®°å½•è´¹ç‡çš„åˆ†æ¶¦è§„åˆ™ï¼Œåˆ†æ¶¦è§„åˆ™ä¸­åŒ…æ‹¬æœºæ„ä»£ç å’Œåˆ†æ¶¦æ¯”ä¾‹ï¼Œå…¨éƒ¨æ¯”ä¾‹ç›¸åŠ éœ€ç­‰äº100%ã€‚;"
 }

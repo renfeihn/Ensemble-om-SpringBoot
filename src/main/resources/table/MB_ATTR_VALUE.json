@@ -74,10 +74,10 @@
       "precision": "",
       "M": false,
       "P": false,
-      "comment": "关联表描述列  ",
+      "comment": "关联表描述列",
       "defaults": "",
       "dictionary": "REF_COLUMNS",
-      "column": "关联表描述列  ",
+      "column": "关联表描述列",
       "scope": ""
     },
     {

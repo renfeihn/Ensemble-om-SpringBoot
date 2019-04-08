@@ -1,6 +1,6 @@
 {
     "code": "FM_DEPARTMENT",
-    "comment": "≤ø√≈–≈œ¢±Ì",
+    "comment": "ÈÉ®Èó®‰ø°ÊÅØË°®",
     "attr": [
         {
             "code": "DEPARTMENT",
@@ -9,10 +9,10 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "≤ø√≈¥˙¬Î",
+            "comment": "ÈÉ®Èó®‰ª£Á†Å",
             "defaults": "",
             "dictionary": "DEPARTMENT",
-            "scope": "»°÷µFM_DEPARTMENT"
+            "scope": "ÂèñÂÄºFM_DEPARTMENT"
         },
         {
             "code": "DEPARTMENT_DESC",
@@ -21,7 +21,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "≤ø√≈√˚≥∆",
+            "comment": "ÈÉ®Èó®ÂêçÁß∞",
             "defaults": "",
             "dictionary": "DEPARTMENT_DESC",
             "scope": ""
@@ -34,8 +34,8 @@
             "lengths": "12",
             "precision": "",
             "defaults": "",
-            "comment": "¿˚»Û÷––ƒ",
-            "scope": "»°÷µFM_PROFIT_CENTRE.PROFIT_CENTRE",
+            "comment": "Âà©Ê∂¶‰∏≠ÂøÉ",
+            "scope": "ÂèñÂÄºFM_PROFIT_CENTRE.PROFIT_CENTRE",
             "M": false,
             "P": false
         },
@@ -46,7 +46,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "∑®»À",
+            "comment": "Ê≥ï‰∫∫",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -58,7 +58,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ωª“◊ ±º‰¥¡",
+            "comment": "‰∫§ÊòìÊó∂Èó¥Êà≥",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -70,7 +70,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "Ωª“◊ ±º‰",
+            "comment": "‰∫§ÊòìÊó∂Èó¥",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -81,5 +81,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "π´π≤≤Œ ˝"
+    "moduleType": "ÂÖ¨ÂÖ±ÂèÇÊï∞"
 }

@@ -1,6 +1,6 @@
 {
     "code": "MB_ACCT_NATURE_DEF",
-    "comment": "ÕË»§ÊôĞÔ¶¨Òå",
+    "comment": "è´¦æˆ·å±æ€§å®šä¹‰",
     "attr": [
         {
             "code": "ACCT_NATURE",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "ÕË»§ÊôĞÔ",
+            "comment": "è´¦æˆ·å±æ€§",
             "defaults": "",
             "dictionary": "ACCT_NATURE",
             "scope": "MB_ACCT_NATURE_DEF.ACCT_NATURE"
@@ -22,8 +22,8 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "ÕË»§ÊôĞÔÃèÊö",
-            "scope": "A:Ö»ÄÜÊÇA~Z»òa~z·¶Î§µÄÓ¢ÎÄ×Ö·û,N:Êı×Ö1~9 AN:AºÍNÈ¡ÖµµÄ×éºÏ,AN:AºÍNÈ¡ÖµµÄ×éºÏ,ANS:ANÈ¡Öµ·¶Î§Í¬Ê±Ö§³ÖÌØÊâ×Ö·û!@#$%^&*()?+=-._: /",
+            "comment": "è´¦æˆ·å±æ€§æè¿°",
+            "scope": "A:åªèƒ½æ˜¯A~Zæˆ–a~zèŒƒå›´çš„è‹±æ–‡å­—ç¬¦,N:æ•°å­—1~9 AN:Aå’ŒNå–å€¼çš„ç»„åˆ,AN:Aå’ŒNå–å€¼çš„ç»„åˆ,ANS:ANå–å€¼èŒƒå›´åŒæ—¶æ”¯æŒç‰¹æ®Šå­—ç¬¦!@#$%^&*()?+=-._: /",
             "M": true,
             "P": false
         },
@@ -34,7 +34,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -46,7 +46,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ê±¼ä´Á",
+            "comment": "æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -58,7 +58,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -70,11 +70,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÕË»§ÊôĞÔ·ÖÀà",
+            "comment": "è´¦æˆ·å±æ€§åˆ†ç±»",
             "defaults": "",
-            "scope": "1-»ù±¾»§£»2-Ò»°ã»§",
+            "scope": "1-åŸºæœ¬æˆ·ï¼›2-ä¸€èˆ¬æˆ·",
             "dictionary": "NATURE_CLASS",
-            "column": "ÕË»§ÊôĞÔ·ÖÀà"
+            "column": "è´¦æˆ·å±æ€§åˆ†ç±»"
         }
     ],
     "table_space": "core_data",
@@ -82,5 +82,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "ÕË»§²ÎÊı"
+    "moduleType": "è´¦æˆ·å‚æ•°"
 }

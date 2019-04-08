@@ -1,49 +1,49 @@
 {
-    "code": "MB_EVENT_DEFAULT_TYPE",
-    "comment": "²úÆ·»ù´¡ÊÂ¼ş¶¨Òå±í",
-    "attr": [        {
-            "code": "EVENT_DEFAULT_TYPE",
-            "dataType": "Varchar",
-            "lengths": "50",
-            "precision": "",
-            "M": true,            "P": true,            "comment": "»ù´¡ÊÂ¼şÀàĞÍ",
-            "defaults": "",
-            "dictionary": "EVENT_DEFAULT_TYPE",
-            "column": "»ù´¡ÊÂ¼şÀàĞÍ",
-            "scope": ""        }
-,        {
-            "code": "EVENT_DEFAULT_DESC",
-            "dataType": "Varchar",
-            "lengths": "100",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "»ù´¡ÊÂ¼şÃèÊö",
-            "defaults": "",
-            "dictionary": "EVENT_DEFAULT_DESC",
-            "column": "»ù´¡ÊÂ¼şÃèÊö",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIMESTAMP",
-            "dataType": "Varchar",
-            "lengths": "17",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä´Á",
-            "defaults": "",
-            "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIME",
-            "dataType": "Number",
-            "lengths": "11",
-            "precision": "0",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä",
-            "defaults": "",
-            "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
-            "scope": ""        }
-    ],    "table_space": "core_data",
-    "dbType": "upright",
-    "parameter": "init_para",
-    "system": "Ensemble",
-    "commentDesc": " ÃèÊö²úÆ·¹¤³§ËùÓĞÊÂ¼şµÄ»ù´¡ÊÂ¼ş",
-"moduleType":"²úÆ·²ÎÊı"}
+  "code": "MB_EVENT_DEFAULT_TYPE",
+  "comment": "äº§å“åŸºç¡€äº‹ä»¶å®šä¹‰è¡¨",
+  "attr": [        {
+    "code": "EVENT_DEFAULT_TYPE",
+    "dataType": "Varchar",
+    "lengths": "50",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "åŸºç¡€äº‹ä»¶ç±»å‹",
+    "defaults": "",
+    "dictionary": "EVENT_DEFAULT_TYPE",
+    "column": "åŸºç¡€äº‹ä»¶ç±»å‹",
+    "scope": ""        }
+  ,        {
+      "code": "EVENT_DEFAULT_DESC",
+      "dataType": "Varchar",
+      "lengths": "100",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "åŸºç¡€äº‹ä»¶æè¿°",
+      "defaults": "",
+      "dictionary": "EVENT_DEFAULT_DESC",
+      "column": "åŸºç¡€äº‹ä»¶æè¿°",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "æ—¶é—´æˆ³",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "äº¤æ˜“æ—¶é—´",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "init_para",
+  "system": "Ensemble",
+  "commentDesc": " æè¿°äº§å“å·¥å‚æ‰€æœ‰äº‹ä»¶çš„åŸºç¡€äº‹ä»¶",
+  "moduleType":"äº§å“å‚æ•°"}

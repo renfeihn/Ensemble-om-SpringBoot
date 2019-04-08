@@ -1,6 +1,6 @@
 {
     "code": "FM_LOC_HOLIDAY",
-    "comment": "µØÇø½Ú¼ÙÈÕ",
+    "comment": "åœ°åŒºèŠ‚å‡æ—¥",
     "attr": [
         {
             "code": "COUNTRY",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "¹ú¼Ò ",
+            "comment": "å›½å®¶",
             "defaults": "",
             "dictionary": "COUNTRY",
             "scope": "FM_CURRENCY.COUNTRY"
@@ -21,7 +21,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "Ê¡ÊĞ ",
+            "comment": "çœå¸‚",
             "defaults": "",
             "dictionary": "STATE",
             "scope": ""
@@ -33,7 +33,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "½Ú¼ÙÈÕÈÕÆÚ",
+            "comment": "èŠ‚å‡æ—¥æ—¥æœŸ",
             "defaults": "",
             "dictionary": "HOLIDAY_DATE",
             "scope": ""
@@ -45,7 +45,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "½Ú¼ÙÈÕÃèÊö",
+            "comment": "èŠ‚å‡æ—¥æè¿°",
             "defaults": "",
             "dictionary": "HOLIDAY_DESC",
             "scope": ""
@@ -58,8 +58,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "½Ú¼ÙÈÕÀàĞÍ",
-            "scope": "S:±ê×¼¼ÙÈÕ,N:·Ç±ê×¼¼ÙÈÕ",
+            "comment": "èŠ‚å‡æ—¥ç±»å‹",
+            "scope": "S:æ ‡å‡†å‡æ—¥,N:éæ ‡å‡†å‡æ—¥",
             "M": true,
             "P": false
         },
@@ -71,8 +71,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "¹¤×÷ÈÕ_¼ÙÈÕ ",
-            "scope": "W:¹¤×÷ÈÕ,H:¼ÙÈÕ",
+            "comment": "å·¥ä½œæ—¥_å‡æ—¥",
+            "scope": "W:å·¥ä½œæ—¥,H:å‡æ—¥",
             "M": true,
             "P": false
         },
@@ -84,8 +84,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "'B'  ",
-            "comment": "ÊÊÓÃ·¶Î§ ",
-            "scope": "I:¸öÈË,E:¹«Ë¾,B:¸öÈËºÍ¹«Ë¾",
+            "comment": "é€‚ç”¨èŒƒå›´",
+            "scope": "I:ä¸ªäºº,E:å…¬å¸,B:ä¸ªäººå’Œå…¬å¸",
             "M": true,
             "P": false
         },
@@ -96,7 +96,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË",
+            "comment": "æ³•äºº",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -108,7 +108,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -120,7 +120,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -131,5 +131,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "¹«¹²²ÎÊı"
+    "moduleType": "å…¬å…±å‚æ•°"
 }

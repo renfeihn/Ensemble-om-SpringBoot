@@ -1,6 +1,6 @@
 {
     "code": "FM_ACCT_EXEC",
-    "comment": "¿Í»§¾­Àí±í",
+    "comment": "å®¢æˆ·ç»ç†è¡¨",
     "attr": [
         {
             "code": "ACCT_EXEC",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "¿Í»§¾­Àí",
+            "comment": "å®¢æˆ·ç»ç†",
             "defaults": "",
             "dictionary": "ACCT_EXEC",
             "scope": ""
@@ -21,7 +21,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "¿Í»§¾­ÀíĞÕÃû",
+            "comment": "å®¢æˆ·ç»ç†å§“å",
             "defaults": "",
             "dictionary": "ACCT_EXEC_NAME",
             "scope": ""
@@ -33,7 +33,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ö÷¹Ü¾­Àí",
+            "comment": "ä¸»ç®¡ç»ç†",
             "defaults": "",
             "dictionary": "MANAGER",
             "scope": ""
@@ -46,8 +46,8 @@
             "lengths": "12",
             "precision": "",
             "defaults": "",
-            "comment": "ÀûÈóÖĞĞÄ",
-            "scope": "È¡ÖµFM_PROFIT_CENTRE.PROFIT_CENTRE",
+            "comment": "åˆ©æ¶¦ä¸­å¿ƒ",
+            "scope": "å–å€¼FM_PROFIT_CENTRE.PROFIT_CENTRE",
             "M": false,
             "P": false
         },
@@ -58,10 +58,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÊÇ·ñµ£±£¾­Àí Y-ÊÇ N-·ñ",
+            "comment": "æ˜¯å¦æ‹…ä¿ç»ç† Y-æ˜¯ N-å¦",
             "defaults": "'N'  ",
             "dictionary": "COLLAT_MGR_IND",
-            "scope": "Y:ÊÇ,N:·ñ"
+            "scope": "Y:æ˜¯,N:å¦"
         },
         {
             "code": "BRANCH",
@@ -70,7 +70,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "¹éÊô»ú¹¹",
+            "comment": "å½’å±æœºæ„",
             "defaults": "",
             "dictionary": "BRANCH",
             "scope": "FM_BRANCH.BRANCH"
@@ -82,7 +82,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË",
+            "comment": "æ³•äºº",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -95,7 +95,7 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "Ö¤¼şÀàĞÍ",
+            "comment": "è¯ä»¶ç±»å‹",
             "scope": "CIF_DOCUMENT_TYPE.DOCUMENT_TYPE",
             "M": false,
             "P": false
@@ -107,7 +107,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ö¤¼şºÅÂë",
+            "comment": "è¯ä»¶å·ç ",
             "defaults": "",
             "dictionary": "DOCUMENT_ID",
             "scope": ""
@@ -119,7 +119,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¢Ö¤¹ú¼Ò",
+            "comment": "å‘è¯å›½å®¶",
             "defaults": "",
             "dictionary": "ISS_COUNTRY",
             "scope": ""
@@ -131,7 +131,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÁªÏµµç»°",
+            "comment": "è”ç³»ç”µè¯",
             "defaults": "",
             "dictionary": "CONTACT_ID",
             "scope": ""
@@ -143,7 +143,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "¿Í»§¾­ÀíÀàĞÍ",
+            "comment": "å®¢æˆ·ç»ç†ç±»å‹",
             "defaults": "",
             "dictionary": "ACCT_EXEC_TYPE",
             "scope": ""
@@ -155,10 +155,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "¿Í»§¾­Àí×´Ì¬",
+            "comment": "å®¢æˆ·ç»ç†çŠ¶æ€",
             "defaults": "",
             "dictionary": "ACCT_EXEC_STATUS",
-            "scope": "A:»î¶¯ E:Ê§Ğ§"
+            "scope": "A:æ´»åŠ¨ E:å¤±æ•ˆ"
         },
         {
             "code": "TRAN_TIMESTAMP",
@@ -167,7 +167,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -179,7 +179,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -190,5 +190,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "¹«¹²²ÎÊı"
+    "moduleType": "å…¬å…±å‚æ•°"
 }

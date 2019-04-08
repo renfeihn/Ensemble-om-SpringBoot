@@ -1,6 +1,6 @@
 {
     "code": "IRL_PROD_INT",
-    "comment": "²úÆ·ÀûÂÊĞÅÏ¢±í",
+    "comment": "äº§å“åˆ©ç‡ä¿¡æ¯è¡¨",
     "attr": [
         {
             "dictionary": "PROD_TYPE",
@@ -10,8 +10,8 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "²úÆ·ÀàĞÍ ",
-            "scope": "È¡ÖµÓÚMB_PROD_TYPE.PROD_TYPE",
+            "comment": "äº§å“ç±»å‹",
+            "scope": "å–å€¼äºMB_PROD_TYPE.PROD_TYPE",
             "M": true,
             "P": true
         },
@@ -23,8 +23,8 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "ÊÂ¼şÀàĞÍ",
-            "scope": "È¡×ÔFM_REF_CODE¡£µ±×Ö¶ÎDOMAINµÄÖµÎªEVENT_TYPEÊ±£¬È¡×Ö¶ÎFIELD_IDµÄÖµ",
+            "comment": "äº‹ä»¶ç±»å‹",
+            "scope": "å–è‡ªFM_REF_CODEã€‚å½“å­—æ®µDOMAINçš„å€¼ä¸ºEVENT_TYPEæ—¶ï¼Œå–å­—æ®µFIELD_IDçš„å€¼",
             "M": true,
             "P": true
         },
@@ -36,8 +36,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "ÀûÂÊÀàĞÍ ",
-            "scope": "È¡×Ô±íirl_int_type",
+            "comment": "åˆ©ç‡ç±»å‹ ",
+            "scope": "å–è‡ªè¡¨irl_int_type",
             "M": false,
             "P": false
         },
@@ -49,8 +49,8 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "ÀûÏ¢·ÖÀà",
-            "scope": "INT:Õı³£ÀûÏ¢,ODP:·£Ï¢,ODI:¸´Àû,ODODP:·£Ï¢µÄ¸´Àû,ODODI:¸´ÀûµÄ¸´Àû,ODF:Í¸Ö§ÀûÏ¢,PDUE:³¬ÆÚÀûÏ¢  ",
+            "comment": "åˆ©æ¯åˆ†ç±»",
+            "scope": "INT:æ­£å¸¸åˆ©æ¯,ODP:ç½šæ¯,ODI:å¤åˆ©,ODODP:ç½šæ¯çš„å¤åˆ©,ODODI:å¤åˆ©çš„å¤åˆ©,ODF:é€æ”¯åˆ©æ¯,PDUE:è¶…æœŸåˆ©æ¯",
             "M": true,
             "P": true
         },
@@ -62,8 +62,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "Ë°ÂÊÀàĞÍ ",
-            "scope": "È¡×ÔIRL_TAXRATE_DEFINE.TAXRATE_TYPE",
+            "comment": "ç¨ç‡ç±»å‹",
+            "scope": "å–è‡ªIRL_TAXRATE_DEFINE.TAXRATE_TYPE",
             "M": false,
             "P": false
         },
@@ -75,8 +75,8 @@
             "lengths": "30",
             "precision": "",
             "defaults": "",
-            "comment": "ÀûÂÊ¼ÆËã½ğ¶î±àÂë",
-            "scope": "È¡×ÔIRL_AMT_EXPRESSION.EXPRESS_ID",
+            "comment": "åˆ©ç‡è®¡ç®—é‡‘é¢ç¼–ç ",
+            "scope": "å–è‡ªIRL_AMT_EXPRESSION.EXPRESS_ID",
             "M": true,
             "P": false
         },
@@ -88,8 +88,8 @@
             "lengths": "30",
             "precision": "",
             "defaults": "",
-            "comment": "ÀûÏ¢¼ÆËã½ğ¶î±àÂë",
-            "scope": "È¡×ÔIRL_AMT_EXPRESSION.EXPRESS_ID",
+            "comment": "åˆ©æ¯è®¡ç®—é‡‘é¢ç¼–ç ",
+            "scope": "å–è‡ªIRL_AMT_EXPRESSION.EXPRESS_ID",
             "M": true,
             "P": false
         },
@@ -101,8 +101,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÖØËãÀûÏ¢·½·¨",
-            "scope": " N:ÖØĞÂ°´Ä£ĞÍ¼ÆËã£» H:È¡ÀúÊ·ÀûÂÊ¼ÆËã£» I£ºÈ¡ÀúÊ·¼ÆÌáºóÔÙ°´Ä£ĞÍ¼ÆËã Ä¬ÈÏÎªN",
+            "comment": "é‡ç®—åˆ©æ¯æ–¹æ³•",
+            "scope": " N:é‡æ–°æŒ‰æ¨¡å‹è®¡ç®—ï¼› H:å–å†å²åˆ©ç‡è®¡ç®—ï¼› Iï¼šå–å†å²è®¡æåå†æŒ‰æ¨¡å‹è®¡ç®— é»˜è®¤ä¸ºN",
             "M": true,
             "P": false
         },
@@ -113,7 +113,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -126,8 +126,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "'0'",
-            "comment": "¼ÆÏ¢ÆğÊ¼ÈÕÆÚÈ¡Öµ·½·¨ ",
-            "scope": "O:¿ª»§ÈÕÆÚ,M:µ½ÆÚÈÕ,I:¼ÆÌáÈÕÆÚ,C:±íÊ¾°´ÉÏÒ»½áÏ¢ÈÕ",
+            "comment": "è®¡æ¯èµ·å§‹æ—¥æœŸå–å€¼æ–¹æ³•",
+            "scope": "O:å¼€æˆ·æ—¥æœŸ,M:åˆ°æœŸæ—¥,I:è®¡ææ—¥æœŸ,C:è¡¨ç¤ºæŒ‰ä¸Šä¸€ç»“æ¯æ—¥",
             "M": false,
             "P": false
         },
@@ -139,8 +139,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "¿¿µµÌìÊı¼ÆËã·½Ê½ ",
-            "scope": "A£º°´´æÆÚ£¨ÆğÏ¢ÈÕ¼ÓÉÏ´æÆÚ£©,B£ºÊµ¼ÊÌìÊı£¨´ÓÆğÏ¢ÈÕ¿ªÊ¼µ½¼ÆËãÈÕ£©,C:¼ÆÌáÌìÊı£¨´ÓÉÏÒ»½áÏ¢ÈÕ¿ªÊ¼µ½¼ÆËãÈÕ£©",
+            "comment": "é æ¡£å¤©æ•°è®¡ç®—æ–¹å¼",
+            "scope": "Aï¼šæŒ‰å­˜æœŸï¼ˆèµ·æ¯æ—¥åŠ ä¸Šå­˜æœŸï¼‰,Bï¼šå®é™…å¤©æ•°ï¼ˆä»èµ·æ¯æ—¥å¼€å§‹åˆ°è®¡ç®—æ—¥ï¼‰,C:è®¡æå¤©æ•°ï¼ˆä»ä¸Šä¸€ç»“æ¯æ—¥å¼€å§‹åˆ°è®¡ç®—æ—¥ï¼‰",
             "M": false,
             "P": false
         },
@@ -152,8 +152,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "ÀûÏ¢¼ÆËã·½·¨",
-            "scope": "AB:»ıÊı¼ÆÏ¢,EB:·Ö¶Î¼ÆÏ¢,BS:²î¼õ·¨¼ÆÏ¢  ",
+            "comment": "åˆ©æ¯è®¡ç®—æ–¹æ³•",
+            "scope": "AB:ç§¯æ•°è®¡æ¯,EB:åˆ†æ®µè®¡æ¯,BS:å·®å‡æ³•è®¡æ¯",
             "M": false,
             "P": false
         },
@@ -165,8 +165,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÀûÂÊÆôÓÃ·½Ê½ ",
-            "scope": "N:ÀûÂÊ²»±ä¸ü,Èç¹û½Ó¿ÚÖĞÓĞÀûÂÊ£¨´æÁ¿ÒµÎñ£©£¬ÔòÒÔ´ËÖµÎª×¼£¬ÈçÃ»ÓĞ£¨ĞÂ°ìÀíÒµÎñ£©£¬ÔòÈ¡ÏµÍ³×îĞÂÀûÂÊ,B:ÀûÂÊÉúĞ§ÈÕµ±ÌìÉúĞ§,Ê¼ÖÕÈ¡ÏµÍ³×îĞÂÀûÂÊ¼ÆËãÀûÏ¢¡£,S:´ÓÏÂÒ»¸ö¼ÆÏ¢ÖÜÆÚ¿ªÊ¼ÉúĞ§,R:°´ÕÕÔ¼¶¨µÄÉúĞ§ÖÜÆÚ¿ªÊ¼ÉúĞ§,´ı¿¼ÂÇ,",
+            "comment": "åˆ©ç‡å¯ç”¨æ–¹å¼",
+            "scope": "N:åˆ©ç‡ä¸å˜æ›´,å¦‚æœæ¥å£ä¸­æœ‰åˆ©ç‡ï¼ˆå­˜é‡ä¸šåŠ¡ï¼‰ï¼Œåˆ™ä»¥æ­¤å€¼ä¸ºå‡†ï¼Œå¦‚æ²¡æœ‰ï¼ˆæ–°åŠç†ä¸šåŠ¡ï¼‰ï¼Œåˆ™å–ç³»ç»Ÿæœ€æ–°åˆ©ç‡,B:åˆ©ç‡ç”Ÿæ•ˆæ—¥å½“å¤©ç”Ÿæ•ˆ,å§‹ç»ˆå–ç³»ç»Ÿæœ€æ–°åˆ©ç‡è®¡ç®—åˆ©æ¯ã€‚,S:ä»ä¸‹ä¸€ä¸ªè®¡æ¯å‘¨æœŸå¼€å§‹ç”Ÿæ•ˆ,R:æŒ‰ç…§çº¦å®šçš„ç”Ÿæ•ˆå‘¨æœŸå¼€å§‹ç”Ÿæ•ˆ,å¾…è€ƒè™‘,",
             "M": false,
             "P": false
         },
@@ -178,8 +178,8 @@
             "lengths": "2",
             "precision": "",
             "defaults": "",
-            "comment": "ÀûÂÊ±ä¸üÖÜÆÚ ",
-            "scope": "È¡×ÔFM_PERIOD_FREQ.PERIOD_FREQ",
+            "comment": "åˆ©ç‡å˜æ›´å‘¨æœŸ",
+            "scope": "å–è‡ªFM_PERIOD_FREQ.PERIOD_FREQ",
             "M": false,
             "P": false
         },
@@ -191,8 +191,8 @@
             "lengths": "2",
             "precision": "",
             "defaults": "",
-            "comment": "ÀûÂÊ±ä¸üÈÕ",
-            "scope": " Èç¹ûÀûÂÊÆôÓÃ·½Ê½ÎªRÊ±£¬ĞèÒªÖ¸¶¨ÀûÂÊ±ä¸üµÄÈÕ¡£ÏµÍ³¸ù¾İÉÏÒ»¸öÀûÂÊ±ä¸üÈÕ£¬ÀûÂÊ±ä¸üÖÜÆÚ£¬ºÍÕâ¸ö¡®ÈÕ¡¯¼ÆËãÏÂÒ»¸öÀûÂÊ±ä¸üÈÕ",
+            "comment": "åˆ©ç‡å˜æ›´æ—¥",
+            "scope": " å¦‚æœåˆ©ç‡å¯ç”¨æ–¹å¼ä¸ºRæ—¶ï¼Œéœ€è¦æŒ‡å®šåˆ©ç‡å˜æ›´çš„æ—¥ã€‚ç³»ç»Ÿæ ¹æ®ä¸Šä¸€ä¸ªåˆ©ç‡å˜æ›´æ—¥ï¼Œåˆ©ç‡å˜æ›´å‘¨æœŸï¼Œå’Œè¿™ä¸ªâ€˜æ—¥â€™è®¡ç®—ä¸‹ä¸€ä¸ªåˆ©ç‡å˜æ›´æ—¥",
             "M": false,
             "P": false
         },
@@ -203,7 +203,7 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "×îĞ¡ÀûÂÊ",
+            "comment": "æœ€å°åˆ©ç‡",
             "defaults": "",
             "dictionary": "MIN_RATE",
             "scope": ""
@@ -215,7 +215,7 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "×î´óÀûÂÊ",
+            "comment": "æœ€å¤§åˆ©ç‡",
             "defaults": "",
             "dictionary": "MAX_RATE",
             "scope": ""
@@ -228,8 +228,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÀûÂÊ¿¿µµ±êÖ¾",
-            "scope": "F:¿¿ÏÂµµ£¬C£º¿¿ÉÏµµ",
+            "comment": "åˆ©ç‡é æ¡£æ ‡å¿—",
+            "scope": "F:é ä¸‹æ¡£ï¼ŒCï¼šé ä¸Šæ¡£",
             "M": false,
             "P": false
         },
@@ -240,10 +240,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÔÂ»ù×¼",
+            "comment": "æœˆåŸºå‡†",
             "defaults": "",
             "dictionary": "MONTH_BASIS",
-            "scope": "ACT:°´Êµ¼ÊÌìÊı,30:°´30Ìì"
+            "scope": "ACT:æŒ‰å®é™…å¤©æ•°,30:æŒ‰30å¤©"
         },
         {
             "dictionary": "GROUP_RULE_TYPE",
@@ -253,8 +253,8 @@
             "lengths": "2",
             "precision": "",
             "defaults": "'02'  ",
-            "comment": "·Ö×é¹æÔò¹ØÏµ",
-            "scope": "02:È¡×î´ó,03:È¡×îĞ¡,04:È¡Æ½¾ùÖµ,05:È¡µş¼Ó,06:È¡È¨ÖØ",
+            "comment": "åˆ†ç»„è§„åˆ™å…³ç³»",
+            "scope": "02:å–æœ€å¤§,03:å–æœ€å°,04:å–å¹³å‡å€¼,05:å–å åŠ ,06:å–æƒé‡",
             "M": true,
             "P": false
         },
@@ -266,8 +266,8 @@
             "lengths": "10",
             "precision": "",
             "defaults": "",
-            "comment": "Ê×¸ö·Ö¶ÎID",
-            "scope": "µ±×Ö¶ÎSPLIT_TYPEµÄÖµÎªPAÊ±£¬È¡×ÔIRL_PERIOD_FREQ.PERI_SPLIT_ID¡£·ñÔòÈ¡×ÔIRL_AMT_SPLIT.AMT_SPLIT_ID",
+            "comment": "é¦–ä¸ªåˆ†æ®µID",
+            "scope": "å½“å­—æ®µSPLIT_TYPEçš„å€¼ä¸ºPAæ—¶ï¼Œå–è‡ªIRL_PERIOD_FREQ.PERI_SPLIT_IDã€‚å¦åˆ™å–è‡ªIRL_AMT_SPLIT.AMT_SPLIT_ID",
             "M": true,
             "P": true
         },
@@ -279,8 +279,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "·Ö¶ÎÀàĞÍ",
-            "scope": "PA:ÏÈ½ğ¶îºóÖÜÆÚ,AP:ÏÈÖÜÆÚºó½ğ¶î",
+            "comment": "åˆ†æ®µç±»å‹",
+            "scope": "PA:å…ˆé‡‘é¢åå‘¨æœŸ,AP:å…ˆå‘¨æœŸåé‡‘é¢",
             "M": false,
             "P": false
         },
@@ -291,7 +291,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "¹æÔòID",
+            "comment": "è§„åˆ™ID",
             "defaults": "",
             "dictionary": "RULEID",
             "scope": ""
@@ -303,7 +303,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -315,7 +315,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -327,11 +327,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ê¹ÓÃ·Ö»§ÀûÂÊ±êÖ¾",
+            "comment": "ä½¿ç”¨åˆ†æˆ·åˆ©ç‡æ ‡å¿—",
             "defaults": "'N'",
-            "scope": "Y£ºÊ¹ÓÃ,N£º²»Ê¹ÓÃ",
+            "scope": "Yï¼šä½¿ç”¨,Nï¼šä¸ä½¿ç”¨",
             "dictionary": "ACCT_RATE_EFFECT",
-            "column": "Ê¹ÓÃ·Ö»§ÀûÂÊ±êÖ¾"
+            "column": "ä½¿ç”¨åˆ†æˆ·åˆ©ç‡æ ‡å¿—"
         },
         {
             "dictionary": "ROUND_DOWN",
@@ -341,7 +341,7 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÊÇ·ñ½ØÎ»±êÖ¾ Y-½ØÎ» N-²»½ØÎ»",
+            "comment": "æ˜¯å¦æˆªä½æ ‡å¿— Y-æˆªä½ N-ä¸æˆªä½",
             "scope": "",
             "M": false,
             "P": false

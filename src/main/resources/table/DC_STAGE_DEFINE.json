@@ -4,7 +4,7 @@
     "parameter": "tran",
     "table_space": "core_data",
     "code": "DC_STAGE_DEFINE",
-    "comment": "ÆÚ´Î¶¨Òå±í",
+    "comment": "æœŸæ¬¡å®šä¹‰è¡¨",
     "attr": [
         {
             "code": "ISSUE_YEAR",
@@ -13,11 +13,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¢ĞĞÄê¶È",
+            "comment": "å‘è¡Œå¹´åº¦",
             "defaults": "",
             "scope": "",
             "dictionary": "ISSUE_YEAR",
-            "column": "·¢ĞĞÄê¶È"
+            "column": "å‘è¡Œå¹´åº¦"
         },
         {
             "code": "PROD_TYPE",
@@ -26,11 +26,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "²úÆ·ÀàĞÍ",
+            "comment": "äº§å“ç±»å‹",
             "defaults": "",
             "scope": "",
             "dictionary": "PROD_TYPE",
-            "column": "²úÆ·ÀàĞÍ"
+            "column": "äº§å“ç±»å‹"
         },
         {
             "code": "CCY",
@@ -39,11 +39,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "±ÒÖÖ",
+            "comment": "å¸ç§",
             "defaults": "",
             "scope": "",
             "dictionary": "CCY",
-            "column": "±ÒÖÖ"
+            "column": "å¸ç§"
         },
         {
             "code": "STAGE_CODE",
@@ -52,11 +52,11 @@
             "precision": "",
             "M": false,
             "P": true,
-            "comment": "ÆÚ´Î´úÂë",
+            "comment": "æœŸæ¬¡ä»£ç ",
             "defaults": "",
             "scope": "",
             "dictionary": "STAGE_CODE",
-            "column": "ÆÚ´Î´úÂë"
+            "column": "æœŸæ¬¡ä»£ç "
         },
         {
             "code": "STAGE_CODE_DESC",
@@ -65,11 +65,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÆÚ´ÎÃèÊö",
+            "comment": "æœŸæ¬¡æè¿°",
             "defaults": "",
             "scope": "",
             "dictionary": "STAGE_CODE_DESC",
-            "column": "ÆÚ´ÎÃèÊö"
+            "column": "æœŸæ¬¡æè¿°"
         },
         {
             "code": "TRAN_DATE",
@@ -78,11 +78,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×ÈÕÆÚ",
+            "comment": "äº¤æ˜“æ—¥æœŸ",
             "defaults": "",
             "scope": "",
             "dictionary": "TRAN_DATE",
-            "column": "½»Ò×ÈÕÆÚ"
+            "column": "äº¤æ˜“æ—¥æœŸ"
         },
         {
             "code": "TRAN_BRANCH",
@@ -91,11 +91,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×»ú¹¹",
+            "comment": "äº¤æ˜“æœºæ„",
             "defaults": "",
             "scope": "",
             "dictionary": "TRAN_BRANCH",
-            "column": "½»Ò×»ú¹¹"
+            "column": "äº¤æ˜“æœºæ„"
         },
         {
             "code": "TOTAL_LIMIT",
@@ -104,11 +104,11 @@
             "precision": "2",
             "M": false,
             "P": false,
-            "comment": "×Ü·Å¿î¶î¶È",
+            "comment": "æ€»æ”¾æ¬¾é¢åº¦",
             "defaults": "",
             "scope": "",
             "dictionary": "TOTAL_LIMIT",
-            "column": "×Ü·Å¿î¶î¶È"
+            "column": "æ€»æ”¾æ¬¾é¢åº¦"
         },
         {
             "code": "DISTRIBUTE_LIMIT",
@@ -117,11 +117,11 @@
             "precision": "2",
             "M": false,
             "P": false,
-            "comment": "ÒÑ·ÖÅä¶î¶È",
+            "comment": "å·²åˆ†é…é¢åº¦",
             "defaults": "",
             "scope": "",
             "dictionary": "DISTRIBUTE_LIMIT",
-            "column": "ÒÑ·ÖÅä¶î¶È"
+            "column": "å·²åˆ†é…é¢åº¦"
         },
         {
             "code": "HOLDING_LIMIT",
@@ -130,11 +130,11 @@
             "precision": "2",
             "M": false,
             "P": false,
-            "comment": "ÒÑÕ¼ÓÃ¶î¶È",
+            "comment": "å·²å ç”¨é¢åº¦",
             "defaults": "",
             "scope": "",
             "dictionary": "HOLDING_LIMIT",
-            "column": "ÒÑÕ¼ÓÃ¶î¶È"
+            "column": "å·²å ç”¨é¢åº¦"
         },
         {
             "code": "LEAVE_LIMIT",
@@ -143,7 +143,7 @@
             "precision": "2",
             "M": false,
             "P": false,
-            "comment": "Ê£Óà¶î¶È",
+            "comment": "å‰©ä½™é¢åº¦",
             "defaults": "",
             "scope": "",
             "dictionary": "LEAVE_LIMIT"
@@ -155,11 +155,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÏúÊÛ·½Ê½  ",
+            "comment": "é”€å”®æ–¹å¼  ",
             "defaults": "",
-            "scope": "C:¾ºÊÛ,P:Åä¶î",
+            "scope": "C:ç«å”®,P:é…é¢",
             "dictionary": "SALE_TYPE",
-            "column": "ÏúÊÛ·½Ê½  "
+            "column": "é”€å”®æ–¹å¼  "
         },
         {
             "code": "OPTION_METHOD",
@@ -168,9 +168,9 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Åä¶îÀàĞÍ",
+            "comment": "é…é¢ç±»å‹",
             "defaults": "",
-            "scope": "NO:²»·ÖÅä¶î¶È, CH:¿É°´ÇşµÀ·ÖÅä, BR:¿É°´·ÖĞĞ·ÖÅä, SB:¿É°´Ö§ĞĞ·ÖÅä",
+            "scope": "NO:ä¸åˆ†é…é¢åº¦, CH:å¯æŒ‰æ¸ é“åˆ†é…, BR:å¯æŒ‰åˆ†è¡Œåˆ†é…, SB:å¯æŒ‰æ”¯è¡Œåˆ†é…",
             "dictionary": "OPTION_METHOD"
         },
         {
@@ -180,11 +180,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¢ĞĞÆğÊ¼ÈÕÆÚ",
+            "comment": "å‘è¡Œèµ·å§‹æ—¥æœŸ",
             "defaults": "",
             "scope": "",
             "dictionary": "ISSUE_START_DATE",
-            "column": "·¢ĞĞÆğÊ¼ÈÕÆÚ"
+            "column": "å‘è¡Œèµ·å§‹æ—¥æœŸ"
         },
         {
             "code": "ISSUE_END_DATE",
@@ -193,11 +193,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¢ĞĞÖÕÖ¹ÈÕÆÚ",
+            "comment": "å‘è¡Œç»ˆæ­¢æ—¥æœŸ",
             "defaults": "",
             "scope": "",
             "dictionary": "ISSUE_END_DATE",
-            "column": "·¢ĞĞÖÕÖ¹ÈÕÆÚ"
+            "column": "å‘è¡Œç»ˆæ­¢æ—¥æœŸ"
         },
         {
             "code": "INT_CALC_TYPE",
@@ -206,11 +206,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "¼ÆÏ¢·½Ê½ ÁãÏ¢£º0¸¡¶¯¼ÆÏ¢£º1¹Ì¶¨ÀûÂÊ£º2",
+            "comment": "è®¡æ¯æ–¹å¼ é›¶æ¯ï¼š0æµ®åŠ¨è®¡æ¯ï¼š1å›ºå®šåˆ©ç‡ï¼š2",
             "defaults": "",
             "scope": "",
             "dictionary": "INT_CALC_TYPE",
-            "column": "¼ÆÏ¢·½Ê½ ÁãÏ¢£º0¸¡¶¯¼ÆÏ¢£º1¹Ì¶¨ÀûÂÊ£º2"
+            "column": "è®¡æ¯æ–¹å¼ é›¶æ¯ï¼š0æµ®åŠ¨è®¡æ¯ï¼š1å›ºå®šåˆ©ç‡ï¼š2"
         },
         {
             "code": "RESET_INT_FREQ",
@@ -219,11 +219,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÀûÂÊÖØÖÃÆµÂÊ",
+            "comment": "åˆ©ç‡é‡ç½®é¢‘ç‡",
             "defaults": "",
             "scope": "",
             "dictionary": "RESET_INT_FREQ",
-            "column": "ÀûÂÊÖØÖÃÆµÂÊ"
+            "column": "åˆ©ç‡é‡ç½®é¢‘ç‡"
         },
         {
             "code": "PAY_INT_TYPE",
@@ -232,11 +232,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "¸¶Ï¢·½Ê½",
+            "comment": "ä»˜æ¯æ–¹å¼",
             "defaults": "",
-            "scope": "1:Ò»´Î»¹±¾¸¶Ï¢ºÍ¶¨ÆÚ¸¶Ï¢,2:µ½ÆÚ»¹±¾",
+            "scope": "1:ä¸€æ¬¡è¿˜æœ¬ä»˜æ¯å’Œå®šæœŸä»˜æ¯,2:åˆ°æœŸè¿˜æœ¬",
             "dictionary": "PAY_INT_TYPE",
-            "column": "¸¶Ï¢·½Ê½"
+            "column": "ä»˜æ¯æ–¹å¼"
         },
         {
             "code": "GET_INT_FREQ",
@@ -245,11 +245,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "È¡Ï¢ÆµÂÊ",
+            "comment": "å–æ¯é¢‘ç‡",
             "defaults": "",
             "scope": "",
             "dictionary": "GET_INT_FREQ",
-            "column": "È¡Ï¢ÆµÂÊ"
+            "column": "å–æ¯é¢‘ç‡"
         },
         {
             "code": "TRANSFER_FLAG",
@@ -258,11 +258,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "×ªÈÃ±êÊ¶",
+            "comment": "è½¬è®©æ ‡è¯†",
             "defaults": "",
-            "scope": "Y:ÊÇ,N:·ñ",
+            "scope": "Y:æ˜¯,N:å¦",
             "dictionary": "TRANSFER_FLAG",
-            "column": "×ªÈÃ±êÊ¶"
+            "column": "è½¬è®©æ ‡è¯†"
         },
         {
             "code": "PRE_WITHDRAW_FLAG",
@@ -271,11 +271,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÊÇ·ñÔÊĞíÌáÇ°Ö§È¡",
+            "comment": "æ˜¯å¦å…è®¸æå‰æ”¯å–",
             "defaults": "",
-            "scope": "Y:ÊÇ,N:·ñ",
+            "scope": "Y:æ˜¯,N:å¦",
             "dictionary": "PRE_WITHDRAW_FLAG",
-            "column": "ÊÇ·ñÔÊĞíÌáÇ°Ö§È¡"
+            "column": "æ˜¯å¦å…è®¸æå‰æ”¯å–"
         },
         {
             "code": "PART_WITHDRAW_NUM",
@@ -284,11 +284,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "²¿Ìá´ÎÊı",
+            "comment": "éƒ¨ææ¬¡æ•°",
             "defaults": "",
             "scope": "",
             "dictionary": "PART_WITHDRAW_NUM",
-            "column": "²¿Ìá´ÎÊı"
+            "column": "éƒ¨ææ¬¡æ•°"
         },
         {
             "code": "TERM",
@@ -297,11 +297,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "´æÆÚ",
+            "comment": "å­˜æœŸ",
             "defaults": "",
             "scope": "",
             "dictionary": "TERM",
-            "column": "´æÆÚ"
+            "column": "å­˜æœŸ"
         },
         {
             "code": "TERM_TYPE",
@@ -310,11 +310,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "´æÆÚÀàĞÍ",
+            "comment": "å­˜æœŸç±»å‹",
             "defaults": "",
             "scope": "",
             "dictionary": "TERM_TYPE",
-            "column": "´æÆÚÀàĞÍ"
+            "column": "å­˜æœŸç±»å‹"
         },
         {
             "code": "BACK_STATUS",
@@ -323,9 +323,9 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "»Ö¸´×´Ì¬£ºN:Î´»Ö¸´,S:³É¹¦,F:Ê§°Ü",
+            "comment": "æ¢å¤çŠ¶æ€ï¼šN:æœªæ¢å¤,S:æˆåŠŸ,F:å¤±è´¥",
             "defaults": "",
-            "scope": "N:Î´»Ö¸´,S:³É¹¦,F:Ê§°Ü",
+            "scope": "N:æœªæ¢å¤,S:æˆåŠŸ,F:å¤±è´¥",
             "dictionary": "BACK_STATUS"
         },
         {
@@ -335,7 +335,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ê§°ÜÃèÊö",
+            "comment": "å¤±è´¥æè¿°",
             "defaults": "",
             "scope": "",
             "dictionary": "ERROR_DESC"
@@ -347,11 +347,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "²Ù×÷¹ñÔ±",
+            "comment": "æ“ä½œæŸœå‘˜",
             "defaults": "",
             "scope": "",
             "dictionary": "USER_ID",
-            "column": "Ê¹ÓÃ¹ñÔ±"
+            "column": "ä½¿ç”¨æŸœå‘˜"
         },
         {
             "code": "TRAN_TIMESTAMP",
@@ -360,11 +360,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ê±¼ä´Á",
+            "comment": "æ—¶é—´æˆ³",
             "defaults": "",
             "scope": "",
             "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á"
+            "column": "æ—¶é—´æˆ³"
         },
         {
             "code": "TRAN_TIME",
@@ -373,13 +373,13 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "scope": "",
             "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä"
+            "column": "äº¤æ˜“æ—¶é—´"
         }
     ],
     "indexs": [],
-    "commentDesc": "ÆÚ´Î¶¨Òå±í"
+    "commentDesc": "æœŸæ¬¡å®šä¹‰è¡¨"
 }

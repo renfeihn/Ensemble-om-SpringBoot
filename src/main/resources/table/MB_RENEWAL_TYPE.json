@@ -1,99 +1,99 @@
 {
-    "code": "MB_RENEWAL_TYPE",
-    "comment": "¶¨ÆÚ²úÆ·±ÈÀı¶¨Òå±í",
-    "attr": [        {
-            "code": "RENEWAL_TYPE",
-            "dataType": "Varchar",
-            "lengths": "10",
-            "precision": "",
-            "M": true,            "P": true,            "comment": "±ÈÀıÀàĞÍ",
-            "defaults": "",
-            "dictionary": "RENEWAL_TYPE",
-            "column": "¶¨ÆÚÀí²Æ·½Ê½",
-            "scope": ""        }
-,        {
-            "code": "RENEWAL_RATE",
-            "dataType": "Number",
-            "lengths": "15",
-            "precision": "8",
-            "M": false,            "P": false,            "comment": "±ÈÂÊ",
-            "defaults": "",
-            "dictionary": "RENEWAL_RATE",
-            "column": "±ÈÂÊ",
-            "scope": ""        }
-,        {
-            "code": "PROD_TYPE",
-            "dataType": "Varchar",
-            "lengths": "10",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "²úÆ·ÀàĞÍ",
-            "defaults": "",
-            "dictionary": "PROD_TYPE",
-            "column": "²úÆ·ÀàĞÍ È¡ÖµÓÚMB_PROD_TYPE.PROD_TYPE",
-            "scope": ""        }
-,        {
-            "code": "TERM",
-            "dataType": "Varchar",
-            "lengths": "5",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "´æÆÚ",
-            "defaults": "",
-            "dictionary": "TERM",
-            "column": "´æÆÚ",
-            "scope": ""        }
-,        {
-            "code": "TERM_TYPE",
-            "dataType": "Varchar",
-            "lengths": "1",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "´æÆÚÀàĞÍ",
-            "defaults": "",
-            "dictionary": "TERM_TYPE",
-            "column": "´æÆÚÀàĞÍ",
-            "scope": ""        }
-,        {
-            "code": "WTD_TRAN_TYPE",
-            "dataType": "Varchar",
-            "lengths": "4",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "Ö§È¡½»Ò×ÀàĞÍ",
-            "defaults": "",
-            "dictionary": "WTD_TRAN_TYPE",
-            "column": "Ö§È¡½»Ò×ÀàĞÍ",
-            "scope": ""        }
-,        {
-            "code": "DEP_TRAN_TYPE",
-            "dataType": "Varchar",
-            "lengths": "4",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "´æÈë½»Ò×ÀàĞÍ",
-            "defaults": "",
-            "dictionary": "DEP_TRAN_TYPE",
-            "column": "´æÈë½»Ò×ÀàĞÍ",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIMESTAMP",
-            "dataType": "Varchar",
-            "lengths": "17",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä´Á",
-            "defaults": "",
-            "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIME",
-            "dataType": "Number",
-            "lengths": "11",
-            "precision": "0",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä",
-            "defaults": "",
-            "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
-            "scope": ""        }
-    ],    "table_space": "core_data",
-    "dbType": "upright",
-    "parameter": "busi_para",
-    "system": "Ensemble",
-    "commentDesc": " 1¡¢Èç¹ûÒ»ÖÖÀí²Æ·½°¸ÖĞ°üº¬¶àÖÖ¶¨ÆÚÀàĞÍ£¬ÔòÔÚ¸Ã±íÖĞ¶¨Òå¸÷¶¨ÆÚÀàĞÍµÄ·ÖÌ¯±ÈÀı¡£  2¡¢×÷ÎªÀí²Æ·½°¸¶¨Òå±íµÄ×Ó±í£¬¿É¸ù¾İÀí²Æ·½°¸¶¨Òå±íÖĞµÄ·ÖÌ¯ÀàĞÍ×Ö¶Î(RENEWAL_TYPE)Óë¸Ã±í½øĞĞ¹ØÁª¡£",
-"moduleType":"²úÆ·²ÎÊı"}
+  "code": "MB_RENEWAL_TYPE",
+  "comment": "å®šæœŸäº§å“æ¯”ä¾‹å®šä¹‰è¡¨",
+  "attr": [        {
+    "code": "RENEWAL_TYPE",
+    "dataType": "Varchar",
+    "lengths": "10",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "æ¯”ä¾‹ç±»å‹",
+    "defaults": "",
+    "dictionary": "RENEWAL_TYPE",
+    "column": "å®šæœŸç†è´¢æ–¹å¼",
+    "scope": ""        }
+  ,        {
+      "code": "RENEWAL_RATE",
+      "dataType": "Number",
+      "lengths": "15",
+      "precision": "8",
+      "M": false,            "P": false,            "comment": "æ¯”ç‡",
+      "defaults": "",
+      "dictionary": "RENEWAL_RATE",
+      "column": "æ¯”ç‡",
+      "scope": ""        }
+  ,        {
+      "code": "PROD_TYPE",
+      "dataType": "Varchar",
+      "lengths": "10",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "äº§å“ç±»å‹",
+      "defaults": "",
+      "dictionary": "PROD_TYPE",
+      "column": "äº§å“ç±»å‹ å–å€¼äºMB_PROD_TYPE.PROD_TYPE",
+      "scope": ""        }
+  ,        {
+      "code": "TERM",
+      "dataType": "Varchar",
+      "lengths": "5",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "å­˜æœŸ",
+      "defaults": "",
+      "dictionary": "TERM",
+      "column": "å­˜æœŸ",
+      "scope": ""        }
+  ,        {
+      "code": "TERM_TYPE",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "å­˜æœŸç±»å‹",
+      "defaults": "",
+      "dictionary": "TERM_TYPE",
+      "column": "å­˜æœŸç±»å‹",
+      "scope": ""        }
+  ,        {
+      "code": "WTD_TRAN_TYPE",
+      "dataType": "Varchar",
+      "lengths": "4",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "æ”¯å–äº¤æ˜“ç±»å‹",
+      "defaults": "",
+      "dictionary": "WTD_TRAN_TYPE",
+      "column": "æ”¯å–äº¤æ˜“ç±»å‹",
+      "scope": ""        }
+  ,        {
+      "code": "DEP_TRAN_TYPE",
+      "dataType": "Varchar",
+      "lengths": "4",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "å­˜å…¥äº¤æ˜“ç±»å‹",
+      "defaults": "",
+      "dictionary": "DEP_TRAN_TYPE",
+      "column": "å­˜å…¥äº¤æ˜“ç±»å‹",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "æ—¶é—´æˆ³",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "äº¤æ˜“æ—¶é—´",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": " 1ã€å¦‚æœä¸€ç§ç†è´¢æ–¹æ¡ˆä¸­åŒ…å«å¤šç§å®šæœŸç±»å‹ï¼Œåˆ™åœ¨è¯¥è¡¨ä¸­å®šä¹‰å„å®šæœŸç±»å‹çš„åˆ†æ‘Šæ¯”ä¾‹ã€‚  2ã€ä½œä¸ºç†è´¢æ–¹æ¡ˆå®šä¹‰è¡¨çš„å­è¡¨ï¼Œå¯æ ¹æ®ç†è´¢æ–¹æ¡ˆå®šä¹‰è¡¨ä¸­çš„åˆ†æ‘Šç±»å‹å­—æ®µ(RENEWAL_TYPE)ä¸è¯¥è¡¨è¿›è¡Œå…³è”ã€‚",
+  "moduleType":"äº§å“å‚æ•°"}

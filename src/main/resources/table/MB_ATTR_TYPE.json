@@ -62,8 +62,8 @@
             "lengths": "10",
             "precision": "",
             "defaults": "",
-            "comment": "使用方式  ",
-            "scope": "EVAL:赋值类,CTR:控制类,IND:处理逻辑,DESC:静态描述  ",
+            "comment": "使用方式",
+            "scope": "EVAL:赋值类,CTR:控制类,IND:处理逻辑,DESC:静态描述",
             "M": true,
             "P": false
         },

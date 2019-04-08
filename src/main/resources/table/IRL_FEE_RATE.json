@@ -1,6 +1,6 @@
 {
     "code": "IRL_FEE_RATE",
-    "comment": "·ÑÂÊĞÅÏ¢±í",
+    "comment": "è´¹ç‡ä¿¡æ¯è¡¨",
     "attr": [
         {
             "dictionary": "IRL_SEQ_NO",
@@ -10,7 +10,7 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "ĞòºÅ",
+            "comment": "åºå·",
             "scope": "",
             "M": true,
             "P": true
@@ -23,8 +23,8 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "·ÑÂÊÀàĞÍ",
-            "scope": "È¡×ÔIRL_FEE_TYPE.FEE_TYPE",
+            "comment": "è´¹ç‡ç±»å‹",
+            "scope": "å–è‡ªIRL_FEE_TYPE.FEE_TYPE",
             "M": true,
             "P": false
         },
@@ -35,10 +35,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÉúĞ§ÈÕÆÚ",
+            "comment": "ç”Ÿæ•ˆæ—¥æœŸ",
             "defaults": "",
             "dictionary": "EFFECT_DATE",
-            "column": "ÉúĞ§ÈÕÆÚ",
+            "column": "ç”Ÿæ•ˆæ—¥æœŸ",
             "scope": ""
         },
         {
@@ -48,10 +48,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "»ú¹¹´úÂë",
+            "comment": "æœºæ„ä»£ç ",
             "defaults": "",
             "dictionary": "BRANCH",
-            "column": "»ú¹¹´úÂë",
+            "column": "æœºæ„ä»£ç ",
             "scope": "FM_BRANCH.BRANCH"
         },
         {
@@ -61,10 +61,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "½»Ò×±ÒÖÖ",
+            "comment": "äº¤æ˜“å¸ç§",
             "defaults": "",
             "dictionary": "CCY",
-            "column": "±ÒÖÖ",
+            "column": "å¸ç§",
             "scope": "FM_CURRENCY.CCY"
         },
         {
@@ -74,10 +74,10 @@
             "precision": "2",
             "M": false,
             "P": false,
-            "comment": "ÉÏÏŞ",
+            "comment": "ä¸Šé™",
             "defaults": "",
             "dictionary": "HIGH_LIMIT",
-            "column": "ÉÏÏŞ",
+            "column": "ä¸Šé™",
             "scope": ""
         },
         {
@@ -87,10 +87,10 @@
             "precision": "2",
             "M": false,
             "P": false,
-            "comment": "ÏÂÏŞ",
+            "comment": "ä¸‹é™",
             "defaults": "",
             "dictionary": "LOW_LIMIT",
-            "column": "ÏÂÏŞ",
+            "column": "ä¸‹é™",
             "scope": ""
         },
         {
@@ -100,10 +100,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
+            "column": "æ³•äººä»£ç ",
             "scope": "FM_COMPANY.COMPANY"
         },
         {
@@ -113,10 +113,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
+            "column": "æ—¶é—´æˆ³",
             "scope": ""
         },
         {
@@ -126,10 +126,10 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
+            "column": "äº¤æ˜“æ—¶é—´",
             "scope": ""
         }
     ],
@@ -137,5 +137,5 @@
     "dbType": "upright",
     "parameter": "busi_para",
     "system": "Limarket",
-    "commentDesc": "×÷ÓÃ£º¼ÇÂ¼²»Í¬·ÖĞĞ¡¢²»Í¬ÉúĞ§ÈÕÆÚµÄ·ÑÂÊÀàĞÍÖ÷ĞÅÏ¢"
+    "commentDesc": "ä½œç”¨ï¼šè®°å½•ä¸åŒåˆ†è¡Œã€ä¸åŒç”Ÿæ•ˆæ—¥æœŸçš„è´¹ç‡ç±»å‹ä¸»ä¿¡æ¯"
 }

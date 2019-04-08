@@ -1,6 +1,6 @@
 {
     "code": "IRL_RULE_GROUP",
-    "comment": "¹æÔò·Ö×é¶¨Òå±í",
+    "comment": "è§„åˆ™åˆ†ç»„å®šä¹‰è¡¨",
     "attr": [
         {
             "dictionary": "GROUP_TYPE",
@@ -10,7 +10,7 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "¹æÔò·Ö×éÀàĞÍ",
+            "comment": "è§„åˆ™åˆ†ç»„ç±»å‹",
             "scope": "",
             "M": true,
             "P": true
@@ -22,7 +22,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "¹æÔò·Ö×éÃèÊö",
+            "comment": "è§„åˆ™åˆ†ç»„æè¿°",
             "defaults": "",
             "dictionary": "GROUP_TYPE_DESC",
             "scope": ""
@@ -34,10 +34,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "·Ö×é¹éÊô·ÖÀà  ",
+            "comment": "åˆ†ç»„å½’å±åˆ†ç±»",
             "defaults": "",
             "dictionary": "GROUP_CLASS",
-            "scope": "D:ÕÛ¿Û,L:ÀûÂÊ,E:»ãÂÊ"
+            "scope": "D:æŠ˜æ‰£,L:åˆ©ç‡,E:æ±‡ç‡"
         },
         {
             "code": "GROUP_MATCH_TYPE",
@@ -46,10 +46,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "×éÄÚ¹æÔò¹ØÏµ    ",
+            "comment": "ç»„å†…è§„åˆ™å…³ç³»",
             "defaults": "",
             "dictionary": "GROUP_MATCH_TYPE",
-            "scope": "µ±GROUP_CLASS = D Ê±:01:ÕÛÉÏÕÛ,02:È¡×î´ó,03:È¡×îĞ¡,04:È¡Æ½¾ùÖµ,05:È¡µş¼Ó,06:È¡È¨ÖØ,07:È¡¹Ì¶¨,µ±GROUP_CLASS = L Ê±:,02:È¡×î´ó,03:È¡×îĞ¡,04:È¡Æ½¾ùÖµ,05:È¡µş¼Ó,06:È¡È¨ÖØ,µ±GROUP_CLASS = E Ê±:,02:È¡×î´ó,03:È¡×îĞ¡,04:È¡Æ½¾ùÖµ,05:È¡µş¼Ó,06:È¡È¨ÖØ"
+            "scope": "å½“GROUP_CLASS = D æ—¶:01:æŠ˜ä¸ŠæŠ˜,02:å–æœ€å¤§,03:å–æœ€å°,04:å–å¹³å‡å€¼,05:å–å åŠ ,06:å–æƒé‡,07:å–å›ºå®š,å½“GROUP_CLASS = L æ—¶:,02:å–æœ€å¤§,03:å–æœ€å°,04:å–å¹³å‡å€¼,05:å–å åŠ ,06:å–æƒé‡,å½“GROUP_CLASS = E æ—¶:,02:å–æœ€å¤§,03:å–æœ€å°,04:å–å¹³å‡å€¼,05:å–å åŠ ,06:å–æƒé‡"
         },
         {
             "code": "WEIGHT",
@@ -58,7 +58,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "È¨ÖØ",
+            "comment": "æƒé‡",
             "defaults": "",
             "dictionary": "WEIGHT",
             "scope": ""
@@ -70,7 +70,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -82,7 +82,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -94,7 +94,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""

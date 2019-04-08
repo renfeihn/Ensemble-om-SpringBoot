@@ -1,6 +1,6 @@
 {
     "code": "TB_APPLY_CONF",
-    "comment": "Ô¤Ô¼²ÎÊı±í",
+    "comment": "é¢„çº¦å‚æ•°è¡¨",
     "attr": [
         {
             "code": "BRANCH",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "»ú¹¹´úÂë",
+            "comment": "æœºæ„ä»£ç ",
             "defaults": "",
             "dictionary": "BRANCH",
             "scope": ""
@@ -21,7 +21,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÏÖ½ğ¹ÜÀí»ú¹¹",
+            "comment": "ç°é‡‘ç®¡ç†æœºæ„",
             "defaults": "",
             "dictionary": "CBRANCH",
             "scope": ""
@@ -33,7 +33,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Æ¾Ö¤¹ÜÀí»ú¹¹",
+            "comment": "å‡­è¯ç®¡ç†æœºæ„",
             "defaults": "",
             "dictionary": "VBRANCH",
             "scope": ""
@@ -45,7 +45,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Æ¾Ö¤ÈËĞĞ/Í¬Òµ·½Ïò",
+            "comment": "å‡­è¯äººè¡Œ/åŒä¸šæ–¹å‘",
             "defaults": "",
             "dictionary": "VBSFLAG",
             "scope": ""
@@ -57,7 +57,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÏÖ½ğÈËĞĞ/Í¬Òµ·½Ïò",
+            "comment": "ç°é‡‘äººè¡Œ/åŒä¸šæ–¹å‘",
             "defaults": "",
             "dictionary": "CBSFLAG",
             "scope": ""
@@ -69,7 +69,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÊÇ·ñ½øĞĞÆ¾Ö¤Ô¤Ô¼",
+            "comment": "æ˜¯å¦è¿›è¡Œå‡­è¯é¢„çº¦",
             "defaults": "",
             "dictionary": "IS_VOUCHER_APPLY",
             "scope": ""
@@ -81,7 +81,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÊÇ·ñ½øĞĞÏÖ½ğÔ¤Ô¼",
+            "comment": "æ˜¯å¦è¿›è¡Œç°é‡‘é¢„çº¦",
             "defaults": "",
             "dictionary": "IS_CASH_APPLY",
             "scope": ""
@@ -93,7 +93,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": ""
@@ -105,7 +105,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -117,7 +117,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -129,11 +129,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "¸´ºË»ú¹¹",
+            "comment": "å¤æ ¸æœºæ„",
             "defaults": "",
             "scope": "",
             "dictionary": "REVIEW_BRANCH",
-            "column": "¸´ºË»ú¹¹"
+            "column": "å¤æ ¸æœºæ„"
         },
         {
             "code": "REVIEW_FLAG",
@@ -142,11 +142,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÊÇ·ñĞèÒª¸´ºË£¨Y-ÊÇ£¬N-·ñ£©",
+            "comment": "æ˜¯å¦éœ€è¦å¤æ ¸ï¼ˆY-æ˜¯ï¼ŒN-å¦ï¼‰",
             "defaults": "",
             "scope": "",
             "dictionary": "REVIEW_FLAG",
-            "column": "ÊÇ·ñĞèÒª¸´ºË£¨Y-ÊÇ£¬N-·ñ£©"
+            "column": "æ˜¯å¦éœ€è¦å¤æ ¸ï¼ˆY-æ˜¯ï¼ŒN-å¦ï¼‰"
         }
     ],
     "table_space": "core_data",
@@ -154,5 +154,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "Î²Ïä²ÎÊı"
+    "moduleType": "å°¾ç®±å‚æ•°"
 }

@@ -1,6 +1,6 @@
 {
     "code": "FM_REF_CODE",
-    "comment": "ÏµÍ³ÄÚ²¿Ô¤¶¨Òå²ÎÊı±í",
+    "comment": "ç³»ç»Ÿå†…éƒ¨é¢„å®šä¹‰å‚æ•°è¡¨",
     "attr": [
         {
             "code": "REF_LANG",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "ÓïÑÔ",
+            "comment": "è¯­è¨€",
             "defaults": "",
             "dictionary": "REF_LANG",
             "scope": ""
@@ -21,7 +21,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "±í×Ö¶Î",
+            "comment": "è¡¨å­—æ®µ",
             "defaults": "",
             "dictionary": "DOMAIN",
             "scope": ""
@@ -33,7 +33,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "È¡Öµ·¶Î§",
+            "comment": "å–å€¼èŒƒå›´",
             "defaults": "",
             "dictionary": "FIELD_VALUE",
             "scope": ""
@@ -45,7 +45,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "ËõĞ´",
+            "comment": "ç¼©å†™",
             "defaults": "",
             "dictionary": "ABBREVIATION",
             "scope": ""
@@ -57,7 +57,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "È¡ÖµµÄº¬ÒåËµÃ÷",
+            "comment": "å–å€¼çš„å«ä¹‰è¯´æ˜",
             "defaults": "",
             "dictionary": "MEANING",
             "scope": ""
@@ -69,7 +69,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -81,7 +81,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -93,7 +93,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -104,5 +104,5 @@
     "parameter": "init_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "¹«¹²²ÎÊı"
+    "moduleType": "å…¬å…±å‚æ•°"
 }

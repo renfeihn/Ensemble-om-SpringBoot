@@ -1,6 +1,6 @@
 {
     "code": "IRL_FEE_TYPE",
-    "comment": "·ÑÓÃÀàĞÍ±í",
+    "comment": "è´¹ç”¨ç±»å‹è¡¨",
     "attr": [
         {
             "dictionary": "FEE_TYPE",
@@ -10,7 +10,7 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "·ÑÓÃÀàĞÍ ",
+            "comment": "è´¹ç”¨ç±»å‹ ",
             "scope": "IRL_FEE_TYPE.FEE_TYPE",
             "M": true,
             "P": true
@@ -22,10 +22,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "·ÑÓÃÀàĞÍÃèÊö",
+            "comment": "è´¹ç”¨ç±»å‹æè¿°",
             "defaults": "",
             "dictionary": "FEE_DESC",
-            "column": "·ÑÓÃÀàĞÍÃèÊö",
+            "column": "è´¹ç”¨ç±»å‹æè¿°",
             "scope": ""
         },
         {
@@ -35,11 +35,11 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "²úÆ·×é ",
+            "comment": "äº§å“ç»„ ",
             "defaults": "",
             "dictionary": "PROD_GRP",
-            "column": "²úÆ·×é  ±ÈÈç£º  RB£º¸ºÕ®  CL£º×Ê²ú  GL£º×ÜÕË  MM£º»õ±ÒÊĞ³¡  ",
-            "scope": "RB:¸ºÕ®,CL:×Ê²ú,GL:×ÜÕË,MM:»õ±ÒÊĞ³¡  "
+            "column": "äº§å“ç»„  æ¯”å¦‚ï¼š  RBï¼šè´Ÿå€º  CLï¼šèµ„äº§  GLï¼šæ€»è´¦  MMï¼šè´§å¸å¸‚åœº  ",
+            "scope": "RB:è´Ÿå€º,CL:èµ„äº§,GL:æ€»è´¦,MM:è´§å¸å¸‚åœº  "
         },
         {
             "code": "FEE_MODE",
@@ -48,11 +48,11 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÊÕ·Ñ·½Ê½  ",
+            "comment": "æ”¶è´¹æ–¹å¼  ",
             "defaults": "",
             "dictionary": "FEE_MODE",
-            "column": "ÊÕ·Ñ·½Ê½  F¨C¹Ì¶¨½ğ¶î  R¨C¹Ì¶¨±ÈÀı  B¨C¹Ì¶¨½ğ¶î+±ÈÀı  S¨C²î¶îÀÛ½ø  T¨CÈ«¶îÀÛ½ø  L¨C°´»ù×¼ÀûÂÊÊÕ·Ñ  A¨C°´ÊıÁ¿  ",
-            "scope": "F:¹Ì¶¨½ğ¶î,R:¹Ì¶¨±ÈÀı,B:¹Ì¶¨½ğ¶î+±ÈÀı,S:²î¶îÀÛ½ø,T:È«¶îÀÛ½ø,L:°´»ù×¼ÀûÂÊÊÕ·Ñ,A:°´ÊıÁ¿"
+            "column": "æ”¶è´¹æ–¹å¼  Fâ€“å›ºå®šé‡‘é¢  Râ€“å›ºå®šæ¯”ä¾‹  Bâ€“å›ºå®šé‡‘é¢+æ¯”ä¾‹  Sâ€“å·®é¢ç´¯è¿›  Tâ€“å…¨é¢ç´¯è¿›  Lâ€“æŒ‰åŸºå‡†åˆ©ç‡æ”¶è´¹  Aâ€“æŒ‰æ•°é‡  ",
+            "scope": "F:å›ºå®šé‡‘é¢,R:å›ºå®šæ¯”ä¾‹,B:å›ºå®šé‡‘é¢+æ¯”ä¾‹,S:å·®é¢ç´¯è¿›,T:å…¨é¢ç´¯è¿›,L:æŒ‰åŸºå‡†åˆ©ç‡æ”¶è´¹,A:æŒ‰æ•°é‡"
         },
         {
             "dictionary": "BOUNDARY_AMT_ID",
@@ -62,8 +62,8 @@
             "lengths": "30",
             "precision": "",
             "defaults": "",
-            "comment": "È±¿Ú¼ÆËã½ğ¶î±àÂë  ÊÕ·Ñ·½Ê½ÎªS¡¢T±ØÊä",
-            "scope": "È¡×ÔIRL_AMT_EXPRESSION.EXPRESS_ID",
+            "comment": "ç¼ºå£è®¡ç®—é‡‘é¢ç¼–ç   æ”¶è´¹æ–¹å¼ä¸ºSã€Tå¿…è¾“",
+            "scope": "å–è‡ªIRL_AMT_EXPRESSION.EXPRESS_ID",
             "M": false,
             "P": false
         },
@@ -75,8 +75,8 @@
             "lengths": "30",
             "precision": "",
             "defaults": "",
-            "comment": "·ÑÓÃ¼ÆËã½ğ¶î±àÂë  ÊÕ·Ñ·½Ê½ÎªR¡¢B±ØÊä",
-            "scope": "È¡×ÔIRL_AMT_EXPRESSION.EXPRESS_ID",
+            "comment": "è´¹ç”¨è®¡ç®—é‡‘é¢ç¼–ç   æ”¶è´¹æ–¹å¼ä¸ºRã€Bå¿…è¾“",
+            "scope": "å–è‡ªIRL_AMT_EXPRESSION.EXPRESS_ID",
             "M": false,
             "P": false
         },
@@ -87,10 +87,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "È±¿ÚÃèÊö",
+            "comment": "ç¼ºå£æè¿°",
             "defaults": "",
             "dictionary": "BOUNDARY_DESC",
-            "column": "È±¿ÚÃèÊö",
+            "column": "ç¼ºå£æè¿°",
             "scope": ""
         },
         {
@@ -100,11 +100,11 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÊÕ·Ñ±ÒÖÖ±êÊ¶  ",
+            "comment": "æ”¶è´¹å¸ç§æ ‡è¯†  ",
             "defaults": "",
             "dictionary": "CCY_FLAG",
-            "column": "ÊÕ·Ñ±ÒÖÖ±êÊ¶  T-½»Ò×±ÒÖÖÊÕ·Ñ  S-Ö¸¶¨±ÒÖÖÊÕ·Ñ  ",
-            "scope": "T:½»Ò×±ÒÖÖÊÕ·Ñ,S:Ö¸¶¨±ÒÖÖÊÕ·Ñ  "
+            "column": "æ”¶è´¹å¸ç§æ ‡è¯†  T-äº¤æ˜“å¸ç§æ”¶è´¹  S-æŒ‡å®šå¸ç§æ”¶è´¹",
+            "scope": "T:äº¤æ˜“å¸ç§æ”¶è´¹,S:æŒ‡å®šå¸ç§æ”¶è´¹"
         },
         {
             "code": "MB_CCY_TYPE",
@@ -113,10 +113,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ä¿±êÊÕ·Ñ±ÒÖÖ  µ±ÊÕ·Ñ±ÒÖÖ±êÊ¶ÎªSÊ±¸Ã×Ö¶Î²ÅÆğ×÷ÓÃ",
+            "comment": "ç›®æ ‡æ”¶è´¹å¸ç§  å½“æ”¶è´¹å¸ç§æ ‡è¯†ä¸ºSæ—¶è¯¥å­—æ®µæ‰èµ·ä½œç”¨",
             "defaults": "",
             "dictionary": "MB_CCY_TYPE",
-            "column": "Ä¿±êÊÕ·Ñ±ÒÖÖ  µ±ÊÕ·Ñ±ÒÖÖ±êÊ¶ÎªSÊ±¸Ã×Ö¶Î²ÅÆğ×÷ÓÃ",
+            "column": "ç›®æ ‡æ”¶è´¹å¸ç§  å½“æ”¶è´¹å¸ç§æ ‡è¯†ä¸ºSæ—¶è¯¥å­—æ®µæ‰èµ·ä½œç”¨",
             "scope": ""
         },
         {
@@ -127,8 +127,8 @@
             "lengths": "2",
             "precision": "",
             "defaults": "",
-            "comment": "ÕÛËã±êÖ¾  ",
-            "scope": "B:±ÈÂÊÇ°ÕÛËã,A:±ÈÂÊºóÕÛËã ",
+            "comment": "æŠ˜ç®—æ ‡å¿—",
+            "scope": "B:æ¯”ç‡å‰æŠ˜ç®—,A:æ¯”ç‡åæŠ˜ç®—",
             "M": false,
             "P": false
         },
@@ -139,11 +139,11 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÈÕÖÕ/Áª»ú±êÖ¾",
+            "comment": "æ—¥ç»ˆ/è”æœºæ ‡å¿—",
             "defaults": "",
             "dictionary": "BO_IND",
-            "column": "ÈÕÖÕ±êÖ¾ B-ÈÕÖÕ O-ÔÚÏß",
-            "scope": "O:Áª»ú B:ÈÕÖÕÅúÁ¿"
+            "column": "æ—¥ç»ˆæ ‡å¿— B-æ—¥ç»ˆ O-åœ¨çº¿",
+            "scope": "O:è”æœº B:æ—¥ç»ˆæ‰¹é‡"
         },
         {
             "code": "DIS_TYPE",
@@ -152,11 +152,11 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÕÛ¿Û·½Ê½ ",
+            "comment": "æŠ˜æ‰£æ–¹å¼",
             "defaults": "",
             "dictionary": "DIS_TYPE",
-            "column": "ÕÛ¿Û·½Ê½  01£ºÕÛÉÏÕÛ  02£ºÈ¡×î´ó  03£ºÈ¡×îĞ¡  04£ºÈ¡Æ½¾ùÖµ  06£ºÈ¡È¨ÖØ",
-            "scope": "01:ÕÛÉÏÕÛ,02:È¡×î´ó,03:È¡×îĞ¡,04:È¡Æ½¾ùÖµ,06:È¡È¨ÖØ"
+            "column": "æŠ˜æ‰£æ–¹å¼  01ï¼šæŠ˜ä¸ŠæŠ˜  02ï¼šå–æœ€å¤§  03ï¼šå–æœ€å°  04ï¼šå–å¹³å‡å€¼  06ï¼šå–æƒé‡",
+            "scope": "01:æŠ˜ä¸ŠæŠ˜,02:å–æœ€å¤§,03:å–æœ€å°,04:å–å¹³å‡å€¼,06:å–æƒé‡"
         },
         {
             "code": "COMPANY",
@@ -165,10 +165,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
+            "column": "æ³•äººä»£ç ",
             "scope": "FM_COMPANY.COMPANY"
         },
         {
@@ -179,8 +179,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "Ë°ÂÊÀàĞÍ",
-            "scope": "È¡×ÔIRL_TAXRATE_DEFINE.TAXRATE_TYPE",
+            "comment": "ç¨ç‡ç±»å‹",
+            "scope": "å–è‡ªIRL_TAXRATE_DEFINE.TAXRATE_TYPE",
             "M": false,
             "P": false
         },
@@ -192,8 +192,8 @@
             "lengths": "10",
             "precision": "",
             "defaults": "",
-            "comment": "·ÑÓÃÏîÄ¿´úÂë",
-            "scope": "È¡×ÔIRL_FEE_ITEM.FEE_ITEM",
+            "comment": "è´¹ç”¨é¡¹ç›®ä»£ç ",
+            "scope": "å–è‡ªIRL_FEE_ITEM.FEE_ITEM",
             "M": false,
             "P": false
         },
@@ -205,7 +205,7 @@
             "lengths": "2",
             "precision": "",
             "defaults": "",
-            "comment": "Ì¯ÏúÈÕ",
+            "comment": "æ‘Šé”€æ—¥",
             "scope": "",
             "M": false,
             "P": false
@@ -217,10 +217,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ê±¼ä´Á",
+            "comment": "æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
+            "column": "æ—¶é—´æˆ³",
             "scope": ""
         },
         {
@@ -230,10 +230,10 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
+            "column": "äº¤æ˜“æ—¶é—´",
             "scope": ""
         },
         {
@@ -244,7 +244,7 @@
             "lengths": "2",
             "precision": "",
             "defaults": "",
-            "comment": "Ì¯ÏúÔÂ",
+            "comment": "æ‘Šé”€æœˆ",
             "scope": "",
             "M": false,
             "P": false
@@ -257,8 +257,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÊÇ·ñĞèÒªÌ¯Ïú",
-            "scope": "Y-ÊÇ N-·ñ",
+            "comment": "æ˜¯å¦éœ€è¦æ‘Šé”€",
+            "scope": "Y-æ˜¯ N-å¦",
             "M": false,
             "P": false
         },
@@ -270,8 +270,8 @@
             "lengths": "2",
             "precision": "",
             "defaults": "",
-            "comment": "Ì¯ÏúÆµÂÊ",
-            "scope": "Y:°´Äê£¬M:°´ÔÂ£¬D:°´ÈÕ",
+            "comment": "æ‘Šé”€é¢‘ç‡",
+            "scope": "Y:æŒ‰å¹´ï¼ŒM:æŒ‰æœˆï¼ŒD:æŒ‰æ—¥",
             "M": false,
             "P": false
         },
@@ -283,8 +283,8 @@
             "lengths": "2",
             "precision": "",
             "defaults": "",
-            "comment": "Ì¯ÏúÊ±¼ä",
-            "scope": "F-ÆÚ³õ L-ÆÚÄ© D-ÖÜÆÚÄÚ¹Ì¶¨ÈÕÆÚ",
+            "comment": "æ‘Šé”€æ—¶é—´",
+            "scope": "F-æœŸåˆ L-æœŸæœ« D-å‘¨æœŸå†…å›ºå®šæ—¥æœŸ",
             "M": false,
             "P": false
         },
@@ -296,8 +296,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÊÇ·ñĞèÒª·ÖÈó",
-            "scope": "Y-ÊÇ N-·ñ",
+            "comment": "æ˜¯å¦éœ€è¦åˆ†æ¶¦",
+            "scope": "Y-æ˜¯ N-å¦",
             "M": false,
             "P": false
         },
@@ -309,7 +309,7 @@
             "lengths": "15",
             "precision": "8",
             "defaults": "",
-            "comment": "ÕË»§ĞĞ±ÈÀı,¼ÇÂ¼°Ù·ÖÊı",
+            "comment": "è´¦æˆ·è¡Œæ¯”ä¾‹,è®°å½•ç™¾åˆ†æ•°",
             "scope": "",
             "M": false,
             "P": false
@@ -322,7 +322,7 @@
             "lengths": "15",
             "precision": "8",
             "defaults": "",
-            "comment": "½»Ò×ĞĞ±ÈÀı,¼ÇÂ¼°Ù·ÖÊı",
+            "comment": "äº¤æ˜“è¡Œæ¯”ä¾‹,è®°å½•ç™¾åˆ†æ•°",
             "scope": "",
             "M": false,
             "P": false
@@ -332,5 +332,5 @@
     "dbType": "upright",
     "parameter": "busi_para",
     "system": "Limarket",
-    "commentDesc": "¼ÇÂ¼·ÑÂÊÀàĞÍĞÅÏ¢"
+    "commentDesc": "è®°å½•è´¹ç‡ç±»å‹ä¿¡æ¯"
 }

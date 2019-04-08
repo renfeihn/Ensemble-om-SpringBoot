@@ -1,6 +1,6 @@
 {
     "code": "IRL_INT_BASIS",
-    "comment": "»ù×¼ÀûÂÊÀàĞÍ±í",
+    "comment": "åŸºå‡†åˆ©ç‡ç±»å‹è¡¨",
     "attr": [
         {
             "dictionary": "INT_BASIS",
@@ -10,7 +10,7 @@
             "lengths": "2",
             "precision": "",
             "defaults": "",
-            "comment": "»ù×¼ÀûÂÊÀàĞÍ  ",
+            "comment": "åŸºå‡†åˆ©ç‡ç±»å‹  ",
             "scope": "",
             "M": true,
             "P": true
@@ -22,7 +22,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "»ù×¼ÀûÂÊÀàĞÍÃèÊö",
+            "comment": "åŸºå‡†åˆ©ç‡ç±»å‹æè¿°",
             "defaults": "",
             "dictionary": "INT_BASIS_DESC",
             "scope": ""
@@ -34,7 +34,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -46,7 +46,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ê±¼ä´Á",
+            "comment": "æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -58,7 +58,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -71,7 +71,7 @@
             "lengths": "100",
             "precision": "",
             "defaults": "",
-            "comment": "·Ö¿âÂ·ÓÉ¹Ø¼ü×Ö",
+            "comment": "åˆ†åº“è·¯ç”±å…³é”®å­—",
             "scope": "",
             "M": false,
             "P": false

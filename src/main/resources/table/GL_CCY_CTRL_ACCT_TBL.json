@@ -1,6 +1,6 @@
 {
     "code": "GL_CCY_CTRL_ACCT_TBL",
-    "comment": "»ã¶ÒËğÒæÖØ¹À¿ÆÄ¿¶¨Òå",
+    "comment": "æ±‡å…‘æŸç›Šé‡ä¼°ç§‘ç›®å®šä¹‰",
     "attr": [
         {
             "dictionary": "GL_CODE",
@@ -10,7 +10,7 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "ËğÒæÖØ¹À¿ÆÄ¿",
+            "comment": "æŸç›Šé‡ä¼°ç§‘ç›®",
             "scope": "AC_SUBJECT.SUBJECT_CODE",
             "M": true,
             "P": true
@@ -23,7 +23,7 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "ÀûÈó¿ÆÄ¿",
+            "comment": "åˆ©æ¶¦ç§‘ç›®",
             "scope": "AC_SUBJECT.SUBJECT_CODE",
             "M": true,
             "P": false
@@ -36,7 +36,7 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "ËğÒæ¿ÆÄ¿",
+            "comment": "æŸç›Šç§‘ç›®",
             "scope": "AC_SUBJECT.SUBJECT_CODE",
             "M": true,
             "P": false
@@ -48,7 +48,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -60,7 +60,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""

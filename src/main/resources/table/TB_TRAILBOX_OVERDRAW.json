@@ -1,6 +1,6 @@
 {
     "code": "TB_TRAILBOX_OVERDRAW",
-    "comment": "Î²ÏäÍ¸Ö§±í",
+    "comment": "å°¾ç®±é€æ”¯è¡¨",
     "attr": [
         {
             "code": "PROGRAM_ID",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "½»Ò×±àºÅ",
+            "comment": "äº¤æ˜“ç¼–å·",
             "defaults": "",
             "dictionary": "PROGRAM_ID",
             "scope": ""
@@ -21,7 +21,7 @@
             "precision": "2",
             "M": false,
             "P": false,
-            "comment": "ÔÊĞíÍ¸Ö§½ğ¶î",
+            "comment": "å…è®¸é€æ”¯é‡‘é¢",
             "defaults": "",
             "dictionary": "OVERDRAW_AMT",
             "scope": ""
@@ -33,7 +33,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -45,7 +45,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -56,5 +56,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "Î²Ïä²ÎÊı"
+    "moduleType": "å°¾ç®±å‚æ•°"
 }

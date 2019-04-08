@@ -1,79 +1,79 @@
 {
-    "code": "CIF_DOCUMENT_TYPE",
-    "comment": "Ö¤¼şÀàĞÍ",
-    "attr": [        {
-            "code": "DOCUMENT_TYPE",
-            "dataType": "Varchar",
-            "lengths": "3",
-            "precision": "",
-            "M": true,            "P": true,            "comment": "Ö¤¼şÀàĞÍ",
-            "defaults": "",
-            "dictionary": "DOCUMENT_TYPE",
-            "column": "Ö¤¼şÀàĞÍ£¬²ÎÊı¶¨Òå±í£º  CIF_DOCUMENT_TYPE",
-            "scope": ""        }
-,        {
-            "code": "DOCUMENT_TYPE_DESC",
-            "dataType": "Varchar",
-            "lengths": "30",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "Ö¤¼şÀàĞÍÃèÊö",
-            "defaults": "",
-            "dictionary": "DOCUMENT_TYPE_DESC",
-            "column": "Ö¤¼şÀàĞÍÃèÊö",
-            "scope": ""        }
-,        {
-            "code": "DOCUMENT_TYPE_SHORT",
-            "dataType": "Varchar",
-            "lengths": "30",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "Ö¤¼şÀàĞÍ¼ò³Æ",
-            "defaults": "",
-            "dictionary": "DOCUMENT_TYPE_SHORT",
-            "column": "Ö¤¼şÀàĞÍ¼ò³Æ",
-            "scope": ""        }
-,        {
-            "code": "APP_IND",
-            "dataType": "Varchar",
-            "lengths": "1",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "ÊÊÓÃ·¶Î§ I-¸öÌå¿Í»§ C-·Ç¸öÌå B-¸öÌå»òÕß·Ç¸öÌå",
-            "defaults": "",
-            "dictionary": "APP_IND",
-            "column": "ÊÊÓÃ·¶Î§ I-¸öÌå¿Í»§ C-·Ç¸öÌå B-¸öÌå»òÕß·Ç¸öÌå",
-            "scope": ""        }
-,        {
-            "code": "COMPANY",
-            "dataType": "Varchar",
-            "lengths": "20",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "·¨ÈË´úÂë",
-            "defaults": "",
-            "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIMESTAMP",
-            "dataType": "Varchar",
-            "lengths": "17",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä´Á",
-            "defaults": "",
-            "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIME",
-            "dataType": "Number",
-            "lengths": "11",
-            "precision": "0",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä",
-            "defaults": "",
-            "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
-            "scope": ""        }
-    ],    "table_space": "core_data",
-    "dbType": "upright",
-    "parameter": "busi_para",
-    "system": "Ensemble",
-    "commentDesc": "1¡¢Î¬»¤¿Í»§ËùÓĞ¿ÉÄÜµÄÖ¤¼şÀàĞÍ£¬°üÀ¨£ºÖ¤¼şÀàĞÍ¡¢Ãû³Æ¡¢ÊÇ·ñ¸öÌå¿Í»§µÈĞÅÏ¢£¬×öÎªÕû¸öÏµÍ³µÄ»ù´¡²ÎÊı£¬ÔÚ¿ªÁ¢¿Í»§¡¢Î¬»¤¿Í»§ĞÅÏ¢Ê±Ê¹ÓÃ£¬Ò²¹©¸÷Ä£¿éÔÚÊ¹ÓÃ¿Í»§ĞÅÏ¢Ê±ÓÃ",
-"moduleType":"¿Í»§²ÎÊı"}
+  "code": "CIF_DOCUMENT_TYPE",
+  "comment": "è¯ä»¶ç±»å‹",
+  "attr": [        {
+    "code": "DOCUMENT_TYPE",
+    "dataType": "Varchar",
+    "lengths": "3",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "è¯ä»¶ç±»å‹",
+    "defaults": "",
+    "dictionary": "DOCUMENT_TYPE",
+    "column": "è¯ä»¶ç±»å‹ï¼Œå‚æ•°å®šä¹‰è¡¨ï¼š  CIF_DOCUMENT_TYPE",
+    "scope": ""        }
+  ,        {
+      "code": "DOCUMENT_TYPE_DESC",
+      "dataType": "Varchar",
+      "lengths": "30",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "è¯ä»¶ç±»å‹æè¿°",
+      "defaults": "",
+      "dictionary": "DOCUMENT_TYPE_DESC",
+      "column": "è¯ä»¶ç±»å‹æè¿°",
+      "scope": ""        }
+  ,        {
+      "code": "DOCUMENT_TYPE_SHORT",
+      "dataType": "Varchar",
+      "lengths": "30",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "è¯ä»¶ç±»å‹ç®€ç§°",
+      "defaults": "",
+      "dictionary": "DOCUMENT_TYPE_SHORT",
+      "column": "è¯ä»¶ç±»å‹ç®€ç§°",
+      "scope": ""        }
+  ,        {
+      "code": "APP_IND",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "é€‚ç”¨èŒƒå›´ I-ä¸ªä½“å®¢æˆ· C-éä¸ªä½“ B-ä¸ªä½“æˆ–è€…éä¸ªä½“",
+      "defaults": "",
+      "dictionary": "APP_IND",
+      "column": "é€‚ç”¨èŒƒå›´ I-ä¸ªä½“å®¢æˆ· C-éä¸ªä½“ B-ä¸ªä½“æˆ–è€…éä¸ªä½“",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "æ³•äººä»£ç ",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "æ³•äººä»£ç ",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "æ—¶é—´æˆ³",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "äº¤æ˜“æ—¶é—´",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": "1ã€ç»´æŠ¤å®¢æˆ·æ‰€æœ‰å¯èƒ½çš„è¯ä»¶ç±»å‹ï¼ŒåŒ…æ‹¬ï¼šè¯ä»¶ç±»å‹ã€åç§°ã€æ˜¯å¦ä¸ªä½“å®¢æˆ·ç­‰ä¿¡æ¯ï¼Œåšä¸ºæ•´ä¸ªç³»ç»Ÿçš„åŸºç¡€å‚æ•°ï¼Œåœ¨å¼€ç«‹å®¢æˆ·ã€ç»´æŠ¤å®¢æˆ·ä¿¡æ¯æ—¶ä½¿ç”¨ï¼Œä¹Ÿä¾›å„æ¨¡å—åœ¨ä½¿ç”¨å®¢æˆ·ä¿¡æ¯æ—¶ç”¨",
+  "moduleType":"å®¢æˆ·å‚æ•°"}

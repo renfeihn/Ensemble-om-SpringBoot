@@ -1,6 +1,6 @@
 {
     "code": "FM_SYSTEM",
-    "comment": "ÏµÍ³ÒµÎñ²ÎÊı±í",
+    "comment": "ç³»ç»Ÿä¸šåŠ¡å‚æ•°è¡¨",
     "attr": [
         {
             "code": "COY_NAME",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÒøĞĞÈ«³Æ",
+            "comment": "é“¶è¡Œå…¨ç§°",
             "defaults": "",
             "dictionary": "COY_NAME",
             "scope": ""
@@ -21,7 +21,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÒøĞĞ¼ò³Æ",
+            "comment": "é“¶è¡Œç®€ç§°",
             "defaults": "",
             "dictionary": "COY_SHORT",
             "scope": ""
@@ -34,7 +34,7 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "ÔËĞĞÈÕÆÚ",
+            "comment": "è¿è¡Œæ—¥æœŸ",
             "scope": "",
             "M": true,
             "P": false
@@ -47,7 +47,7 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "±¾ÔÂÔÂÄ©ÈÕÆÚ",
+            "comment": "æœ¬æœˆæœˆæœ«æ—¥æœŸ",
             "scope": "",
             "M": true,
             "P": false
@@ -60,7 +60,7 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "±¾ÄêÄêÄ©ÈÕÆÚ",
+            "comment": "æœ¬å¹´å¹´æœ«æ—¥æœŸ",
             "scope": "",
             "M": true,
             "P": false
@@ -73,8 +73,8 @@
             "lengths": "12",
             "precision": "",
             "defaults": "",
-            "comment": "×ÜĞĞÇåËãĞĞÄÚ²¿¿Í»§",
-            "scope": "È¡ÖµFM_CLIENT",
+            "comment": "æ€»è¡Œæ¸…ç®—è¡Œå†…éƒ¨å®¢æˆ·",
+            "scope": "å–å€¼FM_CLIENT",
             "M": false,
             "P": false
         },
@@ -85,7 +85,7 @@
             "precision": "2",
             "M": false,
             "P": false,
-            "comment": "Í¶×Ê×Ê½ğ",
+            "comment": "æŠ•èµ„èµ„é‡‘",
             "defaults": "",
             "dictionary": "CAPITAL_FUNDS",
             "scope": ""
@@ -98,8 +98,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÊÇ·ñÎªÄÚ²¿ÒøĞĞ",
-            "scope": "Y:ÊÇ,N:·ñ",
+            "comment": "æ˜¯å¦ä¸ºå†…éƒ¨é“¶è¡Œ",
+            "scope": "Y:æ˜¯,N:å¦",
             "M": true,
             "P": false
         },
@@ -110,7 +110,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "µç×ÓÒøĞĞ",
+            "comment": "ç”µå­é“¶è¡Œ",
             "defaults": "",
             "dictionary": "EBH_BRANCH",
             "scope": ""
@@ -122,7 +122,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÉÏÒ»ÔËĞĞÈÕÆÚ",
+            "comment": "ä¸Šä¸€è¿è¡Œæ—¥æœŸ",
             "defaults": "",
             "dictionary": "LAST_RUN_DATE",
             "scope": ""
@@ -135,7 +135,7 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "ÏÂÒ»ÔËĞĞÈÕ",
+            "comment": "ä¸‹ä¸€è¿è¡Œæ—¥",
             "M": true,
             "P": false
         },
@@ -147,8 +147,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÊÇ·ñ×Ô¶¯Éú³É¿Í»§ºÅ",
-            "scope": "Y:ÊÇ,N:·ñ",
+            "comment": "æ˜¯å¦è‡ªåŠ¨ç”Ÿæˆå®¢æˆ·å·",
+            "scope": "Y:æ˜¯,N:å¦",
             "M": true,
             "P": false
         },
@@ -159,7 +159,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·ÖĞĞ¼äÇåËã¿ÆÄ¿-Í¬Òµ´æ·Å",
+            "comment": "åˆ†è¡Œé—´æ¸…ç®—ç§‘ç›®-åŒä¸šå­˜æ”¾",
             "defaults": "",
             "dictionary": "INTER_BRANCH_ACCT_HO",
             "scope": ""
@@ -172,8 +172,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "Ä¬ÈÏ±¾µØ»ãÂÊÀàĞÍ",
-            "scope": "È¡ÖµFM_CURRENCY.CCY",
+            "comment": "é»˜è®¤æœ¬åœ°æ±‡ç‡ç±»å‹",
+            "scope": "å–å€¼FM_CURRENCY.CCY",
             "M": false,
             "P": false
         },
@@ -184,7 +184,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ä¬ÈÏ»ú¹¹",
+            "comment": "é»˜è®¤æœºæ„",
             "defaults": "",
             "dictionary": "DEFAULT_BRANCH",
             "scope": ""
@@ -196,7 +196,7 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "»ãÂÊ¸¡¶¯°Ù·Ö±È",
+            "comment": "æ±‡ç‡æµ®åŠ¨ç™¾åˆ†æ¯”",
             "defaults": "",
             "dictionary": "EXCHANGE_RATE_VARIANCE",
             "scope": ""
@@ -208,7 +208,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "×ÜĞĞ²ã¼¶´úÂë",
+            "comment": "æ€»è¡Œå±‚çº§ä»£ç ",
             "defaults": "",
             "dictionary": "MAIN_BRANCH_CODE",
             "scope": ""
@@ -221,7 +221,7 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "¼¾Ä©ÈÕÆÚ",
+            "comment": "å­£æœ«æ—¥æœŸ",
             "scope": "",
             "M": true,
             "P": false
@@ -234,7 +234,7 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "°ëÄêÄ©ÈÕÆÚ",
+            "comment": "åŠå¹´æœ«æ—¥æœŸ",
             "scope": "",
             "M": true,
             "P": false
@@ -247,8 +247,8 @@
             "lengths": "2",
             "precision": "",
             "defaults": "'1Y'  ",
-            "comment": "×ÊÁÏ²»È«¿Í»§¶³½áÖÜÆÚ",
-            "scope": "Y:ÊÇ,N:·ñ",
+            "comment": "èµ„æ–™ä¸å…¨å®¢æˆ·å†»ç»“å‘¨æœŸ",
+            "scope": "Y:æ˜¯,N:å¦",
             "M": true,
             "P": false
         },
@@ -260,8 +260,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "'Y'  ",
-            "comment": "ÊÇ·ñ×Ô¶¯Éú³ÉµÖÖÊÑº±àºÅ",
-            "scope": "Y:ÊÇ,N:·ñ",
+            "comment": "æ˜¯å¦è‡ªåŠ¨ç”ŸæˆæŠµè´¨æŠ¼ç¼–å·",
+            "scope": "Y:æ˜¯,N:å¦",
             "M": true,
             "P": false
         },
@@ -273,8 +273,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "'N'  ",
-            "comment": "×Ô¶¯¶³½áºÚÃûµ¥¿Í»§",
-            "scope": "Y:ÊÇ,N:·ñ",
+            "comment": "è‡ªåŠ¨å†»ç»“é»‘åå•å®¢æˆ·",
+            "scope": "Y:æ˜¯,N:å¦",
             "M": true,
             "P": false
         },
@@ -286,8 +286,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "'Y'  ",
-            "comment": "SYMBOLS×ÜÕË·ÖÀë±êÖ¾ ",
-            "scope": "Y:Ê¹ÓÃSYMBOLS×ÜÕË,N:²»Ê¹ÓÃSYMBOLS×ÜÕË",
+            "comment": "SYMBOLSæ€»è´¦åˆ†ç¦»æ ‡å¿—",
+            "scope": "Y:ä½¿ç”¨SYMBOLSæ€»è´¦,N:ä¸ä½¿ç”¨SYMBOLSæ€»è´¦",
             "M": true,
             "P": false
         },
@@ -298,7 +298,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "Åú´¦Àí½×¶Î±êÖ¾",
+            "comment": "æ‰¹å¤„ç†é˜¶æ®µæ ‡å¿—",
             "defaults": "'N'  ",
             "dictionary": "PROCESS_SPLIT_IND",
             "scope": ""
@@ -311,8 +311,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÊÇ·ñ¶à·¨ÈËÏµÍ³",
-            "scope": "Y:ÊÇ,N:·ñ",
+            "comment": "æ˜¯å¦å¤šæ³•äººç³»ç»Ÿ",
+            "scope": "Y:æ˜¯,N:å¦",
             "M": false,
             "P": false
         },
@@ -324,8 +324,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "¶à·¨ÈË»ú¹¹¼äÇåËã·½Ê½ ",
-            "scope": "I:ÏµÍ³ÄÚÇåËãÄ£Ê½,P:Ö§¸¶ÇåËãÄ£Ê½,N:²»ÔÊĞí·¨ÈË¼äÍ¨´æÍ¨¶Ò",
+            "comment": "å¤šæ³•äººæœºæ„é—´æ¸…ç®—æ–¹å¼",
+            "scope": "I:ç³»ç»Ÿå†…æ¸…ç®—æ¨¡å¼,P:æ”¯ä»˜æ¸…ç®—æ¨¡å¼,N:ä¸å…è®¸æ³•äººé—´é€šå­˜é€šå…‘",
             "M": false,
             "P": false
         },
@@ -337,8 +337,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "¶à·¨ÈËÊÇ·ñÔÊĞí¿ç·¨ÈË²éÑ¯±êÖ¾ ",
-            "scope": "Y:ÔÊĞí¿ç·¨ÈË²éÑ¯,N:²»ÔÊĞí¿ç·¨ÈË²éÑ¯",
+            "comment": "å¤šæ³•äººæ˜¯å¦å…è®¸è·¨æ³•äººæŸ¥è¯¢æ ‡å¿—",
+            "scope": "Y:å…è®¸è·¨æ³•äººæŸ¥è¯¢,N:ä¸å…è®¸è·¨æ³•äººæŸ¥è¯¢",
             "M": false,
             "P": false
         },
@@ -350,7 +350,7 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "Ä¬ÈÏ´æ¿îÕË»§ÏŞÖÆÀàĞÍ ",
+            "comment": "é»˜è®¤å­˜æ¬¾è´¦æˆ·é™åˆ¶ç±»å‹",
             "scope": "RB_RESTRAINT_TYPE",
             "M": false,
             "P": false
@@ -363,8 +363,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÊÇ·ñĞĞÄÚ½áÊÛ»ãÆ½ÅÌ",
-            "scope": "Y:ÊÇ,N:·ñ",
+            "comment": "æ˜¯å¦è¡Œå†…ç»“å”®æ±‡å¹³ç›˜",
+            "scope": "Y:æ˜¯,N:å¦",
             "M": false,
             "P": false
         },
@@ -376,8 +376,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "½áÊÛ»ãÄÚ²¿Æ½ÅÌ»ãÂÊÀàĞÍ",
-            "scope": "È¡ÖµFM_RATE_TYPE",
+            "comment": "ç»“å”®æ±‡å†…éƒ¨å¹³ç›˜æ±‡ç‡ç±»å‹",
+            "scope": "å–å€¼FM_RATE_TYPE",
             "M": false,
             "P": false
         },
@@ -389,8 +389,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "DACĞ£Ñé±êÖ¾",
-            "scope": "Y:Ê¹ÓÃDACĞ£Ñé,N:²»Ê¹ÓÃDACĞ£Ñé",
+            "comment": "DACæ ¡éªŒæ ‡å¿—",
+            "scope": "Y:ä½¿ç”¨DACæ ¡éªŒ,N:ä¸ä½¿ç”¨DACæ ¡éªŒ",
             "M": false,
             "P": false
         },
@@ -401,7 +401,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÔÊĞí²éÑ¯µÄÀúÊ·ÌìÊı",
+            "comment": "å…è®¸æŸ¥è¯¢çš„å†å²å¤©æ•°",
             "defaults": "",
             "dictionary": "ALLOW_BACKQRY_DAY",
             "scope": ""
@@ -413,7 +413,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "µ±Ç°Åú´¦ÀíµÄÄ£¿éºÅ",
+            "comment": "å½“å‰æ‰¹å¤„ç†çš„æ¨¡å—å·",
             "defaults": "",
             "dictionary": "BATCH_MODULE",
             "scope": ""
@@ -425,7 +425,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "µ±Ç°Åú´¦ÀíµÄÒµÎñ×é±àºÅ",
+            "comment": "å½“å‰æ‰¹å¤„ç†çš„ä¸šåŠ¡ç»„ç¼–å·",
             "defaults": "",
             "dictionary": "BATCH_UNIT",
             "scope": ""
@@ -438,8 +438,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "'INP'  ",
-            "comment": "ÏµÍ³Ëù´¦µÄ½×¶Î",
-            "scope": "INP:ÈÕ¼ä,EOD:ÈÕÖÕ,SOD:ÈÕÊ¼",
+            "comment": "ç³»ç»Ÿæ‰€å¤„çš„é˜¶æ®µ",
+            "scope": "INP:æ—¥é—´,EOD:æ—¥ç»ˆ,SOD:æ—¥å§‹",
             "M": true,
             "P": false
         },
@@ -451,8 +451,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "'Y'  ",
-            "comment": "ÊÇ·ñÁ¬ĞøÊ¹ÓÃÖ¸¶¨µÄÊı×ÖÇø¼ä±êÖ¾",
-            "scope": "Y:±íÊ¾¿ÉÒÔÁ¬ĞøÖØ¸´Ê¹ÓÃ¸ø¶¨µÄÊı×ÖÇø¼ä,N:±íÊ¾Ö»ÄÜÒÔĞòÁĞµÄ·½Ê½Ê¹ÓÃ¸ø¶¨µÄÊı×ÖÇø¼ä",
+            "comment": "æ˜¯å¦è¿ç»­ä½¿ç”¨æŒ‡å®šçš„æ•°å­—åŒºé—´æ ‡å¿—",
+            "scope": "Y:è¡¨ç¤ºå¯ä»¥è¿ç»­é‡å¤ä½¿ç”¨ç»™å®šçš„æ•°å­—åŒºé—´,N:è¡¨ç¤ºåªèƒ½ä»¥åºåˆ—çš„æ–¹å¼ä½¿ç”¨ç»™å®šçš„æ•°å­—åŒºé—´",
             "M": true,
             "P": false
         },
@@ -464,8 +464,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "'Y'  ",
-            "comment": "ÊÇ·ñ²úÆ·°æ30E¼ÆËãÌìÊı",
-            "scope": "Y:ÊÇ£¬Ê¹ÓÃ²úÆ·°æ30E¼ÆËãÌìÊı,N:·ñ£¬Ê¹ÓÃ³É¶¼°æ30E¼ÆËãÌìÊı",
+            "comment": "æ˜¯å¦äº§å“ç‰ˆ30Eè®¡ç®—å¤©æ•°",
+            "scope": "Y:æ˜¯ï¼Œä½¿ç”¨äº§å“ç‰ˆ30Eè®¡ç®—å¤©æ•°,N:å¦ï¼Œä½¿ç”¨æˆéƒ½ç‰ˆ30Eè®¡ç®—å¤©æ•°",
             "M": true,
             "P": false
         },
@@ -477,8 +477,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "'Y'",
-            "comment": "ÊÇ·ñ¼ÇÂ¼ÒµÎñÊı¾İĞÅÏ¢ ",
-            "scope": "Y:¼ÇÂ¼,N:²»¼ÇÂ¼",
+            "comment": "æ˜¯å¦è®°å½•ä¸šåŠ¡æ•°æ®ä¿¡æ¯",
+            "scope": "Y:è®°å½•,N:ä¸è®°å½•",
             "M": false,
             "P": false
         },
@@ -490,8 +490,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "'Y'",
-            "comment": "ÊÇ·ñ¼ÇÂ¼³ö´íÊ±µÄÒµÎñÊı¾İĞÅÏ¢",
-            "scope": "Y:¼ÇÂ¼,N:²»¼ÇÂ¼",
+            "comment": "æ˜¯å¦è®°å½•å‡ºé”™æ—¶çš„ä¸šåŠ¡æ•°æ®ä¿¡æ¯",
+            "scope": "Y:è®°å½•,N:ä¸è®°å½•",
             "M": false,
             "P": false
         },
@@ -502,7 +502,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ä¬ÈÏÅú´¦ÀíÓÃ»§",
+            "comment": "é»˜è®¤æ‰¹å¤„ç†ç”¨æˆ·",
             "defaults": "",
             "dictionary": "BATCH_DEFAULT_USER_ID",
             "scope": ""
@@ -514,7 +514,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Åú´¦Àí¼ì²é±êÖ¾",
+            "comment": "æ‰¹å¤„ç†æ£€æŸ¥æ ‡å¿—",
             "defaults": "",
             "dictionary": "BATCH_CHECK_FLAG",
             "scope": ""
@@ -526,10 +526,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½è´û¼ì²é±êÖ¾",
+            "comment": "å€Ÿè´·æ£€æŸ¥æ ‡å¿—",
             "defaults": "",
             "dictionary": "CR_DR_CHECK_FLAG",
-            "scope": "Y:ÊÇ N£º·ñ"
+            "scope": "Y:æ˜¯ Nï¼šå¦"
         },
         {
             "code": "COMPANY",
@@ -538,7 +538,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "·¨ÈË",
+            "comment": "æ³•äºº",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -550,7 +550,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ä¬ÈÏÀûÈóÖĞĞÄ",
+            "comment": "é»˜è®¤åˆ©æ¶¦ä¸­å¿ƒ",
             "defaults": "",
             "dictionary": "DEFAULT_PROFIT_CENTRE",
             "scope": ""
@@ -562,7 +562,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "¿Í»§ºÅ½á¹¹ÀàĞÍ",
+            "comment": "å®¢æˆ·å·ç»“æ„ç±»å‹",
             "defaults": "",
             "dictionary": "CLIENT_NO_STRUCTURE_TYPE",
             "scope": "FM_STRUCTURE_TYPE.STRUCTURE_TYPE  CIF_CLIENT.CLIENT_NO"
@@ -574,7 +574,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "»ù´¡±ÒÖÖ",
+            "comment": "åŸºç¡€å¸ç§",
             "defaults": "",
             "dictionary": "BASE_CCY",
             "scope": "FM_CURRENCY.CCY"
@@ -586,7 +586,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÏŞÖÆ±ÒÖÖ",
+            "comment": "é™åˆ¶å¸ç§",
             "defaults": "",
             "dictionary": "LIMIT_CCY",
             "scope": ""
@@ -598,7 +598,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "µ±µØ±ÒÖÖ",
+            "comment": "å½“åœ°å¸ç§",
             "defaults": "",
             "dictionary": "LOCAL_CCY",
             "scope": ""
@@ -610,7 +610,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "±¨±í±ÒÖÖ",
+            "comment": "æŠ¥è¡¨å¸ç§",
             "defaults": "",
             "dictionary": "REPORT_CCY",
             "scope": ""
@@ -622,7 +622,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "³¨¿ÚÀàĞÍ",
+            "comment": "æ•å£ç±»å‹",
             "defaults": "",
             "dictionary": "NPV_GAP_TYPE",
             "scope": ""
@@ -634,7 +634,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "±¾µØ±ÒÖÖ»ãÂÊÀàĞÍ",
+            "comment": "æœ¬åœ°å¸ç§æ±‡ç‡ç±»å‹",
             "defaults": "",
             "dictionary": "DEFAULT_RATE_TYPE",
             "scope": ""
@@ -646,7 +646,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -658,7 +658,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -671,8 +671,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "·¨ÈË¼ä¿Í»§ĞÅÏ¢ÊÇ·ñ¹²Ïí",
-            "scope": "Y:ÊÇ,N:·ñ",
+            "comment": "æ³•äººé—´å®¢æˆ·ä¿¡æ¯æ˜¯å¦å…±äº«",
+            "scope": "Y:æ˜¯,N:å¦",
             "M": false,
             "P": false
         },
@@ -684,8 +684,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÊÇ·ñÔÊĞí·¨ÈË¼ä½»Ò×",
-            "scope": "Y:ÊÇ,N:·ñ",
+            "comment": "æ˜¯å¦å…è®¸æ³•äººé—´äº¤æ˜“",
+            "scope": "Y:æ˜¯,N:å¦",
             "M": false,
             "P": false
         }
@@ -695,5 +695,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "¹«¹²²ÎÊı"
+    "moduleType": "å…¬å…±å‚æ•°"
 }

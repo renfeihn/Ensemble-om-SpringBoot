@@ -1,6 +1,6 @@
 {
     "code": "MB_EXCHANGE_TRAN_TYPE",
-    "comment": "½áÊÛ»ã½»Ò×ÀàĞÍ",
+    "comment": "ç»“å”®æ±‡äº¤æ˜“ç±»å‹",
     "attr": [
         {
             "code": "TRAN_TYPE",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "½»Ò×ÀàĞÍ",
+            "comment": "äº¤æ˜“ç±»å‹",
             "defaults": "",
             "dictionary": "TRAN_TYPE",
             "scope": ""
@@ -22,8 +22,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "¶Ò»»ÀàĞÍ",
-            "scope": "B£º½á»ã\nS£ºÊÛ»ã\nE£ºÍâ±Ò¶Ò»»",
+            "comment": "å…‘æ¢ç±»å‹",
+            "scope": "Bï¼šç»“æ±‡\nSï¼šå”®æ±‡\nEï¼šå¤–å¸å…‘æ¢",
             "M": false,
             "P": false
         },
@@ -35,8 +35,8 @@
             "lengths": "2",
             "precision": "",
             "defaults": "",
-            "comment": "¶Ò»»·½Ê½",
-            "scope": "AA£ºÕË»§¶ÒÕË»§\nCC£ºÏÖ½ğ¶ÒÏÖ½ğ\nCA£ºÏÖ½ğ¶ÒÕË»§\nAC£ºÕË»§¶ÒÏÖ½ğ",
+            "comment": "å…‘æ¢æ–¹å¼",
+            "scope": "AAï¼šè´¦æˆ·å…‘è´¦æˆ·\nCCï¼šç°é‡‘å…‘ç°é‡‘\nCAï¼šç°é‡‘å…‘è´¦æˆ·\nACï¼šè´¦æˆ·å…‘ç°é‡‘",
             "M": false,
             "P": false
         },
@@ -47,7 +47,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -59,7 +59,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -70,5 +70,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "²úÆ·²ÎÊı"
+    "moduleType": "äº§å“å‚æ•°"
 }

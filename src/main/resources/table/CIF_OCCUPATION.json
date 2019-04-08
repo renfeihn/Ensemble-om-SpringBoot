@@ -1,69 +1,69 @@
 {
-    "code": "CIF_OCCUPATION",
-    "comment": "Ö°Òµ·ÖÀà±í",
-    "attr": [        {
-            "code": "OCCUPATION_CODE",
-            "dataType": "Varchar",
-            "lengths": "6",
-            "precision": "",
-            "M": true,            "P": true,            "comment": "Ö°ÒµÀà±ğ",
-            "defaults": "",
-            "dictionary": "OCCUPATION_CODE",
-            "column": "Ö°Òµ ²ÎÊı±ícif_occupation",
-            "scope": ""        }
-,        {
-            "code": "OCCUPATION_DESC",
-            "dataType": "Varchar",
-            "lengths": "50",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "Ö°ÒµËµÃ÷",
-            "defaults": "",
-            "dictionary": "OCCUPATION_DESC",
-            "column": "Ö°ÒµËµÃ÷",
-            "scope": ""        }
-,        {
-            "code": "RISK_LEVEL",
-            "dataType": "Varchar",
-            "lengths": "1",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "·çÏÕµÈ¼¶ H-¸ß L-µÍ",
-            "defaults": "",
-            "dictionary": "RISK_LEVEL",
-            "column": "·çÏÕµÈ¼¶ H-¸ß L-µÍ",
-            "scope": ""        }
-,        {
-            "code": "COMPANY",
-            "dataType": "Varchar",
-            "lengths": "20",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "·¨ÈË´úÂë",
-            "defaults": "",
-            "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIMESTAMP",
-            "dataType": "Varchar",
-            "lengths": "17",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä´Á",
-            "defaults": "",
-            "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIME",
-            "dataType": "Number",
-            "lengths": "11",
-            "precision": "0",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä",
-            "defaults": "",
-            "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
-            "scope": ""        }
-    ],    "table_space": "core_data",
-    "dbType": "upright",
-    "parameter": "busi_para",
-    "system": "Ensemble",
-    "commentDesc": "1¡¢¸Ã±íÎ¬»¤ÁËÖ°ÒµÀà±ğ  2¡¢ÔÚÏêÏ¸¿Í»§ĞÅÏ¢Î¬»¤Ê±£¬¿ÉÒÔ¸ù¾İ´Ë²ÎÊıÎ¬»¤¸öÈË¿Í»§µÄÖ°Òµ",
-"moduleType":"¿Í»§²ÎÊı"}
+  "code": "CIF_OCCUPATION",
+  "comment": "èŒä¸šåˆ†ç±»è¡¨",
+  "attr": [        {
+    "code": "OCCUPATION_CODE",
+    "dataType": "Varchar",
+    "lengths": "6",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "èŒä¸šç±»åˆ«",
+    "defaults": "",
+    "dictionary": "OCCUPATION_CODE",
+    "column": "èŒä¸š å‚æ•°è¡¨cif_occupation",
+    "scope": ""        }
+  ,        {
+      "code": "OCCUPATION_DESC",
+      "dataType": "Varchar",
+      "lengths": "50",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "èŒä¸šè¯´æ˜",
+      "defaults": "",
+      "dictionary": "OCCUPATION_DESC",
+      "column": "èŒä¸šè¯´æ˜",
+      "scope": ""        }
+  ,        {
+      "code": "RISK_LEVEL",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "é£é™©ç­‰çº§ H-é«˜ L-ä½",
+      "defaults": "",
+      "dictionary": "RISK_LEVEL",
+      "column": "é£é™©ç­‰çº§ H-é«˜ L-ä½",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "æ³•äººä»£ç ",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "æ³•äººä»£ç ",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "æ—¶é—´æˆ³",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "äº¤æ˜“æ—¶é—´",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": "1ã€è¯¥è¡¨ç»´æŠ¤äº†èŒä¸šç±»åˆ«  2ã€åœ¨è¯¦ç»†å®¢æˆ·ä¿¡æ¯ç»´æŠ¤æ—¶ï¼Œå¯ä»¥æ ¹æ®æ­¤å‚æ•°ç»´æŠ¤ä¸ªäººå®¢æˆ·çš„èŒä¸š",
+  "moduleType":"å®¢æˆ·å‚æ•°"}

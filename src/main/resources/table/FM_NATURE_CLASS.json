@@ -2,10 +2,10 @@
     "system": "ensemble",
     "code": "FM_NATURE_CLASS",
     "table_space": "core_data",
-    "comment": "ÕË»§ÊôĞÔÖµ±í",
+    "comment": "è´¦æˆ·å±æ€§å€¼è¡¨",
     "dbType": "upright",
     "parameter": "init_para",
-    "commentDesc": "´Ófm_ref_code·ÖÀë³öÀ´µÄMB_ACCT_NATURE_DEF.NATURE_CLASSÊı¾İ",
+    "commentDesc": "ä»fm_ref_codeåˆ†ç¦»å‡ºæ¥çš„MB_ACCT_NATURE_DEF.NATURE_CLASSæ•°æ®",
     "attr": [
         {
             "dictionary": "REF_LANG",
@@ -15,7 +15,7 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "ÓïÑÔ",
+            "comment": "è¯­è¨€",
             "scope": "",
             "M": true,
             "P": true
@@ -28,7 +28,7 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "È¡Öµ·¶Î§",
+            "comment": "å–å€¼èŒƒå›´",
             "scope": "",
             "M": true,
             "P": true
@@ -41,7 +41,7 @@
             "lengths": "30",
             "precision": "",
             "defaults": "",
-            "comment": "È¡ÖµµÄº¬ÒåËµÃ÷",
+            "comment": "å–å€¼çš„å«ä¹‰è¯´æ˜",
             "scope": "",
             "M": true,
             "P": false
@@ -54,7 +54,7 @@
             "lengths": "300",
             "precision": "",
             "defaults": "",
-            "comment": "±¸×¢",
+            "comment": "å¤‡æ³¨",
             "scope": "",
             "M": false,
             "P": false

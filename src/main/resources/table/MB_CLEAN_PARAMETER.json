@@ -1,161 +1,161 @@
 {
-"code":"MB_CLEAN_PARAMETER",
-"comment":"’Àªß«Â¿Ì≤Œ ˝±Ì",
-"attr":[{
-"code":"SEQ_NO",
-"dataType":"Varchar",
-"lengths":"10",
-"precision":"",
-"M":true,"P":true,"comment":"",
-"defaults":"",
-"dictionary":"SEQ_NO"}
-,{
-"code":"PROD_TYPE",
-"dataType":"Varchar",
-"lengths":"50",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"PROD_TYPE"}
-,{
-"code":"CCY",
-"dataType":"Varchar",
-"lengths":"3",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"CCY"}
-,{
-"code":"ACCT_TYPE",
-"dataType":"Varchar",
-"lengths":"2",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"ACCT_TYPE"}
-,{
-"code":"BALANCE",
-"dataType":"NUMBER",
-"lengths":"17",
-"precision":"2",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"BALANCE"}
-,{
-"code":"TERM_PERIOD",
-"dataType":"Varchar",
-"lengths":"5",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"TERM_PERIOD"}
-,{
-"code":"TERM_TYPE",
-"dataType":"Varchar",
-"lengths":"1",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"TERM_TYPE"}
-,{
-"code":"START_TIME",
-"dataType":"Varchar",
-"lengths":"8",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"START_TIME"}
-,{
-"code":"END_TIME",
-"dataType":"Varchar",
-"lengths":"8",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"END_TIME"}
-,{
-"code":"AGREEMENT_TYPE",
-"dataType":"Varchar",
-"lengths":"3",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"AGREEMENT_TYPE"}
-,{
-"code":"PERIOD_FREQ",
-"dataType":"Varchar",
-"lengths":"2",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"PERIOD_FREQ"}
-,{
-"code":"PERIOD_FREQ_TYPE",
-"dataType":"Varchar",
-"lengths":"2",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"PERIOD_FREQ_TYPE"}
-,{
-"code":"LAST_CLEAN_DATE",
-"dataType":"Varchar",
-"lengths":"8",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"LAST_CLEAN_DATE"}
-,{
-"code":"CLEAN_TYPE",
-"dataType":"Varchar",
-"lengths":"4",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"CLEAN_TYPE"}
-,{
-"code":"ACCT_STATUS",
-"dataType":"Varchar",
-"lengths":"1",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"ACCT_STATUS"}
-,{
-"code":"STATUS",
-"dataType":"Varchar",
-"lengths":"1",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"STATUS"}
-,{
-"code":"NEXT_CLEAN_DATE",
-"dataType":"Varchar",
-"lengths":"8",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"NEXT_CLEAN_DATE"}
-,{
-"code":"TRAN_TIMESTAMP",
-"dataType":"Varchar",
-"lengths":"17",
-"precision":"",
-"M":false,"P":false,"comment":"Ωª“◊ ±º‰¥¡",
-"defaults":"",
-"dictionary":"TRAN_TIMESTAMP"}
-,{
-"code":"TRAN_TIME",
-"dataType":"NUMBER",
-"lengths":"11",
-"precision":"0",
-"M":false,"P":false,"comment":"Ωª“◊ ±º‰",
-"defaults":"",
-"dictionary":"TRAN_TIME"}
-],"table_space":"core_data",
-"dbType":"upright",
-"parameter":"tran",
-"system":"Ensemble",
-"commentDesc":"",
-"moduleType":"’Àªß≤Œ ˝"}
+  "code":"MB_CLEAN_PARAMETER",
+  "comment":"Ë¥¶Êà∑Ê∏ÖÁêÜÂèÇÊï∞Ë°®",
+  "attr":[{
+    "code":"SEQ_NO",
+    "dataType":"Varchar",
+    "lengths":"10",
+    "precision":"",
+    "M":true,"P":true,"comment":"",
+    "defaults":"",
+    "dictionary":"SEQ_NO"}
+  ,{
+      "code":"PROD_TYPE",
+      "dataType":"Varchar",
+      "lengths":"50",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"PROD_TYPE"}
+  ,{
+      "code":"CCY",
+      "dataType":"Varchar",
+      "lengths":"3",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"CCY"}
+  ,{
+      "code":"ACCT_TYPE",
+      "dataType":"Varchar",
+      "lengths":"2",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"ACCT_TYPE"}
+  ,{
+      "code":"BALANCE",
+      "dataType":"NUMBER",
+      "lengths":"17",
+      "precision":"2",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"BALANCE"}
+  ,{
+      "code":"TERM_PERIOD",
+      "dataType":"Varchar",
+      "lengths":"5",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"TERM_PERIOD"}
+  ,{
+      "code":"TERM_TYPE",
+      "dataType":"Varchar",
+      "lengths":"1",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"TERM_TYPE"}
+  ,{
+      "code":"START_TIME",
+      "dataType":"Varchar",
+      "lengths":"8",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"START_TIME"}
+  ,{
+      "code":"END_TIME",
+      "dataType":"Varchar",
+      "lengths":"8",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"END_TIME"}
+  ,{
+      "code":"AGREEMENT_TYPE",
+      "dataType":"Varchar",
+      "lengths":"3",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"AGREEMENT_TYPE"}
+  ,{
+      "code":"PERIOD_FREQ",
+      "dataType":"Varchar",
+      "lengths":"2",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"PERIOD_FREQ"}
+  ,{
+      "code":"PERIOD_FREQ_TYPE",
+      "dataType":"Varchar",
+      "lengths":"2",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"PERIOD_FREQ_TYPE"}
+  ,{
+      "code":"LAST_CLEAN_DATE",
+      "dataType":"Varchar",
+      "lengths":"8",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"LAST_CLEAN_DATE"}
+  ,{
+      "code":"CLEAN_TYPE",
+      "dataType":"Varchar",
+      "lengths":"4",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"CLEAN_TYPE"}
+  ,{
+      "code":"ACCT_STATUS",
+      "dataType":"Varchar",
+      "lengths":"1",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"ACCT_STATUS"}
+  ,{
+      "code":"STATUS",
+      "dataType":"Varchar",
+      "lengths":"1",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"STATUS"}
+  ,{
+      "code":"NEXT_CLEAN_DATE",
+      "dataType":"Varchar",
+      "lengths":"8",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"NEXT_CLEAN_DATE"}
+  ,{
+      "code":"TRAN_TIMESTAMP",
+      "dataType":"Varchar",
+      "lengths":"17",
+      "precision":"",
+      "M":false,"P":false,"comment":"‰∫§ÊòìÊó∂Èó¥Êà≥",
+      "defaults":"",
+      "dictionary":"TRAN_TIMESTAMP"}
+  ,{
+      "code":"TRAN_TIME",
+      "dataType":"NUMBER",
+      "lengths":"11",
+      "precision":"0",
+      "M":false,"P":false,"comment":"‰∫§ÊòìÊó∂Èó¥",
+      "defaults":"",
+      "dictionary":"TRAN_TIME"}
+  ],"table_space":"core_data",
+  "dbType":"upright",
+  "parameter":"tran",
+  "system":"Ensemble",
+  "commentDesc":"",
+  "moduleType":"Ë¥¶Êà∑ÂèÇÊï∞"}

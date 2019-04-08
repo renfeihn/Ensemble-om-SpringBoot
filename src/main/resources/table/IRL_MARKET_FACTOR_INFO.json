@@ -1,6 +1,6 @@
 {
     "code": "IRL_MARKET_FACTOR_INFO",
-    "comment": "ÊĞ³¡Ö¸ÊıĞÅÏ¢±í",
+    "comment": "å¸‚åœºæŒ‡æ•°ä¿¡æ¯è¡¨",
     "attr": [
         {
             "dictionary": "IRL_SEQ_NO",
@@ -10,7 +10,7 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "Ö¸ÊıĞòºÅ",
+            "comment": "æŒ‡æ•°åºå·",
             "scope": "",
             "M": true,
             "P": true
@@ -23,8 +23,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "ÊĞ³¡Ö¸ÊıÀàĞÍ´úÂë",
-            "scope": "È¡×ÔFM_REF_CODE,µ±×Ö¶ÎDOMAINµÄÖµÎªMARKET_TYPEÊ±£¬È¡FIELD_VALUEµÄÖµ",
+            "comment": "å¸‚åœºæŒ‡æ•°ç±»å‹ä»£ç ",
+            "scope": "å–è‡ªFM_REF_CODE,å½“å­—æ®µDOMAINçš„å€¼ä¸ºMARKET_TYPEæ—¶ï¼Œå–FIELD_VALUEçš„å€¼",
             "M": true,
             "P": false
         },
@@ -35,7 +35,7 @@
             "precision": "2",
             "M": true,
             "P": false,
-            "comment": "Ö¸ÊıÖµ",
+            "comment": "æŒ‡æ•°å€¼",
             "defaults": "",
             "dictionary": "MARKET_VALUE",
             "scope": ""
@@ -47,7 +47,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÉúĞ§ÈÕÆÚ",
+            "comment": "ç”Ÿæ•ˆæ—¥æœŸ",
             "defaults": "",
             "dictionary": "EFFECT_DATE",
             "scope": ""
@@ -59,7 +59,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ê§Ğ§ÈÕÆÚ",
+            "comment": "å¤±æ•ˆæ—¥æœŸ",
             "defaults": "",
             "dictionary": "END_DATE",
             "scope": ""
@@ -71,7 +71,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "×´Ì¬",
+            "comment": "çŠ¶æ€",
             "defaults": "",
             "dictionary": "FAC_STATUS",
             "scope": ""
@@ -83,7 +83,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "±¸×¢",
+            "comment": "å¤‡æ³¨",
             "defaults": "",
             "dictionary": "REMARK",
             "scope": ""
@@ -95,7 +95,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -107,7 +107,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -119,7 +119,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""

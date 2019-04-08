@@ -1,6 +1,6 @@
 {
     "code": "FM_GAP_PERIOD",
-    "comment": "³¨¿ÚÆÚÏŞĞÅÏ¢",
+    "comment": "æ•å£æœŸé™ä¿¡æ¯",
     "attr": [
         {
             "code": "GAP_TYPE",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "³¨¿ÚÀàĞÍ",
+            "comment": "æ•å£ç±»å‹",
             "defaults": "",
             "dictionary": "GAP_TYPE",
             "scope": ""
@@ -21,7 +21,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "ÆÚÏŞ",
+            "comment": "æœŸé™",
             "defaults": "",
             "dictionary": "PERIOD_NO",
             "scope": ""
@@ -34,8 +34,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÆÚÏŞÀàĞÍ",
-            "scope": "D:DaysÌì,M:MonthsÔÂ,Y:Years Äê",
+            "comment": "æœŸé™ç±»å‹",
+            "scope": "D:Dayså¤©,M:Monthsæœˆ,Y:Years å¹´",
             "M": true,
             "P": true
         },
@@ -46,7 +46,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÆÚÏŞÃèÊö",
+            "comment": "æœŸé™æè¿°",
             "defaults": "",
             "dictionary": "PERIOD_DESC",
             "scope": ""
@@ -58,7 +58,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË",
+            "comment": "æ³•äºº",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -70,7 +70,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -82,7 +82,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -93,5 +93,5 @@
     "parameter": "init_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "¹«¹²²ÎÊı"
+    "moduleType": "å…¬å…±å‚æ•°"
 }

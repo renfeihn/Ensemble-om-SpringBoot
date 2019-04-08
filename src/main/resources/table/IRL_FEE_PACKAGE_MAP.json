@@ -1,6 +1,6 @@
 {
     "code": "IRL_FEE_PACKAGE_MAP",
-    "comment": "·ÑÓÃÌ×²Í·ÑÓÃÀàĞÍ¹ØÁª±í",
+    "comment": "è´¹ç”¨å¥—é¤è´¹ç”¨ç±»å‹å…³è”è¡¨",
     "attr": [
         {
             "dictionary": "PACKAGE_ID",
@@ -10,8 +10,8 @@
             "lengths": "10",
             "precision": "",
             "defaults": "",
-            "comment": "Ì×²Í´úÂë",
-            "scope": "È¡×ÔIRL_FEE_PACKAGE.PACKAGE_ID",
+            "comment": "å¥—é¤ä»£ç ",
+            "scope": "å–è‡ªIRL_FEE_PACKAGE.PACKAGE_ID",
             "M": true,
             "P": true
         },
@@ -23,8 +23,8 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "·ÑÓÃÀàĞÍ",
-            "scope": "È¡×ÔIRL_FEE_TYPE.FEE_TYPE",
+            "comment": "è´¹ç”¨ç±»å‹",
+            "scope": "å–è‡ªIRL_FEE_TYPE.FEE_TYPE",
             "M": true,
             "P": true
         },
@@ -35,7 +35,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -47,7 +47,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""

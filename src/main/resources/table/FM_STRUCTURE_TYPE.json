@@ -1,6 +1,6 @@
 {
     "code": "FM_STRUCTURE_TYPE",
-    "comment": "½á¹¹ÀàĞÍ¶¨Òå±í",
+    "comment": "ç»“æ„ç±»å‹å®šä¹‰è¡¨",
     "attr": [
         {
             "code": "STRUCTURE_TYPE",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "½á¹¹ÀàĞÍ",
+            "comment": "ç»“æ„ç±»å‹",
             "defaults": "",
             "dictionary": "STRUCTURE_TYPE",
             "scope": ""
@@ -22,7 +22,7 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "½á¹¹ÊôĞÔ",
+            "comment": "ç»“æ„å±æ€§",
             "scope": " A/N/AN/ANS",
             "M": false,
             "P": false
@@ -34,7 +34,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "½á¹¹ÃèÊö",
+            "comment": "ç»“æ„æè¿°",
             "defaults": "",
             "dictionary": "STRUCTURE_DESC",
             "scope": ""
@@ -46,7 +46,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "½á¹¹³¤¶È",
+            "comment": "ç»“æ„é•¿åº¦",
             "defaults": "",
             "dictionary": "STRUCTURE_LENGTH",
             "scope": ""
@@ -59,8 +59,8 @@
             "lengths": "2",
             "precision": "",
             "defaults": "",
-            "comment": "½á¹¹·ÖÀà ",
-            "scope": "CN:Client Number  ¿Í»§ºÅ,AN:Account Number ÕËºÅ,AL:Aall ObjectsËùÓĞ¶ÔÏó¶¼¿ÉÒÔÊ¹ÓÃ,RF:Report Filename±¨±íÎÄ¼şÃû³Æ,RS:Report Spool Path±¨±í»º³å³ØÂ·¾¶",
+            "comment": "ç»“æ„åˆ†ç±»",
+            "scope": "CN:Client Number  å®¢æˆ·å·,AN:Account Number è´¦å·,AL:Aall Objectsæ‰€æœ‰å¯¹è±¡éƒ½å¯ä»¥ä½¿ç”¨,RF:Report FilenameæŠ¥è¡¨æ–‡ä»¶åç§°,RS:Report Spool PathæŠ¥è¡¨ç¼“å†²æ± è·¯å¾„",
             "M": true,
             "P": false
         },
@@ -72,8 +72,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "'N'  ",
-            "comment": "ÊÇ·ñÉèÖÃ·Ö¸ô·û",
-            "scope": "Y:ÊÇ,N:·ñ",
+            "comment": "æ˜¯å¦è®¾ç½®åˆ†éš”ç¬¦",
+            "scope": "Y:æ˜¯,N:å¦",
             "M": true,
             "P": false
         },
@@ -84,7 +84,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "²»ÈİĞíµÄ·Ö¸ô·û",
+            "comment": "ä¸å®¹è®¸çš„åˆ†éš”ç¬¦",
             "defaults": "",
             "dictionary": "RESTRICTED_DELIMITER",
             "scope": ""
@@ -96,7 +96,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÊÇ·ñÉèÖÃÍê³É",
+            "comment": "æ˜¯å¦è®¾ç½®å®Œæˆ",
             "defaults": "'N'  ",
             "dictionary": "COMPLETE_IND",
             "scope": ""
@@ -108,7 +108,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "¼ì²é¹æÔò Ä¿Ç°ÏµÍ³ÖĞ¸Ã×Ö¶Î¶¼ÊÇĞ´ËÀ",
+            "comment": "æ£€æŸ¥è§„åˆ™ ç›®å‰ç³»ç»Ÿä¸­è¯¥å­—æ®µéƒ½æ˜¯å†™æ­»",
             "defaults": "",
             "dictionary": "CHECK_DIGIT_FORMULA",
             "scope": ""
@@ -120,7 +120,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË",
+            "comment": "æ³•äºº",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -132,7 +132,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -144,7 +144,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -155,5 +155,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "¹«¹²²ÎÊı"
+    "moduleType": "å…¬å…±å‚æ•°"
 }

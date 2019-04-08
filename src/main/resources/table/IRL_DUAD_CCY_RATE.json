@@ -1,6 +1,6 @@
 {
     "code": "IRL_DUAD_CCY_RATE",
-    "comment": "»õ±Ò¶Ô»ãÂÊÅÆ¼Û±í",
+    "comment": "è´§å¸å¯¹æ±‡ç‡ç‰Œä»·è¡¨",
     "attr": [
         {
             "dictionary": "SOURCE_CCY",
@@ -10,8 +10,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "Ô´±ÒÖÖ",
-            "scope": "È¡×ÔFM_CURRENCY.CCY",
+            "comment": "æºå¸ç§",
+            "scope": "å–è‡ªFM_CURRENCY.CCY",
             "M": true,
             "P": true
         },
@@ -23,8 +23,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "Ä¿±ê±ÒÖÖ",
-            "scope": "È¡×ÔFM_CURRENCY.CCY",
+            "comment": "ç›®æ ‡å¸ç§",
+            "scope": "å–è‡ªFM_CURRENCY.CCY",
             "M": true,
             "P": true
         },
@@ -35,7 +35,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "ÉúĞ§ÈÕÆÚ ",
+            "comment": "ç”Ÿæ•ˆæ—¥æœŸ ",
             "defaults": "",
             "dictionary": "EFFECT_DATE",
             "scope": ""
@@ -47,7 +47,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "ÉúĞ§Ê±¼ä",
+            "comment": "ç”Ÿæ•ˆæ—¶é—´",
             "defaults": "",
             "dictionary": "EFFECT_TIME",
             "scope": ""
@@ -60,8 +60,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "»ãÂÊÀàĞÍ",
-            "scope": "È¡×ÔIRL_EXCHANGE_TYPE.RATE_TYPE",
+            "comment": "æ±‡ç‡ç±»å‹",
+            "scope": "å–è‡ªIRL_EXCHANGE_TYPE.RATE_TYPE",
             "M": true,
             "P": true
         },
@@ -72,7 +72,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "»ú¹¹",
+            "comment": "æœºæ„",
             "defaults": "",
             "dictionary": "BRANCH",
             "scope": "FM_BRANCH.BRANCH"
@@ -85,8 +85,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÅÆ¼ÛÀàĞÍ",
-            "scope": "D:Ö±½Ó,I:¼ä½Ó  ",
+            "comment": "ç‰Œä»·ç±»å‹",
+            "scope": "D:ç›´æ¥,I:é—´æ¥",
             "M": true,
             "P": false
         },
@@ -97,7 +97,7 @@
             "precision": "8",
             "M": true,
             "P": false,
-            "comment": "ÖĞ¼ä¼Û",
+            "comment": "ä¸­é—´ä»·",
             "defaults": "",
             "dictionary": "MIDDLE_RATE",
             "scope": ""
@@ -109,7 +109,7 @@
             "precision": "8",
             "M": true,
             "P": false,
-            "comment": "»ãÂò¼Û",
+            "comment": "æ±‡ä¹°ä»·",
             "defaults": "",
             "dictionary": "EXCH_BUY_RATE",
             "scope": ""
@@ -121,7 +121,7 @@
             "precision": "8",
             "M": true,
             "P": false,
-            "comment": "»ãÂô¼Û",
+            "comment": "æ±‡å–ä»·",
             "defaults": "",
             "dictionary": "EXCH_SELL_RATE",
             "scope": ""
@@ -134,7 +134,7 @@
             "lengths": "15",
             "precision": "",
             "defaults": "",
-            "comment": "ÑëĞĞ²Î¿¼»ãÂÊ",
+            "comment": "å¤®è¡Œå‚è€ƒæ±‡ç‡",
             "scope": "",
             "M": false,
             "P": false
@@ -146,7 +146,7 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "³®Âò¼Û",
+            "comment": "é’ä¹°ä»·",
             "defaults": "",
             "dictionary": "NOTES_BUY_RATE",
             "scope": ""
@@ -158,7 +158,7 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "³®Âô¼Û",
+            "comment": "é’å–ä»·",
             "defaults": "",
             "dictionary": "NOTES_SELL_RATE",
             "scope": ""
@@ -170,7 +170,7 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "×î´ó¸¡¶¯µã",
+            "comment": "æœ€å¤§æµ®åŠ¨ç‚¹",
             "defaults": "",
             "dictionary": "MAX_FLOAT_RATE",
             "scope": ""
@@ -182,7 +182,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -194,7 +194,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -206,7 +206,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""

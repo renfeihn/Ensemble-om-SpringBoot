@@ -1,59 +1,59 @@
 {
-    "code": "TB_VOUCHER_BRANCH",
-    "comment": "Æ¾Ö¤Ê¹ÓÃ·ÖĞĞ±í",
-    "attr": [        {
-            "code": "DOC_TYPE",
-            "dataType": "Varchar",
-            "lengths": "10",
-            "precision": "",
-            "M": true,            "P": true,            "comment": "Æ¾Ö¤ÀàĞÍ È¡ÖµTB_VOUCHER_DEF.DOC_TYPE",
-            "defaults": "",
-            "dictionary": "DOC_TYPE",
-            "column": "Æ¾Ö¤ÀàĞÍ",
-            "scope": ""        }
-,        {
-            "code": "BRANCH",
-            "dataType": "Varchar",
-            "lengths": "20",
-            "precision": "",
-            "M": true,            "P": true,            "comment": "»ú¹¹ È¡ÖµFM_BRANCH_TBL.BRANCH",
-            "defaults": "",
-            "dictionary": "BRANCH",
-            "column": "»ú¹¹´úÂë",
-            "scope": ""        }
-,        {
-            "code": "COMPANY",
-            "dataType": "Varchar",
-            "lengths": "20",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "·¨ÈË´úÂë",
-            "defaults": "",
-            "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIMESTAMP",
-            "dataType": "Varchar",
-            "lengths": "17",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä´Á",
-            "defaults": "",
-            "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIME",
-            "dataType": "Number",
-            "lengths": "11",
-            "precision": "0",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä",
-            "defaults": "",
-            "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
-            "scope": ""        }
-    ],    "table_space": "core_data",
-    "dbType": "upright",
-    "parameter": "busi_para",
-    "system": "Ensemble",
-    "commentDesc": "Î¬»¤Æ¾Ö¤¿ÉÊ¹ÓÃµÄ»ú¹¹ĞÅÏ¢£¬¸Ã±íÎªÒµÎñ²ÎÊı¡£Èç¹ûÆ¾Ö¤ÀàĞÍ¶¨ÒåÎªÏŞÖÆÊ¹ÓÃ»ú¹¹£¨¼´±ítb_voucher_defÖĞBRANCH_RESTRAINT=Y£©£¬ÔòĞèÒªÔÚ±¾±íÖĞÎ¬»¤¸ÃÆ¾Ö¤ÀàĞÍ¿ÉÊ¹ÓÃµÄ»ú¹¹ĞÅÏ¢£¬Èç¹ûÆ¾Ö¤ÀàĞÍ¶¨ÒåÎª²»ÏŞÖÆÊ¹ÓÃ»ú¹¹£¨¼´±ítb_voucher_defÖĞBRANCH_RESTRAINT=N£©£¬Ôò¸ÃÆ¾Ö¤ÀàĞÍµÄÆ¾Ö¤¿ÉÈ«ĞĞÊ¹ÓÃ£¬²»ÓÃÎ¬»¤±¾±íÖĞµÄÊı¾İ¡£",
-"moduleType":"Î²Ïä²ÎÊı"}
+  "code": "TB_VOUCHER_BRANCH",
+  "comment": "å‡­è¯ä½¿ç”¨åˆ†è¡Œè¡¨",
+  "attr": [        {
+    "code": "DOC_TYPE",
+    "dataType": "Varchar",
+    "lengths": "10",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "å‡­è¯ç±»å‹ å–å€¼TB_VOUCHER_DEF.DOC_TYPE",
+    "defaults": "",
+    "dictionary": "DOC_TYPE",
+    "column": "å‡­è¯ç±»å‹",
+    "scope": ""        }
+  ,        {
+      "code": "BRANCH",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": true,            "P": true,            "comment": "æœºæ„ å–å€¼FM_BRANCH_TBL.BRANCH",
+      "defaults": "",
+      "dictionary": "BRANCH",
+      "column": "æœºæ„ä»£ç ",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "æ³•äººä»£ç ",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "æ³•äººä»£ç ",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "æ—¶é—´æˆ³",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "äº¤æ˜“æ—¶é—´",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": "ç»´æŠ¤å‡­è¯å¯ä½¿ç”¨çš„æœºæ„ä¿¡æ¯ï¼Œè¯¥è¡¨ä¸ºä¸šåŠ¡å‚æ•°ã€‚å¦‚æœå‡­è¯ç±»å‹å®šä¹‰ä¸ºé™åˆ¶ä½¿ç”¨æœºæ„ï¼ˆå³è¡¨tb_voucher_defä¸­BRANCH_RESTRAINT=Yï¼‰ï¼Œåˆ™éœ€è¦åœ¨æœ¬è¡¨ä¸­ç»´æŠ¤è¯¥å‡­è¯ç±»å‹å¯ä½¿ç”¨çš„æœºæ„ä¿¡æ¯ï¼Œå¦‚æœå‡­è¯ç±»å‹å®šä¹‰ä¸ºä¸é™åˆ¶ä½¿ç”¨æœºæ„ï¼ˆå³è¡¨tb_voucher_defä¸­BRANCH_RESTRAINT=Nï¼‰ï¼Œåˆ™è¯¥å‡­è¯ç±»å‹çš„å‡­è¯å¯å…¨è¡Œä½¿ç”¨ï¼Œä¸ç”¨ç»´æŠ¤æœ¬è¡¨ä¸­çš„æ•°æ®ã€‚",
+  "moduleType":"å°¾ç®±å‚æ•°"}

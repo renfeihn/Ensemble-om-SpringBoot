@@ -2,10 +2,10 @@
     "system": "ensemble",
     "code": "FM_CHANGE_REGION",
     "table_space": "core_data",
-    "comment": "½»»»µØÇø±í",
+    "comment": "äº¤æ¢åœ°åŒºè¡¨",
     "dbType": "upright",
     "parameter": "init_para",
-    "commentDesc": "fm_ref_code±íÖĞ·ÖÀë³öOC_CHANGE_BRANCH.CHANGE_REGIONÊı¾İ",
+    "commentDesc": "fm_ref_codeè¡¨ä¸­åˆ†ç¦»å‡ºOC_CHANGE_BRANCH.CHANGE_REGIONæ•°æ®",
     "attr": [
         {
             "dictionary": "REF_LANG",
@@ -15,7 +15,7 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "ÓïÑÔ",
+            "comment": "è¯­è¨€",
             "scope": "",
             "M": true,
             "P": true
@@ -28,7 +28,7 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "È¡Öµ·¶Î§",
+            "comment": "å–å€¼èŒƒå›´",
             "scope": "",
             "M": true,
             "P": true
@@ -41,7 +41,7 @@
             "lengths": "30",
             "precision": "",
             "defaults": "",
-            "comment": "È¡ÖµµÄº¬ÒåËµÃ÷",
+            "comment": "å–å€¼çš„å«ä¹‰è¯´æ˜",
             "scope": "",
             "M": true,
             "P": false
@@ -54,7 +54,7 @@
             "lengths": "300",
             "precision": "",
             "defaults": "",
-            "comment": "±¸×¢",
+            "comment": "å¤‡æ³¨",
             "scope": "",
             "M": false,
             "P": false

@@ -1,64 +1,64 @@
 {
-"code":"IRL_AMT_EXPRESSION",
-"comment":"½ğ¶î¼ÆËã±í´ïÊ½ĞÅÏ¢±í",
-"attr":[{
-"code":"EXPRESS_ID",
-"dataType":"Varchar",
-"lengths":"30",
-"precision":"",
-"M":true,"P":true,"comment":"±í´ïÊ½±àÂë",
-"defaults":"",
-"dictionary":"EXPRESS_ID"}
-,{
-"code":"EXPRESSION",
-"dataType":"Varchar",
-"lengths":"500",
-"precision":"",
-"M":true,"P":false,"comment":"±í´ïÊ½",
-"defaults":"",
-"dictionary":"EXPRESSION"}
-,{
-"code":"EXPRESSION_DESC",
-"dataType":"Varchar",
-"lengths":"500",
-"precision":"",
-"M":true,"P":false,"comment":"±í´ïÊ½ÃèÊö",
-"defaults":"",
-"dictionary":"EXPRESSION_DESC"}
-,{
-"code":"COMPANY",
-"dataType":"Varchar",
-"lengths":"20",
-"precision":"",
-"M":false,"P":false,"comment":"·¨ÈË´úÂë",
-"defaults":"",
-"dictionary":"COMPANY"}
-,{
-"code":"TRAN_TIMESTAMP",
-"dataType":"Varchar",
-"lengths":"17",
-"precision":"",
-"M":false,"P":false,"comment":"½»Ò×Ê±¼ä´Á",
-"defaults":"",
-"dictionary":"TRAN_TIMESTAMP"}
-,{
-"code":"TRAN_TIME",
-"dataType":"NUMBER",
-"lengths":"11",
-"precision":"0",
-"M":false,"P":false,"comment":"½»Ò×Ê±¼ä",
-"defaults":"",
-"dictionary":"TRAN_TIME"}
-,{
-"code":"ROUTER_KEY",
-"dataType":"Varchar",
-"lengths":"100",
-"precision":"",
-"M":false,"P":false,"comment":"·Ö¿âÂ·ÓÉ¹Ø¼ü×Ö",
-"defaults":"",
-"dictionary":"ROUTER_KEY"}
-],"table_space":"price_data",
-"dbType":"upright",
-"parameter":"busi_para",
-"system":"Limarket",
-"commentDesc":""}
+  "code":"IRL_AMT_EXPRESSION",
+  "comment":"é‡‘é¢è®¡ç®—è¡¨è¾¾å¼ä¿¡æ¯è¡¨",
+  "attr":[{
+    "code":"EXPRESS_ID",
+    "dataType":"Varchar",
+    "lengths":"30",
+    "precision":"",
+    "M":true,"P":true,"comment":"è¡¨è¾¾å¼ç¼–ç ",
+    "defaults":"",
+    "dictionary":"EXPRESS_ID"}
+  ,{
+      "code":"EXPRESSION",
+      "dataType":"Varchar",
+      "lengths":"500",
+      "precision":"",
+      "M":true,"P":false,"comment":"è¡¨è¾¾å¼",
+      "defaults":"",
+      "dictionary":"EXPRESSION"}
+  ,{
+      "code":"EXPRESSION_DESC",
+      "dataType":"Varchar",
+      "lengths":"500",
+      "precision":"",
+      "M":true,"P":false,"comment":"è¡¨è¾¾å¼æè¿°",
+      "defaults":"",
+      "dictionary":"EXPRESSION_DESC"}
+  ,{
+      "code":"COMPANY",
+      "dataType":"Varchar",
+      "lengths":"20",
+      "precision":"",
+      "M":false,"P":false,"comment":"æ³•äººä»£ç ",
+      "defaults":"",
+      "dictionary":"COMPANY"}
+  ,{
+      "code":"TRAN_TIMESTAMP",
+      "dataType":"Varchar",
+      "lengths":"17",
+      "precision":"",
+      "M":false,"P":false,"comment":"äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults":"",
+      "dictionary":"TRAN_TIMESTAMP"}
+  ,{
+      "code":"TRAN_TIME",
+      "dataType":"NUMBER",
+      "lengths":"11",
+      "precision":"0",
+      "M":false,"P":false,"comment":"äº¤æ˜“æ—¶é—´",
+      "defaults":"",
+      "dictionary":"TRAN_TIME"}
+  ,{
+      "code":"ROUTER_KEY",
+      "dataType":"Varchar",
+      "lengths":"100",
+      "precision":"",
+      "M":false,"P":false,"comment":"åˆ†åº“è·¯ç”±å…³é”®å­—",
+      "defaults":"",
+      "dictionary":"ROUTER_KEY"}
+  ],"table_space":"price_data",
+  "dbType":"upright",
+  "parameter":"busi_para",
+  "system":"Limarket",
+  "commentDesc":""}

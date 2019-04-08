@@ -1,6 +1,6 @@
 {
     "code": "IRL_INT_RATE",
-    "comment": "ÀûÂÊË°ÂÊĞÅÏ¢±í",
+    "comment": "åˆ©ç‡ç¨ç‡ä¿¡æ¯è¡¨",
     "attr": [
         {
             "dictionary": "IRL_SEQ_NO",
@@ -10,8 +10,8 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "ĞòºÅ",
-            "scope": "È¡Öµ·¶Î§£º¼ÆÌáINPUT_DATE|| PROD_TYPE  ½áÏ¢  RUN_DATE||INTERNAL_KEY|| PROD_TYPE  ",
+            "comment": "åºå·",
+            "scope": "å–å€¼èŒƒå›´ï¼šè®¡æINPUT_DATE|| PROD_TYPE  ç»“æ¯  RUN_DATE||INTERNAL_KEY|| PROD_TYPE",
             "M": true,
             "P": true
         },
@@ -23,8 +23,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "ÀûÂÊÀàĞÍ",
-            "scope": "È¡×ÔIRL_INT_TYPE.INT_TAX_TYPE",
+            "comment": "åˆ©ç‡ç±»å‹",
+            "scope": "å–è‡ªIRL_INT_TYPE.INT_TAX_TYPE",
             "M": true,
             "P": false
         },
@@ -35,10 +35,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "±ÒÖÖ",
+            "comment": "å¸ç§",
             "defaults": "",
             "dictionary": "CCY",
-            "column": "±ÒÖÖ",
+            "column": "å¸ç§",
             "scope": "FM_CURRENCY.CCY"
         },
         {
@@ -49,8 +49,8 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "ÉúĞ§ÈÕÆÚ",
-            "scope": " ÈÎºÎ´óÓÚ»òµÈÓÚÔËĞĞÈÕÆÚµÄÓĞĞ§ÈÕÆÚ Ä¬ÈÏÖµ£ºÏµÍ³ÔËĞĞÈÕÆÚ ",
+            "comment": "ç”Ÿæ•ˆæ—¥æœŸ",
+            "scope": " ä»»ä½•å¤§äºæˆ–ç­‰äºè¿è¡Œæ—¥æœŸçš„æœ‰æ•ˆæ—¥æœŸ é»˜è®¤å€¼ï¼šç³»ç»Ÿè¿è¡Œæ—¥æœŸ",
             "M": true,
             "P": false
         },
@@ -62,8 +62,8 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "Ê§Ğ§ÈÕÆÚ ",
-            "scope": "ÈÎºÎ´óÓÚ»òµÈÓÚÔËĞĞÈÕÆÚµÄÓĞĞ§ÈÕÆÚ Ä¬ÈÏÖµ£ºÏµÍ³ÔËĞĞÈÕÆÚ ",
+            "comment": "å¤±æ•ˆæ—¥æœŸ",
+            "scope": "ä»»ä½•å¤§äºæˆ–ç­‰äºè¿è¡Œæ—¥æœŸçš„æœ‰æ•ˆæ—¥æœŸ é»˜è®¤å€¼ï¼šç³»ç»Ÿè¿è¡Œæ—¥æœŸ",
             "M": false,
             "P": false
         },
@@ -75,8 +75,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "Äê»ù×¼ÌìÊı",
-            "scope": "360£ºÒ»Äê°´360Ìì¼ÆËã£¬365£ºÒ»Äê°´365Ìì¼ÆËã£¬366£ºÒ»Äê366Ìì¼ÆËã",
+            "comment": "å¹´åŸºå‡†å¤©æ•°",
+            "scope": "360ï¼šä¸€å¹´æŒ‰360å¤©è®¡ç®—ï¼Œ365ï¼šä¸€å¹´æŒ‰365å¤©è®¡ç®—ï¼Œ366ï¼šä¸€å¹´366å¤©è®¡ç®—",
             "M": true,
             "P": false
         },
@@ -87,10 +87,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "»ú¹¹´úÂë",
+            "comment": "æœºæ„ä»£ç ",
             "defaults": "",
             "dictionary": "BRANCH",
-            "column": "»ú¹¹´úÂë",
+            "column": "æœºæ„ä»£ç ",
             "scope": "FM_BRANCH.BRANCH"
         },
         {
@@ -100,10 +100,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "×îºóĞŞ¸ÄÈÕÆÚ",
+            "comment": "æœ€åä¿®æ”¹æ—¥æœŸ",
             "defaults": "",
             "dictionary": "LAST_CHG_RUN_DATE",
-            "column": "×îºóĞŞ¸ÄÈÕÆÚ",
+            "column": "æœ€åä¿®æ”¹æ—¥æœŸ",
             "scope": ""
         },
         {
@@ -113,10 +113,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
+            "column": "æ³•äººä»£ç ",
             "scope": "FM_COMPANY.COMPANY"
         },
         {
@@ -126,10 +126,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
+            "column": "æ—¶é—´æˆ³",
             "scope": ""
         },
         {
@@ -139,10 +139,10 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
+            "column": "äº¤æ˜“æ—¶é—´",
             "scope": ""
         }
     ],
@@ -150,5 +150,5 @@
     "dbType": "upright",
     "parameter": "busi_para",
     "system": "Limarket",
-    "commentDesc": "±¸×¢£º±¸×¢£ºINT_TYPE¡¢CCY¡¢EFFECT_DATE¡¢BRANCH±ØĞëÎ¨Ò»¡£"
+    "commentDesc": "å¤‡æ³¨ï¼šå¤‡æ³¨ï¼šINT_TYPEã€CCYã€EFFECT_DATEã€BRANCHå¿…é¡»å”¯ä¸€ã€‚"
 }

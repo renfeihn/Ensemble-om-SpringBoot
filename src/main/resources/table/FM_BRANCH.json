@@ -58,7 +58,7 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "所属机构 ",
+            "comment": "所属机构",
             "scope": "取值 FM_BRANCH.BRANCH",
             "M": false,
             "P": false
@@ -207,7 +207,7 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "分行代码 ",
+            "comment": "分行代码",
             "scope": "取值FM_BRANCH.BRANCH",
             "M": false,
             "P": false
@@ -231,7 +231,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "业务单元(港币) ",
+            "comment": "业务单元(港币)",
             "defaults": "",
             "dictionary": "HKD_BUSINESS_UNIT",
             "scope": "取值:FM_BUSINESS_UNIT.BUSINESS_UNIT"
@@ -244,7 +244,7 @@
             "lengths": "12",
             "precision": "",
             "defaults": "'0'",
-            "comment": "外汇金融机构代码 ",
+            "comment": "外汇金融机构代码",
             "scope": "取值FM_BRANCH.BRANCH",
             "M": false,
             "P": false
@@ -280,7 +280,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "日终标识 ",
+            "comment": "日终标识",
             "defaults": "'N'",
             "dictionary": "EOD_IND",
             "scope": "Y:日终状态,N:营业状态"
@@ -392,7 +392,7 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "清算机构 ",
+            "comment": "清算机构",
             "scope": "FM_BRANCH.BRANCH",
             "M": false,
             "P": false
@@ -522,7 +522,7 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "授权标志 ",
+            "comment": "授权标志",
             "scope": "Y:已授权,N:未授权",
             "M": false,
             "P": false

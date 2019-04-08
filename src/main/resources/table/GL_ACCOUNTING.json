@@ -1,136 +1,136 @@
 {
-"code":"GL_ACCOUNTING",
-"comment":"∑÷¬º∂®“Â±Ì",
-"attr":[{
-"code":"ACCOUNTING_NO",
-"dataType":"Varchar",
-"lengths":"30",
-"precision":"",
-"M":true,"P":true,"comment":"ª·º∆∑÷¬º±‡∫≈",
-"defaults":"",
-"dictionary":"ACCOUNTING_NO"}
-,{
-"code":"COUNTER",
-"dataType":"Varchar",
-"lengths":"20",
-"precision":"",
-"M":true,"P":true,"comment":"–Ú∫≈",
-"defaults":"",
-"dictionary":"COUNTER"}
-,{
-"code":"AMOUNT_TYPE",
-"dataType":"Varchar",
-"lengths":"50",
-"precision":"",
-"M":true,"P":true,"comment":"Ω∂Ó¿‡–Õ",
-"defaults":"",
-"dictionary":"AMOUNT_TYPE"}
-,{
-"code":"CR_DR",
-"dataType":"Varchar",
-"lengths":"1",
-"precision":"",
-"M":true,"P":false,"comment":"ΩË¥˚±Í÷æ",
-"defaults":"",
-"dictionary":"CR_DR"}
-,{
-"code":"GL_CODE_EXP",
-"dataType":"Varchar",
-"lengths":"50",
-"precision":"",
-"M":true,"P":false,"comment":"ø∆ƒø",
-"defaults":"",
-"dictionary":"GL_CODE_EXP"}
-,{
-"code":"BRANCH_EXP",
-"dataType":"Varchar",
-"lengths":"50",
-"precision":"",
-"M":true,"P":false,"comment":"ª˙ππ",
-"defaults":"",
-"dictionary":"BRANCH_EXP"}
-,{
-"code":"CLIENT_NO_EXP",
-"dataType":"Varchar",
-"lengths":"50",
-"precision":"",
-"M":true,"P":false,"comment":"øÕªß∫≈",
-"defaults":"",
-"dictionary":"CLIENT_NO_EXP"}
-,{
-"code":"CCY_EXP",
-"dataType":"Varchar",
-"lengths":"50",
-"precision":"",
-"M":true,"P":false,"comment":"±“÷÷",
-"defaults":"",
-"dictionary":"CCY_EXP"}
-,{
-"code":"PROFIT_CENTRE_EXP",
-"dataType":"Varchar",
-"lengths":"50",
-"precision":"",
-"M":true,"P":false,"comment":"¿˚»Û÷––ƒ",
-"defaults":"",
-"dictionary":"PROFIT_CENTRE_EXP"}
-,{
-"code":"SEQ_NO",
-"dataType":"Varchar",
-"lengths":"50",
-"precision":"",
-"M":true,"P":false,"comment":"◊‹’À–Ú∫≈",
-"defaults":"",
-"dictionary":"SEQ_NO"}
-,{
-"code":"AMOUNT_EXP",
-"dataType":"Varchar",
-"lengths":"500",
-"precision":"",
-"M":true,"P":false,"comment":"Ω∂Ó",
-"defaults":"",
-"dictionary":"AMOUNT_EXP"}
-,{
-"code":"PROD_TYPE_EXP",
-"dataType":"Varchar",
-"lengths":"50",
-"precision":"",
-"M":true,"P":false,"comment":"≤˙∆∑¿‡–Õ",
-"defaults":"",
-"dictionary":"PROD_TYPE_EXP"}
-,{
-"code":"COMPANY_EXP",
-"dataType":"Varchar",
-"lengths":"50",
-"precision":"",
-"M":true,"P":false,"comment":"∑®»À",
-"defaults":"",
-"dictionary":"COMPANY_EXP"}
-,{
-"code":"BUSINESS_UNIT_EXP",
-"dataType":"Varchar",
-"lengths":"50",
-"precision":"",
-"M":true,"P":false,"comment":"’ÀÃ◊",
-"defaults":"",
-"dictionary":"BUSINESS_UNIT_EXP"}
-,{
-"code":"TRAN_TIME",
-"dataType":"NUMBER",
-"lengths":"11",
-"precision":"0",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"TRAN_TIME"}
-,{
-"code":"TRAN_TIMESTAMP",
-"dataType":"Varchar",
-"lengths":"17",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"TRAN_TIMESTAMP"}
-],"table_space":"account_data",
-"dbType":"upright",
-"parameter":"busi_para",
-"system":"Accounting",
-"commentDesc":""}
+  "code":"GL_ACCOUNTING",
+  "comment":"ÂàÜÂΩïÂÆö‰πâË°®",
+  "attr":[{
+    "code":"ACCOUNTING_NO",
+    "dataType":"Varchar",
+    "lengths":"30",
+    "precision":"",
+    "M":true,"P":true,"comment":"‰ºöËÆ°ÂàÜÂΩïÁºñÂè∑",
+    "defaults":"",
+    "dictionary":"ACCOUNTING_NO"}
+  ,{
+      "code":"COUNTER",
+      "dataType":"Varchar",
+      "lengths":"20",
+      "precision":"",
+      "M":true,"P":true,"comment":"Â∫èÂè∑",
+      "defaults":"",
+      "dictionary":"COUNTER"}
+  ,{
+      "code":"AMOUNT_TYPE",
+      "dataType":"Varchar",
+      "lengths":"50",
+      "precision":"",
+      "M":true,"P":true,"comment":"ÈáëÈ¢ùÁ±ªÂûã",
+      "defaults":"",
+      "dictionary":"AMOUNT_TYPE"}
+  ,{
+      "code":"CR_DR",
+      "dataType":"Varchar",
+      "lengths":"1",
+      "precision":"",
+      "M":true,"P":false,"comment":"ÂÄüË¥∑Ê†áÂøó",
+      "defaults":"",
+      "dictionary":"CR_DR"}
+  ,{
+      "code":"GL_CODE_EXP",
+      "dataType":"Varchar",
+      "lengths":"50",
+      "precision":"",
+      "M":true,"P":false,"comment":"ÁßëÁõÆ",
+      "defaults":"",
+      "dictionary":"GL_CODE_EXP"}
+  ,{
+      "code":"BRANCH_EXP",
+      "dataType":"Varchar",
+      "lengths":"50",
+      "precision":"",
+      "M":true,"P":false,"comment":"Êú∫ÊûÑ",
+      "defaults":"",
+      "dictionary":"BRANCH_EXP"}
+  ,{
+      "code":"CLIENT_NO_EXP",
+      "dataType":"Varchar",
+      "lengths":"50",
+      "precision":"",
+      "M":true,"P":false,"comment":"ÂÆ¢Êà∑Âè∑",
+      "defaults":"",
+      "dictionary":"CLIENT_NO_EXP"}
+  ,{
+      "code":"CCY_EXP",
+      "dataType":"Varchar",
+      "lengths":"50",
+      "precision":"",
+      "M":true,"P":false,"comment":"Â∏ÅÁßç",
+      "defaults":"",
+      "dictionary":"CCY_EXP"}
+  ,{
+      "code":"PROFIT_CENTRE_EXP",
+      "dataType":"Varchar",
+      "lengths":"50",
+      "precision":"",
+      "M":true,"P":false,"comment":"Âà©Ê∂¶‰∏≠ÂøÉ",
+      "defaults":"",
+      "dictionary":"PROFIT_CENTRE_EXP"}
+  ,{
+      "code":"SEQ_NO",
+      "dataType":"Varchar",
+      "lengths":"50",
+      "precision":"",
+      "M":true,"P":false,"comment":"ÊÄªË¥¶Â∫èÂè∑",
+      "defaults":"",
+      "dictionary":"SEQ_NO"}
+  ,{
+      "code":"AMOUNT_EXP",
+      "dataType":"Varchar",
+      "lengths":"500",
+      "precision":"",
+      "M":true,"P":false,"comment":"ÈáëÈ¢ù",
+      "defaults":"",
+      "dictionary":"AMOUNT_EXP"}
+  ,{
+      "code":"PROD_TYPE_EXP",
+      "dataType":"Varchar",
+      "lengths":"50",
+      "precision":"",
+      "M":true,"P":false,"comment":"‰∫ßÂìÅÁ±ªÂûã",
+      "defaults":"",
+      "dictionary":"PROD_TYPE_EXP"}
+  ,{
+      "code":"COMPANY_EXP",
+      "dataType":"Varchar",
+      "lengths":"50",
+      "precision":"",
+      "M":true,"P":false,"comment":"Ê≥ï‰∫∫",
+      "defaults":"",
+      "dictionary":"COMPANY_EXP"}
+  ,{
+      "code":"BUSINESS_UNIT_EXP",
+      "dataType":"Varchar",
+      "lengths":"50",
+      "precision":"",
+      "M":true,"P":false,"comment":"Ë¥¶Â•ó",
+      "defaults":"",
+      "dictionary":"BUSINESS_UNIT_EXP"}
+  ,{
+      "code":"TRAN_TIME",
+      "dataType":"NUMBER",
+      "lengths":"11",
+      "precision":"0",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"TRAN_TIME"}
+  ,{
+      "code":"TRAN_TIMESTAMP",
+      "dataType":"Varchar",
+      "lengths":"17",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"TRAN_TIMESTAMP"}
+  ],"table_space":"account_data",
+  "dbType":"upright",
+  "parameter":"busi_para",
+  "system":"Accounting",
+  "commentDesc":""}

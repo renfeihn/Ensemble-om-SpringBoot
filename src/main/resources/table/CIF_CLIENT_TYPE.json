@@ -26,10 +26,10 @@
       "dataType": "Varchar",
       "lengths": "1",
       "precision": "",
-      "M": true,            "P": false,            "comment": "是否个体客户",
+      "M": true,            "P": false,            "comment": "是否个体客户 Y-是 N-不是",
       "defaults": "",
       "dictionary": "IS_INDIVIDUAL",
-      "column": "是否个体客户",
+      "column": "是否个体客户 Y-是 N-不是",
       "scope": ""        }
   ,        {
       "code": "COMPANY",

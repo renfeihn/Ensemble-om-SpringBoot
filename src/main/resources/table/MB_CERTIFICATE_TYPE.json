@@ -2,10 +2,10 @@
     "system": "ensemble",
     "code": "MB_CERTIFICATE_TYPE",
     "table_space": "core_data",
-    "comment": "²úÈ¨Ö¤Ã÷ÖÖÀà",
+    "comment": "äº§æƒè¯æ˜ç§ç±»",
     "dbType": "upright",
     "parameter": "busi_para",
-    "commentDesc": "µÖÕ®×Ê²úÊ¹ÓÃ£¬ÓÃÓÚ¶¨Òå²úÈ¨Ö¤Ã÷ÖÖÀà",
+    "commentDesc": "æŠµå€ºèµ„äº§ä½¿ç”¨ï¼Œç”¨äºå®šä¹‰äº§æƒè¯æ˜ç§ç±»",
     "attr": [
         {
             "dictionary": "CERTIFICATE_TYPE",
@@ -15,7 +15,7 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "²úÈ¨Ö¤Ã÷ÖÖÀà",
+            "comment": "äº§æƒè¯æ˜ç§ç±»",
             "scope": "",
             "M": true,
             "P": true
@@ -28,7 +28,7 @@
             "lengths": "200",
             "precision": "",
             "defaults": "",
-            "comment": "²úÈ¨Ö¤Ã÷ÖÖÀàÃèÊö",
+            "comment": "äº§æƒè¯æ˜ç§ç±»æè¿°",
             "scope": "",
             "M": false,
             "P": false
@@ -41,7 +41,7 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "scope": "FM_COMPANY.COMPANY",
             "M": false,
             "P": false
@@ -54,7 +54,7 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "½»Ò×ÈÕÆÚ",
+            "comment": "äº¤æ˜“æ—¥æœŸ",
             "scope": "",
             "M": false,
             "P": false
@@ -67,7 +67,7 @@
             "lengths": "30",
             "precision": "",
             "defaults": "",
-            "comment": "½»Ò×¹ñÔ± FM_USER.USER_ID",
+            "comment": "äº¤æ˜“æŸœå‘˜ FM_USER.USER_ID",
             "scope": "",
             "M": false,
             "P": false
@@ -80,7 +80,7 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "×îºó±ä¸üÈÕÆÚ ",
+            "comment": "æœ€åå˜æ›´æ—¥æœŸ",
             "scope": "",
             "M": false,
             "P": false
@@ -93,7 +93,7 @@
             "lengths": "30",
             "precision": "",
             "defaults": "",
-            "comment": "ÉÏ´ÎĞŞ¸Ä¹ñÔ±",
+            "comment": "ä¸Šæ¬¡ä¿®æ”¹æŸœå‘˜",
             "scope": "",
             "M": false,
             "P": false

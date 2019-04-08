@@ -1,90 +1,90 @@
 {
-    "code": "CIF_DOCUMENT_EXP",
-    "comment": "÷§º˛µΩ∆⁄π‹¿Ì±Ì",
-    "attr": [        {
-            "code": "DOCUMENT_TYPE",
-            "dataType": "Varchar",
-            "lengths": "3",
-            "precision": "",
-            "M": true,            "P": true,            "comment": "÷§º˛¿‡–Õ",
-            "defaults": "",
-            "dictionary": "DOCUMENT_TYPE",
-            "scope": ""        }
-,        {
-            "code": "STOP_FLAG",
-            "dataType": "Varchar",
-            "lengths": "1",
-            "precision": "",
-            "M": true,            "P": false,            "comment": " «∑Ò÷π∏∂Y: « N:∑Ò",
-            "defaults": "",
-            "dictionary": "STOP_FLAG",
-            "scope": ""        }
-,        {
-            "code": "RESTRAINT_TYPE",
-            "dataType": "Varchar",
-            "lengths": "3",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "œﬁ÷∆¿‡–Õ",
-            "defaults": "",
-            "dictionary": "RESTRAINT_TYPE",
-            "scope": ""        }
-,        {
-            "code": "DAYS",
-            "dataType": "Varchar",
-            "lengths": "5",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "ÃÏ ˝",
-            "defaults": "",
-            "dictionary": "DAYS",
-            "scope": ""        }
-,        {
-            "code": "SOURCE_TYPE_RULE",
-            "dataType": "Varchar",
-            "lengths": "150",
-            "precision": "",
-            "M": true,            "P": true,            "comment": "«˛µ¿¿‡–ÕπÊ‘Ú",
-            "defaults": "",
-            "dictionary": "SOURCE_TYPE_RULE",
-            "scope": ""        }
-,        {
-            "code": "DEAL_FLOW",
-            "dataType": "Varchar",
-            "lengths": "2",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "¥¶¿Ì∑Ω Ω             A£∫ ⁄»®¥¶¿Ì              B£∫æ‹æ¯¥¶¿Ì              D£∫Ã·–—¥¶¿Ì",
-            "defaults": "",
-            "dictionary": "DEAL_FLOW",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIMESTAMP",
-            "dataType": "Varchar",
-            "lengths": "17",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "Ωª“◊ ±º‰¥¡",
-            "defaults": "",
-            "dictionary": "TRAN_TIMESTAMP",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIME",
-            "dataType": "NUMBER",
-            "lengths": "11",
-            "precision": "0",
-            "M": false,            "P": false,            "comment": "Ωª“◊ ±º‰",
-            "defaults": "",
-            "dictionary": "TRAN_TIME",
-            "scope": ""        }
-,        {
-            "code": "COMPANY",
-            "dataType": "Varchar",
-            "lengths": "20",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "∑®»À¥˙¬Î",
-            "defaults": "",
-            "dictionary": "COMPANY",
-            "scope": ""        }
-    ],    "table_space": "core_data",
-    "dbType": "upright",
-    "parameter": "busi_para",
-    "system": "Ensemble",
-"commentDesc":"",
-"moduleType":"øÕªß≤Œ ˝"}
+  "code": "CIF_DOCUMENT_EXP",
+  "comment": "ËØÅ‰ª∂Âà∞ÊúüÁÆ°ÁêÜË°®",
+  "attr": [        {
+    "code": "DOCUMENT_TYPE",
+    "dataType": "Varchar",
+    "lengths": "3",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "ËØÅ‰ª∂Á±ªÂûã",
+    "defaults": "",
+    "dictionary": "DOCUMENT_TYPE",
+    "scope": ""        }
+  ,        {
+      "code": "STOP_FLAG",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "ÊòØÂê¶Ê≠¢‰ªòY:ÊòØ N:Âê¶",
+      "defaults": "",
+      "dictionary": "STOP_FLAG",
+      "scope": ""        }
+  ,        {
+      "code": "RESTRAINT_TYPE",
+      "dataType": "Varchar",
+      "lengths": "3",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "ÈôêÂà∂Á±ªÂûã",
+      "defaults": "",
+      "dictionary": "RESTRAINT_TYPE",
+      "scope": ""        }
+  ,        {
+      "code": "DAYS",
+      "dataType": "Varchar",
+      "lengths": "5",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "Â§©Êï∞",
+      "defaults": "",
+      "dictionary": "DAYS",
+      "scope": ""        }
+  ,        {
+      "code": "SOURCE_TYPE_RULE",
+      "dataType": "Varchar",
+      "lengths": "150",
+      "precision": "",
+      "M": true,            "P": true,            "comment": "Ê∏†ÈÅìÁ±ªÂûãËßÑÂàô",
+      "defaults": "",
+      "dictionary": "SOURCE_TYPE_RULE",
+      "scope": ""        }
+  ,        {
+      "code": "DEAL_FLOW",
+      "dataType": "Varchar",
+      "lengths": "2",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "Â§ÑÁêÜÊñπÂºè             AÔºöÊéàÊùÉÂ§ÑÁêÜ              BÔºöÊãíÁªùÂ§ÑÁêÜ              DÔºöÊèêÈÜíÂ§ÑÁêÜ",
+      "defaults": "",
+      "dictionary": "DEAL_FLOW",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "‰∫§ÊòìÊó∂Èó¥Êà≥",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "NUMBER",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "‰∫§ÊòìÊó∂Èó¥",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "Ê≥ï‰∫∫‰ª£Á†Å",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc":"",
+  "moduleType":"ÂÆ¢Êà∑ÂèÇÊï∞"}

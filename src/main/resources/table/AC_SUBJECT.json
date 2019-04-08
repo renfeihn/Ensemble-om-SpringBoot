@@ -69,7 +69,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "BSPL类型  ",
+            "comment": "BSPL类型",
             "defaults": "",
             "dictionary": "BSPL_TYPE",
             "scope": "A:Asset资产,L:Liability负债,E:Expense费用/支出,I:Income收入,C:表外或有,M:表外备忘"
@@ -81,7 +81,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "账户类型  （客户账）",
+            "comment": "账户类型（客户账）",
             "defaults": "",
             "dictionary": "GL_TYPE",
             "scope": "I:内部,N:往账,V:来账,R:零售账户"
@@ -105,7 +105,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "转账指示  ",
+            "comment": "转账指示",
             "defaults": "",
             "dictionary": "OF_TRF",
             "scope": "Y:是,N:否"
@@ -129,7 +129,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "是否计提营业税  ",
+            "comment": "是否计提营业税",
             "defaults": "",
             "dictionary": "OPERATING_TAX",
             "scope": "Y:是,N:否"
@@ -189,7 +189,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "余额方向  ",
+            "comment": "余额方向",
             "defaults": "",
             "dictionary": "BALANCE_WAY",
             "scope": "A:实际,D:借方,C:贷方,B:双向不轧差"

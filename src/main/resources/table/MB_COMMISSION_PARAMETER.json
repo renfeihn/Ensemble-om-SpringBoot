@@ -1,73 +1,73 @@
 {
-    "code": "MB_COMMISSION_PARAMETER",
-    "comment": "Ωª“◊¥˙∞Ï»À≤Œ ˝±Ì",
-    "attr": [
-        {
-            "code": "PROGRAM_ID",
-            "dataType": "Varchar",
-            "lengths": "20",
-            "precision": "",
-            "M": false,
-            "P": false,
-            "comment": "Ωª“◊¬Î",
-            "defaults": "",
-            "dictionary": "PROGRAM_ID",
-            "scope": ""
-        },
-        {
-            "code": "CLIENT_TYPE",
-            "dataType": "Varchar",
-            "lengths": "3",
-            "precision": "",
-            "M": false,
-            "P": false,
-            "comment": "øÕªß¿‡–Õ",
-            "defaults": "",
-            "dictionary": "CLIENT_TYPE",
-            "scope": "CIF_CLIENT_TYPE.CLIENT_TYPE"
-        },
-        {
-            "dictionary": "STATUS",
-            "code": "STATUS",
-            "codeOld": "STATUS",
-            "dataType": "Varchar",
-            "lengths": "3",
-            "precision": "",
-            "defaults": "",
-            "comment": "◊¥Ã¨",
-            "scope": "A:”––ß E: ß–ß",
-            "M": false,
-            "P": false
-        },
-        {
-            "code": "TRAN_TIMESTAMP",
-            "dataType": "Varchar",
-            "lengths": "17",
-            "precision": "",
-            "M": false,
-            "P": false,
-            "comment": "Ωª“◊ ±º‰¥¡",
-            "defaults": "",
-            "dictionary": "TRAN_TIMESTAMP",
-            "scope": ""
-        },
-        {
-            "code": "TRAN_TIME",
-            "dataType": "Number",
-            "lengths": "11",
-            "precision": "0",
-            "M": false,
-            "P": false,
-            "comment": "Ωª“◊ ±º‰",
-            "defaults": "",
-            "dictionary": "TRAN_TIME",
-            "scope": ""
-        }
-    ],
-    "table_space": "core_data",
-    "dbType": "upright",
-    "parameter": "tran",
-    "system": "Ensemble",
-    "commentDesc": "",
-    "moduleType": "Ωª“◊≤Œ ˝"
+  "code": "MB_COMMISSION_PARAMETER",
+  "comment": "‰∫§Êòì‰ª£Âäû‰∫∫ÂèÇÊï∞Ë°®",
+  "attr": [
+    {
+      "code": "PROGRAM_ID",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,
+      "P": false,
+      "comment": "‰∫§ÊòìÁ†Å",
+      "defaults": "",
+      "dictionary": "PROGRAM_ID",
+      "scope": ""
+    },
+    {
+      "code": "CLIENT_TYPE",
+      "dataType": "Varchar",
+      "lengths": "3",
+      "precision": "",
+      "M": false,
+      "P": false,
+      "comment": "ÂÆ¢Êà∑Á±ªÂûã",
+      "defaults": "",
+      "dictionary": "CLIENT_TYPE",
+      "scope": "CIF_CLIENT_TYPE.CLIENT_TYPE"
+    },
+    {
+      "dictionary": "STATUS",
+      "code": "STATUS",
+      "codeOld": "STATUS",
+      "dataType": "Varchar",
+      "lengths": "3",
+      "precision": "",
+      "defaults": "",
+      "comment": "Áä∂ÊÄÅ",
+      "scope": "A:ÊúâÊïà E:Â§±Êïà",
+      "M": false,
+      "P": false
+    },
+    {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,
+      "P": false,
+      "comment": "‰∫§ÊòìÊó∂Èó¥Êà≥",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "scope": ""
+    },
+    {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,
+      "P": false,
+      "comment": "‰∫§ÊòìÊó∂Èó¥",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "scope": ""
+    }
+  ],
+  "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "tran",
+  "system": "Ensemble",
+  "commentDesc": "",
+  "moduleType": "‰∫§ÊòìÂèÇÊï∞"
 }

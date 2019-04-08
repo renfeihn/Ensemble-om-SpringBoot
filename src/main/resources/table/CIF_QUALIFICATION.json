@@ -1,49 +1,49 @@
 {
-"code":"CIF_QUALIFICATION",
-"comment":"÷∞≥∆∂®“Â±Ì",
-"attr":[{
-"code":"QUALIFICATION",
-"dataType":"Varchar",
-"lengths":"3",
-"precision":"",
-"M":true,"P":true,"comment":"÷∞≥∆",
-"defaults":"",
-"dictionary":"QUALIFICATION"}
-,{
-"code":"QUALIFICATION_DESC",
-"dataType":"Varchar",
-"lengths":"50",
-"precision":"",
-"M":false,"P":false,"comment":"÷∞≥∆√Ë ˆ",
-"defaults":"",
-"dictionary":"QUALIFICATION_DESC"}
-,{
-"code":"COMPANY",
-"dataType":"Varchar",
-"lengths":"20",
-"precision":"",
-"M":false,"P":false,"comment":"∑®»À¥˙¬Î",
-"defaults":"",
-"dictionary":"COMPANY"}
-,{
-"code":"TRAN_TIMESTAMP",
-"dataType":"Varchar",
-"lengths":"17",
-"precision":"",
-"M":false,"P":false,"comment":"Ωª“◊ ±º‰¥¡",
-"defaults":"",
-"dictionary":"TRAN_TIMESTAMP"}
-,{
-"code":"TRAN_TIME",
-"dataType":"NUMBER",
-"lengths":"11",
-"precision":"0",
-"M":false,"P":false,"comment":"Ωª“◊ ±º‰",
-"defaults":"",
-"dictionary":"TRAN_TIME"}
-],"table_space":"core_data",
-"dbType":"upright",
-"parameter":"busi_para",
-"system":"Ensemble",
-"commentDesc":"",
-"moduleType":"øÕªß≤Œ ˝"}
+  "code":"CIF_QUALIFICATION",
+  "comment":"ËÅåÁß∞ÂÆö‰πâË°®",
+  "attr":[{
+    "code":"QUALIFICATION",
+    "dataType":"Varchar",
+    "lengths":"3",
+    "precision":"",
+    "M":true,"P":true,"comment":"ËÅåÁß∞",
+    "defaults":"",
+    "dictionary":"QUALIFICATION"}
+  ,{
+      "code":"QUALIFICATION_DESC",
+      "dataType":"Varchar",
+      "lengths":"50",
+      "precision":"",
+      "M":false,"P":false,"comment":"ËÅåÁß∞ÊèèËø∞",
+      "defaults":"",
+      "dictionary":"QUALIFICATION_DESC"}
+  ,{
+      "code":"COMPANY",
+      "dataType":"Varchar",
+      "lengths":"20",
+      "precision":"",
+      "M":false,"P":false,"comment":"Ê≥ï‰∫∫‰ª£Á†Å",
+      "defaults":"",
+      "dictionary":"COMPANY"}
+  ,{
+      "code":"TRAN_TIMESTAMP",
+      "dataType":"Varchar",
+      "lengths":"17",
+      "precision":"",
+      "M":false,"P":false,"comment":"‰∫§ÊòìÊó∂Èó¥Êà≥",
+      "defaults":"",
+      "dictionary":"TRAN_TIMESTAMP"}
+  ,{
+      "code":"TRAN_TIME",
+      "dataType":"NUMBER",
+      "lengths":"11",
+      "precision":"0",
+      "M":false,"P":false,"comment":"‰∫§ÊòìÊó∂Èó¥",
+      "defaults":"",
+      "dictionary":"TRAN_TIME"}
+  ],"table_space":"core_data",
+  "dbType":"upright",
+  "parameter":"busi_para",
+  "system":"Ensemble",
+  "commentDesc":"",
+  "moduleType":"ÂÆ¢Êà∑ÂèÇÊï∞"}

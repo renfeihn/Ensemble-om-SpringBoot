@@ -1,65 +1,65 @@
 {
-"code":"MB_SETTLE_TRAN_MAPPING",
-"comment":"½áËã½»Ò×ÀàĞÍÓ³Éä±í",
-"attr":[{
-"code":"ACCT_TYPE",
-"dataType":"Varchar",
-"lengths":"50",
-"precision":"",
-"M":true,"P":true,"comment":"Ö÷ÕË»§ÕË»§ÀàĞÍ  M-ÆÕÍ¨´û¿î,  D-µæ¿î,  U-ÌùÏÖ´û¿î,  E-Î¯ÍĞ´û¿î,  Y-ÒøÍÅ´û¿î",
-"defaults":"",
-"dictionary":"ACCT_TYPE"}
-,{
-"code":"PAY_REC_IND",
-"dataType":"Varchar",
-"lengths":"3",
-"precision":"",
-"M":true,"P":true,"comment":"ÊÕ¸¶¿î·½Ïò",
-"defaults":"",
-"dictionary":"PAY_REC_IND"}
-,{
-"code":"SETTLE_GL_TYPE",
-"dataType":"Varchar",
-"lengths":"2",
-"precision":"",
-"M":true,"P":true,"comment":"½áËãÕË»§×ÜÕËÀàĞÍ",
-"defaults":"",
-"dictionary":"SETTLE_GL_TYPE"}
-,{
-"code":"TRAN_TYPE_LIST",
-"dataType":"Varchar",
-"lengths":"200",
-"precision":"",
-"M":true,"P":false,"comment":"½»Ò×ÀàĞÍ£¬¿ÉÒÔÅäÖÃ¶à¸ö£¬Ö§³Ö¶ººÅ·Ö¸ô",
-"defaults":"",
-"dictionary":"TRAN_TYPE_LIST"}
-,{
-"code":"COMPANY",
-"dataType":"Varchar",
-"lengths":"8",
-"precision":"",
-"M":false,"P":false,"comment":"·¨ÈË´úÂë",
-"defaults":"",
-"dictionary":"COMPANY"}
-,{
-"code":"TRAN_TIMESTAMP",
-"dataType":"Varchar",
-"lengths":"17",
-"precision":"",
-"M":false,"P":false,"comment":"½»Ò×Ê±¼ä´Á",
-"defaults":"",
-"dictionary":"TRAN_TIMESTAMP"}
-,{
-"code":"TRAN_TIME",
-"dataType":"NUMBER",
-"lengths":"11",
-"precision":"0",
-"M":false,"P":false,"comment":"½»Ò×Ê±¼ä",
-"defaults":"",
-"dictionary":"TRAN_TIME"}
-],"table_space":"core_data",
-"dbType":"upright",
-"parameter":"busi_para",
-"system":"Ensemble",
-"commentDesc":"",
-"moduleType":"½»Ò×²ÎÊı"}
+  "code":"MB_SETTLE_TRAN_MAPPING",
+  "comment":"ç»“ç®—äº¤æ˜“ç±»å‹æ˜ å°„è¡¨",
+  "attr":[{
+    "code":"ACCT_TYPE",
+    "dataType":"Varchar",
+    "lengths":"50",
+    "precision":"",
+    "M":true,"P":true,"comment":"ä¸»è´¦æˆ·è´¦æˆ·ç±»å‹  M-æ™®é€šè´·æ¬¾,  D-å«æ¬¾,  U-è´´ç°è´·æ¬¾,  E-å§”æ‰˜è´·æ¬¾,  Y-é“¶å›¢è´·æ¬¾",
+    "defaults":"",
+    "dictionary":"ACCT_TYPE"}
+  ,{
+      "code":"PAY_REC_IND",
+      "dataType":"Varchar",
+      "lengths":"3",
+      "precision":"",
+      "M":true,"P":true,"comment":"æ”¶ä»˜æ¬¾æ–¹å‘",
+      "defaults":"",
+      "dictionary":"PAY_REC_IND"}
+  ,{
+      "code":"SETTLE_GL_TYPE",
+      "dataType":"Varchar",
+      "lengths":"2",
+      "precision":"",
+      "M":true,"P":true,"comment":"ç»“ç®—è´¦æˆ·æ€»è´¦ç±»å‹",
+      "defaults":"",
+      "dictionary":"SETTLE_GL_TYPE"}
+  ,{
+      "code":"TRAN_TYPE_LIST",
+      "dataType":"Varchar",
+      "lengths":"200",
+      "precision":"",
+      "M":true,"P":false,"comment":"äº¤æ˜“ç±»å‹ï¼Œå¯ä»¥é…ç½®å¤šä¸ªï¼Œæ”¯æŒé€—å·åˆ†éš”",
+      "defaults":"",
+      "dictionary":"TRAN_TYPE_LIST"}
+  ,{
+      "code":"COMPANY",
+      "dataType":"Varchar",
+      "lengths":"8",
+      "precision":"",
+      "M":false,"P":false,"comment":"æ³•äººä»£ç ",
+      "defaults":"",
+      "dictionary":"COMPANY"}
+  ,{
+      "code":"TRAN_TIMESTAMP",
+      "dataType":"Varchar",
+      "lengths":"17",
+      "precision":"",
+      "M":false,"P":false,"comment":"äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults":"",
+      "dictionary":"TRAN_TIMESTAMP"}
+  ,{
+      "code":"TRAN_TIME",
+      "dataType":"NUMBER",
+      "lengths":"11",
+      "precision":"0",
+      "M":false,"P":false,"comment":"äº¤æ˜“æ—¶é—´",
+      "defaults":"",
+      "dictionary":"TRAN_TIME"}
+  ],"table_space":"core_data",
+  "dbType":"upright",
+  "parameter":"busi_para",
+  "system":"Ensemble",
+  "commentDesc":"",
+  "moduleType":"äº¤æ˜“å‚æ•°"}

@@ -1,6 +1,6 @@
 {
     "code": "MB_PROD_CHARGE",
-    "comment": "²úÆ·ÀàĞÍ·ÑÓÃÀàĞÍ¹ØÁª±í",
+    "comment": "äº§å“ç±»å‹è´¹ç”¨ç±»å‹å…³è”è¡¨",
     "attr": [
         {
             "code": "PROD_TYPE",
@@ -9,10 +9,10 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "²úÆ·ÀàĞÍ",
+            "comment": "äº§å“ç±»å‹",
             "defaults": "",
             "dictionary": "PROD_TYPE",
-            "scope": "È¡ÖµÓÚMB_PROD_TYPE.PROD_TYPE"
+            "scope": "å–å€¼äºMB_PROD_TYPE.PROD_TYPE"
         },
         {
             "code": "FEE_TYPE",
@@ -21,7 +21,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "·ÑÓÃÀàĞÍ",
+            "comment": "è´¹ç”¨ç±»å‹",
             "defaults": "",
             "dictionary": "FEE_TYPE",
             "scope": ""
@@ -33,7 +33,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÊÕÈ¡ÆµÂÊ",
+            "comment": "æ”¶å–é¢‘ç‡",
             "defaults": "",
             "dictionary": "CHARGE_PERIOD_FREQ",
             "scope": "FM_PERIOD_FREQ.PERIOD_FREQ"
@@ -45,7 +45,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÊÕÈ¡ÈÕ",
+            "comment": "æ”¶å–æ—¥",
             "defaults": "",
             "dictionary": "CHARGE_DAY",
             "scope": ""
@@ -58,7 +58,7 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "ÏÂÒ»ÊÕ·ÑÈÕÆÚ",
+            "comment": "ä¸‹ä¸€æ”¶è´¹æ—¥æœŸ",
             "scope": "",
             "M": true,
             "P": false
@@ -70,7 +70,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -82,7 +82,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -93,5 +93,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "²úÆ·²ÎÊı"
+    "moduleType": "äº§å“å‚æ•°"
 }

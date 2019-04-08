@@ -1,6 +1,6 @@
 {
     "code": "MB_REASON_CODE",
-    "comment": "Ô­Òò´úÂë",
+    "comment": "åŸå› ä»£ç ",
     "attr": [
         {
             "code": "REASON_CODE",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "Ô­Òò´úÂë",
+            "comment": "åŸå› ä»£ç ",
             "defaults": "",
             "dictionary": "REASON_CODE",
             "scope": ""
@@ -21,7 +21,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "Ô­Òò´úÂëÃèÊö",
+            "comment": "åŸå› ä»£ç æè¿°",
             "defaults": "",
             "dictionary": "REASON_CODE_DESC",
             "scope": ""
@@ -33,7 +33,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ä£¿é",
+            "comment": "æ¨¡å—",
             "defaults": "",
             "dictionary": "SOURCE_MODE",
             "scope": ""
@@ -45,7 +45,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -57,7 +57,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -69,11 +69,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ô­Òò·ÖÀà",
+            "comment": "åŸå› åˆ†ç±»",
             "defaults": "",
             "scope": "",
             "dictionary": "REASON_CLASS",
-            "column": "Ô­Òò·ÖÀà"
+            "column": "åŸå› åˆ†ç±»"
         },
         {
             "code": "BORROW_FOR_REPAY",
@@ -82,11 +82,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÊÇ·ñ½èĞÂ»¹¾É»òĞø´æ±êÖ¾",
+            "comment": "æ˜¯å¦å€Ÿæ–°è¿˜æ—§æˆ–ç»­å­˜æ ‡å¿—",
             "defaults": "",
-            "scope": "Y£ºÊÇ N:·ñ",
+            "scope": "Yï¼šæ˜¯ N:å¦",
             "dictionary": "BORROW_FOR_REPAY",
-            "column": "ÊÇ·ñ½èĞÂ»¹¾É»òĞø´æ±êÖ¾"
+            "column": "æ˜¯å¦å€Ÿæ–°è¿˜æ—§æˆ–ç»­å­˜æ ‡å¿—"
         }
     ],
     "table_space": "core_data",
@@ -94,5 +94,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "ÕË»§²ÎÊı"
+    "moduleType": "è´¦æˆ·å‚æ•°"
 }

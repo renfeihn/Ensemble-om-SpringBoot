@@ -1,6 +1,6 @@
 {
     "code": "IRL_SYSTEM",
-    "comment": "ÏµÍ³ĞÅÏ¢±í",
+    "comment": "ç³»ç»Ÿä¿¡æ¯è¡¨",
     "attr": [
         {
             "code": "COY_NAME",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÒøĞĞÈ«³Æ",
+            "comment": "é“¶è¡Œå…¨ç§°",
             "defaults": "",
             "dictionary": "COY_NAME",
             "scope": ""
@@ -21,7 +21,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÒøĞĞ¼ò³Æ",
+            "comment": "é“¶è¡Œç®€ç§°",
             "defaults": "",
             "dictionary": "COY_SHORT",
             "scope": ""
@@ -33,7 +33,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÔËĞĞÈÕÆÚ",
+            "comment": "è¿è¡Œæ—¥æœŸ",
             "defaults": "",
             "dictionary": "RUN_DATE",
             "scope": ""
@@ -45,7 +45,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "±¾ÔÂÔÂÄ©ÈÕÆÚ",
+            "comment": "æœ¬æœˆæœˆæœ«æ—¥æœŸ",
             "defaults": "",
             "dictionary": "MTH_END_DATE",
             "scope": ""
@@ -57,7 +57,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "±¾ÄêÄêÄ©ÈÕÆÚ",
+            "comment": "æœ¬å¹´å¹´æœ«æ—¥æœŸ",
             "defaults": "",
             "dictionary": "YR_END_DATE",
             "scope": ""
@@ -69,7 +69,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "»ù´¡±ÒÖÖ",
+            "comment": "åŸºç¡€å¸ç§",
             "defaults": "",
             "dictionary": "BASE_CCY",
             "scope": "FM_CURRENCY.CCY"
@@ -81,7 +81,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "µ±µØ±ÒÖÖ",
+            "comment": "å½“åœ°å¸ç§",
             "defaults": "",
             "dictionary": "LOCAL_CCY",
             "scope": ""
@@ -93,7 +93,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ä¬ÈÏ»ú¹¹",
+            "comment": "é»˜è®¤æœºæ„",
             "defaults": "",
             "dictionary": "DEFAULT_BRANCH",
             "scope": ""
@@ -105,7 +105,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÉÏÒ»ÔËĞĞÈÕÆÚ",
+            "comment": "ä¸Šä¸€è¿è¡Œæ—¥æœŸ",
             "defaults": "",
             "dictionary": "LAST_RUN_DATE",
             "scope": ""
@@ -117,7 +117,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÏÂÒ»ÔËĞĞÈÕ",
+            "comment": "ä¸‹ä¸€è¿è¡Œæ—¥",
             "defaults": "",
             "dictionary": "NEXT_RUN_DATE"
         },
@@ -128,7 +128,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "¼¾Ä©ÈÕÆÚ",
+            "comment": "å­£æœ«æ—¥æœŸ",
             "defaults": "",
             "dictionary": "QUR_END_DATE",
             "scope": ""
@@ -140,7 +140,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "°ëÄêÄ©ÈÕÆÚ",
+            "comment": "åŠå¹´æœ«æ—¥æœŸ",
             "defaults": "",
             "dictionary": "HALF_END_DATE",
             "scope": ""
@@ -152,10 +152,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÏµÍ³Ëù´¦µÄ½×¶Î",
+            "comment": "ç³»ç»Ÿæ‰€å¤„çš„é˜¶æ®µ",
             "defaults": "",
             "dictionary": "SYSTEM_PHASE",
-            "scope": "INP:ÈÕ¼ä,EOD:ÈÕÖÕ,SOD:ÈÕÊ¼"
+            "scope": "INP:æ—¥é—´,EOD:æ—¥ç»ˆ,SOD:æ—¥å§‹"
         },
         {
             "code": "DEFAULT_RATE_TYPE",
@@ -164,7 +164,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ä¬ÈÏ»ãÂÊÀàĞÍ",
+            "comment": "é»˜è®¤æ±‡ç‡ç±»å‹",
             "defaults": "",
             "dictionary": "DEFAULT_RATE_TYPE",
             "scope": ""
@@ -176,7 +176,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "±¨¼ÛÓà¶îÀàĞÍ",
+            "comment": "æŠ¥ä»·ä½™é¢ç±»å‹",
             "defaults": "",
             "dictionary": "QUOTE_BALANCE_TYPE",
             "scope": ""
@@ -188,7 +188,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "¼ÆÌáÊÂ¼şÀàĞÍ",
+            "comment": "è®¡æäº‹ä»¶ç±»å‹",
             "defaults": "",
             "dictionary": "INT_EVENT_VALUE",
             "scope": ""
@@ -200,7 +200,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -213,8 +213,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "¼ÆÌáÊÇ·ñÔş²î",
-            "scope": "Y:ÊÇ£¬N:·ñ",
+            "comment": "è®¡ææ˜¯å¦è½§å·®",
+            "scope": "Y:æ˜¯ï¼ŒN:å¦",
             "M": false,
             "P": false
         },
@@ -225,10 +225,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½áÊÛ»ãÄÚ²¿Æ½ÅÌ»ãÂÊÀàĞÍ",
+            "comment": "ç»“å”®æ±‡å†…éƒ¨å¹³ç›˜æ±‡ç‡ç±»å‹",
             "defaults": "",
             "dictionary": "DEFAULT_CHARGE_RATE_TYPE",
-            "scope": "È¡ÖµFM_RATE_TYPE"
+            "scope": "å–å€¼FM_RATE_TYPE"
         },
         {
             "code": "TRAN_TIMESTAMP",
@@ -237,7 +237,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -249,7 +249,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""

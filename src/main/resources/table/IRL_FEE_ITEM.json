@@ -1,40 +1,40 @@
 {
-"code":"IRL_FEE_ITEM",
-"comment":"∑—”√œÓƒø±Ì",
-"attr":[{
-"code":"FEE_ITEM",
-"dataType":"Varchar",
-"lengths":"10",
-"precision":"",
-"M":true,"P":true,"comment":"∑—”√œÓƒø¥˙¬Î",
-"defaults":"",
-"dictionary":"FEE_ITEM"}
-,{
-"code":"FEE_ITEM_DESC",
-"dataType":"Varchar",
-"lengths":"150",
-"precision":"",
-"M":true,"P":false,"comment":"∑—”√œÓƒø√Ë ˆ",
-"defaults":"",
-"dictionary":"FEE_ITEM_DESC"}
-,{
-"code":"TRAN_TIMESTAMP",
-"dataType":"Varchar",
-"lengths":"17",
-"precision":"",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"TRAN_TIMESTAMP"}
-,{
-"code":"TRAN_TIME",
-"dataType":"NUMBER",
-"lengths":"11",
-"precision":"0",
-"M":false,"P":false,"comment":"",
-"defaults":"",
-"dictionary":"TRAN_TIME"}
-],"table_space":"price_data",
-"dbType":"upright",
-"parameter":"busi_para",
-"system":"Limarket",
-"commentDesc":""}
+  "code":"IRL_FEE_ITEM",
+  "comment":"Ë¥πÁî®È°πÁõÆË°®",
+  "attr":[{
+    "code":"FEE_ITEM",
+    "dataType":"Varchar",
+    "lengths":"10",
+    "precision":"",
+    "M":true,"P":true,"comment":"Ë¥πÁî®È°πÁõÆ‰ª£Á†Å",
+    "defaults":"",
+    "dictionary":"FEE_ITEM"}
+  ,{
+      "code":"FEE_ITEM_DESC",
+      "dataType":"Varchar",
+      "lengths":"150",
+      "precision":"",
+      "M":true,"P":false,"comment":"Ë¥πÁî®È°πÁõÆÊèèËø∞",
+      "defaults":"",
+      "dictionary":"FEE_ITEM_DESC"}
+  ,{
+      "code":"TRAN_TIMESTAMP",
+      "dataType":"Varchar",
+      "lengths":"17",
+      "precision":"",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"TRAN_TIMESTAMP"}
+  ,{
+      "code":"TRAN_TIME",
+      "dataType":"NUMBER",
+      "lengths":"11",
+      "precision":"0",
+      "M":false,"P":false,"comment":"",
+      "defaults":"",
+      "dictionary":"TRAN_TIME"}
+  ],"table_space":"price_data",
+  "dbType":"upright",
+  "parameter":"busi_para",
+  "system":"Limarket",
+  "commentDesc":""}

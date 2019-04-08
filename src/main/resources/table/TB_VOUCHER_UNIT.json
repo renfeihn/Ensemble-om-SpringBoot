@@ -1,59 +1,59 @@
 {
-    "system": "Ensemble",
-    "dbType": "upright",
-    "parameter": "busi_para",
-    "table_space": "core_data",
-    "code": "TB_VOUCHER_UNIT",
-    "comment": "Æ¾Ö¤µ¥Î»ĞÅÏ¢¶¨Òå",
-    "attr": [        {
-            "code": "DOC_TYPE",
-            "dataType": "Varchar",
-            "lengths": "10",
-            "precision": "",
-            "M": true,            "P": true,            "comment": "Æ¾Ö¤ÀàĞÍ",
-            "defaults": "",
-            "scope": "",
-            "dictionary": "DOC_TYPE",
-            "column": "Æ¾Ö¤ÀàĞÍ"        }
-,        {
-            "code": "UNIT_BASE",
-            "dataType": "Varchar",
-            "lengths": "10",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "µ¥Î»»ùÊı",
-            "defaults": "",
-            "scope": "",
-            "dictionary": "UNIT_BASE",
-            "column": "µ¥Î»»ùÊı"        }
-,        {
-            "code": "TRAN_TIME",
-            "dataType": "Number",
-            "lengths": "11",
-            "precision": "0",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä",
-            "defaults": "",
-            "scope": "",
-            "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä"        }
-,        {
-            "code": "TRAN_TIMESTAMP",
-            "dataType": "Varchar",
-            "lengths": "17",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä´Á",
-            "defaults": "",
-            "scope": "",
-            "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á"        }
-,        {
-            "code": "UNIT_TYPE",
-            "dataType": "Varchar",
-            "lengths": "5",
-            "precision": "",
-            "M": true,            "P": true,            "comment": "Æ¾Ö¤µ¥Î»",
-            "defaults": "",
-            "scope": "",
-            "dictionary": "UNIT_TYPE",
-            "column": "Æ¾Ö¤µ¥Î»"        }
-    ],    "indexs": [],"commentDesc":"",
-"moduleType":"Î²Ïä²ÎÊı"}
+  "system": "Ensemble",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "table_space": "core_data",
+  "code": "TB_VOUCHER_UNIT",
+  "comment": "å‡­è¯å•ä½ä¿¡æ¯å®šä¹‰",
+  "attr": [        {
+    "code": "DOC_TYPE",
+    "dataType": "Varchar",
+    "lengths": "10",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "å‡­è¯ç±»å‹",
+    "defaults": "",
+    "scope": "",
+    "dictionary": "DOC_TYPE",
+    "column": "å‡­è¯ç±»å‹"        }
+  ,        {
+      "code": "UNIT_BASE",
+      "dataType": "Varchar",
+      "lengths": "10",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "å•ä½åŸºæ•°",
+      "defaults": "",
+      "scope": "",
+      "dictionary": "UNIT_BASE",
+      "column": "å•ä½åŸºæ•°"        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´",
+      "defaults": "",
+      "scope": "",
+      "dictionary": "TRAN_TIME",
+      "column": "äº¤æ˜“æ—¶é—´"        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults": "",
+      "scope": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "æ—¶é—´æˆ³"        }
+  ,        {
+      "code": "UNIT_TYPE",
+      "dataType": "Varchar",
+      "lengths": "5",
+      "precision": "",
+      "M": true,            "P": true,            "comment": "å‡­è¯å•ä½",
+      "defaults": "",
+      "scope": "",
+      "dictionary": "UNIT_TYPE",
+      "column": "å‡­è¯å•ä½"        }
+  ],    "indexs": [],"commentDesc":"",
+  "moduleType":"å°¾ç®±å‚æ•°"}

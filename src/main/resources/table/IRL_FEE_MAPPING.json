@@ -1,6 +1,6 @@
 {
     "code": "IRL_FEE_MAPPING",
-    "comment": "·ÑÓÃÆôÓÃ¹æÔò±í",
+    "comment": "è´¹ç”¨å¯ç”¨è§„åˆ™è¡¨",
     "attr": [
         {
             "dictionary": "IRL_SEQ_NO",
@@ -10,8 +10,8 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "·ÑÓÃ´úÂë",
-            "scope": "È¡Öµ·¶Î§£º¼ÆÌáINPUT_DATE|| PROD_TYPE  ½áÏ¢  RUN_DATE||INTERNAL_KEY|| PROD_TYPE  ",
+            "comment": "è´¹ç”¨ä»£ç ",
+            "scope": "å–å€¼èŒƒå›´ï¼šè®¡æINPUT_DATE|| PROD_TYPE  ç»“æ¯  RUN_DATE||INTERNAL_KEY|| PROD_TYPE  ",
             "M": true,
             "P": true
         },
@@ -23,8 +23,8 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "·ÑÂÊÀàĞÍ",
-            "scope": "È¡×ÔIRL_FEE_TYPE.FEE_TYPE",
+            "comment": "è´¹ç‡ç±»å‹",
+            "scope": "å–è‡ªIRL_FEE_TYPE.FEE_TYPE",
             "M": true,
             "P": false
         },
@@ -36,8 +36,8 @@
             "lengths": "200",
             "precision": "",
             "defaults": "",
-            "comment": "»ú¹¹´úÂë",
-            "scope": "È¡×ÔFM_BRANCH.BRANCH,»òÎªALL±íÊ¾ÈÎÒâ»ú¹¹",
+            "comment": "æœºæ„ä»£ç ",
+            "scope": "å–è‡ªFM_BRANCH.BRANCH,æˆ–ä¸ºALLè¡¨ç¤ºä»»æ„æœºæ„",
             "M": true,
             "P": false
         },
@@ -49,8 +49,8 @@
             "lengths": "200",
             "precision": "",
             "defaults": "",
-            "comment": "ÊÂ¼şÀàĞÍ",
-            "scope": "È¡×ÔFM_REF_CODE,µ±×Ö¶ÎDOMAINµÄÖµÎªEVENT_TYPEÊ±£¬È¡×Ö¶ÎFIELD_IDµÄÖµ¡£»òÎªALL±íÊ¾ÈÎÒâÊÂ¼ş",
+            "comment": "äº‹ä»¶ç±»å‹",
+            "scope": "å–è‡ªFM_REF_CODE,å½“å­—æ®µDOMAINçš„å€¼ä¸ºEVENT_TYPEæ—¶ï¼Œå–å­—æ®µFIELD_IDçš„å€¼ã€‚æˆ–ä¸ºALLè¡¨ç¤ºä»»æ„äº‹ä»¶",
             "M": true,
             "P": false
         },
@@ -62,8 +62,8 @@
             "lengths": "200",
             "precision": "",
             "defaults": "",
-            "comment": "½»Ò×ÀàĞÍ",
-            "scope": "È¡×ÔMB_TRAN_DEF.TRAN_TYPE,»òALL±íÊ¾ÈÎÒâ½»Ò×ÀàĞÍ",
+            "comment": "äº¤æ˜“ç±»å‹",
+            "scope": "å–è‡ªMB_TRAN_DEF.TRAN_TYPE,æˆ–ALLè¡¨ç¤ºä»»æ„äº¤æ˜“ç±»å‹",
             "M": true,
             "P": false
         },
@@ -75,8 +75,8 @@
             "lengths": "200",
             "precision": "",
             "defaults": "",
-            "comment": "²úÆ·×é",
-            "scope": "RB:¸ºÕ®,CL:×Ê²ú,GL:×ÜÕË,MM:»õ±ÒÊĞ³¡,ALL:È«²¿ ",
+            "comment": "äº§å“ç»„",
+            "scope": "RB:è´Ÿå€º,CL:èµ„äº§,GL:æ€»è´¦,MM:è´§å¸å¸‚åœº,ALL:å…¨éƒ¨",
             "M": true,
             "P": false
         },
@@ -88,8 +88,8 @@
             "lengths": "200",
             "precision": "",
             "defaults": "",
-            "comment": "²úÆ·ÀàĞÍ",
-            "scope": "RB:¸ºÕ®²úÆ·,CL:×Ê²ú²úÆ·,GL:×ÜÕË²úÆ·,ALL:È«²¿",
+            "comment": "äº§å“ç±»å‹",
+            "scope": "RB:è´Ÿå€ºäº§å“,CL:èµ„äº§äº§å“,GL:æ€»è´¦äº§å“,ALL:å…¨éƒ¨",
             "M": true,
             "P": false
         },
@@ -101,8 +101,8 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "¼Ó¼±±êÖ¾ ",
-            "scope": "Y-¼Ó¼±,N:²»¼Ó¼± ",
+            "comment": "åŠ æ€¥æ ‡å¿—",
+            "scope": "Y-åŠ æ€¥,N:ä¸åŠ æ€¥",
             "M": true,
             "P": false
         },
@@ -114,8 +114,8 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "¿çĞĞ±êÖ¾",
-            "scope": "B:¿çËûĞĞ,O:¿ç»ú¹¹,S:Í¬»ú¹¹,ALL:È«²¿",
+            "comment": "è·¨è¡Œæ ‡å¿—",
+            "scope": "B:è·¨ä»–è¡Œ,O:è·¨æœºæ„,S:åŒæœºæ„,ALL:å…¨éƒ¨",
             "M": true,
             "P": false
         },
@@ -127,8 +127,8 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "µØÇø",
-            "scope": "LC:Í¬³Ç,DP:ÒìµØ,OS:¾³Íâ,ALL:È«²¿",
+            "comment": "åœ°åŒº",
+            "scope": "LC:åŒåŸ,DP:å¼‚åœ°,OS:å¢ƒå¤–,ALL:å…¨éƒ¨",
             "M": true,
             "P": false
         },
@@ -140,8 +140,8 @@
             "lengths": "200",
             "precision": "",
             "defaults": "",
-            "comment": "±ÒÖÖ",
-            "scope": "È¡×ÔFM_CURRENCY.CCY¡£»ò×ÅÎªALL£¬±íÊ¾ÈÎÒâ±ÒÖÖ",
+            "comment": "å¸ç§",
+            "scope": "å–è‡ªFM_CURRENCY.CCYã€‚æˆ–ç€ä¸ºALLï¼Œè¡¨ç¤ºä»»æ„å¸ç§",
             "M": true,
             "P": false
         },
@@ -152,10 +152,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "¿Í»§ÀàĞÍ",
+            "comment": "å®¢æˆ·ç±»å‹",
             "defaults": "",
             "dictionary": "CLIENT_TYPE_RULE",
-            "column": "¿Í»§ÀàĞÍ",
+            "column": "å®¢æˆ·ç±»å‹",
             "scope": "CIF_CLIENT_TYPE.CLIENT_TYPE"
         },
         {
@@ -165,10 +165,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "¿Í»§ÀàĞÍÏ¸Àà",
+            "comment": "å®¢æˆ·ç±»å‹ç»†ç±»",
             "defaults": "",
             "dictionary": "CATEGORY_TYPE_RULE",
-            "column": "¿Í»§ÀàĞÍÏ¸Àà",
+            "column": "å®¢æˆ·ç±»å‹ç»†ç±»",
             "scope": "CIF_CATEGORY_TYPE.CATEGORY_TYPE"
         },
         {
@@ -179,8 +179,8 @@
             "lengths": "150",
             "precision": "",
             "defaults": "",
-            "comment": "ÇşµÀÀàĞÍ",
-            "scope": "È¡×ÔFM_CHANNEL.CHANNEL¡£»ò×ÅÎªALL,±íÊ¾ÈÎÒâÇşµÀ",
+            "comment": "æ¸ é“ç±»å‹",
+            "scope": "å–è‡ªFM_CHANNEL.CHANNELã€‚æˆ–ç€ä¸ºALL,è¡¨ç¤ºä»»æ„æ¸ é“",
             "M": true,
             "P": false
         },
@@ -192,8 +192,8 @@
             "lengths": "150",
             "precision": "",
             "defaults": "",
-            "comment": "Æ¾Ö¤ÀàĞÍ",
-            "scope": "È¡×ÔTB_VOUCHER_STATUS_PARAMETER.STATUS",
+            "comment": "å‡­è¯ç±»å‹",
+            "scope": "å–è‡ªTB_VOUCHER_STATUS_PARAMETER.STATUS",
             "M": true,
             "P": false
         },
@@ -205,8 +205,8 @@
             "lengths": "150",
             "precision": "",
             "defaults": "",
-            "comment": "Æ¾Ö¤/Æ±¾İ±ä¸üÇ°×´Ì¬",
-            "scope": "È¡×ÔTB_VOUCHER_STATUS_PARAMETER.STATUS",
+            "comment": "å‡­è¯/ç¥¨æ®å˜æ›´å‰çŠ¶æ€",
+            "scope": "å–è‡ªTB_VOUCHER_STATUS_PARAMETER.STATUS",
             "M": true,
             "P": false
         },
@@ -218,8 +218,8 @@
             "lengths": "150",
             "precision": "",
             "defaults": "",
-            "comment": "Æ¾Ö¤/Æ±¾İ±ä¸üºó×´Ì¬",
-            "scope": "È¡×ÔTB_VOUCHER_STATUS_PARAMETER.STATUS",
+            "comment": "å‡­è¯/ç¥¨æ®å˜æ›´åçŠ¶æ€",
+            "scope": "å–è‡ªTB_VOUCHER_STATUS_PARAMETER.STATUS",
             "M": true,
             "P": false
         },
@@ -231,8 +231,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÊÇ·ñÊ¹ÓÃ¹æÔò",
-            "scope": "Y:Ê¹ÓÃ,N:²»Ê¹ÓÃ  ",
+            "comment": "æ˜¯å¦ä½¿ç”¨è§„åˆ™",
+            "scope": "Y:ä½¿ç”¨,N:ä¸ä½¿ç”¨  ",
             "M": true,
             "P": false
         },
@@ -243,10 +243,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ËùÊô·¨ÈË",
+            "comment": "æ‰€å±æ³•äºº",
             "defaults": "",
             "dictionary": "COMPANY_RULE",
-            "column": "ËùÊô·¨ÈË",
+            "column": "æ‰€å±æ³•äºº",
             "scope": ""
         },
         {
@@ -256,10 +256,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·şÎñ´úÂë",
+            "comment": "æœåŠ¡ä»£ç ",
             "defaults": "",
             "dictionary": "SERVICE_ID_RULE",
-            "column": "·şÎñ´úÂë",
+            "column": "æœåŠ¡ä»£ç ",
             "scope": ""
         },
         {
@@ -269,10 +269,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
+            "column": "æ—¶é—´æˆ³",
             "scope": ""
         },
         {
@@ -282,10 +282,10 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
+            "column": "äº¤æ˜“æ—¶é—´",
             "scope": ""
         }
     ],
@@ -293,5 +293,5 @@
     "dbType": "upright",
     "parameter": "busi_para",
     "system": "Limarket",
-    "commentDesc": "×÷ÓÃ£ºÈ·¶¨·ÑÓÃÊÕÈ¡µÄ¹æÔò¶¨Òå"
+    "commentDesc": "ä½œç”¨ï¼šç¡®å®šè´¹ç”¨æ”¶å–çš„è§„åˆ™å®šä¹‰"
 }

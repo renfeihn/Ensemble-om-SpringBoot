@@ -1,6 +1,6 @@
 {
     "code": "IRL_PERI_SPLIT",
-    "comment": "ÖÜÆÚ·Ö¶Î²ÎÊı±í",
+    "comment": "å‘¨æœŸåˆ†æ®µå‚æ•°è¡¨",
     "attr": [
         {
             "code": "PERI_SPLIT_ID",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "ÖÜÆÚ·Ö¶ÎID",
+            "comment": "å‘¨æœŸåˆ†æ®µID",
             "defaults": "",
             "dictionary": "PERI_SPLIT_ID",
             "scope": ""
@@ -21,7 +21,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "ĞòºÅ",
+            "comment": "åºå·",
             "defaults": "",
             "dictionary": "PERI_SEQ_NO",
             "scope": ""
@@ -33,7 +33,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·Ö¶ÎÖÜÆÚ",
+            "comment": "åˆ†æ®µå‘¨æœŸ",
             "defaults": "",
             "dictionary": "PERIOD",
             "scope": ""
@@ -45,10 +45,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·Ö¶ÎÖÜÆÚÀàĞÍ",
+            "comment": "åˆ†æ®µå‘¨æœŸç±»å‹",
             "defaults": "",
             "dictionary": "PERIOD_TYPE",
-            "scope": "D:DaysÌì,M:MonthsÔÂ,Y:Years Äê"
+            "scope": "D:Dayså¤©,M:Monthsæœˆ,Y:Years å¹´"
         },
         {
             "dictionary": "PERI_SPLIT_MODE",
@@ -58,8 +58,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "·Ö¶ÎÄ£Ê½  ",
-            "scope": "Q£ºÈ«¶î£¬C£º²î¶î",
+            "comment": "åˆ†æ®µæ¨¡å¼",
+            "scope": "Qï¼šå…¨é¢ï¼ŒCï¼šå·®é¢",
             "M": false,
             "P": false
         },
@@ -70,7 +70,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÖØËãÌìÊı",
+            "comment": "é‡ç®—å¤©æ•°",
             "defaults": "",
             "dictionary": "RECAL_DAYS",
             "scope": ""
@@ -83,8 +83,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÖØËã¹ıÈ¥ÀûÏ¢",
-            "scope": "Y:ÊÇ£¬N:·ñ",
+            "comment": "é‡ç®—è¿‡å»åˆ©æ¯",
+            "scope": "Y:æ˜¯ï¼ŒN:å¦",
             "M": false,
             "P": false
         },
@@ -96,8 +96,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "ÀûÂÊÀàĞÍ",
-            "scope": "È¡×ÔIRL_INT_TYPE.INT_TAX_TYPE",
+            "comment": "åˆ©ç‡ç±»å‹",
+            "scope": "å–è‡ªIRL_INT_TYPE.INT_TAX_TYPE",
             "M": false,
             "P": false
         },
@@ -109,8 +109,8 @@
             "lengths": "10",
             "precision": "",
             "defaults": "",
-            "comment": "½ğ¶î·Ö¶ÎID",
-            "scope": "È¡×ÔIRL_AMT_SPLIT_ID.AMT_SPLIT_ID",
+            "comment": "é‡‘é¢åˆ†æ®µID",
+            "scope": "å–è‡ªIRL_AMT_SPLIT_ID.AMT_SPLIT_ID",
             "M": false,
             "P": false
         },
@@ -121,7 +121,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "¹æÔòID",
+            "comment": "è§„åˆ™ID",
             "defaults": "",
             "dictionary": "RULE_ID",
             "scope": ""
@@ -133,7 +133,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -145,7 +145,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""

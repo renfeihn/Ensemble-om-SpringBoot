@@ -1,6 +1,6 @@
 {
     "code": "IRL_FEE_CLIENT_TYPE",
-    "comment": "·ÑÂÊ¿Í»§ÀàĞÍ¹ØÏµ±í",
+    "comment": "è´¹ç‡å®¢æˆ·ç±»å‹å…³ç³»è¡¨",
     "attr": [
         {
             "dictionary": "FEE_TYPE",
@@ -10,8 +10,8 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "·ÑÂÊÀàĞÍ",
-            "scope": "È¡×ÔIRL_FEE_TYPE.FEE_TYPE",
+            "comment": "è´¹ç‡ç±»å‹",
+            "scope": "å–è‡ªIRL_FEE_TYPE.FEE_TYPE",
             "M": true,
             "P": true
         },
@@ -22,10 +22,10 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "¿Í»§ÀàĞÍ",
+            "comment": "å®¢æˆ·ç±»å‹",
             "defaults": "",
             "dictionary": "CLIENT_TYPE",
-            "column": "¿Í»§ÀàĞÍ",
+            "column": "å®¢æˆ·ç±»å‹",
             "scope": "CIF_CLIENT_TYPE.CLIENT_TYPE"
         },
         {
@@ -35,10 +35,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
+            "column": "æ³•äººä»£ç ",
             "scope": "FM_COMPANY.COMPANY"
         },
         {
@@ -48,10 +48,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
+            "column": "æ—¶é—´æˆ³",
             "scope": ""
         },
         {
@@ -61,10 +61,10 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
+            "column": "äº¤æ˜“æ—¶é—´",
             "scope": ""
         }
     ],
@@ -72,5 +72,5 @@
     "dbType": "upright",
     "parameter": "busi_para",
     "system": "Limarket",
-    "commentDesc": "×÷ÓÃ£º¼ÇÂ¼·ÑÂÊÊÊÓÃ¿Í»§ÀàĞÍ£»Èç¹ûÈ«²¿¿Í»§ÊÊÓÃ£¬¿ÉÉèÖÃÎªALL;"
+    "commentDesc": "ä½œç”¨ï¼šè®°å½•è´¹ç‡é€‚ç”¨å®¢æˆ·ç±»å‹ï¼›å¦‚æœå…¨éƒ¨å®¢æˆ·é€‚ç”¨ï¼Œå¯è®¾ç½®ä¸ºALL;"
 }

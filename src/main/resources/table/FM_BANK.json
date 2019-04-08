@@ -1,6 +1,6 @@
 {
     "code": "FM_BANK",
-    "comment": "Íâ²¿½ğÈÚ»ú¹¹¶¨Òå±í",
+    "comment": "å¤–éƒ¨é‡‘èæœºæ„å®šä¹‰è¡¨",
     "attr": [
         {
             "code": "BANK_CODE",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "ÒøĞĞ´úÂë",
+            "comment": "é“¶è¡Œä»£ç ",
             "defaults": "",
             "dictionary": "BANK_CODE",
             "scope": ""
@@ -21,7 +21,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÒøĞĞID",
+            "comment": "é“¶è¡ŒID",
             "defaults": "",
             "dictionary": "BANK_ID",
             "scope": ""
@@ -33,7 +33,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÒøĞĞÃû³Æ",
+            "comment": "é“¶è¡Œåç§°",
             "defaults": "",
             "dictionary": "BANK_NAME",
             "scope": ""
@@ -45,10 +45,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÒøĞĞÀà±ğ O-Our Bank ÎÒĞĞ                      B-Bank ËûĞĞ S-Building Society½¨·¿»¥ÖúĞ­»á T-Third Party BankµÚÈı·½ÒøĞĞ",
+            "comment": "é“¶è¡Œç±»åˆ« O-Our Bank æˆ‘è¡Œ                      B-Bank ä»–è¡Œ S-Building Societyå»ºæˆ¿äº’åŠ©åä¼š T-Third Party Bankç¬¬ä¸‰æ–¹é“¶è¡Œ",
             "defaults": "",
             "dictionary": "BANK_TYPE",
-            "scope": "O:Our Bank ÎÒĞĞ,B:Bank ËûĞĞ,S:Building Society½¨·¿»¥ÖúĞ­»á,T:Third Party BankµÚÈı·½ÒøĞĞ"
+            "scope": "O:Our Bank æˆ‘è¡Œ,B:Bank ä»–è¡Œ,S:Building Societyå»ºæˆ¿äº’åŠ©åä¼š,T:Third Party Bankç¬¬ä¸‰æ–¹é“¶è¡Œ"
         },
         {
             "dictionary": "STATUS",
@@ -58,8 +58,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "×´Ì¬",
-            "scope": "A:ÓĞĞ§,F:ÎŞĞ§",
+            "comment": "çŠ¶æ€",
+            "scope": "A:æœ‰æ•ˆ,F:æ— æ•ˆ",
             "M": true,
             "P": false
         },
@@ -70,7 +70,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË",
+            "comment": "æ³•äºº",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -82,7 +82,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -94,7 +94,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -105,5 +105,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "¹«¹²²ÎÊı"
+    "moduleType": "å…¬å…±å‚æ•°"
 }

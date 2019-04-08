@@ -1,25 +1,25 @@
 {
-"code":"MB_COLLAT_TYPE",
-"comment":"µÖÑºÆ·ÀàĞÍ",
-"attr":[{
-"code":"COLLAT_TYPE",
-"dataType":"Varchar",
-"lengths":"10",
-"precision":"",
-"M":true,"P":true,"comment":"µÖÑºÆ·ÀàĞÍ",
-"defaults":"",
-"dictionary":"COLLAT_TYPE"}
-,{
-"code":"COLLAT_TYPE_DESC",
-"dataType":"Varchar",
-"lengths":"100",
-"precision":"",
-"M":true,"P":false,"comment":"µÖÑºÆ·ÀàĞÍÃèÊö",
-"defaults":"",
-"dictionary":"COLLAT_TYPE_DESC"}
-],"table_space":"core_data",
-"dbType":"upright",
-"parameter":"busi_para",
-"system":"Ensemble",
-"commentDesc":"",
-"moduleType":"ÑºÆ·²ÎÊı"}
+  "code":"MB_COLLAT_TYPE",
+  "comment":"æŠµæŠ¼å“ç±»å‹",
+  "attr":[{
+    "code":"COLLAT_TYPE",
+    "dataType":"Varchar",
+    "lengths":"10",
+    "precision":"",
+    "M":true,"P":true,"comment":"æŠµæŠ¼å“ç±»å‹",
+    "defaults":"",
+    "dictionary":"COLLAT_TYPE"}
+  ,{
+      "code":"COLLAT_TYPE_DESC",
+      "dataType":"Varchar",
+      "lengths":"100",
+      "precision":"",
+      "M":true,"P":false,"comment":"æŠµæŠ¼å“ç±»å‹æè¿°",
+      "defaults":"",
+      "dictionary":"COLLAT_TYPE_DESC"}
+  ],"table_space":"core_data",
+  "dbType":"upright",
+  "parameter":"busi_para",
+  "system":"Ensemble",
+  "commentDesc":"",
+  "moduleType":"æŠ¼å“å‚æ•°"}

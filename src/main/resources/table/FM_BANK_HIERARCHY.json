@@ -1,61 +1,61 @@
 {
-"code":"FM_BANK_HIERARCHY",
-"comment":"ª˙ππ≤„¥Œ±Ì",
-"attr":[{
-"code":"HIERARCHY_CODE",
-"dataType":"Varchar",
-"lengths":"5",
-"precision":"",
-"M":true,"P":true,"comment":"≤„º∂¥˙¬Î",
-"defaults":"",
-"dictionary":"HIERARCHY_CODE"}
-,{
-"code":"HIERARCHY_NAME",
-"dataType":"Varchar",
-"lengths":"15",
-"precision":"",
-"M":false,"P":false,"comment":"≤„º∂Àµ√˜",
-"defaults":"",
-"dictionary":"HIERARCHY_NAME"}
-,{
-"code":"HIERARCHY_LEVEL",
-"dataType":"Varchar",
-"lengths":"5",
-"precision":"",
-"M":false,"P":false,"comment":"º∂±",
-"defaults":"",
-"dictionary":"HIERARCHY_LEVEL"}
-,{
-"code":"COMPANY",
-"dataType":"Varchar",
-"lengths":"20",
-"precision":"",
-"M":false,"P":false,"comment":"∑®»À",
-"defaults":"",
-"dictionary":"COMPANY"}
-,{
-"code":"TRAN_TIMESTAMP",
-"dataType":"Varchar",
-"lengths":"17",
-"precision":"",
-"M":false,"P":false,"comment":"Ωª“◊ ±º‰¥¡",
-"defaults":"",
-"dictionary":"TRAN_TIMESTAMP"}
-,{
-"code":"TRAN_TIME",
-"dataType":"NUMBER",
-"lengths":"11",
-"precision":"0",
-"M":false,"P":false,"comment":"Ωª“◊ ±º‰",
-"defaults":"",
-"dictionary":"TRAN_TIME"}
-],"indexs":[{
-"code":"AK_KBH_UK2_FM_BANK_",
-"U":true,"columns":["HIERARCHY_NAME",
-"HIERARCHY_LEVEL"],"table_space":"core_index"}
+  "code":"FM_BANK_HIERARCHY",
+  "comment":"Êú∫ÊûÑÂ±ÇÊ¨°Ë°®",
+  "attr":[{
+    "code":"HIERARCHY_CODE",
+    "dataType":"Varchar",
+    "lengths":"5",
+    "precision":"",
+    "M":true,"P":true,"comment":"Â±ÇÁ∫ß‰ª£Á†Å",
+    "defaults":"",
+    "dictionary":"HIERARCHY_CODE"}
+  ,{
+      "code":"HIERARCHY_NAME",
+      "dataType":"Varchar",
+      "lengths":"15",
+      "precision":"",
+      "M":false,"P":false,"comment":"Â±ÇÁ∫ßËØ¥Êòé",
+      "defaults":"",
+      "dictionary":"HIERARCHY_NAME"}
+  ,{
+      "code":"HIERARCHY_LEVEL",
+      "dataType":"Varchar",
+      "lengths":"5",
+      "precision":"",
+      "M":false,"P":false,"comment":"Á∫ßÂà´",
+      "defaults":"",
+      "dictionary":"HIERARCHY_LEVEL"}
+  ,{
+      "code":"COMPANY",
+      "dataType":"Varchar",
+      "lengths":"20",
+      "precision":"",
+      "M":false,"P":false,"comment":"Ê≥ï‰∫∫",
+      "defaults":"",
+      "dictionary":"COMPANY"}
+  ,{
+      "code":"TRAN_TIMESTAMP",
+      "dataType":"Varchar",
+      "lengths":"17",
+      "precision":"",
+      "M":false,"P":false,"comment":"‰∫§ÊòìÊó∂Èó¥Êà≥",
+      "defaults":"",
+      "dictionary":"TRAN_TIMESTAMP"}
+  ,{
+      "code":"TRAN_TIME",
+      "dataType":"NUMBER",
+      "lengths":"11",
+      "precision":"0",
+      "M":false,"P":false,"comment":"‰∫§ÊòìÊó∂Èó¥",
+      "defaults":"",
+      "dictionary":"TRAN_TIME"}
+  ],"indexs":[{
+  "code":"AK_KBH_UK2_FM_BANK_",
+  "U":true,"columns":["HIERARCHY_NAME",
+    "HIERARCHY_LEVEL"],"table_space":"core_index"}
 ],"table_space":"core_data",
-"dbType":"upright",
-"parameter":"busi_para",
-"system":"Ensemble",
-"commentDesc":"",
-"moduleType":"π´π≤≤Œ ˝"}
+  "dbType":"upright",
+  "parameter":"busi_para",
+  "system":"Ensemble",
+  "commentDesc":"",
+  "moduleType":"ÂÖ¨ÂÖ±ÂèÇÊï∞"}

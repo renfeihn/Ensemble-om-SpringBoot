@@ -1,79 +1,79 @@
 {
-    "code": "CIF_CONTACT_TYPE",
-    "comment": "ÁªÏµÀàĞÍ",
-    "attr": [        {
-            "code": "CONTACT_TYPE",
-            "dataType": "Varchar",
-            "lengths": "3",
-            "precision": "",
-            "M": true,            "P": true,            "comment": "ÁªÏµÀàĞÍ",
-            "defaults": "",
-            "dictionary": "CONTACT_TYPE",
-            "column": "ÁªÏµÀàĞÍ",
-            "scope": ""        }
-,        {
-            "code": "CONTACT_TYPE_DESC",
-            "dataType": "Varchar",
-            "lengths": "30",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "ÁªÏµÀàĞÍÃèÊö",
-            "defaults": "",
-            "dictionary": "CONTACT_TYPE_DESC",
-            "column": "ÁªÏµÀàĞÍÃèÊö",
-            "scope": ""        }
-,        {
-            "code": "ROUTE",
-            "dataType": "Varchar",
-            "lengths": "8",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "ÁªÏµ·½Ê½",
-            "defaults": "",
-            "dictionary": "ROUTE",
-            "column": "ÁªÏµ·½Ê½ÀàĞÍ SWIFT:SWIFTµçÎÄ POSTAL:ÓÊ¼Ä",
-            "scope": ""        }
-,        {
-            "code": "SWIFT_ID",
-            "dataType": "Varchar",
-            "lengths": "12",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "SWIFT ID",
-            "defaults": "",
-            "dictionary": "SWIFT_ID",
-            "column": "SWIFT ID",
-            "scope": ""        }
-,        {
-            "code": "COMPANY",
-            "dataType": "Varchar",
-            "lengths": "20",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "·¨ÈË´úÂë",
-            "defaults": "",
-            "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIMESTAMP",
-            "dataType": "Varchar",
-            "lengths": "17",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä´Á",
-            "defaults": "",
-            "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIME",
-            "dataType": "Number",
-            "lengths": "11",
-            "precision": "0",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä",
-            "defaults": "",
-            "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
-            "scope": ""        }
-    ],    "table_space": "core_data",
-    "dbType": "upright",
-    "parameter": "busi_para",
-    "system": "Ensemble",
-    "commentDesc": " 1¡¢°´¿Í»§µÄ²»Í¬ÁªÏµ·½Ê½À´·ÖÀà¸÷ÖÖÁªÏµÀàĞÍ£¬±íÖĞ±£´æÁËÁªÏµÀàĞÍ¡¢ÀàĞÍÃèÊö¡¢ÁªÏµ·½Ê½µÈĞÅÏ¢£¬×öÎªÕû¸öÏµÍ³µÄ»ù´¡²ÎÊı£¬ÔÚ¿ªÁ¢¿Í»§¡¢Î¬»¤¿Í»§ĞÅÏ¢Ê±Ê¹ÓÃ£¬Ò²¹©¸÷Ä£¿éÊ¹ÓÃ¿Í»§ÁªÏµ·½Ê½Ê±ÓÃ",
-"moduleType":"¿Í»§²ÎÊı"}
+  "code": "CIF_CONTACT_TYPE",
+  "comment": "è”ç³»ç±»å‹",
+  "attr": [        {
+    "code": "CONTACT_TYPE",
+    "dataType": "Varchar",
+    "lengths": "3",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "è”ç³»ç±»å‹",
+    "defaults": "",
+    "dictionary": "CONTACT_TYPE",
+    "column": "è”ç³»ç±»å‹",
+    "scope": ""        }
+  ,        {
+      "code": "CONTACT_TYPE_DESC",
+      "dataType": "Varchar",
+      "lengths": "30",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "è”ç³»ç±»å‹æè¿°",
+      "defaults": "",
+      "dictionary": "CONTACT_TYPE_DESC",
+      "column": "è”ç³»ç±»å‹æè¿°",
+      "scope": ""        }
+  ,        {
+      "code": "ROUTE",
+      "dataType": "Varchar",
+      "lengths": "8",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "è”ç³»æ–¹å¼",
+      "defaults": "",
+      "dictionary": "ROUTE",
+      "column": "è”ç³»æ–¹å¼ç±»å‹ SWIFT:SWIFTç”µæ–‡ POSTAL:é‚®å¯„",
+      "scope": ""        }
+  ,        {
+      "code": "SWIFT_ID",
+      "dataType": "Varchar",
+      "lengths": "12",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "SWIFT ID",
+      "defaults": "",
+      "dictionary": "SWIFT_ID",
+      "column": "SWIFT ID",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "æ³•äººä»£ç ",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "æ³•äººä»£ç ",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "æ—¶é—´æˆ³",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "äº¤æ˜“æ—¶é—´",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": " 1ã€æŒ‰å®¢æˆ·çš„ä¸åŒè”ç³»æ–¹å¼æ¥åˆ†ç±»å„ç§è”ç³»ç±»å‹ï¼Œè¡¨ä¸­ä¿å­˜äº†è”ç³»ç±»å‹ã€ç±»å‹æè¿°ã€è”ç³»æ–¹å¼ç­‰ä¿¡æ¯ï¼Œåšä¸ºæ•´ä¸ªç³»ç»Ÿçš„åŸºç¡€å‚æ•°ï¼Œåœ¨å¼€ç«‹å®¢æˆ·ã€ç»´æŠ¤å®¢æˆ·ä¿¡æ¯æ—¶ä½¿ç”¨ï¼Œä¹Ÿä¾›å„æ¨¡å—ä½¿ç”¨å®¢æˆ·è”ç³»æ–¹å¼æ—¶ç”¨",
+  "moduleType":"å®¢æˆ·å‚æ•°"}

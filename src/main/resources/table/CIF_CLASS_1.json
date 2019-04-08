@@ -1,57 +1,57 @@
 {
-"code":"CIF_CLASS_1",
-"comment":"¿Í»§·ÖÀà1",
-"attr":[{
-"code":"CLASS_1",
-"dataType":"Varchar",
-"lengths":"6",
-"precision":"",
-"M":true,"P":true,"comment":"·ÖÀà1",
-"defaults":"",
-"dictionary":"CLASS_1"}
-,{
-"code":"CLASS_1_DESC",
-"dataType":"Varchar",
-"lengths":"30",
-"precision":"",
-"M":true,"P":false,"comment":"·ÖÀàÃèÊö",
-"defaults":"",
-"dictionary":"CLASS_1_DESC"}
-,{
-"code":"COUNTER_PARTY",
-"dataType":"Varchar",
-"lengths":"10",
-"precision":"",
-"M":false,"P":false,"comment":"½»Ò×¶ÔÊÖ´úÂë",
-"defaults":"",
-"dictionary":"COUNTER_PARTY"}
-,{
-"code":"COMPANY",
-"dataType":"Varchar",
-"lengths":"20",
-"precision":"",
-"M":false,"P":false,"comment":"·¨ÈË´úÂë",
-"defaults":"",
-"dictionary":"COMPANY"}
-,{
-"code":"TRAN_TIMESTAMP",
-"dataType":"Varchar",
-"lengths":"17",
-"precision":"",
-"M":false,"P":false,"comment":"½»Ò×Ê±¼ä´Á",
-"defaults":"",
-"dictionary":"TRAN_TIMESTAMP"}
-,{
-"code":"TRAN_TIME",
-"dataType":"NUMBER",
-"lengths":"11",
-"precision":"0",
-"M":false,"P":false,"comment":"½»Ò×Ê±¼ä",
-"defaults":"",
-"dictionary":"TRAN_TIME"}
-],"table_space":"core_data",
-"dbType":"upright",
-"parameter":"busi_para",
-"system":"Ensemble",
-"commentDesc":"",
-"moduleType":"¿Í»§²ÎÊı"}
+  "code":"CIF_CLASS_1",
+  "comment":"å®¢æˆ·åˆ†ç±»1",
+  "attr":[{
+    "code":"CLASS_1",
+    "dataType":"Varchar",
+    "lengths":"6",
+    "precision":"",
+    "M":true,"P":true,"comment":"åˆ†ç±»1",
+    "defaults":"",
+    "dictionary":"CLASS_1"}
+  ,{
+      "code":"CLASS_1_DESC",
+      "dataType":"Varchar",
+      "lengths":"30",
+      "precision":"",
+      "M":true,"P":false,"comment":"åˆ†ç±»æè¿°",
+      "defaults":"",
+      "dictionary":"CLASS_1_DESC"}
+  ,{
+      "code":"COUNTER_PARTY",
+      "dataType":"Varchar",
+      "lengths":"10",
+      "precision":"",
+      "M":false,"P":false,"comment":"äº¤æ˜“å¯¹æ‰‹ä»£ç ",
+      "defaults":"",
+      "dictionary":"COUNTER_PARTY"}
+  ,{
+      "code":"COMPANY",
+      "dataType":"Varchar",
+      "lengths":"20",
+      "precision":"",
+      "M":false,"P":false,"comment":"æ³•äººä»£ç ",
+      "defaults":"",
+      "dictionary":"COMPANY"}
+  ,{
+      "code":"TRAN_TIMESTAMP",
+      "dataType":"Varchar",
+      "lengths":"17",
+      "precision":"",
+      "M":false,"P":false,"comment":"äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults":"",
+      "dictionary":"TRAN_TIMESTAMP"}
+  ,{
+      "code":"TRAN_TIME",
+      "dataType":"NUMBER",
+      "lengths":"11",
+      "precision":"0",
+      "M":false,"P":false,"comment":"äº¤æ˜“æ—¶é—´",
+      "defaults":"",
+      "dictionary":"TRAN_TIME"}
+  ],"table_space":"core_data",
+  "dbType":"upright",
+  "parameter":"busi_para",
+  "system":"Ensemble",
+  "commentDesc":"",
+  "moduleType":"å®¢æˆ·å‚æ•°"}

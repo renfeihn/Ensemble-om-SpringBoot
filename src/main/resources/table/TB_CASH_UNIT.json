@@ -1,69 +1,69 @@
 {
-    "code": "TB_CASH_UNIT",
-    "comment": "ÏÖ½ğÔ¤Ô¼»ã×ÜÍ³¼Æµ¥Ôª±í",
-    "attr": [        {
-            "code": "PAR_VALUE_ID",
-            "dataType": "Varchar",
-            "lengths": "20",
-            "precision": "",
-            "M": true,            "P": true,            "comment": "È¯±ğ´úºÅ È¡Öµ TB_PAR_VALUE.PAR_VALUE_ID",
-            "defaults": "",
-            "dictionary": "PAR_VALUE_ID",
-            "column": "È¯±ğ´úºÅ È¡Öµ TB_PAR_VALUE.PAR_VALUE_ID",
-            "scope": ""        }
-,        {
-            "code": "UNIT_SUM_K",
-            "dataType": "Varchar",
-            "lengths": "10",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "Ã¿À¦ÕÅÊı",
-            "defaults": "",
-            "dictionary": "UNIT_SUM_K",
-            "column": "Ã¿À¦ÕÅÊı",
-            "scope": ""        }
-,        {
-            "code": "UNIT_SUM_B",
-            "dataType": "Varchar",
-            "lengths": "10",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "Ã¿°ÑÕÅÊı",
-            "defaults": "",
-            "dictionary": "UNIT_SUM_B",
-            "column": "Ã¿°ÑÕÅÊı",
-            "scope": ""        }
-,        {
-            "code": "COMPANY",
-            "dataType": "Varchar",
-            "lengths": "20",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "·¨ÈË´úÂë",
-            "defaults": "",
-            "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIMESTAMP",
-            "dataType": "Varchar",
-            "lengths": "17",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä´Á",
-            "defaults": "",
-            "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIME",
-            "dataType": "Number",
-            "lengths": "11",
-            "precision": "0",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä",
-            "defaults": "",
-            "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
-            "scope": ""        }
-    ],    "table_space": "core_data",
-    "dbType": "upright",
-    "parameter": "busi_para",
-    "system": "Ensemble",
-    "commentDesc": "ÓÃÀ´Î¬»¤²»Í¬¾í±ğµÄ»ã×ÜÍ³¼Æµ¥Ôª²ÎÊıĞÅÏ¢£¬±ÈÈç£ºÃ¿À¦ÕÅÊı¡¢¾í±ğ´úºÅ¡£",
-"moduleType":"Î²Ïä²ÎÊı"}
+  "code": "TB_CASH_UNIT",
+  "comment": "ç°é‡‘é¢„çº¦æ±‡æ€»ç»Ÿè®¡å•å…ƒè¡¨",
+  "attr": [        {
+    "code": "PAR_VALUE_ID",
+    "dataType": "Varchar",
+    "lengths": "20",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "åˆ¸åˆ«ä»£å· å–å€¼ TB_PAR_VALUE.PAR_VALUE_ID",
+    "defaults": "",
+    "dictionary": "PAR_VALUE_ID",
+    "column": "åˆ¸åˆ«ä»£å· å–å€¼ TB_PAR_VALUE.PAR_VALUE_ID",
+    "scope": ""        }
+  ,        {
+      "code": "UNIT_SUM_K",
+      "dataType": "Varchar",
+      "lengths": "10",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "æ¯æ†å¼ æ•°",
+      "defaults": "",
+      "dictionary": "UNIT_SUM_K",
+      "column": "æ¯æ†å¼ æ•°",
+      "scope": ""        }
+  ,        {
+      "code": "UNIT_SUM_B",
+      "dataType": "Varchar",
+      "lengths": "10",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "æ¯æŠŠå¼ æ•°",
+      "defaults": "",
+      "dictionary": "UNIT_SUM_B",
+      "column": "æ¯æŠŠå¼ æ•°",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "æ³•äººä»£ç ",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "æ³•äººä»£ç ",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "æ—¶é—´æˆ³",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "äº¤æ˜“æ—¶é—´",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": "ç”¨æ¥ç»´æŠ¤ä¸åŒå·åˆ«çš„æ±‡æ€»ç»Ÿè®¡å•å…ƒå‚æ•°ä¿¡æ¯ï¼Œæ¯”å¦‚ï¼šæ¯æ†å¼ æ•°ã€å·åˆ«ä»£å·ã€‚",
+  "moduleType":"å°¾ç®±å‚æ•°"}

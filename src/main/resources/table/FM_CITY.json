@@ -1,6 +1,6 @@
 {
     "code": "FM_CITY",
-    "comment": "³ÇÊĞ´úÂë",
+    "comment": "åŸå¸‚ä»£ç ",
     "attr": [
         {
             "dictionary": "COUNTRY",
@@ -10,7 +10,7 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "¹ú¼Ò",
+            "comment": "å›½å®¶",
             "scope": "FM_COUNTRY.COUNTRY",
             "M": true,
             "P": true
@@ -23,7 +23,7 @@
             "lengths": "10",
             "precision": "",
             "defaults": "",
-            "comment": "Ê¡¡¢Öİ",
+            "comment": "çœã€å·",
             "scope": "FM_STATE.STATE",
             "M": true,
             "P": true
@@ -35,10 +35,10 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "³ÇÊĞ´úÂë",
+            "comment": "åŸå¸‚ä»£ç ",
             "defaults": "",
             "dictionary": "CITY",
-            "scope": "È¡Öµ FM_CITY.CITY"
+            "scope": "å–å€¼ FM_CITY.CITY"
         },
         {
             "code": "CITY_TEL",
@@ -47,7 +47,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "µç»°ÇøºÅ",
+            "comment": "ç”µè¯åŒºå·",
             "defaults": "",
             "dictionary": "CITY_TEL",
             "scope": "FM_CITY.CITY"
@@ -59,7 +59,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÃèÊö",
+            "comment": "æè¿°",
             "defaults": "",
             "dictionary": "CITY_DESC",
             "scope": ""
@@ -71,7 +71,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË",
+            "comment": "æ³•äºº",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -83,7 +83,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -95,7 +95,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -106,5 +106,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "¹«¹²²ÎÊı"
+    "moduleType": "å…¬å…±å‚æ•°"
 }

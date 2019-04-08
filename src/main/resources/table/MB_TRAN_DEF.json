@@ -1,6 +1,6 @@
 {
     "code": "MB_TRAN_DEF",
-    "comment": "½»Ò×ÀàĞÍ¶¨Òå±í",
+    "comment": "äº¤æ˜“ç±»å‹å®šä¹‰è¡¨",
     "attr": [
         {
             "code": "TRAN_TYPE",
@@ -9,10 +9,10 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "½»Ò×ÀàĞÍ",
+            "comment": "äº¤æ˜“ç±»å‹",
             "defaults": "",
             "dictionary": "TRAN_TYPE",
-            "column": "½»Ò×ÀàĞÍ",
+            "column": "äº¤æ˜“ç±»å‹",
             "scope": ""
         },
         {
@@ -22,10 +22,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×ÀàĞÍÃèÊö",
+            "comment": "äº¤æ˜“ç±»å‹æè¿°",
             "defaults": "",
             "dictionary": "TRAN_TYPE_DESC",
-            "column": "½»Ò×ÀàĞÍÃèÊö",
+            "column": "äº¤æ˜“ç±»å‹æè¿°",
             "scope": ""
         },
         {
@@ -36,8 +36,8 @@
             "lengths": "10",
             "precision": "",
             "defaults": "",
-            "comment": "½»Ò×·ÖÀà",
-            "scope": "OC-Í¬³Ç£¬CHEQUE-Ö§Æ±",
+            "comment": "äº¤æ˜“åˆ†ç±»",
+            "scope": "OC-åŒåŸï¼ŒCHEQUE-æ”¯ç¥¨",
             "M": false,
             "P": false
         },
@@ -48,10 +48,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÇşµÀ FM_CHANNEL.CHANNEL",
+            "comment": "æ¸ é“ FM_CHANNEL.CHANNEL",
             "defaults": "",
             "dictionary": "SOURCE_TYPE",
-            "column": "ÇşµÀÀàĞÍ ¼ûfm_channel±íµÄÇşµÀ¶¨Òå",
+            "column": "æ¸ é“ç±»å‹ è§fm_channelè¡¨çš„æ¸ é“å®šä¹‰",
             "scope": ""
         },
         {
@@ -62,8 +62,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "½è´û±êÖ¾",
-            "scope": "C:´û D£º½è",
+            "comment": "å€Ÿè´·æ ‡å¿—",
+            "scope": "C:è´· Dï¼šå€Ÿ",
             "M": false,
             "P": false
         },
@@ -75,7 +75,7 @@
             "lengths": "10",
             "precision": "",
             "defaults": "",
-            "comment": "³åÕı½»Ò×ÀàĞÍ ",
+            "comment": "å†²æ­£äº¤æ˜“ç±»å‹ ",
             "scope": "MB_TRAN_DEF.TRAN_TYPE",
             "M": false,
             "P": false
@@ -87,11 +87,11 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÏÖ½ğ½»Ò×",
+            "comment": "ç°é‡‘äº¤æ˜“",
             "defaults": "",
             "dictionary": "CASH_TRAN",
-            "column": "ÏÖ½ğ½»Ò×",
-            "scope": "Y:ÊÇ N:·ñ"
+            "column": "ç°é‡‘äº¤æ˜“",
+            "scope": "Y:æ˜¯ N:å¦"
         },
         {
             "dictionary": "MULTI_RVS_TRAN_TYPE_IND",
@@ -101,8 +101,8 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "¶àÖÖ³åÕı·½Ê½±êÖ¾",
-            "scope": "Y:ÊÇ N:·ñ",
+            "comment": "å¤šç§å†²æ­£æ–¹å¼æ ‡å¿—",
+            "scope": "Y:æ˜¯ N:å¦",
             "M": false,
             "P": false
         },
@@ -113,10 +113,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×ÀàĞÍÓë½»Ò×½çÃæ¶ÔÓ¦¹ØÏµ",
+            "comment": "äº¤æ˜“ç±»å‹ä¸äº¤æ˜“ç•Œé¢å¯¹åº”å…³ç³»",
             "defaults": "",
             "dictionary": "PROGRAM_ID_GROUP",
-            "column": "½»Ò×ÀàĞÍÓë½»Ò×½çÃæ¶ÔÓ¦¹ØÏµ",
+            "column": "äº¤æ˜“ç±»å‹ä¸äº¤æ˜“ç•Œé¢å¯¹åº”å…³ç³»",
             "scope": ""
         },
         {
@@ -126,10 +126,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "³åÕı½»Ò×±êÖ¾",
+            "comment": "å†²æ­£äº¤æ˜“æ ‡å¿—",
             "defaults": "",
             "dictionary": "REVERSAL_TRAN_FLAG",
-            "column": "³åÕı½»Ò×±êÖ¾",
+            "column": "å†²æ­£äº¤æ˜“æ ‡å¿—",
             "scope": ""
         },
         {
@@ -139,10 +139,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Óà¶î±êÖ¾",
+            "comment": "ä½™é¢æ ‡å¿—",
             "defaults": "",
             "dictionary": "BALANCE_FLAG",
-            "column": "Óà¶î±êÖ¾",
+            "column": "ä½™é¢æ ‡å¿—",
             "scope": ""
         },
         {
@@ -152,10 +152,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Óà¶îÀàĞÍ´ÎĞò",
+            "comment": "ä½™é¢ç±»å‹æ¬¡åº",
             "defaults": "",
             "dictionary": "BAL_TYPE_PRIORITY",
-            "column": "Óà¶îÀàĞÍ´ÎĞò",
+            "column": "ä½™é¢ç±»å‹æ¬¡åº",
             "scope": ""
         },
         {
@@ -165,10 +165,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Æ¾Ö¤´òÓ¡½»Ò×ÃèÊö",
+            "comment": "å‡­è¯æ‰“å°äº¤æ˜“æè¿°",
             "defaults": "",
             "dictionary": "PRINT_TRAN_DESC",
-            "column": "Æ¾Ö¤´òÓ¡½»Ò×ÃèÊö",
+            "column": "å‡­è¯æ‰“å°äº¤æ˜“æè¿°",
             "scope": ""
         },
         {
@@ -178,10 +178,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "¸üÕı½»Ò× Y:ÊÇ N:·ñ",
+            "comment": "æ›´æ­£äº¤æ˜“ Y:æ˜¯ N:å¦",
             "defaults": "",
             "dictionary": "IS_CORRECT",
-            "column": "¸üÕı½»Ò×",
+            "column": "æ›´æ­£äº¤æ˜“",
             "scope": ""
         },
         {
@@ -192,7 +192,7 @@
             "lengths": "10",
             "precision": "",
             "defaults": "",
-            "comment": "¶Ô·½½»Ò×ÀàĞÍ ",
+            "comment": "å¯¹æ–¹äº¤æ˜“ç±»å‹ ",
             "scope": "MB_TRAN_DEF.TRAN_TYPE",
             "M": false,
             "P": false
@@ -204,11 +204,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÖØĞÂ¼ÆËãÓà¶îÖ¹¸¶±êÖ¾ ",
+            "comment": "é‡æ–°è®¡ç®—ä½™é¢æ­¢ä»˜æ ‡å¿— ",
             "defaults": "",
             "dictionary": "RECALC_ACCT_STOP_PAY",
-            "column": "ÖØĞÂ¼ÆËãÓà¶îÖ¹¸¶±êÖ¾ Y-ÖØĞÂ¼ÆËã N-²»ÖØĞÂ¼ÆËã",
-            "scope": "Y:ÖØĞÂ¼ÆËã,N:²»ÖØĞÂ¼ÆËã"
+            "column": "é‡æ–°è®¡ç®—ä½™é¢æ­¢ä»˜æ ‡å¿— Y-é‡æ–°è®¡ç®— N-ä¸é‡æ–°è®¡ç®—",
+            "scope": "Y:é‡æ–°è®¡ç®—,N:ä¸é‡æ–°è®¡ç®—"
         },
         {
             "code": "RECALC_RES_AMT",
@@ -217,11 +217,11 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÖØĞÂ¼ÆËãÏŞÖÆ½ğ¶î±êÖ¾ ",
+            "comment": "é‡æ–°è®¡ç®—é™åˆ¶é‡‘é¢æ ‡å¿— ",
             "defaults": "",
             "dictionary": "RECALC_RES_AMT",
-            "column": "ÖØĞÂ¼ÆËãÏŞÖÆ½ğ¶î±êÖ¾ Y-ÖØĞÂ¼ÆËã N-²»ÖØĞÂ¼ÆËã",
-            "scope": "Y:ÖØĞÂ¼ÆËã,N:²»ÖØĞÂ¼ÆËã"
+            "column": "é‡æ–°è®¡ç®—é™åˆ¶é‡‘é¢æ ‡å¿— Y-é‡æ–°è®¡ç®— N-ä¸é‡æ–°è®¡ç®—",
+            "scope": "Y:é‡æ–°è®¡ç®—,N:ä¸é‡æ–°è®¡ç®—"
         },
         {
             "dictionary": "RES_PRIORITY",
@@ -231,7 +231,7 @@
             "lengths": "5",
             "precision": "",
             "defaults": "",
-            "comment": "¶³½á¼¶±ğ(ÏŞÖÆ¼¶±ğ) ",
+            "comment": "å†»ç»“çº§åˆ«(é™åˆ¶çº§åˆ«) ",
             "scope": "FM_RESTRAINT_TYPE.RES_PRIORITY",
             "M": false,
             "P": false
@@ -243,10 +243,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½ğ¶î¼ÆËãÀàĞÍ",
+            "comment": "é‡‘é¢è®¡ç®—ç±»å‹",
             "defaults": "",
             "dictionary": "AVAILBAL_CALC_TYPE",
-            "column": "½ğ¶î¼ÆËãÀàĞÍ",
+            "column": "é‡‘é¢è®¡ç®—ç±»å‹",
             "scope": ""
         },
         {
@@ -257,8 +257,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "Î²Ïä¸üĞÂ±êÖ¾",
-            "scope": "Y:¸üĞÂ,N:²»¸üĞÂ",
+            "comment": "å°¾ç®±æ›´æ–°æ ‡å¿—",
+            "scope": "Y:æ›´æ–°,N:ä¸æ›´æ–°",
             "M": false,
             "P": false
         },
@@ -269,10 +269,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
+            "column": "æ—¶é—´æˆ³",
             "scope": ""
         },
         {
@@ -282,10 +282,10 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
+            "column": "äº¤æ˜“æ—¶é—´",
             "scope": ""
         },
         {
@@ -296,8 +296,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÊÇ·ñ³ö³§²ÎÊı",
-            "scope": "Y:ÊÇ;N:·ñ",
+            "comment": "æ˜¯å¦å‡ºå‚å‚æ•°",
+            "scope": "Y:æ˜¯;N:å¦",
             "M": false,
             "P": false
         }
@@ -306,6 +306,6 @@
     "dbType": "upright",
     "parameter": "busi_para",
     "system": "Ensemble",
-    "commentDesc": "ÃèÊö²úÆ·¹¤³§ËùÓĞ½»Ò×ÀàĞÍµÄ¶¨Òå",
-    "moduleType": "½»Ò×²ÎÊı"
+    "commentDesc": "æè¿°äº§å“å·¥å‚æ‰€æœ‰äº¤æ˜“ç±»å‹çš„å®šä¹‰",
+    "moduleType": "äº¤æ˜“å‚æ•°"
 }

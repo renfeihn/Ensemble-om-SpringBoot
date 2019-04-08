@@ -2,7 +2,7 @@
     "system": "Ensemble",
     "code": "FM_MAX_DEGREE",
     "table_space": "core_data",
-    "comment": "Ñ§Î»±í",
+    "comment": "å­¦ä½è¡¨",
     "dbType": "upright",
     "parameter": "init_para",
     "attr": [
@@ -14,7 +14,7 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "ÓïÑÔ",
+            "comment": "è¯­è¨€",
             "scope": "",
             "M": true,
             "P": true
@@ -27,7 +27,7 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "È¡Öµ·¶Î§",
+            "comment": "å–å€¼èŒƒå›´",
             "scope": "",
             "M": true,
             "P": true
@@ -40,7 +40,7 @@
             "lengths": "30",
             "precision": "",
             "defaults": "",
-            "comment": "È¡ÖµµÄº¬ÒåËµÃ÷",
+            "comment": "å–å€¼çš„å«ä¹‰è¯´æ˜",
             "scope": "",
             "M": true,
             "P": false
@@ -53,7 +53,7 @@
             "lengths": "300",
             "precision": "",
             "defaults": "",
-            "comment": "±¸×¢",
+            "comment": "å¤‡æ³¨",
             "scope": "",
             "M": false,
             "P": false

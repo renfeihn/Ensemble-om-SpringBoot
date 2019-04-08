@@ -1,6 +1,6 @@
 {
     "code": "GL_CCY_RULE",
-    "comment": "±ÒÖÖ¹æÔò±í",
+    "comment": "å¸ç§è§„åˆ™è¡¨",
     "attr": [
         {
             "dictionary": "EVENT_TYPE",
@@ -10,7 +10,7 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "ÊÂ¼şÀàĞÍ",
+            "comment": "äº‹ä»¶ç±»å‹",
             "scope": "MB_EVENT_TYPE.EVENT_TYPE",
             "M": true,
             "P": true
@@ -23,7 +23,7 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "Âô³ö±ÒÖÖ",
+            "comment": "å–å‡ºå¸ç§",
             "scope": "FM_CURRENCY.CCY",
             "M": true,
             "P": true
@@ -35,7 +35,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "ÂòÈë±ÒÖÖ",
+            "comment": "ä¹°å…¥å¸ç§",
             "defaults": "",
             "dictionary": "BUY_CCY",
             "scope": "FM_CURRENCY.CCY"
@@ -47,7 +47,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "»á¼Æ·ÖÂ¼±àºÅ",
+            "comment": "ä¼šè®¡åˆ†å½•ç¼–å·",
             "defaults": "",
             "dictionary": "ACCOUNTING_NO",
             "scope": ""
@@ -59,7 +59,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -71,7 +71,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""

@@ -1,6 +1,6 @@
 {
     "code": "LM_TRAN_LIMIT_DEF",
-    "comment": "ÏŞ¶î¶¨Òå±í",
+    "comment": "é™é¢å®šä¹‰è¡¨",
     "attr": [
         {
             "code": "LIMIT_REF",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "ÏŞ¶î±àÂë",
+            "comment": "é™é¢ç¼–ç ",
             "defaults": "",
             "dictionary": "LIMIT_REF",
             "scope": ""
@@ -21,7 +21,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ËµÃ÷",
+            "comment": "è¯´æ˜",
             "defaults": "",
             "dictionary": "LIMIT_DESC",
             "scope": ""
@@ -33,7 +33,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "±ÒÖÖ",
+            "comment": "å¸ç§",
             "defaults": "",
             "dictionary": "CCY",
             "scope": "FM_CURRENCY.CCY"
@@ -45,7 +45,7 @@
             "precision": "2",
             "M": true,
             "P": false,
-            "comment": "×îµÍ×ª´æ½ğ¶î",
+            "comment": "æœ€ä½è½¬å­˜é‡‘é¢",
             "defaults": "",
             "dictionary": "MIN_AMT",
             "scope": ""
@@ -57,7 +57,7 @@
             "precision": "2",
             "M": true,
             "P": false,
-            "comment": "×î´ó¶î",
+            "comment": "æœ€å¤§é¢",
             "defaults": "",
             "dictionary": "MAX_AMT",
             "scope": ""
@@ -69,7 +69,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÉúĞ§ÈÕÆÚ",
+            "comment": "ç”Ÿæ•ˆæ—¥æœŸ",
             "defaults": "",
             "dictionary": "EFFECT_DATE",
             "scope": ""
@@ -81,10 +81,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÀàĞÍ  ",
+            "comment": "ç±»å‹  ",
             "defaults": "",
             "dictionary": "LIMIT_TYPE",
-            "scope": "PD:Ã¿ÌìÀÛ¼Æ,PT:µ¥±Ê½»Ò×, PM:Ã¿ÔÂÀÛ¼Æ"
+            "scope": "PD:æ¯å¤©ç´¯è®¡,PT:å•ç¬”äº¤æ˜“, PM:æ¯æœˆç´¯è®¡"
         },
         {
             "code": "LIMIT_LEVEL",
@@ -93,10 +93,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÆäËû¼¶±ğ  ",
+            "comment": "å…¶ä»–çº§åˆ«  ",
             "defaults": "",
             "dictionary": "LIMIT_LEVEL",
-            "scope": "CUST:¿Í»§¼¶±ğ,ACCT:ÕË»§¼¶±ğ,NULL:ÎŞ¼¶±ğ"
+            "scope": "CUST:å®¢æˆ·çº§åˆ«,ACCT:è´¦æˆ·çº§åˆ«,NULL:æ— çº§åˆ«"
         },
         {
             "code": "STATUS",
@@ -105,10 +105,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "×´Ì¬ A:ÓĞĞ§ E:Ê§Ğ§",
+            "comment": "çŠ¶æ€ A:æœ‰æ•ˆ E:å¤±æ•ˆ",
             "defaults": "",
             "dictionary": "STATUS",
-            "scope": "A:ÓĞĞ§,F:ÎŞĞ§"
+            "scope": "A:æœ‰æ•ˆ,F:æ— æ•ˆ"
         },
         {
             "code": "DEAL_FLOW",
@@ -117,10 +117,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "´¦Àí·½Ê½",
+            "comment": "å¤„ç†æ–¹å¼",
             "defaults": "",
             "dictionary": "DEAL_FLOW",
-            "scope": "A:ÊÚÈ¨´¦Àí,B:¾Ü¾ø´¦Àí,D:ÌáĞÑ´¦Àí"
+            "scope": "A:æˆæƒå¤„ç†,B:æ‹’ç»å¤„ç†,D:æé†’å¤„ç†"
         },
         {
             "code": "ENABLE_DEFINE",
@@ -129,10 +129,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÊÇ·ñÔÊĞí×Ô¶¨Òå  ",
+            "comment": "æ˜¯å¦å…è®¸è‡ªå®šä¹‰",
             "defaults": "'N'",
             "dictionary": "ENABLE_DEFINE",
-            "scope": "Y:ÔÊĞí,N:²»ÔÊĞí"
+            "scope": "Y:å…è®¸,N:ä¸å…è®¸"
         },
         {
             "dictionary": "START_DATE",
@@ -142,7 +142,7 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "ÉúĞ§ÈÕÆÚ",
+            "comment": "ç”Ÿæ•ˆæ—¥æœŸ",
             "scope": "",
             "M": false,
             "P": false
@@ -155,7 +155,7 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "ÖÕÖ¹ÈÕÆÚ",
+            "comment": "ç»ˆæ­¢æ—¥æœŸ",
             "scope": "",
             "M": false,
             "P": false
@@ -167,7 +167,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ê±¼ä´Á",
+            "comment": "æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -179,7 +179,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -190,5 +190,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "ÏŞ¶î²ÎÊı"
+    "moduleType": "é™é¢å‚æ•°"
 }

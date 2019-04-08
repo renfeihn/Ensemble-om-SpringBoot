@@ -4,7 +4,7 @@
     "parameter": "busi_para",
     "table_space": "core_data",
     "code": "FM_REGION_CODE_USERDEF",
-    "comment": "×Ô¶¨ÒåÇøÓò´úÂë¶¨Òå",
+    "comment": "è‡ªå®šä¹‰åŒºåŸŸä»£ç å®šä¹‰",
     "attr": [
         {
             "code": "REGION_CODE",
@@ -13,11 +13,11 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "ÇøÓò´úÂë",
+            "comment": "åŒºåŸŸä»£ç ",
             "defaults": "",
             "scope": "",
             "dictionary": "REGION_CODE",
-            "column": "ÇøÓò´úÂë"
+            "column": "åŒºåŸŸä»£ç "
         },
         {
             "code": "REGION_CODE_DESC",
@@ -26,11 +26,11 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÇøÓò´úÂëÃèÊö",
+            "comment": "åŒºåŸŸä»£ç æè¿°",
             "defaults": "",
             "scope": "",
             "dictionary": "REGION_CODE_DESC",
-            "column": "ÇøÓò´úÂëÃèÊö"
+            "column": "åŒºåŸŸä»£ç æè¿°"
         },
         {
             "code": "REGION_TYPE_CODE",
@@ -39,11 +39,11 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÇøÓòÀàĞÍ´úÂë",
+            "comment": "åŒºåŸŸç±»å‹ä»£ç ",
             "defaults": "",
             "scope": "",
             "dictionary": "REGION_TYPE_CODE",
-            "column": "ÇøÓòÀàĞÍ´úÂë"
+            "column": "åŒºåŸŸç±»å‹ä»£ç "
         },
         {
             "code": "TRAN_TIME",
@@ -52,11 +52,11 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "scope": "",
             "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä"
+            "column": "äº¤æ˜“æ—¶é—´"
         },
         {
             "code": "TRAN_TIMESTAMP",
@@ -65,13 +65,13 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ê±¼ä´Á",
+            "comment": "æ—¶é—´æˆ³",
             "defaults": "",
             "scope": "",
             "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á"
+            "column": "æ—¶é—´æˆ³"
         }
     ],
     "indexs": [],
-    "commentDesc": "×Ô¶¨ÒåÇøÓò´úÂë¶¨Òå"
+    "commentDesc": "è‡ªå®šä¹‰åŒºåŸŸä»£ç å®šä¹‰"
 }

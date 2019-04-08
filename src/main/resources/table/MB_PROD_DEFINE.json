@@ -64,7 +64,7 @@
       "precision": "0",
       "M": true,
       "P": false,
-      "comment": "参数KEY 取值于MB_ATTR_TYPE ",
+      "comment": "参数KEY 取值于MB_ATTR_TYPE",
       "defaults": "",
       "dictionary": ""
     },

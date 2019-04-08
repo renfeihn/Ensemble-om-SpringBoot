@@ -1,6 +1,6 @@
 {
     "code": "GL_CUSTOM_RULE",
-    "comment": "×Ô¶¨Òå¹æÔò±í",
+    "comment": "è‡ªå®šä¹‰è§„åˆ™è¡¨",
     "attr": [
         {
             "code": "RULE_NO",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "¹æÔò±àºÅ",
+            "comment": "è§„åˆ™ç¼–å·",
             "defaults": "",
             "dictionary": "RULE_NO",
             "scope": ""
@@ -21,7 +21,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "¹æÔò±í´ïÊ½",
+            "comment": "è§„åˆ™è¡¨è¾¾å¼",
             "defaults": "",
             "dictionary": "RULE_EXPRESSION",
             "scope": ""
@@ -34,7 +34,7 @@
             "lengths": "256",
             "precision": "",
             "defaults": "",
-            "comment": "¹æÔòÃèÊö",
+            "comment": "è§„åˆ™æè¿°",
             "scope": "",
             "M": false,
             "P": false
@@ -46,7 +46,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "¿ÆÄ¿´úÂë AC_SUBJECT.SUBJECT_CODE",
+            "comment": "ç§‘ç›®ä»£ç  AC_SUBJECT.SUBJECT_CODE",
             "defaults": "",
             "dictionary": "GL_CODE",
             "scope": ""
@@ -58,7 +58,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÕÊÌ×",
+            "comment": "å¸å¥—",
             "defaults": "",
             "dictionary": "BUSSINESS_UNIT",
             "scope": ""
@@ -70,10 +70,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÀûÈóÖĞĞÄ FM_PROFIT_CENTRE.PROFIT_CENTRE",
+            "comment": "åˆ©æ¶¦ä¸­å¿ƒ FM_PROFIT_CENTRE.PROFIT_CENTRE",
             "defaults": "",
             "dictionary": "PROFIT_CENTRE",
-            "scope": "È¡ÖµFM_PROFIT_CENTRE_TBL.PROFIT_CENTRE"
+            "scope": "å–å€¼FM_PROFIT_CENTRE_TBL.PROFIT_CENTRE"
         },
         {
             "code": "TRAN_TIME",
@@ -82,7 +82,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -94,7 +94,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -107,8 +107,8 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "²úÆ·ÀàĞÍ",
-            "scope": "È¡ÖµÓÚMB_PROD_TYPE.PROD_TYPE",
+            "comment": "äº§å“ç±»å‹",
+            "scope": "å–å€¼äºMB_PROD_TYPE.PROD_TYPE",
             "M": true,
             "P": false
         },
@@ -120,7 +120,7 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "½ğ¶îÀàĞÍ",
+            "comment": "é‡‘é¢ç±»å‹",
             "scope": "MB_ATTR_VALUE.AMT_TYPE",
             "M": true,
             "P": false
@@ -133,7 +133,7 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "gl_accounting±íÖĞ±»Ìæ»»gl_code_exp",
+            "comment": "gl_accountingè¡¨ä¸­è¢«æ›¿æ¢gl_code_exp",
             "scope": "",
             "M": true,
             "P": false
@@ -146,7 +146,7 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "×Ô¶¨Òå¹æÔòÒ»",
+            "comment": "è‡ªå®šä¹‰è§„åˆ™ä¸€",
             "scope": "",
             "M": false,
             "P": false
@@ -159,7 +159,7 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "×Ô¶¨Òå¹æÔò¶ş",
+            "comment": "è‡ªå®šä¹‰è§„åˆ™äºŒ",
             "scope": "",
             "M": false,
             "P": false
@@ -172,7 +172,7 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "×Ô¶¨Òå¹æÔòÈı",
+            "comment": "è‡ªå®šä¹‰è§„åˆ™ä¸‰",
             "scope": "",
             "M": false,
             "P": false
@@ -185,7 +185,7 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "×Ô¶¨Òå¹æÔòÒ»¶ÔÓ¦Öµ",
+            "comment": "è‡ªå®šä¹‰è§„åˆ™ä¸€å¯¹åº”å€¼",
             "scope": "",
             "M": false,
             "P": false
@@ -198,7 +198,7 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "×Ô¶¨Òå¹æÔò¶ş¶ÔÓ¦Öµ",
+            "comment": "è‡ªå®šä¹‰è§„åˆ™äºŒå¯¹åº”å€¼",
             "scope": "",
             "M": false,
             "P": false
@@ -211,7 +211,7 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "×Ô¶¨Òå¹æÔòÈı¶ÔÓ¦Öµ",
+            "comment": "è‡ªå®šä¹‰è§„åˆ™ä¸‰å¯¹åº”å€¼",
             "scope": "",
             "M": false,
             "P": false
@@ -224,7 +224,7 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "ºËËã×´Ì¬",
+            "comment": "æ ¸ç®—çŠ¶æ€",
             "scope": "MB_ACCOUNTING_STATUS.ACCOUNTING_STATUS",
             "M": false,
             "P": false

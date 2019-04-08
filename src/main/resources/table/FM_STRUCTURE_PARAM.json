@@ -1,6 +1,6 @@
 {
     "code": "FM_STRUCTURE_PARAM",
-    "comment": "½á¹¹²ÎÊı¶¨Òå±í",
+    "comment": "ç»“æ„å‚æ•°å®šä¹‰è¡¨",
     "attr": [
         {
             "code": "STRUCTURE_TYPE",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "½á¹¹ÀàĞÍ",
+            "comment": "ç»“æ„ç±»å‹",
             "defaults": "",
             "dictionary": "STRUCTURE_TYPE",
             "scope": ""
@@ -22,8 +22,8 @@
             "lengths": "2",
             "precision": "",
             "defaults": "",
-            "comment": "²ÎÊıÀàĞÍ ",
-            "scope": "AN:Basic Account Number »ù±¾ÕËºÅ,BK:Bank Code,BR:Branch Code »ú¹¹ºÅ,CC:Country Code ¹ú¼Ò´úÂë,CD:Check Digit Ğ£ÑéÊı×Ö,CL:Client Number ¿Í»§ºÅ,CY:Currency Code ±ÒÖÖ,DT:Date Value ÉúĞ§ÈÕÆÚ,PC Padding Character,PF:product family ²úÆ·¼Ò×å,PI:Program ID ³ÌĞò±àºÅ,PT:Product Type ²úÆ·ÀàĞÍ,RN:region µØÇøºÅ,SN:Sequence Number ĞòÁĞºÅ,SP:System Phase ÏµÍ³½×¶Î,ST:String Value ×Ö·û´®Öµ,UI:User ID ¹ñÔ±ID",
+            "comment": "å‚æ•°ç±»å‹",
+            "scope": "AN:Basic Account Number åŸºæœ¬è´¦å·,BK:Bank Code,BR:Branch Code æœºæ„å·,CC:Country Code å›½å®¶ä»£ç ,CD:Check Digit æ ¡éªŒæ•°å­—,CL:Client Number å®¢æˆ·å·,CY:Currency Code å¸ç§,DT:Date Value ç”Ÿæ•ˆæ—¥æœŸ,PC Padding Character,PF:product family äº§å“å®¶æ—,PI:Program ID ç¨‹åºç¼–å·,PT:Product Type äº§å“ç±»å‹,RN:region åœ°åŒºå·,SN:Sequence Number åºåˆ—å·,SP:System Phase ç³»ç»Ÿé˜¶æ®µ,ST:String Value å­—ç¬¦ä¸²å€¼,UI:User ID æŸœå‘˜ID",
             "M": true,
             "P": true
         },
@@ -34,7 +34,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "³¤¶È",
+            "comment": "é•¿åº¦",
             "defaults": "",
             "dictionary": "LENGTH",
             "scope": ""
@@ -46,7 +46,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "ÆğÊ¼Î»ÖÃ",
+            "comment": "èµ·å§‹ä½ç½®",
             "defaults": "",
             "dictionary": "START_POS",
             "scope": ""
@@ -58,7 +58,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "½áÊøÎ»ÖÃ",
+            "comment": "ç»“æŸä½ç½®",
             "defaults": "",
             "dictionary": "END_POS",
             "scope": ""
@@ -70,7 +70,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ìî³ä×Ö·û",
+            "comment": "å¡«å……å­—ç¬¦",
             "defaults": "",
             "dictionary": "PADDING_CHAR",
             "scope": ""
@@ -83,8 +83,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "Ë³ĞòºÅÀàĞÍ",
-            "scope": " È¡Öµ FM_SEQ_TYPE.SEQ_TYPE",
+            "comment": "é¡ºåºå·ç±»å‹",
+            "scope": " å–å€¼ FM_SEQ_TYPE.SEQ_TYPE",
             "M": false,
             "P": false
         },
@@ -95,7 +95,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "×Ö·ûÖµ",
+            "comment": "å­—ç¬¦å€¼",
             "defaults": "",
             "dictionary": "STRING_VALUE",
             "scope": ""
@@ -107,7 +107,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË",
+            "comment": "æ³•äºº",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -119,7 +119,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -131,7 +131,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -142,5 +142,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "¹«¹²²ÎÊı"
+    "moduleType": "å…¬å…±å‚æ•°"
 }

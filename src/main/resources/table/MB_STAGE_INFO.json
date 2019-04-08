@@ -1,88 +1,88 @@
 {
-"code":"MB_STAGE_INFO",
-"comment":"ÆÚ´ÎĞÅÏ¢±í",
-"attr":[{
-"code":"ISSUE_YEAR",
-"dataType":"Varchar",
-"lengths":"4",
-"precision":"",
-"M":true,"P":false,"comment":"·¢ĞĞÄê¶È",
-"defaults":"",
-"dictionary":"ISSUE_YEAR"}
-,{
-"code":"PROD_TYPE",
-"dataType":"Varchar",
-"lengths":"50",
-"precision":"",
-"M":true,"P":false,"comment":"²úÆ·ÀàĞÍ",
-"defaults":"",
-"dictionary":"PROD_TYPE"}
-,{
-"code":"CCY",
-"dataType":"Varchar",
-"lengths":"3",
-"precision":"",
-"M":true,"P":false,"comment":"±ÒÖÖ",
-"defaults":"",
-"dictionary":"CCY"}
-,{
-"code":"STAGE_CODE",
-"dataType":"Varchar",
-"lengths":"50",
-"precision":"",
-"M":true,"P":true,"comment":"ÆÚ´Î´úÂë",
-"defaults":"",
-"dictionary":"STAGE_CODE"}
-,{
-"code":"ISSUE_AMT",
-"dataType":"NUMBER",
-"lengths":"17",
-"precision":"2",
-"M":true,"P":false,"comment":"ÆÚ´Î·¢ĞĞ¶î¶È",
-"defaults":"",
-"dictionary":"ISSUE_AMT"}
-,{
-"code":"USED_AMT",
-"dataType":"NUMBER",
-"lengths":"17",
-"precision":"2",
-"M":false,"P":false,"comment":"ÆÚ´ÎÒÑÊ¹ÓÃ¶î¶È",
-"defaults":"",
-"dictionary":"USED_AMT"}
-,{
-"code":"PREV_USED_AMT",
-"dataType":"NUMBER",
-"lengths":"17",
-"precision":"2",
-"M":false,"P":false,"comment":"ÉÏ´ÎÒÑÊ¹ÓÃ¶î¶È",
-"defaults":"",
-"dictionary":"PREV_USED_AMT"}
-,{
-"code":"LAST_CHANGE_DATE",
-"dataType":"Varchar",
-"lengths":"8",
-"precision":"",
-"M":false,"P":false,"comment":"ÉÏ´Î¸üĞÂÈÕÆÚ",
-"defaults":"",
-"dictionary":"LAST_CHANGE_DATE"}
-,{
-"code":"TRAN_TIMESTAMP",
-"dataType":"Varchar",
-"lengths":"17",
-"precision":"",
-"M":false,"P":false,"comment":"½»Ò×Ê±¼ä´Á",
-"defaults":"",
-"dictionary":"TRAN_TIMESTAMP"}
-,{
-"code":"TRAN_TIME",
-"dataType":"NUMBER",
-"lengths":"11",
-"precision":"0",
-"M":false,"P":false,"comment":"½»Ò×Ê±¼ä",
-"defaults":"",
-"dictionary":"TRAN_TIME"}
-],"table_space":"core_data",
-"dbType":"upright",
-"parameter":"busi_para",
-"system":"Ensemble",
-"commentDesc":""}
+  "code":"MB_STAGE_INFO",
+  "comment":"æœŸæ¬¡ä¿¡æ¯è¡¨",
+  "attr":[{
+    "code":"ISSUE_YEAR",
+    "dataType":"Varchar",
+    "lengths":"4",
+    "precision":"",
+    "M":true,"P":false,"comment":"å‘è¡Œå¹´åº¦",
+    "defaults":"",
+    "dictionary":"ISSUE_YEAR"}
+  ,{
+      "code":"PROD_TYPE",
+      "dataType":"Varchar",
+      "lengths":"50",
+      "precision":"",
+      "M":true,"P":false,"comment":"äº§å“ç±»å‹",
+      "defaults":"",
+      "dictionary":"PROD_TYPE"}
+  ,{
+      "code":"CCY",
+      "dataType":"Varchar",
+      "lengths":"3",
+      "precision":"",
+      "M":true,"P":false,"comment":"å¸ç§",
+      "defaults":"",
+      "dictionary":"CCY"}
+  ,{
+      "code":"STAGE_CODE",
+      "dataType":"Varchar",
+      "lengths":"50",
+      "precision":"",
+      "M":true,"P":true,"comment":"æœŸæ¬¡ä»£ç ",
+      "defaults":"",
+      "dictionary":"STAGE_CODE"}
+  ,{
+      "code":"ISSUE_AMT",
+      "dataType":"NUMBER",
+      "lengths":"17",
+      "precision":"2",
+      "M":true,"P":false,"comment":"æœŸæ¬¡å‘è¡Œé¢åº¦",
+      "defaults":"",
+      "dictionary":"ISSUE_AMT"}
+  ,{
+      "code":"USED_AMT",
+      "dataType":"NUMBER",
+      "lengths":"17",
+      "precision":"2",
+      "M":false,"P":false,"comment":"æœŸæ¬¡å·²ä½¿ç”¨é¢åº¦",
+      "defaults":"",
+      "dictionary":"USED_AMT"}
+  ,{
+      "code":"PREV_USED_AMT",
+      "dataType":"NUMBER",
+      "lengths":"17",
+      "precision":"2",
+      "M":false,"P":false,"comment":"ä¸Šæ¬¡å·²ä½¿ç”¨é¢åº¦",
+      "defaults":"",
+      "dictionary":"PREV_USED_AMT"}
+  ,{
+      "code":"LAST_CHANGE_DATE",
+      "dataType":"Varchar",
+      "lengths":"8",
+      "precision":"",
+      "M":false,"P":false,"comment":"ä¸Šæ¬¡æ›´æ–°æ—¥æœŸ",
+      "defaults":"",
+      "dictionary":"LAST_CHANGE_DATE"}
+  ,{
+      "code":"TRAN_TIMESTAMP",
+      "dataType":"Varchar",
+      "lengths":"17",
+      "precision":"",
+      "M":false,"P":false,"comment":"äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults":"",
+      "dictionary":"TRAN_TIMESTAMP"}
+  ,{
+      "code":"TRAN_TIME",
+      "dataType":"NUMBER",
+      "lengths":"11",
+      "precision":"0",
+      "M":false,"P":false,"comment":"äº¤æ˜“æ—¶é—´",
+      "defaults":"",
+      "dictionary":"TRAN_TIME"}
+  ],"table_space":"core_data",
+  "dbType":"upright",
+  "parameter":"busi_para",
+  "system":"Ensemble",
+  "commentDesc":""}

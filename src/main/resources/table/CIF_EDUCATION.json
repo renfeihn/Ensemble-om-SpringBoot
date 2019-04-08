@@ -1,59 +1,59 @@
 {
-    "code": "CIF_EDUCATION",
-    "comment": "½ÌÓı³Ì¶È",
-    "attr": [        {
-            "code": "EDUCATION",
-            "dataType": "Varchar",
-            "lengths": "3",
-            "precision": "",
-            "M": true,            "P": true,            "comment": "½ÌÓı³Ì¶È±àºÅ",
-            "defaults": "",
-            "dictionary": "EDUCATION",
-            "column": "Ñ§Àú Êı¾İÀ´Ô´ÓÚ²ÎÊı±íCIF_EDUCATION±í",
-            "scope": ""        }
-,        {
-            "code": "EDUCATION_DESC",
-            "dataType": "Varchar",
-            "lengths": "30",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "½ÌÓı³Ì¶ÈÃèÊö",
-            "defaults": "",
-            "dictionary": "EDUCATION_DESC",
-            "column": "½ÌÓı³Ì¶ÈÃèÊö",
-            "scope": ""        }
-,        {
-            "code": "COMPANY",
-            "dataType": "Varchar",
-            "lengths": "20",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "·¨ÈË´úÂë",
-            "defaults": "",
-            "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIMESTAMP",
-            "dataType": "Varchar",
-            "lengths": "17",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä´Á",
-            "defaults": "",
-            "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIME",
-            "dataType": "Number",
-            "lengths": "11",
-            "precision": "0",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä",
-            "defaults": "",
-            "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
-            "scope": ""        }
-    ],    "table_space": "core_data",
-    "dbType": "upright",
-    "parameter": "busi_para",
-    "system": "Ensemble",
-    "commentDesc": "¶¨Òå¿Í»§µÄÊÜ½ÌÓı³Ì¶È",
-"moduleType":"¿Í»§²ÎÊı"}
+  "code": "CIF_EDUCATION",
+  "comment": "æ•™è‚²ç¨‹åº¦",
+  "attr": [        {
+    "code": "EDUCATION",
+    "dataType": "Varchar",
+    "lengths": "3",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "æ•™è‚²ç¨‹åº¦ç¼–å·",
+    "defaults": "",
+    "dictionary": "EDUCATION",
+    "column": "å­¦å† æ•°æ®æ¥æºäºå‚æ•°è¡¨CIF_EDUCATIONè¡¨",
+    "scope": ""        }
+  ,        {
+      "code": "EDUCATION_DESC",
+      "dataType": "Varchar",
+      "lengths": "30",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "æ•™è‚²ç¨‹åº¦æè¿°",
+      "defaults": "",
+      "dictionary": "EDUCATION_DESC",
+      "column": "æ•™è‚²ç¨‹åº¦æè¿°",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "æ³•äººä»£ç ",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "æ³•äººä»£ç ",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "æ—¶é—´æˆ³",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "äº¤æ˜“æ—¶é—´",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": "å®šä¹‰å®¢æˆ·çš„å—æ•™è‚²ç¨‹åº¦",
+  "moduleType":"å®¢æˆ·å‚æ•°"}

@@ -1,6 +1,6 @@
 {
     "code": "FM_BRANCH_CCY",
-    "comment": "»ú¹¹±ÒÖÖ±í",
+    "comment": "æœºæ„å¸ç§è¡¨",
     "attr": [
         {
             "dictionary": "BRANCH",
@@ -10,8 +10,8 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "»ú¹¹´úÂë",
-            "scope": "È¡ÖµÎªFM_BRANCH.BRANCH",
+            "comment": "æœºæ„ä»£ç ",
+            "scope": "å–å€¼ä¸ºFM_BRANCH.BRANCH",
             "M": true,
             "P": true
         },
@@ -23,8 +23,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "±ÒÖÖ",
-            "scope": "È¡ÖµÎªFM_CURRENCY.CCY",
+            "comment": "å¸ç§",
+            "scope": "å–å€¼ä¸ºFM_CURRENCY.CCY",
             "M": true,
             "P": true
         },
@@ -35,7 +35,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË",
+            "comment": "æ³•äºº",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -47,7 +47,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -59,7 +59,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -70,5 +70,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "¹«¹²²ÎÊı"
+    "moduleType": "å…¬å…±å‚æ•°"
 }

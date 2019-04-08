@@ -1,6 +1,6 @@
 {
     "code": "FM_STATE",
-    "comment": "Ê¡¡¢ÖİĞÅÏ¢±í",
+    "comment": "çœã€å·ä¿¡æ¯è¡¨",
     "attr": [
         {
             "code": "COUNTRY",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "¹ú¼Ò",
+            "comment": "å›½å®¶",
             "defaults": "",
             "dictionary": "COUNTRY",
             "scope": "FM_CURRENCY.COUNTRY"
@@ -21,7 +21,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "Ê¡",
+            "comment": "çœ",
             "defaults": "",
             "dictionary": "STATE",
             "scope": ""
@@ -33,7 +33,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "Ê¡Ãû³Æ",
+            "comment": "çœåç§°",
             "defaults": "",
             "dictionary": "STATE_DESC",
             "scope": ""
@@ -46,8 +46,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "ÖÜÄ©1 FRI  ÖÜÎå MON  ÖÜÒ» SAT  ÖÜÁù SUN  ÖÜÈÕ THU  ÖÜËÄ TUE  ÖÜ¶ş WED  ÖÜÈı",
-            "scope": "FRI  ÖÜÎå MON  ÖÜÒ» SAT  ÖÜÁù SUN  ÖÜÈÕ THU  ÖÜËÄ TUE  ÖÜ¶ş WED  ÖÜÈı",
+            "comment": "å‘¨æœ«1 FRI  å‘¨äº” MON  å‘¨ä¸€ SAT  å‘¨å…­ SUN  å‘¨æ—¥ THU  å‘¨å›› TUE  å‘¨äºŒ WED  å‘¨ä¸‰",
+            "scope": "FRI  å‘¨äº” MON  å‘¨ä¸€ SAT  å‘¨å…­ SUN  å‘¨æ—¥ THU  å‘¨å›› TUE  å‘¨äºŒ WED  å‘¨ä¸‰",
             "M": false,
             "P": false
         },
@@ -59,8 +59,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "ÖÜÄ©2 FRI  ÖÜÎå MON  ÖÜÒ» SAT  ÖÜÁù SUN  ÖÜÈÕ THU  ÖÜËÄ TUE  ÖÜ¶ş WED  ÖÜÈı",
-            "scope": "FRI  ÖÜÎå MON  ÖÜÒ» SAT  ÖÜÁù SUN  ÖÜÈÕ THU  ÖÜËÄ TUE  ÖÜ¶ş WED  ÖÜÈı",
+            "comment": "å‘¨æœ«2 FRI  å‘¨äº” MON  å‘¨ä¸€ SAT  å‘¨å…­ SUN  å‘¨æ—¥ THU  å‘¨å›› TUE  å‘¨äºŒ WED  å‘¨ä¸‰",
+            "scope": "FRI  å‘¨äº” MON  å‘¨ä¸€ SAT  å‘¨å…­ SUN  å‘¨æ—¥ THU  å‘¨å›› TUE  å‘¨äºŒ WED  å‘¨ä¸‰",
             "M": false,
             "P": false
         },
@@ -71,7 +71,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË",
+            "comment": "æ³•äºº",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -83,7 +83,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -95,7 +95,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -106,5 +106,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "¹«¹²²ÎÊı"
+    "moduleType": "å…¬å…±å‚æ•°"
 }

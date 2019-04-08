@@ -1,41 +1,41 @@
 {
-"code":"MB_PURPOSE",
-"comment":"×Ê½ğÓÃÍ¾",
-"attr":[{
-"code":"PURPOSE",
-"dataType":"Varchar",
-"lengths":"6",
-"precision":"",
-"M":true,"P":true,"comment":"Ä¿µÄ",
-"defaults":"",
-"dictionary":"PURPOSE"}
-,{
-"code":"PURPOSE_DESC",
-"dataType":"Varchar",
-"lengths":"30",
-"precision":"",
-"M":true,"P":false,"comment":"ÃèÊö",
-"defaults":"",
-"dictionary":"PURPOSE_DESC"}
-,{
-"code":"TRAN_TIMESTAMP",
-"dataType":"Varchar",
-"lengths":"17",
-"precision":"",
-"M":false,"P":false,"comment":"½»Ò×Ê±¼ä´Á",
-"defaults":"",
-"dictionary":"TRAN_TIMESTAMP"}
-,{
-"code":"TRAN_TIME",
-"dataType":"NUMBER",
-"lengths":"11",
-"precision":"0",
-"M":false,"P":false,"comment":"½»Ò×Ê±¼ä",
-"defaults":"",
-"dictionary":"TRAN_TIME"}
-],"table_space":"core_data",
-"dbType":"upright",
-"parameter":"busi_para",
-"system":"Ensemble",
-"commentDesc":"",
-"moduleType":"ÕË»§²ÎÊı"}
+  "code":"MB_PURPOSE",
+  "comment":"èµ„é‡‘ç”¨é€”",
+  "attr":[{
+    "code":"PURPOSE",
+    "dataType":"Varchar",
+    "lengths":"6",
+    "precision":"",
+    "M":true,"P":true,"comment":"ç›®çš„",
+    "defaults":"",
+    "dictionary":"PURPOSE"}
+  ,{
+      "code":"PURPOSE_DESC",
+      "dataType":"Varchar",
+      "lengths":"30",
+      "precision":"",
+      "M":true,"P":false,"comment":"æè¿°",
+      "defaults":"",
+      "dictionary":"PURPOSE_DESC"}
+  ,{
+      "code":"TRAN_TIMESTAMP",
+      "dataType":"Varchar",
+      "lengths":"17",
+      "precision":"",
+      "M":false,"P":false,"comment":"äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults":"",
+      "dictionary":"TRAN_TIMESTAMP"}
+  ,{
+      "code":"TRAN_TIME",
+      "dataType":"NUMBER",
+      "lengths":"11",
+      "precision":"0",
+      "M":false,"P":false,"comment":"äº¤æ˜“æ—¶é—´",
+      "defaults":"",
+      "dictionary":"TRAN_TIME"}
+  ],"table_space":"core_data",
+  "dbType":"upright",
+  "parameter":"busi_para",
+  "system":"Ensemble",
+  "commentDesc":"",
+  "moduleType":"è´¦æˆ·å‚æ•°"}

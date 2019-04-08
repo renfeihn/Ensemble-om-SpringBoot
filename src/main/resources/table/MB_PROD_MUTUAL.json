@@ -4,7 +4,7 @@
     "parameter": "busi_para",
     "table_space": "core_data",
     "code": "MB_PROD_MUTUAL",
-    "comment": "²úÆ·»¥³â²ÎÊı±í",
+    "comment": "äº§å“äº’æ–¥å‚æ•°è¡¨",
     "attr": [
         {
             "code": "CLIENT_TYPE",
@@ -13,11 +13,11 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "¿Í»§ÀàĞÍ",
+            "comment": "å®¢æˆ·ç±»å‹",
             "defaults": "",
             "scope": "",
             "dictionary": "CLIENT_TYPE",
-            "column": "¿Í»§ÀàĞÍ"
+            "column": "å®¢æˆ·ç±»å‹"
         },
         {
             "code": "PROD_TYPE",
@@ -26,11 +26,11 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "²úÆ·ÀàĞÍ ",
+            "comment": "äº§å“ç±»å‹ ",
             "defaults": "",
-            "scope": "È¡ÖµÓÚMB_PROD_TYPE.PROD_TYPE",
+            "scope": "å–å€¼äºMB_PROD_TYPE.PROD_TYPE",
             "dictionary": "PROD_TYPE",
-            "column": "²úÆ·ÀàĞÍ "
+            "column": "äº§å“ç±»å‹ "
         },
         {
             "code": "MUT_PROD_TYPE",
@@ -39,11 +39,11 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "»¥³â²úÆ·ÀàĞÍ",
+            "comment": "äº’æ–¥äº§å“ç±»å‹",
             "defaults": "",
             "scope": "",
             "dictionary": "MUT_PROD_TYPE",
-            "column": "»¥³â²úÆ·ÀàĞÍ"
+            "column": "äº’æ–¥äº§å“ç±»å‹"
         },
         {
             "code": "PROD_RELATION_TYPE",
@@ -52,13 +52,13 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "¹ØÏµÀàĞÍ",
+            "comment": "å…³ç³»ç±»å‹",
             "defaults": "'MUT'",
             "scope": "",
             "dictionary": "PROD_RELATION_TYPE",
-            "column": "¹ØÏµÀàĞÍ"
+            "column": "å…³ç³»ç±»å‹"
         }
     ],
     "indexs": [],
-    "commentDesc": "²úÆ·»¥³â²ÎÊı±í"
+    "commentDesc": "äº§å“äº’æ–¥å‚æ•°è¡¨"
 }

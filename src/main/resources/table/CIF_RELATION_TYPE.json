@@ -1,159 +1,159 @@
 {
-    "code": "CIF_RELATION_TYPE",
-    "comment": "¿Í»§¹ØÏµÀàĞÍ",
-    "attr": [        {
-            "code": "RELATION_TYPE",
-            "dataType": "Varchar",
-            "lengths": "10",
-            "precision": "",
-            "M": true,            "P": true,            "comment": "ÀàĞÍ",
-            "defaults": "",
-            "dictionary": "RELATION_TYPE",
-            "column": "ÓëÎÒĞĞ¹ØÏµ",
-            "scope": ""        }
-,        {
-            "code": "RELATION_DESC",
-            "dataType": "Varchar",
-            "lengths": "100",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "ÀàĞÍÃèÊö",
-            "defaults": "",
-            "dictionary": "RELATION_DESC",
-            "column": "ÀàĞÍÃèÊö",
-            "scope": ""        }
-,        {
-            "code": "COUNTER_REL",
-            "dataType": "Varchar",
-            "lengths": "15",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "·´Ïà¹ØÏµÀàĞÍ È¡Öµ FM_RELATION_TYPE.RELATION_TYPE",
-            "defaults": "",
-            "dictionary": "COUNTER_REL",
-            "column": "·´Ïà¹ØÏµÀàĞÍ È¡Öµ FM_RELATION_TYPE.RELATION_TYPE",
-            "scope": ""        }
-,        {
-            "code": "EXPOSURE",
-            "dataType": "Varchar",
-            "lengths": "1",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "·çÏÕ Y/N",
-            "defaults": "",
-            "dictionary": "EXPOSURE",
-            "column": "·çÏÕ Y/N",
-            "scope": ""        }
-,        {
-            "code": "EQUITY",
-            "dataType": "Varchar",
-            "lengths": "1",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "¹ÉÈ¨ Y/N",
-            "defaults": "",
-            "dictionary": "EQUITY",
-            "column": "¹ÉÈ¨ Y/N",
-            "scope": ""        }
-,        {
-            "code": "JOINT_ACCT",
-            "dataType": "Varchar",
-            "lengths": "1",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "ÁªºÏÕÊ»§ Y/N",
-            "defaults": "",
-            "dictionary": "JOINT_ACCT",
-            "column": "ÁªºÏÕÊ»§ Y/N",
-            "scope": ""        }
-,        {
-            "code": "AUTHORISED",
-            "dataType": "Varchar",
-            "lengths": "1",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "ÊÚÈ¨·½ Y/N",
-            "defaults": "",
-            "dictionary": "AUTHORISED",
-            "column": "ÊÚÈ¨·½ Y/N",
-            "scope": ""        }
-,        {
-            "code": "EMPLOYMENT",
-            "dataType": "Varchar",
-            "lengths": "1",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "¹ÍÓ¶ Y/N",
-            "defaults": "",
-            "dictionary": "EMPLOYMENT",
-            "column": "¹ÍÓ¶ Y/N",
-            "scope": ""        }
-,        {
-            "code": "RELATIVE",
-            "dataType": "Varchar",
-            "lengths": "1",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "Ç×Æİ Y/N",
-            "defaults": "",
-            "dictionary": "RELATIVE",
-            "column": "Ç×Æİ Y/N",
-            "scope": ""        }
-,        {
-            "code": "SYMMENTRIC",
-            "dataType": "Varchar",
-            "lengths": "1",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "¶ÔµÈ Y/N",
-            "defaults": "",
-            "dictionary": "SYMMENTRIC",
-            "column": "¶ÔµÈ Y/N",
-            "scope": ""        }
-,        {
-            "code": "JOIN_COLLAT",
-            "dataType": "Varchar",
-            "lengths": "1",
-            "precision": "",
-            "M": true,            "P": false,            "comment": "ÁªºÏÌå Y/N",
-            "defaults": "",
-            "dictionary": "JOIN_COLLAT",
-            "column": "ÁªºÏÌå Y/N",
-            "scope": ""        }
-,        {
-            "code": "RELATION_TYPE_FLAG",
-            "dataType": "Varchar",
-            "lengths": "1",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "¹ØÏµÀàĞÍ±êÊ¶ 1-¸öÈË-¸öÈË 2-¸öÈË-·Ç¸öÈË 3-·Ç¸öÈË-·Ç¸öÈË 4-·Ç¸öÈË-¸öÈË 5-¸öÈË-·Ç¸öÈË »ò ·Ç¸öÈË-·Ç¸öÈË 6-·Ç¸öÈË-·Ç¸öÈË »ò ·Ç¸öÈË-¸öÈË",
-            "defaults": "",
-            "dictionary": "RELATION_TYPE_FLAG",
-            "column": "¹ØÏµÀàĞÍ±êÊ¶ 1-¸öÈË-¸öÈË 2-¸öÈË-·Ç¸öÈË 3-·Ç¸öÈË-·Ç¸öÈË 4-·Ç¸öÈË-¸öÈË 5-¸öÈË-·Ç¸öÈË »ò ·Ç¸öÈË-·Ç¸öÈË 6-·Ç¸öÈË-·Ç¸öÈË »ò ·Ç¸öÈË-¸öÈË",
-            "scope": ""        }
-,        {
-            "code": "COMPANY",
-            "dataType": "Varchar",
-            "lengths": "20",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "·¨ÈË´úÂë",
-            "defaults": "",
-            "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIMESTAMP",
-            "dataType": "Varchar",
-            "lengths": "17",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä´Á",
-            "defaults": "",
-            "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIME",
-            "dataType": "Number",
-            "lengths": "11",
-            "precision": "0",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä",
-            "defaults": "",
-            "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
-            "scope": ""        }
-    ],    "table_space": "core_data",
-    "dbType": "upright",
-    "parameter": "busi_para",
-    "system": "Ensemble",
-    "commentDesc": "¸Ã²ÎÊıÓÃÓÚ¶¨Òå¿Í»§Óë¿Í»§¼äµÄ¹ØÏµ£¬Èç¹É¶Ô¹ØÏµ£¬¸¸×Ó¹ØÏµµÈ",
-"moduleType":"¿Í»§²ÎÊı"}
+  "code": "CIF_RELATION_TYPE",
+  "comment": "å®¢æˆ·å…³ç³»ç±»å‹",
+  "attr": [        {
+    "code": "RELATION_TYPE",
+    "dataType": "Varchar",
+    "lengths": "10",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "ç±»å‹",
+    "defaults": "",
+    "dictionary": "RELATION_TYPE",
+    "column": "ä¸æˆ‘è¡Œå…³ç³»",
+    "scope": ""        }
+  ,        {
+      "code": "RELATION_DESC",
+      "dataType": "Varchar",
+      "lengths": "100",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "ç±»å‹æè¿°",
+      "defaults": "",
+      "dictionary": "RELATION_DESC",
+      "column": "ç±»å‹æè¿°",
+      "scope": ""        }
+  ,        {
+      "code": "COUNTER_REL",
+      "dataType": "Varchar",
+      "lengths": "15",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "åç›¸å…³ç³»ç±»å‹ å–å€¼ FM_RELATION_TYPE.RELATION_TYPE",
+      "defaults": "",
+      "dictionary": "COUNTER_REL",
+      "column": "åç›¸å…³ç³»ç±»å‹ å–å€¼ FM_RELATION_TYPE.RELATION_TYPE",
+      "scope": ""        }
+  ,        {
+      "code": "EXPOSURE",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "é£é™© Y/N",
+      "defaults": "",
+      "dictionary": "EXPOSURE",
+      "column": "é£é™© Y/N",
+      "scope": ""        }
+  ,        {
+      "code": "EQUITY",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "è‚¡æƒ Y/N",
+      "defaults": "",
+      "dictionary": "EQUITY",
+      "column": "è‚¡æƒ Y/N",
+      "scope": ""        }
+  ,        {
+      "code": "JOINT_ACCT",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "è”åˆå¸æˆ· Y/N",
+      "defaults": "",
+      "dictionary": "JOINT_ACCT",
+      "column": "è”åˆå¸æˆ· Y/N",
+      "scope": ""        }
+  ,        {
+      "code": "AUTHORISED",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "æˆæƒæ–¹ Y/N",
+      "defaults": "",
+      "dictionary": "AUTHORISED",
+      "column": "æˆæƒæ–¹ Y/N",
+      "scope": ""        }
+  ,        {
+      "code": "EMPLOYMENT",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "é›‡ä½£ Y/N",
+      "defaults": "",
+      "dictionary": "EMPLOYMENT",
+      "column": "é›‡ä½£ Y/N",
+      "scope": ""        }
+  ,        {
+      "code": "RELATIVE",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "äº²æˆš Y/N",
+      "defaults": "",
+      "dictionary": "RELATIVE",
+      "column": "äº²æˆš Y/N",
+      "scope": ""        }
+  ,        {
+      "code": "SYMMENTRIC",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "å¯¹ç­‰ Y/N",
+      "defaults": "",
+      "dictionary": "SYMMENTRIC",
+      "column": "å¯¹ç­‰ Y/N",
+      "scope": ""        }
+  ,        {
+      "code": "JOIN_COLLAT",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "è”åˆä½“ Y/N",
+      "defaults": "",
+      "dictionary": "JOIN_COLLAT",
+      "column": "è”åˆä½“ Y/N",
+      "scope": ""        }
+  ,        {
+      "code": "RELATION_TYPE_FLAG",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "å…³ç³»ç±»å‹æ ‡è¯† 1-ä¸ªäºº-ä¸ªäºº 2-ä¸ªäºº-éä¸ªäºº 3-éä¸ªäºº-éä¸ªäºº 4-éä¸ªäºº-ä¸ªäºº 5-ä¸ªäºº-éä¸ªäºº æˆ– éä¸ªäºº-éä¸ªäºº 6-éä¸ªäºº-éä¸ªäºº æˆ– éä¸ªäºº-ä¸ªäºº",
+      "defaults": "",
+      "dictionary": "RELATION_TYPE_FLAG",
+      "column": "å…³ç³»ç±»å‹æ ‡è¯† 1-ä¸ªäºº-ä¸ªäºº 2-ä¸ªäºº-éä¸ªäºº 3-éä¸ªäºº-éä¸ªäºº 4-éä¸ªäºº-ä¸ªäºº 5-ä¸ªäºº-éä¸ªäºº æˆ– éä¸ªäºº-éä¸ªäºº 6-éä¸ªäºº-éä¸ªäºº æˆ– éä¸ªäºº-ä¸ªäºº",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "æ³•äººä»£ç ",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "æ³•äººä»£ç ",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "æ—¶é—´æˆ³",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "äº¤æ˜“æ—¶é—´",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": "è¯¥å‚æ•°ç”¨äºå®šä¹‰å®¢æˆ·ä¸å®¢æˆ·é—´çš„å…³ç³»ï¼Œå¦‚è‚¡å¯¹å…³ç³»ï¼Œçˆ¶å­å…³ç³»ç­‰",
+  "moduleType":"å®¢æˆ·å‚æ•°"}

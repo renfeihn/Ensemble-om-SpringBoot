@@ -1,6 +1,6 @@
 {
     "code": "LM_TRAN_LIMIT_LINK",
-    "comment": "ÏŞ¶îÁ´½Ó±í",
+    "comment": "é™é¢é“¾æ¥è¡¨",
     "attr": [
         {
             "code": "LIMIT_REF",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÏŞ¶î±àÂë",
+            "comment": "é™é¢ç¼–ç ",
             "defaults": "",
             "dictionary": "LIMIT_REF",
             "scope": ""
@@ -21,7 +21,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "½»Ò×ÀàĞÍ ¶à½»Ò×ÀàĞÍ£¨ÁªºÏÆğÀ´Ê¹ÓÃÍ³Ò»¶î¶È£©,²»ÏŞÖÆÎªALLMB_TRAN_DEF.TRAN_TYPE",
+            "comment": "äº¤æ˜“ç±»å‹ å¤šäº¤æ˜“ç±»å‹ï¼ˆè”åˆèµ·æ¥ä½¿ç”¨ç»Ÿä¸€é¢åº¦ï¼‰,ä¸é™åˆ¶ä¸ºALLMB_TRAN_DEF.TRAN_TYPE",
             "defaults": "",
             "dictionary": "TRAN_TYPE_LINK",
             "scope": ""
@@ -33,7 +33,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÇşµÀ ¶àÇşµÀÀàĞÍ£¨ÁªºÏÇşµÀÊ¹ÓÃÍ³Ò»¶î¶È£©ALL±íÊ¾ËùÓĞÇşµÀ FM_CHANNEL.CHANNEL",
+            "comment": "æ¸ é“ å¤šæ¸ é“ç±»å‹ï¼ˆè”åˆæ¸ é“ä½¿ç”¨ç»Ÿä¸€é¢åº¦ï¼‰ALLè¡¨ç¤ºæ‰€æœ‰æ¸ é“ FM_CHANNEL.CHANNEL",
             "defaults": "",
             "dictionary": "SOURCE_TYPE_LINK",
             "scope": ""
@@ -45,7 +45,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "¿Í»§ÀàĞÍ",
+            "comment": "å®¢æˆ·ç±»å‹",
             "defaults": "",
             "dictionary": "CLIENT_TYPE",
             "scope": "CIF_CLIENT_TYPE.CLIENT_TYPE"
@@ -57,10 +57,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "¿Í»§¾³ÄÚÍâ±êÖ¾ ",
+            "comment": "å®¢æˆ·å¢ƒå†…å¤–æ ‡å¿— ",
             "defaults": "",
             "dictionary": "INLAND_IND",
-            "scope": "I:¾³ÄÚ,O:¾³Íâ,ALL:²»ÏŞÖÆ"
+            "scope": "I:å¢ƒå†…,O:å¢ƒå¤–,ALL:ä¸é™åˆ¶"
         },
         {
             "code": "AREA_CODE_LINK",
@@ -69,7 +69,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "µØÇøÂë ½»Ò×µØÇøÂë£¨¿¨ÏµÍ³ĞèÒª£©£¬²»ÏŞÖÆÎªALL FM_STATE.STATE",
+            "comment": "åœ°åŒºç  äº¤æ˜“åœ°åŒºç ï¼ˆå¡ç³»ç»Ÿéœ€è¦ï¼‰ï¼Œä¸é™åˆ¶ä¸ºALL FM_STATE.STATE",
             "defaults": "",
             "dictionary": "AREA_CODE_LINK",
             "scope": ""
@@ -81,10 +81,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "²úÆ·ÀàĞÍ MB_PROD_TYPE.PROD_TYPE",
+            "comment": "äº§å“ç±»å‹ MB_PROD_TYPE.PROD_TYPE",
             "defaults": "",
             "dictionary": "PROD_TYPE",
-            "scope": "È¡ÖµÓÚMB_PROD_TYPE.PROD_TYPE"
+            "scope": "å–å€¼äºMB_PROD_TYPE.PROD_TYPE"
         },
         {
             "code": "BALANCE_TYPE",
@@ -93,7 +93,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Óà¶îÀàĞÍ  CA  TT,²»ÏŞÖÆÎªALL",
+            "comment": "ä½™é¢ç±»å‹  CA  TT,ä¸é™åˆ¶ä¸ºALL",
             "defaults": "",
             "dictionary": "BALANCE_TYPE",
             "scope": ""
@@ -105,10 +105,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "ÊÇ·ñ¸½Êô¿¨",
+            "comment": "æ˜¯å¦é™„å±å¡",
             "defaults": "",
             "dictionary": "IS_APP_FLAG",
-            "scope": "Y:ÊÇ,N:·ñ"
+            "scope": "Y:æ˜¯,N:å¦"
         },
         {
             "dictionary": "IS_CONVENT",
@@ -130,10 +130,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "»ú¹¹ºÅ",
+            "comment": "æœºæ„å·",
             "defaults": "",
             "dictionary": "BRANCH_LINK",
-            "scope": "¶à»ú¹¹ºÅ,²»ÏŞÖÆÎªALLFM_BRANCH.BRANCH"
+            "scope": "å¤šæœºæ„å·,ä¸é™åˆ¶ä¸ºALLFM_BRANCH.BRANCH"
         },
         {
             "dictionary": "TRAN_CCY_LINK",
@@ -155,7 +155,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ê±¼ä´Á",
+            "comment": "æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -167,7 +167,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -178,5 +178,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "ÏŞ¶î²ÎÊı"
+    "moduleType": "é™é¢å‚æ•°"
 }

@@ -1,6 +1,6 @@
 {
     "code": "IRL_BASIS_RATE",
-    "comment": "»ù×¼ÀûÂÊĞÅÏ¢±í",
+    "comment": "åŸºå‡†åˆ©ç‡ä¿¡æ¯è¡¨",
     "attr": [
         {
             "dictionary": "INT_BASIS",
@@ -10,8 +10,8 @@
             "lengths": "2",
             "precision": "",
             "defaults": "",
-            "comment": "»ù×¼ÀûÂÊÀàĞÍ´úÂë",
-            "scope": "È¡×ÔIRL_INT_BASIS.INT_BASIS",
+            "comment": "åŸºå‡†åˆ©ç‡ç±»å‹ä»£ç ",
+            "scope": "å–è‡ªIRL_INT_BASIS.INT_BASIS",
             "M": true,
             "P": true
         },
@@ -22,7 +22,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "±ÒÖÖ",
+            "comment": "å¸ç§",
             "defaults": "",
             "dictionary": "CCY",
             "scope": "FM_CURRENCY.CCY"
@@ -34,7 +34,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "ÉúĞ§ÈÕÆÚ",
+            "comment": "ç”Ÿæ•ˆæ—¥æœŸ",
             "defaults": "",
             "dictionary": "EFFECT_DATE",
             "scope": ""
@@ -46,7 +46,7 @@
             "precision": "8",
             "M": true,
             "P": false,
-            "comment": "ÀûÂÊ",
+            "comment": "åˆ©ç‡",
             "defaults": "",
             "dictionary": "INT_BASIS_RATE",
             "scope": ""
@@ -58,7 +58,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -70,7 +70,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -82,7 +82,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""

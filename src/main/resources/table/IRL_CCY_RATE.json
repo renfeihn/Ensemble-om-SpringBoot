@@ -1,6 +1,6 @@
 {
     "code": "IRL_CCY_RATE",
-    "comment": "»ãÂÊÅÆ¼Û±í",
+    "comment": "æ±‡ç‡ç‰Œä»·è¡¨",
     "attr": [
         {
             "code": "CCY",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "±ÒÖÖ",
+            "comment": "å¸ç§",
             "defaults": "",
             "dictionary": "CCY",
             "scope": "FM_CURRENCY.CCY"
@@ -21,7 +21,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "»ú¹¹",
+            "comment": "æœºæ„",
             "defaults": "",
             "dictionary": "BRANCH",
             "scope": "FM_BRANCH.BRANCH"
@@ -33,7 +33,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "»ãÂÊÀàĞÍ",
+            "comment": "æ±‡ç‡ç±»å‹",
             "defaults": "",
             "dictionary": "RATE_TYPE",
             "scope": ""
@@ -45,7 +45,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "ÉúĞ§ÈÕÆÚ",
+            "comment": "ç”Ÿæ•ˆæ—¥æœŸ",
             "defaults": "",
             "dictionary": "EFFECT_DATE",
             "scope": ""
@@ -57,7 +57,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "ÉúĞ§Ê±¼ä",
+            "comment": "ç”Ÿæ•ˆæ—¶é—´",
             "defaults": "",
             "dictionary": "EFFECT_TIME",
             "scope": ""
@@ -70,8 +70,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÅÆ¼ÛÀàĞÍ",
-            "scope": "D:Ö±½Ó,I:¼ä½Ó  ",
+            "comment": "ç‰Œä»·ç±»å‹",
+            "scope": "D:ç›´æ¥,I:é—´æ¥",
             "M": true,
             "P": false
         },
@@ -82,7 +82,7 @@
             "precision": "8",
             "M": true,
             "P": false,
-            "comment": "ÖĞ¼ä¼Û",
+            "comment": "ä¸­é—´ä»·",
             "defaults": "",
             "dictionary": "MIDDLE_RATE",
             "scope": ""
@@ -94,7 +94,7 @@
             "precision": "8",
             "M": true,
             "P": false,
-            "comment": "»ãÂò¼Û",
+            "comment": "æ±‡ä¹°ä»·",
             "defaults": "",
             "dictionary": "EXCH_BUY_RATE",
             "scope": ""
@@ -107,7 +107,7 @@
             "lengths": "15",
             "precision": "",
             "defaults": "",
-            "comment": "»ãÂô¼Û",
+            "comment": "æ±‡å–ä»·",
             "scope": "",
             "M": true,
             "P": false
@@ -119,7 +119,7 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "ÑëĞĞ²Î¿¼»ãÂÊ",
+            "comment": "å¤®è¡Œå‚è€ƒæ±‡ç‡",
             "defaults": "",
             "dictionary": "CENTRAL_BANK_RATE",
             "scope": ""
@@ -131,7 +131,7 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "³®Âò¼Û",
+            "comment": "é’ä¹°ä»·",
             "defaults": "",
             "dictionary": "NOTES_BUY_RATE",
             "scope": ""
@@ -143,7 +143,7 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "³®Âô¼Û",
+            "comment": "é’å–ä»·",
             "defaults": "",
             "dictionary": "NOTES_SELL_RATE",
             "scope": ""
@@ -155,7 +155,7 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "×î´ó¸¡¶¯µã",
+            "comment": "æœ€å¤§æµ®åŠ¨ç‚¹",
             "defaults": "",
             "dictionary": "MAX_FLOAT_RATE",
             "scope": ""
@@ -167,7 +167,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -179,7 +179,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -191,7 +191,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""

@@ -1,59 +1,59 @@
 {
-    "code": "CIF_CLASS_LEVEL",
-    "comment": "²ÎÊı±í",
-    "attr": [        {
-            "code": "CLASS_LEVEL",
-            "dataType": "Varchar",
-            "lengths": "4",
-            "precision": "",
-            "M": true,            "P": true,            "comment": "×ÛºÏÆÀ¼¶",
-            "defaults": "",
-            "dictionary": "CLASS_LEVEL",
-            "column": "×ÛºÏÆÀ¼¶  ²ÎÊı¶¨Òå±í£ºCIF_CLASS_LEVEL",
-            "scope": ""        }
-,        {
-            "code": "CLASS_LEVEL_DESC",
-            "dataType": "Varchar",
-            "lengths": "50",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "×ÛºÏÆÀ¼¶ÃèÊö",
-            "defaults": "",
-            "dictionary": "CLASS_LEVEL_DESC",
-            "column": "×ÛºÏÆÀ¼¶ÃèÊö",
-            "scope": ""        }
-,        {
-            "code": "COMPANY",
-            "dataType": "Varchar",
-            "lengths": "20",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "·¨ÈË´úÂë",
-            "defaults": "",
-            "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIMESTAMP",
-            "dataType": "Varchar",
-            "lengths": "17",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä´Á",
-            "defaults": "",
-            "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIME",
-            "dataType": "Number",
-            "lengths": "11",
-            "precision": "0",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä",
-            "defaults": "",
-            "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
-            "scope": ""        }
-    ],    "table_space": "core_data",
-    "dbType": "upright",
-    "parameter": "busi_para",
-    "system": "Ensemble",
-    "commentDesc": "¿Í»§µÄ×ÛºÏÆÀ¼¶",
-"moduleType":"¿Í»§²ÎÊı"}
+  "code": "CIF_CLASS_LEVEL",
+  "comment": "å‚æ•°è¡¨",
+  "attr": [        {
+    "code": "CLASS_LEVEL",
+    "dataType": "Varchar",
+    "lengths": "4",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "ç»¼åˆè¯„çº§",
+    "defaults": "",
+    "dictionary": "CLASS_LEVEL",
+    "column": "ç»¼åˆè¯„çº§  å‚æ•°å®šä¹‰è¡¨ï¼šCIF_CLASS_LEVEL",
+    "scope": ""        }
+  ,        {
+      "code": "CLASS_LEVEL_DESC",
+      "dataType": "Varchar",
+      "lengths": "50",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "ç»¼åˆè¯„çº§æè¿°",
+      "defaults": "",
+      "dictionary": "CLASS_LEVEL_DESC",
+      "column": "ç»¼åˆè¯„çº§æè¿°",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "æ³•äººä»£ç ",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "æ³•äººä»£ç ",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "æ—¶é—´æˆ³",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "äº¤æ˜“æ—¶é—´",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": "å®¢æˆ·çš„ç»¼åˆè¯„çº§",
+  "moduleType":"å®¢æˆ·å‚æ•°"}

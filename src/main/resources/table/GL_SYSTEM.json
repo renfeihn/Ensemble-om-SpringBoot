@@ -1,6 +1,6 @@
 {
     "code": "GL_SYSTEM",
-    "comment": "����ϵͳ������",
+    "comment": "总帐系统参数表",
     "attr": [
         {
             "code": "SEQ_NO",
@@ -9,10 +9,10 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "���",
+            "comment": "序号",
             "defaults": "",
             "dictionary": "SEQ_NO",
-            "column": "���",
+            "column": "序号",
             "scope": ""
         },
         {
@@ -22,10 +22,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "������ʷ������",
+            "comment": "总账历史保存期",
             "defaults": "",
             "dictionary": "HIST_PERIOD_NO",
-            "column": "������ʷ������",
+            "column": "总账历史保存期",
             "scope": ""
         },
         {
@@ -35,10 +35,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "������ʷ����������",
+            "comment": "总账历史保存期类型",
             "defaults": "",
             "dictionary": "HIST_PERIOD_TYPE",
-            "column": "������ʷ����������",
+            "column": "总账历史保存期类型",
             "scope": ""
         },
         {
@@ -48,10 +48,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "�����Ϣ����",
+            "comment": "最大倒起息天数",
             "defaults": "",
             "dictionary": "MAX_BACKDATE_DAY",
-            "column": "�����Ϣ����",
+            "column": "最大倒起息天数",
             "scope": ""
         },
         {
@@ -61,10 +61,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "�������Ϣ����",
+            "comment": "最大将来起息天数",
             "defaults": "",
             "dictionary": "MAX_FUTUREDATE_DAY",
-            "column": "�������Ϣ����",
+            "column": "最大将来起息天数",
             "scope": ""
         },
         {
@@ -74,10 +74,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "�������Ŀ ȡֵAC_SUBJECT",
+            "comment": "净利润科目 取值AC_SUBJECT",
             "defaults": "",
             "dictionary": "RETAIN_EARNINGS",
-            "column": "�������Ŀ ȡֵAC_SUBJECT",
+            "column": "净利润科目 取值AC_SUBJECT",
             "scope": ""
         },
         {
@@ -87,10 +87,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ӧ����Ϣ��Ŀ ȡֵAC_SUBJECT",
+            "comment": "应付利息科目 取值AC_SUBJECT",
             "defaults": "",
             "dictionary": "INT_PAYABLE",
-            "column": "Ӧ����Ϣ��Ŀ ȡֵAC_SUBJECT",
+            "column": "应付利息科目 取值AC_SUBJECT",
             "scope": ""
         },
         {
@@ -100,10 +100,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ӧ����Ϣ��Ŀ ȡֵAC_SUBJECT",
+            "comment": "应收利息科目 取值AC_SUBJECT",
             "defaults": "",
             "dictionary": "INT_RECEIVABLE",
-            "column": "Ӧ����Ϣ��Ŀ ȡֵAC_SUBJECT",
+            "column": "应收利息科目 取值AC_SUBJECT",
             "scope": ""
         },
         {
@@ -113,10 +113,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "�������˿�Ŀ ȡֵAC_SUBJECT",
+            "comment": "销户挂账科目 取值AC_SUBJECT",
             "defaults": "",
             "dictionary": "OS_CLOSE_BAL",
-            "column": "�������˿�Ŀ ȡֵAC_SUBJECT",
+            "column": "销户挂账科目 取值AC_SUBJECT",
             "scope": ""
         },
         {
@@ -126,10 +126,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "�����˻���ĩ�����Ϣ��������(��)",
+            "comment": "总账账户月末余额信息保留期限(月)",
             "defaults": "",
             "dictionary": "ACCT_HIST_PERIOD_NO",
-            "column": "�����˻���ĩ�����Ϣ��������(��)",
+            "column": "总账账户月末余额信息保留期限(月)",
             "scope": ""
         },
         {
@@ -139,10 +139,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "�Ƿ��Զ������ڲ��ʻ� Y �� N ��",
+            "comment": "是否自动创建内部帐户 Y 是 N 否",
             "defaults": "",
             "dictionary": "AUTO_INT_ACCT_CREATION",
-            "column": "�Ƿ��Զ������ڲ��ʻ� Y �� N ��",
+            "column": "是否自动创建内部帐户 Y 是 N 否",
             "scope": ""
         },
         {
@@ -152,10 +152,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "��Ϣ�ʻ����� I �ڲ� C �ͻ���",
+            "comment": "利息帐户类型 I 内部 C 客户级",
             "defaults": "",
             "dictionary": "INT_ACCT_TYPE",
-            "column": "��Ϣ�ʻ����� I �ڲ� C �ͻ���",
+            "column": "利息帐户类型 I 内部 C 客户级",
             "scope": ""
         },
         {
@@ -165,10 +165,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "˰���ʻ����� I �ڲ� C �ͻ���",
+            "comment": "税率帐户类型 I 内部 C 客户级",
             "defaults": "",
             "dictionary": "TAX_ACCT_TYPE",
-            "column": "˰���ʻ����� I �ڲ� C �ͻ���",
+            "column": "税率帐户类型 I 内部 C 客户级",
             "scope": ""
         },
         {
@@ -178,10 +178,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ĭ�ϻ������� ȡֵFM_RATE_TYPE.RATE_TYPE",
+            "comment": "默认汇率类型 取值FM_RATE_TYPE.RATE_TYPE",
             "defaults": "",
             "dictionary": "DEFAULT_RATE_TYPE",
-            "column": "���ر��ֻ�������",
+            "column": "本地币种汇率类型",
             "scope": ""
         },
         {
@@ -191,10 +191,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "��������",
+            "comment": "损益评估",
             "defaults": "",
             "dictionary": "REVAL_BY_POST",
-            "column": "��������",
+            "column": "损益评估",
             "scope": ""
         },
         {
@@ -204,10 +204,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "�Ƿ���������� Y/N",
+            "comment": "是否批处理完成 Y/N",
             "defaults": "",
             "dictionary": "IS_BATCH_FINISHED",
-            "column": "�Ƿ���������� Y/N",
+            "column": "是否批处理完成 Y/N",
             "scope": ""
         },
         {
@@ -217,10 +217,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ӫҵ˰��˰Ƶ�� ȡֵFM_PERIOD_FREQ.PERIOD_FREQ",
+            "comment": "营业税缴税频率 取值FM_PERIOD_FREQ.PERIOD_FREQ",
             "defaults": "",
             "dictionary": "TAX_FREQ",
-            "column": "Ӫҵ˰��˰Ƶ�� ȡֵFM_PERIOD_FREQ.PERIOD_FREQ",
+            "column": "营业税缴税频率 取值FM_PERIOD_FREQ.PERIOD_FREQ",
             "scope": ""
         },
         {
@@ -230,10 +230,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ӫҵ˰�¸���˰����",
+            "comment": "营业税下个缴税日期",
             "defaults": "",
             "dictionary": "NEXT_CYCLE_DATE",
-            "column": "��һ��Ϣ��",
+            "column": "下一结息日",
             "scope": ""
         },
         {
@@ -243,10 +243,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ӫҵ˰�ϸ���˰����",
+            "comment": "营业税上个缴税日期",
             "defaults": "",
             "dictionary": "PREV_CYCLE_DATE",
-            "column": "Ӫҵ˰�ϸ���˰����",
+            "column": "营业税上个缴税日期",
             "scope": ""
         },
         {
@@ -256,10 +256,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "��ʷ������ʼ����",
+            "comment": "历史数据起始日期",
             "defaults": "",
             "dictionary": "LAST_POSTING_RETENTION_DATE",
-            "column": "��ʷ������ʼ����",
+            "column": "历史数据起始日期",
             "scope": ""
         },
         {
@@ -269,10 +269,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "�����׹��ɿ�Ŀ",
+            "comment": "跨帐套过渡科目",
             "defaults": "",
             "dictionary": "INTER_ACCTG_BK",
-            "column": "�����׹��ɿ�Ŀ",
+            "column": "跨帐套过渡科目",
             "scope": ""
         },
         {
@@ -282,10 +282,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "�����ױ�־",
+            "comment": "跨帐套标志",
             "defaults": "",
             "dictionary": "TWO_BOOK",
-            "column": "�����ױ�־",
+            "column": "跨帐套标志",
             "scope": ""
         },
         {
@@ -295,10 +295,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "���������˻�������־ Y ���� N ������",
+            "comment": "允许非零账户销户标志 Y 允许 N 不允许",
             "defaults": "",
             "dictionary": "OS_CLOSE_IND",
-            "column": "���������˻�������־ Y ���� N ������",
+            "column": "允许非零账户销户标志 Y 允许 N 不允许",
             "scope": ""
         },
         {
@@ -308,10 +308,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "�Ƿ��Զ��������ײο��� Y �Զ����� N ���Զ�����",
+            "comment": "是否自动产生交易参考号 Y 自动生成 N 不自动生成",
             "defaults": "",
             "dictionary": "AUTO_REF",
-            "column": "�Ƿ��Զ��������ײο��� Y �Զ����� N ���Զ�����",
+            "column": "是否自动产生交易参考号 Y 自动生成 N 不自动生成",
             "scope": ""
         },
         {
@@ -321,10 +321,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "���ײο���ǰ׺ Ĭ��GL",
+            "comment": "交易参考号前缀 默认GL",
             "defaults": "",
             "dictionary": "REF_PREFIX",
-            "column": "���ײο���ǰ׺ Ĭ��GL",
+            "column": "交易参考号前缀 默认GL",
             "scope": ""
         },
         {
@@ -334,10 +334,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "�෨�˶༶�����¼������������������־ O-�������� B-����������",
+            "comment": "多法人多级清算分录联机或批处理处理标志 O-联机产生 B-批处理产生",
             "defaults": "",
             "dictionary": "BO_IND",
-            "column": "���ձ�־ B-���� O-����",
+            "column": "日终标志 B-日终 O-在线",
             "scope": ""
         },
         {
@@ -347,10 +347,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "�Ƿ�ϲ�������ˮ Y-����������������ˮ���ɻ�Ʒ�¼  N-����ԭʼ������ˮ���ɻ�Ʒ�¼",
+            "comment": "是否合并清算流水 Y-根据轧差后的清算流水生成会计分录  N-根据原始清算流水生成会计分录",
             "defaults": "",
             "dictionary": "BATCH_CONS_IND",
-            "column": "�Ƿ�ϲ�������ˮ Y-����������������ˮ���ɻ�Ʒ�¼  N-����ԭʼ������ˮ���ɻ�Ʒ�¼",
+            "column": "是否合并清算流水 Y-根据轧差后的清算流水生成会计分录  N-根据原始清算流水生成会计分录",
             "scope": ""
         },
         {
@@ -360,10 +360,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "�Ƿ�ϲ������¼ Y-�ϲ� N-���ϲ�",
+            "comment": "是否合并清算分录 Y-合并 N-不合并",
             "defaults": "",
             "dictionary": "MULTISETTLE_IND",
-            "column": "�Ƿ�ϲ������¼ Y-�ϲ� N-���ϲ�",
+            "column": "是否合并清算分录 Y-合并 N-不合并",
             "scope": ""
         },
         {
@@ -373,10 +373,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "���˴���",
+            "comment": "法人代码",
             "defaults": "",
             "dictionary": "COMPANY",
-            "column": "���˴���",
+            "column": "法人代码",
             "scope": ""
         },
         {
@@ -386,10 +386,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "��һ��������",
+            "comment": "上一运行日期",
             "defaults": "",
             "dictionary": "LAST_RUN_DATE",
-            "column": "�����������",
+            "column": "最后运行日期",
             "scope": ""
         },
         {
@@ -399,10 +399,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "��������",
+            "comment": "运行日期",
             "defaults": "",
             "dictionary": "RUN_DATE",
-            "column": "��������",
+            "column": "运行日期",
             "scope": ""
         },
         {
@@ -412,7 +412,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "��һ��������",
+            "comment": "下一运行日期",
             "dictionary": "NEXT_RUN_DATE",
             "defaults": "",
             "scope": ""
@@ -424,10 +424,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "��������",
+            "comment": "利润中心",
             "defaults": "",
             "dictionary": "PROFIT_CENTRE",
-            "column": "�������� ȡֵ FM_PROFIT_CENTRE_TBL.PROFIT_CENTRE",
+            "column": "利润中心 取值 FM_PROFIT_CENTRE_TBL.PROFIT_CENTRE",
             "scope": ""
         },
         {
@@ -437,10 +437,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "���ر���",
+            "comment": "当地币种",
             "defaults": "",
             "dictionary": "LOCAL_CCY",
-            "column": "����",
+            "column": "本币",
             "scope": ""
         },
         {
@@ -450,10 +450,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "���ֿ����ʻ�",
+            "comment": "币种控制帐户",
             "defaults": "",
             "dictionary": "CCY_CTRL_ACCT",
-            "column": "���ֿ����ʻ�",
+            "column": "币种控制帐户",
             "scope": ""
         },
         {
@@ -463,10 +463,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "�ʲ����͹��˿�Ŀ",
+            "comment": "资产类型挂账科目",
             "defaults": "",
             "dictionary": "SUSP_ASSET_ACCT",
-            "column": "�ʲ����͹��˿�Ŀ",
+            "column": "资产类型挂账科目",
             "scope": ""
         },
         {
@@ -476,10 +476,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "��ծ����˿�Ŀ",
+            "comment": "负债类挂账科目",
             "defaults": "",
             "dictionary": "SUSP_LIAB_ACCT",
-            "column": "��ծ����˿�Ŀ",
+            "column": "负债类挂账科目",
             "scope": ""
         },
         {
@@ -489,10 +489,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "������ȿ�Ŀ-�ʲ���",
+            "comment": "表外过度科目-资产类",
             "defaults": "",
             "dictionary": "SUSP_CONT_ASSET",
-            "column": "������ȿ�Ŀ-�ʲ���",
+            "column": "表外过度科目-资产类",
             "scope": ""
         },
         {
@@ -502,10 +502,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "������ȿ�Ŀ-��ծ��",
+            "comment": "表外过度科目-负债类",
             "defaults": "",
             "dictionary": "SUSP_CONT_LIAB",
-            "column": "������ȿ�Ŀ-��ծ��",
+            "column": "表外过度科目-负债类",
             "scope": ""
         },
         {
@@ -515,10 +515,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "������˿�Ŀ-�ʲ�",
+            "comment": "结算挂账科目-资产",
             "defaults": "",
             "dictionary": "SUSP_SETTLE_ASSET",
-            "column": "������˿�Ŀ-�ʲ�",
+            "column": "结算挂账科目-资产",
             "scope": ""
         },
         {
@@ -528,10 +528,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "������˿�Ŀ-��ծ",
+            "comment": "结算挂账科目-负债",
             "defaults": "",
             "dictionary": "SUSP_SETTLE_LIAB",
-            "column": "������˿�Ŀ-��ծ",
+            "column": "结算挂账科目-负债",
             "scope": ""
         },
         {
@@ -541,10 +541,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "����Ӧ�����Ŀ",
+            "comment": "其他应付款科目",
             "defaults": "",
             "dictionary": "GL_CASH_CODE",
-            "column": "����Ӧ�����Ŀ",
+            "column": "其他应付款科目",
             "scope": ""
         },
         {
@@ -554,10 +554,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "��������",
+            "comment": "基础币种",
             "defaults": "",
             "dictionary": "BASE_CCY",
-            "column": "��������",
+            "column": "基础币种",
             "scope": ""
         },
         {
@@ -567,10 +567,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "���ۻ��ڲ�ƽ�̻�������",
+            "comment": "结售汇内部平盘汇率类型",
             "defaults": "",
             "dictionary": "DEFAULT_CHARGE_RATE_TYPE",
-            "column": "���ۻ��ڲ�ƽ�̻������� ȡֵFM_RATE_TYPE",
+            "column": "结售汇内部平盘汇率类型 取值FM_RATE_TYPE",
             "scope": ""
         },
         {
@@ -580,10 +580,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "Ĭ�ϻ���",
+            "comment": "默认机构",
             "defaults": "",
             "dictionary": "DEFAULT_BRANCH",
-            "column": "Ĭ�ϻ���",
+            "column": "默认机构",
             "scope": ""
         },
         {
@@ -593,10 +593,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "����ģʽ 0 -0������ 1-�༶����",
+            "comment": "清算模式 0 -0级清算 1-多级清算",
             "defaults": "",
             "dictionary": "MUTI_SETTLE_MODE",
-            "column": "����ģʽ 0 -0������ 1-�༶����",
+            "column": "清算模式 0 -0级清算 1-多级清算",
             "scope": ""
         },
         {
@@ -622,7 +622,7 @@
             "comment": "",
             "defaults": "",
             "dictionary": "TRAN_TIME",
-            "column": "����ʱ��",
+            "column": "交易时间",
             "scope": ""
         },
         {
@@ -635,7 +635,7 @@
             "comment": "",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
-            "column": "ʱ���",
+            "column": "时间戳",
             "scope": ""
         }
     ],
@@ -643,5 +643,5 @@
     "dbType": "upright",
     "parameter": "busi_para",
     "system": "Accounting",
-    "commentDesc": "1����������ģ��ʹ�õ�ϵͳ�������磺������ʷ�����ڡ������Ϣ�������������Ϣ������Ӧ����Ϣ��Ŀ��Ӧ����Ϣ��Ŀ���������˿�Ŀ����������������ģ��ͳһʹ�õĲ�����  2����������ֻ����һ�У���PM->������->����(NV111)  ��ά��������ֵ��"
+    "commentDesc": "1、保存总账模块使用的系统参数，如：总账历史保存期、最大倒起息天数、最大将来起息天数、应付利息科目、应收利息科目、销户挂账科目、损益评估等总账模块统一使用的参数。  2、表中数据只能有一行，在PM->往来帐->参数(NV111)  来维护各参数值。"
 }

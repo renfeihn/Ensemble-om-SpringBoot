@@ -1,6 +1,6 @@
 {
     "code": "IRL_INT_TYPE",
-    "comment": "ÀûÂÊË°ÂÊÀàĞÍ±í",
+    "comment": "åˆ©ç‡ç¨ç‡ç±»å‹è¡¨",
     "attr": [
         {
             "code": "INT_TAX_TYPE",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "ÀûÂÊË°ÂÊÀàĞÍ",
+            "comment": "åˆ©ç‡ç¨ç‡ç±»å‹",
             "defaults": "",
             "dictionary": "INT_TAX_TYPE",
             "scope": ""
@@ -21,7 +21,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "ÀûÂÊË°ÂÊÀàĞÍÃèÊö",
+            "comment": "åˆ©ç‡ç¨ç‡ç±»å‹æè¿°",
             "defaults": "",
             "dictionary": "INT_TAX_TYPE_DESC",
             "scope": ""
@@ -33,10 +33,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "²úÆ·×é",
+            "comment": "äº§å“ç»„",
             "defaults": "",
             "dictionary": "PROD_GRP",
-            "scope": "RB:¸ºÕ®,CL:×Ê²ú,GL:×ÜÕË,MM:»õ±ÒÊĞ³¡  "
+            "scope": "RB:è´Ÿå€º,CL:èµ„äº§,GL:æ€»è´¦,MM:è´§å¸å¸‚åœº"
         },
         {
             "dictionary": "RATE_LADDER",
@@ -46,8 +46,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "ÀûÏ¢¼ÆËãÄ£ĞÍ",
-            "scope": "È¡×Ô±íFM_REF_CODE,µ±×Ö¶ÎDOMAINµÄÖµÎªRATE_LADDERÊ±£¬È¡×Ö¶ÎFIELD_VALUEµÄÖµ",
+            "comment": "åˆ©æ¯è®¡ç®—æ¨¡å‹",
+            "scope": "å–è‡ªè¡¨FM_REF_CODE,å½“å­—æ®µDOMAINçš„å€¼ä¸ºRATE_LADDERæ—¶ï¼Œå–å­—æ®µFIELD_VALUEçš„å€¼",
             "M": true,
             "P": false
         },
@@ -58,7 +58,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -71,7 +71,7 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "ÀûÂÊÀàĞÍË°ÂÊÀàĞÍ±êÖ¾ ",
+            "comment": "åˆ©ç‡ç±»å‹ç¨ç‡ç±»å‹æ ‡å¿—",
             "scope": "\n",
             "M": true,
             "P": false
@@ -84,8 +84,8 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "Ë°ÂÊ¼ÆËãÄ£ĞÍ",
-            "scope": "A£ºÔöÖµË°£¬B£º¸öÈËËùµÃË°",
+            "comment": "ç¨ç‡è®¡ç®—æ¨¡å‹",
+            "scope": "Aï¼šå¢å€¼ç¨ï¼ŒBï¼šä¸ªäººæ‰€å¾—ç¨",
             "M": false,
             "P": false
         },
@@ -96,7 +96,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -108,7 +108,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""

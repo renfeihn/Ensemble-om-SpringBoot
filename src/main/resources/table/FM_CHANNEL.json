@@ -1,57 +1,57 @@
 {
-"code":"FM_CHANNEL",
-"comment":"ÇşµÀÀàĞÍ",
-"attr":[{
-"code":"CHANNEL",
-"dataType":"Varchar",
-"lengths":"10",
-"precision":"",
-"M":true,"P":true,"comment":"ÇşµÀ Ä¿Ç°ÏµÍ³Ê¹ÓÃµ½ÇşµÀÀàĞÍÓĞ£º MT-¹ñÃæÒµÎñ MC-¿¨¹ñÃæÒµÎñ AC-±¾ĞĞ×ÔÖú DP-´ó¶îÖ§¸¶ MP-Ğ¡¶îÖ§¸¶ SF-SWIFT CB-ÍøÉÏÒøĞĞ PB-µç»°ÒøĞĞ CC-CALL CENTRE MB-¶ÌĞÅÒøĞĞ UC-ÒøÁª½»Ò× PC-¿¨Ö§¸¶ÒµÎñ BC-¹ñÃæ·¢Æğ¿¨ÖĞ¼äÒµÎñ ND-Æ±¾İÏµÍ³·¢ÆğµÄÒµÎñ AB-×ÔÖúÖÕ¶ËÏµÍ³·¢ÆğµÄÖĞ¼äÒµÎñ BH-ÖĞ¼äÒµÎñ UT-ÒøÁª±¾´úËûÒµÎñ BI-ÅúÁ¿½Ó¿ÚÒµÎñ IF-Ò»°ãÎÄ¼ş½Ó¿ÚÒµÎñ NI-ÄÚ²¿ÒµÎñ´¦Àí IG-ÄÚ²¿ÇåËã CS-²ÆË°¿âĞĞÒµÎñ SR-(Security)°²È«¼ÓÃÜÇşµÀ GL-×ÜÕÊÏµÍ³ÒµÎñ",
-"defaults":"",
-"dictionary":"CHANNEL"}
-,{
-"code":"CHANNEL_DESC",
-"dataType":"Varchar",
-"lengths":"30",
-"precision":"",
-"M":true,"P":false,"comment":"ÇşµÀÃèÊö",
-"defaults":"",
-"dictionary":"CHANNEL_DESC"}
-,{
-"code":"CHANNEL_SHORT",
-"dataType":"Varchar",
-"lengths":"10",
-"precision":"",
-"M":false,"P":false,"comment":"ÇşµÀ¼ò³Æ",
-"defaults":"",
-"dictionary":"CHANNEL_SHORT"}
-,{
-"code":"COMPANY",
-"dataType":"Varchar",
-"lengths":"20",
-"precision":"",
-"M":false,"P":false,"comment":"·¨ÈË",
-"defaults":"",
-"dictionary":"COMPANY"}
-,{
-"code":"TRAN_TIMESTAMP",
-"dataType":"Varchar",
-"lengths":"17",
-"precision":"",
-"M":false,"P":false,"comment":"½»Ò×Ê±¼ä´Á",
-"defaults":"",
-"dictionary":"TRAN_TIMESTAMP"}
-,{
-"code":"TRAN_TIME",
-"dataType":"NUMBER",
-"lengths":"11",
-"precision":"0",
-"M":false,"P":false,"comment":"½»Ò×Ê±¼ä",
-"defaults":"",
-"dictionary":"TRAN_TIME"}
-],"table_space":"core_data",
-"dbType":"upright",
-"parameter":"init_para",
-"system":"Ensemble",
-"commentDesc":"",
-"moduleType":"¹«¹²²ÎÊı"}
+  "code":"FM_CHANNEL",
+  "comment":"æ¸ é“ç±»å‹",
+  "attr":[{
+    "code":"CHANNEL",
+    "dataType":"Varchar",
+    "lengths":"10",
+    "precision":"",
+    "M":true,"P":true,"comment":"æ¸ é“ ç›®å‰ç³»ç»Ÿä½¿ç”¨åˆ°æ¸ é“ç±»å‹æœ‰ï¼š MT-æŸœé¢ä¸šåŠ¡ MC-å¡æŸœé¢ä¸šåŠ¡ AC-æœ¬è¡Œè‡ªåŠ© DP-å¤§é¢æ”¯ä»˜ MP-å°é¢æ”¯ä»˜ SF-SWIFT CB-ç½‘ä¸Šé“¶è¡Œ PB-ç”µè¯é“¶è¡Œ CC-CALL CENTRE MB-çŸ­ä¿¡é“¶è¡Œ UC-é“¶è”äº¤æ˜“ PC-å¡æ”¯ä»˜ä¸šåŠ¡ BC-æŸœé¢å‘èµ·å¡ä¸­é—´ä¸šåŠ¡ ND-ç¥¨æ®ç³»ç»Ÿå‘èµ·çš„ä¸šåŠ¡ AB-è‡ªåŠ©ç»ˆç«¯ç³»ç»Ÿå‘èµ·çš„ä¸­é—´ä¸šåŠ¡ BH-ä¸­é—´ä¸šåŠ¡ UT-é“¶è”æœ¬ä»£ä»–ä¸šåŠ¡ BI-æ‰¹é‡æ¥å£ä¸šåŠ¡ IF-ä¸€èˆ¬æ–‡ä»¶æ¥å£ä¸šåŠ¡ NI-å†…éƒ¨ä¸šåŠ¡å¤„ç† IG-å†…éƒ¨æ¸…ç®— CS-è´¢ç¨åº“è¡Œä¸šåŠ¡ SR-(Security)å®‰å…¨åŠ å¯†æ¸ é“ GL-æ€»å¸ç³»ç»Ÿä¸šåŠ¡",
+    "defaults":"",
+    "dictionary":"CHANNEL"}
+  ,{
+      "code":"CHANNEL_DESC",
+      "dataType":"Varchar",
+      "lengths":"30",
+      "precision":"",
+      "M":true,"P":false,"comment":"æ¸ é“æè¿°",
+      "defaults":"",
+      "dictionary":"CHANNEL_DESC"}
+  ,{
+      "code":"CHANNEL_SHORT",
+      "dataType":"Varchar",
+      "lengths":"10",
+      "precision":"",
+      "M":false,"P":false,"comment":"æ¸ é“ç®€ç§°",
+      "defaults":"",
+      "dictionary":"CHANNEL_SHORT"}
+  ,{
+      "code":"COMPANY",
+      "dataType":"Varchar",
+      "lengths":"20",
+      "precision":"",
+      "M":false,"P":false,"comment":"æ³•äºº",
+      "defaults":"",
+      "dictionary":"COMPANY"}
+  ,{
+      "code":"TRAN_TIMESTAMP",
+      "dataType":"Varchar",
+      "lengths":"17",
+      "precision":"",
+      "M":false,"P":false,"comment":"äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults":"",
+      "dictionary":"TRAN_TIMESTAMP"}
+  ,{
+      "code":"TRAN_TIME",
+      "dataType":"NUMBER",
+      "lengths":"11",
+      "precision":"0",
+      "M":false,"P":false,"comment":"äº¤æ˜“æ—¶é—´",
+      "defaults":"",
+      "dictionary":"TRAN_TIME"}
+  ],"table_space":"core_data",
+  "dbType":"upright",
+  "parameter":"init_para",
+  "system":"Ensemble",
+  "commentDesc":"",
+  "moduleType":"å…¬å…±å‚æ•°"}

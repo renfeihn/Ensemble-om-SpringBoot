@@ -1,6 +1,6 @@
 {
     "code": "FM_MODULE",
-    "comment": "Ä£¿éËµÃ÷±í",
+    "comment": "æ¨¡å—è¯´æ˜Žè¡¨",
     "attr": [
         {
             "dictionary": "MODULE_ID",
@@ -10,8 +10,8 @@
             "lengths": "2",
             "precision": "",
             "defaults": "",
-            "comment": "Ä£¿éºÅ ",
-            "scope": "SA:SYMBOLS*SYSTEM ADMINISTRATION SA FM:SYMBOLS*KERNEL ¹«¹² GL:SYMBOLS*GENERAL LEDGER×ÜÕËÄ£¿é RB:SYMBOLS*DEPOSITS ´æ¿îÄ£¿é DP:SYMBOLS*DOMESTIC PAYMENTS Ö§¸¶Ä£¿é FT:SYMBOLS*FUNDS TRANSFER Íâ»ã»ã¿î RX:RB_FX sell/buy ¶Ô¿Í½áÊÛ»ã LM:SYMBOLS*LIMITS CONTROL ÏÞ¶î CL:SYMBOLS*CUSTOMER LENDING ´û¿î FX:SYMBOLS*FOREIGN EXCHANGEÍâ»ãÂòÂô MM:SYMBOLS*MONEY MARKET ×Ê½ðÄ£¿é TF:SYMBOLS*TRADE FINANCE ¹ú¼Ê½áËãÄ£¿é RT:REMIT CUSTOMER LENDING AL:ACCUMULATION FUND LENDING ¹«»ý½ðÄ£¿é BH:BRANCH FUNCTIONS ÖÐ¼äÒµÎñÄ£¿é CM:THE COMMON OF THE SYSTEM ¹«¹²Ä£¿é NV:THE NOSTRO OR VOSTRO ÍùÀ´ÕÊÄ£¿é PT:SYMBOLS*PAYMENT TRANSFERÖ§¸¶ NS:NEW ACCOUNTS ÐÂ»á¼Æ×¼Ôò",
+            "comment": "æ¨¡å—å·",
+            "scope": "SA:SYMBOLS*SYSTEM ADMINISTRATION SA FM:SYMBOLS*KERNEL å…¬å…± GL:SYMBOLS*GENERAL LEDGERæ€»è´¦æ¨¡å— RB:SYMBOLS*DEPOSITS å­˜æ¬¾æ¨¡å— DP:SYMBOLS*DOMESTIC PAYMENTS æ”¯ä»˜æ¨¡å— FT:SYMBOLS*FUNDS TRANSFER å¤–æ±‡æ±‡æ¬¾ RX:RB_FX sell/buy å¯¹å®¢ç»“å”®æ±‡ LM:SYMBOLS*LIMITS CONTROL é™é¢ CL:SYMBOLS*CUSTOMER LENDING è´·æ¬¾ FX:SYMBOLS*FOREIGN EXCHANGEå¤–æ±‡ä¹°å– MM:SYMBOLS*MONEY MARKET èµ„é‡‘æ¨¡å— TF:SYMBOLS*TRADE FINANCE å›½é™…ç»“ç®—æ¨¡å— RT:REMIT CUSTOMER LENDING AL:ACCUMULATION FUND LENDING å…¬ç§¯é‡‘æ¨¡å— BH:BRANCH FUNCTIONS ä¸­é—´ä¸šåŠ¡æ¨¡å— CM:THE COMMON OF THE SYSTEM å…¬å…±æ¨¡å— NV:THE NOSTRO OR VOSTRO å¾€æ¥å¸æ¨¡å— PT:SYMBOLS*PAYMENT TRANSFERæ”¯ä»˜ NS:NEW ACCOUNTS æ–°ä¼šè®¡å‡†åˆ™",
             "M": true,
             "P": true
         },
@@ -22,10 +22,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "Ä£¿éÃû³Æ",
+            "comment": "æ¨¡å—åç§°",
             "defaults": "",
             "dictionary": "MODULE_NAME",
-            "column": "Ä£¿éÃû³Æ",
+            "column": "æ¨¡å—åç§°",
             "scope": ""
         },
         {
@@ -35,10 +35,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË",
+            "comment": "æ³•äºº",
             "defaults": "",
             "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
+            "column": "æ³•äººä»£ç ",
             "scope": "FM_COMPANY.COMPANY"
         },
         {
@@ -48,10 +48,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
+            "column": "æ—¶é—´æˆ³",
             "scope": ""
         },
         {
@@ -61,10 +61,10 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
+            "column": "äº¤æ˜“æ—¶é—´",
             "scope": ""
         }
     ],
@@ -72,6 +72,6 @@
     "dbType": "upright",
     "parameter": "init_para",
     "system": "Ensemble",
-    "commentDesc": "ÏµÍ³ÄÚ²¿¶¨ÒåµÄÄ£¿éËµÃ÷",
-    "moduleType": "¹«¹²²ÎÊý"
+    "commentDesc": "ç³»ç»Ÿå†…éƒ¨å®šä¹‰çš„æ¨¡å—è¯´æ˜Ž",
+    "moduleType": "å…¬å…±å‚æ•°"
 }

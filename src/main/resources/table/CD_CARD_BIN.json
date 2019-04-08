@@ -1,6 +1,6 @@
 {
     "code": "CD_CARD_BIN",
-    "comment": " ¿¨bin²ÎÊı±í",
+    "comment": " å¡binå‚æ•°è¡¨",
     "attr": [
         {
             "code": "CARD_BIN",
@@ -9,7 +9,7 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "¿¨bin",
+            "comment": "å¡bin",
             "defaults": "",
             "dictionary": "CARD_BIN",
             "scope": ""
@@ -22,8 +22,8 @@
             "lengths": "20",
             "precision": "",
             "defaults": "",
-            "comment": "¿¨binÖ¤ÊéÓĞĞ§ÆÚÏŞ",
-            "scope": "ÕûĞÍÊı×Ö,ÒÔÔÂÎªµ¥Î»±ÈÈç120,±íÊ¾120¸öÔÂ",
+            "comment": "å¡binè¯ä¹¦æœ‰æ•ˆæœŸé™",
+            "scope": "æ•´å‹æ•°å­—,ä»¥æœˆä¸ºå•ä½æ¯”å¦‚120,è¡¨ç¤º120ä¸ªæœˆ",
             "M": false,
             "P": false
         },
@@ -34,7 +34,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
             "scope": "FM_COMPANY.COMPANY"
@@ -46,7 +46,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
             "scope": ""
@@ -58,7 +58,7 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
             "scope": ""
@@ -69,5 +69,5 @@
     "parameter": "busi_para",
     "system": "Ensemble",
     "commentDesc": "",
-    "moduleType": "¿¨²ÎÊı"
+    "moduleType": "å¡å‚æ•°"
 }

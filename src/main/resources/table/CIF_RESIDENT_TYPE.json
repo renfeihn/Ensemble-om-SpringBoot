@@ -1,59 +1,59 @@
 {
-    "code": "CIF_RESIDENT_TYPE",
-    "comment": "¾Ó×¡ÀàĞÍ±í",
-    "attr": [        {
-            "code": "RESIDENT_TYPE",
-            "dataType": "Varchar",
-            "lengths": "1",
-            "precision": "",
-            "M": true,            "P": true,            "comment": "¾Ó×¡ÀàĞÍ",
-            "defaults": "",
-            "dictionary": "RESIDENT_TYPE",
-            "column": "¾Ó×¡ÀàĞÍ",
-            "scope": ""        }
-,        {
-            "code": "RESIDENT_TYPE_DESC",
-            "dataType": "Varchar",
-            "lengths": "30",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "¾Ó×¡ÀàĞÍËµÃ÷",
-            "defaults": "",
-            "dictionary": "RESIDENT_TYPE_DESC",
-            "column": "¾Ó×¡ÀàĞÍËµÃ÷",
-            "scope": ""        }
-,        {
-            "code": "COMPANY",
-            "dataType": "Varchar",
-            "lengths": "20",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "·¨ÈË´úÂë",
-            "defaults": "",
-            "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIMESTAMP",
-            "dataType": "Varchar",
-            "lengths": "17",
-            "precision": "",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä´Á",
-            "defaults": "",
-            "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
-            "scope": ""        }
-,        {
-            "code": "TRAN_TIME",
-            "dataType": "Number",
-            "lengths": "11",
-            "precision": "0",
-            "M": false,            "P": false,            "comment": "½»Ò×Ê±¼ä",
-            "defaults": "",
-            "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
-            "scope": ""        }
-    ],    "table_space": "core_data",
-    "dbType": "upright",
-    "parameter": "busi_para",
-    "system": "Ensemble",
-    "commentDesc": "¼ÇÂ¼¿Í»§µÄ¾Ó×¡ÀàĞÍ",
-"moduleType":"¿Í»§²ÎÊı"}
+  "code": "CIF_RESIDENT_TYPE",
+  "comment": "å±…ä½ç±»å‹è¡¨",
+  "attr": [        {
+    "code": "RESIDENT_TYPE",
+    "dataType": "Varchar",
+    "lengths": "1",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "å±…ä½ç±»å‹",
+    "defaults": "",
+    "dictionary": "RESIDENT_TYPE",
+    "column": "å±…ä½ç±»å‹",
+    "scope": ""        }
+  ,        {
+      "code": "RESIDENT_TYPE_DESC",
+      "dataType": "Varchar",
+      "lengths": "30",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "å±…ä½ç±»å‹è¯´æ˜",
+      "defaults": "",
+      "dictionary": "RESIDENT_TYPE_DESC",
+      "column": "å±…ä½ç±»å‹è¯´æ˜",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "æ³•äººä»£ç ",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "æ³•äººä»£ç ",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "æ—¶é—´æˆ³",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "äº¤æ˜“æ—¶é—´",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "äº¤æ˜“æ—¶é—´",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": "è®°å½•å®¢æˆ·çš„å±…ä½ç±»å‹",
+  "moduleType":"å®¢æˆ·å‚æ•°"}

@@ -1,6 +1,6 @@
 {
     "code": "GL_ACCT_TYPE",
-    "comment": "���˲�Ʒ����",
+    "comment": "总账产品定义",
     "attr": [
         {
             "code": "ACCT_TYPE",
@@ -9,10 +9,10 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "�ʻ�����",
+            "comment": "帐户类型",
             "defaults": "",
             "dictionary": "ACCT_TYPE",
-            "column": "�˻����ͣ�  A-AIO�˻�,C-�����˻�,S-�����˻�,T-�����˻�,M-��ͨ����,D-���,U-���ִ���,E-ί�д���,Y-���Ŵ���,G-����  ",
+            "column": "账户类型：  A-AIO账户,C-结算账户,S-储蓄账户,T-定期账户,M-普通贷款,D-垫款,U-贴现贷款,E-委托贷款,Y-银团贷款,G-保函  ",
             "scope": ""
         },
         {
@@ -22,10 +22,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "�ʻ���������",
+            "comment": "帐户类型描述",
             "defaults": "",
             "dictionary": "ACCT_TYPE_DESC",
-            "column": "�ʻ���������",
+            "column": "帐户类型描述",
             "scope": ""
         },
         {
@@ -35,10 +35,10 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "������� N-���ˣ�V-����",
+            "comment": "存款类型 N-往账，V-来账",
             "defaults": "",
             "dictionary": "DEPOSIT_TYPE",
-            "column": "������� S-���� C-���� T-����",
+            "column": "存款类型 S-储蓄 C-往来 T-定期",
             "scope": ""
         },
         {
@@ -48,10 +48,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "�ʲ�����ծ���Ŀ���� ȡֵAC_SUBJECT",
+            "comment": "资产、负债类科目代码 取值AC_SUBJECT",
             "defaults": "",
             "dictionary": "GL_CODE_AL",
-            "column": "�ʲ�����ծ���Ŀ���� ȡֵAC_SUBJECT",
+            "column": "资产、负债类科目代码 取值AC_SUBJECT",
             "scope": ""
         },
         {
@@ -61,10 +61,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "��Ϣ֧����Ŀ  ������Ϣʹ�õĽ跽��Ŀ",
+            "comment": "利息支出科目  贷方利息使用的借方科目",
             "defaults": "",
             "dictionary": "INT_PAY",
-            "column": "��Ϣ֧����Ŀ  ������Ϣʹ�õĽ跽��Ŀ",
+            "column": "利息支出科目  贷方利息使用的借方科目",
             "scope": ""
         },
         {
@@ -74,10 +74,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ӧ����Ϣ��Ŀ  ������Ϣʹ�õĴ�����Ŀ",
+            "comment": "应付利息科目  贷方利息使用的贷方科目",
             "defaults": "",
             "dictionary": "INT_PAYABLE",
-            "column": "Ӧ����Ϣ��Ŀ ȡֵAC_SUBJECT",
+            "column": "应付利息科目 取值AC_SUBJECT",
             "scope": ""
         },
         {
@@ -87,10 +87,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "��Ϣ�����Ŀ  �跽��Ϣʹ�õĴ�����Ŀ",
+            "comment": "利息收入科目  借方利息使用的贷方科目",
             "defaults": "",
             "dictionary": "INT_RECEIVE",
-            "column": "��Ϣ�����Ŀ  �跽��Ϣʹ�õĴ�����Ŀ",
+            "column": "利息收入科目  借方利息使用的贷方科目",
             "scope": ""
         },
         {
@@ -100,10 +100,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "Ӧ����Ϣ��Ŀ  �跽��Ϣʹ�õĽ跽��Ŀ",
+            "comment": "应计利息科目  借方利息使用的借方科目",
             "defaults": "",
             "dictionary": "INT_RECEIVABLE",
-            "column": "Ӧ����Ϣ��Ŀ ȡֵAC_SUBJECT",
+            "column": "应收利息科目 取值AC_SUBJECT",
             "scope": ""
         },
         {
@@ -116,7 +116,7 @@
             "comment": "",
             "defaults": "",
             "dictionary": "TRAN_TIME",
-            "column": "����ʱ��",
+            "column": "交易时间",
             "scope": ""
         },
         {
@@ -129,7 +129,7 @@
             "comment": "",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
-            "column": "ʱ���",
+            "column": "时间戳",
             "scope": ""
         }
     ],
@@ -137,5 +137,5 @@
     "dbType": "upright",
     "parameter": "busi_para",
     "system": "Accounting",
-    "commentDesc": "1����PM->������->�ʻ�����(NV121)�н�������  2�����������˻��Ĳ�Ʒ���ͼ������ԣ�������Ʒ����˵�����ʲ�����ծ�����롢֧����Ŀ��  3���������˻�����������ʹ��"
+    "commentDesc": "1、在PM->往来账->帐户类型(NV121)中进行配置  2、定义总账账户的产品类型及其属性，包括产品类型说明及资产、负债、收入、支出科目。  3、在总账账户开户交易中使用"
 }

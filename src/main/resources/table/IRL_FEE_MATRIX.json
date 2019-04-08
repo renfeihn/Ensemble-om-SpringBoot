@@ -1,6 +1,6 @@
 {
     "code": "IRL_FEE_MATRIX",
-    "comment": "·ÑÂÊ¾ØÕóĞÅÏ¢±í",
+    "comment": "è´¹ç‡çŸ©é˜µä¿¡æ¯è¡¨",
     "attr": [
         {
             "code": "MATRIX_NO",
@@ -9,10 +9,10 @@
             "precision": "",
             "M": true,
             "P": true,
-            "comment": "¾ØÕóĞòºÅ",
+            "comment": "çŸ©é˜µåºå·",
             "defaults": "",
             "dictionary": "MATRIX_NO",
-            "column": "½×ÌİĞòºÅ",
+            "column": "é˜¶æ¢¯åºå·",
             "scope": ""
         },
         {
@@ -23,8 +23,8 @@
             "lengths": "50",
             "precision": "",
             "defaults": "",
-            "comment": "·ÑÂÊ±àºÅ",
-            "scope": "È¡×ÔIRL_FEE_RATE.IRL_SEQ_NO",
+            "comment": "è´¹ç‡ç¼–å·",
+            "scope": "å–è‡ªIRL_FEE_RATE.IRL_SEQ_NO",
             "M": true,
             "P": false
         },
@@ -35,10 +35,10 @@
             "precision": "2",
             "M": false,
             "P": false,
-            "comment": "È±¿ÚÖµ",
+            "comment": "ç¼ºå£å€¼",
             "defaults": "",
             "dictionary": "BOUNDARY",
-            "column": "È±¿ÚÖµ",
+            "column": "ç¼ºå£å€¼",
             "scope": ""
         },
         {
@@ -48,10 +48,10 @@
             "precision": "2",
             "M": false,
             "P": false,
-            "comment": "·ÑÓÃ½ğ¶î",
+            "comment": "è´¹ç”¨é‡‘é¢",
             "defaults": "",
             "dictionary": "FEE_AMT",
-            "column": "ÊÖĞø·Ñ½ğ¶î",
+            "column": "æ‰‹ç»­è´¹é‡‘é¢",
             "scope": ""
         },
         {
@@ -61,10 +61,10 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "·ÑÂÊ£¨%£©",
+            "comment": "è´¹ç‡ï¼ˆ%ï¼‰",
             "defaults": "",
             "dictionary": "FEE_RATE",
-            "column": "·ÑÂÊ£¨%£©",
+            "column": "è´¹ç‡ï¼ˆ%ï¼‰",
             "scope": ""
         },
         {
@@ -75,8 +75,8 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "ÀûÂÊÀàĞÍ",
-            "scope": "È¡×ÔIRL_INT_TYPE.INT_TAX_TYPE",
+            "comment": "åˆ©ç‡ç±»å‹",
+            "scope": "å–è‡ªIRL_INT_TYPE.INT_TAX_TYPE",
             "M": false,
             "P": false
         },
@@ -87,10 +87,10 @@
             "precision": "8",
             "M": false,
             "P": false,
-            "comment": "¸¡¶¯Öµ",
+            "comment": "æµ®åŠ¨å€¼",
             "defaults": "",
             "dictionary": "FLOAT_RATE",
-            "column": "¸¡¶¯ÀûÂÊ",
+            "column": "æµ®åŠ¨åˆ©ç‡",
             "scope": ""
         },
         {
@@ -100,10 +100,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "·¨ÈË´úÂë",
+            "comment": "æ³•äººä»£ç ",
             "defaults": "",
             "dictionary": "COMPANY",
-            "column": "·¨ÈË´úÂë",
+            "column": "æ³•äººä»£ç ",
             "scope": "FM_COMPANY.COMPANY"
         },
         {
@@ -113,10 +113,10 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä´Á",
+            "comment": "äº¤æ˜“æ—¶é—´æˆ³",
             "defaults": "",
             "dictionary": "TRAN_TIMESTAMP",
-            "column": "Ê±¼ä´Á",
+            "column": "æ—¶é—´æˆ³",
             "scope": ""
         },
         {
@@ -126,10 +126,10 @@
             "precision": "0",
             "M": false,
             "P": false,
-            "comment": "½»Ò×Ê±¼ä",
+            "comment": "äº¤æ˜“æ—¶é—´",
             "defaults": "",
             "dictionary": "TRAN_TIME",
-            "column": "½»Ò×Ê±¼ä",
+            "column": "äº¤æ˜“æ—¶é—´",
             "scope": ""
         }
     ],
@@ -137,5 +137,5 @@
     "dbType": "upright",
     "parameter": "busi_para",
     "system": "Limarket",
-    "commentDesc": "×÷ÓÃ£ºÊÇ·ÑÂÊĞÅÏ¢±íµÄ×Ó±í£¬¼ÇÂ¼·ÑÂÊÀàĞÍ¶ÔÓ¦µÄ¾ßÌåÊÕ·Ñ·ÑÂÊ¡¢½ğ¶îĞÅÏ¢¡£"
+    "commentDesc": "ä½œç”¨ï¼šæ˜¯è´¹ç‡ä¿¡æ¯è¡¨çš„å­è¡¨ï¼Œè®°å½•è´¹ç‡ç±»å‹å¯¹åº”çš„å…·ä½“æ”¶è´¹è´¹ç‡ã€é‡‘é¢ä¿¡æ¯ã€‚"
 }
