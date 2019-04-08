@@ -206,7 +206,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "计息方式 零息：0浮动计息：1固定利率：2",
+            "comment": "计息方式",
             "defaults": "",
             "scope": "",
             "dictionary": "INT_CALC_TYPE",
@@ -323,7 +323,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "恢复状态：N:未恢复,S:成功,F:失败",
+            "comment": "恢复状态",
             "defaults": "",
             "scope": "N:未恢复,S:成功,F:失败",
             "dictionary": "BACK_STATUS"

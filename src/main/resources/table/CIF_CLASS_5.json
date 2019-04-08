@@ -6,7 +6,7 @@
     "dataType":"Varchar",
     "lengths":"6",
     "precision":"",
-    "M":true,"P":true,"comment":"用户自定义的分类代码",
+    "M":true,"P":true,"comment":"分类代码",
     "defaults":"",
     "dictionary":"CLASS_5"}
   ,{
@@ -14,7 +14,7 @@
       "dataType":"Varchar",
       "lengths":"30",
       "precision":"",
-      "M":true,"P":false,"comment":"对分类代码的描述",
+      "M":true,"P":false,"comment":"描述",
       "defaults":"",
       "dictionary":"CLASS_5_DESC"}
   ,{

@@ -204,7 +204,7 @@
             "lengths": "10",
             "precision": "",
             "defaults": "",
-            "comment": "币种组，使用目标币种+源币种",
+            "comment": "币种组",
             "scope": "取自FM_CURRENCY.CCY",
             "M": false,
             "P": false

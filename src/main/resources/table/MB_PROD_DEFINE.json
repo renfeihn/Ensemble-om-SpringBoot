@@ -9,7 +9,7 @@
       "precision": "0",
       "M": true,
       "P": true,
-      "comment": "产品类型 取值于MB_PROD_TYPE.PROD_TYPE",
+      "comment": "产品类型",
       "defaults": "",
       "dictionary": ""
     },
@@ -31,7 +31,7 @@
       "precision": "0",
       "M": true,
       "P": false,
-      "comment": "组装类型 EVENT ：事件 PART ： 部件 ATTR： 属性",
+      "comment": "组装类型",
       "defaults": "",
       "dictionary": ""
     },
@@ -53,7 +53,7 @@
       "precision": "0",
       "M": true,
       "P": false,
-      "comment": "产品基础事件 取值于MB_EVENT_DEFAULT_TYPE.EVENT_DEFAULT_TYPE",
+      "comment": "产品基础事件",
       "defaults": "",
       "dictionary": ""
     },
@@ -64,7 +64,7 @@
       "precision": "0",
       "M": true,
       "P": false,
-      "comment": "参数KEY 取值于MB_ATTR_TYPE",
+      "comment": "参数KEY",
       "defaults": "",
       "dictionary": ""
     },
@@ -86,7 +86,7 @@
       "precision": "0",
       "M": true,
       "P": false,
-      "comment": "状态 A：有效 F：无效",
+      "comment": "状态",
       "defaults": "",
       "dictionary": ""
     },
@@ -97,7 +97,7 @@
       "precision": "0",
       "M": true,
       "P": false,
-      "comment": "",
+      "comment": "法人",
       "defaults": "",
       "dictionary": ""
     },

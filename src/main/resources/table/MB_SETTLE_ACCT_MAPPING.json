@@ -22,7 +22,7 @@
       "dataType":"Varchar",
       "lengths":"3",
       "precision":"",
-      "M":true,"P":false,"comment":"收付款方向，可以配置ALL",
+      "M":true,"P":false,"comment":"收付款方向",
       "defaults":"",
       "dictionary":"PAY_REC_IND"}
   ,{
@@ -30,7 +30,7 @@
       "dataType":"Varchar",
       "lengths":"200",
       "precision":"",
-      "M":true,"P":false,"comment":"金额类型集合，支持配置多个，逗号分隔",
+      "M":true,"P":false,"comment":"金额类型集合",
       "defaults":"",
       "dictionary":"AMT_TYPE_LIST"}
   ,{

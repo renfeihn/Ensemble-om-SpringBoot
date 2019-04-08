@@ -142,7 +142,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "是否需要复核（Y-是，N-否）",
+            "comment": "是否需要复核",
             "defaults": "",
             "scope": "",
             "dictionary": "REVIEW_FLAG",

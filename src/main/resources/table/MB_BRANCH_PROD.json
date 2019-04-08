@@ -6,7 +6,7 @@
     "dataType":"Varchar",
     "lengths":"20",
     "precision":"",
-    "M":true,"P":true,"comment":"",
+    "M":true,"P":true,"comment":"机构",
     "defaults":"",
     "dictionary":"BRANCH"}
   ,{
@@ -14,7 +14,7 @@
       "dataType":"Varchar",
       "lengths":"50",
       "precision":"",
-      "M":true,"P":true,"comment":"",
+      "M":true,"P":true,"comment":"产品代码",
       "defaults":"",
       "dictionary":"PROD_TYPE"}
   ,{
@@ -22,7 +22,7 @@
       "dataType":"Varchar",
       "lengths":"100",
       "precision":"",
-      "M":true,"P":false,"comment":"",
+      "M":true,"P":false,"comment":"产品名称",
       "defaults":"",
       "dictionary":"PROD_DESC"}
   ,{

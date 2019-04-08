@@ -9,7 +9,7 @@
       "precision": "",
       "M": true,
       "P": true,
-      "comment": "参数KEY值 取值于MB_ATTR_TYPE.ATTR_KEY",
+      "comment": "参数KEY值",
       "defaults": "",
       "dictionary": "ATTR_KEY",
       "column": "参数KEY 取值于MB_ATTR_TYPE ",

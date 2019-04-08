@@ -108,7 +108,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "检查规则 目前系统中该字段都是写死",
+            "comment": "检查规则",
             "defaults": "",
             "dictionary": "CHECK_DIGIT_FORMULA",
             "scope": ""

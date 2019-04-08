@@ -26,7 +26,7 @@
       "dataType": "Varchar",
       "lengths": "1",
       "precision": "",
-      "M": true,            "P": false,            "comment": "是否个体客户 Y-是 N-不是",
+      "M": true,            "P": false,            "comment": "是否个体客户",
       "defaults": "",
       "dictionary": "IS_INDIVIDUAL",
       "column": "是否个体客户 Y-是 N-不是",

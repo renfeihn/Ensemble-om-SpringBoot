@@ -15,7 +15,7 @@
       "dataType": "Varchar",
       "lengths": "1",
       "precision": "",
-      "M": true,            "P": false,            "comment": "是否止付Y:是 N:否",
+      "M": true,            "P": false,            "comment": "是否止付",
       "defaults": "",
       "dictionary": "STOP_FLAG",
       "scope": ""        }
@@ -51,7 +51,7 @@
       "dataType": "Varchar",
       "lengths": "2",
       "precision": "",
-      "M": true,            "P": false,            "comment": "处理方式             A：授权处理              B：拒绝处理              D：提醒处理",
+      "M": true,            "P": false,            "comment": "处理方式",
       "defaults": "",
       "dictionary": "DEAL_FLOW",
       "scope": ""        }

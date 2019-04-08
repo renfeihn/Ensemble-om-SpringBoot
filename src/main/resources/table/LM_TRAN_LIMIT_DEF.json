@@ -105,7 +105,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "状态 A:有效 E:失效",
+            "comment": "状态",
             "defaults": "",
             "dictionary": "STATUS",
             "scope": "A:有效,F:无效"

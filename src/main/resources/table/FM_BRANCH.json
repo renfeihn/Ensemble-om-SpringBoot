@@ -70,7 +70,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "内部客户号 默认等于机构号",
+            "comment": "内部客户号",
             "defaults": "",
             "dictionary": "INTERNAL_CLIENT",
             "scope": ""
@@ -133,7 +133,7 @@
             "lengths": "10",
             "precision": "",
             "defaults": "",
-            "comment": "省、州  FM_STATE.STATE",
+            "comment": "省、州",
             "scope": "",
             "M": true,
             "P": false
@@ -508,7 +508,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "操作最高级别,下拉菜单选项来自柜员级别参数表，必输，柜员级别为大于零的自然数，数字越大，级别越高。后台参数配置，不需要界面设置",
+            "comment": "操作最高级别",
             "defaults": "",
             "scope": "",
             "dictionary": "OPER_MAX_LEVEL",

@@ -62,7 +62,7 @@
       "dataType":"NUMBER",
       "lengths":"11",
       "precision":"0",
-      "M":false,"P":false,"comment":"",
+      "M":false,"P":false,"comment":"交易时间",
       "defaults":"",
       "dictionary":"TRAN_TIME"}
   ,{
@@ -70,7 +70,7 @@
       "dataType":"Varchar",
       "lengths":"17",
       "precision":"",
-      "M":false,"P":false,"comment":"",
+      "M":false,"P":false,"comment":"交易时间戳",
       "defaults":"",
       "dictionary":"TRAN_TIMESTAMP"}
   ],"table_space":"account_data",

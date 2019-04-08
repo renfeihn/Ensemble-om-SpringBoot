@@ -6,7 +6,7 @@
     "dataType":"Varchar",
     "lengths":"10",
     "precision":"",
-    "M":true,"P":true,"comment":"",
+    "M":true,"P":true,"comment":"序号",
     "defaults":"",
     "dictionary":"SEQ_NO"}
   ,{
@@ -14,7 +14,7 @@
       "dataType":"Varchar",
       "lengths":"50",
       "precision":"",
-      "M":false,"P":false,"comment":"",
+      "M":false,"P":false,"comment":"产品代码",
       "defaults":"",
       "dictionary":"PROD_TYPE"}
   ,{
@@ -22,7 +22,7 @@
       "dataType":"Varchar",
       "lengths":"3",
       "precision":"",
-      "M":false,"P":false,"comment":"",
+      "M":false,"P":false,"comment":"币种",
       "defaults":"",
       "dictionary":"CCY"}
   ,{
@@ -30,7 +30,7 @@
       "dataType":"Varchar",
       "lengths":"2",
       "precision":"",
-      "M":false,"P":false,"comment":"",
+      "M":false,"P":false,"comment":"账户类型",
       "defaults":"",
       "dictionary":"ACCT_TYPE"}
   ,{
@@ -38,7 +38,7 @@
       "dataType":"NUMBER",
       "lengths":"17",
       "precision":"2",
-      "M":false,"P":false,"comment":"",
+      "M":false,"P":false,"comment":"余额类型",
       "defaults":"",
       "dictionary":"BALANCE"}
   ,{
@@ -62,7 +62,7 @@
       "dataType":"Varchar",
       "lengths":"8",
       "precision":"",
-      "M":false,"P":false,"comment":"",
+      "M":false,"P":false,"comment":"起始时间",
       "defaults":"",
       "dictionary":"START_TIME"}
   ,{
@@ -70,7 +70,7 @@
       "dataType":"Varchar",
       "lengths":"8",
       "precision":"",
-      "M":false,"P":false,"comment":"",
+      "M":false,"P":false,"comment":"终止时间",
       "defaults":"",
       "dictionary":"END_TIME"}
   ,{
@@ -86,7 +86,7 @@
       "dataType":"Varchar",
       "lengths":"2",
       "precision":"",
-      "M":false,"P":false,"comment":"",
+      "M":false,"P":false,"comment":"周期",
       "defaults":"",
       "dictionary":"PERIOD_FREQ"}
   ,{

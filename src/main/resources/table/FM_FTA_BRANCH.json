@@ -6,7 +6,7 @@
     "dataType":"Varchar",
     "lengths":"10",
     "precision":"",
-    "M":true,"P":true,"comment":"",
+    "M":true,"P":true,"comment":"自贸区代码",
     "defaults":"",
     "dictionary":"FTA_CODE"}
   ,{
@@ -14,7 +14,7 @@
       "dataType":"Varchar",
       "lengths":"50",
       "precision":"",
-      "M":true,"P":false,"comment":"",
+      "M":true,"P":false,"comment":"自贸区描述",
       "defaults":"",
       "dictionary":"FTA_DESC"}
   ,{
@@ -22,7 +22,7 @@
       "dataType":"Varchar",
       "lengths":"1",
       "precision":"",
-      "M":true,"P":false,"comment":"",
+      "M":true,"P":false,"comment":"自贸区类型",
       "defaults":"",
       "dictionary":"FTA_TYPE"}
   ,{
@@ -30,7 +30,7 @@
       "dataType":"Varchar",
       "lengths":"1",
       "precision":"",
-      "M":true,"P":false,"comment":"",
+      "M":true,"P":false,"comment":"区域",
       "defaults":"",
       "dictionary":"FTA_NATURE"}
   ,{
@@ -38,7 +38,7 @@
       "dataType":"Varchar",
       "lengths":"3",
       "precision":"",
-      "M":true,"P":false,"comment":"",
+      "M":true,"P":false,"comment":"利率类型",
       "defaults":"",
       "dictionary":"FTA_RATE_TYPE"}
   ,{

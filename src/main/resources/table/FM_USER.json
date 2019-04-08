@@ -58,7 +58,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "柜员级别 0~9 9为最高级别",
+            "comment": "柜员级别",
             "defaults": "",
             "dictionary": "USER_LEVEL",
             "scope": ""
@@ -122,7 +122,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "账薄 默认UA",
+            "comment": "账薄",
             "defaults": "",
             "dictionary": "TBOOK",
             "scope": ""

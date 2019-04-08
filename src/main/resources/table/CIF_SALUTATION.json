@@ -26,7 +26,7 @@
       "dataType": "Varchar",
       "lengths": "1",
       "precision": "",
-      "M": false,            "P": false,            "comment": "适用性别 M-男 F-女 U-未知",
+      "M": false,            "P": false,            "comment": "适用性别",
       "defaults": "",
       "dictionary": "GENDER_FLAG",
       "column": "适用性别 M-男 F-女 U-未知",

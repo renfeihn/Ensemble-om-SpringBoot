@@ -6,7 +6,7 @@
     "dataType":"Varchar",
     "lengths":"50",
     "precision":"",
-    "M":true,"P":true,"comment":"主账户账户类型  M-普通贷款,  D-垫款,  U-贴现贷款,  E-委托贷款,  Y-银团贷款",
+    "M":true,"P":true,"comment":"主账户账户类型",
     "defaults":"",
     "dictionary":"ACCT_TYPE"}
   ,{
@@ -30,7 +30,7 @@
       "dataType":"Varchar",
       "lengths":"200",
       "precision":"",
-      "M":true,"P":false,"comment":"交易类型，可以配置多个，支持逗号分隔",
+      "M":true,"P":false,"comment":"交易类型",
       "defaults":"",
       "dictionary":"TRAN_TYPE_LIST"}
   ,{

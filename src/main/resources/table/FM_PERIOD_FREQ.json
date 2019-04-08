@@ -22,7 +22,7 @@
       "dataType":"Varchar",
       "lengths":"1",
       "precision":"",
-      "M":true,"P":false,"comment":"节假日是否顺延 Y:顺延 N:不顺延",
+      "M":true,"P":false,"comment":"节假日是否顺延",
       "defaults":"",
       "dictionary":"FORCE_WORK_DAY"}
   ,{
@@ -38,7 +38,7 @@
       "dataType":"Varchar",
       "lengths":"1",
       "precision":"",
-      "M":true,"P":false,"comment":"每期单位 D:Day M:Month",
+      "M":true,"P":false,"comment":"每期单位",
       "defaults":"",
       "dictionary":"DAY_MTH"}
   ,{
@@ -46,7 +46,7 @@
       "dataType":"Varchar",
       "lengths":"5",
       "precision":"",
-      "M":true,"P":false,"comment":"每期天数 DAY_MTH为D时，取ADD_NO值；为M时，值为7* ADD_NO；为Y时，值为360* ADD_NO",
+      "M":true,"P":false,"comment":"每期天数",
       "defaults":"",
       "dictionary":"DAY_NUM"}
   ,{
@@ -54,7 +54,7 @@
       "dataType":"Varchar",
       "lengths":"1",
       "precision":"",
-      "M":true,"P":false,"comment":"期初/期末 F:期初       L:期末      A:实际天数",
+      "M":true,"P":false,"comment":"期初/期末",
       "defaults":"",
       "dictionary":"FIRST_LAST"}
   ,{
@@ -78,7 +78,7 @@
       "dataType":"Varchar",
       "lengths":"1",
       "precision":"",
-      "M":true,"P":false,"comment":"半月标识 Y:是 N:否 默认值为N",
+      "M":true,"P":false,"comment":"半月标识",
       "defaults":"'N'  ",
       "dictionary":"HALF_MONTH"}
   ,{

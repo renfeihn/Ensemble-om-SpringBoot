@@ -62,7 +62,7 @@
       "dataType":"Varchar",
       "lengths":"1",
       "precision":"",
-      "M":false,"P":false,"comment":"交易检查标志  指在保留天数内是否检查发生过交易",
+      "M":false,"P":false,"comment":"交易检查标志",
       "defaults":"",
       "dictionary":"CHECK_TRAN_FLAG"}
   ,{

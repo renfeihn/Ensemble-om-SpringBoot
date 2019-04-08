@@ -36,7 +36,7 @@
       "dataType": "Varchar",
       "lengths": "1",
       "precision": "",
-      "M": true,            "P": false,            "comment": "适用范围 I-个体客户 C-非个体 B-个体或者非个体",
+      "M": true,            "P": false,            "comment": "适用范围",
       "defaults": "",
       "dictionary": "APP_IND",
       "column": "适用范围 I-个体客户 C-非个体 B-个体或者非个体",

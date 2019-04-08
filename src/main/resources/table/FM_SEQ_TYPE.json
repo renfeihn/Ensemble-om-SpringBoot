@@ -30,7 +30,7 @@
       "dataType":"Varchar",
       "lengths":"1",
       "precision":"",
-      "M":true,"P":false,"comment":"分行重置 Y/N",
+      "M":true,"P":false,"comment":"分行重置",
       "defaults":"'N'  ",
       "dictionary":"BRANCH_RESET"}
   ,{
@@ -38,7 +38,7 @@
       "dataType":"Varchar",
       "lengths":"1",
       "precision":"",
-      "M":true,"P":false,"comment":"产品重置 Y/N",
+      "M":true,"P":false,"comment":"产品重置",
       "defaults":"'N'  ",
       "dictionary":"PROD_TYPE_RESET"}
   ,{
@@ -46,7 +46,7 @@
       "dataType":"Varchar",
       "lengths":"1",
       "precision":"",
-      "M":true,"P":false,"comment":"币种重置 Y/N",
+      "M":true,"P":false,"comment":"币种重置",
       "defaults":"'N'  ",
       "dictionary":"CCY_RESET"}
   ,{
@@ -54,7 +54,7 @@
       "dataType":"Varchar",
       "lengths":"1",
       "precision":"",
-      "M":false,"P":false,"comment":"客户公私属性重置 Y/N",
+      "M":false,"P":false,"comment":"客户公私属性重置",
       "defaults":"'N'",
       "dictionary":"IS_INDVL_RESET"}
   ,{

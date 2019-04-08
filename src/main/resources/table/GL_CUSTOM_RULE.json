@@ -46,7 +46,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "科目代码 AC_SUBJECT.SUBJECT_CODE",
+            "comment": "科目代码",
             "defaults": "",
             "dictionary": "GL_CODE",
             "scope": ""
@@ -70,7 +70,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "利润中心 FM_PROFIT_CENTRE.PROFIT_CENTRE",
+            "comment": "利润中心",
             "defaults": "",
             "dictionary": "PROFIT_CENTRE",
             "scope": "取值FM_PROFIT_CENTRE_TBL.PROFIT_CENTRE"

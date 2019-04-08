@@ -58,7 +58,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "是否担保经理 Y-是 N-否",
+            "comment": "是否担保经理",
             "defaults": "'N'  ",
             "dictionary": "COLLAT_MGR_IND",
             "scope": "Y:是,N:否"

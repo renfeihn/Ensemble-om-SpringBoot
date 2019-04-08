@@ -30,7 +30,7 @@
       "dataType":"Varchar",
       "lengths":"1",
       "precision":"",
-      "M":true,"P":false,"comment":"利润中心类型 S-Sub 记账类 C-Control 控制类",
+      "M":true,"P":false,"comment":"利润中心类型",
       "defaults":"'S'  ",
       "dictionary":"PROFIT_CENTRE_TYPE"}
   ,{

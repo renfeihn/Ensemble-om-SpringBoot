@@ -22,7 +22,7 @@
       "dataType":"Varchar",
       "lengths":"1",
       "precision":"",
-      "M":false,"P":false,"comment":"收入支出标志 D 借 C  贷",
+      "M":false,"P":false,"comment":"收入支出标志",
       "defaults":"",
       "dictionary":"CR_DR_IND"}
   ,{

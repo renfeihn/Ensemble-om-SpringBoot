@@ -26,7 +26,7 @@
       "dataType": "Varchar",
       "lengths": "1",
       "precision": "",
-      "M": false,            "P": false,            "comment": "风险等级 H-高 L-低",
+      "M": false,            "P": false,            "comment": "风险等级",
       "defaults": "",
       "dictionary": "RISK_LEVEL",
       "column": "风险等级 H-高 L-低",

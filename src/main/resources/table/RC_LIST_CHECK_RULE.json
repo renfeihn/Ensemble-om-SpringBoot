@@ -70,7 +70,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "禁止期限，整数",
+            "comment": "禁止期限",
             "defaults": "",
             "dictionary": "FORBID_TERM",
             "scope": ""
@@ -82,7 +82,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "禁止期限单位  FM_PERIOD_FREQ.DAY_MTH",
+            "comment": "禁止期限单位",
             "defaults": "",
             "dictionary": "FORBID_TERM_TYPE",
             "scope": "D:日,M:月,Y:年"
@@ -144,7 +144,7 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "接口禁止标识：I ：包含  E：排除",
+            "comment": "接口禁止标识",
             "scope": "",
             "M": true,
             "P": false
@@ -157,7 +157,7 @@
             "lengths": "200",
             "precision": "",
             "defaults": "",
-            "comment": "禁止期限，整数",
+            "comment": "禁止期限",
             "scope": "",
             "M": true,
             "P": false

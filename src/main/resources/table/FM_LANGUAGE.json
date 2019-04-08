@@ -6,7 +6,7 @@
     "dataType":"Varchar",
     "lengths":"1",
     "precision":"",
-    "M":true,"P":true,"comment":"用户语言 E:中文  C:中文",
+    "M":true,"P":true,"comment":"用户语言",
     "defaults":"",
     "dictionary":"LANGUAGE_CODE"}
   ,{

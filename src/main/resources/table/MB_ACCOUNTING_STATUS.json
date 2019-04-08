@@ -22,7 +22,7 @@
             "dataType":"Varchar",
             "lengths":"1",
             "precision":"",
-            "M":false,"P":false,"comment":"自动变化标志 Y-是N-否 Y时根据期间自动变化",
+            "M":false,"P":false,"comment":"自动变化标志",
             "defaults":"",
             "dictionary":"AUTO_CHANGE"}
     ,{
@@ -30,7 +30,7 @@
             "dataType":"Varchar",
             "lengths":"3",
             "precision":"",
-            "M":false,"P":false,"comment":"变化类型  PPD-本金逾期 IPD-利息逾期 APD-本息逾期 INA-不活动",
+            "M":false,"P":false,"comment":"变化类型",
             "defaults":"",
             "dictionary":"CHANGE_TYPE"}
     ,{
@@ -46,7 +46,7 @@
             "dataType":"Varchar",
             "lengths":"1",
             "precision":"",
-            "M":false,"P":false,"comment":"期间类型 D 天 M 月 Y 年",
+            "M":false,"P":false,"comment":"期间类型",
             "defaults":"",
             "dictionary":"PERIOD_TYPE"}
     ,{
@@ -54,7 +54,7 @@
             "dataType":"Varchar",
             "lengths":"1",
             "precision":"",
-            "M":false,"P":false,"comment":"是否可交易标识 Y 允许 N 不允许",
+            "M":false,"P":false,"comment":"是否可交易标识",
             "defaults":"",
             "dictionary":"AVAILABLE"}
     ,{
@@ -62,7 +62,7 @@
             "dataType":"Varchar",
             "lengths":"1",
             "precision":"",
-            "M":false,"P":false,"comment":"是否涉及利息 Y-是N-否",
+            "M":false,"P":false,"comment":"是否涉及利息",
             "defaults":"",
             "dictionary":"NON_PERFORMING"}
     ,{
@@ -70,7 +70,7 @@
             "dataType":"Varchar",
             "lengths":"1",
             "precision":"",
-            "M":false,"P":false,"comment":"是否涉及本金 Y-是N-否",
+            "M":false,"P":false,"comment":"是否涉及本金",
             "defaults":"",
             "dictionary":"NON_PERFORMING_PRI"}
     ,{
@@ -78,7 +78,7 @@
             "dataType":"Varchar",
             "lengths":"1",
             "precision":"",
-            "M":false,"P":false,"comment":"是否核销 Y-是N-否",
+            "M":false,"P":false,"comment":"是否核销",
             "defaults":"",
             "dictionary":"WRITE_OFF"}
     ,{
@@ -86,7 +86,7 @@
             "dataType":"Varchar",
             "lengths":"1",
             "precision":"",
-            "M":false,"P":false,"comment":"是否终止 Y-是N-否",
+            "M":false,"P":false,"comment":"是否终止",
             "defaults":"",
             "dictionary":"TERMINATE_IND"}
     ,{
@@ -102,7 +102,7 @@
             "dataType":"Varchar",
             "lengths":"1",
             "precision":"",
-            "M":false,"P":false,"comment":"是否考虑宽限期 Y-是N-否",
+            "M":false,"P":false,"comment":"是否考虑宽限期",
             "defaults":"",
             "dictionary":"GRACE_DAY"}
     ,{
@@ -110,7 +110,7 @@
             "dataType":"Varchar",
             "lengths":"1",
             "precision":"",
-            "M":false,"P":false,"comment":"持续扣款标志 Y-允许 N-不允许",
+            "M":false,"P":false,"comment":"持续扣款标志",
             "defaults":"",
             "dictionary":"HUNTING_STATUS"}
     ,{
@@ -126,7 +126,7 @@
             "dataType":"Varchar",
             "lengths":"1",
             "precision":"",
-            "M":false,"P":false,"comment":"自动还款类型 B 大本大息 S 小本小息",
+            "M":false,"P":false,"comment":"自动还款类型",
             "defaults":"",
             "dictionary":"ALLOC_SEQ_TYPE"}
     ,{

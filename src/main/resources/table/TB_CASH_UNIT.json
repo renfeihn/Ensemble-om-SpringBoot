@@ -6,7 +6,7 @@
     "dataType": "Varchar",
     "lengths": "20",
     "precision": "",
-    "M": true,            "P": true,            "comment": "券别代号 取值 TB_PAR_VALUE.PAR_VALUE_ID",
+    "M": true,            "P": true,            "comment": "券别代号",
     "defaults": "",
     "dictionary": "PAR_VALUE_ID",
     "column": "券别代号 取值 TB_PAR_VALUE.PAR_VALUE_ID",

@@ -45,7 +45,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "银行类别 O-Our Bank 我行                      B-Bank 他行 S-Building Society建房互助协会 T-Third Party Bank第三方银行",
+            "comment": "银行类别",
             "defaults": "",
             "dictionary": "BANK_TYPE",
             "scope": "O:Our Bank 我行,B:Bank 他行,S:Building Society建房互助协会,T:Third Party Bank第三方银行"

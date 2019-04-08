@@ -341,7 +341,7 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "是否截位标志 Y-截位 N-不截位",
+            "comment": "是否截位标志",
             "scope": "",
             "M": false,
             "P": false

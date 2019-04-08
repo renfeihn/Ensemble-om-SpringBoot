@@ -120,7 +120,7 @@
             "lengths": "1",
             "precision": "",
             "defaults": "",
-            "comment": "倒起息算法 F正算 B逆算",
+            "comment": "倒起息算法",
             "scope": "",
             "M": false,
             "P": false

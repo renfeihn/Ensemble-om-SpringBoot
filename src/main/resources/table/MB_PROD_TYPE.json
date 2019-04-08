@@ -62,7 +62,7 @@
       "lengths": "1",
       "precision": "",
       "defaults": "",
-      "comment": "产品作用范围",
+      "comment": "产品属性",
       "scope": "B:基础产品,S:可售产品",
       "M": false,
       "P": false

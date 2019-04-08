@@ -6,7 +6,7 @@
     "dataType":"Varchar",
     "lengths":"2",
     "precision":"",
-    "M":true,"P":true,"comment":"联系人类型 HL-热线验证人 CA-对账有权人 FC-金融交易经办人",
+    "M":true,"P":true,"comment":"联系人类型",
     "defaults":"",
     "dictionary":"LINKMAN_TYPE"}
   ,{

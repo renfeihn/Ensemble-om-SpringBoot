@@ -67,7 +67,7 @@
             "lengths": "30",
             "precision": "",
             "defaults": "",
-            "comment": "交易柜员 FM_USER.USER_ID",
+            "comment": "交易柜员",
             "scope": "",
             "M": false,
             "P": false

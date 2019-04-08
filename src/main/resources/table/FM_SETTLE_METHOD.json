@@ -99,7 +99,7 @@
             "lengths": "8",
             "precision": "",
             "defaults": "",
-            "comment": "电位类型 电文的类型",
+            "comment": "电文的类型",
             "scope": "例如,FT103，FT195等",
             "M": true,
             "P": false
@@ -213,7 +213,7 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "联系类型 取值",
+            "comment": "联系类型",
             "scope": "CIF_CONTACT_TYPE.CONTACT_TYPE",
             "M": false,
             "P": false
@@ -226,7 +226,7 @@
             "lengths": "3",
             "precision": "",
             "defaults": "",
-            "comment": "发报方联系类型 取值",
+            "comment": "发报方联系类型",
             "scope": "取值FM_CONTACT_TYPE.CONTACT_TYPE",
             "M": false,
             "P": false

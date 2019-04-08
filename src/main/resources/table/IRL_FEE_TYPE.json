@@ -62,7 +62,7 @@
             "lengths": "30",
             "precision": "",
             "defaults": "",
-            "comment": "缺口计算金额编码  收费方式为S、T必输",
+            "comment": "缺口计算金额编码",
             "scope": "取自IRL_AMT_EXPRESSION.EXPRESS_ID",
             "M": false,
             "P": false
@@ -75,7 +75,7 @@
             "lengths": "30",
             "precision": "",
             "defaults": "",
-            "comment": "费用计算金额编码  收费方式为R、B必输",
+            "comment": "费用计算金额编码",
             "scope": "取自IRL_AMT_EXPRESSION.EXPRESS_ID",
             "M": false,
             "P": false
@@ -113,7 +113,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "目标收费币种  当收费币种标识为S时该字段才起作用",
+            "comment": "目标收费币种",
             "defaults": "",
             "dictionary": "MB_CCY_TYPE",
             "column": "目标收费币种  当收费币种标识为S时该字段才起作用",
@@ -322,7 +322,7 @@
             "lengths": "15",
             "precision": "8",
             "defaults": "",
-            "comment": "交易行比例,记录百分数",
+            "comment": "交易行比例",
             "scope": "",
             "M": false,
             "P": false

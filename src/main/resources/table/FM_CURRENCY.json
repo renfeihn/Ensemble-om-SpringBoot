@@ -45,7 +45,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "基准天数 3.60365366E8",
+            "comment": "基准天数",
             "defaults": "",
             "dictionary": "DAY_BASIS",
             "scope": ""
@@ -145,7 +145,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "付/收款通知日 0-99",
+            "comment": "付/收款通知日",
             "defaults": "",
             "dictionary": "PAY_ADVICE_DAYS",
             "scope": ""
@@ -157,7 +157,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "固定日期 0-99",
+            "comment": "固定日期",
             "defaults": "",
             "dictionary": "FIXING_DAYS",
             "scope": ""
@@ -194,7 +194,7 @@
             "precision": "",
             "M": false,
             "P": false,
-            "comment": "货币组代码 货币中CCY_GROUP 为Y的货币代码",
+            "comment": "货币组代码",
             "defaults": "",
             "dictionary": "CCY_GROUP_CODE",
             "scope": ""

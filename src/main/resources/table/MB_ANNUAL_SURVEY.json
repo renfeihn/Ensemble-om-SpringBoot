@@ -14,7 +14,7 @@
       "dataType":"Varchar",
       "lengths":"1",
       "precision":"",
-      "M":true,"P":false,"comment":"是否止付Y:是 N:否",
+      "M":true,"P":false,"comment":"是否止付",
       "defaults":"",
       "dictionary":"STOP_FLAG"}
   ,{

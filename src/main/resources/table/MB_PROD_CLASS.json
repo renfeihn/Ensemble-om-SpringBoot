@@ -30,6 +30,8 @@
       "code": "PROD_CLASS_LEVEL",
       "codeOld": "PROD_CLASS_LEVEL",
       "dataType": "Varchar",
+      "comment": "产品分类等级",
+
       "lengths": "20",
       "precision": "",
       "defaults": "",
@@ -41,6 +43,8 @@
       "code": "PARENT_PROD_CLASS",
       "codeOld": "PARENT_PROD_CLASS",
       "dataType": "Varchar",
+      "comment": "父级产品分类",
+
       "lengths": "1",
       "precision": "",
       "defaults": "",

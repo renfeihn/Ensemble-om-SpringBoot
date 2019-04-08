@@ -35,7 +35,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "损失标志 Y-损失 N-非损失",
+            "comment": "损失标志",
             "defaults": "",
             "dictionary": "LOSS_IND",
             "column": "损失标志 Y-损失 N-非损失",

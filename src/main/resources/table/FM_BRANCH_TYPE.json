@@ -41,7 +41,7 @@
             "lengths": "30",
             "precision": "",
             "defaults": "",
-            "comment": "取值的含义说明",
+            "comment": "取值描述",
             "scope": "",
             "M": true,
             "P": false

@@ -45,7 +45,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "科目类型 C:控制类科目 S:记账类科目",
+            "comment": "科目类型",
             "defaults": "",
             "dictionary": "SUBJECT_TYPE",
             "scope": ""
@@ -81,7 +81,7 @@
             "precision": "",
             "M": true,
             "P": false,
-            "comment": "账户类型（客户账）",
+            "comment": "账户类型",
             "defaults": "",
             "dictionary": "GL_TYPE",
             "scope": "I:内部,N:往账,V:来账,R:零售账户"
