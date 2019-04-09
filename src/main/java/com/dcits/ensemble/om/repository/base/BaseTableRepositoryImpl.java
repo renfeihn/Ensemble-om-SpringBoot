@@ -46,24 +46,26 @@ public class BaseTableRepositoryImpl {
         StringBuffer sqlStr=new StringBuffer("delete from "+space+tableName+space+"where");
         StringBuffer reSql=new StringBuffer("delete from "+space+tableName+space+"where");
         for(Object key:pkValueJson.keySet()){
-            Object value = dataMap.get(key);
+            Object value = pkValueJson.get(key);
             sqlStr.append(space+key + equal  + mark + and);
             reSql.append(space+key + equal  + "'"+value+"'" + and);
         }
         sqlStr.delete(sqlStr.length() - 3, sqlStr.length() );
         reSql.delete(reSql.length() - 3, reSql.length() );
 
-            Query dataQuery = em.createNativeQuery(sqlStr.toString());
-            int i = 1;
-            for (Object key : pkValueJson.keySet()) {
-                Object value = pkValueJson.get(key);
-                dataQuery.setParameter(i, value);
-                i++;
-            }
+        Query dataQuery = em.createNativeQuery(sqlStr.toString());
+        int i = 1;
+        for (Object key : pkValueJson.keySet()) {
+            Object value = pkValueJson.get(key);
+            dataQuery.setParameter(i, value);
+            i++;
+        }
         if(flag) {
             dataQuery.executeUpdate();
         }
         reSql.append(";");
+        reSql.append("\r\n");
+
         return reSql;
     }
     @Modifying
@@ -120,6 +122,8 @@ public class BaseTableRepositoryImpl {
             dataQuery.executeUpdate();
         }
         reSql.append(";");
+        reSql.append("\r\n");
+
         return reSql;
     };
     @Modifying
@@ -192,6 +196,7 @@ public class BaseTableRepositoryImpl {
             }
             sqlStr.append(right);
             sqlStr.append(";");
+            sqlStr.append("\r\n");
         }
         return sqlStr;
     }
