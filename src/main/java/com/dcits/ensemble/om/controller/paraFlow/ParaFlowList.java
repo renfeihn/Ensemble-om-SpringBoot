@@ -105,6 +105,7 @@ public class ParaFlowList {
         if(omProcessDetailHist != null){
             responseMap.put("lastOptUser",omProcessDetailHist.getUserId());
             responseMap.put("lastOptTime",omProcessDetailHist.getTranTime());
+            responseMap.put("remark",omProcessDetailHist.getRemark());
         }
         return ResultUtils.success(responseMap);
     }
