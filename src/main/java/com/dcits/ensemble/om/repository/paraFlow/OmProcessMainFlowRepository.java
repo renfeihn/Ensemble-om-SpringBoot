@@ -17,6 +17,7 @@ public interface OmProcessMainFlowRepository extends JpaRepository<OmProcessMain
      public OmProcessMainFlow findByTranIdAndStatus(String tranId,String status);
      public OmProcessMainFlow findByTranId(String tranId);
      public OmProcessMainFlow findByMainSeqNo(String mainSeqNo);
+     List<OmProcessMainFlow> findByDispose(String dispose);
      @Transactional
      @Modifying
      @Query("update OmProcessMainFlow set status=:status where mainSeqNo=:mainSeqNo")

@@ -135,7 +135,9 @@ public class ProdInfoController {
         //记录操作流程
         //有单号，1.获取操作信息（操作序号） 2.组合表中生成新的子单号 3.将子单号信息存入差异信息表
         differenceProdInfo.insertProdDifferenceInfo(map, seqNo);
-        return ResultUtils.success();
+        Map responseMap = new HashMap<>();
+        responseMap.put("mainSeqNo",seqNo);
+        return ResultUtils.success(responseMap);
     }
     /**
      * 复核，发布流程处理

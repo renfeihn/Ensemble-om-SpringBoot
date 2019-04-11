@@ -21,6 +21,8 @@ import springfox.documentation.spring.web.json.Json;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.*;
 
 /**
@@ -39,6 +41,8 @@ public class ParaFlowList {
     FlowPublishService flowPublishService;
     @Resource
     OmProcessRecordHistRepository omProcessRecordHistRepository;
+    @Resource
+    OmProcessRelationHistRepository omProcessRelationHistRepository;
     //获取交易提交流程信息
     @RequestMapping("/reviewList")
     public @ResponseBody
@@ -60,9 +64,12 @@ public class ParaFlowList {
     @RequestMapping("/reviewCheckList")
     public @ResponseBody
     Result getCheckFlowList(HttpServletResponse response){
-        List<OmProcessMainFlow> omProcessMainFlowList = omProcessMainFlowRepository.findAll();
         List<Map> resultList=new ArrayList<>();
+        List<OmProcessMainFlow> omProcessMainFlowList = omProcessMainFlowRepository.findByDispose("N");
+        //遍历在途流程  判断该产品是否在途待处理
         for(OmProcessMainFlow omProcessMainFlow : omProcessMainFlowList){
+            String mainSeqNo = omProcessMainFlow.getMainSeqNo();
+
             Map<String,Object> checkMap= new HashMap<>();
             //获取提交流程信息
             OmProcessDetailHist omProcessDetailHistCheck = omProcessDetailHistRepository.findByMainSeqNoAndDtlSeqNoAndStatus(omProcessMainFlow.getMainSeqNo(), omProcessMainFlow.getDtlSeqNo(),omProcessMainFlow.getStatus());
@@ -74,6 +81,34 @@ public class ParaFlowList {
         }
         return ResultUtils.success(resultList);
     }
+
+    //获取在途流程详细信息
+    @RequestMapping("/getFlowInfoByMainSeqNo")
+    public @ResponseBody
+    Result getFlowInfoByMainSeqNo(HttpServletResponse response,@RequestBody Map map){
+        String mainSeqNo = (String)map.get("mainSeqNo");
+        Map responseMap = new HashMap<>();
+        BigDecimal dtlSeqNo = new BigDecimal(BigInteger.ZERO);
+        String status = "";
+        //获取在途流程信息 组装申请信息
+        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByMainSeqNo(mainSeqNo);
+        if(omProcessMainFlow!=null){
+            dtlSeqNo = omProcessMainFlow.getDtlSeqNo();
+            status = omProcessMainFlow.getStatus();
+            responseMap.put("mainSeqNo",omProcessMainFlow.getMainSeqNo());
+            responseMap.put("applicationUser",omProcessMainFlow.getUserId());
+            responseMap.put("status",omProcessMainFlow.getStatus());
+            responseMap.put("applicationTime",omProcessMainFlow.getMainSeqNo().substring(0,8));
+        }
+        //获取流程最新修改信息
+        OmProcessDetailHist omProcessDetailHist = omProcessDetailHistRepository.findByMainSeqNoAndDtlSeqNoAndStatus(mainSeqNo,dtlSeqNo,status);
+        if(omProcessDetailHist != null){
+            responseMap.put("lastOptUser",omProcessDetailHist.getUserId());
+            responseMap.put("lastOptTime",omProcessDetailHist.getTranTime());
+        }
+        return ResultUtils.success(responseMap);
+    }
+
     //发布流程
     @RequestMapping("/publish")
     public @ResponseBody
@@ -104,11 +139,15 @@ public class ParaFlowList {
         String prodType = (String)map.get("prodType");
         Map responseMap = new HashMap<>();
         Boolean ret = false;
+        String tagStatus = "";
+        String mainSeqNo = "";
         List<OmProcessMainFlow> omProcessMainFlowList = omProcessMainFlowRepository.findAll();
         for(OmProcessMainFlow omProcessMainFlow:omProcessMainFlowList){
-            String status = omProcessMainFlow.getStatus().toString();
-            String isP = omProcessMainFlow.getDispose().toString();
-            if(("N".equals(isP) && ("1".equals(status))) || "2".equals(status) || "3".equals(status)){
+            String status = omProcessMainFlow.getStatus();
+            tagStatus = omProcessMainFlow.getStatus();
+            mainSeqNo = omProcessMainFlow.getMainSeqNo();
+            String isP = omProcessMainFlow.getDispose();
+            if(("N".equals(isP) && ("1".equals(status))) || "2".equals(status) || "3".equals(status) || "6".equals(status)){
                 Boolean findIn = false;
                 //存在在途数据 判断是否该产品
                 List<OmProcessRecordHist> omProcessRecordHistList = omProcessRecordHistRepository.findByMainSeqNo(omProcessMainFlow.getMainSeqNo());
@@ -126,6 +165,8 @@ public class ParaFlowList {
             }
         }
         responseMap.put("ret",ret);
+        responseMap.put("status",tagStatus);
+        responseMap.put("mainSeqNo",mainSeqNo);
         return ResultUtils.success(responseMap);
     }
 }
