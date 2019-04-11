@@ -92,18 +92,26 @@ public class ParamTable {
         String tableName= (String) map.get("tableName");
         String tableDesc= (String) map.get("tableDesc");
         List list= (List) map.get("data");
-        String seqNo;
+        String seqNo = "";
+        Boolean flag = false;
         String option = (String) map.get("option");
-        //根据option设置交易状态  保存(save):2  暂存(temp):1
-        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByUserIdAndDispose(userName, "N");
+        //根据option设置交易状态  保存1 提交2
+        List<OmProcessMainFlow> omProcessMainFlowList = omProcessMainFlowRepository.findByUserIdAndDispose(userName, "N");
         //无单号，1.申请单号 2.新增记录差异信息 3.根据操作类型更新交易状态
-        if (omProcessMainFlow == null || omProcessMainFlow.getMainSeqNo() == null) {
-            seqNo = flowManagement.appNoByTable(userName, tableName, "Y","1");
-        } else {
-            seqNo = omProcessMainFlow.getMainSeqNo();
-            if("6".equals(omProcessMainFlow.getStatus())) {
-                flowManagement.onlyUpdateDel(omProcessMainFlow,userName);
+        for(OmProcessMainFlow omProcessMainFlow:omProcessMainFlowList){
+            //存在保存未提交  驳回未提交的时候  不重新生成单号
+            if("1".equals(omProcessMainFlow.getStatus()) || "6".equals(omProcessMainFlow.getStatus())){
+                seqNo = omProcessMainFlow.getMainSeqNo();
+                if("6".equals(omProcessMainFlow.getStatus())) {
+                    flowManagement.onlyUpdateDel(omProcessMainFlow,userName);
+                }
+                flag = true;
+                break;
             }
+        }
+        if(!flag){
+            //不存在待提交的流程时候  重新申请新的单号
+            seqNo = flowManagement.appNoByTable(userName, tableName, "Y","1");
         }
         //记录操作流程
         //有单号，1.获取操作信息（操作序号） 2.组合表中生成新的子单号 3.将子单号信息存入差异信息表

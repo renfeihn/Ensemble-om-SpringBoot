@@ -96,40 +96,47 @@ public class ProdInfoController {
     }
 
     /**
-     * 保存、暂存处理
-     * 通过页面传递的交易单号判断是暂存还是保存
-     * 无单号：为交易申请单号，记录上送的页面操作
-     * 有单号&&保存操作：根据交易单号改交易状态，更新操作记录表
-     * 有单号&&暂存操作：根据单号更新操作记录表
-     *
-     * @param response
+     * @deprecated 保存时 以用户为维度 获取改用户所有未处理的流程信息List<OmProcessMainFlow>
+     *     判断是否存在保存未提交  驳回未提交的流程
+     *     存在： 不发起新的流程 不申请新的单号  新操作更新relation表即可
+     *     不存在：发起新的流程  申请新的单号  新单号拥有全流程生命周期
+     *     status: 1-保存  2-提交 3-复核 4-发布 6-驳回
+     *     dispose: Y-表示该流程已经结束  N-标识该流程在途
      */
     @RequestMapping("/saveProdInfo")
     @ResponseBody
     public Result saveProdInfo(HttpServletResponse response, @RequestBody Map map) {
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         String userName = (String) map.get("userName");
-        String seqNo;
+        String seqNo = "";
         String option = (String) map.get("option"); 
-        //根据option设置交易状态  保存(save):2  暂存(temp):1
-        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByUserIdAndDispose(userName, "N");
-        //无单号，1.申请单号 2.新增记录差异信息 3.根据操作类型更新交易状态
-        if (omProcessMainFlow == null || omProcessMainFlow.getMainSeqNo() == null) {
-            seqNo = flowManagement.appNoByTable(userName, "MB_PROD_TYPE", "Y","1");
-        } else {
-            //此处判断如果交易状态为待复核、待发布状态则抛出异常
-            seqNo = omProcessMainFlow.getMainSeqNo();
-            //判断其前状态，如果为作废则更新批次号并且记录新的操作信息
-            if("6".equals(omProcessMainFlow.getStatus())) {
-                flowManagement.onlyUpdateDel(omProcessMainFlow,userName);
+        //以用户为维护  获取该用户所有在途流程
+        List<OmProcessMainFlow> omProcessMainFlowList = omProcessMainFlowRepository.findByUserIdAndDispose(userName, "N");
+        /**获取当前用户所有在途流程  存在“1-保存未提交 || 6-驳回未提交” 的流程时 就以此为主单号  更新relation表
+          *如果遍历结束  所有流程均已经提交||没有流程时候 重新发起新的流程
+         */
+        Boolean flag = false;
+        for(OmProcessMainFlow omProcessMainFlow:omProcessMainFlowList){
+            if("1".equals(omProcessMainFlow.getStatus()) || "6".equals(omProcessMainFlow.getStatus())){
+                seqNo = omProcessMainFlow.getMainSeqNo();
+                //判断其前状态，如果为作废则更新批次号并且记录新的操作信息
+                if("6".equals(omProcessMainFlow.getStatus())) {
+                    flowManagement.onlyUpdateDel(omProcessMainFlow,userName);
+                }
+                flag = true;
+                break;
             }
         }
+        if(!flag){
+            //不存在待提交的流程  此时发起新的流程
+            seqNo = flowManagement.appNoByTable(userName, "MB_PROD_TYPE", "Y","1");
+        }
+
         //记录操作流程
         //有单号，1.获取操作信息（操作序号） 2.组合表中生成新的子单号 3.将子单号信息存入差异信息表
         differenceProdInfo.insertProdDifferenceInfo(map, seqNo);
         return ResultUtils.success();
     }
-
     /**
      * 复核，发布流程处理
      * 通过界面传递的optType(操作类型)3:复核  4:发布

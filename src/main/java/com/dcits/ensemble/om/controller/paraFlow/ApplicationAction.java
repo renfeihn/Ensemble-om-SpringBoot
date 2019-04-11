@@ -66,10 +66,15 @@ public class ApplicationAction {
     public Result submitCommon(HttpServletResponse response, @RequestBody Map map) {
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         String userId = (String) map.get("userId");
-        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByUserIdAndDispose(userId, "N");
-        omProcessMainFlow.setStatus("2");
-        omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow);
-        flowManagement.sumProcessInfo(omProcessMainFlow.getMainSeqNo(), userId, "2", omProcessMainFlow.getDtlSeqNo(),null,null);
+        List<OmProcessMainFlow> omProcessMainFlowList = omProcessMainFlowRepository.findByUserIdAndDispose(userId, "N");
+        for(OmProcessMainFlow omProcessMainFlow1: omProcessMainFlowList) {
+            //以用户为维度  将保存未提交，驳回未提交的流程进行提交
+            if(("1".equals(omProcessMainFlow1.getStatus()) || "6".equals(omProcessMainFlow1.getStatus())) && "N".equals(omProcessMainFlow1.getDispose())) {
+                omProcessMainFlow1.setStatus("2");
+                omProcessMainFlowRepository.saveAndFlush(omProcessMainFlow1);
+                flowManagement.sumProcessInfo(omProcessMainFlow1.getMainSeqNo(), userId, "2", omProcessMainFlow1.getDtlSeqNo(), null, null);
+            }
+        }
         return ResultUtils.success();
     }
     @RequestMapping("/getCommonList")
@@ -78,10 +83,13 @@ public class ApplicationAction {
     Result getProdList(HttpServletResponse response,@RequestBody Map map){
         response.setHeader("Content-Type", "application/json;charset=UTF-8");
         String userId = (String) map.get("userId");
-        OmProcessMainFlow omProcessMainFlow = omProcessMainFlowRepository.findByUserIdAndDispose(userId, "N");
+        List<OmProcessMainFlow> omProcessMainFlow = omProcessMainFlowRepository.findByUserIdAndDispose(userId, "N");
         List<OmProcessRelationHist> mbProdTypeList=new ArrayList<>();
-        if(omProcessMainFlow !=null &&("1".equals(omProcessMainFlow.getStatus())||"6".equals(omProcessMainFlow.getStatus()))) {
-            mbProdTypeList = omProcessRelationHistRepository.findByMainSeqNoGroupBy(omProcessMainFlow.getMainSeqNo());
+        for(OmProcessMainFlow omProcessMainFlow1: omProcessMainFlow) {
+            //待提交数据包括 保存未提交 + 驳回未处理的流程
+            if (omProcessMainFlow != null && ("1".equals(omProcessMainFlow1.getStatus()) || "6".equals(omProcessMainFlow1.getStatus()))) {
+                mbProdTypeList = omProcessRelationHistRepository.findByMainSeqNoGroupBy(omProcessMainFlow1.getMainSeqNo());
+            }
         }
         return   ResultUtils.success(mbProdTypeList);
     }
