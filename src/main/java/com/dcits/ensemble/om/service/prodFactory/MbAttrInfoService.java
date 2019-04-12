@@ -71,25 +71,30 @@ public class MbAttrInfoService {
         List<MbAttrValue> mbAttrValueList= mbAttrValueRepository.findAllByAttrKey(key);
         AttrValueBean attrValueBean=new AttrValueBean();
         List valueScoreList=new ArrayList<>();
-        for(MbAttrValue attrValue : mbAttrValueList){
-                if("RF".equals(valueMethod)){
-                    String columnInfo=attrValue.getRefColumns();
-                    String[] columns= columnInfo.split(",");
+        if(mbAttrValueList!=null && mbAttrValueList.size()>0) {
+            for (MbAttrValue attrValue : mbAttrValueList) {
+                if ("RF".equals(valueMethod)) {
+                    String columnInfo = attrValue.getRefColumns();
+                    if(columnInfo!="" && columnInfo!=null){
+                        String[] columns = columnInfo.split(",");
+                        attrValueBean.setRfColumn(columns[0]);
+                        if (columns.length > 1) {
+                            attrValueBean.setRfColumnDesc(columns[1]);
+                        }
+                    }
                     attrValueBean.setKey(key);
                     attrValueBean.setRfTable(attrValue.getRefTable());
-                    attrValueBean.setRfColumn(columns[0]);
-                    if(columns.length>1) {
-                        attrValueBean.setRfColumnDesc(columns[1]);
-                    }
-                }else if("VL".equals(valueMethod)){
-                    Map vlMap =new HashMap<>();
-                    vlMap.put("key",attrValue.getAttrValue());
+
+                } else if ("VL".equals(valueMethod)) {
+                    Map vlMap = new HashMap<>();
+                    vlMap.put("key", attrValue.getAttrValue());
                     vlMap.put("value", attrValue.getValueDesc());
                     valueScoreList.add(vlMap);
                 }
-        }
-        if("VL".equals(valueMethod)){
-            attrValueBean.setValueScore(valueScoreList);
+            }
+            if ("VL".equals(valueMethod)) {
+                attrValueBean.setValueScore(valueScoreList);
+            }
         }
         return attrValueBean;
     }
