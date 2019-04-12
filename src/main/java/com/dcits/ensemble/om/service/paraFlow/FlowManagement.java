@@ -4,10 +4,12 @@ import com.dcits.ensemble.om.model.dbmodel.OmProcessRecordHist;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessMainFlow;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessDetailHist;
 import com.dcits.ensemble.om.model.dbmodel.OmProcessRelationHist;
+import com.dcits.ensemble.om.model.dbmodel.tables.OmTableList;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessDetailHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessMainFlowRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRelationHistRepository;
+import com.dcits.ensemble.om.repository.tables.OmTableListRepository;
 import com.dcits.ensemble.om.util.ResourcesUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +34,8 @@ public class FlowManagement {
     private OmProcessRecordHistRepository omProcessRecordHistRepository;
     @Resource
     private OmProcessRelationHistRepository omProcessRelationHistRepository;
+    @Resource
+    private OmTableListRepository omTableListRepository;
     /**
      * 服务在用户暂存时调用
      * 对应交易如果有单号
@@ -69,7 +73,13 @@ public class FlowManagement {
         String  seqNo= ResourcesUtils.getDateTimeUuId();
         paraCircleFlow.setMainSeqNo(seqNo);
         paraCircleFlow.setTranId(tranName);
-        paraCircleFlow.setTranDesc("产品定义");
+        //获取参数表名称
+        OmTableList omTableList = omTableListRepository.findByTableName(tranName);
+        if(omTableList != null){
+            paraCircleFlow.setTranDesc(omTableList.getTableDesc());
+        }else {
+            paraCircleFlow.setTranDesc("产品定义");
+        }
         paraCircleFlow.setStatus(status);
         paraCircleFlow.setIsTranGroup(tranFlow);
         paraCircleFlow.setDtlSeqNo(BigDecimal.ONE);
