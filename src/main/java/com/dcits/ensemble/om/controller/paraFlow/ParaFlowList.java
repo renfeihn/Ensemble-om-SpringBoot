@@ -60,6 +60,18 @@ public class ParaFlowList {
       return ResultUtils.success(resultList);
     }
 
+    //获取交易提交流程信息
+    @RequestMapping("/getRelationInfoOfUndeal")
+    public @ResponseBody
+    Result getRelationInfoOfUndeal(HttpServletResponse response){
+        List<OmProcessRelationHist> resultList = new ArrayList<>();
+        List<OmProcessMainFlow> omProcessMainFlowList = omProcessMainFlowRepository.findByDispose("N");
+        for(OmProcessMainFlow omProcessMainFlow:omProcessMainFlowList){
+            resultList.addAll(omProcessRelationHistRepository.findByMainSeqNo(omProcessMainFlow.getMainSeqNo()));
+        }
+        return ResultUtils.success(resultList);
+    }
+
     //获取交易复核流程信息
     @RequestMapping("/reviewCheckList")
     public @ResponseBody
