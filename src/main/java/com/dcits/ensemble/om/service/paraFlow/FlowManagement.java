@@ -10,6 +10,8 @@ import com.dcits.ensemble.om.repository.paraFlow.OmProcessMainFlowRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRecordHistRepository;
 import com.dcits.ensemble.om.repository.paraFlow.OmProcessRelationHistRepository;
 import com.dcits.ensemble.om.repository.tables.OmTableListRepository;
+import com.dcits.ensemble.om.table.DbTable;
+import com.dcits.ensemble.om.table.TableDefine;
 import com.dcits.ensemble.om.util.ResourcesUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -75,8 +77,11 @@ public class FlowManagement {
         paraCircleFlow.setTranId(tranName);
         //获取参数表名称
         OmTableList omTableList = omTableListRepository.findByTableName(tranName);
+        DbTable dbTable= TableDefine.getTable(tranName);
         if(omTableList != null){
             paraCircleFlow.setTranDesc(omTableList.getTableDesc());
+        }else if(dbTable != null){
+            paraCircleFlow.setTranDesc(dbTable.getComment());
         }else {
             paraCircleFlow.setTranDesc("产品定义");
         }
