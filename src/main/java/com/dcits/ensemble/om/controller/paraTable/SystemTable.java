@@ -170,7 +170,13 @@ public class SystemTable {
         else {
             //获取用户所管理的所有用户信息
             List<OmUser> omUsers = omUserRepository.findByParentUserId(parentUserId);
-            omUser = omUsers;
+            //用户本身信息
+            OmUser user = omUserRepository.findByUserId(parentUserId);
+            //将用户本身信息放第一位
+            omUser.add(user);
+            for(OmUser use : omUsers){
+                omUser.add(use);
+            }
             //获取所有用户的角色信息
             if (omUsers.size() > 0) {
                 for (int i = 0; i < omUsers.size(); i++) {

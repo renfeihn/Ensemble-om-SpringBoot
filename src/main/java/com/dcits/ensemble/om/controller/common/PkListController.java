@@ -32,12 +32,9 @@ public class PkListController {
     @RequestMapping("/getPkList")
     @ResponseBody
     public Result getPkList(HttpServletResponse response, @RequestBody Map map) {
-        String pkInfo=(String)map.get("pkInfo");
-        int begin=pkInfo.indexOf(".");
-        int beginSec=pkInfo.indexOf("|");
-        String tableName=pkInfo.substring(0, begin);
-        String column=pkInfo.substring(begin+1,beginSec);
-        String columnDesc=pkInfo.substring(beginSec+1);
+        String tableName=(String)map.get("tableName");
+        String column=(String)map.get("columnCode");
+        String columnDesc=(String)map.get("columnDesc");
         List<Map> columnMap= pkListRepository.getPkList(tableName,column,columnDesc);
         return  ResultUtils.success(columnMap);
     }
