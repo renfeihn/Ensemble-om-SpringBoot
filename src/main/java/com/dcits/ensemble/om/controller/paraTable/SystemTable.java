@@ -138,6 +138,29 @@ public class SystemTable {
     }
 
     /*
+     * 用户，菜单，角色，权限表信息保存
+     * */
+    @RequestMapping("/saveRoleMenuTable")
+    @ResponseBody
+    public Result saveRoleMenuTable(HttpServletResponse response, @RequestBody Map map){
+        response.setHeader("Content-Type", "application/json;charset=UTF-8");
+        List<Map> addList = (List) map.get("add");
+        List<Map> deleteList = (List) map.get("delete");
+        if(deleteList.size() != 0){
+            for(Map delete : deleteList){
+                JSONObject pkValue = new JSONObject();
+                pkValue.put("ROLE_ID", delete.get("roleId"));
+                pkValue.put("MENU_ID", delete.get("menuId"));
+                systemTableRepositoryImpl.deleteTable("OM_MENU_ROLE", delete, pkValue);
+            }
+        }
+        for(Map add : addList){
+            systemTableRepositoryImpl.insertTable("OM_MENU_ROLE", add);
+        }
+        return ResultUtils.success();
+    }
+
+    /*
      * 通过用户  获取用户所能访问的菜单信息
      * */
     @RequestMapping("/getSysInfoByUser")
