@@ -14,7 +14,6 @@ public class OmMenuRoleClass implements Serializable {
 
     private String roleId;
     private String menuId;
-    private String roleFatherId;
 
 
     @Override
