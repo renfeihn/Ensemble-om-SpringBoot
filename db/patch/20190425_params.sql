@@ -1,0 +1,1 @@
+﻿alter table om_menu_role add role_father_id VARCHAR(30);
