@@ -122,6 +122,24 @@ public class ParaFlowList {
         return ResultUtils.success(responseMap);
     }
 
+    //获取已完成交易详细信息
+    @RequestMapping("/getFinishFlowInfo")
+    public @ResponseBody
+    Result getFinishFlowInfo(HttpServletResponse response){
+        List<Map> resultList=new ArrayList<>();
+        List<OmProcessMainFlow> omProcessMainFlowList = omProcessMainFlowRepository.findByDispose("Y");
+        //获取已完成的交易的完整信息
+        for(OmProcessMainFlow omProcessMainFlow : omProcessMainFlowList){
+            Map<String,Object> checkMap= new HashMap<>();
+            //获取完整信息
+            OmProcessDetailHist omProcessDetailHistCheck = omProcessDetailHistRepository.findByMainSeqNoAndStatus(omProcessMainFlow.getMainSeqNo(),"4");
+            checkMap.put("flowManage", omProcessMainFlow);
+            checkMap.put("flowCheckInfo", omProcessDetailHistCheck);
+            resultList.add(checkMap);
+        }
+        return ResultUtils.success(resultList);
+    }
+
     //发布流程
     @RequestMapping("/publish")
     public @ResponseBody
