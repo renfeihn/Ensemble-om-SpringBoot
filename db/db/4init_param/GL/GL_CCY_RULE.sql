@@ -1,0 +1,3 @@
+TRUNCATE TABLE gl_ccy_rule;
+
+COMMIT;

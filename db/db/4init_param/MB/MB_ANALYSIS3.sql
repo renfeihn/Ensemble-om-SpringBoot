@@ -1,0 +1,3 @@
+TRUNCATE TABLE mb_analysis3;
+
+COMMIT;

@@ -1,0 +1,102 @@
+{
+    "system": "ensemble",
+    "code": "MB_CERTIFICATE_TYPE",
+    "table_space": "core_data",
+    "comment": "产权证明种类",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "commentDesc": "抵债资产使用，用于定义产权证明种类",
+    "attr": [
+        {
+            "dictionary": "CERTIFICATE_TYPE",
+            "code": "CERTIFICATE_TYPE",
+            "codeOld": "",
+            "dataType": "Varchar",
+            "lengths": "50",
+            "precision": "",
+            "defaults": "",
+            "comment": "产权证明种类",
+            "scope": "",
+            "M": true,
+            "P": true
+        },
+        {
+            "dictionary": "CERTIFICATE_TYPE_DESC",
+            "code": "CERTIFICATE_TYPE_DESC",
+            "codeOld": "",
+            "dataType": "Varchar",
+            "lengths": "200",
+            "precision": "",
+            "defaults": "",
+            "comment": "产权证明种类描述",
+            "scope": "",
+            "M": false,
+            "P": false
+        },
+        {
+            "dictionary": "COMPANY",
+            "code": "COMPANY",
+            "codeOld": "",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "defaults": "",
+            "comment": "法人代码",
+            "scope": "FM_COMPANY.COMPANY",
+            "M": false,
+            "P": false
+        },
+        {
+            "dictionary": "TRAN_DATE",
+            "code": "TRAN_DATE",
+            "codeOld": "",
+            "dataType": "Varchar",
+            "lengths": "8",
+            "precision": "",
+            "defaults": "",
+            "comment": "交易日期",
+            "scope": "",
+            "M": false,
+            "P": false
+        },
+        {
+            "dictionary": "USER_ID",
+            "code": "USER_ID",
+            "codeOld": "",
+            "dataType": "Varchar",
+            "lengths": "30",
+            "precision": "",
+            "defaults": "",
+            "comment": "交易柜员",
+            "scope": "",
+            "M": false,
+            "P": false
+        },
+        {
+            "dictionary": "LAST_CHANGE_DATE",
+            "code": "LAST_CHANGE_DATE",
+            "codeOld": "",
+            "dataType": "Varchar",
+            "lengths": "8",
+            "precision": "",
+            "defaults": "",
+            "comment": "最后变更日期",
+            "scope": "",
+            "M": false,
+            "P": false
+        },
+        {
+            "dictionary": "LAST_CHANGE_USER_ID",
+            "code": "LAST_CHANGE_USER_ID",
+            "codeOld": "",
+            "dataType": "Varchar",
+            "lengths": "30",
+            "precision": "",
+            "defaults": "",
+            "comment": "上次修改柜员",
+            "scope": "",
+            "M": false,
+            "P": false
+        }
+    ]
+}

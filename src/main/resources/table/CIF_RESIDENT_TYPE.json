@@ -1,0 +1,59 @@
+{
+  "code": "CIF_RESIDENT_TYPE",
+  "comment": "居住类型表",
+  "attr": [        {
+    "code": "RESIDENT_TYPE",
+    "dataType": "Varchar",
+    "lengths": "1",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "居住类型",
+    "defaults": "",
+    "dictionary": "RESIDENT_TYPE",
+    "column": "居住类型",
+    "scope": ""        }
+  ,        {
+      "code": "RESIDENT_TYPE_DESC",
+      "dataType": "Varchar",
+      "lengths": "30",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "居住类型说明",
+      "defaults": "",
+      "dictionary": "RESIDENT_TYPE_DESC",
+      "column": "居住类型说明",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "法人代码",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "法人代码",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "交易时间戳",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "时间戳",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "交易时间",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "交易时间",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": "记录客户的居住类型",
+  "moduleType":"客户参数"}

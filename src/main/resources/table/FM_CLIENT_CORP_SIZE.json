@@ -1,0 +1,63 @@
+{
+    "system": "ensemble",
+    "code": "FM_CLIENT_CORP_SIZE",
+    "table_space": "core_data",
+    "comment": "企业规模表",
+    "dbType": "upright",
+    "parameter": "init_para",
+    "commentDesc": "FM_REF_CODE表中分离出来的FM_CLIENT.CORP_SIZE数据",
+    "attr": [
+        {
+            "dictionary": "REF_LANG",
+            "code": "REF_LANG",
+            "codeOld": "",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "defaults": "",
+            "comment": "语言",
+            "scope": "",
+            "M": true,
+            "P": true
+        },
+        {
+            "dictionary": "FIELD_VALUE",
+            "code": "FIELD_VALUE",
+            "codeOld": "FIELD_VALUE",
+            "dataType": "Varchar",
+            "lengths": "8",
+            "precision": "",
+            "defaults": "",
+            "comment": "取值范围",
+            "scope": "",
+            "M": true,
+            "P": true
+        },
+        {
+            "dictionary": "MEANING",
+            "code": "MEANING",
+            "codeOld": "MEANING",
+            "dataType": "Varchar",
+            "lengths": "30",
+            "precision": "",
+            "defaults": "",
+            "comment": "取值的含义说明",
+            "scope": "",
+            "M": true,
+            "P": false
+        },
+        {
+            "dictionary": "NARRATIVE1",
+            "code": "NARRATIVE1",
+            "codeOld": "REMARK",
+            "dataType": "Varchar",
+            "lengths": "300",
+            "precision": "",
+            "defaults": "",
+            "comment": "备注",
+            "scope": "",
+            "M": false,
+            "P": false
+        }
+    ]
+}

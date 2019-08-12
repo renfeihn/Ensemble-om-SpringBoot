@@ -1,0 +1,42 @@
+Error executing: TRUNCATE TABLE gl_ccy_rule
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'ensemble_om.gl_ccy_rule' doesn't exist
+Error executing: INSERT INTO lm_tran_limit_def (LIMIT_REF, LIMIT_DESC, CCY, MIN_AMT, MAX_AMT, EFFECT_DATE, LIMIT_TYPE, LIMIT_LEVEL, STATUS, DEAL_FLOW, ENABLE_DEFINE, START_DATE, END_DATE, TRAN_TIMESTAMP, TRAN_TIME) VALUES ('TranSumPd3CrLimit', '三类账户入账日累计交易限额', 'CNY', '0', '2000', '20160101', 'PD', NULL, 'Y', 'A', 'Y', NULL, NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'TranSumPd3CrLimit' for key 'PRIMARY'
+Error executing: INSERT INTO lm_tran_limit_def (LIMIT_REF, LIMIT_DESC, CCY, MIN_AMT, MAX_AMT, EFFECT_DATE, LIMIT_TYPE, LIMIT_LEVEL, STATUS, DEAL_FLOW, ENABLE_DEFINE, START_DATE, END_DATE, TRAN_TIMESTAMP, TRAN_TIME) VALUES ('TranSumPd3DrLimit', '三类账户出账日累计交易限额', 'CNY', '0', '2000', '20160101', 'PD', NULL, 'Y', 'A', 'Y', NULL, NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'TranSumPd3DrLimit' for key 'PRIMARY'
+Error executing: INSERT INTO lm_tran_limit_def (LIMIT_REF, LIMIT_DESC, CCY, MIN_AMT, MAX_AMT, EFFECT_DATE, LIMIT_TYPE, LIMIT_LEVEL, STATUS, DEAL_FLOW, ENABLE_DEFINE, START_DATE, END_DATE, TRAN_TIMESTAMP, TRAN_TIME) VALUES ('TranSumPy3CrLimit', '三类账户入账年累计交易限额', 'CNY', '0', '50000', '20160101', 'PY', NULL, 'Y', 'A', 'Y', NULL, NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'TranSumPy3CrLimit' for key 'PRIMARY'
+Error executing: INSERT INTO mb_open_ctl (CLIENT_TYPE, CTRL_ATTR, CTRL_VALUE, QUANTITY, DEAL_FLOW, TRAN_TIMESTAMP, TRAN_TIME, COMPANY) VALUES ('01', 'ACCT_CLASS', '1', '1', 'B', NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'CTRL_ATTR' at row 1
+Error executing: INSERT INTO mb_open_ctl (CLIENT_TYPE, CTRL_ATTR, CTRL_VALUE, QUANTITY, DEAL_FLOW, TRAN_TIMESTAMP, TRAN_TIME, COMPANY) VALUES ('01', 'ACCT_CLASS', '2', '5', 'B', NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'CTRL_ATTR' at row 1
+Error executing: INSERT INTO mb_open_ctl (CLIENT_TYPE, CTRL_ATTR, CTRL_VALUE, QUANTITY, DEAL_FLOW, TRAN_TIMESTAMP, TRAN_TIME, COMPANY) VALUES ('01', 'ACCT_CLASS', '3', '5', 'B', NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'CTRL_ATTR' at row 1
+Error executing: TRUNCATE TABLE gl_ccy_rule
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'ensemble_om.gl_ccy_rule' doesn't exist
+Error executing: INSERT INTO lm_tran_limit_def (LIMIT_REF, LIMIT_DESC, CCY, MIN_AMT, MAX_AMT, EFFECT_DATE, LIMIT_TYPE, LIMIT_LEVEL, STATUS, DEAL_FLOW, ENABLE_DEFINE, START_DATE, END_DATE, TRAN_TIMESTAMP, TRAN_TIME) VALUES ('TranSumPd3CrLimit', '三类账户入账日累计交易限额', 'CNY', '0', '2000', '20160101', 'PD', NULL, 'Y', 'A', 'Y', NULL, NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'TranSumPd3CrLimit' for key 'PRIMARY'
+Error executing: INSERT INTO lm_tran_limit_def (LIMIT_REF, LIMIT_DESC, CCY, MIN_AMT, MAX_AMT, EFFECT_DATE, LIMIT_TYPE, LIMIT_LEVEL, STATUS, DEAL_FLOW, ENABLE_DEFINE, START_DATE, END_DATE, TRAN_TIMESTAMP, TRAN_TIME) VALUES ('TranSumPd3DrLimit', '三类账户出账日累计交易限额', 'CNY', '0', '2000', '20160101', 'PD', NULL, 'Y', 'A', 'Y', NULL, NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'TranSumPd3DrLimit' for key 'PRIMARY'
+Error executing: INSERT INTO lm_tran_limit_def (LIMIT_REF, LIMIT_DESC, CCY, MIN_AMT, MAX_AMT, EFFECT_DATE, LIMIT_TYPE, LIMIT_LEVEL, STATUS, DEAL_FLOW, ENABLE_DEFINE, START_DATE, END_DATE, TRAN_TIMESTAMP, TRAN_TIME) VALUES ('TranSumPy3CrLimit', '三类账户入账年累计交易限额', 'CNY', '0', '50000', '20160101', 'PY', NULL, 'Y', 'A', 'Y', NULL, NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'TranSumPy3CrLimit' for key 'PRIMARY'
+Error executing: INSERT INTO mb_open_ctl (CLIENT_TYPE, CTRL_ATTR, CTRL_VALUE, QUANTITY, DEAL_FLOW, TRAN_TIMESTAMP, TRAN_TIME, COMPANY) VALUES ('01', 'ACCT_CLASS', '1', '1', 'B', NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'CTRL_ATTR' at row 1
+Error executing: INSERT INTO mb_open_ctl (CLIENT_TYPE, CTRL_ATTR, CTRL_VALUE, QUANTITY, DEAL_FLOW, TRAN_TIMESTAMP, TRAN_TIME, COMPANY) VALUES ('01', 'ACCT_CLASS', '2', '5', 'B', NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'CTRL_ATTR' at row 1
+Error executing: INSERT INTO mb_open_ctl (CLIENT_TYPE, CTRL_ATTR, CTRL_VALUE, QUANTITY, DEAL_FLOW, TRAN_TIMESTAMP, TRAN_TIME, COMPANY) VALUES ('01', 'ACCT_CLASS', '3', '5', 'B', NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'CTRL_ATTR' at row 1
+Error executing: TRUNCATE TABLE gl_ccy_rule
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'ensemble_om.gl_ccy_rule' doesn't exist
+Error executing: INSERT INTO lm_tran_limit_def (LIMIT_REF, LIMIT_DESC, CCY, MIN_AMT, MAX_AMT, EFFECT_DATE, LIMIT_TYPE, LIMIT_LEVEL, STATUS, DEAL_FLOW, ENABLE_DEFINE, START_DATE, END_DATE, TRAN_TIMESTAMP, TRAN_TIME) VALUES ('TranSumPd3CrLimit', '三类账户入账日累计交易限额', 'CNY', '0', '2000', '20160101', 'PD', NULL, 'Y', 'A', 'Y', NULL, NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'TranSumPd3CrLimit' for key 'PRIMARY'
+Error executing: INSERT INTO lm_tran_limit_def (LIMIT_REF, LIMIT_DESC, CCY, MIN_AMT, MAX_AMT, EFFECT_DATE, LIMIT_TYPE, LIMIT_LEVEL, STATUS, DEAL_FLOW, ENABLE_DEFINE, START_DATE, END_DATE, TRAN_TIMESTAMP, TRAN_TIME) VALUES ('TranSumPd3DrLimit', '三类账户出账日累计交易限额', 'CNY', '0', '2000', '20160101', 'PD', NULL, 'Y', 'A', 'Y', NULL, NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'TranSumPd3DrLimit' for key 'PRIMARY'
+Error executing: INSERT INTO lm_tran_limit_def (LIMIT_REF, LIMIT_DESC, CCY, MIN_AMT, MAX_AMT, EFFECT_DATE, LIMIT_TYPE, LIMIT_LEVEL, STATUS, DEAL_FLOW, ENABLE_DEFINE, START_DATE, END_DATE, TRAN_TIMESTAMP, TRAN_TIME) VALUES ('TranSumPy3CrLimit', '三类账户入账年累计交易限额', 'CNY', '0', '50000', '20160101', 'PY', NULL, 'Y', 'A', 'Y', NULL, NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'TranSumPy3CrLimit' for key 'PRIMARY'
+Error executing: INSERT INTO mb_open_ctl (CLIENT_TYPE, CTRL_ATTR, CTRL_VALUE, QUANTITY, DEAL_FLOW, TRAN_TIMESTAMP, TRAN_TIME, COMPANY) VALUES ('01', 'ACCT_CLASS', '1', '1', 'B', NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'CTRL_ATTR' at row 1
+Error executing: INSERT INTO mb_open_ctl (CLIENT_TYPE, CTRL_ATTR, CTRL_VALUE, QUANTITY, DEAL_FLOW, TRAN_TIMESTAMP, TRAN_TIME, COMPANY) VALUES ('01', 'ACCT_CLASS', '2', '5', 'B', NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'CTRL_ATTR' at row 1
+Error executing: INSERT INTO mb_open_ctl (CLIENT_TYPE, CTRL_ATTR, CTRL_VALUE, QUANTITY, DEAL_FLOW, TRAN_TIMESTAMP, TRAN_TIME, COMPANY) VALUES ('01', 'ACCT_CLASS', '3', '5', 'B', NULL, NULL, NULL)
+.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'CTRL_ATTR' at row 1

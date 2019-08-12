@@ -1,0 +1,9 @@
+{
+  "runners": [
+    {
+      "db":"db_upright",
+      "db_file_dir": "4init_param/ensemble/",
+      "db_file": "4init_param/ensemble/runallStria.sql"
+    }
+  ]
+}

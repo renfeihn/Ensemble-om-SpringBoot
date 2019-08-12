@@ -1,0 +1,73 @@
+{
+    "code": "CD_CARD_BIN",
+    "comment": " 卡bin参数表",
+    "attr": [
+        {
+            "code": "CARD_BIN",
+            "dataType": "Varchar",
+            "lengths": "6",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "卡bin",
+            "defaults": "",
+            "dictionary": "CARD_BIN",
+            "scope": ""
+        },
+        {
+            "dictionary": "VALID_TIME",
+            "code": "VALID_TIME",
+            "codeOld": "VALID_TIME",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "defaults": "",
+            "comment": "卡bin证书有效期限",
+            "scope": "整型数字,以月为单位比如120,表示120个月",
+            "M": false,
+            "P": false
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "",
+    "moduleType": "卡参数"
+}

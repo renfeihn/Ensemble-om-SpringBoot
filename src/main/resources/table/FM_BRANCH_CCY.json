@@ -1,0 +1,74 @@
+{
+    "code": "FM_BRANCH_CCY",
+    "comment": "机构币种表",
+    "attr": [
+        {
+            "dictionary": "BRANCH",
+            "code": "BRANCH",
+            "codeOld": "BRANCH",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "defaults": "",
+            "comment": "机构代码",
+            "scope": "取值为FM_BRANCH.BRANCH",
+            "M": true,
+            "P": true
+        },
+        {
+            "dictionary": "CCY",
+            "code": "CCY",
+            "codeOld": "CCY",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "defaults": "",
+            "comment": "币种",
+            "scope": "取值为FM_CURRENCY.CCY",
+            "M": true,
+            "P": true
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "",
+    "moduleType": "公共参数"
+}

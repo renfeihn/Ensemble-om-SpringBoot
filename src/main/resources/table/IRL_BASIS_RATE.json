@@ -1,0 +1,96 @@
+{
+    "code": "IRL_BASIS_RATE",
+    "comment": "基准利率信息表",
+    "attr": [
+        {
+            "dictionary": "INT_BASIS",
+            "code": "INT_BASIS",
+            "codeOld": "INT_BASIS",
+            "dataType": "Varchar",
+            "lengths": "2",
+            "precision": "",
+            "defaults": "",
+            "comment": "基准利率类型代码",
+            "scope": "取自IRL_INT_BASIS.INT_BASIS",
+            "M": true,
+            "P": true
+        },
+        {
+            "code": "CCY",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "币种",
+            "defaults": "",
+            "dictionary": "CCY",
+            "scope": "FM_CURRENCY.CCY"
+        },
+        {
+            "code": "EFFECT_DATE",
+            "dataType": "Varchar",
+            "lengths": "8",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "生效日期",
+            "defaults": "",
+            "dictionary": "EFFECT_DATE",
+            "scope": ""
+        },
+        {
+            "code": "INT_BASIS_RATE",
+            "dataType": "Number",
+            "lengths": "15",
+            "precision": "8",
+            "M": true,
+            "P": false,
+            "comment": "利率",
+            "defaults": "",
+            "dictionary": "INT_BASIS_RATE",
+            "scope": ""
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "price_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Limarket",
+    "commentDesc": ""
+}

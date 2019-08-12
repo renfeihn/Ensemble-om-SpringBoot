@@ -1,0 +1,89 @@
+{
+    "code": "IRL_FEE_PROFIT_DISTRIBUTION",
+    "comment": "分润规则表",
+    "attr": [
+        {
+            "dictionary": "FEE_TYPE",
+            "code": "FEE_TYPE",
+            "codeOld": "FEE_TYPE",
+            "dataType": "Varchar",
+            "lengths": "8",
+            "precision": "",
+            "defaults": "",
+            "comment": "费率类型",
+            "scope": "取自IRL_FEE_TYPE.FEE_TYPE",
+            "M": true,
+            "P": true
+        },
+        {
+            "code": "BRANCH",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "机构代码",
+            "defaults": "",
+            "dictionary": "BRANCH",
+            "column": "机构代码",
+            "scope": "FM_BRANCH.BRANCH"
+        },
+        {
+            "code": "PERCENT",
+            "dataType": "Number",
+            "lengths": "5",
+            "precision": "2",
+            "M": true,
+            "P": false,
+            "comment": "百分比",
+            "defaults": "",
+            "dictionary": "PERCENT",
+            "column": "百分比",
+            "scope": ""
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "column": "法人代码",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "column": "时间戳",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "column": "交易时间",
+            "scope": ""
+        }
+    ],
+    "table_space": "price_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Limarket",
+    "commentDesc": "作用：记录费率的分润规则，分润规则中包括机构代码和分润比例，全部比例相加需等于100%。;"
+}

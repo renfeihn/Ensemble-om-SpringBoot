@@ -1,0 +1,69 @@
+{
+  "code": "TB_CASH_UNIT",
+  "comment": "现金预约汇总统计单元表",
+  "attr": [        {
+    "code": "PAR_VALUE_ID",
+    "dataType": "Varchar",
+    "lengths": "20",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "券别代号",
+    "defaults": "",
+    "dictionary": "PAR_VALUE_ID",
+    "column": "券别代号 取值 TB_PAR_VALUE.PAR_VALUE_ID",
+    "scope": ""        }
+  ,        {
+      "code": "UNIT_SUM_K",
+      "dataType": "Varchar",
+      "lengths": "10",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "每捆张数",
+      "defaults": "",
+      "dictionary": "UNIT_SUM_K",
+      "column": "每捆张数",
+      "scope": ""        }
+  ,        {
+      "code": "UNIT_SUM_B",
+      "dataType": "Varchar",
+      "lengths": "10",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "每把张数",
+      "defaults": "",
+      "dictionary": "UNIT_SUM_B",
+      "column": "每把张数",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "法人代码",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "法人代码",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "交易时间戳",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "时间戳",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "交易时间",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "交易时间",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": "用来维护不同卷别的汇总统计单元参数信息，比如：每捆张数、卷别代号。",
+  "moduleType":"尾箱参数"}

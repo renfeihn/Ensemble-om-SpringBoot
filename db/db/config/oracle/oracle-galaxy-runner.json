@@ -1,0 +1,20 @@
+{
+  "runners": [
+    {
+      "db":"db_upright",
+      "db_file_dir": "2galaxy/",
+      "db_file": "2galaxy/Galaxy_Install_For_Oracle_Upright.sql"
+    },
+    {
+      "db":"db_level1",
+      "db_file_dir": "2galaxy/",
+      "db_file": "2galaxy/Galaxy_Install_For_Oracle_Level.sql"
+    },
+	{
+      "db":"db_level2",
+      "db_file_dir": "2galaxy/",
+      "db_file": "2galaxy/Galaxy_Install_For_Oracle_Level.sql"
+    }
+
+  ]
+}

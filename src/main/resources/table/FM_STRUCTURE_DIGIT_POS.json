@@ -1,0 +1,97 @@
+{
+    "code": "FM_STRUCTURE_DIGIT_POS",
+    "comment": "结构数字校验位定义表",
+    "attr": [
+        {
+            "code": "STRUCTURE_TYPE",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "结构类型",
+            "defaults": "",
+            "dictionary": "STRUCTURE_TYPE",
+            "scope": ""
+        },
+        {
+            "code": "DIGIT_POS",
+            "dataType": "Varchar",
+            "lengths": "50",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "数字位置",
+            "defaults": "",
+            "dictionary": "DIGIT_POS",
+            "scope": ""
+        },
+        {
+            "dictionary": "CHECK_DIGIT_IND",
+            "code": "CHECK_DIGIT_IND",
+            "codeOld": "CHECK_DIGIT_IND",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "defaults": "'N'  ",
+            "comment": "是否进行数字的权重计算",
+            "scope": "Y:是,N:否",
+            "M": true,
+            "P": false
+        },
+        {
+            "code": "WEIGHT",
+            "dataType": "Varchar",
+            "lengths": "5",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "权重",
+            "defaults": "",
+            "dictionary": "WEIGHT",
+            "scope": ""
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "",
+    "moduleType": "公共参数"
+}

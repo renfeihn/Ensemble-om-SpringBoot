@@ -1,0 +1,159 @@
+{
+  "code": "CIF_RELATION_TYPE",
+  "comment": "客户关系类型",
+  "attr": [        {
+    "code": "RELATION_TYPE",
+    "dataType": "Varchar",
+    "lengths": "10",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "类型",
+    "defaults": "",
+    "dictionary": "RELATION_TYPE",
+    "column": "与我行关系",
+    "scope": ""        }
+  ,        {
+      "code": "RELATION_DESC",
+      "dataType": "Varchar",
+      "lengths": "100",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "类型描述",
+      "defaults": "",
+      "dictionary": "RELATION_DESC",
+      "column": "类型描述",
+      "scope": ""        }
+  ,        {
+      "code": "COUNTER_REL",
+      "dataType": "Varchar",
+      "lengths": "15",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "反相关系类型",
+      "defaults": "",
+      "dictionary": "COUNTER_REL",
+      "column": "反相关系类型 取值 FM_RELATION_TYPE.RELATION_TYPE",
+      "scope": ""        }
+  ,        {
+      "code": "EXPOSURE",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "风险",
+      "defaults": "",
+      "dictionary": "EXPOSURE",
+      "column": "风险 Y/N",
+      "scope": ""        }
+  ,        {
+      "code": "EQUITY",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "股权",
+      "defaults": "",
+      "dictionary": "EQUITY",
+      "column": "股权 Y/N",
+      "scope": ""        }
+  ,        {
+      "code": "JOINT_ACCT",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "联合帐户",
+      "defaults": "",
+      "dictionary": "JOINT_ACCT",
+      "column": "联合帐户 Y/N",
+      "scope": ""        }
+  ,        {
+      "code": "AUTHORISED",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "授权方",
+      "defaults": "",
+      "dictionary": "AUTHORISED",
+      "column": "授权方 Y/N",
+      "scope": ""        }
+  ,        {
+      "code": "EMPLOYMENT",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "雇佣",
+      "defaults": "",
+      "dictionary": "EMPLOYMENT",
+      "column": "雇佣 Y/N",
+      "scope": ""        }
+  ,        {
+      "code": "RELATIVE",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "亲戚",
+      "defaults": "",
+      "dictionary": "RELATIVE",
+      "column": "亲戚 Y/N",
+      "scope": ""        }
+  ,        {
+      "code": "SYMMENTRIC",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "对等",
+      "defaults": "",
+      "dictionary": "SYMMENTRIC",
+      "column": "对等 Y/N",
+      "scope": ""        }
+  ,        {
+      "code": "JOIN_COLLAT",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "联合体",
+      "defaults": "",
+      "dictionary": "JOIN_COLLAT",
+      "column": "联合体 Y/N",
+      "scope": ""        }
+  ,        {
+      "code": "RELATION_TYPE_FLAG",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "关系类型标识",
+      "defaults": "",
+      "dictionary": "RELATION_TYPE_FLAG",
+      "column": "关系类型标识 1-个人-个人 2-个人-非个人 3-非个人-非个人 4-非个人-个人 5-个人-非个人 或 非个人-非个人 6-非个人-非个人 或 非个人-个人",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "法人代码",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "法人代码",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "交易时间戳",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "时间戳",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "交易时间",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "交易时间",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": "该参数用于定义客户与客户间的关系，如股对关系，父子关系等",
+  "moduleType":"客户参数"}

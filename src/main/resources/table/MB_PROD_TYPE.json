@@ -1,142 +1,142 @@
 {
   "code": "MB_PROD_TYPE",
-  "comment": "产品定义表：描述产品工厂所有产品的定义",
-  "attrs": [
+  "comment": "产品类型定义表",
+  "attr": [
     {
       "code": "PROD_TYPE",
-      "dataType": "VARCHAR2",
+      "dataType": "Varchar",
       "lengths": "50",
-      "precision": "0",
+      "precision": "",
       "M": true,
       "P": true,
-      "comment": "产品类型 取值于MB_PROD_TYPE.PROD_TYPE",
+      "comment": "产品类型",
       "defaults": "",
-      "dictionary": ""
+      "dictionary": "PROD_TYPE",
+      "column": "产品类型 取值于MB_PROD_TYPE.PROD_TYPE",
+      "scope": "取值于MB_PROD_TYPE.PROD_TYPE"
     },
     {
-      "code": "SEQ_NO",
-      "dataType": "VARCHAR2",
-      "lengths": "30",
-      "precision": "0",
-      "M": true,
-      "P": true,
-      "comment": "组装序号",
-      "defaults": "",
-      "dictionary": ""
-    },
-    {
-      "code": "ASSEMBLE_TYPE",
-      "dataType": "VARCHAR2",
-      "lengths": "20",
-      "precision": "0",
-      "M": true,
-      "P": false,
-      "comment": "组装类型 EVENT ：事件 PART ： 部件 ATTR： 属性",
-      "defaults": "",
-      "dictionary": ""
-    },
-    {
-      "code": "ASSEMBLE_ID",
-      "dataType": "VARCHAR2",
-      "lengths": "20",
-      "precision": "0",
-      "M": true,
-      "P": false,
-      "comment": "组件ID",
-      "defaults": "",
-      "dictionary": ""
-    },
-    {
-      "code": "EVENT_DEFAULT",
-      "dataType": "VARCHAR2",
-      "lengths": "50",
-      "precision": "0",
-      "M": true,
-      "P": false,
-      "comment": "产品基础事件 取值于MB_EVENT_DEFAULT_TYPE.EVENT_DEFAULT_TYPE",
-      "defaults": "",
-      "dictionary": ""
-    },
-    {
-      "code": "ATTR_KEY",
-      "dataType": "VARCHAR2",
-      "lengths": "30",
-      "precision": "0",
-      "M": true,
-      "P": false,
-      "comment": "参数KEY 取值于MB_ATTR_TYPE ",
-      "defaults": "",
-      "dictionary": ""
-    },
-    {
-      "code": "ATTR_VALUE",
-      "dataType": "VARCHAR2",
+      "code": "PROD_DESC",
+      "dataType": "Varchar",
       "lengths": "100",
-      "precision": "0",
+      "precision": "",
       "M": true,
       "P": false,
-      "comment": "参数值",
+      "comment": "产品类型描述",
       "defaults": "",
-      "dictionary": ""
+      "dictionary": "PROD_DESC",
+      "column": "产品类型描述",
+      "scope": ""
     },
     {
-      "code": "STATUS",
-      "dataType": "VARCHAR2",
-      "lengths": "1",
-      "precision": "0",
-      "M": true,
-      "P": false,
-      "comment": "状态 A：有效 F：无效",
+      "dictionary": "PROD_CLASS",
+      "code": "PROD_CLASS",
+      "codeOld": "PROD_CLASS",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
       "defaults": "",
-      "dictionary": ""
+      "comment": "产品分类",
+      "scope": "取值为MB_PROD_CLASS.PROD_CLASS",
+      "M": true,
+      "P": false
+    },
+    {
+      "dictionary": "PROD_GROUP",
+      "code": "PROD_GROUP",
+      "codeOld": "PROD_GROUP",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "defaults": "",
+      "comment": "是否产品组",
+      "scope": "Y:组合产品,N:单一产品",
+      "M": false,
+      "P": false
+    },
+    {
+      "dictionary": "PROD_RANGE",
+      "code": "PROD_RANGE",
+      "codeOld": "PROD_RANGE",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "defaults": "",
+      "comment": "产品属性",
+      "scope": "B:基础产品,S:可售产品",
+      "M": false,
+      "P": false
+    },
+    {
+      "code": "BASE_PROD_TYPE",
+      "dataType": "Varchar",
+      "lengths": "50",
+      "precision": "",
+      "M": false,
+      "P": false,
+      "comment": "基础产品",
+      "defaults": "",
+      "dictionary": "BASE_PROD_TYPE",
+      "column": "基础产品",
+      "scope": ""
+    },
+    {
+      "dictionary": "STATUS",
+      "code": "STATUS",
+      "codeOld": "STATUS",
+      "dataType": "Varchar",
+      "lengths": "3",
+      "precision": "",
+      "defaults": "",
+      "comment": "状态",
+      "scope": "A:有效,F:无效",
+      "M": true,
+      "P": false
     },
     {
       "code": "COMPANY",
-      "dataType": "VARCHAR2",
+      "dataType": "Varchar",
       "lengths": "20",
-      "precision": "0",
-      "M": true,
+      "precision": "",
+      "M": false,
       "P": false,
-      "comment": "",
+      "comment": "法人代码",
       "defaults": "",
-      "dictionary": ""
+      "dictionary": "COMPANY",
+      "column": "法人代码",
+      "scope": "FM_COMPANY.COMPANY"
     },
     {
       "code": "TRAN_TIMESTAMP",
-      "dataType": "VARCHAR2",
+      "dataType": "Varchar",
       "lengths": "17",
-      "precision": "0",
-      "M": true,
+      "precision": "",
+      "M": false,
       "P": false,
       "comment": "交易时间戳",
       "defaults": "",
-      "dictionary": ""
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "时间戳",
+      "scope": ""
     },
     {
       "code": "TRAN_TIME",
-      "dataType": "NUMBER",
+      "dataType": "Number",
       "lengths": "11",
       "precision": "0",
-      "M": true,
+      "M": false,
       "P": false,
       "comment": "交易时间",
       "defaults": "",
-      "dictionary": ""
-    }
-  ],
-  "indexs": [
-    {
-      "code": "PK_MB_PROD_DEFINE",
-      "U": false,
-      "columns": [
-        "PROD_TYPE",
-        "SEQ_NO"
-      ],
-      "table_space": "core_index"
+      "dictionary": "TRAN_TIME",
+      "column": "交易时间",
+      "scope": ""
     }
   ],
   "table_space": "core_data",
   "dbType": "upright",
   "parameter": "busi_para",
-  "system": "Ensemble"
+  "system": "Ensemble",
+  "commentDesc": "描述产品工厂所有的产品类型",
+  "moduleType": "产品参数"
 }

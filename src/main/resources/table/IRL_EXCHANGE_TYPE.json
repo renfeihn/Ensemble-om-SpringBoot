@@ -1,0 +1,110 @@
+{
+    "code": "IRL_EXCHANGE_TYPE",
+    "comment": "汇率类型表",
+    "attr": [
+        {
+            "code": "RATE_TYPE",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "汇率类型",
+            "defaults": "",
+            "dictionary": "RATE_TYPE",
+            "scope": ""
+        },
+        {
+            "code": "RATE_TYPE_DESC",
+            "dataType": "Varchar",
+            "lengths": "50",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "汇率类型描述",
+            "defaults": "",
+            "dictionary": "RATE_TYPE_DESC",
+            "scope": ""
+        },
+        {
+            "dictionary": "QUOTE_CCY",
+            "code": "QUOTE_CCY",
+            "codeOld": "QUOTE_CCY",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "defaults": "",
+            "comment": "报价币种",
+            "scope": "取自FM_CURRENCY.CCY",
+            "M": true,
+            "P": false
+        },
+        {
+            "dictionary": "FLOAT_TYPE",
+            "code": "FLOAT_TYPE",
+            "codeOld": "FLOAT_TYPE",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "defaults": "",
+            "comment": "浮动方式",
+            "scope": "02:取最大,03:取最小,04:取平均值,05:取叠加,06:取权重",
+            "M": false,
+            "P": false
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "dictionary": "HBD_FLAG",
+            "code": "HBD_FLAG",
+            "codeOld": "HBD_FLAG",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "defaults": "",
+            "comment": "货币对汇率标志",
+            "scope": "Y:是,N:否",
+            "M": true,
+            "P": false
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "price_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Limarket",
+    "commentDesc": ""
+}

@@ -1,0 +1,64 @@
+{
+    "system": "Ensemble",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "table_space": "core_data",
+    "code": "MB_PROD_MUTUAL",
+    "comment": "产品互斥参数表",
+    "attr": [
+        {
+            "code": "CLIENT_TYPE",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "客户类型",
+            "defaults": "",
+            "scope": "",
+            "dictionary": "CLIENT_TYPE",
+            "column": "客户类型"
+        },
+        {
+            "code": "PROD_TYPE",
+            "dataType": "Varchar",
+            "lengths": "50",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "产品类型 ",
+            "defaults": "",
+            "scope": "取值于MB_PROD_TYPE.PROD_TYPE",
+            "dictionary": "PROD_TYPE",
+            "column": "产品类型 "
+        },
+        {
+            "code": "MUT_PROD_TYPE",
+            "dataType": "Varchar",
+            "lengths": "50",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "互斥产品类型",
+            "defaults": "",
+            "scope": "",
+            "dictionary": "MUT_PROD_TYPE",
+            "column": "互斥产品类型"
+        },
+        {
+            "code": "PROD_RELATION_TYPE",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "关系类型",
+            "defaults": "'MUT'",
+            "scope": "",
+            "dictionary": "PROD_RELATION_TYPE",
+            "column": "关系类型"
+        }
+    ],
+    "indexs": [],
+    "commentDesc": "产品互斥参数表"
+}

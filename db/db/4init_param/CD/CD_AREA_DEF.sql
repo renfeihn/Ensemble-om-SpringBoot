@@ -1,0 +1,3 @@
+TRUNCATE TABLE cd_area_def;
+
+COMMIT;

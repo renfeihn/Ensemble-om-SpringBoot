@@ -1,0 +1,69 @@
+{
+  "code": "CIF_OCCUPATION",
+  "comment": "职业分类表",
+  "attr": [        {
+    "code": "OCCUPATION_CODE",
+    "dataType": "Varchar",
+    "lengths": "6",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "职业类别",
+    "defaults": "",
+    "dictionary": "OCCUPATION_CODE",
+    "column": "职业 参数表cif_occupation",
+    "scope": ""        }
+  ,        {
+      "code": "OCCUPATION_DESC",
+      "dataType": "Varchar",
+      "lengths": "50",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "职业说明",
+      "defaults": "",
+      "dictionary": "OCCUPATION_DESC",
+      "column": "职业说明",
+      "scope": ""        }
+  ,        {
+      "code": "RISK_LEVEL",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "风险等级",
+      "defaults": "",
+      "dictionary": "RISK_LEVEL",
+      "column": "风险等级 H-高 L-低",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "法人代码",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "法人代码",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "交易时间戳",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "时间戳",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "交易时间",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "交易时间",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": "1、该表维护了职业类别  2、在详细客户信息维护时，可以根据此参数维护个人客户的职业",
+  "moduleType":"客户参数"}

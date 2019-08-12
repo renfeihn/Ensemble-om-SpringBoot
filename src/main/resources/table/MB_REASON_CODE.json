@@ -1,0 +1,98 @@
+{
+    "code": "MB_REASON_CODE",
+    "comment": "原因代码",
+    "attr": [
+        {
+            "code": "REASON_CODE",
+            "dataType": "Varchar",
+            "lengths": "6",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "原因代码",
+            "defaults": "",
+            "dictionary": "REASON_CODE",
+            "scope": ""
+        },
+        {
+            "code": "REASON_CODE_DESC",
+            "dataType": "Varchar",
+            "lengths": "30",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "原因代码描述",
+            "defaults": "",
+            "dictionary": "REASON_CODE_DESC",
+            "scope": ""
+        },
+        {
+            "code": "SOURCE_MODE",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "模块",
+            "defaults": "",
+            "dictionary": "SOURCE_MODE",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "NUMBER",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        },
+        {
+            "code": "REASON_CLASS",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "原因分类",
+            "defaults": "",
+            "scope": "",
+            "dictionary": "REASON_CLASS",
+            "column": "原因分类"
+        },
+        {
+            "code": "BORROW_FOR_REPAY",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "是否借新还旧或续存标志",
+            "defaults": "",
+            "scope": "Y：是 N:否",
+            "dictionary": "BORROW_FOR_REPAY",
+            "column": "是否借新还旧或续存标志"
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "",
+    "moduleType": "账户参数"
+}

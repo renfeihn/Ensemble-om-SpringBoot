@@ -1,0 +1,1 @@
+ALTER TABLE mb_prod_type ADD COLUMN prod_abbr varchar(50) DEFAULT null comment '产品简介' ;

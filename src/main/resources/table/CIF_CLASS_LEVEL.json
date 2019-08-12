@@ -1,0 +1,59 @@
+{
+  "code": "CIF_CLASS_LEVEL",
+  "comment": "参数表",
+  "attr": [        {
+    "code": "CLASS_LEVEL",
+    "dataType": "Varchar",
+    "lengths": "4",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "综合评级",
+    "defaults": "",
+    "dictionary": "CLASS_LEVEL",
+    "column": "综合评级  参数定义表：CIF_CLASS_LEVEL",
+    "scope": ""        }
+  ,        {
+      "code": "CLASS_LEVEL_DESC",
+      "dataType": "Varchar",
+      "lengths": "50",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "综合评级描述",
+      "defaults": "",
+      "dictionary": "CLASS_LEVEL_DESC",
+      "column": "综合评级描述",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "法人代码",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "法人代码",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "交易时间戳",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "时间戳",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "交易时间",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "交易时间",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": "客户的综合评级",
+  "moduleType":"客户参数"}

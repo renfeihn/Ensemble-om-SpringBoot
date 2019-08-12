@@ -1,0 +1,77 @@
+{
+    "code": "FM_MODULE",
+    "comment": "模块说明表",
+    "attr": [
+        {
+            "dictionary": "MODULE_ID",
+            "code": "MODULE_ID",
+            "codeOld": "MODULE_ID",
+            "dataType": "Varchar",
+            "lengths": "2",
+            "precision": "",
+            "defaults": "",
+            "comment": "模块号",
+            "scope": "SA:SYMBOLS*SYSTEM ADMINISTRATION SA FM:SYMBOLS*KERNEL 公共 GL:SYMBOLS*GENERAL LEDGER总账模块 RB:SYMBOLS*DEPOSITS 存款模块 DP:SYMBOLS*DOMESTIC PAYMENTS 支付模块 FT:SYMBOLS*FUNDS TRANSFER 外汇汇款 RX:RB_FX sell/buy 对客结售汇 LM:SYMBOLS*LIMITS CONTROL 限额 CL:SYMBOLS*CUSTOMER LENDING 贷款 FX:SYMBOLS*FOREIGN EXCHANGE外汇买卖 MM:SYMBOLS*MONEY MARKET 资金模块 TF:SYMBOLS*TRADE FINANCE 国际结算模块 RT:REMIT CUSTOMER LENDING AL:ACCUMULATION FUND LENDING 公积金模块 BH:BRANCH FUNCTIONS 中间业务模块 CM:THE COMMON OF THE SYSTEM 公共模块 NV:THE NOSTRO OR VOSTRO 往来帐模块 PT:SYMBOLS*PAYMENT TRANSFER支付 NS:NEW ACCOUNTS 新会计准则",
+            "M": true,
+            "P": true
+        },
+        {
+            "code": "MODULE_NAME",
+            "dataType": "Varchar",
+            "lengths": "30",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "模块名称",
+            "defaults": "",
+            "dictionary": "MODULE_NAME",
+            "column": "模块名称",
+            "scope": ""
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "column": "法人代码",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "column": "时间戳",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "column": "交易时间",
+            "scope": ""
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "init_para",
+    "system": "Ensemble",
+    "commentDesc": "系统内部定义的模块说明",
+    "moduleType": "公共参数"
+}

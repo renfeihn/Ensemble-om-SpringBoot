@@ -1,0 +1,49 @@
+{
+  "code": "MB_EVENT_DEFAULT_TYPE",
+  "comment": "产品基础事件定义表",
+  "attr": [        {
+    "code": "EVENT_DEFAULT_TYPE",
+    "dataType": "Varchar",
+    "lengths": "50",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "基础事件类型",
+    "defaults": "",
+    "dictionary": "EVENT_DEFAULT_TYPE",
+    "column": "基础事件类型",
+    "scope": ""        }
+  ,        {
+      "code": "EVENT_DEFAULT_DESC",
+      "dataType": "Varchar",
+      "lengths": "100",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "基础事件描述",
+      "defaults": "",
+      "dictionary": "EVENT_DEFAULT_DESC",
+      "column": "基础事件描述",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "交易时间戳",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "时间戳",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "交易时间",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "交易时间",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "init_para",
+  "system": "Ensemble",
+  "commentDesc": " 描述产品工厂所有事件的基础事件",
+  "moduleType":"产品参数"}

@@ -1,0 +1,79 @@
+{
+  "code": "CIF_DOCUMENT_TYPE",
+  "comment": "证件类型",
+  "attr": [        {
+    "code": "DOCUMENT_TYPE",
+    "dataType": "Varchar",
+    "lengths": "3",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "证件类型",
+    "defaults": "",
+    "dictionary": "DOCUMENT_TYPE",
+    "column": "证件类型，参数定义表：  CIF_DOCUMENT_TYPE",
+    "scope": ""        }
+  ,        {
+      "code": "DOCUMENT_TYPE_DESC",
+      "dataType": "Varchar",
+      "lengths": "30",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "证件类型描述",
+      "defaults": "",
+      "dictionary": "DOCUMENT_TYPE_DESC",
+      "column": "证件类型描述",
+      "scope": ""        }
+  ,        {
+      "code": "DOCUMENT_TYPE_SHORT",
+      "dataType": "Varchar",
+      "lengths": "30",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "证件类型简称",
+      "defaults": "",
+      "dictionary": "DOCUMENT_TYPE_SHORT",
+      "column": "证件类型简称",
+      "scope": ""        }
+  ,        {
+      "code": "APP_IND",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "适用范围",
+      "defaults": "",
+      "dictionary": "APP_IND",
+      "column": "适用范围 I-个体客户 C-非个体 B-个体或者非个体",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "法人代码",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "法人代码",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "交易时间戳",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "时间戳",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "交易时间",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "交易时间",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": "1、维护客户所有可能的证件类型，包括：证件类型、名称、是否个体客户等信息，做为整个系统的基础参数，在开立客户、维护客户信息时使用，也供各模块在使用客户信息时用",
+  "moduleType":"客户参数"}

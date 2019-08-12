@@ -1,0 +1,122 @@
+{
+    "code": "IRL_AMT_SPLIT",
+    "comment": "金额分段参数表",
+    "attr": [
+        {
+            "code": "AMT_SPLIT_ID",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "金额分段ID",
+            "defaults": "",
+            "dictionary": "AMT_SPLIT_ID",
+            "scope": ""
+        },
+        {
+            "code": "AMT_SEQ_NO",
+            "dataType": "Varchar",
+            "lengths": "5",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "序号",
+            "defaults": "",
+            "dictionary": "AMT_SEQ_NO",
+            "scope": ""
+        },
+        {
+            "code": "SPLIT_AMT",
+            "dataType": "NUMBER",
+            "lengths": "17",
+            "precision": "2",
+            "M": false,
+            "P": false,
+            "comment": "分段金额",
+            "defaults": "",
+            "dictionary": "SPLIT_AMT",
+            "scope": ""
+        },
+        {
+            "dictionary": "AMT_SPLIT_MODE",
+            "code": "AMT_SPLIT_MODE",
+            "codeOld": "AMT_SPLIT_MODE",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "defaults": "",
+            "comment": "分段模式",
+            "scope": "Q:全额，C:差额",
+            "M": false,
+            "P": false
+        },
+        {
+            "dictionary": "INT_TYPE",
+            "code": "INT_TYPE",
+            "codeOld": "INT_TYPE",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "defaults": "",
+            "comment": "利率类型",
+            "scope": "取自IRL_INT_TYPE.INT_TAX_TYPE",
+            "M": false,
+            "P": false
+        },
+        {
+            "dictionary": "PERI_SPLIT_ID",
+            "code": "PERI_SPLIT_ID",
+            "codeOld": "PERI_SPLIT_ID",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "defaults": "",
+            "comment": "周期分段ID",
+            "scope": "取自IRL_PERI_SPLIT.PERI_SPLIT_ID",
+            "M": false,
+            "P": false
+        },
+        {
+            "code": "RULE_ID",
+            "dataType": "Varchar",
+            "lengths": "500",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "规则ID",
+            "defaults": "",
+            "dictionary": "RULE_ID",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "price_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Limarket",
+    "commentDesc": ""
+}

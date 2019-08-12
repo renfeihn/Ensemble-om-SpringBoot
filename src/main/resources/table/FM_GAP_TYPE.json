@@ -1,0 +1,123 @@
+{
+    "code": "FM_GAP_TYPE",
+    "comment": "敞口类型定义表",
+    "attr": [
+        {
+            "code": "GAP_TYPE",
+            "dataType": "Varchar",
+            "lengths": "5",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "敞口类型",
+            "defaults": "",
+            "dictionary": "GAP_TYPE",
+            "scope": ""
+        },
+        {
+            "code": "CCY",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "币种",
+            "defaults": "",
+            "dictionary": "CCY",
+            "scope": "FM_CURRENCY.CCY"
+        },
+        {
+            "code": "GAP_TYPE_DESC",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "敞口类型描述",
+            "defaults": "",
+            "dictionary": "GAP_TYPE_DESC",
+            "scope": ""
+        },
+        {
+            "dictionary": "WORKING_DAYS",
+            "code": "WORKING_DAYS",
+            "codeOld": "WORKING_DAYS",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "defaults": "'N'  ",
+            "comment": "是否工作日",
+            "scope": "Y:是,N:否",
+            "M": true,
+            "P": false
+        },
+        {
+            "dictionary": "GAP_START",
+            "code": "GAP_START",
+            "codeOld": "GAP_START",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "defaults": "",
+            "comment": "敞口开始日期",
+            "scope": "R:代表运行日期,S:代表即期(两天后)",
+            "M": true,
+            "P": false
+        },
+        {
+            "dictionary": "PROD_GROUP",
+            "code": "PROD_GROUP",
+            "codeOld": "PROD_GROUP",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "defaults": "",
+            "comment": "所属模块",
+            "scope": "Y:组合产品,N:单一产品",
+            "M": false,
+            "P": false
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "init_para",
+    "system": "Ensemble",
+    "commentDesc": "",
+    "moduleType": "公共参数"
+}

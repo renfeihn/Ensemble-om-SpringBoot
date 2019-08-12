@@ -1,0 +1,133 @@
+{
+    "code": "IRL_MARKET_FACTOR_INFO",
+    "comment": "市场指数信息表",
+    "attr": [
+        {
+            "dictionary": "IRL_SEQ_NO",
+            "code": "IRL_SEQ_NO",
+            "codeOld": "IRL_SEQ_NO",
+            "dataType": "Varchar",
+            "lengths": "50",
+            "precision": "",
+            "defaults": "",
+            "comment": "指数序号",
+            "scope": "",
+            "M": true,
+            "P": true
+        },
+        {
+            "dictionary": "MARKET_TYPE",
+            "code": "MARKET_TYPE",
+            "codeOld": "MARKET_TYPE",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "defaults": "",
+            "comment": "市场指数类型代码",
+            "scope": "取自FM_REF_CODE,当字段DOMAIN的值为MARKET_TYPE时，取FIELD_VALUE的值",
+            "M": true,
+            "P": false
+        },
+        {
+            "code": "MARKET_VALUE",
+            "dataType": "Number",
+            "lengths": "17",
+            "precision": "2",
+            "M": true,
+            "P": false,
+            "comment": "指数值",
+            "defaults": "",
+            "dictionary": "MARKET_VALUE",
+            "scope": ""
+        },
+        {
+            "code": "EFFECT_DATE",
+            "dataType": "Varchar",
+            "lengths": "8",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "生效日期",
+            "defaults": "",
+            "dictionary": "EFFECT_DATE",
+            "scope": ""
+        },
+        {
+            "code": "END_DATE",
+            "dataType": "Varchar",
+            "lengths": "8",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "失效日期",
+            "defaults": "",
+            "dictionary": "END_DATE",
+            "scope": ""
+        },
+        {
+            "code": "FAC_STATUS",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "状态",
+            "defaults": "",
+            "dictionary": "FAC_STATUS",
+            "scope": ""
+        },
+        {
+            "code": "REMARK",
+            "dataType": "Varchar",
+            "lengths": "200",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "备注",
+            "defaults": "",
+            "dictionary": "REMARK",
+            "scope": ""
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "price_data",
+    "dbType": "upright",
+    "parameter": "tran",
+    "system": "Limarket",
+    "commentDesc": ""
+}

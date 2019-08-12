@@ -1,0 +1,62 @@
+{
+    "system": "Ensemble",
+    "code": "FM_MARITAL_STATUS",
+    "table_space": "core_data",
+    "comment": "婚姻状况表",
+    "dbType": "upright",
+    "parameter": "init_para",
+    "attr": [
+        {
+            "dictionary": "REF_LANG",
+            "code": "REF_LANG",
+            "codeOld": "",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "defaults": "",
+            "comment": "语言",
+            "scope": "",
+            "M": true,
+            "P": true
+        },
+        {
+            "dictionary": "FIELD_VALUE",
+            "code": "FIELD_VALUE",
+            "codeOld": "",
+            "dataType": "Varchar",
+            "lengths": "8",
+            "precision": "",
+            "defaults": "",
+            "comment": "取值范围",
+            "scope": "",
+            "M": true,
+            "P": true
+        },
+        {
+            "dictionary": "MEANING",
+            "code": "MEANING",
+            "codeOld": "",
+            "dataType": "Varchar",
+            "lengths": "30",
+            "precision": "",
+            "defaults": "",
+            "comment": "取值的含义说明",
+            "scope": "",
+            "M": true,
+            "P": false
+        },
+        {
+            "dictionary": "NARRATIVE1",
+            "code": "NARRATIVE1",
+            "codeOld": "",
+            "dataType": "Varchar",
+            "lengths": "300",
+            "precision": "",
+            "defaults": "",
+            "comment": "备注",
+            "scope": "",
+            "M": false,
+            "P": false
+        }
+    ]
+}

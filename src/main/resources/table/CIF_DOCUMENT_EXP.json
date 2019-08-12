@@ -1,0 +1,90 @@
+{
+  "code": "CIF_DOCUMENT_EXP",
+  "comment": "证件到期管理表",
+  "attr": [        {
+    "code": "DOCUMENT_TYPE",
+    "dataType": "Varchar",
+    "lengths": "3",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "证件类型",
+    "defaults": "",
+    "dictionary": "DOCUMENT_TYPE",
+    "scope": ""        }
+  ,        {
+      "code": "STOP_FLAG",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "是否止付",
+      "defaults": "",
+      "dictionary": "STOP_FLAG",
+      "scope": ""        }
+  ,        {
+      "code": "RESTRAINT_TYPE",
+      "dataType": "Varchar",
+      "lengths": "3",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "限制类型",
+      "defaults": "",
+      "dictionary": "RESTRAINT_TYPE",
+      "scope": ""        }
+  ,        {
+      "code": "DAYS",
+      "dataType": "Varchar",
+      "lengths": "5",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "天数",
+      "defaults": "",
+      "dictionary": "DAYS",
+      "scope": ""        }
+  ,        {
+      "code": "SOURCE_TYPE_RULE",
+      "dataType": "Varchar",
+      "lengths": "150",
+      "precision": "",
+      "M": true,            "P": true,            "comment": "渠道类型规则",
+      "defaults": "",
+      "dictionary": "SOURCE_TYPE_RULE",
+      "scope": ""        }
+  ,        {
+      "code": "DEAL_FLOW",
+      "dataType": "Varchar",
+      "lengths": "2",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "处理方式",
+      "defaults": "",
+      "dictionary": "DEAL_FLOW",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "交易时间戳",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "NUMBER",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "交易时间",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "法人代码",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc":"",
+  "moduleType":"客户参数"}

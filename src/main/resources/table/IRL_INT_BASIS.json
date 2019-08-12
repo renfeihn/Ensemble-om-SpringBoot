@@ -1,0 +1,85 @@
+{
+    "code": "IRL_INT_BASIS",
+    "comment": "基准利率类型表",
+    "attr": [
+        {
+            "dictionary": "INT_BASIS",
+            "code": "INT_BASIS",
+            "codeOld": "INT_BASIS",
+            "dataType": "Varchar",
+            "lengths": "2",
+            "precision": "",
+            "defaults": "",
+            "comment": "基准利率类型  ",
+            "scope": "",
+            "M": true,
+            "P": true
+        },
+        {
+            "code": "INT_BASIS_DESC",
+            "dataType": "Varchar",
+            "lengths": "60",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "基准利率类型描述",
+            "defaults": "",
+            "dictionary": "INT_BASIS_DESC",
+            "scope": ""
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人代码",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        },
+        {
+            "dictionary": "ROUTER_KEY",
+            "code": "ROUTER_KEY",
+            "codeOld": "",
+            "dataType": "Varchar",
+            "lengths": "100",
+            "precision": "",
+            "defaults": "",
+            "comment": "分库路由关键字",
+            "scope": "",
+            "M": false,
+            "P": false
+        }
+    ],
+    "table_space": "price_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Limarket",
+    "commentDesc": ""
+}

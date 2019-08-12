@@ -1,0 +1,52 @@
+drop table if exists DC_STAGE_RULE_DEFINE;
+/*==============================================================*/
+/* Table: DC_STAGE_RULE_DEFINE                                           */
+/*==============================================================*/
+create table DC_STAGE_RULE_DEFINE
+(
+    STAGE_CODE varchar(50) not null comment '期次代码',
+    PROD_TYPE varchar(50) not null comment '产品类型',
+    STRUCT_CLASS varchar(4) not null comment '结构分类',
+    STAGE_INIT_PRICE Decimal(17,2) comment '期初价格',
+    OPEN_RATE Decimal(15,8) comment '开户利率',
+    ACCR_RATE Decimal(15,8) comment '计提利率',
+    PRE_RATE Decimal(15,8) comment '提前支取利率',
+    HIGH_GRADE_RATE Decimal(15,8) comment '高档利率',
+    LOW_END_RATE Decimal(15,8) comment '低档利率',
+    YEARS_RATE Decimal(15,8) comment '年化利率',
+    ACTUAL_RATE Decimal(15,8) comment '行内利率',
+    FLOAT_RATE Decimal(15,8) comment '浮动利率',
+    STAGE_FIXED_RATE Decimal(15,8) comment '期次级固定利率',
+    STAGE_SPREAD_RATE Decimal(15,8) comment '期次级浮动百分点',
+    STAGE_PERCENT_RATE Decimal(5,2) comment '期次级浮动百分比',
+    REAL_RATE Decimal(15,8) comment '执行利率',
+    ACR_RATE_TYPE varchar(4) comment '计提利率规则',
+    CORPORE_ID varchar(50) comment '标的物ID',
+    TOUCH_TYPE varchar(4) comment '触碰类型',
+    TOUCH_PERCENT Decimal(5,2) comment '触碰百分比',
+    LOW_THRESHOLD Decimal(5,2) comment '最低价格',
+    HIGH_THRESHOLD Decimal(5,2) comment '最高价格',
+    IN_SECTION_DAYS varchar(5) comment '区间内天数',
+    OUT_SECTION_DAYS varchar(5) comment '区间外天数',
+    IS_TOUCH varchar(1) comment '是否触碰',
+    IS_RETRY varchar(1) comment '是否重算 Y:是 N:否',
+    OBSERVE_FLAG varchar(1) comment '是否设置观察日',
+    TOUCH_STOP_FLAG varchar(1) comment '是否终止产品',
+    STAGE_LOW_LIMIT Decimal(17,2) comment '期次成立最低额度',
+    INIT_AMT Decimal(17,2) comment '认购起存金额',
+    SG_MAX_AMT Decimal(17,2) comment '单笔认购最大金额',
+    AMT_UNIT Decimal(17,2) comment '金额单位',
+    RISK_LEVEL varchar(5) comment '风险等级',
+    EFFECT_DATE varchar(8) comment '起息日期',
+    MATURITY_DATE varchar(8) comment '到期日期',
+    USER_ID varchar(30) comment '操作柜员',
+    AUTH_OFFICER_ID varchar(30) comment '授权柜员',
+    TRAN_BRANCH varchar(20) comment '交易机构',
+    TRAN_TIMESTAMP varchar(17) comment '交易时间戳',
+    TRAN_TIME Decimal(11,0) comment '交易时间',
+    ROUTER_KEY varchar(100) comment '分库路由关键字',
+    COMPANY varchar(20) comment '法人代码',
+    RULE_DESC varchar(256) comment '规则描述',
+    primary  key (STAGE_CODE,PROD_TYPE)
+);
+alter table DC_STAGE_RULE_DEFINE comment '期次规则定义表 undefined';

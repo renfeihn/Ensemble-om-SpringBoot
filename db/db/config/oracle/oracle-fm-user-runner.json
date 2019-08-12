@@ -1,0 +1,9 @@
+{
+  "runners": [
+ {
+      "db":"db_upright",
+      "db_file_dir": "6test_data/",
+      "db_file": "6test_data/userRunner.sql"
+    }
+  ]
+}

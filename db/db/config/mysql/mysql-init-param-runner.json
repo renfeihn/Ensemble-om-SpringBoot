@@ -1,0 +1,29 @@
+{
+  "runners": [
+    {
+      "db":"db_upright",
+      "db_file_dir": "4init_param/ensemble/",
+      "db_file": "4init_param/ensemble/runallData.sql"
+    },
+    {
+      "db":"db_upright",
+      "db_file_dir":"4init_param/accounting/upright/",
+      "db_file": "4init_param/accounting/upright/init_parameter_runall.sql"
+    },
+     {
+      "db":"db_upright",
+      "db_file_dir": "4init_param/smartLiMarket/",
+      "db_file": "4init_param/smartLiMarket/init_data.sql"
+    },
+    {
+      "db":"db_level1",
+      "db_file_dir":"4init_param/accounting/level/",
+      "db_file": "4init_param/accounting/level/init_parameter_runall.sql"
+    },
+     {
+      "db":"db_level2",
+      "db_file_dir":"4init_param/accounting/level/",
+      "db_file": "4init_param/accounting/level/init_parameter_runall.sql"
+    }
+  ]
+}

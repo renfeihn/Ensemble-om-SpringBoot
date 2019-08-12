@@ -1,0 +1,79 @@
+{
+  "code": "CIF_CONTACT_TYPE",
+  "comment": "联系类型",
+  "attr": [        {
+    "code": "CONTACT_TYPE",
+    "dataType": "Varchar",
+    "lengths": "3",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "联系类型",
+    "defaults": "",
+    "dictionary": "CONTACT_TYPE",
+    "column": "联系类型",
+    "scope": ""        }
+  ,        {
+      "code": "CONTACT_TYPE_DESC",
+      "dataType": "Varchar",
+      "lengths": "30",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "联系类型描述",
+      "defaults": "",
+      "dictionary": "CONTACT_TYPE_DESC",
+      "column": "联系类型描述",
+      "scope": ""        }
+  ,        {
+      "code": "ROUTE",
+      "dataType": "Varchar",
+      "lengths": "8",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "联系方式",
+      "defaults": "",
+      "dictionary": "ROUTE",
+      "column": "联系方式类型 SWIFT:SWIFT电文 POSTAL:邮寄",
+      "scope": ""        }
+  ,        {
+      "code": "SWIFT_ID",
+      "dataType": "Varchar",
+      "lengths": "12",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "SWIFT ID",
+      "defaults": "",
+      "dictionary": "SWIFT_ID",
+      "column": "SWIFT ID",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "法人代码",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "法人代码",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "交易时间戳",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "时间戳",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "交易时间",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "交易时间",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": " 1、按客户的不同联系方式来分类各种联系类型，表中保存了联系类型、类型描述、联系方式等信息，做为整个系统的基础参数，在开立客户、维护客户信息时使用，也供各模块使用客户联系方式时用",
+  "moduleType":"客户参数"}

@@ -1,0 +1,97 @@
+{
+    "code": "FM_GAP_PERIOD",
+    "comment": "敞口期限信息",
+    "attr": [
+        {
+            "code": "GAP_TYPE",
+            "dataType": "Varchar",
+            "lengths": "5",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "敞口类型",
+            "defaults": "",
+            "dictionary": "GAP_TYPE",
+            "scope": ""
+        },
+        {
+            "code": "PERIOD_NO",
+            "dataType": "Varchar",
+            "lengths": "5",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "期限",
+            "defaults": "",
+            "dictionary": "PERIOD_NO",
+            "scope": ""
+        },
+        {
+            "dictionary": "PERIOD_TYPE",
+            "code": "PERIOD_TYPE",
+            "codeOld": "PERIOD_TYPE",
+            "dataType": "Varchar",
+            "lengths": "1",
+            "precision": "",
+            "defaults": "",
+            "comment": "期限类型",
+            "scope": "D:Days天,M:Months月,Y:Years 年",
+            "M": true,
+            "P": true
+        },
+        {
+            "code": "PERIOD_DESC",
+            "dataType": "Varchar",
+            "lengths": "10",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "期限描述",
+            "defaults": "",
+            "dictionary": "PERIOD_DESC",
+            "scope": ""
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "init_para",
+    "system": "Ensemble",
+    "commentDesc": "",
+    "moduleType": "公共参数"
+}

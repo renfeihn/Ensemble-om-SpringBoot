@@ -1,0 +1,179 @@
+{
+  "code": "CIF_CATEGORY_TYPE",
+  "comment": "客户类型-细分类表",
+  "attr": [        {
+    "code": "CATEGORY_TYPE",
+    "dataType": "Varchar",
+    "lengths": "3",
+    "precision": "",
+    "M": true,            "P": true,            "comment": "客户细分类型",
+    "defaults": "",
+    "dictionary": "CATEGORY_TYPE",
+    "column": "客户细分类型",
+    "scope": ""        }
+  ,        {
+      "code": "CATEGORY_DESC",
+      "dataType": "Varchar",
+      "lengths": "30",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "类型描述",
+      "defaults": "",
+      "dictionary": "CATEGORY_DESC",
+      "column": "类型描述",
+      "scope": ""        }
+  ,        {
+      "code": "CLIENT_TYPE",
+      "dataType": "Varchar",
+      "lengths": "3",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "客户类型",
+      "defaults": "",
+      "dictionary": "CLIENT_TYPE",
+      "column": "客户类型",
+      "scope": ""        }
+  ,        {
+      "code": "BANK",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "是否为银行",
+      "defaults": "",
+      "dictionary": "BANK",
+      "column": "是否为银行 Y-是 N-不是",
+      "scope": ""        }
+  ,        {
+      "code": "CENTRAL_BANK",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "是否为中央银行",
+      "defaults": "",
+      "dictionary": "CENTRAL_BANK",
+      "column": "是否为中央银行 Y-是 N-不是",
+      "scope": ""        }
+  ,        {
+      "code": "FIN_INSTITUTION",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "是否为金融机构",
+      "defaults": "",
+      "dictionary": "FIN_INSTITUTION",
+      "column": "是否为金融机构 Y-是 N-不是",
+      "scope": ""        }
+  ,        {
+      "code": "REP_OFFICE",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "是否为代表处",
+      "defaults": "",
+      "dictionary": "REP_OFFICE",
+      "column": "是否为代表处 Y-是 N-不是",
+      "scope": ""        }
+  ,        {
+      "code": "BROKER",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "是否为经纪人",
+      "defaults": "",
+      "dictionary": "BROKER",
+      "column": "是否为经纪人 Y-是 N-不是",
+      "scope": ""        }
+  ,        {
+      "code": "CORPORATION",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "是否为企业",
+      "defaults": "",
+      "dictionary": "CORPORATION",
+      "column": "是否为企业 Y-是 N-不是",
+      "scope": ""        }
+  ,        {
+      "code": "INDIVIDUAL",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "是否为个体",
+      "defaults": "",
+      "dictionary": "INDIVIDUAL",
+      "column": "是否为个体 Y-是 N-不是",
+      "scope": ""        }
+  ,        {
+      "code": "GOVERNMENT",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "是否为政府部门",
+      "defaults": "",
+      "dictionary": "GOVERNMENT",
+      "column": "是否为政府部门 Y-是 N-不是",
+      "scope": ""        }
+  ,        {
+      "code": "INTL_INSTITUTION",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "是否为国际组织",
+      "defaults": "",
+      "dictionary": "INTL_INSTITUTION",
+      "column": "是否为国际组织 Y-是 N-不是",
+      "scope": ""        }
+  ,        {
+      "code": "JOINT",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "是否为联合体",
+      "defaults": "",
+      "dictionary": "JOINT",
+      "column": "是否为联合体 Y-是 N-不是",
+      "scope": ""        }
+  ,        {
+      "code": "OTHER",
+      "dataType": "Varchar",
+      "lengths": "1",
+      "precision": "",
+      "M": true,            "P": false,            "comment": "是否是其他",
+      "defaults": "",
+      "dictionary": "OTHER",
+      "column": "是否是其他 Y-是 N-不是",
+      "scope": ""        }
+  ,        {
+      "code": "COMPANY",
+      "dataType": "Varchar",
+      "lengths": "20",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "法人代码",
+      "defaults": "",
+      "dictionary": "COMPANY",
+      "column": "法人代码",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIMESTAMP",
+      "dataType": "Varchar",
+      "lengths": "17",
+      "precision": "",
+      "M": false,            "P": false,            "comment": "交易时间戳",
+      "defaults": "",
+      "dictionary": "TRAN_TIMESTAMP",
+      "column": "时间戳",
+      "scope": ""        }
+  ,        {
+      "code": "TRAN_TIME",
+      "dataType": "Number",
+      "lengths": "11",
+      "precision": "0",
+      "M": false,            "P": false,            "comment": "交易时间",
+      "defaults": "",
+      "dictionary": "TRAN_TIME",
+      "column": "交易时间",
+      "scope": ""        }
+  ],    "table_space": "core_data",
+  "dbType": "upright",
+  "parameter": "busi_para",
+  "system": "Ensemble",
+  "commentDesc": "1、在客户类型大类的基础上进一步细分，比如：个人客户又细分为纯储蓄客户、内部员工，公司又细分为国有企业、集体企业等，该表数据做为整个系统的基础参数，在开立客户、维护客户信息时使用，也供各模块在使用客户信息时用。",
+  "moduleType":"客户参数"}

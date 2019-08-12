@@ -10,56 +10,55 @@ drop table if exists web_user_role;
 
 create table web_menu
 (
-   menu_seq             int default null comment '²Ëµ¥ĞòºÅ',
-   menu_id              int not null comment '²Ëµ¥ID',
-   menu_name            varchar(20) not null comment '²Ëµ¥Ãû³Æ',
-   menu_parent_id       int not null comment 'ÉÏ¼¶²Ëµ¥ID',
-   menu_url             varchar(100) not null comment '²Ëµ¥URL',
-   menu_status          varchar(10) not null comment '²Ëµ¥×´Ì¬',
-   menu_action          varchar(100) default '' comment '°´Å¥Á´½Ó',
+   menu_seq             int default null comment 'ï¿½Ëµï¿½ï¿½ï¿½ï¿½',
+   menu_id              int not null comment 'ï¿½Ëµï¿½ID',
+   menu_name            varchar(20) not null comment 'ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½',
+   menu_parent_id       int not null comment 'ï¿½Ï¼ï¿½ï¿½Ëµï¿½ID',
+   menu_url             varchar(100) not null comment 'ï¿½Ëµï¿½URL',
+   menu_status          varchar(10) not null comment 'ï¿½Ëµï¿½×´Ì¬',
+   menu_action          varchar(100) default '' comment 'ï¿½ï¿½Å¥ï¿½ï¿½ï¿½ï¿½',
    primary key (menu_id)
 );
 
-alter table web_menu comment 'È¨ÏŞ²Ëµ¥½»Ò×';
+alter table web_menu comment 'È¨ï¿½Ş²Ëµï¿½ï¿½ï¿½ï¿½ï¿½';
 
 create table web_role
 (
-   role_id              int not null comment '½ÇÉ«ID',
-   role_name            varchar(20) not null comment '½ÇÉ«Ãû³Æ',
-   role_desc            varchar(100) not null comment '½ÇÉ«ÃèÊö',
+   role_id              int not null comment 'ï¿½ï¿½É«ID',
+   role_name            varchar(20) not null comment 'ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½',
+   role_desc            varchar(100) not null comment 'ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½',
    primary key (role_id)
 );
 
-alter table web_role comment 'È¨ÏŞ½ÇÉ«½»Ò×';
+alter table web_role comment 'È¨ï¿½Ş½ï¿½É«ï¿½ï¿½ï¿½ï¿½';
 
 create table web_role_menu
 (
-   role_id              int not null comment '½ÇÉ«ID',
-   menu_id              int not null comment '²Ëµ¥ID',
+   role_id              int not null comment 'ï¿½ï¿½É«ID',
+   menu_id              int not null comment 'ï¿½Ëµï¿½ID',
    primary key (role_id, menu_id)
 );
 
-alter table web_role_menu comment 'È¨ÏŞ½ÇÉ«²Ëµ¥½»Ò×';
+alter table web_role_menu comment 'È¨ï¿½Ş½ï¿½É«ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½';
 
-create table web_user
-(
-   user_id              varchar(20) not null comment 'ÓÃ»§ID',
-   user_name            varchar(20) not null comment 'ÓÃ»§Ãû³Æ',
-   password             varchar(200) not null comment 'ÓÃ»§ÃÜÂë',
-   message              varchar(255) default '' comment 'ÓÃ»§ĞÅÏ¢',
-   organization         varchar(100) default '' comment '»ú¹¹',
-   legalentity          varchar(100) default '' comment '·¨ÈË',
-   primary key (user_id)
+CREATE TABLE web_user (
+  USER_ID varchar(20) NOT NULL COMMENT 'ç”¨æˆ·ID',
+  USER_NAME varchar(20) NOT NULL COMMENT 'ç”¨æˆ·åç§°',
+  PASSWORD varchar(20) NOT NULL COMMENT 'ç”¨æˆ·å¯†ç ',
+  MESSAGE varchar(255) DEFAULT '' COMMENT 'æœºæ„',
+  ORGANIZATION varchar(100) DEFAULT '' COMMENT 'æ³•äºº',
+  LEGALENTITY varchar(100) DEFAULT '' COMMENT 'ç”¨æˆ·ä¿¡æ¯',
+  PRIMARY KEY (USER_ID)
 );
 
-alter table web_user comment 'È¨ÏŞÓÃ»§½»Ò×';
+alter table web_user comment 'È¨ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 create table web_user_role
 (
-   role_id              int not null comment '½ÇÉ«ID',
-   user_id              varchar(30) not null comment 'ÓÃ»§ID',
+   role_id              int not null comment 'ï¿½ï¿½É«ID',
+   user_id              varchar(30) not null comment 'ï¿½Ã»ï¿½ID',
    primary key (user_id)
 );
 
-alter table web_user_role comment 'È¨ÏŞÓÃ»§½ÇÉ«½»Ò×';
+alter table web_user_role comment 'È¨ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½';
 

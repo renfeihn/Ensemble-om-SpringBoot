@@ -1,0 +1,9 @@
+{
+  "runners": [
+    {
+      "db":"db_upright",
+      "db_file_dir": "5busi_param/",
+      "db_file": "5busi_param/parameter_oracle_runall.sql"
+    }
+  ]
+}

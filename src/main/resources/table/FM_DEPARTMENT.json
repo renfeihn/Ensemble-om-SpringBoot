@@ -1,0 +1,85 @@
+{
+    "code": "FM_DEPARTMENT",
+    "comment": "部门信息表",
+    "attr": [
+        {
+            "code": "DEPARTMENT",
+            "dataType": "Varchar",
+            "lengths": "3",
+            "precision": "",
+            "M": true,
+            "P": true,
+            "comment": "部门代码",
+            "defaults": "",
+            "dictionary": "DEPARTMENT",
+            "scope": "取值FM_DEPARTMENT"
+        },
+        {
+            "code": "DEPARTMENT_DESC",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": true,
+            "P": false,
+            "comment": "部门名称",
+            "defaults": "",
+            "dictionary": "DEPARTMENT_DESC",
+            "scope": ""
+        },
+        {
+            "dictionary": "PROFIT_SEGMENT",
+            "code": "PROFIT_SEGMENT",
+            "codeOld": "PROFIT_SEGMENT",
+            "dataType": "Varchar",
+            "lengths": "12",
+            "precision": "",
+            "defaults": "",
+            "comment": "利润中心",
+            "scope": "取值FM_PROFIT_CENTRE.PROFIT_CENTRE",
+            "M": false,
+            "P": false
+        },
+        {
+            "code": "COMPANY",
+            "dataType": "Varchar",
+            "lengths": "20",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "法人",
+            "defaults": "",
+            "dictionary": "COMPANY",
+            "scope": "FM_COMPANY.COMPANY"
+        },
+        {
+            "code": "TRAN_TIMESTAMP",
+            "dataType": "Varchar",
+            "lengths": "17",
+            "precision": "",
+            "M": false,
+            "P": false,
+            "comment": "交易时间戳",
+            "defaults": "",
+            "dictionary": "TRAN_TIMESTAMP",
+            "scope": ""
+        },
+        {
+            "code": "TRAN_TIME",
+            "dataType": "Number",
+            "lengths": "11",
+            "precision": "0",
+            "M": false,
+            "P": false,
+            "comment": "交易时间",
+            "defaults": "",
+            "dictionary": "TRAN_TIME",
+            "scope": ""
+        }
+    ],
+    "table_space": "core_data",
+    "dbType": "upright",
+    "parameter": "busi_para",
+    "system": "Ensemble",
+    "commentDesc": "",
+    "moduleType": "公共参数"
+}
